@@ -1,9 +1,29 @@
+
+
 @use 'uswds-core' as * with (
   $theme-show-notifications: false,
   $theme-font-path: '../node_modules/@uswds/uswds/dist/fonts',
   $theme-image-path: '../node_modules/@uswds/uswds/dist/img',
   $theme-font-type-sans: 'public-sans',
-  $theme-hero-image: '../_img/hero.png'
+  $theme-hero-image: '../_img/hero.png',
+  $theme-color-accent-warm-family: "blue-warm",
+  $theme-color-accent-warm-lightest: false,
+  $theme-color-accent-warm-lighter: "blue-warm-10",
+  $theme-color-accent-warm-light: "blue-warm-20v",
+  $theme-color-accent-warm: "blue-warm-30v",
+  $theme-color-accent-warm-dark: "blue-warm-50v",
+  $theme-color-accent-warm-darker: "blue-warm-60",
+  $theme-color-accent-warm-darkest: false,
 );
 
 @forward 'uswds';
+
+@forward "helpers";
+@forward "footer";
+
+$fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/v4-shims.scss";
