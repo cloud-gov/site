@@ -24,6 +24,7 @@ i.e.
 .usa-table th {
   background-color: transparent;
 }
+
 //Responsive tables from USWDS SITE
 $theme-table-responsive-expand-at: 'tablet';
 $theme-table-responsive-title-width: 15;
@@ -112,7 +113,7 @@ $theme-table-column-gap: 4;
         content: '';
         background-color: color('gray-2');
         border-bottom-left-radius: radius(
-          $theme-table-responsive-border-radius
+                        $theme-table-responsive-border-radius
         );
         border-top-left-radius: radius($theme-table-responsive-border-radius);
         display: block;
@@ -333,6 +334,7 @@ h5,
 h6 {
   @include u-text('ls-neg-3');
 }
+
 //Set the heading styles outside of usa-prose
 .usa-section h2 {
   @include u-font-size('sans', $theme-h2-font-size);
@@ -407,6 +409,13 @@ h6 {
   }
 }
 
+@media (min-width: 40em) {
+  main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
 main .usa-button {
   @include u-radius(1px);
   @include u-text('medium');
@@ -448,6 +457,7 @@ main .usa-button--secondary {
     @include u-padding-y(4);
   }
 }
+
 .usa-section--dark {
   @include u-bg('primary-darkest');
 
@@ -486,6 +496,7 @@ main .usa-button--secondary {
       }
     }
   }
+
   i {
     @include u-color('accent-warm-dark');
   }
