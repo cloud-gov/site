@@ -3,7 +3,6 @@
   $theme-font-path: '../node_modules/@uswds/uswds/dist/fonts',
   $theme-image-path: '../node_modules/@uswds/uswds/dist/img',
   $theme-font-type-sans: 'public-sans',
-  $theme-hero-image: '../_img/content/pexels-eberhardgross-844297.jpg', // Photo by eberhard grossgasteiger: https://www.pexels.com/photo/down-angle-photography-of-red-clouds-and-blue-sky-844297/
   // Theme color base
   $theme-color-base-family:           'gray-cool',
   $theme-color-base-lightest:         'gray-cool-3',
@@ -194,8 +193,6 @@
   $theme-lead-line-height: 6,
   $theme-lead-measure: 6
 );
-
-//@forward "uswds.custom";
 
 @forward "uswds";
 
