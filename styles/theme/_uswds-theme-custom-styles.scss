@@ -181,7 +181,7 @@ $theme-table-column-gap: 4;
 
     th,
     td {
-      @include u-padding-x($theme-table-column-gap / 2);
+      @include u-padding-x(calc($theme-table-column-gap / 2));
       @include u-padding-y(1);
       border: none;
       text-align: left;
@@ -222,12 +222,12 @@ $theme-table-column-gap: 4;
 
     @include at-media($theme-table-responsive-expand-at) {
       thead {
-        // @include u-font("lang", 2);
+         //@include u-font("lang", 2);
       }
 
       th,
       td {
-        @include u-padding-x($theme-table-column-gap / 2);
+        @include u-padding-x(calc($theme-table-column-gap / 2));
         @include u-padding-y(0.5);
         border: none;
 

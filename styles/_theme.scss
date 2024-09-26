@@ -112,19 +112,10 @@ $fa-font-path: "../node_modules/@fortawesome/fontawesome-free/webfonts";
 
 .site-footer {
   @include u-bg('accent-warm');
-  @include u-font('body', '3xs');
+  //@include u-font('body', '3xs');
   @include u-color('ink');
 
-  a {
-    @include u-color('ink');
 
-    &:visited {
-      @include u-color('ink');
-    }
-    &:hover {
-      @include u-color('primary-darker');
-    }
-  }
 }
 
 @media screen and (min-width: 640px) {
