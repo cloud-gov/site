@@ -11,11 +11,11 @@ redirect_from:
 
 ### Want to use cloud.gov?
 
+
 ### Support for people who use cloud.gov
 
 ### Report a vulnerability
 
-We welcome vulnerability reports [according to our vulnerability disclosure policy](https://www.gsa.gov/vulnerability-disclosure-policy), which includes how to best contact us for this kind of information.
 
 ### Questions from the public and industry
 

@@ -1,11 +1,25 @@
 title: cloud.gov
 email: support@cloud.gov
-description: >- # this means to ignore newlines
-  Agency Name (EAC) Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Aenean et sapien a leo auctor scelerisque quis nec magna. Sed dictum ante a risus vehicula facilisis.
+support_email_address: support@cloud.gov
+description: >- # this means to ignore newlines until "baseurl:"
+  Expedite your agency’s path to a secure and compliant cloud. cloud.gov provides an application environment that enables rapid deployment and ATO assessment for modern web applications.
+baseurl: "" # the subpath of your site, e.g. /blog
+# url: "https://example.gov" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Twitter handle. Only the handle, not the URL.
 twitter: clouddotgov
+github_url: https://github.com/cloud-gov/cg-site
+support_email: mailto:support@cloud.gov?body=What+is+your+question%3F%0D%0A%0D%0APlease+provide+your+application+name+or+URL.+Do+not+include+any+sensitive+information+about+your+platform+in+this+email.
+inquiries_email: mailto:inquiries@cloud.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov%3A%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A%0AHow%20did%20you%20first%20hear%20about%20cloud.gov%3F
+
+github_branch: main
+
+# Configuration for Google Analytics, add your UA code here:
+google_analytics_ua: UA-48605964-34
+
+# Configuration for DAP, add your agency ID here:
+dap_agency: GSA
+dap_subagency: TTS,cloud.gov
 
 #################################################################
 #
@@ -180,6 +194,66 @@ collections:
     permalink: /pages/knowledge-base/:path/
 
 permalink: pretty
+
+markdown: kramdown
+url: "https://cloud.gov"
+
+exclude:
+  - package.json
+  - package-lock.json
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE.md
+  - degit.json
+  - vendor
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - .parcel-cache
+
+### plugin settings ###
+last-modified-at:
+  date-format: "%Y-%m-%d"
+
+
+defaults:
+  - scope:
+      path: "_docs/compliance"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/deployment"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/getting-started"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/management"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/orgs-spaces"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/overview"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/pricing"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/services"
+    values:
+      toc: true
+  - scope:
+      path: "_docs/technology"
+    values:
+      toc: true
+
 
 toc:
   min_level: 2
