@@ -3,15 +3,15 @@ require('@uswds/uswds');
 // Add your custom javascript here
 console.log("Hi from cloud.gov Pages");
 
-mermaid.initialize({startOnLoad:true, theme: 'base'}, ".someOtherClass");
+// mermaid.initialize({startOnLoad:true, theme: 'base'}, ".someOtherClass");
 
 const sideNavParents = document.querySelectorAll(".usa-sidenav__item--parent-item");
 const sideNavChild = document.querySelectorAll(".usa-sidenav__sublist--middle-generation");
 const subLists = document.querySelectorAll("ul.usa-sidenav__sublist");
 const middleSubList = document.querySelectorAll(".usa-sidenav__sublist ul");
 
-anchors.add('h2').remove('.no-anchor');
-anchors.add('h3').remove('.no-anchor');
+// anchors.add('h2').remove('.no-anchor');
+// anchors.add('h3').remove('.no-anchor');
 
 
 function openCurrentSubNav(self){
