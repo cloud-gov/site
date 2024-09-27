@@ -10,9 +10,10 @@ const sideNavChild = document.querySelectorAll(".usa-sidenav__sublist--middle-ge
 const subLists = document.querySelectorAll("ul.usa-sidenav__sublist");
 const middleSubList = document.querySelectorAll(".usa-sidenav__sublist ul");
 
-// anchors.add('h2').remove('.no-anchor');
-// anchors.add('h3').remove('.no-anchor');
+anchors.add('h2').remove('.no-anchor');
+anchors.add('h3').remove('.no-anchor');
 
+console.log(anchors);
 
 function openCurrentSubNav(self){
     //Toggle the attribute

@@ -17,7 +17,8 @@ module.exports = function (config) {
 
   // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
   config.addPassthroughCopy({
-    './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js'
+    './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
+    './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.js'
   });
 
   // Add plugins

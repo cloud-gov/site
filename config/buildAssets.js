@@ -17,6 +17,7 @@ async function createAssetPaths() {
             const files = await fs.readdir(
                 path.join(__dirname, '../_site/assets', dir)
             );
+            console.log(files);
             return files.map((file) => {
                 const {name, ext} = path.parse(file);
                 const hashedAt = name.lastIndexOf('-');
