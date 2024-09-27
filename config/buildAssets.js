@@ -36,7 +36,7 @@ async function createAssetPaths() {
 
 esbuild
     .build({
-        entryPoints: ['styles/styles.scss', 'js/app.js', 'js/admin.js', 'js/anchor.min.js', 'js/mermaid.min.js'],
+        entryPoints: ['styles/styles.scss', 'js/app.js', 'js/admin.js'],
         entryNames: '[dir]/[name]-[hash]',
         outdir: '_site/assets',
         format: 'iife',
@@ -54,7 +54,8 @@ esbuild
         plugins: [sassPlugin({
             loadPaths: [
                 "./node_modules/@uswds",
-                "./node_modules/@uswds/uswds/packages"
+                "./node_modules/@uswds/uswds/packages",
+                "./node_modules/anchor-js/"
             ]
         })],
         bundle: true,

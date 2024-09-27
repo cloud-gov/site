@@ -11,7 +11,6 @@ redirect_from:
 
 ### Want to use cloud.gov?
 
-
 ### Support for people who use cloud.gov
 
 ### Report a vulnerability

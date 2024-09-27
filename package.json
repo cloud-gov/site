@@ -46,6 +46,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@uswds/uswds": "^3.8.2",
-    "decap-cms": "^3.3.3"
+    "anchor-js": "^5.0.0",
+    "decap-cms": "^3.3.3",
+    "mermaid": "^11.2.1"
   }
 }
