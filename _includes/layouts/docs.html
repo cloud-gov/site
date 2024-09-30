@@ -13,9 +13,8 @@ This template is for a single page that does not have a date associated with it.
             {% include "sidenav.html" %}
             {% endif %}
             <main id="main-content"
-                  class="usa-layout-docs__main desktop:grid-col-8 usa-prose bg-white padding-y-8 padding-x-4">
+                  class="usa-layout-docs__main usa-prose bg-white padding-y-8 padding-x-4">
                 <h1>{{ title }}</h1>
-                <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
 
                     {% comment %}
                     {% assign toc_content = content | toc_only | strip | strip_newlines %}
@@ -36,7 +35,6 @@ This template is for a single page that does not have a date associated with it.
                         <div class="grid-col flex-1"><p><a href="{{ site.github_url }}/edit/{{ site.github_branch }}/{{ page.relative_path }}">Suggest edits</a></p></div>
                     </div>
 
-                </div>
             </main>
         </div>
     </div>

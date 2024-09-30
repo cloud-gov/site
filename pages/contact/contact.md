@@ -11,10 +11,22 @@ redirect_from:
 
 ### Want to use cloud.gov?
 
+If you're interested in using cloud.gov, email [{{site.email}}]({{site.inquiries_email}}).  We’ll schedule a call to answer your questions and help you [get started]({{ site.baseurl }}/sign-up/).
+
+If you have a U.S. federal government email address, you can [get access to a free sandbox space]({{ site.baseurl }}/pricing/free-limited-sandbox).
+
 ### Support for people who use cloud.gov
+
+Email [**{{site.support_email_address}}**]({{site.support_email}}). See our [customer service objectives page]({{ site.baseurl }}/overview/customer-service-objectives.md}) for information about our support availability.
+
+If you need help with an application security incident, the request should come from the System Owner or Org Manager, to help us validate the request. For an active incident, refer to our
+standard [security.txt]({{ site.baseurl }}/.well-known/security.txt) file.
+
+You should not include any passwords or sensitive environment variables in your email (we don't need them to help you, and you should keep them protected).
 
 ### Report a vulnerability
 
+We welcome vulnerability reports [according to our vulnerability disclosure policy](https://www.gsa.gov/vulnerability-disclosure-policy), which includes how to best contact us for this kind of information.
 
 ### Questions from the public and industry
 
