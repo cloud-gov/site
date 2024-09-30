@@ -17,12 +17,13 @@ async function createAssetPaths() {
             const files = await fs.readdir(
                 path.join(__dirname, '../_site/assets', dir)
             );
-            console.log(files);
+            console.log('some files and stuff', files);
             return files.map((file) => {
                 const {name, ext} = path.parse(file);
                 const hashedAt = name.lastIndexOf('-');
-                const originalName = name.slice(0, hashedAt);
+                const originalName = hashedAt > -1 ? name.slice(0, hashedAt) : name;
                 const key = `${originalName}${ext}`;
+                // const key = file;
                 return {
                     [key]: `${pathPrefix}/assets/${dir}/${file}`,
                 };
