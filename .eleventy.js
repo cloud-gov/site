@@ -8,6 +8,7 @@ const yaml = require("js-yaml");
 const svgSprite = require("eleventy-plugin-svg-sprite");
 const { imageShortcode, imageWithClassShortcode } = require('./config');
 const pluginTOC = require('eleventy-plugin-toc')
+const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 
 module.exports = function (config) {
   // Set pathPrefix for site
@@ -21,7 +22,8 @@ module.exports = function (config) {
     'admin': 'admin',
     'favicon.ico': 'favicon.ico',
     './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
-    './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.min.js'
+    './node_modules/mermaid/dist/mermaid.min.js': 'assets/js/anchor.min.js',
+    './node_modules/mer': 'assets/js/mermaid.min.mjs'
   });
 
   // Add plugins
@@ -44,6 +46,16 @@ module.exports = function (config) {
 
   config.addPlugin(pluginTOC, {
     tags: ['h2']
+  });
+
+  config.addPlugin(pluginMermaid, {
+    mermaid_js_src: '/assets/mermaid.min.js',
+    html_tag: 'div',
+    extra_classes: 'graph',
+    mermaid_config: {
+      'startOnLoad': true,
+      'theme': 'base'
+    }
   });
 
   // Allow yaml to be used in the _data dir
