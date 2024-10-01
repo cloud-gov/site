@@ -7,6 +7,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const yaml = require("js-yaml");
 const svgSprite = require("eleventy-plugin-svg-sprite");
 const { imageShortcode, imageWithClassShortcode } = require('./config');
+const pluginTOC = require('eleventy-plugin-toc')
 
 module.exports = function (config) {
   // Set pathPrefix for site
@@ -38,6 +39,8 @@ module.exports = function (config) {
     svgSpriteShortcode: 'usa_icons_sprite',
     svgShortcode: 'usa_icons'
   });
+
+  config.addPlugin(pluginTOC);
 
   // Allow yaml to be used in the _data dir
   config.addDataExtension("yaml", contents => yaml.load(contents));
