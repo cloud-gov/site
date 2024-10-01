@@ -1,6 +1,6 @@
 ---
 permalink: contact/
-layout: layouts/docs
+layout: layouts/page
 sidenav: true
 title: Contact
 redirect_from:

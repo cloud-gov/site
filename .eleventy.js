@@ -14,10 +14,12 @@ module.exports = function (config) {
   let pathPrefix = '/';
 
   // Copy the `admin` folders to the output
-  config.addPassthroughCopy('admin');
+  // config.addPassthroughCopy('admin');
 
   // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
   config.addPassthroughCopy({
+    'admin': 'admin',
+    'favicon.ico': 'favicon.ico',
     './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
     './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.min.js'
   });
@@ -40,7 +42,9 @@ module.exports = function (config) {
     svgShortcode: 'usa_icons'
   });
 
-  config.addPlugin(pluginTOC);
+  config.addPlugin(pluginTOC, {
+    tags: ['h2']
+  });
 
   // Allow yaml to be used in the _data dir
   config.addDataExtension("yaml", contents => yaml.load(contents));
