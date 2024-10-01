@@ -37,7 +37,7 @@ Here's how it works: Every moderate-impact federal system is required to account
 
 Here's an example of a control breakdown for a simple moderate-impact system hosted on cloud.gov:
 
-{% image_with_class "./_img/content/fedramp-moderate-controls-new.png" "" "GSA Logo" "Graphic showing the breakdown of how many controls are fully covered by cloud.gov." %}
+{% image_with_class "./_img/content/fedramp-moderate-controls-new.png" "" "" "Graphic showing the breakdown of how many controls are fully covered by cloud.gov." %}
 
 ### Control Implementation Summary (CIS) + Customer Responsibility Matrix (CRM):
 

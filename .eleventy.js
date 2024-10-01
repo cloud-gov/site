@@ -20,6 +20,7 @@ module.exports = function (config) {
   // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
   config.addPassthroughCopy({
     'admin': 'admin',
+    'resources': 'resources',
     'favicon.ico': 'favicon.ico',
     './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
     './node_modules/mermaid/dist/mermaid.min.js': 'assets/js/anchor.min.js',

@@ -1,5 +1,6 @@
 ---
 parent: deployment
+permalink: docs/deployment/app-maintenance/
 redirect_from: 
     - /docs/getting-started/app-maintenance/
     - /docs/apps/app-maintenance/
