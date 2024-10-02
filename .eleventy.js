@@ -112,7 +112,7 @@ module.exports = function (config) {
   let markdownLibrary = markdownIt({
     html: true,
     breaks: true,
-    linkify: true,
+    linkify: false
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
       placement: 'after',
@@ -122,6 +122,16 @@ module.exports = function (config) {
     }),
     slugify: config.getFilter('slug'),
   });
+
+  function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  markdownLibrary.renderer.rules.code_inline = (tokens, idx, { langPrefix = '' }) => {
+    const token = tokens[idx];
+    return `<code class="${langPrefix}plaintext highlighter-rouge">${htmlEntities(token.content)}</code>&nbsp;`;
+  };
+
   config.setLibrary('md', markdownLibrary);
 
   // Override Browsersync defaults (used only with --serve)
