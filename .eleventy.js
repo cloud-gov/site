@@ -23,8 +23,8 @@ module.exports = function (config) {
     'resources': 'resources',
     'favicon.ico': 'favicon.ico',
     './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
-    './node_modules/mermaid/dist/mermaid.min.js': 'assets/js/anchor.min.js',
-    './node_modules/mer': 'assets/js/mermaid.min.mjs'
+    './node_modules/mermaid/dist/mermaid.min.js': 'assets/js/mermaid.min.js',
+    './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.min.js'
   });
 
   // Add plugins
@@ -117,7 +117,7 @@ module.exports = function (config) {
     permalink: markdownItAnchor.permalink.ariaHidden({
       placement: 'after',
       class: 'direct-link',
-      symbol: '#',
+      symbol: '',
       level: [1, 2, 3, 4],
     }),
     slugify: config.getFilter('slug'),
