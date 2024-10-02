@@ -9,6 +9,8 @@ const svgSprite = require("eleventy-plugin-svg-sprite");
 const { imageShortcode, imageWithClassShortcode } = require('./config');
 const pluginTOC = require('eleventy-plugin-toc')
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 
 module.exports = function (config) {
   // Set pathPrefix for site
@@ -22,6 +24,7 @@ module.exports = function (config) {
     'admin': 'admin',
     'resources': 'resources',
     'favicon.ico': 'favicon.ico',
+    './node_modules/PrismJS/themes/prism-atom-dark.css': 'assets/styles/prism-atom-dark.css',
     './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
     './node_modules/mermaid/dist/mermaid.min.js': 'assets/js/mermaid.min.js',
     './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.min.js'
@@ -43,6 +46,10 @@ module.exports = function (config) {
     path: "./node_modules/@uswds/uswds/dist/img/usa-icons",
     svgSpriteShortcode: 'usa_icons_sprite',
     svgShortcode: 'usa_icons'
+  });
+
+  config.addPlugin(syntaxHighlight, {
+
   });
 
   config.addPlugin(pluginTOC, {
@@ -129,7 +136,7 @@ module.exports = function (config) {
 
   markdownLibrary.renderer.rules.code_inline = (tokens, idx, { langPrefix = '' }) => {
     const token = tokens[idx];
-    return `<code class="${langPrefix}plaintext highlighter-rouge">${htmlEntities(token.content)}</code>&nbsp;`;
+    return `<code class="${langPrefix}plaintext">${htmlEntities(token.content)}</code>&nbsp;`;
   };
 
   config.setLibrary('md', markdownLibrary);

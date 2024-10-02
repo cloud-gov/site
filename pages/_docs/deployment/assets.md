@@ -1,6 +1,7 @@
 ---
 parent: deployment
 layout: layouts/docs
+permalink: docs/deployment/assets/
 sidenav: true
 redirect_from:
     - /docs/apps/assets/

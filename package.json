@@ -29,6 +29,7 @@
     "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@kevingimbel/eleventy-plugin-mermaid": "^2.2.1",
     "autoprefixer": "^10.4.20",
     "chokidar-cli": "^3.0.0",
@@ -50,6 +51,7 @@
     "anchor-js": "^5.0.0",
     "decap-cms": "^3.3.3",
     "eleventy-plugin-toc": "^1.1.5",
-    "mermaid": "^11.2.1"
+    "mermaid": "^11.2.1",
+    "PrismJS": "git+https://github.com/PrismJS/prism-themes.git"
   }
 }
