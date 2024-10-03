@@ -1,11 +1,7 @@
 ---
 layout: layouts/wide
 permalink: knowledge-base/
-pagination:
-  data: collections.kbarticles
-  enabled: true
-  collection: kbarticles
-  size: 10
+
 ---
 
 <div id="blog" class="usa-graphic-list usa-section usa-section--dark sign-up-intro">
@@ -48,7 +44,7 @@ pagination:
       {% endfor %}
 
       <!-- Pagination links -->
-      {%- include pagination-links.html -%}
+      {%- include "../_includes/pagination-links.html" -%}
 
     </div>
 

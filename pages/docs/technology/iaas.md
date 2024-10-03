@@ -1,6 +1,7 @@
 ---
 parent: technology
 layout: layouts/docs
+permalink: docs/technology/iaas/
 sidenav: true
 title: Infrastructure under cloud.gov
 weight: 20
