@@ -188,7 +188,7 @@ collections:
     permalink: /:collection/:path/
   kbarticles:
     output: true
-    permalink: /knowledge-base/:path/
+    permalink: /pages/knowledge-base/:path/
   kbarticlespages:
     output: true
     permalink: /pages/knowledge-base/:path/
@@ -218,39 +218,39 @@ last-modified-at:
 
 defaults:
   - scope:
-      path: "_docs/compliance"
+      path: "docs/compliance"
     values:
       toc: true
   - scope:
-      path: "_docs/deployment"
+      path: "docs/deployment"
     values:
       toc: true
   - scope:
-      path: "_docs/getting-started"
+      path: "docs/getting-started"
     values:
       toc: true
   - scope:
-      path: "_docs/management"
+      path: "docs/management"
     values:
       toc: true
   - scope:
-      path: "_docs/orgs-spaces"
+      path: "docs/orgs-spaces"
     values:
       toc: true
   - scope:
-      path: "_docs/overview"
+      path: "docs/overview"
     values:
       toc: true
   - scope:
-      path: "_docs/pricing"
+      path: "docs/pricing"
     values:
       toc: true
   - scope:
-      path: "_docs/services"
+      path: "docs/services"
     values:
       toc: true
   - scope:
-      path: "_docs/technology"
+      path: "docs/technology"
     values:
       toc: true
 
@@ -265,3 +265,90 @@ toc:
   sublist_class: ''
   item_class: toc-entry
   item_prefix: toc-
+
+
+
+sidenav:
+  - text: Using Pages
+    href: /pages/documentation/
+    subfolderitems:
+      - text: Why use Pages?
+        href: /pages/documentation/why-use-pages/
+      - text: Access and permissions
+        href: /pages/documentation/access-permissions/
+      - text: Adding a user to an Organization
+        href: /pages/documentation/adding-users/
+      - text: Before you launch
+        href: /pages/documentation/before-you-launch/
+      - text: Getting started with a sandbox
+        href: /pages/documentation/sandbox/
+      - text: "21st Century IDEA"
+        href: /pages/documentation/21st-century-idea/
+      - text: Getting started with Decap CMS
+        href: /pages/documentation/getting-started-with-decap-cms/
+      - text: Included with Pages
+        href: /pages/documentation/included-with-pages/
+      - text: Instructional demos
+        href: /pages/documentation/instructional-demos/
+      - text: Builds and previews
+        href: /pages/documentation/previews/
+      - text: Custom domains
+        href: /pages/documentation/custom-domains/
+      - text: Migration guide
+        href: /pages/documentation/migration-guide/
+      - text: Adding forms
+        href: /pages/documentation/forms/
+      - text: Adding search
+        href: /pages/documentation/search/
+      - text: Site templates
+        href: /pages/documentation/templates/
+      - text: Customizing your site
+        href: /pages/documentation/customization/
+      - text: Using the markup languages
+        href: /pages/documentation/resources/
+      - text: Content guide
+        href: /pages/documentation/content-guide/
+      - text: Custom headers
+        href: /pages/documentation/custom-headers/
+      - text: Federalist.json
+        href: /pages/documentation/federalist-json/
+  - text: For security and compliance
+    href: /pages/documentation/
+    subfolderitems:
+      - text: Security and Compliance
+        href: /pages/documentation/security-and-compliance
+      - text: Customer responsibilities
+        href: /pages/documentation/customer-responsibilities/
+      - text: FedRAMP Tracker
+        href: /docs/overview/fedramp-tracker/
+      - text: Automated Site Reports
+        href: /pages/documentation/automated-site-reports/
+  - text: For developers
+    href: /pages/documentation/
+    subfolderitems:
+      - text: How builds work
+        href: /pages/documentation/how-builds-work/
+      - text: Specific build errors
+        href: /pages/documentation/build-errors/
+      - text: Environment variables on builds
+        href: /pages/documentation/env-vars-on-pages-builds/
+      - text: Pages and cloud.gov
+        href: /pages/documentation/cloud-gov/
+      - text: Node on Pages
+        href: /pages/documentation/node-on-pages/
+      - text: RVM on Pages
+        href: /pages/documentation/rvm-on-pages/
+      - text: Bundler on Pages
+        href: /pages/documentation/bundler-on-pages/
+      - text: Caching Build Dependencies
+        href: /pages/documentation/cache-dependencies/
+      - text: Supported site engines
+        href: /pages/documentation/supported-site-engines/
+      - text: Large file handling
+        href: /pages/documentation/large-file-handling/
+      - text: Renaming your site's repository
+        href: /pages/documentation/renaming-site-repository/
+      - text: Monorepos on Pages
+        href: /pages/documentation/monorepos-on-pages/
+      - text: External tools and resources
+        href: /pages/documentation/external-tools-and-resources/

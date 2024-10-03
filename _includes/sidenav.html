@@ -21,10 +21,13 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
           {{ nav_item.name | escape }}
         </a>
 
+
         <ul class="usa-sidenav__sublist {% if relevant_parent != nav_item.identifier %}display-none{% endif %}"
             id="{{ nav_id }}" aria-hidden="true">
+
           {%- unless nav_item.children -%}
           {%- for docpage in site.docs -%}
+
           {%- if nav_item.identifier == docpage.parent -%}
           <li class="usa-sidenav__item">
             <a href="{{ docpage.url | prepend: site.baseurl }}" class="{% if docpage.url == page.url %}usa-current{% endif %}">{{ docpage.title }}</a>

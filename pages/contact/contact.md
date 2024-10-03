@@ -17,7 +17,7 @@ If you have a U.S. federal government email address, you can [get access to a fr
 
 ### Support for people who use cloud.gov
 
-Email [**{{site.support_email_address}}**]({{site.support_email}}). See our [customer service objectives page]({{ site.baseurl }}/overview/customer-service-objectives.md}) for information about our support availability.
+Email [**{{site.support_email_address}}**]({{site.support_email}}). See our [customer service objectives page]({{ site.baseurl }}/overview/customer-service-objectives) for information about our support availability.
 
 If you need help with an application security incident, the request should come from the System Owner or Org Manager, to help us validate the request. For an active incident, refer to our
 standard [security.txt]({{ site.baseurl }}/.well-known/security.txt) file.
