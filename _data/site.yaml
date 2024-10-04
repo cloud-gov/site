@@ -188,7 +188,7 @@ collections:
     permalink: /:collection/:path/
   kbarticles:
     output: true
-    permalink: /pages/knowledge-base/:path/
+    permalink: /knowledge-base/:path/
   kbarticlespages:
     output: true
     permalink: /pages/knowledge-base/:path/
