@@ -3,6 +3,7 @@ layout: layouts/post
 title: "Understanding Kibana and how to visualize your application logs"
 date: 2022-12-08 00:00:00 +00:00
 excerpt: This article briefly explains what Kibana does, what types of logs are available in Kibana, and how to create log visualizations in Kibana.
+  - posts
 
 ---
 

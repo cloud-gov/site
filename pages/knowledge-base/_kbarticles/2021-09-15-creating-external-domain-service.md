@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Issues setting up an external domain service"
 date: 2021-09-15 00:00:00 +00:00
 excerpt: Some tips on how to address issues when setting up a new external domain service
+tags:
+  - posts
 ---
 
 If you are trying to set up an external domain service for your website or application, you may encounter specific error messages that indicate a problem setting up your new service. Specifically, one error message you might encounter when creating a new external domain service looks like this:

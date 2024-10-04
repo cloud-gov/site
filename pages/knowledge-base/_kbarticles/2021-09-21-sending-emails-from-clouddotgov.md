@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Sending emails from the cloud.gov platform"
 date: 2021-05-21 00:00:00 +00:00
 excerpt: Information to help if you need to send emails from your app
+tags:
+  - posts
 ---
 
 Applications sometimes need to send an outbound email to users or administrators. cloud.gov users may require guidance on what email components are supported by the platform, and which options are best for them.

@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Adding users to your sandbox"
 date: 2022-08-08 00:00:00 +00:00
 excerpt: Follow these instructions to add a user to your sandbox
+  - posts
+
 ---
 
 If you would like to add a user to your sandbox org, login to your account via the command line and run:

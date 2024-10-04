@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Scaling your cloud.gov applications"
 date: 2021-05-20 00:00:00 +00:00
 excerpt: How and why to scale your cloud.gov applications by adding more application instances
+  - posts
+
 ---
 
 ### Importance of multiple application instances

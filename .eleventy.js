@@ -10,6 +10,7 @@ const { imageShortcode, imageWithClassShortcode } = require('./config');
 const pluginTOC = require('eleventy-plugin-toc')
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const inspect = require("util").inspect;
 
 
 module.exports = function (config) {
@@ -69,6 +70,8 @@ module.exports = function (config) {
   // Allow yaml to be used in the _data dir
   config.addDataExtension("yaml", contents => yaml.load(contents));
 
+  config.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`)
+
   config.addFilter('readableDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(
       'dd LLL yyyy'
@@ -99,7 +102,7 @@ module.exports = function (config) {
 
   function filterTagList(tags) {
     return (tags || []).filter(
-      (tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1
+      (tag) => ['all', 'nav', 'post', 'posts', 'kbarticles'].indexOf(tag) === -1
     );
   }
 

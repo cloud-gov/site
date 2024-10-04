@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Managing egress traffic from your app"
 date: 2021-12-16 00:00:00 +00:00
 excerpt: If you are having issues connecting to external services from your app, use these tips to troubleshoot
+  - posts
+
 ---
 
 The cloud.gov team [recently announced a new feature]({{ site.baseurl }}/_posts/2021-11-16-controlled-space-egress) of our platform that allows developers to control how traffic leaves their application instances.

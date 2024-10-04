@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Getting RDS version information"
 date: 2021-05-20 00:00:00 +00:00
 excerpt: Find out what version of AWS RDS version your app is using
+tags:
+  - posts
 ---
 
 The dedicated plans listed in the [RDS Services page](https://cloud.gov/docs/services/relational-database/) (marked “AWS RDS Latest”) deploy the default version as advertised by AWS. 

@@ -2,7 +2,11 @@
 layout: layouts/post
 title: "Troubleshooting SSH Connections"
 date: 2021-05-17 00:00:00 +00:00
+author:
+description: Some tips and tricks for logging into app instances using SSH
 excerpt: Some tips and tricks for logging into app instances using SSH
+tags:
+  - posts
 ---
 
 **UPDATE: As of November 28, 2022, cloud.gov only supports connecting to applications using SSH over port 2222. It is no longer possible to use port 22 to connect to applications over SSH.**

@@ -3,6 +3,7 @@ layout: layouts/post
 title: "Fixing certificate validation errors from AWS CLI when using the cg-egress-proxy"
 date: 2022-11-04 00:00:00 +00:00
 excerpt: How to fix certificate errors if you are using the AWS CLI from an application protected by the cg-egress-proxy
+  - posts
 ---
 
 If you are using the [`cg-egress-proxy`](https://github.com/GSA/cg-egress-proxy) to restrict the egress traffic for your application, you may experience certificate validation errors which prevent you from [interacting with brokered AWS services using the CLI](https://cloud.gov/docs/services/s3/#interacting-with-your-s3-bucket-from-outside-cloudgov).

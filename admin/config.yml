@@ -29,9 +29,9 @@ publish_mode: editorial_workflow
 logo_url: https://pages.cloud.gov/images/logos/pages-logo-blue.svg
 
 collections:
-  - label: Posts
-    name: posts
-    folder: posts/
+  - label: cloud.gov knowledge base
+    name: kbarticles
+    folder: pages/knowledge-base/_kbarticles/
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:

@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Sidecar Processes"
 date: 2023-04-18 00:00:00 +00:00
 excerpt: Using sidecar processes.
+  - posts
+
 ---
 
 ## What is a sidecar process?

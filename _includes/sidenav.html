@@ -24,7 +24,7 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
 
         <ul class="usa-sidenav__sublist {% if relevant_parent != nav_item.identifier %}display-none{% endif %}"
             id="{{ nav_id }}" aria-hidden="true">
-
+            <code>IDENTIFIER: {{nav_item.identifier}}</code>
           {%- unless nav_item.children -%}
           {%- for docpage in site.docs -%}
 

@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Managing buildpack changes"
 date: 2021-05-20 00:00:00 +00:00
 excerpt: If your application's behavior changes unexpectedly without code changes, it might be related to a new buildpack release
+tags:
+  - posts
 ---
 
 If you notice strange behavior in your application, or if builds / deployments are not working properly and no coding changes were made, one possible cause could be changes to the [buildpack](https://cloud.gov/docs/getting-started/concepts/#buildpacks) used by your application.

@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Connecting to brokered Elasticsearch service instances"
 date: 2021-05-20 00:00:00 +00:00
 excerpt: Some suggestions for connecting to brokered Elasticsearch instances
+tags:
+  - posts
 ---
 
 For compliance purposes, brokered Elasticsearch service instances may only be accessed from within the cloud.gov environment. Additionally in order to connect to these instances, AWS requires the use of [signed HTTP headers](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-request-signing.html). If you plan to connect to your Elasticsearch instance from your local environment frequently, this can present challenges.

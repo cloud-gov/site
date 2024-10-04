@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Connecting PostgreSQL RDS instance to S3"
 date: 2023-02-13 00:00:00 +00:00
 excerpt: You can now load data from an S3 bucket into a PostgreSQL RDS instance.
+  - posts
+
 ---
 
 This method can be used to load a large amount of data into an RDS instance running on cloud.gov and utilizes an AWS PostgreSQL S3 extension in the process described in the AWS documentation for [Importing data from S3 into RDS for PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PostgreSQL.S3Import.html).

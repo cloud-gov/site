@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Questions About App Restarts"
 date: 2021-07-26 00:00:00 +00:00
 excerpt: When do application restarts happen and what do they mean
+tags:
+  - posts
 ---
 
 Application restarts are a common occurrence on the cloud.gov platform, as our operators [regularly deploy updates to the various system components](https://cloud.gov/docs/deployment/app-maintenance/#operating-system-patching). This can sometimes cause confusion as application developers or system owners may interpret restarts as an issue with the way their application is built or functions.
