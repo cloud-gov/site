@@ -20,7 +20,7 @@
       {%- if post.data.excerpt -%}
         {{ post.data.excerpt | truncatewords: 10 }}
       {%- else -%}
-        {{ post.content | truncatewords: 10 }}
+        {{ post.content | striptags | truncatewords: 10 }}
       {%- endif -%}
     </p>
     <ul class="usa-collection__meta" aria-label="More information">

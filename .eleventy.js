@@ -11,6 +11,7 @@ const pluginTOC = require('eleventy-plugin-toc')
 const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const inspect = require("util").inspect;
+const striptags = require("striptags");
 
 
 module.exports = function (config) {
@@ -29,6 +30,11 @@ module.exports = function (config) {
     './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
     './node_modules/mermaid/dist/mermaid.min.js': 'assets/js/mermaid.min.js',
     './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.min.js'
+  });
+
+  config.addFilter("striptags", (content) => {
+    console.log(content);
+    return striptags(content);
   });
 
   // Add plugins
