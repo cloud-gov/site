@@ -3,6 +3,8 @@ layout: layouts/post
 title: "GitHub Repository Best Practices"
 date: 2024-04-23 00:00:00 +00:00
 excerpt: Pages guide for maintaining GitHub hosted repositories
+tags:
+  pagesknowledgebase
 ---
 
 Adhering to a set of best practices when it comes to managing GitHub repositories can greatly ease the maintenance burden and drastically improve the developer experience for websites hosted on cloud.gov Pages. This document should serve as a constructive conversation piece for agencies and not as an audit mechanism. But by utilizing certain code scanning tools, agencies may find it easier to identify and cover certain security controls within their respective Customer Responsibility Matrix (CRM). Here is a useful guide for you to get started with implementing some best practices regarding user permissions and security for your GitHub hosted repositories.

@@ -177,6 +177,18 @@ module.exports = function (config) {
     pathPrefix = process.env.BASEURL
   }
 
+  config.addUrlTransform((page) => {
+    if (page.url.startsWith("/pages/knowledge-base/articles")) {
+      return page.url.replace("/pages/knowledge-base/articles", "/knowledge-base");
+    }
+  });
+
+  config.addUrlTransform((page) => {
+    if (page.url.startsWith("/pages/pages/knowledge-base/articles")) {
+      return page.url.replace("/pages/pages/knowledge-base/articles", "/pages/knowledge-base");
+    }
+  });
+
   return {
     // Control which files Eleventy will process
     // e.g.: *.md, *.njk, *.html, *.liquid

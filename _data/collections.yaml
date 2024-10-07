@@ -22,7 +22,7 @@
 
 - label: cloud.gov knowledge base
   name: kbarticles
-  folder: pages/knowledge-base/_kbarticles/
+  folder: pages/knowledge-base/articles/
   create: true
   slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
   editor:

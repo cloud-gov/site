@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Displaying dynamic content on a Pages static site"
 date: 2024-03-06 00:00:00 +00:00
 excerpt: Serve content from a backend database to a static site
+tags:
+  pagesknowledgebase
 ---
 
 For many of our customers, a simple static site hosted on cloud.gov Pages is a lightweight and easy to manage solution for their agency or office. But what about situations where a static site needs to display a small amount of dynamic content; for example, structured data that updates more frequently than the written content, or is provided by another team or application? Certain kinds of data and content are more suitably stored in a database and accessed via an API on page load. While those services aren’t available in Pages, databases and APIs are available to our customers through cloud.gov.

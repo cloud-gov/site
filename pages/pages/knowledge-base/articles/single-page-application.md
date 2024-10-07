@@ -3,6 +3,8 @@ layout: layouts/post
 title: "Hosting Single Page Applications on Pages"
 date: 2023-11-09 00:00:00 +00:00
 excerpt: Take a look at how Pages handles single page applications
+tags:
+  pagesknowledgebase
 ---
 
 
