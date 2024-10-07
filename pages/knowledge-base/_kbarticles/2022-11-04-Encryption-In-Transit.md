@@ -3,6 +3,7 @@ layout: layouts/post
 title: "Encryption in transit on cloud.gov"
 date: 2022-11-04 00:00:00 +00:00
 excerpt: This article documents the status of encryption in transit for various types of traffic on the cloud.gov platform.
+tags:
   - posts
 ---
 

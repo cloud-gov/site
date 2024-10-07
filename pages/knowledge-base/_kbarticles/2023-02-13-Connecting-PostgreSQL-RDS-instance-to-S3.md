@@ -3,6 +3,7 @@ layout: layouts/post
 title: "Connecting PostgreSQL RDS instance to S3"
 date: 2023-02-13 00:00:00 +00:00
 excerpt: You can now load data from an S3 bucket into a PostgreSQL RDS instance.
+tags:
   - posts
 
 ---

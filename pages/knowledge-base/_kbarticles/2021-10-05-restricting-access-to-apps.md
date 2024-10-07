@@ -3,7 +3,8 @@ layout: layouts/post
 title: "Restricting access to apps"
 date: 2021-10-05 00:00:00 +00:00
 excerpt: Information to help you restrict access to your apps
-
+tags:
+  - posts
 ---
 
 Applications sometimes need to restrict access to content, functionality, or components. This is particularly true of applications that are built using microservices, or that utilize backend APIs to power front-end interfaces.

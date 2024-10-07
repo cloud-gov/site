@@ -3,6 +3,7 @@ layout: layouts/post
 title: "Managing egress traffic from your app"
 date: 2021-12-16 00:00:00 +00:00
 excerpt: If you are having issues connecting to external services from your app, use these tips to troubleshoot
+tags:
   - posts
 
 ---
