@@ -33,7 +33,6 @@ module.exports = function (config) {
   });
 
   config.addFilter("striptags", (content) => {
-    console.log(content);
     return striptags(content);
   });
 
