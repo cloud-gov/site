@@ -17,7 +17,11 @@
     </div>
 
     <p class="usa-collection__description">
-      {{ post.data.excerpt | truncatewords: 10 }}
+      {%- if post.data.excerpt -%}
+        {{ post.data.excerpt | truncatewords: 10 }}
+      {%- else -%}
+        {{ post.content | truncatewords: 10 }}
+      {%- endif -%}
     </p>
     <ul class="usa-collection__meta" aria-label="More information">
       <li class="usa-collection__meta-item">

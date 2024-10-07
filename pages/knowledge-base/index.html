@@ -1,7 +1,7 @@
 ---
 layout: layouts/wide
 permalink: "knowledge-base/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}"
-title: Blog
+title: cloud.gov knowledge base
 pagination:
   data: collections.posts
   size: 8
@@ -11,8 +11,7 @@ pagination:
 
 <div id="blog" class="bg-primary-darker usa-section--dark usa-content font-serif-lg padding-y-6 sign-up-intro usa-graphic-list">
   <div class="grid-container">
-    <h1 class="text-normal text-white margin-0">cloud.gov knowledge base
-    </h1>
+    <h1 class="text-normal text-white margin-0">{{ title }}</h1>
   </div>
 </div>
 <div class="grid-container">

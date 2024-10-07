@@ -1,11 +1,11 @@
 ---
 layout: layouts/wide
-permalink: "pages/knowledge-base/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}"
-title: cloud.gov Pages knowledge base
+permalink: "news/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}"
+title: cloud.gov news
 pagination:
-  data: collections.pagesknowledgebase
+  data: collections.news
   size: 8
-  alias: pagesknowledgebase
+  alias: news
   reverse: true
 ---
 
@@ -18,7 +18,7 @@ pagination:
   <div class="grid-row">
     <div class="desktop:grid-col-8 usa-prose padding-right-4">
       <!-- This loops through the paginated posts -->
-      {%- for post in pagesknowledgebase %}
+      {%- for post in news %}
         {% include "collection-item.html" post: post %}
       {% endfor %}
       {% include "pagination-links.html" %}
