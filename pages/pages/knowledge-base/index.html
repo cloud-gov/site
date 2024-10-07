@@ -1,10 +1,10 @@
 ---
 layout: layouts/wide
-permalink: pages/knowledge-base/
+permalink: "pages/knowledge-base/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}"
 title: cloud.gov Pages knowledge base
 pagination:
   data: collections.pagesknowledgebase
-  size: 100
+  size: 8
   alias: pagesknowledgebase
   reverse: true
 ---

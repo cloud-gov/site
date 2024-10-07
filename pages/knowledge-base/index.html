@@ -1,10 +1,10 @@
 ---
 layout: layouts/wide
-permalink: knowledge-base/
+permalink: "knowledge-base/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}"
 title: Blog
 pagination:
   data: collections.posts
-  size: 100
+  size: 8
   alias: posts
   reverse: true
 ---
