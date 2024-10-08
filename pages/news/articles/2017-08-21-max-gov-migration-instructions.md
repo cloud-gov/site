@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-08-22"
+  news
+  news
+  news
+  news
+  news
+date: "2017-08-022"
+date: "2017-08-022"
+date: "2017-08-022"
+date: "2017-08-022"
+date: "2017-08-0022"
+date: "2017-08-0022"
+title: "Announcement: cloud.gov accounts will migrate to OMB MAX"
+title: "Announcement: cloud.gov accounts will migrate to OMB MAX"
+title: "Announcement: cloud.gov accounts will migrate to OMB MAX"
+title: "Announcement: cloud.gov accounts will migrate to OMB MAX"
+title: "Announcement: cloud.gov accounts will migrate to OMB MAX"
 title: "Announcement: cloud.gov accounts will migrate to OMB MAX"
 redirect_from:
-  - /updates/2017-08-21-max-gov-migration-instructions/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-08-021-max-gov-migration-instructions/
+  - /updates/2017-08-021-max-gov-migration-instructions/
+  - /updates/2017-08-021-max-gov-migration-instructions/
+  - /updates/2017-08-021-max-gov-migration-instructions/
+  - /updates/2017-08-0021-max-gov-migration-instructions/
+  - /updates/2017-08-0021-max-gov-migration-instructions/
+---
+---
+---
+---
+---
 ---
 
 ## Note: This page is out of date as of Nov. 2017. cloud.gov is no longer migrating any users to OMB MAX.

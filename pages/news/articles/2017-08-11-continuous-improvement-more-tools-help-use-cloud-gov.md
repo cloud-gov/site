@@ -1,8 +1,38 @@
 ---
-date: "2017-08-11"
+---
+---
+---
+---
+---
+date: "2017-08-011"
+date: "2017-08-011"
+date: "2017-08-011"
+date: "2017-08-011"
+date: "2017-08-0011"
+date: "2017-08-0011"
+title: "Quarterly update: Continuous improvement, more tools to help you use cloud.gov"
+title: "Quarterly update: Continuous improvement, more tools to help you use cloud.gov"
+title: "Quarterly update: Continuous improvement, more tools to help you use cloud.gov"
+title: "Quarterly update: Continuous improvement, more tools to help you use cloud.gov"
+title: "Quarterly update: Continuous improvement, more tools to help you use cloud.gov"
 title: "Quarterly update: Continuous improvement, more tools to help you use cloud.gov"
 redirect_from:
-  - /updates/2017-08-11-continuous-improvement-more-tools-help-use-cloud-gov/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-08-011-continuous-improvement-more-tools-help-use-cloud-gov/
+  - /updates/2017-08-011-continuous-improvement-more-tools-help-use-cloud-gov/
+  - /updates/2017-08-011-continuous-improvement-more-tools-help-use-cloud-gov/
+  - /updates/2017-08-011-continuous-improvement-more-tools-help-use-cloud-gov/
+  - /updates/2017-08-0011-continuous-improvement-more-tools-help-use-cloud-gov/
+  - /updates/2017-08-0011-continuous-improvement-more-tools-help-use-cloud-gov/
+---
+---
+---
+---
+---
 ---
 
 Every quarter we update you with the important news about new features and updates to the cloud.gov platform. In this edition of the newsletter we have updates about the cloud.gov dashboard and other features for our users as well as stories from our customers, and links to recent presentations about cloud.gov.

@@ -107,7 +107,7 @@ module.exports = function (config) {
 
   function filterTagList(tags) {
     return (tags || []).filter(
-      (tag) => ['all', 'nav', 'post', 'posts', 'kbarticles'].indexOf(tag) === -1
+      (tag) => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1
     );
   }
 
@@ -186,11 +186,15 @@ module.exports = function (config) {
     if (page.url.startsWith("/pages/knowledge-base/articles")) {
       return page.url.replace("/pages/knowledge-base/articles", "/knowledge-base");
     }
-  });
-
-  config.addUrlTransform((page) => {
     if (page.url.startsWith("/pages/pages/knowledge-base/articles")) {
       return page.url.replace("/pages/pages/knowledge-base/articles", "/pages/knowledge-base");
+    }
+    if (page.url.startsWith("/pages/news/articles/")) {
+      let dateMatches = page.url.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/g);
+      let date = !!dateMatches && dateMatches.length > 0 ? dateMatches[0].replaceAll('-','/') : '';
+      let descriptionMatches = page.url.match(/[A-Za-z]+-[A-Za-z]+/);
+      let description = !!descriptionMatches && descriptionMatches.length > 0 ? descriptionMatches[descriptionMatches.length - 1] + '/' : '';
+      return `/${date}/${description}`;
     }
   });
 

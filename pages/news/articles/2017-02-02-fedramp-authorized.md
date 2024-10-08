@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-02-02"
+  news
+  news
+  news
+  news
+  news
+date: "2017-02-002"
+date: "2017-02-002"
+date: "2017-02-002"
+date: "2017-02-002"
+date: "2017-02-0002"
+date: "2017-02-0002"
+title: "cloud.gov is now FedRAMP Authorized."
+title: "cloud.gov is now FedRAMP Authorized."
+title: "cloud.gov is now FedRAMP Authorized."
+title: "cloud.gov is now FedRAMP Authorized."
+title: "cloud.gov is now FedRAMP Authorized."
 title: "cloud.gov is now FedRAMP Authorized."
 redirect_from:
-  - /updates/2017-02-02-fedramp-authorized/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-02-002-fedramp-authorized/
+  - /updates/2017-02-002-fedramp-authorized/
+  - /updates/2017-02-002-fedramp-authorized/
+  - /updates/2017-02-002-fedramp-authorized/
+  - /updates/2017-02-0002-fedramp-authorized/
+  - /updates/2017-02-0002-fedramp-authorized/
+---
+---
+---
+---
+---
 ---
 
 ### Now it’s easier than ever to get started with cloud.gov.

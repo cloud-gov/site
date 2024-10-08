@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-07-07"
+  news
+  news
+  news
+  news
+  news
+date: "2017-07-007"
+date: "2017-07-007"
+date: "2017-07-007"
+date: "2017-07-007"
+date: "2017-07-0007"
+date: "2017-07-0007"
+title: "New instructions for service account and identity provider services"
+title: "New instructions for service account and identity provider services"
+title: "New instructions for service account and identity provider services"
+title: "New instructions for service account and identity provider services"
+title: "New instructions for service account and identity provider services"
 title: "New instructions for service account and identity provider services"
 redirect_from:
-  - /updates/2017-07-07-changes-to-credentials-broker/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-07-007-changes-to-credentials-broker/
+  - /updates/2017-07-007-changes-to-credentials-broker/
+  - /updates/2017-07-007-changes-to-credentials-broker/
+  - /updates/2017-07-007-changes-to-credentials-broker/
+  - /updates/2017-07-0007-changes-to-credentials-broker/
+  - /updates/2017-07-0007-changes-to-credentials-broker/
+---
+---
+---
+---
+---
 ---
 
 If you use the [cloud.gov identity provider]({{ site.baseurl }}/docs/services/cloud-gov-identity-provider)

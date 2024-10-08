@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-08-31"
+  news
+  news
+  news
+  news
+  news
+date: "2017-08-031"
+date: "2017-08-031"
+date: "2017-08-031"
+date: "2017-08-031"
+date: "2017-08-0031"
+date: "2017-08-0031"
+title: "cloud.gov platform release notes, plus join our workshop on September 28"
+title: "cloud.gov platform release notes, plus join our workshop on September 28"
+title: "cloud.gov platform release notes, plus join our workshop on September 28"
+title: "cloud.gov platform release notes, plus join our workshop on September 28"
+title: "cloud.gov platform release notes, plus join our workshop on September 28"
 title: "cloud.gov platform release notes, plus join our workshop on September 28"
 redirect_from:
-  - /updates/2017-08-31-release-notes-plus-join-september-workshop/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-08-031-release-notes-plus-join-september-workshop/
+  - /updates/2017-08-031-release-notes-plus-join-september-workshop/
+  - /updates/2017-08-031-release-notes-plus-join-september-workshop/
+  - /updates/2017-08-031-release-notes-plus-join-september-workshop/
+  - /updates/2017-08-0031-release-notes-plus-join-september-workshop/
+  - /updates/2017-08-0031-release-notes-plus-join-september-workshop/
+---
+---
+---
+---
+---
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.

@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2018-02-13"
+  news
+  news
+  news
+  news
+  news
+date: "2018-02-013"
+date: "2018-02-013"
+date: "2018-02-013"
+date: "2018-02-013"
+date: "2018-02-0013"
+date: "2018-02-0013"
+title: "Elasticsearch 5.6, upcoming Cloud Foundry Summit, and platform updates"
+title: "Elasticsearch 5.6, upcoming Cloud Foundry Summit, and platform updates"
+title: "Elasticsearch 5.6, upcoming Cloud Foundry Summit, and platform updates"
+title: "Elasticsearch 5.6, upcoming Cloud Foundry Summit, and platform updates"
+title: "Elasticsearch 5.6, upcoming Cloud Foundry Summit, and platform updates"
 title: "Elasticsearch 5.6, upcoming Cloud Foundry Summit, and platform updates"
 redirect_from:
-  - /updates/2018-02-13-elasticsearch-56-upcoming-cloud-foundry-summit-and-platform-updates/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2018-02-013-elasticsearch-56-upcoming-cloud-foundry-summit-and-platform-updates/
+  - /updates/2018-02-013-elasticsearch-56-upcoming-cloud-foundry-summit-and-platform-updates/
+  - /updates/2018-02-013-elasticsearch-56-upcoming-cloud-foundry-summit-and-platform-updates/
+  - /updates/2018-02-013-elasticsearch-56-upcoming-cloud-foundry-summit-and-platform-updates/
+  - /updates/2018-02-0013-elasticsearch-56-upcoming-cloud-foundry-summit-and-platform-updates/
+  - /updates/2018-02-0013-elasticsearch-56-upcoming-cloud-foundry-summit-and-platform-updates/
+---
+---
+---
+---
+---
 ---
 
 !["FEC case study illustration"]({{site.baseurl}}/assets/"fec-case-study-illo.svg")

@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2016-11-30"
+  news
+  news
+  news
+  news
+  news
+date: "2016-11-030"
+date: "2016-11-030"
+date: "2016-11-030"
+date: "2016-11-030"
+date: "2016-11-0030"
+date: "2016-11-0030"
+title: "Platform Release Notes"
+title: "Platform Release Notes"
+title: "Platform Release Notes"
+title: "Platform Release Notes"
+title: "Platform Release Notes"
 title: "Platform Release Notes"
 redirect_from:
-  - /updates/2016-11-30-release-notes/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2016-11-030-release-notes/
+  - /updates/2016-11-030-release-notes/
+  - /updates/2016-11-030-release-notes/
+  - /updates/2016-11-030-release-notes/
+  - /updates/2016-11-0030-release-notes/
+  - /updates/2016-11-0030-release-notes/
+---
+---
+---
+---
+---
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.

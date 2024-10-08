@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2019-02-26"
+  news
+  news
+  news
+  news
+  news
+date: "2019-02-026"
+date: "2019-02-026"
+date: "2019-02-026"
+date: "2019-02-026"
+date: "2019-02-0026"
+date: "2019-02-0026"
+title: "Quarterly update - An OS upgrade, cross-IaaS services, R Shiny apps, and more!" 
+title: "Quarterly update - An OS upgrade, cross-IaaS services, R Shiny apps, and more!" 
+title: "Quarterly update - An OS upgrade, cross-IaaS services, R Shiny apps, and more!" 
+title: "Quarterly update - An OS upgrade, cross-IaaS services, R Shiny apps, and more!" 
+title: "Quarterly update - An OS upgrade, cross-IaaS services, R Shiny apps, and more!" 
 title: "Quarterly update - An OS upgrade, cross-IaaS services, R Shiny apps, and more!" 
 redirect_from:
-  - /updates/2019-02-26-quarterly-update/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2019-02-026-quarterly-update/
+  - /updates/2019-02-026-quarterly-update/
+  - /updates/2019-02-026-quarterly-update/
+  - /updates/2019-02-026-quarterly-update/
+  - /updates/2019-02-0026-quarterly-update/
+  - /updates/2019-02-0026-quarterly-update/
+---
+---
+---
+---
+---
 ---
 
 **An OS upgrade, cross-IaaS services, R Shiny apps, and more!**

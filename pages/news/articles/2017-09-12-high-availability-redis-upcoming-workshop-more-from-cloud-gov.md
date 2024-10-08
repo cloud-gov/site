@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-09-12"
+  news
+  news
+  news
+  news
+  news
+date: "2017-09-012"
+date: "2017-09-012"
+date: "2017-09-012"
+date: "2017-09-012"
+date: "2017-09-0012"
+date: "2017-09-0012"
+title: "High availability Redis, our upcoming workshop, and more from cloud.gov"
+title: "High availability Redis, our upcoming workshop, and more from cloud.gov"
+title: "High availability Redis, our upcoming workshop, and more from cloud.gov"
+title: "High availability Redis, our upcoming workshop, and more from cloud.gov"
+title: "High availability Redis, our upcoming workshop, and more from cloud.gov"
 title: "High availability Redis, our upcoming workshop, and more from cloud.gov"
 redirect_from:
-  - /updates/2017-09-12-high-availability-redis-upcoming-workshop-more-from-cloud-gov/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-09-012-high-availability-redis-upcoming-workshop-more-from-cloud-gov/
+  - /updates/2017-09-012-high-availability-redis-upcoming-workshop-more-from-cloud-gov/
+  - /updates/2017-09-012-high-availability-redis-upcoming-workshop-more-from-cloud-gov/
+  - /updates/2017-09-012-high-availability-redis-upcoming-workshop-more-from-cloud-gov/
+  - /updates/2017-09-0012-high-availability-redis-upcoming-workshop-more-from-cloud-gov/
+  - /updates/2017-09-0012-high-availability-redis-upcoming-workshop-more-from-cloud-gov/
+---
+---
+---
+---
+---
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.

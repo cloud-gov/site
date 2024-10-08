@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2016-02-12"
+  news
+  news
+  news
+  news
+  news
+date: "2016-02-012"
+date: "2016-02-012"
+date: "2016-02-012"
+date: "2016-02-012"
+date: "2016-02-0012"
+date: "2016-02-0012"
+title: "Logging service"
+title: "Logging service"
+title: "Logging service"
+title: "Logging service"
+title: "Logging service"
 title: "Logging service"
 redirect_from:
-  - /updates/2016-02-12-logs-update/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2016-02-012-logs-update/
+  - /updates/2016-02-012-logs-update/
+  - /updates/2016-02-012-logs-update/
+  - /updates/2016-02-012-logs-update/
+  - /updates/2016-02-0012-logs-update/
+  - /updates/2016-02-0012-logs-update/
+---
+---
+---
+---
+---
 ---
 
 New feature: Zero-setup persistent logs.

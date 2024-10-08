@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2016-07-07"
+  news
+  news
+  news
+  news
+  news
+date: "2016-07-007"
+date: "2016-07-007"
+date: "2016-07-007"
+date: "2016-07-007"
+date: "2016-07-0007"
+date: "2016-07-0007"
+title: "Today’s Dashboard update (formerly the “Deck”)"
+title: "Today’s Dashboard update (formerly the “Deck”)"
+title: "Today’s Dashboard update (formerly the “Deck”)"
+title: "Today’s Dashboard update (formerly the “Deck”)"
+title: "Today’s Dashboard update (formerly the “Deck”)"
 title: "Today’s Dashboard update (formerly the “Deck”)"
 redirect_from:
-  - /updates/2016-07-07-deck-update/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2016-07-007-deck-update/
+  - /updates/2016-07-007-deck-update/
+  - /updates/2016-07-007-deck-update/
+  - /updates/2016-07-007-deck-update/
+  - /updates/2016-07-0007-deck-update/
+  - /updates/2016-07-0007-deck-update/
+---
+---
+---
+---
+---
 ---
 
 Today we released a new version of the [cloud.gov Deck (now Dashboard)](https://dashboard.cloud.gov/). The best part is invisible: we refactored the codebase so we can improve it much faster than we could with the old version. But it has visible changes too, so here’s what’s new, what we have in mind, and how to tell us what you think.

@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2016-06-15"
+  news
+  news
+  news
+  news
+  news
+date: "2016-06-015"
+date: "2016-06-015"
+date: "2016-06-015"
+date: "2016-06-015"
+date: "2016-06-0015"
+date: "2016-06-0015"
+title: "Changes to login and cf-ssh"
+title: "Changes to login and cf-ssh"
+title: "Changes to login and cf-ssh"
+title: "Changes to login and cf-ssh"
+title: "Changes to login and cf-ssh"
 title: "Changes to login and cf-ssh"
 redirect_from:
-  - /updates/2016-06-15-auth-ssh-changes/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2016-06-015-auth-ssh-changes/
+  - /updates/2016-06-015-auth-ssh-changes/
+  - /updates/2016-06-015-auth-ssh-changes/
+  - /updates/2016-06-015-auth-ssh-changes/
+  - /updates/2016-06-0015-auth-ssh-changes/
+  - /updates/2016-06-0015-auth-ssh-changes/
+---
+---
+---
+---
+---
 ---
 
 Earlier this month we updated **cloud.gov login** and **`cf-ssh`** in ways that mean most cloud.gov users need to change how they use them. You've probably already made these changes if you need to (we sent email notifications to people who should log in using the new system), but here are the details as a handy reference.

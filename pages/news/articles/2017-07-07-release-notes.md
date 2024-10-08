@@ -1,24 +1,69 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-07-10"
+  news
+  news
+  news
+  news
+  news
+date: "2017-07-010"
+date: "2017-07-010"
+date: "2017-07-010"
+date: "2017-07-010"
+date: "2017-07-0010"
+date: "2017-07-0010"
+title: "Platform Release Notes: July 10, 2017"
+title: "Platform Release Notes: July 10, 2017"
+title: "Platform Release Notes: July 10, 2017"
+title: "Platform Release Notes: July 10, 2017"
+title: "Platform Release Notes: July 10, 2017"
 title: "Platform Release Notes: July 10, 2017"
 redirect_from:
-  - /updates/2017-07-07-release-notes/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-07-007-release-notes/
+  - /updates/2017-07-007-release-notes/
+  - /updates/2017-07-007-release-notes/
+  - /updates/2017-07-007-release-notes/
+  - /updates/2017-07-0007-release-notes/
+  - /updates/2017-07-0007-release-notes/
+---
+---
+---
+---
+---
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past six weeks.
 <!--more-->
 
 ### Added
-* Organization managers can now [add new teammates to your org]({{ site.baseurl }}/docs/apps/managing-teammates.md#give-roles-to-a-teammate) and manage user permissions right from the [dashboard](https://dashboard.fr.cloud.gov/).
-* [cf-service-connect]({{ site.baseurl }}/docs/services/relational-database.md#manually-access-a-database) now supports Windows. [See how to install it here.](https://github.com/18F/cf-service-connect#local-installation)
+* Organization managers can now [add new teammates to your org]({{ site.baseurl }}/docs/apps/managing-teammates#give-roles-to-a-teammate) and manage user permissions right from the [dashboard](https://dashboard.fr.cloud.gov/).
+* [cf-service-connect]({{ site.baseurl }}/docs/services/relational-database#manually-access-a-database) now supports Windows. [See how to install it here.](https://github.com/18F/cf-service-connect#local-installation)
 
 ### Changed
 
-- When you make a new service account or identity provider service instance, you will now [get the credentials using a service key]({{ site.baseurl }}/updates/2017-07-07-changes-to-credentials-broker.md), instead of getting the credentials from a Toaster (formerly Fugacious) link. This doesn’t change existing service account and identity provider instances, but you can delete and recreate them to use this new method.
-- [Static IP addresses for communicating with external apps]({{ site.baseurl }}/docs/apps/static-egress.md): Outbound traffic from cloud.gov now comes from specific IP addresses to help customers open up a connection between cloud.gov and outside data centers.
+- When you make a new service account or identity provider service instance, you will now [get the credentials using a service key]({{ site.baseurl }}/updates/2017-07-07-changes-to-credentials-broker), instead of getting the credentials from a Toaster (formerly Fugacious) link. This doesn’t change existing service account and identity provider instances, but you can delete and recreate them to use this new method.
+- [Static IP addresses for communicating with external apps]({{ site.baseurl }}/docs/apps/static-egress): Outbound traffic from cloud.gov now comes from specific IP addresses to help customers open up a connection between cloud.gov and outside data centers.
 - We recommend you upgrade your Cloud Foundry CLI to [the latest version](https://github.com/cloudfoundry/cli/releases) to get the latest bug fixes.
 - We improved the responsiveness of the dashboard to better reflect actions that happen on the backend.
 

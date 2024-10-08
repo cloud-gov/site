@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-05-24"
+  news
+  news
+  news
+  news
+  news
+date: "2017-05-024"
+date: "2017-05-024"
+date: "2017-05-024"
+date: "2017-05-024"
+date: "2017-05-0024"
+date: "2017-05-0024"
+title: "Get what you need from cloud.gov"
+title: "Get what you need from cloud.gov"
+title: "Get what you need from cloud.gov"
+title: "Get what you need from cloud.gov"
+title: "Get what you need from cloud.gov"
 title: "Get what you need from cloud.gov"
 redirect_from:
-  - /updates/2017-05-24-get-what-you-need/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-05-024-get-what-you-need/
+  - /updates/2017-05-024-get-what-you-need/
+  - /updates/2017-05-024-get-what-you-need/
+  - /updates/2017-05-024-get-what-you-need/
+  - /updates/2017-05-0024-get-what-you-need/
+  - /updates/2017-05-0024-get-what-you-need/
+---
+---
+---
+---
+---
 ---
 
 ### What’s new

@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2015-09-14"
+  news
+  news
+  news
+  news
+  news
+date: "2015-09-014"
+date: "2015-09-014"
+date: "2015-09-014"
+date: "2015-09-014"
+date: "2015-09-0014"
+date: "2015-09-0014"
+title: "Even more console features and a new home for updates"
+title: "Even more console features and a new home for updates"
+title: "Even more console features and a new home for updates"
+title: "Even more console features and a new home for updates"
+title: "Even more console features and a new home for updates"
 title: "Even more console features and a new home for updates"
 redirect_from:
-  - /updates/2015-09-14-sprint-5-update/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2015-09-014-sprint-05-update/
+  - /updates/2015-09-014-sprint-05-update/
+  - /updates/2015-09-014-sprint-05-update/
+  - /updates/2015-09-014-sprint-05-update/
+  - /updates/2015-09-0014-sprint-05-update/
+  - /updates/2015-09-0014-sprint-05-update/
+---
+---
+---
+---
+---
 ---
 
 Now you can view log and event data for your apps and adjust permissions for your org and spaces via the web. We're also publishing these updates via [cloud.gov](http://cloud.gov/updates/).

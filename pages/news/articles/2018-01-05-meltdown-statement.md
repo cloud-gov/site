@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2018-01-05"
+  news
+  news
+  news
+  news
+  news
+date: "2018-01-005"
+date: "2018-01-005"
+date: "2018-01-005"
+date: "2018-01-005"
+date: "2018-01-0005"
+date: "2018-01-0005"
+title: "Note about Meltdown/Spectre vulnerabilities"
+title: "Note about Meltdown/Spectre vulnerabilities"
+title: "Note about Meltdown/Spectre vulnerabilities"
+title: "Note about Meltdown/Spectre vulnerabilities"
+title: "Note about Meltdown/Spectre vulnerabilities"
 title: "Note about Meltdown/Spectre vulnerabilities"
 redirect_from:
-  - /updates/2018-01-05-meltdown-statement/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2018-01-005-meltdown-statement/
+  - /updates/2018-01-005-meltdown-statement/
+  - /updates/2018-01-005-meltdown-statement/
+  - /updates/2018-01-005-meltdown-statement/
+  - /updates/2018-01-0005-meltdown-statement/
+  - /updates/2018-01-0005-meltdown-statement/
+---
+---
+---
+---
+---
 ---
 
 cloud.gov is tracking the recent public disclosure of vulnerabilities in modern CPUs, named the [Meltdown and Spectre](https://meltdownattack.com/) attacks.

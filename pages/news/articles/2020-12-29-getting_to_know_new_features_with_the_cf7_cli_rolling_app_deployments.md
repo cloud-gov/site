@@ -1,9 +1,44 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
+  news
+  news
+  news
+  news
+  news
   news
 title: Getting to know new features with the cf7 cli rolling app deployments
-date: "2021-12-29"
+title: Getting to know new features with the cf7 cli rolling app deployments
+title: Getting to know new features with the cf7 cli rolling app deployments
+title: Getting to know new features with the cf7 cli rolling app deployments
+title: Getting to know new features with the cf7 cli rolling app deployments
+title: Getting to know new features with the cf7 cli rolling app deployments
+date: "2021-12-029"
+date: "2021-12-029"
+date: "2021-12-029"
+date: "2021-12-029"
+date: "2021-12-0029"
+date: "2021-12-0029"
+---
+---
+---
+---
+---
 ---
 We have put together a [new video tutorial ](https://www.youtube.com/watch?v=vr0bBYKMVb8&feature=youtu.be)to focus on new features of the cf7 CLI.  This tutorial will get you familiar with the new "rolling" app deployment strategy available for zero downtime deployments.  With these new [features available in the cf7 cli](https://docs.cloudfoundry.org/cf-cli/v7.html#-new-workflows-supported-by-cf-cli-v7), the **rolling**, zero-downtime deployment option is the most anticipated feature and could improve your workflows the most. The older versions of cli did not provide zero downtime deployments natively which meant needing to use a third party plugin or complicated **blue/green** deployment pipeline to accommodate your needs.
 

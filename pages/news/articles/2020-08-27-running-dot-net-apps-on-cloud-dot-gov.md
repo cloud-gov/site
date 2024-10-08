@@ -1,10 +1,50 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
+  news
+  news
+  news
+  news
+  news
   news
 title: "Running .NET Apps on cloud.gov"
-date: "2020-08-27"
+title: "Running .NET Apps on cloud.gov"
+title: "Running .NET Apps on cloud.gov"
+title: "Running .NET Apps on cloud.gov"
+title: "Running .NET Apps on cloud.gov"
+title: "Running .NET Apps on cloud.gov"
+date: "2020-08-027"
+date: "2020-08-027"
+date: "2020-08-027"
+date: "2020-08-027"
+date: "2020-08-0027"
+date: "2020-08-0027"
 excerpt: Learn more about how you can run .NET apps on the cloud.gov platform and get answers to commonly asked questions about .NET development and deployment for cloud.gov
+excerpt: Learn more about how you can run .NET apps on the cloud.gov platform and get answers to commonly asked questions about .NET development and deployment for cloud.gov
+excerpt: Learn more about how you can run .NET apps on the cloud.gov platform and get answers to commonly asked questions about .NET development and deployment for cloud.gov
+excerpt: Learn more about how you can run .NET apps on the cloud.gov platform and get answers to commonly asked questions about .NET development and deployment for cloud.gov
+excerpt: Learn more about how you can run .NET apps on the cloud.gov platform and get answers to commonly asked questions about .NET development and deployment for cloud.gov
+excerpt: Learn more about how you can run .NET apps on the cloud.gov platform and get answers to commonly asked questions about .NET development and deployment for cloud.gov
+---
+---
+---
+---
+---
 ---
 
 The cloud.gov team often gets asked about whether the platform supports running .NET applications. The good news is: Yes! You can run .NET applications on the cloud.gov platform and [reap all the benefits](https://cloud.gov/docs/technology/responsibilities/) enjoyed by developers using [other languages and frameworks](https://cloud.gov/docs/overview/portfolio-analysis/) for their applications.

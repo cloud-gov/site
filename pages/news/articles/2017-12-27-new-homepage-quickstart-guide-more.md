@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-12-27"
+  news
+  news
+  news
+  news
+  news
+date: "2017-12-027"
+date: "2017-12-027"
+date: "2017-12-027"
+date: "2017-12-027"
+date: "2017-12-0027"
+date: "2017-12-0027"
+title: "A new homepage, quickstart guide, and more"
+title: "A new homepage, quickstart guide, and more"
+title: "A new homepage, quickstart guide, and more"
+title: "A new homepage, quickstart guide, and more"
+title: "A new homepage, quickstart guide, and more"
 title: "A new homepage, quickstart guide, and more"
 redirect_from:
-  - /updates/2017-12-27-new-homepage-quickstart-guide-more/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-12-027-new-homepage-quickstart-guide-more/
+  - /updates/2017-12-027-new-homepage-quickstart-guide-more/
+  - /updates/2017-12-027-new-homepage-quickstart-guide-more/
+  - /updates/2017-12-027-new-homepage-quickstart-guide-more/
+  - /updates/2017-12-0027-new-homepage-quickstart-guide-more/
+  - /updates/2017-12-0027-new-homepage-quickstart-guide-more/
+---
+---
+---
+---
+---
 ---
 
 We’ve been hard at work making cloud.gov work for you. We’re constantly optimizing the platform so it’s secure and meets your expectations.

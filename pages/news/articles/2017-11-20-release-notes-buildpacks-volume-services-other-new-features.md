@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-11-20"
+  news
+  news
+  news
+  news
+  news
+date: "2017-11-020"
+date: "2017-11-020"
+date: "2017-11-020"
+date: "2017-11-020"
+date: "2017-11-0020"
+date: "2017-11-0020"
+title: "cloud.gov monthly update: Buildpack notifications, volume services, and other new features"
+title: "cloud.gov monthly update: Buildpack notifications, volume services, and other new features"
+title: "cloud.gov monthly update: Buildpack notifications, volume services, and other new features"
+title: "cloud.gov monthly update: Buildpack notifications, volume services, and other new features"
+title: "cloud.gov monthly update: Buildpack notifications, volume services, and other new features"
 title: "cloud.gov monthly update: Buildpack notifications, volume services, and other new features"
 redirect_from:
-  - /updates/2017-11-20-release-notes-buildpacks-volume-services-other-new-features/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-11-020-release-notes-buildpacks-volume-services-other-new-features/
+  - /updates/2017-11-020-release-notes-buildpacks-volume-services-other-new-features/
+  - /updates/2017-11-020-release-notes-buildpacks-volume-services-other-new-features/
+  - /updates/2017-11-020-release-notes-buildpacks-volume-services-other-new-features/
+  - /updates/2017-11-0020-release-notes-buildpacks-volume-services-other-new-features/
+  - /updates/2017-11-0020-release-notes-buildpacks-volume-services-other-new-features/
+---
+---
+---
+---
+---
 ---
 
 

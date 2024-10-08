@@ -1,12 +1,62 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2020-02-27"
+  news
+  news
+  news
+  news
+  news
+date: "2020-02-027"
+date: "2020-02-027"
+date: "2020-02-027"
+date: "2020-02-027"
+date: "2020-02-0027"
+date: "2020-02-0027"
+title: "Introducing the new cloud.gov dashboard" 
+title: "Introducing the new cloud.gov dashboard" 
+title: "Introducing the new cloud.gov dashboard" 
+title: "Introducing the new cloud.gov dashboard" 
+title: "Introducing the new cloud.gov dashboard" 
 title: "Introducing the new cloud.gov dashboard" 
 excerpt: "The new beta dashboard is here, making it easier for you to manage orgs and spaces."
+excerpt: "The new beta dashboard is here, making it easier for you to manage orgs and spaces."
+excerpt: "The new beta dashboard is here, making it easier for you to manage orgs and spaces."
+excerpt: "The new beta dashboard is here, making it easier for you to manage orgs and spaces."
+excerpt: "The new beta dashboard is here, making it easier for you to manage orgs and spaces."
+excerpt: "The new beta dashboard is here, making it easier for you to manage orgs and spaces."
 redirect_from:
-  - /updates/2020-02-27-new-dashboard/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2020-02-027-new-dashboard/
+  - /updates/2020-02-027-new-dashboard/
+  - /updates/2020-02-027-new-dashboard/
+  - /updates/2020-02-027-new-dashboard/
+  - /updates/2020-02-0027-new-dashboard/
+  - /updates/2020-02-0027-new-dashboard/
+---
+---
+---
+---
+---
 ---
 
 You ask, we deliver! We are excited to introduce our adoption of [Stratos](https://github.com/cloudfoundry/stratos) as the new cloud.gov web-based dashboard.

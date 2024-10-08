@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2015-09-01"
+  news
+  news
+  news
+  news
+  news
+date: "2015-09-001"
+date: "2015-09-001"
+date: "2015-09-001"
+date: "2015-09-001"
+date: "2015-09-0001"
+date: "2015-09-0001"
+title: "Status page and console additions"
+title: "Status page and console additions"
+title: "Status page and console additions"
+title: "Status page and console additions"
+title: "Status page and console additions"
 title: "Status page and console additions"
 redirect_from:
-  - /updates/2015-09-01-sprint-4-update/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2015-09-001-sprint-04-update/
+  - /updates/2015-09-001-sprint-04-update/
+  - /updates/2015-09-001-sprint-04-update/
+  - /updates/2015-09-001-sprint-04-update/
+  - /updates/2015-09-0001-sprint-04-update/
+  - /updates/2015-09-0001-sprint-04-update/
+---
+---
+---
+---
+---
 ---
 
 We've added a new status page to show you the state of the cloud.gov platform, and we've made significant upgrades in your ability to manage your apps via the web.

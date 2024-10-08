@@ -1,9 +1,44 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
+  news
+  news
+  news
+  news
+  news
   news
 title: cloud.gov not impacted by SolarWinds Orion code compromise - CISA Directive 21-01
-date: "2020-12-18"
+title: cloud.gov not impacted by SolarWinds Orion code compromise - CISA Directive 21-01
+title: cloud.gov not impacted by SolarWinds Orion code compromise - CISA Directive 21-01
+title: cloud.gov not impacted by SolarWinds Orion code compromise - CISA Directive 21-01
+title: cloud.gov not impacted by SolarWinds Orion code compromise - CISA Directive 21-01
+title: cloud.gov not impacted by SolarWinds Orion code compromise - CISA Directive 21-01
+date: "2020-12-018"
+date: "2020-12-018"
+date: "2020-12-018"
+date: "2020-12-018"
+date: "2020-12-0018"
+date: "2020-12-0018"
+---
+---
+---
+---
+---
 ---
 On December 13, 2020, the DHS Cybersecurity and Infrastructure Security Agency (CISA) published [Emergency Directive 21-01, “Mitigate SolarWinds Orion Code Compromise”](https://cyber.dhs.gov/ed/21-01/).
 

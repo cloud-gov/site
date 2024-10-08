@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2019-07-12"
+  news
+  news
+  news
+  news
+  news
+date: "2019-07-012"
+date: "2019-07-012"
+date: "2019-07-012"
+date: "2019-07-012"
+date: "2019-07-0012"
+date: "2019-07-0012"
+title: "VPN backhaul, Drupal 8 example, and new team members" 
+title: "VPN backhaul, Drupal 8 example, and new team members" 
+title: "VPN backhaul, Drupal 8 example, and new team members" 
+title: "VPN backhaul, Drupal 8 example, and new team members" 
+title: "VPN backhaul, Drupal 8 example, and new team members" 
 title: "VPN backhaul, Drupal 8 example, and new team members" 
 redirect_from:
-  - /updates/2019-07-12-VPN-backhaul-drupal-8-and-new-team-members/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2019-07-012-VPN-backhaul-drupal-08-and-new-team-members/
+  - /updates/2019-07-012-VPN-backhaul-drupal-08-and-new-team-members/
+  - /updates/2019-07-012-VPN-backhaul-drupal-08-and-new-team-members/
+  - /updates/2019-07-012-VPN-backhaul-drupal-08-and-new-team-members/
+  - /updates/2019-07-0012-VPN-backhaul-drupal-08-and-new-team-members/
+  - /updates/2019-07-0012-VPN-backhaul-drupal-08-and-new-team-members/
+---
+---
+---
+---
+---
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our recent changes.

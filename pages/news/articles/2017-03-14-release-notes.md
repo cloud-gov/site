@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-03-14"
+  news
+  news
+  news
+  news
+  news
+date: "2017-03-014"
+date: "2017-03-014"
+date: "2017-03-014"
+date: "2017-03-014"
+date: "2017-03-0014"
+date: "2017-03-0014"
+title: "Platform Release Notes: March 14, 2017"
+title: "Platform Release Notes: March 14, 2017"
+title: "Platform Release Notes: March 14, 2017"
+title: "Platform Release Notes: March 14, 2017"
+title: "Platform Release Notes: March 14, 2017"
 title: "Platform Release Notes: March 14, 2017"
 redirect_from:
-  - /updates/2017-03-14-release-notes/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-03-014-release-notes/
+  - /updates/2017-03-014-release-notes/
+  - /updates/2017-03-014-release-notes/
+  - /updates/2017-03-014-release-notes/
+  - /updates/2017-03-0014-release-notes/
+  - /updates/2017-03-0014-release-notes/
+---
+---
+---
+---
+---
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past two weeks.

@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2018-03-14"
+  news
+  news
+  news
+  news
+  news
+date: "2018-03-014"
+date: "2018-03-014"
+date: "2018-03-014"
+date: "2018-03-014"
+date: "2018-03-0014"
+date: "2018-03-0014"
+title: "TLS 1.0 and 1.1 support removal, Drupal 8 made easy, and platform updates"
+title: "TLS 1.0 and 1.1 support removal, Drupal 8 made easy, and platform updates"
+title: "TLS 1.0 and 1.1 support removal, Drupal 8 made easy, and platform updates"
+title: "TLS 1.0 and 1.1 support removal, Drupal 8 made easy, and platform updates"
+title: "TLS 1.0 and 1.1 support removal, Drupal 8 made easy, and platform updates"
 title: "TLS 1.0 and 1.1 support removal, Drupal 8 made easy, and platform updates"
 redirect_from:
-  - /updates/2018-03-14-TLS-10-and-11-support-deprecated-Drupal-8-made-easy-and-platform-updates/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2018-03-014-TLS-10-and-11-support-deprecated-Drupal-08-made-easy-and-platform-updates/
+  - /updates/2018-03-014-TLS-10-and-11-support-deprecated-Drupal-08-made-easy-and-platform-updates/
+  - /updates/2018-03-014-TLS-10-and-11-support-deprecated-Drupal-08-made-easy-and-platform-updates/
+  - /updates/2018-03-014-TLS-10-and-11-support-deprecated-Drupal-08-made-easy-and-platform-updates/
+  - /updates/2018-03-0014-TLS-10-and-11-support-deprecated-Drupal-08-made-easy-and-platform-updates/
+  - /updates/2018-03-0014-TLS-10-and-11-support-deprecated-Drupal-08-made-easy-and-platform-updates/
+---
+---
+---
+---
+---
 ---
 
 ### Upcoming breaking change

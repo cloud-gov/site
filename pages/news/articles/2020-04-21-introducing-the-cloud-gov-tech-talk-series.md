@@ -1,10 +1,50 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2020-04-22"
+  news
+  news
+  news
+  news
+  news
+date: "2020-04-022"
+date: "2020-04-022"
+date: "2020-04-022"
+date: "2020-04-022"
+date: "2020-04-0022"
+date: "2020-04-0022"
+title: "cloud.gov's Tech Talk series"
+title: "cloud.gov's Tech Talk series"
+title: "cloud.gov's Tech Talk series"
+title: "cloud.gov's Tech Talk series"
+title: "cloud.gov's Tech Talk series"
 title: "cloud.gov's Tech Talk series"
 excerpt: "On March 31, the cloud.gov team kicked off our Tech Talk series in partnership with Digital.gov University. The series is designed to provide a deeper dialogue on the functionality of cloud.gov while providing guidance on ways to simplify and accelerate development using the platform."
+excerpt: "On March 31, the cloud.gov team kicked off our Tech Talk series in partnership with Digital.gov University. The series is designed to provide a deeper dialogue on the functionality of cloud.gov while providing guidance on ways to simplify and accelerate development using the platform."
+excerpt: "On March 31, the cloud.gov team kicked off our Tech Talk series in partnership with Digital.gov University. The series is designed to provide a deeper dialogue on the functionality of cloud.gov while providing guidance on ways to simplify and accelerate development using the platform."
+excerpt: "On March 31, the cloud.gov team kicked off our Tech Talk series in partnership with Digital.gov University. The series is designed to provide a deeper dialogue on the functionality of cloud.gov while providing guidance on ways to simplify and accelerate development using the platform."
+excerpt: "On March 31, the cloud.gov team kicked off our Tech Talk series in partnership with Digital.gov University. The series is designed to provide a deeper dialogue on the functionality of cloud.gov while providing guidance on ways to simplify and accelerate development using the platform."
+excerpt: "On March 31, the cloud.gov team kicked off our Tech Talk series in partnership with Digital.gov University. The series is designed to provide a deeper dialogue on the functionality of cloud.gov while providing guidance on ways to simplify and accelerate development using the platform."
+---
+---
+---
+---
+---
 ---
 
 On March 31, the cloud.gov team kicked off our Tech Talk series in partnership with Digital.gov University. The series is designed to provide a deeper dialogue on the functionality of cloud.gov while providing guidance on ways to simplify and accelerate development using the platform.

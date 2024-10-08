@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2016-12-21"
+  news
+  news
+  news
+  news
+  news
+date: "2016-12-021"
+date: "2016-12-021"
+date: "2016-12-021"
+date: "2016-12-021"
+date: "2016-12-0021"
+date: "2016-12-0021"
+title: "East/West Sandbox Deprecation Notice"
+title: "East/West Sandbox Deprecation Notice"
+title: "East/West Sandbox Deprecation Notice"
+title: "East/West Sandbox Deprecation Notice"
+title: "East/West Sandbox Deprecation Notice"
 title: "East/West Sandbox Deprecation Notice"
 redirect_from:
-  - /updates/2016-12-20-ew-sandbox-deprecation/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2016-12-020-ew-sandbox-deprecation/
+  - /updates/2016-12-020-ew-sandbox-deprecation/
+  - /updates/2016-12-020-ew-sandbox-deprecation/
+  - /updates/2016-12-020-ew-sandbox-deprecation/
+  - /updates/2016-12-0020-ew-sandbox-deprecation/
+  - /updates/2016-12-0020-ew-sandbox-deprecation/
+---
+---
+---
+---
+---
 ---
 
 Update: since the time of this posting, we have postponed the cutoff date from January 15th to a new date that we expect to confirm and announce soon. 

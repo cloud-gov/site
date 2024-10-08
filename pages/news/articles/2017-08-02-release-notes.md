@@ -1,21 +1,66 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-08-02"
+  news
+  news
+  news
+  news
+  news
+date: "2017-08-002"
+date: "2017-08-002"
+date: "2017-08-002"
+date: "2017-08-002"
+date: "2017-08-0002"
+date: "2017-08-0002"
+title: "Platform Release Notes: August 2, 2017"
+title: "Platform Release Notes: August 2, 2017"
+title: "Platform Release Notes: August 2, 2017"
+title: "Platform Release Notes: August 2, 2017"
+title: "Platform Release Notes: August 2, 2017"
 title: "Platform Release Notes: August 2, 2017"
 redirect_from:
-  - /updates/2017-08-02-release-notes/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-08-002-release-notes/
+  - /updates/2017-08-002-release-notes/
+  - /updates/2017-08-002-release-notes/
+  - /updates/2017-08-002-release-notes/
+  - /updates/2017-08-0002-release-notes/
+  - /updates/2017-08-0002-release-notes/
+---
+---
+---
+---
+---
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.
 <!--more-->
 
 ### Added
-You can [add people to spaces]({{ site.baseurl }}/docs/apps/managing-teammates.md#give-roles-to-a-teammate) from the [dashboard](https://dashboard.fr.cloud.gov/#/) if you’re an Org Manager. For example, this makes it easier for program managers to add developers to projects without using the command line tool.
+You can [add people to spaces]({{ site.baseurl }}/docs/apps/managing-teammates#give-roles-to-a-teammate) from the [dashboard](https://dashboard.fr.cloud.gov/#/) if you’re an Org Manager. For example, this makes it easier for program managers to add developers to projects without using the command line tool.
 
 ### Changed
-In the dashboard, Org Managers and Space Managers can [remove a person from a space]({{ site.baseurl }}/docs/apps/managing-teammates.md#space-users) with one click on "Remove All Space Roles".
+In the dashboard, Org Managers and Space Managers can [remove a person from a space]({{ site.baseurl }}/docs/apps/managing-teammates#space-users) with one click on "Remove All Space Roles".
 Org Managers must remove a person from all spaces before removing them from the Org otherwise. If you try to remove them with the dashboard, you’ll see an error if the user still belongs to any space.
 
 ### In case you missed it

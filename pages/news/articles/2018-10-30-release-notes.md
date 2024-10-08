@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2018-10-30"
+  news
+  news
+  news
+  news
+  news
+date: "2018-10-030"
+date: "2018-10-030"
+date: "2018-10-030"
+date: "2018-10-030"
+date: "2018-10-0030"
+date: "2018-10-0030"
+title: "Release notes" 
+title: "Release notes" 
+title: "Release notes" 
+title: "Release notes" 
+title: "Release notes" 
 title: "Release notes" 
 redirect_from:
-  - /updates/2018-10-30-release-notes/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2018-10-030-release-notes/
+  - /updates/2018-10-030-release-notes/
+  - /updates/2018-10-030-release-notes/
+  - /updates/2018-10-030-release-notes/
+  - /updates/2018-10-0030-release-notes/
+  - /updates/2018-10-0030-release-notes/
+---
+---
+---
+---
+---
 ---
 
 Here's the latest on how we've been trying to make cloud.gov simpler and more secure. (If you find yourself needing to explain cloud.gov to coworkers or leadership, take a look at our [new two-pager]({{ site.baseurl }}/resources/cloudgov-overview-2018.pdf)!)

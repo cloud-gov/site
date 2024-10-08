@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
   news
-date: "2017-08-16"
+  news
+  news
+  news
+  news
+  news
+date: "2017-08-016"
+date: "2017-08-016"
+date: "2017-08-016"
+date: "2017-08-016"
+date: "2017-08-0016"
+date: "2017-08-0016"
+title: "Platform Release Notes: August 16, 2017"
+title: "Platform Release Notes: August 16, 2017"
+title: "Platform Release Notes: August 16, 2017"
+title: "Platform Release Notes: August 16, 2017"
+title: "Platform Release Notes: August 16, 2017"
 title: "Platform Release Notes: August 16, 2017"
 redirect_from:
-  - /updates/2017-08-16-release-notes/
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+  - /updates/2017-08-016-release-notes/
+  - /updates/2017-08-016-release-notes/
+  - /updates/2017-08-016-release-notes/
+  - /updates/2017-08-016-release-notes/
+  - /updates/2017-08-0016-release-notes/
+  - /updates/2017-08-0016-release-notes/
+---
+---
+---
+---
+---
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov user? Here are highlights from our platform updates over the past two weeks.
@@ -13,7 +58,7 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 ### Added
 
 * Space managers can [add any member of your organization to a space from the dashboard]({{ site.baseurl }}/docs/apps/managing-teammates#space-users).
-* Documentation for how to take [snapshots and restore backups of your ElasticSearch service data](https://github.com/cloud-gov/cg-site/blob/6418e8e933f887896a102d8575f1c7af468d1d2f/content/docs/services/elasticsearch24.md).
+* Documentation for how to take [snapshots and restore backups of your ElasticSearch service data](https://github.com/cloud-gov/cg-site/blob/6418e8e933f887896a102d8575f1c7af468d1d2f/content/docs/services/elasticsearch24).
 * All customers can now use [Oracle’s SE2 relational database]({{ site.baseurl }}/docs/services/relational-database).
 
 ### Changed

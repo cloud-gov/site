@@ -1,11 +1,56 @@
 ---
+---
+---
+---
+---
+---
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
+layout: layouts/post
 layout: layouts/post
 tags:
+tags:
+tags:
+tags:
+tags:
+tags:
+  news
+  news
+  news
+  news
+  news
   news
 title: Changes to cloud.gov’s existing CDN and custom domain services
-date: "2020-04-28"
+title: Changes to cloud.gov’s existing CDN and custom domain services
+title: Changes to cloud.gov’s existing CDN and custom domain services
+title: Changes to cloud.gov’s existing CDN and custom domain services
+title: Changes to cloud.gov’s existing CDN and custom domain services
+title: Changes to cloud.gov’s existing CDN and custom domain services
+date: "2020-04-028"
+date: "2020-04-028"
+date: "2020-04-028"
+date: "2020-04-028"
+date: "2020-04-0028"
+date: "2020-04-0028"
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
+redirect_from:
 redirect_from:
   - /2020/04/28/changes-to-cloud-gov-s-existing-cdn-and-custom-domain-services-1/
+  - /2020/04/28/changes-to-cloud-gov-s-existing-cdn-and-custom-domain-services-1/
+  - /2020/04/28/changes-to-cloud-gov-s-existing-cdn-and-custom-domain-services-1/
+  - /2020/04/28/changes-to-cloud-gov-s-existing-cdn-and-custom-domain-services-1/
+  - /2020/04/28/changes-to-cloud-gov-s-existing-cdn-and-custom-domain-services-1/
+  - /2020/04/28/changes-to-cloud-gov-s-existing-cdn-and-custom-domain-services-1/
+---
+---
+---
+---
+---
 ---
 This message is to let you know about upcoming changes to cloud.gov’s CDN and domain services.
 
