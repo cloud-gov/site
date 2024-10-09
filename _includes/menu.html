@@ -4,7 +4,11 @@ manage your navigation system {% endcomment %}
 
 <header class="usa-header usa-header--extended" role="banner">
   <div class="usa-navbar">
-    {% include "logo.html" %}
+    {% if navigation == "pages" %}
+      {% include "pages/logo.html" %}
+    {% else %}
+      {% include "logo.html" %}
+    {% endif %}
     <button class="usa-menu-btn">Menu</button>
   </div>
   <nav
