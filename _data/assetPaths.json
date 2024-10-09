@@ -1,8 +1,12 @@
 {
   "admin.js": "/assets/js/admin-OYJBR6FH.js",
   "admin.map": "/assets/js/admin-OYJBR6FH.js.map",
+  "anchor.min.js": "/assets/js/anchor.min.js",
   "app.js": "/assets/js/app-SPESETTN.js",
   "app.map": "/assets/js/app-SPESETTN.js.map",
-  "styles.css": "/assets/styles/styles-QYDV2SFB.css",
-  "styles.map": "/assets/styles/styles-QYDV2SFB.css.map"
+  "mermaid.min.js": "/assets/js/mermaid.min.js",
+  "uswds.js": "/assets/js/uswds-init.js",
+  "prism-atom.css": "/assets/styles/prism-atom-dark.css",
+  "styles.css": "/assets/styles/styles-CXNBFNDF.css",
+  "styles.map": "/assets/styles/styles-CXNBFNDF.css.map"
 }
