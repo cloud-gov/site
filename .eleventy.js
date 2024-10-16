@@ -1,24 +1,39 @@
-const { DateTime } = require('luxon');
+const {DateTime} = require('luxon');
 const fs = require('fs');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginNavigation = require('@11ty/eleventy-navigation');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const {markdownItTable} = require('markdown-it-table');
 const yaml = require("js-yaml");
 const svgSprite = require("eleventy-plugin-svg-sprite");
-const { imageShortcode, imageWithClassShortcode } = require('./config');
+const {imageShortcode, imageWithClassShortcode} = require('./config');
+const pluginTOC = require('eleventy-plugin-toc')
+const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const inspect = require("util").inspect;
+const striptags = require("striptags");
 
 module.exports = function (config) {
   // Set pathPrefix for site
   let pathPrefix = '/';
 
-  // Copy the `admin` folders to the output
-  config.addPassthroughCopy('admin');
-
   // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
-  config.addPassthroughCopy({'./node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js'});
+  config.addPassthroughCopy({
+    'admin': 'admin',
+    '_img': 'img',
+    'resources': 'resources',
+    'favicon.ico': 'favicon.ico',
+    './node_modules/PrismJS/themes/prism-coldark-dark.css': 'assets/styles/prism-atom-dark.css',
+    './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
+    './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.min.js'
+  });
 
-  // Add plugins
+  config.addFilter("striptags", (content) => {
+    return striptags(content);
+  });
+
+  // Add plugins.html
   config.addPlugin(pluginRss);
   config.addPlugin(pluginNavigation);
 
@@ -36,18 +51,24 @@ module.exports = function (config) {
     svgShortcode: 'usa_icons'
   });
 
+  config.addPlugin(pluginTOC, {
+    tags: ['h2']
+  });
+
   // Allow yaml to be used in the _data dir
   config.addDataExtension("yaml", contents => yaml.load(contents));
 
+  config.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`)
+
   config.addFilter('readableDate', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(
-      'dd LLL yyyy'
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(
+      'LLLL d, yyyy'
     );
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   config.addFilter('htmlDateString', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
 
   // Get the first `n` elements of a collection.
@@ -85,20 +106,64 @@ module.exports = function (config) {
     return filterTagList([...tagSet]);
   });
 
+  config.addPlugin(syntaxHighlight, {
+    highlight: function (str, lang) {
+      if (lang === "mermaid") {
+        // Bypass syntax highlighting for mermaid code blocks
+        return `<pre class="mermaid cg-diagrams">${str}</pre>`;
+      }
+
+      // Use the default syntax highlighting for other languages
+      const hljs = require("highlight.js");
+      if (hljs.getLanguage(lang)) {
+        return `<pre><code class="language-${lang}">${hljs.highlight(str, {language: lang}).value}</code></pre>`;
+      }
+
+      // Fallback: Return the code without highlighting if no valid language
+      return `<pre><code>${str}</code></pre>`;
+    }
+  });
+  config.addPlugin(pluginMermaid, {
+    html_tag: 'div',
+    extra_classes: 'cg-diagrams',
+    mermaid_config: {
+      theme: 'base'
+    }
+  });
+
+  function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
     html: true,
     breaks: true,
-    linkify: true,
+    linkify: false
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
       placement: 'after',
       class: 'direct-link',
-      symbol: '#',
+      symbol: '',
       level: [1, 2, 3, 4],
     }),
     slugify: config.getFilter('slug'),
+  }).use(markdownItTable);
+  config.addFilter("markdown", (content) => {
+    return markdownLibrary.render(content);
   });
+  markdownLibrary.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+    const href = tokens[idx].attrGet("href");
+    if (href && href.startsWith("http")) {
+      tokens[idx].attrPush(["target", "_blank"]);
+      tokens[idx].attrPush(["rel", "noopener noreferrer"]);
+    }
+    return self.renderToken(tokens, idx, options);
+  };
+  markdownLibrary.renderer.rules.code_inline = (tokens, idx, {langPrefix = ''}) => {
+    const token = tokens[idx];
+    return `<code class="${langPrefix}plaintext">${htmlEntities(token.content)}</code>&nbsp;`;
+  };
   config.setLibrary('md', markdownLibrary);
 
   // Override Browsersync defaults (used only with --serve)
@@ -109,7 +174,7 @@ module.exports = function (config) {
 
         browserSync.addMiddleware('*', (req, res) => {
           // Provides the 404 content without redirect.
-          res.writeHead(404, { 'Content-Type': 'text/html; charset=UTF-8' });
+          res.writeHead(404, {'Content-Type': 'text/html; charset=UTF-8'});
           res.write(content_404);
           res.end();
         });
@@ -133,6 +198,22 @@ module.exports = function (config) {
   if (process.env.BASEURL) {
     pathPrefix = process.env.BASEURL
   }
+
+  config.addUrlTransform((page) => {
+    if (page.url.startsWith("/content/knowledge-base/articles")) {
+      return page.url.replace("/pages/knowledge-base/articles", "/knowledge-base");
+    }
+    if (page.url.startsWith("/content/pages/knowledge-base/articles")) {
+      return page.url.replace("/content/pages/knowledge-base/articles", "/content/knowledge-base");
+    }
+    if (page.url.startsWith("/content/news/articles/")) {
+      let dateMatches = page.url.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/g);
+      let date = !!dateMatches && dateMatches.length > 0 ? dateMatches[0].replaceAll('-', '/') : '';
+      let descriptionMatches = page.url.match(/[A-Za-z]+-[A-Za-z]+/);
+      let description = !!descriptionMatches && descriptionMatches.length > 0 ? descriptionMatches[descriptionMatches.length - 1] + '/' : '';
+      return `/${date}/${description}`;
+    }
+  });
 
   return {
     // Control which files Eleventy will process

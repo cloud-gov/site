@@ -1,7 +1,7 @@
 const fs = require('fs/promises');
 const path = require('path');
 const esbuild = require('esbuild');
-const { sassPlugin } = require('esbuild-sass-plugin');
+const {sassPlugin} = require('esbuild-sass-plugin');
 
 async function createAssetPaths() {
   let pathPrefix = ''
@@ -18,10 +18,11 @@ async function createAssetPaths() {
         path.join(__dirname, '../_site/assets', dir)
       );
       return files.map((file) => {
-        const { name, ext } = path.parse(file);
+        const {name, ext} = path.parse(file);
         const hashedAt = name.lastIndexOf('-');
-        const originalName = name.slice(0, hashedAt);
+        const originalName = hashedAt > -1 ? name.slice(0, hashedAt) : name;
         const key = `${originalName}${ext}`;
+        // const key = file;
         return {
           [key]: `${pathPrefix}/assets/${dir}/${file}`,
         };
@@ -42,6 +43,7 @@ esbuild
     format: 'iife',
     loader: {
       '.png': 'dataurl',
+      '.jpg': 'dataurl',
       '.svg': 'dataurl',
       '.ttf': 'dataurl',
       '.woff': 'dataurl',
@@ -53,7 +55,8 @@ esbuild
     plugins: [sassPlugin({
       loadPaths: [
         "./node_modules/@uswds",
-        "./node_modules/@uswds/uswds/packages"
+        "./node_modules/@uswds/uswds/packages",
+        "./node_modules/anchor-js/"
       ]
     })],
     bundle: true,
