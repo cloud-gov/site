@@ -1,8 +1,11 @@
 {
   "admin.js": "/assets/js/admin-OYJBR6FH.js",
   "admin.map": "/assets/js/admin-OYJBR6FH.js.map",
-  "app.js": "/assets/js/app-ZQYILJ3O.js",
-  "app.map": "/assets/js/app-ZQYILJ3O.js.map",
-  "styles.css": "/assets/styles/styles-MC7BSLSF.css",
-  "styles.map": "/assets/styles/styles-MC7BSLSF.css.map"
+  "anchor.min.js": "/assets/js/anchor.min.js",
+  "app.js": "/assets/js/app-L3434OIE.js",
+  "app.map": "/assets/js/app-L3434OIE.js.map",
+  "uswds.js": "/assets/js/uswds-init.js",
+  "prism-atom.css": "/assets/styles/prism-atom-dark.css",
+  "styles.css": "/assets/styles/styles-7YC6I6SN.css",
+  "styles.map": "/assets/styles/styles-7YC6I6SN.css.map"
 }
