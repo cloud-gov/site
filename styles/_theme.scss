@@ -1,0 +1,413 @@
+@use "uswds-core" as *;
+@import "theme/uswds-theme-color";
+@import "theme/uswds-theme-components";
+@import "theme/uswds-theme-custom-styles";
+@import "theme/uswds-theme-general";
+@import "theme/uswds-theme-spacing";
+@import "theme/uswds-theme-typography";
+@import "theme/uswds-theme-utilities";
+
+// default mode hide banner
+.usa-banner__content {
+  display: hidden;
+}
+
+.usa-graphic-list {
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+}
+
+@media screen and (min-width: 640px) {
+  .tablet\:width-1\/3 {
+    width: 33%;
+  }
+  .tablet\:float-left {
+    float: left;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .paginate-link {
+    display: initial;
+  }
+  .paginate-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .paginate-link {
+    display: none;
+  }
+  .paginate-button {
+    display: block;
+  }
+}
+
+// Add your SASS/CSS here
+// default mode hide banner
+.usa-banner__content,
+.usa-nav__submenu {
+  display: hidden;
+}
+
+.site-banner {
+  background-color: color('base-darkest');
+
+  .usa-banner__content {
+    color: color('white');
+  }
+
+  .usa-banner__header-action {
+    color: color('base-light');
+    &::after {
+      mask: url('../_img/content/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
+      background-color: color('base-light');
+    }
+    &:hover {
+      color: color('white');
+      &::after {
+        background-color: color('white');
+      }
+    }
+  }
+
+  .usa-banner__button[aria-expanded='true']::before {
+    background: transparent !important;
+  }
+
+  .usa-banner__button[aria-expanded='true']::after {
+    @include u-bg('white');
+    mask: url('../_img/content/close-alt.svg') no-repeat center/1rem 1rem;
+  }
+
+  @include at-media('tablet') {
+    .usa-banner__button,
+    .usa-banner__button[aria-expanded='true'] {
+      color: color('base-light');
+      &::after {
+        mask: url('../_img/content/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
+        background-color: color('base-light');
+      }
+      &:hover {
+        color: color('white');
+        &::after {
+          background-color: color('white');
+        }
+      }
+    }
+  }
+
+  .usa-banner__header-text {
+    color: color('white');
+  }
+
+  .usa-banner__header-action {
+    color: color('gray-30');
+  }
+}
+
+.site-footer {
+  @include u-bg('accent-warm');
+  //@include u-font('body', '3xs');
+  @include u-color('ink');
+
+
+}
+
+@media screen and (min-width: 640px) {
+  .tablet\:width-1\/3 {
+    width: 33%;
+  }
+  .tablet\:float-left {
+    float: left;
+  }
+
+  //force grid-row wide gutter docs well
+  .grid-row.grid-gap .usa-prose.padding-x-4 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .paginate-link {
+    display: initial;
+  }
+  .paginate-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .paginate-link {
+    display: none;
+  }
+  .paginate-button {
+    display: block;
+  }
+}
+
+//Docs
+.usa-section.bg-accent-warm-light {
+  @include at-media('tablet') {
+    @include u-padding-y(8);
+  }
+}
+
+.usa-layout-docs-sidenav {
+  @include at-media('mobile') {
+    @include u-flex('fill');
+    @include u-order('last');
+  }
+  @include at-media('desktop') {
+    order: 0;
+    flex: none;
+  }
+}
+
+// Pricing Page
+.usa-content.bg-accent-warm-light {
+  @include at-media('tablet') {
+    @include u-padding-top(4);
+    @include u-padding-bottom(8);
+  }
+}
+
+.products-pricing {
+  @include at-media('tablet') {
+    .intro {
+      h2 {
+        @include u-font-size('sans', 10);
+      }
+    }
+  }
+
+  .usa-table tr {
+    @include u-padding-y(3);
+    border-top: units(1px) solid color('base-lighter');
+    display: flex;
+  }
+
+  .usa-table td {
+    background-color: transparent;
+    border: none;
+    @include u-padding-left(0);
+    //@include u-padding-right($theme-table-column-gap / 2);
+    @include u-padding-y(0.5);
+
+    h3 {
+      @include u-margin-y(0);
+    }
+
+    &.small-info {
+      @include u-font-size('sans', '2xs');
+      @include at-media('desktop') {
+        min-height: 83px;
+      }
+    }
+
+    &.intro-info {
+      @include at-media('desktop') {
+        min-height: 133px;
+      }
+    }
+
+    a.usa-button {
+      @include u-margin-bottom(2);
+    }
+  }
+}
+
+.pricing-calculations {
+  .pricing-line-item {
+    border-bottom: 1px dotted #444;
+  }
+
+  .pricing-total {
+    @include u-text('semibold');
+    display: block;
+    @include u-margin-top(5);
+  }
+
+  span {
+    @include u-float('right');
+  }
+}
+
+// Home
+ul.home-list {
+  list-style: none;
+  @include u-border-bottom(1px);
+  @include u-border-bottom('base-light');
+
+  li {
+    @include u-border-top(1px);
+    @include u-border-top('base-light');
+    @include u-padding-y('105');
+
+    &:first-of-type {
+      border-top: 1px solid 'base-light';
+    }
+  }
+}
+
+a.cg-arrow {
+  @include u-color('ink');
+  @include u-font-family('ui');
+
+  display: block;
+
+  &:before {
+    content: '\02192';
+    display: inline-block;
+    @include u-padding-right('105');
+    @include u-text('secondary-vivid');
+    font-family: 'Times New Roman', Arial, sans-serif;
+  }
+}
+@include at-media('tablet') {
+  .bar-top {
+    @include u-padding-top(4);
+    &:before {
+      @include u-bg('base-light');
+      content: '';
+      height: 2px;
+      left: 16px;
+      position: absolute;
+      top: 0;
+      width: 45px;
+    }
+  }
+}
+
+.bg-primary-darker {
+  h1 {
+    font-weight: 600;
+  }
+}
+
+.site-welcome {
+  @include u-margin-top(4);
+
+  h1 {
+    @include u-font-size('sans', 16);
+    line-height: 4rem;
+    margin-top: -1rem;
+  }
+  ul {
+    padding: 0;
+    margin: 30px 0 0 0;
+    max-width: 500px;
+
+    li {
+      font-size: 22px;
+
+      a {
+        @include u-padding-y(3);
+
+        &:before {
+          width: 40px;
+        }
+      }
+    }
+  }
+  p.usa-intro {
+    @include u-font-size('serif', 'lg');
+  }
+}
+
+a {
+  @include u-color('primary-dark');
+
+  &:hover {
+    @include u-color('primary-darker');
+  }
+}
+
+.sign-up-intro {
+  background-color: 'primary-darkest';
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 1040px 148px;
+
+  @include at-media('desktop') {
+    background-image: url('../_img/content/peaks.svg');
+  }
+}
+
+.usa-section.why-cloud,
+.usa-section.is-cloud-right,
+.usa-section.packages {
+  h2 {
+    @include u-margin-top(0);
+  }
+  h3 {
+    @include u-margin-y(1);
+  }
+  .usa-prose {
+    @include u-margin-bottom(3);
+  }
+}
+
+.is-cloud-right .home-list {
+  padding-left: 0;
+}
+
+.partner-card {
+  @include u-margin(1);
+  @include u-padding-y(1);
+  @include u-border(1px);
+  @include u-border('base-light');
+
+  h5 {
+    @include u-margin-y(1);
+  }
+
+  a {
+    @include u-color('ink');
+  }
+
+  img {
+    @include u-square(9);
+    @include u-float('left');
+    @include u-padding-right(2);
+  }
+}
+
+code.language-plaintext {
+  @include u-display('inline');
+}
+
+.usa-section.want-more {
+  @include at-media('tablet') {
+    @include u-padding-bottom(8);
+  }
+}
+
+#table-of-contents {
+  @include u-border($theme-color-base-lighter);
+  border-width: 1px;
+  border-style: solid;
+  padding: 0 2em;
+  background-color: color($theme-color-accent-warm-light);
+}
+
+#table-of-contents ol {
+  font-size: .9rem;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.usa-prose {
+  .usa-collection__item {
+    border-top: none;
+  }
+}
+
+.usa-intro, .usa-prose>h1+p {
+  max-width: 88ex;
+  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.46rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
