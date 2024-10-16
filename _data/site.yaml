@@ -1,11 +1,25 @@
 title: cloud.gov
 email: support@cloud.gov
-description: >- # this means to ignore newlines
-  Agency Name (EAC) Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Aenean et sapien a leo auctor scelerisque quis nec magna. Sed dictum ante a risus vehicula facilisis.
+support_email_address: support@cloud.gov
+description: >- # this means to ignore newlines until "baseurl:"
+  Expedite your agency’s path to a secure and compliant cloud. cloud.gov provides an application environment that enables rapid deployment and ATO assessment for modern web applications.
+baseurl: "" # the subpath of your site, e.g. /knowledge-base
+# url: "https://example.gov" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Twitter handle. Only the handle, not the URL.
 twitter: clouddotgov
+github_url: https://github.com/cloud-gov/cg-site
+support_email: mailto:support@cloud.gov?body=What+is+your+question%3F%0D%0A%0D%0APlease+provide+your+application+name+or+URL.+Do+not+include+any+sensitive+information+about+your+platform+in+this+email.
+inquiries_email: mailto:inquiries@cloud.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov%3A%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A%0AHow%20did%20you%20first%20hear%20about%20cloud.gov%3F
+
+github_branch: main
+
+# Configuration for Google Analytics, add your UA code here:
+google_analytics_ua: UA-48605964-34
+
+# Configuration for DAP, add your agency ID here:
+dap_agency: GSA
+dap_subagency: TTS,cloud.gov
 
 #################################################################
 #
@@ -41,14 +55,14 @@ twitter: clouddotgov
 #
 #################################################################
 dap:
-  # agency: your-agency
+# agency: your-agency
 
-  # Optional
-  # subagency: your-subagency
+# Optional
+# subagency: your-subagency
 
 # Configuration for Google Analytics
 ga:
-  # ua: your-ua
+# ua: your-ua
 
 # Site Navigation
 primary_navigation:
@@ -96,7 +110,7 @@ primary_navigation:
   - name: Knowledge base
     url: /knowledge-base/
   - name: Pages
-    url: /pages/
+    url: /content/
   - name: Contact us
     url: /contact/
 
@@ -177,9 +191,69 @@ collections:
     permalink: /knowledge-base/:path/
   kbarticlespages:
     output: true
-    permalink: /pages/knowledge-base/:path/
+    permalink: /content/knowledge-base/:path/
 
 permalink: pretty
+
+markdown: kramdown
+url: "https://cloud.gov"
+
+exclude:
+  - package.json
+  - package-lock.json
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE.md
+  - degit.json
+  - vendor
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - .parcel-cache
+
+### plugin settings ###
+last-modified-at:
+  date-format: "%Y-%m-%d"
+
+
+defaults:
+  - scope:
+      path: "content/docs/compliance"
+    values:
+      toc: true
+  - scope:
+      path: "content/docs/deployment"
+    values:
+      toc: true
+  - scope:
+      path: "content/docs/getting-started"
+    values:
+      toc: true
+  - scope:
+      path: "content/docs/management"
+    values:
+      toc: true
+  - scope:
+      path: "content/docs/orgs-spaces"
+    values:
+      toc: true
+  - scope:
+      path: "content/docs/overview"
+    values:
+      toc: true
+  - scope:
+      path: "content/docs/pricing"
+    values:
+      toc: true
+  - scope:
+      path: "content/docs/services"
+    values:
+      toc: true
+  - scope:
+      path: "content/docs/technology"
+    values:
+      toc: true
+
 
 toc:
   min_level: 2
@@ -191,3 +265,90 @@ toc:
   sublist_class: ''
   item_class: toc-entry
   item_prefix: toc-
+
+
+
+sidenav:
+  - text: Using Pages
+    href: /content/documentation/
+    subfolderitems:
+      - text: Why use Pages?
+        href: /content/documentation/why-use-content/
+      - text: Access and permissions
+        href: /content/documentation/access-permissions/
+      - text: Adding a user to an Organization
+        href: /content/documentation/adding-users/
+      - text: Before you launch
+        href: /content/documentation/before-you-launch/
+      - text: Getting started with a sandbox
+        href: /content/documentation/sandbox/
+      - text: "21st Century IDEA"
+        href: /content/documentation/21st-century-idea/
+      - text: Getting started with Decap CMS
+        href: /content/documentation/getting-started-with-decap-cms/
+      - text: Included with Pages
+        href: /content/documentation/included-with-content/
+      - text: Instructional demos
+        href: /content/documentation/instructional-demos/
+      - text: Builds and previews
+        href: /content/documentation/previews/
+      - text: Custom domains
+        href: /content/documentation/custom-domains/
+      - text: Migration guide
+        href: /content/documentation/migration-guide/
+      - text: Adding forms
+        href: /content/documentation/forms/
+      - text: Adding search
+        href: /content/documentation/search/
+      - text: Site templates
+        href: /content/documentation/templates/
+      - text: Customizing your site
+        href: /content/documentation/customization/
+      - text: Using the markup languages
+        href: /content/documentation/resources/
+      - text: Content guide
+        href: /content/documentation/content-guide/
+      - text: Custom headers
+        href: /content/documentation/custom-headers/
+      - text: Federalist.json
+        href: /content/documentation/federalist-json/
+  - text: For security and compliance
+    href: /content/documentation/
+    subfolderitems:
+      - text: Security and Compliance
+        href: /content/documentation/security-and-compliance
+      - text: Customer responsibilities
+        href: /content/documentation/customer-responsibilities/
+      - text: FedRAMP Tracker
+        href: /docs/overview/fedramp-tracker/
+      - text: Automated Site Reports
+        href: /content/documentation/automated-site-reports/
+  - text: For developers
+    href: /content/documentation/
+    subfolderitems:
+      - text: How builds work
+        href: /content/documentation/how-builds-work/
+      - text: Specific build errors
+        href: /content/documentation/build-errors/
+      - text: Environment variables on builds
+        href: /content/documentation/env-vars-on-content-builds/
+      - text: Pages and cloud.gov
+        href: /content/documentation/cloud-gov/
+      - text: Node on Pages
+        href: /content/documentation/node-on-content/
+      - text: RVM on Pages
+        href: /content/documentation/rvm-on-content/
+      - text: Bundler on Pages
+        href: /content/documentation/bundler-on-content/
+      - text: Caching Build Dependencies
+        href: /content/documentation/cache-dependencies/
+      - text: Supported site engines
+        href: /content/documentation/supported-site-engines/
+      - text: Large file handling
+        href: /content/documentation/large-file-handling/
+      - text: Renaming your site's repository
+        href: /content/documentation/renaming-site-repository/
+      - text: Monorepos on Pages
+        href: /content/documentation/monorepos-on-content/
+      - text: External tools and resources
+        href: /content/documentation/external-tools-and-resources/
