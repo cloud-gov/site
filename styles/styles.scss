@@ -1,7 +1,6 @@
 @use 'uswds-core' as * with (
   $theme-show-notifications: false,
   $theme-font-path: '../node_modules/@uswds/uswds/dist/fonts',
-  //$font-stack-helvetica: '"Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif',
   $theme-image-path: '../node_modules/@uswds/uswds/dist/img',
   // Theme color base
   $theme-color-base-family:           'gray-cool',
@@ -198,5 +197,8 @@
  * Custom theme files below this line...
  */
 @forward "theme";
+@forward "mermaid";
 @forward "helpers";
 @forward "footer";
+
+@forward "pages/index";
