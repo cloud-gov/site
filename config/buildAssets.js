@@ -20,7 +20,7 @@ async function createAssetPaths() {
             return files.map((file) => {
                 const {name, ext} = path.parse(file);
                 const hashedAt = name.lastIndexOf('-');
-                const originalName = name.slice(0, hashedAt);
+                const originalName = hashedAt > -1 ? name.slice(0, hashedAt) : name;
                 const key = `${originalName}${ext}`;
                 return {
                     [key]: `${pathPrefix}/assets/${dir}/${file}`,
@@ -35,36 +35,37 @@ async function createAssetPaths() {
 }
 
 esbuild
-    .build({
-        entryPoints: ['styles/styles.scss', 'js/app.js', 'js/admin.js'],
-        entryNames: '[dir]/[name]-[hash]',
-        outdir: '_site/assets',
-        format: 'iife',
-        loader: {
-            '.png': 'dataurl',
-            '.jpg': 'dataurl',
-            '.svg': 'dataurl',
-            '.ttf': 'dataurl',
-            '.woff': 'dataurl',
-            '.woff2': 'dataurl',
-        },
-        minify: process.env.ELEVENTY_ENV === 'production',
-        sourcemap: process.env.ELEVENTY_ENV !== 'production',
-        target: ['chrome58', 'firefox57', 'safari11', 'edge18'],
-        plugins: [sassPlugin({
-            loadPaths: [
-                "./node_modules/@uswds",
-                "./node_modules/@uswds/uswds/packages"
-            ]
-        })],
-        bundle: true,
-    })
-    .then(() => createAssetPaths())
-    .then(() => {
-        console.log('Assets have been built!');
-        process.exit();
-    })
-    .catch((err) => {
-        console.error(err);
-        process.exit(1);
-    });
+  .build({
+    entryPoints: ['styles/styles.scss', 'js/app.js', 'js/admin.js'],
+    entryNames: '[dir]/[name]-[hash]',
+    outdir: '_site/assets',
+    format: 'iife',
+    loader: {
+      '.png': 'dataurl',
+      '.jpg': 'dataurl',
+      '.svg': 'dataurl',
+      '.ttf': 'dataurl',
+      '.woff': 'dataurl',
+      '.woff2': 'dataurl',
+    },
+    minify: process.env.ELEVENTY_ENV === 'production',
+    sourcemap: process.env.ELEVENTY_ENV !== 'production',
+    target: ['chrome58', 'firefox57', 'safari11', 'edge18'],
+    plugins: [sassPlugin({
+      loadPaths: [
+        "./node_modules/@uswds",
+        "./node_modules/@uswds/uswds/packages",
+        "./node_modules/anchor-js/"
+      ]
+    })],
+    bundle: true,
+  })
+  .then(() => createAssetPaths())
+  .then(() => {
+    console.log('Assets have been built!');
+    process.exit();
+  })
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
