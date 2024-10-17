@@ -311,6 +311,7 @@ $theme-table-column-gap: 4;
 h1,
 .usa-prose h1 {
   @include u-text('semibold');
+  line-height: 1.15;
 }
 
 h2,
