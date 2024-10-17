@@ -6,7 +6,7 @@ layout: layouts/base
 This template is for a single page that does not have a date associated with it. For example, an about page.
 {% endcomment %}
 
-<div class="usa-layout-docs usa-section bg-accent-warm-light page-layout">
+<div class="usa-layout-docs usa-section {{background}} page-layout">
   <div class="grid-container">
     <div class="grid-row grid-gap">
       {% if sidenav == true %}
@@ -21,7 +21,7 @@ This template is for a single page that does not have a date associated with it.
       {% endif %}
 
       <main id="main-content"
-            class="usa-layout-docs__main usa-prose bg-white padding-y-8 padding-x-4 {{ custom_classes }} {{bg-color-class}}">
+            class="usa-layout-docs__main {{ custom_classes }} {{bg-color-class}}">
         {% if hidetitle != true %}
         <h1>{{ title }}</h1>
         {% endif %}

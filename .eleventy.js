@@ -21,6 +21,7 @@ module.exports = function (config) {
   // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
   config.addPassthroughCopy({
     'admin': 'admin',
+    '_assets': 'assets',
     '_img': 'img',
     'resources': 'resources',
     'favicon.ico': 'favicon.ico',

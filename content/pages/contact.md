@@ -1,8 +1,9 @@
 ---
-permalink: /content/contact/
+permalink: /pages/contact/
 layout: layouts/page
-navigation: content
+navigation: pages
 title: cloud.gov Pages - Contact
+hidetitle: true
 ---
 
 

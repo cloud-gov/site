@@ -8,19 +8,19 @@ redirect_from:
 
 how_it_works:
   - name: Build
-    image: /assets/images/content/build-on-blue.svg
+    image: /img/pages/build-on-blue.svg
     image_alt: Hand building a website
     description: Use our templates or develop your own and publish your web page right away.
     link: /assets/documents/coe-success.pdf
     link_text: See how the Centers of Excellence (CoEs) used Pages to get new content up quickly
   - name: Launch
-    image: /assets/images/content/launch-on-blue.svg
+    image: /img/pages/launch-on-blue.svg
     image_alt: Hand launching a secure website with cloud.gov
     description: You focus on the content, we'll worry about the security, compliance, and deployment.
     link: /assets/documents/afwerx-success.pdf
     link_text: Learn how DoD leveraged the Pages platform to build their own template designs
   - name: Manage
-    image: /assets/images/content/manage-on-blue.svg
+    image: /img/pages/manage-on-blue.svg
     image_alt: Hand using faders to manage website deployments
     description: Use our intuitive interface to control the process from start to finish.
     link: /assets/documents/doi-success.pdf
@@ -28,68 +28,68 @@ how_it_works:
 
 case_studies:
   - name: AFWERX
-    thumbnail: /assets/images/content/afwerx-success-Thumbnail.png
+    thumbnail: /img/pages/afwerx-success-Thumbnail.png
     thumbnail_alt: AFWERX Success Story Thumbnail
     read_me_for: Challenges with government compliance, and cultural challenges switching to Cloud solutions
     link: /assets/documents/afwerx-success.pdf
   - name: Centers of Excellence
-    thumbnail: /assets/images/content/coe-success-Thumbnail.png
+    thumbnail: /img/pages/coe-success-Thumbnail.png
     thumbnail_alt: Centers of Excellence  Success Story Thumbnail
     read_me_for: Enhanced functionality, hands-on support, and modern design
     link: /assets/documents/coe-success.pdf
   - name: Department of the Interior
-    thumbnail: /assets/images/content/doi-success-Thumbnail.png
+    thumbnail: /img/pages/doi-success-Thumbnail.png
     thumbnail_alt: Department of Interior  Success Story Thumbnail
     read_me_for: How Pages adds value to my work as a content strategist
     link: /assets/documents/doi-success.pdf
 agencies_using:
   - name: Department of Education
-    seal: /assets/images/content/500px-Education.png
+    seal: /img/pages/500px-Education.png
   - name: Department of Homeland Security
-    seal: /assets/images/content/500px-DHS.png
+    seal: /img/pages/500px-DHS.png
   - name: Department of the Interior
-    seal: /assets/images/content/500px-DOI.png
+    seal: /img/pages/500px-DOI.png
   - name: Department of the Treasury
-    seal: /assets/images/content/500px-treasury.png
+    seal: /img/pages/500px-treasury.png
   - name: General Services Administration
-    seal: /assets/images/content/500px-GSA.png
+    seal: /img/pages/500px-GSA.png
   - name: National Science Foundation
-    seal: /assets/images/content/500px-NSF.png
+    seal: /img/pages/500px-NSF.png
   - name: Office of Personnel Management
-    seal: /assets/images/content/500px-OPM.png
+    seal: /img/pages/500px-OPM.png
   - name: Department of Defense
-    seal: /assets/images/content/DODc.gif
+    seal: /img/pages/DODc.gif
 example_sites:
   - name: Performance.gov
     link: https://performance.gov
-    screenshot: /assets/images/content/performance.gov.png
+    screenshot: /img/pages/performance.gov.png
   - name: Privacy and Civil Liberties Oversight Board
     link: https://www.pclob.gov
-    screenshot: /assets/images/content/pclob.gov.png
+    screenshot: /img/pages/pclob.gov.png
   - name: FedRAMP
     link: https://fedramp.gov
-    screenshot: /assets/images/content/fedramp.gov.png
+    screenshot: /img/pages/fedramp.gov.png
   - name: CIO.gov
     link: https://cio.gov
-    screenshot: /assets/images/content/cio.gov.png
+    screenshot: /img/pages/cio.gov.png
 fact_sheets:
   - name: Pages proposal
-    thumbnail: /assets/images/content/Pages-Proposal-Thumbnail.png
+    thumbnail: /img/pages/Pages-Proposal-Thumbnail.png
     thumbnail_alt: Pages proposal fact sheet PDF document thumbnail
     pdfs:
       - link: /assets/documents/Pages-Proposal.pdf
         description: A two-page overview about Pages for stakeholder briefings
   - name: Pages basic diagram
-    thumbnail: /assets/images/content/how-content-works-diagram-Thumbnail.png
+    thumbnail: /img/pages/how-pages-works-diagram-Thumbnail.png
     thumbnail_alt: Pages basic diagram fact sheet PDF document thumbnail
     pdfs:
-      - link: /assets/documents/how-content-works-diagram.pdf
+      - link: /assets/documents/how-pages-works-diagram.pdf
         description: An outline of how all of Pages' parts work together.
   - name: Compliance memo & extension
-    thumbnail: /assets/images/content/content-compliance-memo-Thumbnail.jpg
+    thumbnail: /img/pages/pages-compliance-memo-Thumbnail.jpg
     thumbnail_alt: Compliance memo & extension fact sheet PDF document thumbnail
     pdfs:
-      - link: /assets/documents/content-compliance-memo.pdf
+      - link: /assets/documents/pages-compliance-memo.pdf
         description: Details about Pages' compliance and Authority to Operate.
       - link: /assets/documents/Federalist-ATO-Extension-Letter.pdf
         description: Pages's compliance and Authority to Operate extension.
@@ -128,7 +128,7 @@ fact_sheets:
     <h2>How it works.</h2>
   </div>
   <div class="grid-row grid-gap-lg">
-    {% for item in page.how_it_works %}
+    {% for item in how_it_works %}
       <div class="tablet:grid-col-4 margin-y-4">
         <div class="font-sans-sm text-heavy text-center"><span class="bg-primary display-inline-block padding-1 height-5 width-5 radius-pill">{{ forloop.index }}</span></div>
         <p class="font-sans-lg text-uppercase text-center">
@@ -137,7 +137,7 @@ fact_sheets:
         <img class="display-block margin-x-auto" src="{{item.image | url}}" alt="{{item.image_alt}}">
         <div class="padding-x-2">
           <p class="font-sans-xs line-height-sans-3">{{ item.description }}</p>
-          <a class="display-block font-sans-3xs line-height-sans-4" href="{{item.link | url }}}}">{{ item.link_text }}</a>
+          <a class="display-block font-sans-3xs line-height-sans-4" href="{{item.link | url }}">{{ item.link_text }}</a>
         </div>
       </div>
     {% endfor %}
@@ -154,7 +154,7 @@ fact_sheets:
       </p>
       <h3>Agencies using Pages</h3>
     <div class="grid-row grid-gap margin-bottom-3">
-      {% for agency in page.agencies_using %}
+      {% for agency in agencies_using %}
       <div class="tablet:grid-col-3 text-center">
         <figure class="margin-0 padding-2">
           <img src="{{agency.seal | url}}" alt="Seal of the {{agency.name}}" height="64" width="64">
@@ -172,7 +172,7 @@ fact_sheets:
     <h2>Customer Case Studies</h2>
     <a name="Case Studies"></a>
     <div class="grid-row grid-gap-lg">
-      {% for study in page.case_studies %}
+      {% for study in case_studies %}
       <div class="tablet:grid-col-4 bar-top">
           <h3>{{study.name}}</h3>
           <a class="display-block border-1px border-base-lighter margin-y-2" href="{{study.link | url}}"><img class="display-block" src="{{study.thumbnail | url}}" alt="{{study.thumbnail_alt}}"></a>
@@ -207,7 +207,7 @@ fact_sheets:
       </p>
     </div>
     <div class="grid-row grid-gap margin-bottom-2">
-    {% for example_site in page.example_sites %}
+    {% for example_site in example_sites %}
       <div class="tablet:grid-col-6 padding-2 text-center">
         <a class="border border-base-lighter display-block margin-bottom-1" href="{{example_site.link | url }}"><img class="display-block" src="{{example_site.screenshot | url }}" alt="Screenshot of {{example_site.name}}"></a>
         <a href="{{example_site.link | url}}">{{example_site.name}}</a>
@@ -229,7 +229,7 @@ fact_sheets:
       </p>
     </div>
     <div class="grid-row grid-gap">
-      {% for sheet in page.fact_sheets %}
+      {% for sheet in fact_sheets %}
       <div class="tablet:grid-col-4 bar-top">
         <div class="padding-2">
           <a href="{{sheet.pdfs[0].link | url }}" class="display-block margin-bottom-2"><img class="border border-base-lighter display-block" src="{{sheet.thumbnail | url }}" alt="{{sheet.thumbnail_alt}}"></a>

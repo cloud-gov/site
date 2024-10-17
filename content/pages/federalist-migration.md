@@ -1,7 +1,7 @@
 ---
-permalink: /content/federalist-migration/
+permalink: /pages/federalist-migration/
 layout: layouts/page
-navigation: content
+navigation: pages
 title: cloud.gov Pages - Federalist Migration
 ---
 
