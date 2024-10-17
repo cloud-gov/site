@@ -1,0 +1,27 @@
+---
+layout: layouts/wide
+permalink: "pages/knowledge-base/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber | plus: 1 }}/{% endif %}"
+title: cloud.gov Pages knowledge base
+pagination:
+  data: collections.pagesknowledgebase
+  size: 8
+  alias: pagesknowledgebase
+  reverse: true
+---
+
+<div id="blog" class="bg-primary-darker usa-section--dark usa-content font-serif-lg padding-y-6 sign-up-intro usa-graphic-list">
+  <div class="grid-container">
+    <h1 class="text-normal text-white margin-0">{{title}}</h1>
+  </div>
+</div>
+<div class="grid-container">
+  <div class="grid-row">
+    <div class="desktop:grid-col-8 usa-prose padding-right-4">
+      <!-- This loops through the paginated posts -->
+      {%- for post in pagesknowledgebase %}
+        {% include "collection-item.html" post: post %}
+      {% endfor %}
+      {% include "pagination-links.html" %}
+    </div>
+  </div>
+</div>
