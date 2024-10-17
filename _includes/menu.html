@@ -4,7 +4,11 @@ manage your navigation system {% endcomment %}
 
 <header class="usa-header usa-header--extended" role="banner">
   <div class="usa-navbar">
-    {% include "logo.html" %}
+    {% if navigation == "pages" %}
+      {% include "pages/logo.html" %}
+    {% else %}
+      {% include "logo.html" %}
+    {% endif %}
     <button class="usa-menu-btn">Menu</button>
   </div>
   <nav
@@ -30,10 +34,20 @@ manage your navigation system {% endcomment %}
             ><span>{{ nav_item.name | escape }}</span></a
           >
         </li>
-        {% else %} {% assign nav_id = 'primary-nav-' | append: forloop.index %}
+        {% else %}
+        {% assign nav_id = 'primary-nav-' | append: forloop.index %}
+
+        {%- if page.overview and nav_item.key == 'overview' -%}
+        {%- assign is_current = page.overview -%}
+        {%- elsif basedir == nav_item.key and page.overview == nil -%}
+        {%- assign is_current = true -%}
+        {%- else -%}
+        {%- assign is_current = false -%}
+        {%- endif -%}
+
         <li class="usa-nav__primary-item">
           <button
-            class="usa-accordion__button usa-nav__link"
+            class="usa-accordion__button usa-nav__link{% if is_current %} usa-current{% endif %}"
             aria-expanded="false"
             aria-controls="{{ nav_id }}"
           >

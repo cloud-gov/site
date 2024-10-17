@@ -7,16 +7,34 @@ const markdownItAnchor = require('markdown-it-anchor');
 const yaml = require("js-yaml");
 const svgSprite = require("eleventy-plugin-svg-sprite");
 const { imageShortcode, imageWithClassShortcode } = require('./config');
+const pluginTOC = require('eleventy-plugin-toc')
+const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const inspect = require("util").inspect;
+const striptags = require("striptags");
+
 
 module.exports = function (config) {
   // Set pathPrefix for site
   let pathPrefix = '/';
 
   // Copy the `admin` folders to the output
-  config.addPassthroughCopy('admin');
+  // config.addPassthroughCopy('admin');
 
   // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
-  config.addPassthroughCopy({'./node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js'});
+  config.addPassthroughCopy({
+    'admin': 'admin',
+    'resources': 'resources',
+    'favicon.ico': 'favicon.ico',
+    './node_modules/PrismJS/themes/prism-atom-dark.css': 'assets/styles/prism-atom-dark.css',
+    './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
+    './node_modules/mermaid/dist/mermaid.min.js': 'assets/js/mermaid.min.js',
+    './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.min.js'
+  });
+
+  config.addFilter("striptags", (content) => {
+    return striptags(content);
+  });
 
   // Add plugins
   config.addPlugin(pluginRss);
@@ -36,8 +54,28 @@ module.exports = function (config) {
     svgShortcode: 'usa_icons'
   });
 
+  config.addPlugin(syntaxHighlight, {
+
+  });
+
+  config.addPlugin(pluginTOC, {
+    tags: ['h2']
+  });
+
+  config.addPlugin(pluginMermaid, {
+    mermaid_js_src: '/assets/mermaid.min.js',
+    html_tag: 'div',
+    extra_classes: 'graph',
+    mermaid_config: {
+      'startOnLoad': true,
+      'theme': 'base'
+    }
+  });
+
   // Allow yaml to be used in the _data dir
   config.addDataExtension("yaml", contents => yaml.load(contents));
+
+  config.addFilter("debug", (content) => `<pre>${inspect(content)}</pre>`)
 
   config.addFilter('readableDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(
@@ -89,16 +127,26 @@ module.exports = function (config) {
   let markdownLibrary = markdownIt({
     html: true,
     breaks: true,
-    linkify: true,
+    linkify: false
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
       placement: 'after',
       class: 'direct-link',
-      symbol: '#',
+      symbol: '',
       level: [1, 2, 3, 4],
     }),
     slugify: config.getFilter('slug'),
   });
+
+  function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  markdownLibrary.renderer.rules.code_inline = (tokens, idx, { langPrefix = '' }) => {
+    const token = tokens[idx];
+    return `<code class="${langPrefix}plaintext">${htmlEntities(token.content)}</code>&nbsp;`;
+  };
+
   config.setLibrary('md', markdownLibrary);
 
   // Override Browsersync defaults (used only with --serve)
@@ -133,6 +181,22 @@ module.exports = function (config) {
   if (process.env.BASEURL) {
     pathPrefix = process.env.BASEURL
   }
+
+  config.addUrlTransform((page) => {
+    if (page.url.startsWith("/pages/knowledge-base/articles")) {
+      return page.url.replace("/pages/knowledge-base/articles", "/knowledge-base");
+    }
+    if (page.url.startsWith("/pages/pages/knowledge-base/articles")) {
+      return page.url.replace("/pages/pages/knowledge-base/articles", "/pages/knowledge-base");
+    }
+    if (page.url.startsWith("/pages/news/articles/")) {
+      let dateMatches = page.url.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/g);
+      let date = !!dateMatches && dateMatches.length > 0 ? dateMatches[0].replaceAll('-','/') : '';
+      let descriptionMatches = page.url.match(/[A-Za-z]+-[A-Za-z]+/);
+      let description = !!descriptionMatches && descriptionMatches.length > 0 ? descriptionMatches[descriptionMatches.length - 1] + '/' : '';
+      return `/${date}/${description}`;
+    }
+  });
 
   return {
     // Control which files Eleventy will process
