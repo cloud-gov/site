@@ -205,7 +205,7 @@ module.exports = function (config) {
       return page.url.replace("/pages/knowledge-base/articles", "/knowledge-base");
     }
     if (page.url.startsWith("/content/pages/knowledge-base/articles")) {
-      return page.url.replace("/content/pages/knowledge-base/articles", "/content/knowledge-base");
+      return page.url.replace("/content/pages/knowledge-base/articles", "/pages/knowledge-base");
     }
     if (page.url.startsWith("/content/news/articles/")) {
       let dateMatches = page.url.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/g);

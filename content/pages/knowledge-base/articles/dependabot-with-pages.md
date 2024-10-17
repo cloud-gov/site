@@ -49,7 +49,7 @@ For a complete list of configuration options and implementations, visit the GitH
 
 This example `dependabot.yml` file is for any Jekyll site running on Pages. In this case there are two defined package ecosystems which are npm and bundler, both located in the root directory. Specifically for the npm package we’ve set the conditions for Dependabot to check for dependency updates once a week, on Monday, while specifying the time and timezone. By default, Dependabot is set to the UTC timezone. We’ve added and set the condition `open-pull-requests-limit` to the value 2 so no matter how many updates there are, Dependabot will only open 2 pull requests a week maximum which will drastically cut down on noise. By default, Dependabot opens a maximum of five pull requests for version updates. We have also set an `ignore` condition for the dependency `minimatch` which will ignore all updates through version 3, effectively pinning it at its current version for the time being. For the bundler package manager we have kept the same conditions as with npm except we have set the frequency interval to monthly which by default will be the first Monday of the month. Although this is in the same yaml file, conditions set for each package-ecosystem are independent of each other. We have also specified a bundler dependency version to ignore.
 
-```
+```shell
 version: 2
 updates:
   - package-ecosystem: "npm"
@@ -78,7 +78,7 @@ ignore:
         
 In this example an 11ty site is used and we have specfified our npm package manager once again. We have set dependabot to check for version updates daily by specifying "daily" as the interval. We have set the branch that dependabot will run checks against as our `staging` branch by utilizing the "target-branch" option. By default, Dependabot will check for manifest files on the production  branch and raise pull requests for version updates against it. You can override this behavior by explicitly setting the `target-branch` condition to another branch and have pull requests opened against it instead of your main branch which is what we have done here. It may be easier for Pages users to run more frequent version checks against a staging type branch as opposed to the main branch to make pull requests and alerts more manageable. We have also set Dependabot to ignore all version updates for 3.0 on the dependency `rimraf` with a pull request limit of 2.
 
-```
+```shell
 version: 2
 updates:
     -package-ecosystem: "npm"

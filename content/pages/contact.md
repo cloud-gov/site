@@ -1,7 +1,7 @@
 ---
 permalink: /pages/contact/
 layout: layouts/page
-navigation: pages
+
 title: cloud.gov Pages - Contact
 hidetitle: true
 ---

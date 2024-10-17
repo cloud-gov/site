@@ -1,7 +1,7 @@
 ---
 permalink: /pages/federalist-migration/
 layout: layouts/page
-navigation: pages
+
 title: cloud.gov Pages - Federalist Migration
 ---
 

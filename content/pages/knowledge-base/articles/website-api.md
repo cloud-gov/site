@@ -46,7 +46,7 @@ In our case, we provisioned a PostgreSQL v15 database instance within cloud.gov 
 
 When queried via the API application, the database will select a number of rows, convert them to a Python dictionary via the [RealDictCursor module](https://www.psycopg.org/docs/extras.html#real-dictionary-cursor), and return that collection.
 
-```
+```shell
 Bank Name                | City          | State | Cert  | Acquiring Institution               | Closing Date | Fund  | id 
 -------------------------+---------------+-------+-------+-------------------------------------+--------------+-------+---
 Citizens Bank            | Sac City      | IA    | 8758  | Iowa Trust & Savings Bank           | 3-Nov-23     | 10545 | 1
