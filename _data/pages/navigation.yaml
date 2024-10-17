@@ -102,7 +102,7 @@ sidenav:
       - text: Specific build errors
         href: /pages/documentation/build-errors/
       - text: Environment variables on builds
-        href: /pages/documentation/env-vars-on-content-builds/
+        href: /pages/documentation/env-vars-on-pages-builds/
       - text: Pages and cloud.gov
         href: /pages/documentation/cloud-gov/
       - text: Node on Pages

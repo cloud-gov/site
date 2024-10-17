@@ -4,12 +4,12 @@ content as markdown. Specify `html=true` if you're using raw HTML instead.
 {% endcomment %}
 <div class="usa-alert usa-alert--{{ include.status | default: 'info' }}">
   <div class="usa-alert__body">
-    <h3 class="usa-alert__heading">{{ include.heading | escape }}</h3>
+    <h3 class="usa-alert__heading">{{ heading | escape }}</h3>
     <div class="usa-alert__text">
-      {% unless include.html %}
-        {{ include.content | strip | markdownify }}
+      {% unless "include.html" %}
+        {{ content | strip | markdown }}
       {% else %}
-        {{ include.content }}
+        {{ content }}
       {% endunless %}
     </div>
   </div>
