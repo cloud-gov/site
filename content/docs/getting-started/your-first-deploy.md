@@ -1,7 +1,4 @@
 ---
-parent: getting-started
-layout: layouts/docs
-sidenav: true
 title: Your first deploy
 weight: -30
 ---

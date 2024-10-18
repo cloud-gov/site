@@ -1,7 +1,4 @@
 ---
-parent: management
-layout: layouts/docs
-sidenav: true
 redirect_from:
     - /docs/apps/continuous-deployment/
 title: Continuous deployment

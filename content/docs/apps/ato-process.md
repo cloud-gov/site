@@ -1,8 +1,4 @@
 ---
-parent: compliance
-layout: layouts/docs
-permalink: docs/compliance/ato-process/
-sidenav: true
 title: ATO process
 ---
 

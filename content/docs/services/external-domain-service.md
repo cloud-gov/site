@@ -1,7 +1,5 @@
 ---
 parent: services
-layout: layouts/docs
-sidenav: true
 title: External domain service
 name: "external-domain-service"
 description: "Custom domains and TLS certificates with automatic renewal"

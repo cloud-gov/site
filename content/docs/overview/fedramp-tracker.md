@@ -1,8 +1,4 @@
 ---
-parent: overview
-layout: layouts/docs
-permalink: docs/overview/fedramp-tracker/
-sidenav: true
 title: FedRAMP Authorized
 weight: 0
 redirect_from:

@@ -1,7 +1,4 @@
 ---
-parent: deployment
-layout: layouts/docs
-sidenav: true
 title: Languages and frameworks
 weight: 29
 redirect_from:

@@ -1,8 +1,5 @@
 ---
-parent: customer-stories
 layout: layouts/page
-permalink: docs/customer-stories/fec/
-sidenav: true
 title: Federal Election Commission
 kicker: Case study
 redirect_from:

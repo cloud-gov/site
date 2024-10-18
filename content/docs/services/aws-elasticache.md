@@ -1,7 +1,5 @@
 ---
 parent: services
-layout: layouts/docs
-sidenav: true
 title: AWS Elasticache Redis
 name: "aws-elasticache"
 description: "AWS Elasticache Redis: an in-memory data structure store"

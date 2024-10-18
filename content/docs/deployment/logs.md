@@ -1,7 +1,4 @@
 ---
-parent: deployment
-layout: layouts/docs
-sidenav: true
 redirect_from:
     - /docs/apps/logs/
 title: Logs

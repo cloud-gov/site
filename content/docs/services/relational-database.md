@@ -1,7 +1,5 @@
 ---
 parent: services
-layout: layouts/docs
-sidenav: true
 title: RDS - Relational databases
 description: "Persistent, relational databases using Amazon RDS"
 redirect_from:

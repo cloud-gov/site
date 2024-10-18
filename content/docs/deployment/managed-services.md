@@ -1,8 +1,5 @@
 ---
 title: Managed services
-parent: deployment
-layout: layouts/docs
-sidenav: true
 redirect_from:
   - /docs/apps/managed-services/
   - /overview/pricing/managed-services

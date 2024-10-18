@@ -1,8 +1,4 @@
 ---
-parent: deployment
-layout: layouts/docs
-permalink: docs/deployment/deployment/
-sidenav: true
 title: Basic deployment instructions
 redirect_from:
     - /docs/apps/deployment/

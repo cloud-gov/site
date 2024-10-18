@@ -1,8 +1,4 @@
 ---
-parent: compliance
-layout: layouts/docs
-sidenav: true
-permalink: docs/compliance/meeting-tic-requirements/
 title: Meeting TIC requirements
 redirect_from:
   - /docs/orgs/meeting-tic-requirements

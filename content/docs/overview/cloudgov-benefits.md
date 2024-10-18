@@ -1,8 +1,4 @@
 ---
-parent: overview
-permalink: docs/overview/cloudgov-benefits/
-layout: layouts/docs
-sidenav: true
 overview: true
 title: The benefits of cloud.gov
 weight: -51

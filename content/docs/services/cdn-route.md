@@ -1,7 +1,5 @@
 ---
 parent: services
-layout: layouts/docs
-sidenav: true
 title: CDN service (deprecated)
 name: "cdn-route"
 description: "Custom domains, CDN caching, and TLS certificates with automatic renewal"

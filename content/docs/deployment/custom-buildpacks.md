@@ -1,16 +1,10 @@
 ---
-parent: deployment
-permalink: docs/deployment/custom-buildpacks/
 redirect_from:
     - /apps/multi-buildpack-deploys/
     - /apps/apt-get/
     - /apps/experimental/custom-buildpacks/
     - /docs/apps/assets/
-
-layout: layouts/docs
-sidenav: true
 title: More languages (custom buildpacks)
-
 weight: 30
 ---
 

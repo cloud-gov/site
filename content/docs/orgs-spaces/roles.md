@@ -1,7 +1,5 @@
 ---
 parent: orgs-spaces
-layout: layouts/docs
-sidenav: true
 redirect_from: 
     - /docs/apps/managing-teammates/
     - /docs/management/managing-teammates/

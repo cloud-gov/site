@@ -1,7 +1,5 @@
 ---
 parent: orgs-spaces
-layout: layouts/docs
-sidenav: true
 title: Manage org quotas
 ---
 

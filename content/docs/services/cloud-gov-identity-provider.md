@@ -1,7 +1,5 @@
 ---
 parent: services
-layout: layouts/docs
-sidenav: true
 title: cloud.gov identity provider
 name: "cloud-gov-identity-provider"
 description: "Authenticate cloud.gov users in your app"

@@ -1,7 +1,4 @@
 ---
-parent: management
-layout: layouts/docs
-sidenav: true
 redirect_from:
     - /docs/apps/database-backup-restore/
 title: Perform a database backup or restore

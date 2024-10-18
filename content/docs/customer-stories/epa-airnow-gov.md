@@ -1,8 +1,4 @@
 ---
-parent: customer-stories
-layout: layouts/docs
-permalink: docs/customer-stories/epa-airnow-gov/
-sidenav: true
 title: Environmental Protection Agency - AirNow.gov
 kicker: Case study
 redirect_from:

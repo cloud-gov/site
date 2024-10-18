@@ -1,8 +1,4 @@
 ---
-parent: technology
-layout: layouts/docs
-permalink: docs/technology/platform-protections/
-sidenav: true
 title: Protections against malicious activity
 weight: 30
 updated: Last Modified

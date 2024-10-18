@@ -1,8 +1,4 @@
 ---
-parent: overview
-permalink: docs/overview/cloudgov-team/
-layout: layouts/docs
-sidenav: true
 title: The cloud.gov team
 overview: true
 weight: 80

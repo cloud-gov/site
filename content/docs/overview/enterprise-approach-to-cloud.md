@@ -1,11 +1,7 @@
 ---
-parent: overview
-layout: layouts/docs
-sidenav: true
 title: Enterprise accounts
 weight: -99
 overview: true
-permalink: docs/overview/enterprise-approach-to-cloud/
 redirect_from:
   - /enterprise
 ---

@@ -1,8 +1,5 @@
 ---
 parent: ops
-
-layout: layouts/docs
-sidenav: true
 title: Team docs have moved
 redirect_from:
   - /docs/ops/aws-onboarding/

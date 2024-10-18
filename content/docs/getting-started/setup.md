@@ -1,7 +1,4 @@
 ---
-parent: getting-started
-layout: layouts/docs
-sidenav: true
 title: Set up cloud.gov and log in
 weight: -50
 ---

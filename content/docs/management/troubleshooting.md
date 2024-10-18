@@ -1,7 +1,5 @@
 ---
-parent: apps
-layout: layouts/docs
-sidenav: true
+
 title: Troubleshooting
 redirect_from: 
     - /docs/apps/troubleshooting/

@@ -1,7 +1,5 @@
 ---
 parent: services
-layout: layouts/docs
-sidenav: true
 title: "AWS Elasticsearch"
 name: aws-elasticsearch"
 description: "AWS search: a distributed, RESTful search and analytics engine"

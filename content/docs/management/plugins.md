@@ -1,8 +1,4 @@
 ---
-parent: management
-layout: layouts/docs
-sidenav: true
-permalink: docs/management/plugins/
 title: CF CLI plugins
 ---
 

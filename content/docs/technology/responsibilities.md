@@ -1,8 +1,4 @@
 ---
-parent: technology
-layout: layouts/docs
-permalink: docs/technology/responsibilities/
-sidenav: true
 title: What the cloud.gov PaaS offers
 weight: 5
 redirect_from:

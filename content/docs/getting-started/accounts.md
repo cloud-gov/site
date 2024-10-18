@@ -1,8 +1,4 @@
 ---
-parent: getting-started
-permalink: docs/getting-started/accounts/
-layout: layouts/docs
-sidenav: true
 title: Get access to cloud.gov
 weight: -100
 ---

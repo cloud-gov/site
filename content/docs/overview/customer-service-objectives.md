@@ -1,8 +1,4 @@
 ---
-parent: overview
-layout: layouts/docs
-permalink: docs/overview/customer-service-objectives/
-sidenav: true
 title: Our customer service objectives
 overview: true
 weight: 15

@@ -1,7 +1,5 @@
 ---
-parent: management
-layout: layouts/docs
-sidenav: true
+
 redirect_from:
     - /docs/apps/limits/
 title: Set org, space, and app limits

@@ -1,8 +1,4 @@
 ---
-parent: orgs-spaces
-layout: layouts/docs
-sidenav: true
-permalink: docs/orgs-spaces/dashboard/
 title: Dashboard
 ---
 

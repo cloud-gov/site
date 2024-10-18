@@ -1,9 +1,5 @@
 ---
 title: Introduction
-parent: services
-layout: layouts/docs
-permalink: docs/services/intro/
-sidenav: true
 weight: -1
 redirect_from:
   - /docs/services/

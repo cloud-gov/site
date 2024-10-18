@@ -1,7 +1,4 @@
 ---
-parent: apps
-layout: layouts/docs
-sidenav: true
 redirect_from: 
     - /docs/apps/static/
 title: Deploying static sites

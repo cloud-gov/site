@@ -1,8 +1,4 @@
 ---
-parent: overview
-permalink: docs/overview/what-is-cloudgov/
-layout: layouts/docs
-sidenav: true
 title: What is cloud.gov?
 weight: -99
 overview: true

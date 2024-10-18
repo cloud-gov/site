@@ -1,8 +1,4 @@
 ---
-parent: overview
-layout: layouts/docs
-permalink: docs/overview/portfolio-analysis/
-sidenav: true
 title: What applications are supported?
 overview: true
 weight: 16

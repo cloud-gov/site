@@ -1,7 +1,5 @@
 ---
-parent: management
-layout: layouts/docs
-sidenav: true
+
 redirect_from: 
     - /docs/apps/moving-apps/
 title: Moving apps between spaces

@@ -1,8 +1,4 @@
 ---
-parent: technology
-layout: layouts/docs
-permalink: docs/technology/conforming-federal-security-regulations/
-sidenav: true
 title: How cloud.gov helps teams comply with requirements
 weight: 20
 redirect_from:

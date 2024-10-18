@@ -1,7 +1,4 @@
 ---
-parent: compliance
-layout: layouts/docs
-sidenav: true
 title: M-21-31 compliance
 ---
 

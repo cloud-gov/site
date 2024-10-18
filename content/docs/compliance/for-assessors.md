@@ -1,7 +1,4 @@
 ---
-parent: compliance
-layout: layouts/docs
-sidenav: true
 title: Overview for assessors
 weight: 50
 redirect_from:

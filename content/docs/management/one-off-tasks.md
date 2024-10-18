@@ -1,7 +1,5 @@
 ---
-parent: management
-layout: layouts/docs
-sidenav: true
+
 redirect_from: 
     - /docs/apps/one-off-tasks/
 title: Running one-off tasks

@@ -1,8 +1,4 @@
 ---
-parent: overview
-layout: layouts/docs
-sidenav: true
-permalink: docs/overview/using-cloudgov-paas/
 title: What you can do with the cloud.gov platform
 weight: 13
 overview: true

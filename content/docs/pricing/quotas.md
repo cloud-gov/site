@@ -1,7 +1,5 @@
 ---
 parent: pricing
-layout: layouts/docs
-sidenav: true
 title: Quota costs, billing, and limits
 weight: 5
 redirect_from:

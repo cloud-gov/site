@@ -1,8 +1,4 @@
 ---
-parent: overview
-layout: layouts/docs
-permalink: docs/overview/who-can-use-cloudgov/
-sidenav: true
 title: Who can use it?
 weight: 15
 overview: true

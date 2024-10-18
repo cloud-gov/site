@@ -1,8 +1,4 @@
 ---
-parent: deployment
-layout: layouts/docs
-permalink: docs/deployment/docker/
-sidenav: true
 title: Deploying Docker images
 redirect_from:
   - /docs/intro/technology/containers

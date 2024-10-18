@@ -1,7 +1,5 @@
 ---
 parent: services
-layout: layouts/docs
-sidenav: true
 title: cloud.gov service account
 name: "cloud-gov-service-account"
 description: "cloud.gov service accounts for automated access by programs"

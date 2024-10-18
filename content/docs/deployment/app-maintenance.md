@@ -1,11 +1,7 @@
 ---
-parent: deployment
-permalink: docs/deployment/app-maintenance/
 redirect_from: 
     - /docs/getting-started/app-maintenance/
     - /docs/apps/app-maintenance/
-layout: layouts/docs
-sidenav: true
 title: App maintenance
 weight: -90
 ---

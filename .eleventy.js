@@ -201,6 +201,9 @@ module.exports = function (config) {
   }
 
   config.addUrlTransform((page) => {
+    if (page.url.startsWith("/content/docs")) {
+      return page.url.replace("/content/docs", "/docs");
+    }
     if (page.url.startsWith("/content/knowledge-base/articles")) {
       return page.url.replace("/pages/knowledge-base/articles", "/knowledge-base");
     }

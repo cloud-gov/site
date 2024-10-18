@@ -1,7 +1,4 @@
 ---
-parent: getting-started
-layout: layouts/docs
-sidenav: true
 title: Reference
 redirect_from:
   - /docs

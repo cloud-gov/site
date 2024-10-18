@@ -1,7 +1,4 @@
 ---
-parent: getting-started
-layout: layouts/docs
-sidenav: true
 title: Concepts
 redirect_from:
   - /docs/intro/terminology/system-terminology

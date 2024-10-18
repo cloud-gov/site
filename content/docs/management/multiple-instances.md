@@ -1,8 +1,6 @@
 ---
 date: 2015-05-27T13:32:00-04:00
-parent: management
-layout: layouts/docs
-sidenav: true
+
 redirect_from: 
     - /docs/apps/multiple-instances/
 title: Running multiple instances

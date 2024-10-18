@@ -1,8 +1,5 @@
 ---
 title: Code samples
-parent: getting-started
-layout: layouts/docs
-sidenav: true
 ---
 
 ## Prerequisites

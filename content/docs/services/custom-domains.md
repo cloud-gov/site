@@ -1,7 +1,5 @@
 ---
 parent: services
-layout: layouts/docs
-sidenav: true
 title: Custom domain service (deprecated)
 name: "custom-domain"
 description: "Custom domains and TLS certificates with automatic renewal"
