@@ -1,24 +1,103 @@
-const { DateTime } = require('luxon');
+const {DateTime} = require('luxon');
 const fs = require('fs');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginNavigation = require('@11ty/eleventy-navigation');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const {markdownItTable} = require('markdown-it-table');
 const yaml = require("js-yaml");
 const svgSprite = require("eleventy-plugin-svg-sprite");
-const { imageShortcode, imageWithClassShortcode } = require('./config');
+const {imageShortcode, imageWithClassShortcode} = require('./config');
+const pluginTOC = require('eleventy-plugin-toc')
+const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const inspect = require("util").inspect;
+const striptags = require("striptags");
+const path = require("path");
+const matter = require('gray-matter');
+
+
+function fileExists(filePath) {
+  return fs.existsSync(filePath);
+}
+
+function loadConfig(filePath) {
+  try {
+    const resolvedPath = path.resolve(filePath);
+    return require(resolvedPath);
+  } catch (error) {
+    return false;
+  }
+}
+
+function getFilesByTypes(directoryPath, fileTypes) {
+  const files = fs.readdirSync(directoryPath);
+  const matchingFiles = [];
+  for (const file of files) {
+    const filePath = path.join(directoryPath, file);
+    const fileStat = fs.statSync(filePath);
+    if (fileStat.isFile() && fileTypes.includes(path.extname(file).toLowerCase())) {
+      matchingFiles.push(file);
+    }
+  }
+  return matchingFiles;
+}
+
+function getFrontMatterSync(filePath) {
+  try {
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const parsed = matter(fileContent);
+    return {
+      data: parsed.data,  // Front matter as an object
+      content: parsed.content,  // Content without front matter
+    };
+  } catch (error) {
+    console.error(`Error reading file: ${error.message}`);
+    return null;
+  }
+}
+
+function getPageData(filePath) {
+  const pageData = {}; // Default structure
+
+  // Try to resolve Eleventy page metadata (if available)
+  try {
+    const eleventyPage = require(filePath); // Simulate page loading
+    if (eleventyPage) {
+      pageData.url = eleventyPage.url;
+      pageData.fileSlug = eleventyPage.fileSlug;
+      pageData.outputPath = eleventyPage.outputPath;
+    }
+  } catch (error) {
+    console.warn(`Could not load 11ty page data for: ${filePath}`, error);
+  }
+
+  return pageData;
+}
+
 
 module.exports = function (config) {
   // Set pathPrefix for site
   let pathPrefix = '/';
 
-  // Copy the `admin` folders to the output
-  config.addPassthroughCopy('admin');
-
   // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
-  config.addPassthroughCopy({'./node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js'});
+  config.addPassthroughCopy({
+    'admin': 'admin',
+    '_assets': 'assets',
+    '_img': 'img',
+    'resources': 'resources',
+    'favicon.ico': 'favicon.ico',
+    './node_modules/PrismJS/themes/prism-coldark-dark.css': 'assets/styles/prism-atom-dark.css',
+    './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
+    './node_modules/@uswds/uswds/dist/img/sprite.svg': 'img/sprite.svg',
+    './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.min.js'
+  });
 
-  // Add plugins
+  config.addFilter("striptags", (content) => {
+    return striptags(content);
+  });
+
+  // Add plugins.html
   config.addPlugin(pluginRss);
   config.addPlugin(pluginNavigation);
 
@@ -36,18 +115,31 @@ module.exports = function (config) {
     svgShortcode: 'usa_icons'
   });
 
+  config.addPlugin(pluginTOC, {
+    tags: ['h2']
+  });
+
   // Allow yaml to be used in the _data dir
   config.addDataExtension("yaml", contents => yaml.load(contents));
 
+  config.addFilter("debug", (content) => `<pre><code>${inspect(content)}</code></pre>`)
+
   config.addFilter('readableDate', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(
-      'dd LLL yyyy'
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(
+      'LLLL d, yyyy'
     );
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   config.addFilter('htmlDateString', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  });
+
+  config.addFilter('getSideNav', (collections=[], sidenavIdentifier="") => {
+    const sideNav = collections.find(x => x.sidenav === sidenavIdentifier);
+    return !!sideNav?.categories ? sideNav.categories.sort((a, b) => {
+      return a.weight - b.weight;
+    }) : [];
   });
 
   // Get the first `n` elements of a collection.
@@ -81,24 +173,163 @@ module.exports = function (config) {
     collection.getAll().forEach((item) => {
       (item.data.tags || []).forEach((tag) => tagSet.add(tag));
     });
-
     return filterTagList([...tagSet]);
   });
+
+  /**
+   * Create sidenavigation appropriate to folder structure
+   * An empty ".SIDENAV" file in a folder indicates the presence of a sidenav.
+   *  - 11ty will parse the folder. Example: content/docs/.SIDENAV
+   *  - This file can be empty. It just indicates the existence of navigation
+   * A ".SIDENAVCATEGORY" file describes information about the top level category.
+   *  - Example: content/docs/apps/.SIDENAVCATEGORY
+   *  - module.exports = {
+   *      name: "Compliance",
+   *      icon: "fa-check-square-o"
+   *    }
+   *   In your file front matter, to opt in to be included in a menu:
+   *   sidenav: true,
+   *   sidenavIdentifier: "docs",
+   */
+
+  config.addCollection("sideNavigation", function (collectionApi) {
+    const basePath = "content";
+    const mainFolders = fs
+      .readdirSync(basePath, {withFileTypes: true})
+      .filter((dirent) => {
+        const folderPath = path.join(basePath, dirent.name);
+        return (
+          dirent.isDirectory() &&
+          fileExists(path.join(folderPath, ".SIDENAV"))
+        );
+      });
+
+    const result = [];
+    for (const folder of mainFolders) {
+      const folderPath = path.join(basePath, folder.name);
+      const sidenavConfigPath = path.join(folderPath, ".SIDENAV");
+      const sidenavConfig = loadConfig(sidenavConfigPath);
+
+      if (sidenavConfig) {
+        const collection = {
+          sidenav: folder.name
+        };
+        const categories = [];
+
+        const subfolders = fs
+          .readdirSync(folderPath, {withFileTypes: true})
+          .filter((subdir) => subdir.isDirectory());
+
+        for (const subfolder of subfolders) {
+          const subfolderPath = path.join(folderPath, subfolder.name);
+          const categoryConfig = loadConfig(
+            path.join(subfolderPath, ".SIDENAVCATEGORY")
+          );
+
+          if (categoryConfig) {
+            const {name, icon} = categoryConfig;
+            const contentFiles = getFilesByTypes(subfolderPath, [
+              ".html",
+              ".md",
+              ".liquid",
+            ]);
+
+            const children = contentFiles
+              .map((file) => {
+                const filePath = `${subfolderPath}/${file}`;
+                const frontMatter = getFrontMatterSync(filePath)?.data;
+
+                if (frontMatter?.showInSidenav) {
+                  // Find corresponding page using the collection API
+                  const page = collectionApi.getAll().find((entry) =>
+                    entry.inputPath.endsWith(filePath)
+                  );
+
+                  return {
+                    ...frontMatter,
+                    url: page.url
+                  };
+                }
+                return null;
+              })
+              .filter(Boolean);
+            categories.push({
+              name,
+              weight: categoryConfig.weight,
+              id: subfolder.name,
+              icon,
+              children,
+            });
+          }
+        }
+        result.push({
+          ...collection,
+          categories,
+        });
+      }
+    }
+    console.log('Dynamic Side Navigation Configurations', result);
+    return result;
+  });
+
+  config.addPlugin(syntaxHighlight, {
+    highlight: function (str, lang) {
+      if (lang === "mermaid") {
+        // Bypass syntax highlighting for mermaid code blocks
+        return `<pre class="mermaid cg-diagrams">${str}</pre>`;
+      }
+
+      // Use the default syntax highlighting for other languages
+      const hljs = require("highlight.js");
+      if (hljs.getLanguage(lang)) {
+        return `<pre><code class="language-${lang}">${hljs.highlight(str, {language: lang}).value}</code></pre>`;
+      }
+
+      // Fallback: Return the code without highlighting if no valid language
+      return `<pre><code>${str}</code></pre>`;
+    }
+  });
+  config.addPlugin(pluginMermaid, {
+    html_tag: 'div',
+    extra_classes: 'cg-diagrams',
+    mermaid_config: {
+      theme: 'base'
+    }
+  });
+
+  function htmlEntities(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
 
   // Customize Markdown library and settings:
   let markdownLibrary = markdownIt({
     html: true,
     breaks: true,
-    linkify: true,
+    linkify: false
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
       placement: 'after',
       class: 'direct-link',
-      symbol: '#',
+      symbol: '',
       level: [1, 2, 3, 4],
     }),
     slugify: config.getFilter('slug'),
+  }).use(markdownItTable);
+  config.addFilter("markdown", (content) => {
+    return markdownLibrary.render(content);
   });
+  markdownLibrary.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+    const href = tokens[idx].attrGet("href");
+    if (href && href.startsWith("http")) {
+      tokens[idx].attrPush(["target", "_blank"]);
+      tokens[idx].attrPush(["rel", "noopener noreferrer"]);
+    }
+    return self.renderToken(tokens, idx, options);
+  };
+  markdownLibrary.renderer.rules.code_inline = (tokens, idx, {langPrefix = ''}) => {
+    const token = tokens[idx];
+    return `<code class="${langPrefix}plaintext">${htmlEntities(token.content)}</code>&nbsp;`;
+  };
   config.setLibrary('md', markdownLibrary);
 
   // Override Browsersync defaults (used only with --serve)
@@ -109,7 +340,7 @@ module.exports = function (config) {
 
         browserSync.addMiddleware('*', (req, res) => {
           // Provides the 404 content without redirect.
-          res.writeHead(404, { 'Content-Type': 'text/html; charset=UTF-8' });
+          res.writeHead(404, {'Content-Type': 'text/html; charset=UTF-8'});
           res.write(content_404);
           res.end();
         });
@@ -133,6 +364,25 @@ module.exports = function (config) {
   if (process.env.BASEURL) {
     pathPrefix = process.env.BASEURL
   }
+
+  config.addUrlTransform((page) => {
+    if (page.url.startsWith("/content/docs")) {
+      return page.url.replace("/content/docs", "/docs");
+    }
+    if (page.url.startsWith("/content/knowledge-base/articles")) {
+      return page.url.replace("/pages/knowledge-base/articles", "/knowledge-base");
+    }
+    if (page.url.startsWith("/content/pages/knowledge-base/articles")) {
+      return page.url.replace("/content/pages/knowledge-base/articles", "/pages/knowledge-base");
+    }
+    if (page.url.startsWith("/content/news/articles/")) {
+      let dateMatches = page.url.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/g);
+      let date = !!dateMatches && dateMatches.length > 0 ? dateMatches[0].replaceAll('-', '/') : '';
+      let descriptionMatches = page.url.match(/[A-Za-z]+-[A-Za-z]+/);
+      let description = !!descriptionMatches && descriptionMatches.length > 0 ? descriptionMatches[descriptionMatches.length - 1] + '/' : '';
+      return `/${date}/${description}`;
+    }
+  });
 
   return {
     // Control which files Eleventy will process

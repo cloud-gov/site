@@ -1,0 +1,5 @@
+module.exports = {
+  name: "Managing apps",
+  icon: "lightbulb",
+  weight: 30
+}

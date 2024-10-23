@@ -1,0 +1,5 @@
+module.exports = {
+  name: "Deploying apps",
+  icon: "file_present",
+  weight: 20
+}
