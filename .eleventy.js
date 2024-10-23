@@ -365,25 +365,6 @@ module.exports = function (config) {
     pathPrefix = process.env.BASEURL
   }
 
-  config.addUrlTransform((page) => {
-    if (page.url.startsWith("/content/docs")) {
-      return page.url.replace("/content/docs", "/docs");
-    }
-    if (page.url.startsWith("/content/knowledge-base/articles")) {
-      return page.url.replace("/pages/knowledge-base/articles", "/knowledge-base");
-    }
-    if (page.url.startsWith("/content/pages/knowledge-base/articles")) {
-      return page.url.replace("/content/pages/knowledge-base/articles", "/pages/knowledge-base");
-    }
-    if (page.url.startsWith("/content/news/articles/")) {
-      let dateMatches = page.url.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/g);
-      let date = !!dateMatches && dateMatches.length > 0 ? dateMatches[0].replaceAll('-', '/') : '';
-      let descriptionMatches = page.url.match(/[A-Za-z]+-[A-Za-z]+/);
-      let description = !!descriptionMatches && descriptionMatches.length > 0 ? descriptionMatches[descriptionMatches.length - 1] + '/' : '';
-      return `/${date}/${description}`;
-    }
-  });
-
   return {
     // Control which files Eleventy will process
     // e.g.: *.md, *.njk, *.html, *.liquid
@@ -415,9 +396,10 @@ module.exports = function (config) {
 
     // These are all optional (defaults are shown):
     dir: {
-      input: '.',
-      includes: '_includes',
-      data: '_data',
+      input: 'content',
+      pathPrefix: '/',
+      includes: '../_includes',
+      data: '../_data',
       output: '_site',
     },
   };
