@@ -1,11 +1,11 @@
-title: cloud.gov
-email: support@cloud.gov
+title: Agency Name
+email: contact@example.gov
 description: >- # this means to ignore newlines
   Agency Name (EAC) Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   Aenean et sapien a leo auctor scelerisque quis nec magna. Sed dictum ante a risus vehicula facilisis.
 
 # Twitter handle. Only the handle, not the URL.
-twitter: clouddotgov
+twitter: 18F
 
 #################################################################
 #
@@ -52,100 +52,28 @@ ga:
 
 # Site Navigation
 primary_navigation:
-  - name: Why cloud.gov?
-    key: overview
+  - name: Home
+    url: /
+  - name: Blog
+    url: /blog/
+  - name: Document
+    url: /document/
+  - name: Document with sidenav
+    url: /document-with-sidenav/
+  - name: Document submenu
     children:
-      - name: Overview
-        url: /docs/overview/what-is-cloudgov/
-      - name: We’re FedRAMP authorized
-        url: /docs/overview/fedramp-tracker/
-      - name: Applications we support
-        url: /docs/overview/portfolio-analysis/
-      - name: Benefits of PaaS
-        url: /docs/technology/responsibilities/
-      - name: Customer stories
-        url: /docs/customer-stories/epa-airnow-gov/
-      - name: Our team
-        url: /docs/overview/cloudgov-team/
-  - name: Get started
-    url: /sign-up/
-  - name: Pricing
-    key: pricing
-    children:
-      - name: Pricing
-        url: /pricing/
-      - name: Try a Free Sandbox
-        url: /docs/pricing/free-limited-sandbox/
-      - name: Quota Costs Billing & Limits
-        url: /docs/pricing/quotas/
-      - name: Support Packages
-        url: /support-packages/
-  - name: Documentation
-    key: docs
-    children:
-      - name: Deploying apps
-        url: /docs/deployment/deployment/
-      - name: Managing apps
-        url: /docs/management/plugins/
-      - name: Managing services
-        url: /docs/services/intro/
-      - name: Managing orgs
-        url: /docs/orgs-spaces/dashboard/
-  - name: News
-    url: /news/
-  - name: Knowledge base
-    url: /knowledge-base/
-  - name: Pages
-    url: /pages/
-  - name: Contact us
-    url: /contact/
+      - name: Navigation link
+        url: "#main-content"
+      - name: Navigation link
+        url: "#main-content"
+      - name: Navigation link
+        url: "#main-content"
 
 secondary_navigation:
-  - name: Platform Status
-    url: https://cloudgov.statuspage.io/
-  - name: Log in
-    url: https://login.fr.cloud.gov/login
-
-documentation_navigation:
-  - name: "Overview"
-    identifier: "overview"
-    icon: fa-home
-    weight: -150
-  - name: "Technology and security"
-    identifier: "technology"
-    icon: fa-lock
-    weight: -130
-  - name: "Customer stories"
-    identifier: "customer-stories"
-    icon: fa-star
-    weight: -120
-  - name: "Getting started"
-    identifier: "getting-started"
-    icon: fa-road
-    weight: -115
-  - name: "Deploying apps"
-    identifier: "deployment"
-    icon: fa-file-text
-    weight: -110
-  - name: "Services"
-    identifier: "services"
-    icon: fa-database
-    weight: -100
-  - name: "Managing apps"
-    identifier: "management"
-    icon: fa-rocket
-    weight: -100
-  - name: "Managing orgs"
-    identifier: "orgs-spaces"
-    icon: fa-users
-    weight: -100
-  - name: "Compliance"
-    identifier: "compliance"
-    icon: fa-check-square-o
-    weight: -95
-  - name: "Team documentation"
-    identifier: "ops"
-    icon: fa-wrench
+  - name: Secondary link
+    url: "#main-content"
+  - name: Another secondary link
+    url: "#main-content"
 
 # Search.gov configuration
 #
@@ -153,41 +81,24 @@ documentation_navigation:
 # 2. Add a new site.
 # 3. Add your site/affiliate name here.
 searchgov:
-  endpoint: https://search.usa.gov # You should not change this.
-  affiliate: cloud.gov
-  access_key: v_vjJAaWUAy1wHDmCPVM7zEvyH7-gbS1WeYhoEA_X9o=
-  inline: false #this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
+
+  # Only change this if you're using a CNAME. Learn more here: https://search.gov/manual/cname.html
+  endpoint: https://search.usa.gov
+
+  # Replace this with your search.gov account.
+  affiliate: federalist-uswds-example
+
+  # Replace this with your access key.
+  access_key: xX1gtb2RcnLbIYkHAcB6IaTRr4ZfN-p16ofcyUebeko=
+
+  # This renders the results within the page instead of sending to user to search.gov.
+  inline: true
+
+  # This allows Search.gov to present relevant type-ahead search suggestions in your website's search box.
+  # If you do not want to present search suggestions, set this value to false.
   suggestions: true
 
 ##########################################################################################
 # The values below here are more advanced and should only be
 # changed if you know what they do
 ##########################################################################################
-
-
-collections:
-  pages:
-    output: true
-    permalink: /:path/
-  docs:
-    output: true
-    permalink: /:collection/:path/
-  kbarticles:
-    output: true
-    permalink: /knowledge-base/:path/
-  kbarticlespages:
-    output: true
-    permalink: /pages/knowledge-base/:path/
-
-permalink: pretty
-
-toc:
-  min_level: 2
-  max_level: 2
-  ordered_list: true
-  no_toc_section_class: no_toc_section
-  list_id: toc
-  list_class: section-nav
-  sublist_class: ''
-  item_class: toc-entry
-  item_prefix: toc-
