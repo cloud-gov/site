@@ -1,11 +1,25 @@
-title: Agency Name
-email: contact@example.gov
-description: >- # this means to ignore newlines
-  Agency Name (EAC) Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Aenean et sapien a leo auctor scelerisque quis nec magna. Sed dictum ante a risus vehicula facilisis.
+title: cloud.gov
+email: support@cloud.gov
+support_email_address: support@cloud.gov
+description: >- # this means to ignore newlines until "baseurl:"
+  Expedite your agency’s path to a secure and compliant cloud. cloud.gov provides an application environment that enables rapid deployment and ATO assessment for modern web applications.
+baseurl: "" # the subpath of your site, e.g. /knowledge-base
+# url: "https://example.gov" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Twitter handle. Only the handle, not the URL.
-twitter: 18F
+twitter: clouddotgov
+github_url: https://github.com/cloud-gov/cg-site
+support_email: mailto:support@cloud.gov?body=What+is+your+question%3F%0D%0A%0D%0APlease+provide+your+application+name+or+URL.+Do+not+include+any+sensitive+information+about+your+platform+in+this+email.
+inquiries_email: mailto:inquiries@cloud.gov?body=What%27s%20your%20name%3F%0A%0AWhat%20agency%20or%20office%20do%20you%20work%20for%3F%0A%0AWhat%27s%20your%20job%20title%20or%20role%3F%0A%0ATell%20us%20a%20little%20about%20your%20project%20or%20your%20questions%20about%20cloud.gov%3A%0A%0AIf%20you%27d%20like%20us%20to%20call%20you%2C%20what%27s%20your%20phone%20number%20and%20when%20might%20be%20a%20good%20time%3F%0A%0AHow%20did%20you%20first%20hear%20about%20cloud.gov%3F
+
+github_branch: main
+
+# Configuration for Google Analytics, add your UA code here:
+google_analytics_ua: UA-48605964-34
+
+# Configuration for DAP, add your agency ID here:
+dap_agency: GSA
+dap_subagency: TTS,cloud.gov
 
 #################################################################
 #
@@ -41,39 +55,70 @@ twitter: 18F
 #
 #################################################################
 dap:
-  # agency: your-agency
+# agency: your-agency
 
-  # Optional
-  # subagency: your-subagency
+# Optional
+# subagency: your-subagency
 
 # Configuration for Google Analytics
 ga:
-  # ua: your-ua
+# ua: your-ua
 
 # Site Navigation
 primary_navigation:
-  - name: Home
-    url: /
-  - name: Blog
-    url: /blog/
-  - name: Document
-    url: /document/
-  - name: Document with sidenav
-    url: /document-with-sidenav/
-  - name: Document submenu
+  - name: Why cloud.gov?
+    key: overview
     children:
-      - name: Navigation link
-        url: "#main-content"
-      - name: Navigation link
-        url: "#main-content"
-      - name: Navigation link
-        url: "#main-content"
+      - name: Overview
+        url: /docs/overview/what-is-cloudgov/
+      - name: We’re FedRAMP authorized
+        url: /docs/overview/fedramp-tracker/
+      - name: Applications we support
+        url: /docs/overview/portfolio-analysis/
+      - name: Benefits of PaaS
+        url: /docs/technology/responsibilities/
+      - name: Customer stories
+        url: /docs/customer-stories/epa-airnow-gov/
+      - name: Our team
+        url: /docs/overview/cloudgov-team/
+  - name: Get started
+    url: /sign-up/
+  - name: Pricing
+    key: pricing
+    children:
+      - name: Pricing
+        url: /pricing/
+      - name: Try a Free Sandbox
+        url: /docs/pricing/free-limited-sandbox/
+      - name: Quota Costs Billing & Limits
+        url: /docs/pricing/quotas/
+      - name: Support Packages
+        url: /support-packages/
+  - name: Documentation
+    key: docs
+    children:
+      - name: Deploying apps
+        url: /docs/deployment/deployment/
+      - name: Managing apps
+        url: /docs/management/plugins/
+      - name: Managing services
+        url: /docs/services/intro/
+      - name: Managing orgs
+        url: /docs/orgs-spaces/dashboard/
+  - name: News
+    url: /news/
+  - name: Knowledge base
+    url: /knowledge-base/
+  - name: Pages
+    url: /pages/
+  - name: Contact us
+    url: /contact/
 
 secondary_navigation:
-  - name: Secondary link
-    url: "#main-content"
-  - name: Another secondary link
-    url: "#main-content"
+  - name: Platform Status
+    url: https://cloudgov.statuspage.io/
+  - name: Log in
+    url: https://login.fr.cloud.gov/login
 
 # Search.gov configuration
 #
@@ -81,24 +126,23 @@ secondary_navigation:
 # 2. Add a new site.
 # 3. Add your site/affiliate name here.
 searchgov:
-
-  # Only change this if you're using a CNAME. Learn more here: https://search.gov/manual/cname.html
-  endpoint: https://search.usa.gov
-
-  # Replace this with your search.gov account.
-  affiliate: federalist-uswds-example
-
-  # Replace this with your access key.
-  access_key: xX1gtb2RcnLbIYkHAcB6IaTRr4ZfN-p16ofcyUebeko=
-
-  # This renders the results within the page instead of sending to user to search.gov.
-  inline: true
-
-  # This allows Search.gov to present relevant type-ahead search suggestions in your website's search box.
-  # If you do not want to present search suggestions, set this value to false.
+  endpoint: https://search.usa.gov # You should not change this.
+  affiliate: cloud.gov
+  access_key: v_vjJAaWUAy1wHDmCPVM7zEvyH7-gbS1WeYhoEA_X9o=
+  inline: false #this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
   suggestions: true
 
 ##########################################################################################
 # The values below here are more advanced and should only be
 # changed if you know what they do
 ##########################################################################################
+
+permalink: pretty
+
+url: "https://cloud.gov"
+
+
+### plugin settings ###
+last-modified-at:
+  date-format: "%Y-%m-%d"
+
