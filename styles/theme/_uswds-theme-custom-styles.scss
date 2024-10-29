@@ -311,7 +311,7 @@ $theme-table-column-gap: 4;
 h1,
 .usa-prose h1 {
   @include u-text('semibold');
-  line-height: 1.15;
+  @include u-line-height('heading', 2);
 }
 
 h2,
@@ -528,7 +528,7 @@ main .usa-button--secondary {
 
 .usa-sidenav__sublist .usa-sidenav__sublist a,
 .usa-sidenav__sublist a:not(.usa-button) {
-  padding-left: 2.5rem !important;
+  @include u-padding-left(8);
 }
 
 // To Dop add in dropdown arrows

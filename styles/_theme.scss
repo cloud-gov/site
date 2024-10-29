@@ -262,7 +262,7 @@ a.cg-arrow {
     display: inline-block;
     @include u-padding-right('105');
     @include u-text('secondary-vivid');
-    font-family: 'Times New Roman', Arial, sans-serif;
+    @include u-font-family('merriweather');
   }
 }
 @include at-media('tablet') {
