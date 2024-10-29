@@ -416,7 +416,9 @@ h1 {
   line-height: 1.6;
 }
 
-.usa-icon {
-  vertical-align: middle;
-  top: -2px;
+.usa-sidenav {
+  .usa-icon {
+    vertical-align: middle;
+    top: -2px;
+  }
 }
