@@ -282,7 +282,7 @@ a.cg-arrow {
 
 .bg-primary-darker {
   h1 {
-    font-weight: 600;
+    @include u-text('bold');
   }
 }
 
@@ -405,12 +405,12 @@ code.language-plaintext {
 }
 
 h1 {
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  @include u-font-family('sans')
 }
 
 .usa-intro, .usa-prose>h1+p {
   max-width: 88ex;
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  @include u-font-family('sans');
   font-size: 1.46rem;
   font-weight: 400;
   line-height: 1.6;
