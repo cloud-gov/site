@@ -13,7 +13,7 @@
 }
 
 .usa-graphic-list {
-  font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  @include u-font-family('sans');
 }
 
 @media screen and (min-width: 640px) {
