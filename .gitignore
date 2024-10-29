@@ -121,3 +121,4 @@ _site
 public
 node_modules
 .idea
+_data/assetPaths.json
