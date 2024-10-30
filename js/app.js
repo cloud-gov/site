@@ -1,54 +1,14 @@
 require('@uswds/uswds');
 
-// Add your custom javascript here
-console.log("Hi from cloud.gov Pages");
-
-// mermaid.initialize({startOnLoad:true, theme: 'base'}, ".someOtherClass");
-
 const sideNavParents = document.querySelectorAll(".usa-sidenav__item--parent-item");
 const sideNavChild = document.querySelectorAll(".usa-sidenav__sublist--middle-generation");
 const subLists = document.querySelectorAll("ul.usa-sidenav__sublist");
 const middleSubList = document.querySelectorAll(".usa-sidenav__sublist ul");
 
-// TODO: Fix issue with anchors not being included
 if (!!anchors) {
   anchors.add('h2').remove('.no-anchor');
   anchors.add('h3').remove('.no-anchor');
 }
-
-if (location.search === "?b") {
-  document.querySelector('#main-content > .usa-section:first-child').classList.add('usa-section--dark');
-  document.querySelector('#main-content > .usa-section:nth-child(2)').classList.remove('usa-section--dark');
-  document.querySelectorAll('.bg-primary.radius-pill').forEach(function (el) {
-    el.classList.add('text-white');
-  });
-
-  document.querySelectorAll('img[src*="-on-blue.svg"]').forEach(function (el) {
-    el.src = el.src.replace(/-on-blue/, '-on-white');
-  });
-
-
-  document.querySelectorAll('#main-content > .usa-section:nth-child(2) a[href]:not(.anchorjs-link)').forEach(function (el) {
-    el.classList.add('cg-arrow');
-  });
-} else if (location.search === '?c') {
-  document.querySelector('#main-content > .usa-section:first-child').classList.add('usa-section--dark');
-  document.querySelector('#main-content > .usa-section:nth-child(2)').classList.remove('usa-section--dark');
-  document.querySelector('#main-content > .usa-section:nth-child(2)').classList.add('usa-section--light');
-  document.querySelectorAll('.bg-primary.radius-pill').forEach(function (el) {
-    el.classList.add('text-white');
-  });
-
-  document.querySelectorAll('img[src*="-on-blue.svg"]').forEach(function (el) {
-    el.src = el.src.replace(/-on-blue/, '-on-white');
-  });
-
-  document.querySelectorAll('#main-content > .usa-section:nth-child(2) a[href]:not(.anchorjs-link)').forEach(function (el) {
-    el.classList.add('cg-arrow');
-  });
-
-}
-
 function openCurrentSubNav(self) {
   self.setAttribute('aria-expanded', !self.getAttribute('aria-expanded'));
   self.classList.toggle('usa-current');
@@ -56,7 +16,7 @@ function openCurrentSubNav(self) {
   // //toggle the subnav
   const controlledElement = document.getElementById(ariaHandled);
   controlledElement.setAttribute('aria-hidden', (!controlledElement.getAttribute('aria-hidden')).toString());
-  controlledElement.classList.toggle('display-none');
+  controlledElement.classList.toggle('usa-sr-only');
 }
 
 function closeAllLists(listArray) {
@@ -87,38 +47,4 @@ const sideNavExpansion = function (event) {
 
 for (let i = 0; i < sideNavParents.length; i++) {
   sideNavParents[i].addEventListener('click', sideNavExpansion, false);
-}
-
-
-if (location.search === "?b") {
-  document.querySelector('#main-content > .usa-section:first-child').classList.add('usa-section--dark');
-  document.querySelector('#main-content > .usa-section:nth-child(2)').classList.remove('usa-section--dark');
-  document.querySelectorAll('.bg-primary.radius-pill').forEach(function (el) {
-    el.classList.add('text-white');
-  });
-
-  document.querySelectorAll('img[src*="-on-blue.svg"]').forEach(function (el) {
-    el.src = el.src.replace(/-on-blue/, '-on-white');
-  });
-
-
-  document.querySelectorAll('#main-content > .usa-section:nth-child(2) a[href]:not(.anchorjs-link)').forEach(function (el) {
-    el.classList.add('cg-arrow');
-  });
-} else if (location.search === '?c') {
-  document.querySelector('#main-content > .usa-section:first-child').classList.add('usa-section--dark');
-  document.querySelector('#main-content > .usa-section:nth-child(2)').classList.remove('usa-section--dark');
-  document.querySelector('#main-content > .usa-section:nth-child(2)').classList.add('usa-section--light');
-  document.querySelectorAll('.bg-primary.radius-pill').forEach(function (el) {
-    el.classList.add('text-white');
-  });
-
-  document.querySelectorAll('img[src*="-on-blue.svg"]').forEach(function (el) {
-    el.src = el.src.replace(/-on-blue/, '-on-white');
-  });
-
-  document.querySelectorAll('#main-content > .usa-section:nth-child(2) a[href]:not(.anchorjs-link)').forEach(function (el) {
-    el.classList.add('cg-arrow');
-  });
-
 }
