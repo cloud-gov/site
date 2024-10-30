@@ -410,10 +410,7 @@ h1 {
 
 .usa-intro, .usa-prose>h1+p {
   max-width: 88ex;
-  @include u-font-family('sans');
-  font-size: 1.46rem;
-  font-weight: 400;
-  line-height: 1.6;
+  @include u-font('body', 'lg');
 }
 
 .usa-sidenav {
