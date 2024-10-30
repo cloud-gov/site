@@ -132,6 +132,24 @@ module.exports = function (config) {
     }
   });
 
+  const originalUrlFilter = config.getFilter('url');
+
+  // Override the `url` filter
+  config.addFilter('url', function (url) {
+    if (!url) return url; // Handle empty or null URLs
+
+    const isExternal = /^https?:\/\//.test(url); // Check if the URL is external
+
+    if (isExternal) {
+      // For external links, return the URL wrapped in an anchor tag
+      return `${url}" target="_blank" rel="noopener noreferrer"`;
+    } else {
+      // For internal links, use the original filter
+      return originalUrlFilter(url);
+    }
+  });
+
+
   function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
