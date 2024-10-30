@@ -222,7 +222,7 @@ $theme-table-column-gap: 4;
 
     @include at-media($theme-table-responsive-expand-at) {
       thead {
-         //@include u-font("lang", 2);
+        //@include u-font("lang", 2);
       }
 
       th,
@@ -311,6 +311,7 @@ $theme-table-column-gap: 4;
 h1,
 .usa-prose h1 {
   @include u-text('semibold');
+  @include u-line-height('heading', 2);
 }
 
 h2,
@@ -409,12 +410,14 @@ h6 {
   }
 }
 
-@media (min-width: 40em) {
-  main {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-}
+// TODO: Make this only for the home page... or better yet, just give the home page a top padding
+
+//@media (min-width: 40em) {
+//  main {
+//    padding-top: 2rem;
+//    padding-bottom: 2rem;
+//  }
+//}
 
 main .usa-button {
   @include u-radius(1px);
@@ -523,8 +526,8 @@ main .usa-button--secondary {
   padding-left: 2.75rem;
 }
 
-//Grandchild link
-.usa-sidenav__sublist .usa-sidenav__sublist a {
+.usa-sidenav__sublist .usa-sidenav__sublist a,
+.usa-sidenav__sublist a:not(.usa-button) {
   @include u-padding-left(8);
 }
 
