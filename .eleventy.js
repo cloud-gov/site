@@ -13,6 +13,8 @@ const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const inspect = require("util").inspect;
 const striptags = require("striptags");
+const {JSDOM} = require('jsdom');
+
 
 module.exports = function (config) {
   // Set pathPrefix for site
@@ -132,24 +134,6 @@ module.exports = function (config) {
     }
   });
 
-  const originalUrlFilter = config.getFilter('url');
-
-  // Override the `url` filter
-  config.addFilter('url', function (url) {
-    if (!url) return url; // Handle empty or null URLs
-
-    const isExternal = /^https?:\/\//.test(url); // Check if the URL is external
-
-    if (isExternal) {
-      // For external links, return the URL wrapped in an anchor tag
-      return `${url}" target="_blank" rel="noopener noreferrer"`;
-    } else {
-      // For internal links, use the original filter
-      return originalUrlFilter(url);
-    }
-  });
-
-
   function htmlEntities(str) {
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
@@ -158,32 +142,58 @@ module.exports = function (config) {
   let markdownLibrary = markdownIt({
     html: true,
     breaks: true,
-    linkify: true
-  }).use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: 'after',
-      class: 'direct-link',
-      symbol: '',
-      level: [1, 2, 3, 4],
-    }),
-    slugify: config.getFilter('slug'),
-  }).use(markdownItTable);
+    linkify: true,
+    typographer: true
+  })
+    .use(function (md) {
+      // Override the default link rendering rule to add target and rel attributes
+      const defaultRender = md.renderer.rules.link_open || function (tokens, idx, options, env, self) {
+        return self.renderToken(tokens, idx, options);
+      };
+      md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+        const token = tokens[idx];
+        const hrefAttr = token.attrs ? token.attrs.find(attr => attr[0] === 'href') : null;
+        if (hrefAttr && /^https?:\/\//.test(hrefAttr[1])) {
+          token.attrSet('target', '_blank');
+          token.attrSet('rel', 'noopener noreferrer');
+        }
+        return defaultRender(tokens, idx, options, env, self);
+      };
+      md.renderer.rules.code_inline = (tokens, idx, {langPrefix = ''}) => {
+        const token = tokens[idx];
+        return `<code class="${langPrefix}plaintext">${htmlEntities(token.content)}</code>&nbsp;`;
+      };
+    })
+    .use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.ariaHidden({
+        placement: 'after',
+        class: 'direct-link',
+        symbol: '',
+        level: [1, 2, 3, 4],
+      }),
+      slugify: config.getFilter('slug'),
+    })
+    .use(markdownItTable);
+
   config.addFilter("markdown", (content) => {
     return markdownLibrary.render(content);
   });
-  markdownLibrary.renderer.rules.link_open = function (tokens, idx, options, env, self) {
-    const href = tokens[idx].attrGet("href");
-    if (href && href.startsWith("http")) {
-      tokens[idx].attrPush(["target", "_blank"]);
-      tokens[idx].attrPush(["rel", "noopener noreferrer"]);
-    }
-    return self.renderToken(tokens, idx, options);
-  };
-  markdownLibrary.renderer.rules.code_inline = (tokens, idx, {langPrefix = ''}) => {
-    const token = tokens[idx];
-    return `<code class="${langPrefix}plaintext">${htmlEntities(token.content)}</code>&nbsp;`;
-  };
   config.setLibrary('md', markdownLibrary);
+
+  config.addTransform("externalLinks", (content, outputPath) => {
+    if (outputPath && outputPath.endsWith(".html")) {
+      const dom = new JSDOM(content);
+      const links = dom.window.document.querySelectorAll("a[href^='http']");
+
+      links.forEach(link => {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      });
+
+      return dom.serialize();
+    }
+    return content;
+  });
 
   // Override Browsersync defaults (used only with --serve)
   config.setBrowserSyncConfig({
