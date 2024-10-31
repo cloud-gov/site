@@ -37,6 +37,18 @@ module.exports = function (config) {
     return striptags(content);
   });
 
+  config.addFilter("prepTOCContent", (content) => {
+    const toc = config.getFilter("toc");
+    const strip = config.getFilter("strip");
+    const strip_newlines = config.getFilter("strip_newlines")
+    return strip_newlines(strip(toc(content)));
+  });
+
+  config.addFilter("shouldShowTOC", (content, showToc) => {
+    return !!showToc && content !== "" && content !== '<ol id="toc" class="section-nav"></ol>';
+  });
+
+
   // Add plugins.html
   config.addPlugin(pluginRss);
   config.addPlugin(pluginNavigation);
