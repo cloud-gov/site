@@ -37,6 +37,7 @@ module.exports = function (config) {
     return striptags(content);
   });
 
+  // Prepare content for table of contents, at time of writing used on the docs.html layout
   config.addFilter("prepTOCContent", (content) => {
     const toc = config.getFilter("toc");
     const strip = config.getFilter("strip");
@@ -44,6 +45,7 @@ module.exports = function (config) {
     return strip_newlines(strip(toc(content)));
   });
 
+  // Determine if the table of contents should be shown, at time of writing used on the docs.html layout
   config.addFilter("shouldShowTOC", (content, showToc) => {
     return !!showToc && content !== "" && content !== '<ol id="toc" class="section-nav"></ol>';
   });
