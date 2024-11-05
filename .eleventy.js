@@ -167,6 +167,7 @@ module.exports = function (config) {
         const hrefAttr = token.attrs ? token.attrs.find(attr => attr[0] === 'href') : null;
         if (hrefAttr && /^https?:\/\//.test(hrefAttr[1])) {
           token.attrSet('target', '_blank');
+          token.attrSet('class', 'usa-link--external');
           token.attrSet('rel', 'noopener noreferrer');
         }
         return defaultRender(tokens, idx, options, env, self);
@@ -199,6 +200,7 @@ module.exports = function (config) {
 
       links.forEach(link => {
         link.setAttribute("target", "_blank");
+        link.setAttribute('class', 'usa-link--external');
         link.setAttribute("rel", "noopener noreferrer");
       });
 
