@@ -35,6 +35,20 @@ module.exports = function (config) {
     return striptags(content);
   });
 
+  // Prepare content for table of contents, at time of writing used on the docs.html layout
+  config.addFilter("prepTOCContent", (content) => {
+    const toc = config.getFilter("toc");
+    const strip = config.getFilter("strip");
+    const strip_newlines = config.getFilter("strip_newlines")
+    return strip_newlines(strip(toc(content)));
+  });
+
+  // Determine if the table of contents should be shown, at time of writing used on the docs.html layout
+  config.addFilter("shouldShowTOC", (content, showToc) => {
+    return !!showToc && content !== "" && content !== '<ol id="toc" class="section-nav"></ol>';
+  });
+
+
   // Add plugins.html
   config.addPlugin(pluginRss);
   config.addPlugin(pluginNavigation);
@@ -140,31 +154,43 @@ module.exports = function (config) {
   let markdownLibrary = markdownIt({
     html: true,
     breaks: true,
-    linkify: true
-  }).use(markdownItAnchor, {
-    permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: 'after',
-      class: 'direct-link',
-      symbol: '',
-      level: [1, 2, 3, 4],
-    }),
-    slugify: config.getFilter('slug'),
-  }).use(markdownItTable);
+    linkify: true,
+    typographer: true
+  })
+    .use(function (md) {
+      // Override the default link rendering rule to add target and rel attributes
+      const defaultRender = md.renderer.rules.link_open || function (tokens, idx, options, env, self) {
+        return self.renderToken(tokens, idx, options);
+      };
+      md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
+        const token = tokens[idx];
+        const hrefAttr = token.attrs ? token.attrs.find(attr => attr[0] === 'href') : null;
+        if (hrefAttr && /^https?:\/\//.test(hrefAttr[1])) {
+          token.attrSet('target', '_blank');
+          token.attrSet('class', 'usa-link--external');
+          token.attrSet('rel', 'noopener noreferrer');
+        }
+        return defaultRender(tokens, idx, options, env, self);
+      };
+      md.renderer.rules.code_inline = (tokens, idx, {langPrefix = ''}) => {
+        const token = tokens[idx];
+        return `<code class="${langPrefix}plaintext">${htmlEntities(token.content)}</code>&nbsp;`;
+      };
+    })
+    .use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.ariaHidden({
+        placement: 'after',
+        class: 'direct-link',
+        symbol: '',
+        level: [1, 2, 3, 4],
+      }),
+      slugify: config.getFilter('slug'),
+    })
+    .use(markdownItTable);
+
   config.addFilter("markdown", (content) => {
     return markdownLibrary.render(content);
   });
-  markdownLibrary.renderer.rules.link_open = function (tokens, idx, options, env, self) {
-    const href = tokens[idx].attrGet("href");
-    if (href && href.startsWith("http")) {
-      tokens[idx].attrPush(["target", "_blank"]);
-      tokens[idx].attrPush(["rel", "noopener noreferrer"]);
-    }
-    return self.renderToken(tokens, idx, options);
-  };
-  markdownLibrary.renderer.rules.code_inline = (tokens, idx, {langPrefix = ''}) => {
-    const token = tokens[idx];
-    return `<code class="${langPrefix}plaintext">${htmlEntities(token.content)}</code>&nbsp;`;
-  };
   config.setLibrary('md', markdownLibrary);
 
   // Override Browsersync defaults (used only with --serve)

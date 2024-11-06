@@ -6,15 +6,31 @@ layout: layouts/base
 This template is for a single page that does not have a date associated with it. For example, an about page.
 {% endcomment %}
 
-<div id="main-content" class="usa-layout-docs usa-section">
+<div class="usa-layout-docs usa-section {{background}} page-layout">
   <div class="grid-container">
     <div class="grid-row grid-gap">
       {% if sidenav == true %}
       {% include "sidenav.html" %}
       {% endif %}
-      <main>
-        <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
-            {{ content }}
+
+      {% assign custom_classes = '' %}
+      {% if page.sidenav == true %}
+        {% assign custom_classes = custom_classes | append: 'desktop:grid-col-8 ' %}
+      {% else %}
+        {% assign custom_classes = custom_classes | append: 'desktop:grid-col-12 ' %}
+      {% endif %}
+
+      <main id="main-content"
+            class="usa-layout-docs__main {{ custom_classes }} {{bg-color-class}}">
+        {% if hidetitle != true %}
+        <h1>{{ title }}</h1>
+        {% endif %}
+
+        {{ content }}
+
+        <div class="grid-row">
+          <div class="grid-col flex-4"></div>
+          <div class="grid-col flex-1"><p><a href="{{ site.github_url }}/edit/{{ site.github_branch }}/{{ page.relative_path }}" class="usa-link--external" target="_blank">Suggest edits</a></p></div>
         </div>
       </main>
     </div>
