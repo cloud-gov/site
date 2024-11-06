@@ -13,8 +13,6 @@ const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const inspect = require("util").inspect;
 const striptags = require("striptags");
-const {JSDOM} = require('jsdom');
-
 
 module.exports = function (config) {
   // Set pathPrefix for site
