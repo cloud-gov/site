@@ -195,22 +195,6 @@ module.exports = function (config) {
   });
   config.setLibrary('md', markdownLibrary);
 
-  config.addTransform("externalLinks", (content, outputPath) => {
-    if (outputPath && outputPath.endsWith(".html")) {
-      const dom = new JSDOM(content);
-      const links = dom.window.document.querySelectorAll("a[href^='http']");
-
-      links.forEach(link => {
-        link.setAttribute("target", "_blank");
-        link.setAttribute('class', 'usa-link--external');
-        link.setAttribute("rel", "noopener noreferrer");
-      });
-
-      return dom.serialize();
-    }
-    return content;
-  });
-
   // Override Browsersync defaults (used only with --serve)
   config.setBrowserSyncConfig({
     callbacks: {
