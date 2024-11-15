@@ -194,6 +194,102 @@ module.exports = function (config) {
     return filterTagList([...tagSet]);
   });
 
+  /**
+   * Create sidenavigation appropriate to folder structure
+   * An empty ".SIDENAV" file in a folder indicates the presence of a sidenav.
+   *  - 11ty will parse the folder. Example: content/docs/.SIDENAV
+   *  - This file can be empty. It just indicates the existence of navigation
+   * A ".SIDENAVCATEGORY" file describes information about the top level category.
+   *  - Example: content/docs/apps/.SIDENAVCATEGORY
+   *  - module.exports = {
+   *      name: "Compliance",
+   *      icon: "fa-check-square-o"
+   *    }
+   *   In your file front matter, to opt in to be included in a menu:
+   *   sidenav: true,
+   *   sidenavIdentifier: "docs",
+   */
+
+  config.addCollection("sideNavigation", function (collectionApi) {
+    const basePath = "content";
+    const mainFolders = fs
+      .readdirSync(basePath, {withFileTypes: true})
+      .filter((dirent) => {
+        const folderPath = path.join(basePath, dirent.name);
+        return (
+          dirent.isDirectory() &&
+          fileExists(path.join(folderPath, ".SIDENAV"))
+        );
+      });
+
+    const result = [];
+    for (const folder of mainFolders) {
+      const folderPath = path.join(basePath, folder.name);
+      const sidenavConfigPath = path.join(folderPath, ".SIDENAV");
+      const sidenavConfig = loadConfig(sidenavConfigPath);
+
+      if (sidenavConfig) {
+        const collection = {
+          sidenav: folder.name
+        };
+        const categories = [];
+
+        const subfolders = fs
+          .readdirSync(folderPath, {withFileTypes: true})
+          .filter((subdir) => subdir.isDirectory());
+
+        for (const subfolder of subfolders) {
+          const subfolderPath = path.join(folderPath, subfolder.name);
+          const categoryConfig = loadConfig(
+            path.join(subfolderPath, ".SIDENAVCATEGORY")
+          );
+
+          if (categoryConfig) {
+            const {name, icon} = categoryConfig;
+            const contentFiles = getFilesByTypes(subfolderPath, [
+              ".html",
+              ".md",
+              ".liquid",
+            ]);
+
+            const children = contentFiles
+              .map((file) => {
+                const filePath = `${subfolderPath}/${file}`;
+                const frontMatter = getFrontMatterSync(filePath)?.data;
+
+                if (frontMatter?.showInSidenav) {
+                  // Find corresponding page using the collection API
+                  const page = collectionApi.getAll().find((entry) =>
+                    entry.inputPath.endsWith(filePath)
+                  );
+
+                  return {
+                    ...frontMatter,
+                    url: page.url
+                  };
+                }
+                return null;
+              })
+              .filter(Boolean);
+            categories.push({
+              name,
+              weight: categoryConfig.weight,
+              id: subfolder.name,
+              icon,
+              children,
+            });
+          }
+        }
+        result.push({
+          ...collection,
+          categories,
+        });
+      }
+    }
+    console.log('Dynamic Side Navigation Configurations', result);
+    return result;
+  });
+
   config.addPlugin(syntaxHighlight, {
     highlight: function (str, lang) {
       if (lang === "mermaid") {
