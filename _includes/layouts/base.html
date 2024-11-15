@@ -16,8 +16,8 @@ The home page uses wide.html layout, since it extends full width of page
       {% assign primary_navigation = pages.navigation.primary %}
       {% assign secondary_navigation = pages.navigation.secondary %}
   {% else %}
-    {% assign primary_navigation = site.navigation.primary %}
-    {% assign secondary_navigation = site.navigation.secondary %}
+    {% assign primary_navigation = site.primary_navigation %}
+    {% assign secondary_navigation = site.secondary_navigation %}
   {% endif %}
   {% include "menu.html" primary_navigation: primary_navigation  secondary_navigation: secondary_navigation %}
 
