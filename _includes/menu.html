@@ -5,17 +5,17 @@ manage your navigation system {% endcomment %}
 <header class="usa-header usa-header--extended" role="banner">
   <div class="usa-navbar">
     {% if navigation == "pages" %}
-      {% include "pages/logo.html" %}
+    {% include "pages/logo.html" %}
     {% else %}
-      {% include "logo.html" %}
+    {% include "logo.html" %}
     {% endif %}
     <button class="usa-menu-btn">Menu</button>
   </div>
   <nav
-    id="menu-navigation"
-    aria-label="Menu navigation"
-    role="navigation"
-    class="usa-nav"
+          id="menu-navigation"
+          aria-label="Menu navigation"
+          role="navigation"
+          class="usa-nav"
   >
     <div class="usa-nav__inner">
       <button class="usa-nav__close">
@@ -23,15 +23,15 @@ manage your navigation system {% endcomment %}
       </button>
       <ul class="usa-nav__primary usa-accordion">
         {% for nav_item in primary_navigation %}
-          {% unless nav_item.children %}
+        {% unless nav_item.children %}
         {% assign basedir = page.url | remove_first: '/' | split: '/' | first |
         lstrip %} {% assign linkdir = nav_item.url | replace: "/", "" | lstrip
         %}
         <li class="usa-nav__primary-item">
           <a
-            class="usa-nav__link{% if basedir == linkdir %} usa-current{% endif %}"
-            href="{{ nav_item.url | url }}"
-            ><span>{{ nav_item.name | escape }}</span></a
+                  class="usa-nav__link{% if basedir == linkdir %} usa-current{% endif %}"
+                  href="{{ nav_item.url | url }}"
+          ><span>{{ nav_item.name | escape }}</span></a
           >
         </li>
         {% else %}
@@ -47,9 +47,9 @@ manage your navigation system {% endcomment %}
 
         <li class="usa-nav__primary-item">
           <button
-            class="usa-accordion__button usa-nav__link{% if is_current %} usa-current{% endif %}"
-            aria-expanded="false"
-            aria-controls="{{ nav_id }}"
+                  class="usa-accordion__button usa-nav__link{% if is_current %} usa-current{% endif %}"
+                  aria-expanded="false"
+                  aria-controls="{{ nav_id }}"
           >
             <span>{{ nav_item.name | escape }}</span>
           </button>
@@ -57,7 +57,7 @@ manage your navigation system {% endcomment %}
             {% for subnav_item in nav_item.children %}
             <li class="usa-nav__submenu-item">
               <a href="{{ subnav_item.url | url }}"
-                >{{ subnav_item.name | escape }}</a
+              >{{ subnav_item.name | escape }}</a
               >
             </li>
             {% endfor %}
@@ -70,7 +70,7 @@ manage your navigation system {% endcomment %}
           {% for nav_item in secondary_navigation %}
           <li class="usa-nav__secondary-item">
             <a href="{{ nav_item.url | url }}"
-              >{{ nav_item.name | escape }}</a
+            >{{ nav_item.name | escape }}</a
             >
           </li>
           {% endfor %}

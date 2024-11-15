@@ -13,6 +13,72 @@ const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const inspect = require("util").inspect;
 const striptags = require("striptags");
+const path = require("path");
+const matter = require('gray-matter');
+
+
+// Helper function to synchronously determine if a file exists
+function fileExists(filePath) {
+  return fs.existsSync(filePath);
+}
+
+function loadConfig(filePath) {
+  try {
+    const resolvedPath = path.resolve(filePath);
+    return require(resolvedPath);
+  } catch (error) {
+    return false;
+  }
+}
+
+// Helper function to retrieve all files in a folder by a given type
+function getFilesByTypes(directoryPath, fileTypes) {
+  const files = fs.readdirSync(directoryPath);
+  const matchingFiles = [];
+  for (const file of files) {
+    const filePath = path.join(directoryPath, file);
+    const fileStat = fs.statSync(filePath);
+    if (fileStat.isFile() && fileTypes.includes(path.extname(file).toLowerCase())) {
+      matchingFiles.push(file);
+    }
+  }
+  return matchingFiles;
+}
+
+// Retrieves front matter data from content files synchronously. General purpose function, but specifically used for dynamic sidenav generation
+function getFrontMatterSync(filePath) {
+  try {
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const parsed = matter(fileContent);
+    return {
+      data: parsed.data,  // Front matter as an object
+      content: parsed.content,  // Content without front matter
+    };
+  } catch (error) {
+    console.error(`Error reading file: ${error.message}`);
+    return null;
+  }
+}
+
+// Returns page metadata from 11ty
+function getPageData(filePath) {
+  const pageData = {}; // Default structure
+
+  // Try to resolve Eleventy page metadata (if available)
+  try {
+    const eleventyPage = require(filePath); // Simulate page loading
+    if (eleventyPage) {
+      pageData.url = eleventyPage.url;
+      pageData.fileSlug = eleventyPage.fileSlug;
+      pageData.outputPath = eleventyPage.outputPath;
+    }
+  } catch (error) {
+    console.warn(`Could not load 11ty page data for: ${filePath}`, error);
+  }
+
+  return pageData;
+}
+
 
 module.exports = function (config) {
   // Set pathPrefix for site
@@ -31,6 +97,7 @@ module.exports = function (config) {
     './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.min.js'
   });
 
+  // Strips HTML content. Good for general use if needed, but specifically used on paginated areas for description content.
   config.addFilter("striptags", (content) => {
     return striptags(content);
   });
@@ -38,9 +105,8 @@ module.exports = function (config) {
   // Prepare content for table of contents, at time of writing used on the docs.html layout
   config.addFilter("prepTOCContent", (content) => {
     const toc = config.getFilter("toc");
-    const strip = config.getFilter("strip");
-    const strip_newlines = config.getFilter("strip_newlines")
-    return strip_newlines(strip(toc(content)));
+    const striptags = config.getFilter("striptags");
+    return striptags(toc(content));
   });
 
   // Determine if the table of contents should be shown, at time of writing used on the docs.html layout
@@ -85,6 +151,13 @@ module.exports = function (config) {
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   config.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  });
+
+  config.addFilter('getSideNav', (collections=[], sidenavIdentifier="") => {
+    const sideNav = collections.find(x => x.sidenav === sidenavIdentifier);
+    return !!sideNav?.categories ? sideNav.categories.sort((a, b) => {
+      return a.weight - b.weight;
+    }) : [];
   });
 
   // Get the first `n` elements of a collection.

@@ -178,6 +178,7 @@
     .intro {
       h2 {
         @include u-font-size('sans', 10);
+        height: 60px;
       }
     }
   }
@@ -209,6 +210,11 @@
     &.intro-info {
       @include at-media('desktop') {
         min-height: 133px;
+        &.description {
+          height: 270px;
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
       }
     }
 
