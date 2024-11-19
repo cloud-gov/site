@@ -114,8 +114,7 @@ module.exports = function (config) {
     return !!showToc && content !== "" && content !== '<ol id="toc" class="section-nav"></ol>';
   });
 
-
-  // Add plugins.html
+  // Add plugins
   config.addPlugin(pluginRss);
   config.addPlugin(pluginNavigation);
 
@@ -286,7 +285,6 @@ module.exports = function (config) {
         });
       }
     }
-    console.log('Dynamic Side Navigation Configurations', result);
     return result;
   });
 

@@ -17,7 +17,7 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
                     </svg>&nbsp;
                     {{ category.name }}
                 </a>
-                <ul class="usa-sidenav__sublist {% if category.id != parent %}display-none{% endif %}"
+                <ul class="usa-sidenav__sublist {% if category.id != parent %}usa-sr-only{% endif %}"
                     id="side-nav-{{ category.id }}" aria-hidden="true">
                     {%- for navLink in category.children -%}
                     <li class="usa-sidenav__item">
