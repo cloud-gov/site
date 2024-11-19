@@ -1,6 +1,5 @@
 require('@uswds/uswds');
 import AnchorJS from 'anchor-js';
-
 const anchors = new AnchorJS();
 
 

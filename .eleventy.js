@@ -91,7 +91,7 @@ module.exports = function (config) {
     '_img': 'img',
     'resources': 'resources',
     'favicon.ico': 'favicon.ico',
-    './node_modules/PrismJS/themes/prism-coldark-dark.css': 'assets/styles/prism-atom-dark.css',
+    './node_modules/PrismJS/themes/prism-coldark-dark.css': 'assets/styles/prism.css',
     './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
     './node_modules/@uswds/uswds/dist/img/sprite.svg': 'img/sprite.svg',
     './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.min.js'
