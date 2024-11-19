@@ -1,0 +1,5 @@
+module.exports = {
+  name: "Compliance",
+  icon: "verified",
+  weight: 40
+}

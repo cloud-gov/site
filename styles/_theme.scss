@@ -421,7 +421,11 @@ h1 {
 
 .usa-sidenav {
   .usa-icon {
-    vertical-align: middle;
-    top: -2px;
+    vertical-align: top;
+    top: 3px;
+  }
+  .sidenav-category-label {
+    display: inline-block;
+    width: calc(100% - 25px);
   }
 }

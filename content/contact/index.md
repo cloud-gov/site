@@ -2,6 +2,7 @@
 permalink: contact/
 layout: layouts/docs
 sidenav: true
+sidenavIdentifier: "docs"
 title: Contact
 redirect_from:
   - /help

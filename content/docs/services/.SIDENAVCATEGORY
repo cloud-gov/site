@@ -1,0 +1,5 @@
+module.exports = {
+  name: "Services",
+  icon: "account_balance",
+  weight: 25
+}

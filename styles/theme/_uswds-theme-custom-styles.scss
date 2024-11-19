@@ -528,7 +528,7 @@ main .usa-button--secondary {
 
 .usa-sidenav__sublist .usa-sidenav__sublist a,
 .usa-sidenav__sublist a:not(.usa-button) {
-  @include u-padding-left(8);
+  @include u-padding-left(5);
 }
 
 // To Dop add in dropdown arrows

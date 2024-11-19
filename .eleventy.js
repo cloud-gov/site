@@ -91,7 +91,7 @@ module.exports = function (config) {
     '_img': 'img',
     'resources': 'resources',
     'favicon.ico': 'favicon.ico',
-    './node_modules/PrismJS/themes/prism-coldark-dark.css': 'assets/styles/prism-atom-dark.css',
+    './node_modules/PrismJS/themes/prism-coldark-dark.css': 'assets/styles/prism.css',
     './node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js',
     './node_modules/@uswds/uswds/dist/img/sprite.svg': 'img/sprite.svg',
     './node_modules/anchor-js/anchor.min.js': 'assets/js/anchor.min.js'
@@ -114,8 +114,7 @@ module.exports = function (config) {
     return !!showToc && content !== "" && content !== '<ol id="toc" class="section-nav"></ol>';
   });
 
-
-  // Add plugins.html
+  // Add plugins
   config.addPlugin(pluginRss);
   config.addPlugin(pluginNavigation);
 
@@ -192,6 +191,101 @@ module.exports = function (config) {
       (item.data.tags || []).forEach((tag) => tagSet.add(tag));
     });
     return filterTagList([...tagSet]);
+  });
+
+  /**
+   * Create sidenavigation appropriate to folder structure
+   * An empty ".SIDENAV" file in a folder indicates the presence of a sidenav.
+   *  - 11ty will parse the folder. Example: content/docs/.SIDENAV
+   *  - This file can be empty. It just indicates the existence of navigation
+   * A ".SIDENAVCATEGORY" file describes information about the top level category.
+   *  - Example: content/docs/apps/.SIDENAVCATEGORY
+   *  - module.exports = {
+   *      name: "Compliance",
+   *      icon: "fa-check-square-o"
+   *    }
+   *   In your file front matter, to opt in to be included in a menu:
+   *   sidenav: true,
+   *   sidenavIdentifier: "docs",
+   */
+
+  config.addCollection("sideNavigation", function (collectionApi) {
+    const basePath = "content";
+    const mainFolders = fs
+      .readdirSync(basePath, {withFileTypes: true})
+      .filter((dirent) => {
+        const folderPath = path.join(basePath, dirent.name);
+        return (
+          dirent.isDirectory() &&
+          fileExists(path.join(folderPath, ".SIDENAV"))
+        );
+      });
+
+    const result = [];
+    for (const folder of mainFolders) {
+      const folderPath = path.join(basePath, folder.name);
+      const sidenavConfigPath = path.join(folderPath, ".SIDENAV");
+      const sidenavConfig = loadConfig(sidenavConfigPath);
+
+      if (sidenavConfig) {
+        const collection = {
+          sidenav: folder.name
+        };
+        const categories = [];
+
+        const subfolders = fs
+          .readdirSync(folderPath, {withFileTypes: true})
+          .filter((subdir) => subdir.isDirectory());
+
+        for (const subfolder of subfolders) {
+          const subfolderPath = path.join(folderPath, subfolder.name);
+          const categoryConfig = loadConfig(
+            path.join(subfolderPath, ".SIDENAVCATEGORY")
+          );
+
+          if (categoryConfig) {
+            const {name, icon} = categoryConfig;
+            const contentFiles = getFilesByTypes(subfolderPath, [
+              ".html",
+              ".md",
+              ".liquid",
+            ]);
+
+            const children = contentFiles
+              .map((file) => {
+                const filePath = `${subfolderPath}/${file}`;
+                const frontMatter = getFrontMatterSync(filePath)?.data;
+
+                if (frontMatter?.showInSidenav) {
+                  // Find corresponding page using the collection API
+                  const page = collectionApi.getAll().find((entry) =>
+                    entry.inputPath.endsWith(filePath)
+                  );
+
+                  return {
+                    ...frontMatter,
+                    url: page.url
+                  };
+                }
+                return null;
+              })
+              .filter(Boolean);
+            categories.push({
+              name,
+              weight: categoryConfig.weight,
+              id: subfolder.name,
+              icon,
+              children,
+            });
+          }
+        }
+        result.push({
+          ...collection,
+          categories,
+        });
+      }
+    }
+    return result;
   });
 
   config.addPlugin(syntaxHighlight, {
