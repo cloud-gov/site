@@ -15,7 +15,7 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
                     <svg class="usa-icon" aria-hidden="true" role="img">
                         <use xlink:href="{{ '/img/sprite.svg#' | append: category.icon | url }}"></use>
                     </svg>&nbsp;
-                    {{ category.name }}
+                    <span class="sidenav-category-label">{{ category.name }}</span>
                 </a>
                 <ul class="usa-sidenav__sublist {% if category.id != parent %}usa-sr-only{% endif %}"
                     id="side-nav-{{ category.id }}" aria-hidden="true">
