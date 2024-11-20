@@ -12,7 +12,7 @@ The home page uses wide.html layout, since it extends full width of page
 <body>
   {% include "header.html" %}
 
-  {% if assign navigation == "pages" %}
+  {% if navigation == "pages" %}
       {% assign primary_navigation = pages.navigation.primary %}
       {% assign secondary_navigation = pages.navigation.secondary %}
   {% else %}
