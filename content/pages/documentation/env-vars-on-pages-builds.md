@@ -1,5 +1,6 @@
 ---
 title: Build environment variables
+permalink: /pages/documentation/env-vars-on-pages-builds/
 ---
 
 At the time your site is built, a number of special environment variables are exposed. You can access these environment variables with your build engine to customize your build (for instance, to add some special text to your site to show which branch has been built).
