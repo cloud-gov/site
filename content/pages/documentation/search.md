@@ -25,33 +25,33 @@ If you want to disable crawling and indexing for specific pages of your producti
 Manage search visibility
 </caption>
 <thead>
-<tr style="height: 30px;">
-  <th scope="col" style="border: 1px solid black; padding: 2px; vertical-align: top; background-color: #f2f2f2;"><strong>Priority</strong></th>
-  <th scope="col" style="border: 1px solid black; padding: 2px; vertical-align: top;background-color: #f2f2f2;"><strong>Method to manage robot behavior</strong></th>
-  <th scope="col" style="border: 1px solid black; padding: 2px; vertical-align: top;background-color: #f2f2f2;"><strong>How to <u>prevent</u> indexing/crawling</strong></th>
-  <th scope="col" style="border: 1px solid black; padding: 2px; vertical-align: top;background-color: #f2f2f2;"><strong>How to <u>allow</u> indexing/crawling</strong></th>
+<tr style="height: 1.875rem;">
+  <th scope="col" style="border: 0.0625rem solid black; padding: 0.125rem; vertical-align: top; background-color: #f2f2f2;"><strong>Priority</strong></th>
+  <th scope="col" style="border: 0.0625rem solid black; padding: 0.125rem; vertical-align: top;background-color: #f2f2f2;"><strong>Method to manage robot behavior</strong></th>
+  <th scope="col" style="border: 0.0625rem solid black; padding: 0.125rem; vertical-align: top;background-color: #f2f2f2;"><strong>How to <u>prevent</u> indexing/crawling</strong></th>
+  <th scope="col" style="border: 0.0625rem solid black; padding: 0.125rem; vertical-align: top;background-color: #f2f2f2;"><strong>How to <u>allow</u> indexing/crawling</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <th scope="row"style="border: 1px solid black; padding: 0px 0px 0px 4px; vertical-align: top; width: 20px;"><strong>1.</strong></th>
-  <td style="border: 1px solid black; padding: 8px; vertical-align: top;"><strong>robots.txt in your Pages site</strong><br><br>Discourages robots from crawling the page or pages listed. Webpages that aren’t crawled generally can’t be indexed.</td>
-  <td style="border: 1px solid black; padding: 8px; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 4px;">User-agent: *
+  <th scope="row"style="border: 0.0625rem solid black; padding: 0rem 0rem 0rem 0.25rem; vertical-align: top; width: 1.25rem;"><strong>1.</strong></th>
+  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><strong>robots.txt in your Pages site</strong><br><br>Discourages robots from crawling the page or pages listed. Webpages that aren’t crawled generally can’t be indexed.</td>
+  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">User-agent: *
   disallow: /directory</code></td>
-  <td style="border: 1px solid black; padding: 8px; vertical-align: top;">N/A, crawling is allowed by default</td>
+  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;">N/A, crawling is allowed by default</td>
 </tr>
 <tr>
-  <th scope="row"style="border: 1px solid black; padding: 0px 0px 0px 4px; vertical-align: top; width: 20px;"><strong>2.</strong></th>
-  <td style="border: 1px solid black; padding: 8px; vertical-align: top;"><strong>X-Robots-Tag HTTP header (served by Pages via the Pages proxy)</strong><br><br>Encourages or discourages robots to read and index the content on this page or use it to find more links to crawl</td>
-  <td style="border: 1px solid black; padding: 8px; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 4px;">robots: none</code><br>(this is automatically served to  visitors of all Pages preview builds)</td>
-  <td style="border: 1px solid black; padding: 8px; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 4px;">robots: all</code><br>(this is automatically served to  visitors of all Pages preview builds)</td>
+  <th scope="row"style="border: 0.0625rem solid black; padding: 0rem 0rem 0rem 0.25rem; vertical-align: top; width: 1.25rem;"><strong>2.</strong></th>
+  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><strong>X-Robots-Tag HTTP header (served by Pages via the Pages proxy)</strong><br><br>Encourages or discourages robots to read and index the content on this page or use it to find more links to crawl</td>
+  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">robots: none</code><br>(this is automatically served to  visitors of all Pages preview builds)</td>
+  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">robots: all</code><br>(this is automatically served to  visitors of all Pages preview builds)</td>
 </tr>
 <tr>
-  <th scope="row" style="border: 1px solid black; padding: 0px 0px 0px 4px; vertical-align: top; width: 20px;"><strong>3.</strong></th>
-  <td style="border: 1px solid black; padding: 8px; vertical-align: top;"><strong><meta name="robots"> in your Pages site webpage HTML
+  <th scope="row" style="border: 0.0625rem solid black; padding: 0rem 0rem 0rem 0.25rem; vertical-align: top; width: 1.25rem;"><strong>3.</strong></th>
+  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><strong><meta name="robots"> in your Pages site webpage HTML
 </strong><br><br>Encourages or discourages robots to read and index the content on this page or use it to find more links to crawl</td>
-  <td style="border: 1px solid black; padding: 8px; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 2px 4px; border-radius: 4px;">content="noindex, nofollow”</code></td>
-  <td style="border: 1px solid black; padding: 8px; vertical-align: top;">N/A, indexing is allowed by default</td>
+  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">content="noindex, nofollow”</code></td>
+  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;">N/A, indexing is allowed by default</td>
 </tr>
 </tbody>
 </table>
