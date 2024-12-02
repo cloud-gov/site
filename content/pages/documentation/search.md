@@ -20,40 +20,47 @@ Pages automatically handles search engine visibility for preview URLs via the Pa
 
 If you want to disable crawling and indexing for specific pages of your production site, you can include the `noindex/nofollow` meta tag in the head of those pages, or include those folders in your robots.txt, if your site generates one.
 
-<table style="border-collapse: collapse; width: 100%;">
-<caption>
-Manage search visibility
-</caption>
-<thead>
-<tr style="height: 1.875rem;">
-  <th scope="col" style="border: 0.0625rem solid black; padding: 0.125rem; vertical-align: top; background-color: #f2f2f2;"><strong>Priority</strong></th>
-  <th scope="col" style="border: 0.0625rem solid black; padding: 0.125rem; vertical-align: top;background-color: #f2f2f2;"><strong>Method to manage robot behavior</strong></th>
-  <th scope="col" style="border: 0.0625rem solid black; padding: 0.125rem; vertical-align: top;background-color: #f2f2f2;"><strong>How to <u>prevent</u> indexing/crawling</strong></th>
-  <th scope="col" style="border: 0.0625rem solid black; padding: 0.125rem; vertical-align: top;background-color: #f2f2f2;"><strong>How to <u>allow</u> indexing/crawling</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <th scope="row"style="border: 0.0625rem solid black; padding: 0rem 0rem 0rem 0.25rem; vertical-align: top; width: 1.25rem;"><strong>1.</strong></th>
-  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><strong>robots.txt in your Pages site</strong><br><br>Discourages robots from crawling the page or pages listed. Webpages that aren’t crawled generally can’t be indexed.</td>
-  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">User-agent: *
-  disallow: /directory</code></td>
-  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;">N/A, crawling is allowed by default</td>
-</tr>
-<tr>
-  <th scope="row"style="border: 0.0625rem solid black; padding: 0rem 0rem 0rem 0.25rem; vertical-align: top; width: 1.25rem;"><strong>2.</strong></th>
-  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><strong>X-Robots-Tag HTTP header (served by Pages via the Pages proxy)</strong><br><br>Encourages or discourages robots to read and index the content on this page or use it to find more links to crawl</td>
-  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">robots: none</code><br>(this is automatically served to  visitors of all Pages preview builds)</td>
-  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">robots: all</code><br>(this is automatically served to  visitors of all Pages preview builds)</td>
-</tr>
-<tr>
-  <th scope="row" style="border: 0.0625rem solid black; padding: 0rem 0rem 0rem 0.25rem; vertical-align: top; width: 1.25rem;"><strong>3.</strong></th>
-  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><strong><meta name="robots"> in your Pages site webpage HTML
-</strong><br><br>Encourages or discourages robots to read and index the content on this page or use it to find more links to crawl</td>
-  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;"><code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">content="noindex, nofollow”</code></td>
-  <td style="border: 0.0625rem solid black; padding: 0.5rem; vertical-align: top;">N/A, indexing is allowed by default</td>
-</tr>
-</tbody>
+<table class="usa-table usa-table--borderless">
+  <caption>
+    Manage Search Visibility
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col"><strong>Method to manage robot behavior</strong></th>
+      <th scope="col"><strong>How to <u>prevent</u> indexing/crawling</strong></th>
+      <th scope="col"><strong>How to <u>allow</u> indexing/crawling</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><strong>robots.txt in your Pages site</strong><br><br>Discourages robots from crawling the page or pages listed. Webpages that aren’t crawled generally can’t be indexed.</th>
+      <td>
+      <code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">User-agent: *
+  disallow: /directory
+  </code>
+      </td>
+      <td>N/A, crawling is allowed by default</td>
+    </tr>
+    <tr>
+      <th scope="row"><strong>X-Robots-Tag HTTP header (served by Pages via the Pages proxy)</strong><br><br>Encourages or discourages robots to read and index the content on this page or use it to find more links to crawl
+      </th>
+      <td>
+      <code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">robots: none</code><br><br>(this is automatically served to  visitors of all Pages preview builds)
+      </td>
+      <td>
+      <code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">robots: all</code><br><br>(this is automatically served to  visitors of all Pages preview builds)
+      </td>
+    </tr>
+    <tr>
+      <th scope="row"><strong><meta name="robots"> in your Pages site webpage HTML
+</strong><br><br>Encourages or discourages robots to read and index the content on this page or use it to find more links to crawl</th>
+      <td>
+      <code style="background-color: #f5f5f5; padding: 0.125rem 0.25rem; border-radius: 0.25rem;">content="noindex, nofollow”</code>
+      </td>
+      <td>N/A, indexing is allowed by default</td>
+    </tr>
+    </tr>
+  </tbody>
 </table>
 
 
@@ -68,4 +75,4 @@ You can use this code sample
 {% endunless %}
 ```
 
-See additional documentation on (build environment variables)[https://cloud.gov/pages/documentation/env-vars-on-pages-builds/].
+See additional documentation on [build environment variables](https://cloud.gov/pages/documentation/env-vars-on-pages-builds/).
