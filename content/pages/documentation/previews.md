@@ -28,5 +28,7 @@ Build history and logs for every build are available in the Pages web applicatio
 
 ## Absolute URL management - Eleventy (11ty)
 Although Pages automatically sets `BASEURL`, it is best to define your production URL in the site config file (`site.yaml`) to construct absolute URLs throughout an Eleventy site where `url: “https://agency-production-url.gov”`. This will allow the sitemap to construct proper absolute URLs by using `site.url` and `page.url` instead of the `BASEURL` value maintaining consistency across builds.
- 
+
+{% raw %} 
 `<loc>{{ site.url }}{{ page.url }}</loc>`
+{% endraw %}
