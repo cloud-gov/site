@@ -18,11 +18,11 @@ This project strives to be compliant with requirements set by [21st Century IDEA
 ## Key Functionality
 This repository contains the following examples and functionality:
 
-✅  Publish blog posts, press releases, announcements, etc. To modify this code, check out `blog/index.html`, which manages how the posts are listed. You should then check out `_includes/layouts/post.html` to see how individual posts are structured.
+✅ Publish blog posts, press releases, announcements, etc. To modify this code, check out `blog/index.html`, which manages how the posts are listed. You should then check out `_includes/layouts/post.html` to see how individual posts are structured.
 
 ✅ Publish single one-off pages. Instead of creating lots of folders throughout the root directory, you should put single pages in `pages` folder and change the `permalink` at the top of each page. Use sub-folders only when you really need to.
 
-✅  There are two different kinds of `pages`, one does not have a side bar navigation, and the other uses `_includes/sidenav.html`. You can enable this option by adding `sidenav: true` to your page front matter.
+✅ There are two different kinds of `pages`, one does not have a side bar navigation, and the other uses `_includes/sidenav.html`. You can enable this option by adding `sidenav: true` to your page front matter.
 
 ```
 ---
@@ -115,7 +115,7 @@ You can run the Netlify CMS locally to more easily customize and troubleshoot th
 We provide comments in the [`/admin/config.yml`](./admin/config.yml) instructing you how to change the `backend` values from your production site to the local development.
 
 > *Note: Make sure to not commit and push the config with the `backend` set for local develop to Github or
-else you will break your production site's Netlify CMS.
+> else you will break your production site's Netlify CMS.
 
 ```yml
 # Local development backend

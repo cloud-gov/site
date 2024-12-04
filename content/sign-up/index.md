@@ -1,5 +1,4 @@
 ---
-
 layout: layouts/wide
 title: Get started
 ---

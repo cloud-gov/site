@@ -5,7 +5,6 @@ date: 2024-03-25
 excerpt: How to monitor the CPU and memory metrics for your application on cloud.gov
 tags:
    - posts
-
 ---
 
 One of the benefits of hosting your applications on cloud.gov is that it offers [performance metrics for

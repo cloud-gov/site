@@ -21,7 +21,9 @@ This template is for a single page that does not have a date associated with it.
                 <h1>{{ title }}</h1>
 
                 {% assign toc_content = content | prepTOCContent %}
-                {% if toc_content | shouldShowTOC: showtoc %}
+                {% assign emptytoc = toc_content | isTocEmpty %}
+
+                {% if emptytoc == false and showtoc == true %}
                 <h2>Table of Contents</h2>
                 <div id="table-of-contents">
                     {{ toc_content }}
