@@ -3,7 +3,7 @@ showInSidenav: true
 title: IPv6, HTTPS, DNSSEC, and Certificates
 ---
 
-Here's what cloud.gov does to support relevant federal standards and recommendations, for applications on `*.app.cloud.gov` and [custom domains]({{ site.baseurl }}/docs/management/custom-domains).
+Here's what cloud.gov does to support relevant federal standards and recommendations, for applications on `*.app.cloud.gov` and [custom domains]({{ site.baseurl }}{{ "/docs/management/custom-domains" | url }}).
 
 ## IPv6
 
@@ -15,17 +15,17 @@ cloud.gov ensures all applications are accessible only over HTTPS with [HTTP Str
 
 ### [HSTS preloading](https://https.cio.gov/guide/#options-for-hsts-compliance)
 
-cloud.gov sets [`Strict-Transport-Security`]({{ site.baseurl }}/docs/management/headers) headers for all applications by default, and has added the `cloud.gov` domain/subdomains to the HSTS preload list for most major browsers.
+cloud.gov sets [`Strict-Transport-Security`]({{ site.baseurl }}{{ "/docs/management/headers" | url }}) headers for all applications by default, and has added the `cloud.gov` domain/subdomains to the HSTS preload list for most major browsers.
 
-You are responsible for setting up HSTS preloading for your [custom domain]({{ site.baseurl }}/docs/management/custom-domains). cloud.gov doesn't set this up for you. If you need HSTS preloading, follow [the guidance from the maintainers of the HSTS preload list](https://hstspreload.org/#opt-in). The HTTPS-Only Standard encourages HSTS preloading.
+You are responsible for setting up HSTS preloading for your [custom domain]({{ site.baseurl }}{{ "/docs/management/custom-domains" | url }}). cloud.gov doesn't set this up for you. If you need HSTS preloading, follow [the guidance from the maintainers of the HSTS preload list](https://hstspreload.org/#opt-in). The HTTPS-Only Standard encourages HSTS preloading.
 
-*Additional details are available in the [cloud.gov FedRAMP P-ATO documentation package]({{ site.baseurl }}/docs/overview/fedramp-tracker#how-you-can-use-this-p-ato), including in System Security Plan controls SC-8, SC-12, and SC-20.*
+*Additional details are available in the [cloud.gov FedRAMP P-ATO documentation package]({{ site.baseurl }}{{ "/docs/overview/fedramp-tracker" | url }}#how-you-can-use-this-p-ato), including in System Security Plan controls SC-8, SC-12, and SC-20.*
 
 ### SSL/TLS Implementation
 
 The SSL/TLS implementation depends on how your client is reaching cloud.gov, which is either through an AWS load balancer, or through the CDN service based on Amazon CloudFront.
 
-* [AWS load balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#tls13-security-policies) implement the `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` SSL/TLS policy.
+* [AWS load balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#fips-security-policies) implement the `ELBSecurityPolicy-TLS13-1-2-FIPS-2023-04` SSL/TLS policy. This policy leverages the AWS-LC FIPS validated cryptographic module. To learn more, see the [AWS-LC Cryptographic Module](https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4631) page on the NIST Cryptographic Module Validation Program site.
 * [Amazon CloudFront distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers) implement the `TLSv1.2_2018` policy.
 
 Our TLS implementation and cipher suites are consistent with [White House Office of Management and Budget's M-15-13](https://https.cio.gov/), the Department of Homeland Security's [Binding Operational Directive 18-01](https://cyber.dhs.gov/bod/18-01/), and [NIST's 800-52r2 Guidelines for TLS Implementations](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r2.pdf).
@@ -41,17 +41,21 @@ TLS_RSA_WITH_AES_128_GCM_SHA256 (0x009C)
 TLS_RSA_WITH_AES_256_GCM_SHA384 (0x009D)
 ```
 
-These are false positives. At cloud.gov we leverage TLS implementations from Amazon Web Services, which use [s2n-tls](https://github.com/aws/s2n-tls) to inject random timing variations [to mitigate CBC attacks like LUCKY13](https://aws.amazon.com/blogs/security/s2n-and-lucky-13/). Further, these ciphersuites are still acceptable per [NIST 800-52r2, Appendix D](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r2.pdf#%5B%7B%22num%22%3A174%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C70%2C719%2C0%5D). While the CBC cipher modes of operation are being phased out (they are theoretically subject to padding oracle attacks), we support them so we can serve members of the public who are unable to adopt newer technology.
+These are false positives. At cloud.gov we leverage TLS implementations from Amazon Web Services, which use [s2n-tls](https://github.com/aws/s2n-tls) to inject random timing variations [to mitigate CBC attacks like LUCKY13](https://aws.amazon.com/blogs/security/s2n-and-lucky-13/). Further, these ciphersuites are still acceptable per [NIST 800-52r2, Appendix D](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-52r2.pdf#%5B%7B%22num%22%3A174%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C70%2C719%2C0%5D).
+While the CBC cipher modes of operation are being phased out (they are theoretically subject to padding oracle attacks), we support them so we can serve members of the public who are unable to adopt newer technology.
 
-**TLS 1.3**: TLS 1.3 has been implemented with `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` security policies on our load balancers. All new Cloudfront domains are created with the `TLSv1.2_2018` security policy, which supports TLS 1.3. The TLS versions supported by other AWS service endpoints, like S3, are controlled by AWS itself.
+**TLS 1.3**: TLS 1.3 has been implemented with `ELBSecurityPolicy-TLS13-1-2-FIPS-2023-04` security policies on our load balancers. All new Cloudfront domains are created with the `TLSv1.2_2018` security policy, which supports TLS 1.3. The TLS versions supported by other AWS service endpoints, like S3, are controlled by AWS itself.
 
 **Cipher suite names**: The AWS documentation uses the OpenSSL cipher names which are different from IANA/RFC cipher names returned by scanners. For example, `ECDHE-RSA-AES128-SHA256` on the documentation page will be called `TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256` by scanners and other tools.
 
-**Cipher suite count**: The `ELBSecurityPolicy-TLS13-1-2-Ext1-2021-06` has 15 ciphers, but your scanner may only show 11 results. That's because our certificates are signed with RSA keys, not Elliptic Curve (ECDSA) keys, so those cipher suites are not in use. In June, 2023, a switch to ECDSA caused an [outage for a significant percentage of cloud.gov users](https://cloudgov.statuspage.io/incidents/vz9t74zm7zw8), so we will support RSA for the foreseeable future.
+**Cipher suite count**: The `ELBSecurityPolicy-TLS13-1-2-FIPS-2023-04` has 10 ciphers, but your scanner may only show 6 results. That's because our certificates are signed with RSA keys, not Elliptic Curve (ECDSA) keys, so those cipher suites are not in use. In June, 2023, a switch to ECDSA caused an [outage for a significant percentage of cloud.gov users](https://cloudgov.statuspage.io/incidents/vz9t74zm7zw8), so we will support RSA for the foreseeable future.
 
 ## Compression and BREACH (CVE-2013-3587)
 
-Security scanners targeting applications hosted on cloud.gov may generate findings for BREACH, [CVE-2013-3587](https://nvd.nist.gov/vuln/detail/CVE-2013-3587) (CVSS score 5.9, Medium), and then suggest disabling HTTP compression as the mitigation. However, there are multiple mitigations according to the [BREACH authors](https://breachattack.com), including the following:
+Security scanners targeting applications hosted on cloud.gov may generate findings for
+BREACH, [CVE-2013-3587](https://nvd.nist.gov/vuln/detail/CVE-2013-3587) (CVSS score 5.9, Medium),
+and then suggest disabling HTTP compression as the mitigation. However, there are multiple mitigations
+according to the [BREACH authors](https://breachattack.com), including the following:
 
 * Separating secrets from user input
 * Randomizing secrets per request
@@ -59,7 +63,10 @@ Security scanners targeting applications hosted on cloud.gov may generate findin
 * Protecting vulnerable pages with CSRF
 * Length hiding (by adding random number of bytes to the responses)
 
-Since any modern web application framework should include CSRF token masking to mitigate BREACH, disabling compression is not necessary, and would badly impact all end users of cloud.gov. We suggest that you mitigate BREACH at the application level, or carry the finding as an operational requirement.
+Since any modern web application framework should include CSRF token masking to mitigate BREACH,
+disabling compression is not necessary, and would badly impact all end users of cloud.gov. We
+suggest that you mitigate BREACH at the application level, or carry the finding as an operational
+requirement.
 
 ## DNSSEC
 
@@ -69,7 +76,7 @@ cloud.gov does not currently support DNSSEC on `cloud.gov` domains. For example,
 
 If you do need DNSSEC for your custom domain, you are responsible for configuring DNSSEC in your DNS system. cloud.gov can't configure DNSSEC for you because cloud.gov does not have access to your DNS system.
 
-cloud.gov supports mapping your DNSSEC-enabled custom domain to your applications hosted on cloud.gov -- see [DNSSEC support for the CDN service]({{ site.baseurl }}/docs/services/cdn-route#dnssec-support) and [DNSSEC support for the custom domain service]({{ site.baseurl }}/docs/services/custom-domains#dnssec-support).
+cloud.gov supports mapping your DNSSEC-enabled custom domain to your applications hosted on cloud.gov -- see [DNSSEC support for the CDN service]({{ site.baseurl }}{{ "/docs/services/cdn-route" | url }}#dnssec-support) and [DNSSEC support for the custom domain service]({{ site.baseurl }}{{ "/docs/services/custom-domains" | url }}#dnssec-support).
 
 *Additional details are available the cloud.gov System Security Plan, including controls SC-20, SC-21, SC-22, and SC-23.*
 

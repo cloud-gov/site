@@ -2,6 +2,7 @@ module.exports = {
   layout: "layouts/docs",
   sidenav: true,
   sidenavIdentifier: "docs",
+  showtoc: true,
   permalink: function (data) {
     const fileName = data.page.inputPath
       .replace('content/', '')

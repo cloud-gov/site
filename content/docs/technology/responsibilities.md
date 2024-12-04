@@ -1,6 +1,6 @@
 ---
 showInSidenav: true
-title: What the cloud.gov PaaS offers
+title: Cloud.gov responsibilities and deprecation policy
 weight: 5
 redirect_from:
   - /docs/intro/technology/responsibilities/
@@ -8,25 +8,27 @@ redirect_from:
   - /overview/technology/responsibilities/
 ---
 
-As a Platform as a Service, cloud.gov is responsible for maintenance and security of the cloud.gov platform. Customers are responsible for maintenance and security of their custom code running on the platform.
+## Cloud.gov Platform responsibilities
+
+As a Platform as a Service, Cloud.gov is responsible for maintenance and security of the Cloud.gov platform. Customers are responsible for maintenance and security of their custom code running on the platform.
 
 Here's a chart to illustrate this in three example use cases:
 
-!["Diagram of responsibilities, described in text below"]({{site.baseurl}}/img/content/boundaries.svg){:width=450}
+!["Diagram of responsibilities, described in text below"]({{site.baseurl}}/img/content/boundaries.svg)
 
 <!-- Source for this diagram is https://docs.google.com/drawings/d/1UBiOteSPXpA72KE52Kh-j7aYr73zTkzJ_oMuw5F293I/edit -->
 
-App #1 uses a [standard buildpack]({{ site.baseurl }}/docs/getting-started/concepts#buildpacks). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
+App #1 uses a [standard buildpack]({{ "/docs/getting-started/concepts" | url }}#buildpacks). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
 
-App #2 uses a [custom buildpack]({{ site.baseurl }}/docs/deployment/custom-buildpacks), so the customer's responsibility expands from the app code to managing the custom buildpack and its dependencies. If you choose to use a custom buildpack, you are responsible for:
+App #2 uses a [custom buildpack]({{ "/docs/deployment/custom-buildpacks" | url }}), so the customer's responsibility expands from the app code to managing the custom buildpack and its dependencies. If you choose to use a custom buildpack, you are responsible for:
 
 * Ensuring your application framework/runtime and all dependencies are supported versions with no known vulnerabilities.
 * Continually updating your runtime and dependencies as new vulnerabilities are discovered and fixed.
 * Maintaining a best practice baseline configuration for your application framework/runtime that meets all applicable security standards.
 
-App #3 is a Docker setup, where the customer is fully responsible for their Docker container and custom image. [Learn about this feature.]({{ site.baseurl }}/docs/deployment/docker)
+App #3 is a Docker setup, where the customer is fully responsible for their Docker container and custom image. [Learn about this feature.]({{ "/docs/deployment/docker" | url }})
 
-cloud.gov is always responsible for the following components at its platform level:
+Cloud.gov is always responsible for the following components at its platform level:
 
 * Operating system
 * Continuous monitoring
@@ -37,9 +39,11 @@ cloud.gov is always responsible for the following components at its platform lev
 * Logging
 * Alerting
 
+**See also**: The Cloud.gov [customer service objectives]({{ "/docs/overview/customer-service-objectives" | url }})
+
 ## Deprecation policy
 
-From time to time, it becomes necessary to deprecate a service, feature, or API. Below is our policy for doing so. In the description, `service` 
+From time to time, it becomes necessary to deprecate a service, feature, or API. Below is our policy for doing so. In the description, `service`
 refers to a service, feature, API, etc.
 
 In cases where a replacement service will be provided, we'll make the replacement service available before beginning the deprecation process.
@@ -53,8 +57,8 @@ Deprecations happen in steps:
 
 Here's an example:
 
-First, cloud.gov determines that the coffee service is not serving customers as well as a new espresso service might, and we decide 
-to replace the coffee service entirely with the espresso service. 
+First, Cloud.gov determines that the coffee service is not serving customers as well as a new espresso service might, and we decide
+to replace the coffee service entirely with the espresso service.
 First, we make the espresso service generally available. Next, we send out the general announcement to all of our users. This announcement goes out on April 3rd and states:
 
 - the coffee service is being deprecated
@@ -64,3 +68,8 @@ First, we make the espresso service generally available. Next, we send out the g
 
 After May 3rd, we begin sending emails to users still using the coffee service, at least one message every other week.
 Finally, on August 31st, we shut down the last instances of the coffee service.
+
+### Exceptions
+
+Cloud.gov may need to accelerate a deprecation timeline when maintaining a service poses risks to platform
+operation. We will note in customer communications when and why we're using an accelerated timeline.

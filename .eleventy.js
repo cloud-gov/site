@@ -105,13 +105,14 @@ module.exports = function (config) {
   // Prepare content for table of contents, at time of writing used on the docs.html layout
   config.addFilter("prepTOCContent", (content) => {
     const toc = config.getFilter("toc");
-    const striptags = config.getFilter("striptags");
-    return striptags(toc(content));
+    return toc(content);
   });
 
   // Determine if the table of contents should be shown, at time of writing used on the docs.html layout
-  config.addFilter("shouldShowTOC", (content, showToc) => {
-    return !!showToc && content !== "" && content !== '<ol id="toc" class="section-nav"></ol>';
+  config.addFilter("isTocEmpty", (content) => {
+    const result = content === undefined || content === null || content === "" || content === " " || content === '<nav class="toc" ><ol></ol></nav>';
+    console.error("ERR RESULT!!!!!", result, content);
+    return result;
   });
 
   // Add plugins

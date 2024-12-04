@@ -6,15 +6,15 @@ title: March 21st cloud.gov Change Log
 excerpt: The cloud.gov team is working on providing change logs so everyone can see new features and updates.
 ---
 
-# Change Log 
+# Change Log
 
 ## Before digging into the changes...
 
-* Reminder: Please contact support@cloud.gov to schedule your RDS upgrades if you have not already done so. 
-* The default amount of memory for staging applications has been increased from 1GB to 2GB to attempt to mitigate staging OOM issues.   Once we verify the recently deployed stemcells with the fix, we will be dropping it back down to 1 GB during upgrades next week. 
-* As mentioned above there is a fix for the Out of Memory issue, which is live in production. The release 1.404 contains this fix: 
-	
-    >  The linux kernel has been changed from the HWE line of kernels back to the LTS line of kernels. Changing from the current 6.5 to 5.15. This is an attempt to mitigate [issue 318](https://github.com/cloudfoundry/bosh-linux-stemcell-builder/issues/318) where we see cgroups with memory limits hitting OOM errors when they previously did not under the 6.2 kernel versions
+* Reminder: Please contact support@cloud.gov to schedule your RDS upgrades if you have not already done so.
+* The default amount of memory for staging applications has been increased from 1GB to 2GB to attempt to mitigate staging OOM issues.   Once we verify the recently deployed stemcells with the fix, we will be dropping it back down to 1 GB during upgrades next week.
+* As mentioned above there is a fix for the Out of Memory issue, which is live in production. The release 1.404 contains this fix:
+
+  >  The linux kernel has been changed from the HWE line of kernels back to the LTS line of kernels. Changing from the current 6.5 to 5.15. This is an attempt to mitigate [issue 318](https://github.com/cloudfoundry/bosh-linux-stemcell-builder/issues/318) where we see cgroups with memory limits hitting OOM errors when they previously did not under the 6.2 kernel versions
 
 
 ## Customer Facing Changes
@@ -39,9 +39,9 @@ Changes below are broken down by component, note that `v39.7.0` was a stemcell u
 * Add dotnet-runtime 8.0.3, remove dotnet-runtime 8.0.2 ([#943](https://github.com/cloudfoundry/dotnet-core-buildpack/pull/943))
 * Add dotnet-sdk 8.0.202, remove dotnet-sdk 8.0.201 ([#938](https://github.com/cloudfoundry/dotnet-core-buildpack/pull/938))
 * Add libunwind 1.8.1, remove libunwind 1.8.0 ([#925](https://github.com/cloudfoundry/dotnet-core-buildpack/pull/925))
-* Add node 20.11.1, remove node 20.11.0  
-* Add dotnet-sdk 8.0.201, remove dotnet-sdk 8.0.200  
-* Add support for BP_OPENSSL_ACTIVATE_LEGACY_PROVIDER ([#921](https://github.com/cloudfoundry/dotnet-core-buildpack/pull/921)) 
+* Add node 20.11.1, remove node 20.11.0
+* Add dotnet-sdk 8.0.201, remove dotnet-sdk 8.0.200
+* Add support for BP_OPENSSL_ACTIVATE_LEGACY_PROVIDER ([#921](https://github.com/cloudfoundry/dotnet-core-buildpack/pull/921))
 * Enables the new environment variable will load and active the legacy openssl provider
 * Remove `use_legacy_openssl` buildpack.yml setting in favour of the environment variable
 
@@ -71,8 +71,8 @@ Default binary versions:
 
 #### go-buildpack 1.10.16 to 1.10.17
 
-* Add go 1.22.1, remove go 1.22.0 
-* Add go 1.21.8, remove go 1.21.7 
+* Add go 1.22.1, remove go 1.22.0
+* Add go 1.21.8, remove go 1.21.7
 * Deprecate Go 1.20.x (EOL) ([#424](https://github.com/cloudfoundry/go-buildpack/pull/424))
 
 Packaged binaries:
@@ -88,11 +88,11 @@ Default binary versions:
 * go 1.21.x
 
 #### java-buildpack 4.66.0 to 4.67.0
-For a more detailed look at the changes in 4.67.0, please take a look at the [commit log](https://github.com/cloudfoundry/java-buildpack/compare/v4.66.0...v4.67.0). The packaged version of the buildpack, suitable for use with create-buildpack and update-buildpack, can be found attached to this release.
+For a more detailed look at the changes in 4.67.0, please take a look at the [commit log](https://github.com/cloudfoundry/java-buildpack/compare/v4.66.0...v4.67.0). The packaged version of the buildpack, suitable for use with create-buildpack and update-buildpack, can be found attached to this release.
 
 | Dependency                       | Version          | CVEs                                                                               | Release Notes                                                                                                                                |
 | -------------------------------- | ---------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| AppDynamics Agent                | `24.2.0_35552`   |                                                                                    | 
+| AppDynamics Agent                | `24.2.0_35552`   |                                                                                    |
 | Azure Application Insights Agent | `3.5.0`          |                                                                                    | [Release Notes](https://github.com/Microsoft/ApplicationInsights-Java/releases)                                                              |
 | CA Introscope APM Framework      | `24.2.1_7`       |                                                                                    |                                                                                                                                              |
 | Client Certificate Mapper        | `2.0.1`          | Included inline above                                                              | Included inline above                                                                                                                        |
@@ -139,7 +139,7 @@ For a more detailed look at the changes in 4.67.0, please take a look at the [c
 
 #### nginx-buildpack 1.2.11 to 1.2.12
 
-* Add nginx 1.25.4, remove nginx 1.25.3 ([#267](https://github.com/cloudfoundry/nginx-buildpack/pull/267))  
+* Add nginx 1.25.4, remove nginx 1.25.3 ([#267](https://github.com/cloudfoundry/nginx-buildpack/pull/267))
 
 Packaged binaries:
 
@@ -154,7 +154,7 @@ Default binary versions:
 
 #### php-buildpack 4.6.15 to 4.6.16
 
-* Add php 8.2.16, remove php 8.2.14 
+* Add php 8.2.16, remove php 8.2.14
 
 Packaged binaries:
 
@@ -184,8 +184,8 @@ Default binary versions:
 
 #### python-buildpack 1.8.20 to 1.8.21
 
-* Add setuptools 69.1.1, remove setuptools 69.1.0 
-* Add miniconda3-py39 24.1.2, remove miniconda3-py39 23.11.0 
+* Add setuptools 69.1.1, remove setuptools 69.1.0
+* Add miniconda3-py39 24.1.2, remove miniconda3-py39 23.11.0
 
 Packaged binaries:
 
@@ -217,8 +217,8 @@ Packaged binaries:
 
 #### ruby-buildpack 1.10.9 to 1.10.10
 
-* Add jruby 9.4.6.0, remove jruby 9.4.5.0 ([#906](https://github.com/cloudfoundry/ruby-buildpack/pull/906))  
-* Add node 20.11.1, remove node 20.11.0 ([#905](https://github.com/cloudfoundry/ruby-buildpack/pull/905))  
+* Add jruby 9.4.6.0, remove jruby 9.4.5.0 ([#906](https://github.com/cloudfoundry/ruby-buildpack/pull/906))
+* Add node 20.11.1, remove node 20.11.0 ([#905](https://github.com/cloudfoundry/ruby-buildpack/pull/905))
 
 Packaged binaries:
 
@@ -240,7 +240,7 @@ Default binary versions:
 
 #### staticfile-buildpack 1.6.10 to 1.6.11
 
-* Add nginx 1.25.4, remove nginx 1.25.3 ([#408](https://github.com/cloudfoundry/staticfile-buildpack/pull/408))  
+* Add nginx 1.25.4, remove nginx 1.25.3 ([#408](https://github.com/cloudfoundry/staticfile-buildpack/pull/408))
 
 Packaged binaries:
 
@@ -251,22 +251,22 @@ Default binary versions:
 
 * nginx 1.25.x
 
-### CFLinuxfs4 - v1.82.0 up from v1.79.0 
+### CFLinuxfs4 - v1.82.0 up from v1.79.0
 
 Notably, this release addresses:
-* [USN-6694-1](https://ubuntu.com/security/notices/USN-6694-1) Expat vulnerabilities:
-   * [CVE-2024-28757](https://ubuntu.com/security/CVE-2024-28757):  libexpat through 2.6.1 allows an XML Entity Expansion attack when there is isolated use of external parsers (created via XML_ExternalEntityParserCreate).
-   * [CVE-2023-52425](https://ubuntu.com/security/CVE-2023-52425):  libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.
+* [USN-6694-1](https://ubuntu.com/security/notices/USN-6694-1) Expat vulnerabilities:
+  * CVE-2024-28757:  libexpat through 2.6.1 allows an XML Entity Expansion attack when there is isolated use of external parsers (created via XML_ExternalEntityParserCreate).
+  * CVE-2023-52425:  libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.
 
-* [USN-6677-1](https://ubuntu.com/security/notices/USN-6677-1) libde265 vulnerabilities:
+* [USN-6677-1](https://ubuntu.com/security/notices/USN-6677-1) libde265 vulnerabilities:
 
-   * [CVE-2023-49468](https://ubuntu.com/security/CVE-2023-49468): Libde265 v1.0.14 was discovered to contain a global buffer overflow vulnerability in the read_coding_unit function at slice.cc.
-   * [CVE-2023-49465](https://ubuntu.com/security/CVE-2023-49465): Libde265 v1.0.14 was discovered to contain a heap-buffer-overflow vulnerability in the derive_spatial_luma_vector_prediction function at motion.cc.
-   * [CVE-2023-27102](https://ubuntu.com/security/CVE-2023-27102): Libde265 v1.0.11 was discovered to contain a segmentation violation via the function decoder_context::process_slice_segment_header at decctx.cc.
-   * [CVE-2023-49467](https://ubuntu.com/security/CVE-2023-49467): Libde265 v1.0.14 was discovered to contain a heap-buffer-overflow vulnerability in the derive_combined_bipredictive_merging_candidates function at motion.cc.
-   * [CVE-2023-27103](https://ubuntu.com/security/CVE-2023-27103): Libde265 v1.0.11 was discovered to contain a heap buffer overflow via the function derive_collocated_motion_vectors at motion.cc.
-   * [CVE-2023-47471](https://ubuntu.com/security/CVE-2023-47471): Buffer Overflow vulnerability in strukturag libde265 v1.10.12 allows a local attacker to cause a denial of service via the slice_segment_header function in the slice.cc component.
-   * [CVE-2023-43887](https://ubuntu.com/security/CVE-2023-43887): Libde265 v1.0.12 was discovered to contain multiple buffer overflows via the num_tile_columns and num_tile_row parameters in the function pic_parameter_set::dump.
+  * CVE-2023-49468: Libde265 v1.0.14 was discovered to contain a global buffer overflow vulnerability in the read_coding_unit function at slice.cc.
+  * CVE-2023-49465: Libde265 v1.0.14 was discovered to contain a heap-buffer-overflow vulnerability in the derive_spatial_luma_vector_prediction function at motion.cc.
+  * CVE-2023-27102: Libde265 v1.0.11 was discovered to contain a segmentation violation via the function decoder_context::process_slice_segment_header at decctx.cc.
+  * CVE-2023-49467: Libde265 v1.0.14 was discovered to contain a heap-buffer-overflow vulnerability in the derive_combined_bipredictive_merging_candidates function at motion.cc.
+  * CVE-2023-27103: Libde265 v1.0.11 was discovered to contain a heap buffer overflow via the function derive_collocated_motion_vectors at motion.cc.
+  * CVE-2023-47471: Buffer Overflow vulnerability in strukturag libde265 v1.10.12 allows a local attacker to cause a denial of service via the slice_segment_header function in the slice.cc component.
+  * CVE-2023-43887: Libde265 v1.0.12 was discovered to contain multiple buffer overflows via the num_tile_columns and num_tile_row parameters in the function pic_parameter_set::dump.
 
 ## Platform Changes
 ---
@@ -284,13 +284,13 @@ This section is for the platform operators at `cloud.gov` to highlight changes t
 * Expose process CPU Entitlement in stats ([cloudfoundry/cloud_controller_ng#3641](https://github.com/cloudfoundry/cloud_controller_ng/pull/3641))
 
 * Dependency Bumps
-   * bump webmock from 3.21.2 to 3.23.0 ([cloudfoundry/cloud_controller_ng#3649](https://github.com/cloudfoundry/cloud_controller_ng/pull/3649), [cloudfoundry/cloud_controller_ng#3654](https://github.com/cloudfoundry/cloud_controller_ng/pull/3654))
-   * bump listen from 3.8.0 to 3.9.0 ([cloudfoundry/cloud_controller_ng#3653](https://github.com/cloudfoundry/cloud_controller_ng/pull/3653))
-   * bump googleapis-common-protos from 1.4.0 to 1.5.0 ([cloudfoundry/cloud_controller_ng#3655](https://github.com/cloudfoundry/cloud_controller_ng/pull/3655))
+  * bump webmock from 3.21.2 to 3.23.0 ([cloudfoundry/cloud_controller_ng#3649](https://github.com/cloudfoundry/cloud_controller_ng/pull/3649), [cloudfoundry/cloud_controller_ng#3654](https://github.com/cloudfoundry/cloud_controller_ng/pull/3654))
+  * bump listen from 3.8.0 to 3.9.0 ([cloudfoundry/cloud_controller_ng#3653](https://github.com/cloudfoundry/cloud_controller_ng/pull/3653))
+  * bump googleapis-common-protos from 1.4.0 to 1.5.0 ([cloudfoundry/cloud_controller_ng#3655](https://github.com/cloudfoundry/cloud_controller_ng/pull/3655))
 
 Cloud Controller Database Migrations
-   * [20240222131500_change_delayed_jobs_reserve_index.rb](https://github.com/sap-contributions/cloud_controller_ng/blob/a6febf66cf9cf7c86b27b917df9b111b874b6972/db/migrations/20240222131500_change_delayed_jobs_reserve_index.rb)
-   * [20240219113000_add_routes_space_id_index.rb](https://github.com/sap-contributions/cloud_controller_ng/blob/a6febf66cf9cf7c86b27b917df9b111b874b6972/db/migrations/20240219113000_add_routes_space_id_index.rb)
+* [20240222131500_change_delayed_jobs_reserve_index.rb](https://github.com/sap-contributions/cloud_controller_ng/blob/a6febf66cf9cf7c86b27b917df9b111b874b6972/db/migrations/20240222131500_change_delayed_jobs_reserve_index.rb)
+* [20240219113000_add_routes_space_id_index.rb](https://github.com/sap-contributions/cloud_controller_ng/blob/a6febf66cf9cf7c86b27b917df9b111b874b6972/db/migrations/20240219113000_add_routes_space_id_index.rb)
 
 #### log-cache 3.0.10 to 3.0.11
 
@@ -300,7 +300,7 @@ Cloud Controller Database Migrations
 #### loggregator-agent 7.7.5 to 8.0.2
 
 * Bump dependencies
-* Bump to [go1.21.8](https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg/m/46oA5yPABQAJ)
+* Bump to [go1.21.8](https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg/m/46oA5yPABQAJ)
 
 
 ### routing 0.292.0 to 0.293.0
@@ -313,7 +313,7 @@ Cloud Controller Database Migrations
 ### statsd-injector 1.11.38 to 1.11.39
 
 * Bump dependencies
-* Bump to [go1.21.8](https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg/m/46oA5yPABQAJ)
+* Bump to [go1.21.8](https://groups.google.com/g/golang-announce/c/5pwGVUPoMbg/m/46oA5yPABQAJ)
 
 ### syslog 11.8.17 to 12.2.3
 
@@ -323,29 +323,29 @@ Cloud Controller Database Migrations
 
 ### uaa 77.1.0 to 77.2.0
 
-* Bump to [UAA v77.2.0](https://github.com/cloudfoundry/uaa/releases/tag/v77.2.0)
+* Bump to [UAA v77.2.0](https://github.com/cloudfoundry/uaa/releases/tag/v77.2.0)
 
 #### Misc
 
-* doc: clarify use of multiple URLs in uaa.ldap.url by [@peterhaochen47](https://github.com/peterhaochen47) in [#810](https://github.com/cloudfoundry/uaa-release/pull/810)
-* Revert "remove: gomega github ignore removed" by [@hsinn0](https://github.com/hsinn0) in [#811](https://github.com/cloudfoundry/uaa-release/pull/811)
+* doc: clarify use of multiple URLs in uaa.ldap.url by [@peterhaochen47](https://github.com/peterhaochen47) in [#810](https://github.com/cloudfoundry/uaa-release/pull/810)
+* Revert "remove: gomega github ignore removed" by [@hsinn0](https://github.com/hsinn0) in [#811](https://github.com/cloudfoundry/uaa-release/pull/811)
 
 #### Dependency Bumps
 
-* Bump rspec-support from 3.13.0 to 3.13.1 by [@dependabot](https://github.com/dependabot) in [#809](https://github.com/cloudfoundry/uaa-release/pull/809)
-* Bump drb from 2.2.0 to 2.2.1 by [@dependabot](https://github.com/dependabot) in [#812](https://github.com/cloudfoundry/uaa-release/pull/812)
-* Bump github.com/cloudfoundry/bosh-utils from 0.0.446 to 0.0.447 in /src/acceptance_tests by [@dependabot](https://github.com/dependabot) in [#814](https://github.com/cloudfoundry/uaa-release/pull/814)
-* Bump github.com/cloudfoundry/bosh-utils from 0.0.447 to 0.0.448 in /src/acceptance_tests by [@dependabot](https://github.com/dependabot) in [#817](https://github.com/cloudfoundry/uaa-release/pull/817)
-* Bump i18n from 1.14.1 to 1.14.3 by [@dependabot](https://github.com/dependabot) in [#816](https://github.com/cloudfoundry/uaa-release/pull/816)
-* Bump github.com/cloudfoundry/bosh-utils from 0.0.448 to 0.0.449 in /src/acceptance_tests by [@dependabot](https://github.com/dependabot) in [#819](https://github.com/cloudfoundry/uaa-release/pull/819)
-* Bump i18n from 1.14.3 to 1.14.4 by [@dependabot](https://github.com/dependabot) in [#820](https://github.com/cloudfoundry/uaa-release/pull/820)
+* Bump rspec-support from 3.13.0 to 3.13.1 by [@dependabot](https://github.com/dependabot) in [#809](https://github.com/cloudfoundry/uaa-release/pull/809)
+* Bump drb from 2.2.0 to 2.2.1 by [@dependabot](https://github.com/dependabot) in [#812](https://github.com/cloudfoundry/uaa-release/pull/812)
+* Bump github.com/cloudfoundry/bosh-utils from 0.0.446 to 0.0.447 in /src/acceptance_tests by [@dependabot](https://github.com/dependabot) in [#814](https://github.com/cloudfoundry/uaa-release/pull/814)
+* Bump github.com/cloudfoundry/bosh-utils from 0.0.447 to 0.0.448 in /src/acceptance_tests by [@dependabot](https://github.com/dependabot) in [#817](https://github.com/cloudfoundry/uaa-release/pull/817)
+* Bump i18n from 1.14.1 to 1.14.3 by [@dependabot](https://github.com/dependabot) in [#816](https://github.com/cloudfoundry/uaa-release/pull/816)
+* Bump github.com/cloudfoundry/bosh-utils from 0.0.448 to 0.0.449 in /src/acceptance_tests by [@dependabot](https://github.com/dependabot) in [#819](https://github.com/cloudfoundry/uaa-release/pull/819)
+* Bump i18n from 1.14.3 to 1.14.4 by [@dependabot](https://github.com/dependabot) in [#820](https://github.com/cloudfoundry/uaa-release/pull/820)
 
 
 #### Known Issues
 
 * During the upgrade to this version from UAA v76 or below with canary deployment (where briefly both new and old UAA servers could be running), UAA delete user endpoint might respond with an error even though the user deletion is successful. Mitigation: Delete users after the canary deployment finishes. But if you do run into this issue, you can ignore the error and check whether the user has been successfully deleted after the canary deployment finishes.
 
-**Full UAA Changelog**: [v77.1.0...v77.2.0](https://github.com/cloudfoundry/uaa-release/compare/v77.1.0...v77.2.0)
+**Full UAA Changelog**: [v77.1.0...v77.2.0](https://github.com/cloudfoundry/uaa-release/compare/v77.1.0...v77.2.0)
 
 
 ## Final Note
