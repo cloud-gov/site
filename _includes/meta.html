@@ -21,10 +21,8 @@ to modify some of the meta-data for the site, this is the place to do it.
         {% assign summary = description %}
     {% elsif excerpt != undefined %}
         {% assign summary = excerpt %}
-    {% elsif title != undefined %}
-        {% assign summary = title %}
     {% else %}
-        {% assign summary = site.title %}
+        {% assign summary = content | striptags | truncatewords: 50 %}
     {% endif %}
 
     <title>{{title}} | {{site.title}}</title>
@@ -49,3 +47,6 @@ to modify some of the meta-data for the site, this is the place to do it.
     <link rel="stylesheet" href="{{ assetPaths['styles.css'] }}" type="text/css"/>
     <link rel="stylesheet" href="{{ assetPaths['prism.css'] }}" type="text/css"/>
 </head>
+
+
+{{ page | debug }}

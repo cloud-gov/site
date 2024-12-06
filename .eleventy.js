@@ -110,9 +110,7 @@ module.exports = function (config) {
 
   // Determine if the table of contents should be shown, at time of writing used on the docs.html layout
   config.addFilter("isTocEmpty", (content) => {
-    const result = content === undefined || content === null || content === "" || content === " " || content === '<nav class="toc" ><ol></ol></nav>';
-    console.error("ERR RESULT!!!!!", result, content);
-    return result;
+    return content === undefined || content === null || content === "" || content === " " || content === '<nav class="toc" ><ol></ol></nav>';
   });
 
   // Add plugins
