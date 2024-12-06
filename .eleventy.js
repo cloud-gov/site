@@ -15,6 +15,7 @@ const inspect = require("util").inspect;
 const striptags = require("striptags");
 const path = require("path");
 const matter = require('gray-matter');
+const { JSDOM } = require("jsdom");
 
 
 // Helper function to synchronously determine if a file exists
@@ -79,7 +80,6 @@ function getPageData(filePath) {
   return pageData;
 }
 
-
 module.exports = function (config) {
   // Set pathPrefix for site
   let pathPrefix = '/';
@@ -111,6 +111,12 @@ module.exports = function (config) {
   // Determine if the table of contents should be shown, at time of writing used on the docs.html layout
   config.addFilter("isTocEmpty", (content) => {
     return content === undefined || content === null || content === "" || content === " " || content === '<nav class="toc" ><ol></ol></nav>';
+  });
+
+  config.addFilter("domQuery", (content, selector) => {
+    const dom = new JSDOM(content);
+    const body = dom.window.document.querySelector(selector);
+    return !!body ? body.textContent : content;
   });
 
   // Add plugins

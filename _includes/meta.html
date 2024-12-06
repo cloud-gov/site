@@ -22,7 +22,7 @@ to modify some of the meta-data for the site, this is the place to do it.
     {% elsif excerpt != undefined %}
         {% assign summary = excerpt %}
     {% else %}
-        {% assign summary = content | striptags | truncatewords: 50 %}
+        {% assign summary = content | domQuery: '#main-content' | striptags | truncatewords: 50 %}
     {% endif %}
 
     <title>{{title}} | {{site.title}}</title>
