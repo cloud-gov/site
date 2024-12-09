@@ -21,10 +21,8 @@ to modify some of the meta-data for the site, this is the place to do it.
         {% assign summary = description %}
     {% elsif excerpt != undefined %}
         {% assign summary = excerpt %}
-    {% elsif title != undefined %}
-        {% assign summary = title %}
     {% else %}
-        {% assign summary = site.title %}
+        {% assign summary = content | domQuery: '#main-content' | striptags | truncatewords: 50 %}
     {% endif %}
 
     <title>{{title}} | {{site.title}}</title>
