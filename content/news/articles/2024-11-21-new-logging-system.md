@@ -10,7 +10,7 @@ Cloud.gov is upgrading our logging system, <https://logs.fr.cloud.gov>, with a m
 
 The significance of the update requires a cutover from the current system to the new one that will take place on the following timeline:
 
-* **December 3**: The new system will be generally available at [https://logs-beta.fr.cloud.gov](https://log-beta.fr.cloud.gov).
+* **December 3**: The new system will be generally available at [https://logs-beta.fr.cloud.gov](https://logs-beta.fr.cloud.gov).
 * **December 10**: The current logging system will be renamed to <https://logs-deprecated.fr.cloud.gov>, and new system will be available at <https://logs.fr.cloud.gov>
 * **January 7, 2025**: The deprecated logging system will be decommissioned.
 
@@ -52,3 +52,7 @@ We recommend you take the following actions:
 ## Deprecation notice
 
 The [Cloud.gov deprecation policy](http://cloud.gov) calls for a longer transition period between services than we're employing here, unless continuing that service poses risks to the platform. Since the current logging system uses components that are reaching EOL, continued operation poses security and compliance risks, and we are moving to decommission the service by January 10, 2025.
+
+## Updates
+
+December 6, 2024: [Changes to expect with the December 2024 logging update]({{site.baseurl}}/knowledge-base/2024-12-06-migrating-opensearch/)
