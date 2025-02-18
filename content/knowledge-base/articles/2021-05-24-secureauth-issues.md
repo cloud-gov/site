@@ -8,23 +8,13 @@ tags:
   - posts
 ---
 
-## If you are using GSA's single sign on integration (SecureAuth)
-
-When logging in to cloud.gov, you may encounter an error message that includes reference to `InResponseToField`. For example, something like:
-
-```shell
-InResponseToField of the Response doesn’t correspond to sent message {code}
-```
-
-This is typically caused by SecureAuth having an old certificate or session cookie in your browser, and is not related to the cloud.gov platform. 
-
-Things you can check:
+## If you are using your agency's single sign on integration
 
 * You can verify this issue is affecting your login by opening a private or incognito session in your browser and retry logging in. 
 
 * You can try clearing all cache and cookies, restart your browser, and retry logging in.
 
-If these steps don't work, [GSA also has a tool that can clear these items](https://secureauth.gsa.gov/secureauth2/cleancert.aspx). Note - if you are a Mac user, this site will only work in Safari.
+If these steps don't work, and your agency identity provider works for other services, open an issue with [support@cloud.gov].
 
 ## If you are using the cloud.gov identity provider (IDP)
 
