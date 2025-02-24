@@ -12,11 +12,12 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 <!--more-->
 
 ### Added
+
 The [cloud.gov dashboard](https://dashboard.fr.cloud.gov) now alerts you when it’s unable to fetch recent data. This can help you when you’re troubleshooting problems with your application.
 
 ### Changed
 
-[`cf logs`]({{ site.baseurl }}/docs/apps/logs/) now accesses logs over port 443 instead of the previous port 4443, to increase the number of people who can use `cf logs` without errors. In many workplaces port 4443 is blocked, which leads `cf logs` to return an error.
+[`cf logs`](/docs/apps/logs/) now accesses logs over port 443 instead of the previous port 4443, to increase the number of people who can use `cf logs` without errors. In many workplaces port 4443 is blocked, which leads `cf logs` to return an error.
 
 ### Security
 

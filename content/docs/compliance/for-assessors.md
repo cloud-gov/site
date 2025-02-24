@@ -18,7 +18,6 @@ cloud.gov is a platform as a service (PaaS). This means customers provide the co
 
 cloud.gov is built specifically for government. It's based on Cloud Foundry and makes use of Amazon Web Services' GovCloud environment.
 
-
 ## Terminology / Overview of terms
 
 ### Organizations
@@ -37,18 +36,17 @@ As the [Cloud Foundry documentation](http://docs.cloudfoundry.org/concepts/roles
 
 cloud.gov currently permits the following roles:
 
- * **Org Managers** are managers or other users who need to administer the org.
- * **Org Auditors** view but cannot edit user information and org quota usage information.
- * **Space Managers** are managers or other users who administer a space within an org.
- * **Space Developers:** are application developers or other users who manage applications and services in a space.
- * **Space Auditors:** view but cannot edit the space.
-
+- **Org Managers** are managers or other users who need to administer the org.
+- **Org Auditors** view but cannot edit user information and org quota usage information.
+- **Space Managers** are managers or other users who administer a space within an org.
+- **Space Developers:** are application developers or other users who manage applications and services in a space.
+- **Space Auditors:** view but cannot edit the space.
 
 ## Division of responsibilities
 
 ### Security updates
 
-When a new security update is available for one of cloud.gov's underlying technologies, we update the relevant buildpacks. These changes don't take effect on individual apps until the apps are restaged. Customers know their apps best, and we prefer to minimize surprises, so the customer's dev team is responsible for restaging their own app(s). We notify everyone running an app on an outdated version of a buildpack when we have new versions, so they can decide on an appropriate time to restage and pick up the update. For more information, see the [app maintenance documentation]({{ site.baseurl }}/docs/apps/app-maintenance/).
+When a new security update is available for one of cloud.gov's underlying technologies, we update the relevant buildpacks. These changes don't take effect on individual apps until the apps are restaged. Customers know their apps best, and we prefer to minimize surprises, so the customer's dev team is responsible for restaging their own app(s). We notify everyone running an app on an outdated version of a buildpack when we have new versions, so they can decide on an appropriate time to restage and pick up the update. For more information, see the [app maintenance documentation](/docs/apps/app-maintenance/).
 
 ### Encryption
 
@@ -56,10 +54,10 @@ Every S3, AWS Elasticache, and database service configured through cloud.gov is 
 
 All logs are encrypted while in transit and at rest for [logs.fr.cloud.gov](https://logs.fr.cloud.gov) and [Amazon CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html).
 
-For details, see SC-28 in the cloud.gov System Security Plan in our [P-ATO documentation package]({{ site.baseurl }}/docs/overview/fedramp-tracker/#how-you-can-use-this-p-ato).
+For details, see SC-28 in the cloud.gov System Security Plan in our [P-ATO documentation package](/docs/overview/fedramp-tracker/#how-you-can-use-this-p-ato).
 
 ### Auditing login attempts
 
-Through multi-factor authentication and other means, the cloud.gov team verifies that people logging into cloud.gov legitimately own their accounts. But users don't log in to orgs and spaces, they log into cloud.gov itself. Accordingly, customers don't have direct access to logs of login attempts, but you can ask us to perform specific log searches on your behalf. 
+Through multi-factor authentication and other means, the cloud.gov team verifies that people logging into cloud.gov legitimately own their accounts. But users don't log in to orgs and spaces, they log into cloud.gov itself. Accordingly, customers don't have direct access to logs of login attempts, but you can ask us to perform specific log searches on your behalf.
 
-You can use [event auditing]({{ site.baseurl }}/docs/compliance/auditing-activity) to audit access control changes on orgs and spaces, as well as many other events of interest.
+You can use [event auditing](/docs/compliance/auditing-activity) to audit access control changes on orgs and spaces, as well as many other events of interest.

@@ -12,22 +12,28 @@ Curious what’s new that you might find helpful as a cloud.gov application deve
 <!--more-->
 
 ### Added
-When you create a [cloud.gov identity provider service instance]({{ site.baseurl }}/docs/services/cloud-gov-identity-provider/), you can now add scopes from a whitelist of approved scopes. This makes it easier to enable specific permissions and access for additional types of users in your applications.
+
+When you create a [cloud.gov identity provider service instance](/docs/services/cloud-gov-identity-provider/), you can now add scopes from a whitelist of approved scopes. This makes it easier to enable specific permissions and access for additional types of users in your applications.
 
 ### Changed
+
 We recommend updating to the [latest version (6.25)](https://github.com/cloudfoundry/cli/releases/tag/v6.25.0) of the Cloud Foundry command line interface (CLI). This can prevent errors when using the cf CLI. You can check your currently-installed version using `cf -v`
 
 ### Fixed
+
 The cloud.gov dashboard’s loading icon no longer displays after pages finish loading. Before, they would continue indefinitely.
 
 ### Deprecated
+
 - On March 15th, we deprecated support for building and deployment on the cloud.gov East/West environment. This is in preparation for an upcoming shutdown of that environment. We are supporting a few customers in the process of migrating from East/West to GovCloud, but in all other cases we now support the GovCloud environment exclusively.
 - The latest Go buildpack deprecates support for Go 1.6. The next Go release will remove support for 1.6.
 
 ### Removed
+
 The latest Go buildpack no longer supports Go 1.5.
 
 ### Security
+
 We upgraded the Cloud Foundry deployment to [v254](https://github.com/cloudfoundry/cf-release/releases/tag/v254). We have also upgraded the following buildpacks to versions newer than the buildpacks included in CF v254:
 
 - [php buildpack 4.3.29](https://github.com/cloudfoundry/php-buildpack/releases/tag/v4.3.29)

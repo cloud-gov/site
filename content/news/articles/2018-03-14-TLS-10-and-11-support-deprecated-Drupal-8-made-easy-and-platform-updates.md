@@ -8,7 +8,8 @@ redirect_from:
 ---
 
 ### Upcoming breaking change
-- **We will remove support for TLS 1.0 and 1.1 connections to all applications on cloud.gov on March 30, so that all connections must use TLS 1.2**. TLS 1.0 and 1.1 are outdated versions of the encryption protocol for HTTPS connections, and federal standards require federal systems to stop using them ([see FedRAMP TLS Requirements](https://www.fedramp.gov/assets/resources/documents/CSP_TLS_Requirements.pdf)). After this change, your applications will be inaccessible for anyone using a client device that requires TLS 1.1 or lower. We estimate this change will block less than 1 percent of traffic that reaches applications hosted on cloud.gov today. It’s probably required for your applications by your own agency as well, but if you have any concerns or questions, please [contact us]({{ site.baseurl }}/docs/help/).
+
+- **We will remove support for TLS 1.0 and 1.1 connections to all applications on cloud.gov on March 30, so that all connections must use TLS 1.2**. TLS 1.0 and 1.1 are outdated versions of the encryption protocol for HTTPS connections, and federal standards require federal systems to stop using them ([see FedRAMP TLS Requirements](https://www.fedramp.gov/assets/resources/documents/CSP_TLS_Requirements.pdf)). After this change, your applications will be inaccessible for anyone using a client device that requires TLS 1.1 or lower. We estimate this change will block less than 1 percent of traffic that reaches applications hosted on cloud.gov today. It’s probably required for your applications by your own agency as well, but if you have any concerns or questions, please [contact us](/docs/help/).
 
 ### Announcements
 
@@ -16,17 +17,15 @@ redirect_from:
 
 - **We invite research volunteers** to help us improve cloud.gov. To participate, click on the embedded sign-up form at the bottom of the [home page](https://cloud.gov).
 
-
 ### Added
 
-- **We’ve made a demo showing how easy it is to [deploy Drupal 8 to cloud.gov](https://github.com/18F/cf-ex-drupal)**. 
+- **We’ve made a demo showing how easy it is to [deploy Drupal 8 to cloud.gov](https://github.com/18F/cf-ex-drupal)**.
 
-- **We’ve provided [a guide]({{ site.baseurl }}/docs/compliance/auditing-activity/)** explaining how to generate audit logs for events such as role changes, service bindings, and 75+ other events.  
+- **We’ve provided [a guide](/docs/compliance/auditing-activity/)** explaining how to generate audit logs for events such as role changes, service bindings, and 75+ other events.
 
 ### Fixed
 
-- **We’ve updated the [Overview for assessors]({{ site.baseurl }}/docs/compliance/for-assessors/) page** to clarify that logs are encrypted during transit and at rest.  
-
+- **We’ve updated the [Overview for assessors](/docs/compliance/for-assessors/) page** to clarify that logs are encrypted during transit and at rest.
 
 ### Buildpack updates
 
@@ -34,7 +33,7 @@ redirect_from:
   - Added PHP 7.1.14, 7.2.2, removed 7.1.12, 7.2.0
   - Upgraded Redis to 3.1.6
 - [.NET Core Buildpack 2.0.2](https://github.com/cloudfoundry/dotnet-core-buildpack/releases/tag/v2.0.2)
-  - Updated to allow manifest overrides  
+  - Updated to allow manifest overrides
 - [Binary Buildpack 1.0.17](https://github.com/cloudfoundry/binary-buildpack/releases/tag/v1.0.17)
   - Now emits error message when no start command is given
 - [NodeJS Buildpack 1.6.18](https://github.com/cloudfoundry/nodejs-buildpack/releases/tag/v1.6.18)
@@ -51,10 +50,10 @@ redirect_from:
   - Added RubyGems 2.7.6, removed 2.7.4
 - [RootFS cflinuxfs2 1.188.0](https://github.com/cloudfoundry/cflinuxfs2/releases/tag/1.188.0)
   - USN-3577-1 cups vulnerabilities
-  - USN-3569-1 libvorbis vulnerabilities 
+  - USN-3569-1 libvorbis vulnerabilities
   - USN-3554-1 curl vulnerabilities
 - [Cloud Foundry Deployment 1.16.0](https://github.com/cloudfoundry/cf-deployment/releases/tag/v1.16.0)
-  - Simplifies platform operations and maintenance, removes legacy properties 
+  - Simplifies platform operations and maintenance, removes legacy properties
 - [Diego 2.0.0](https://github.com/cloudfoundry/diego-release/releases/tag/v2.0.0)
   - Upgraded to major version 2 release with better container scheduling, dependency management and all components now use mutual TLS
 - [Stemcell 3541.9](https://github.com/cloudfoundry/bosh-linux-stemcell-builder/releases/tag/stable-3541.9)

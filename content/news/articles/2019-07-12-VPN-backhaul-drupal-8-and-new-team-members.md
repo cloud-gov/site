@@ -2,7 +2,7 @@
 layout: layouts/post
 tags: news
 date: 2019-07-12
-title: "VPN backhaul, Drupal 8 example, and new team members" 
+title: "VPN backhaul, Drupal 8 example, and new team members"
 redirect_from:
   - /updates/2019-07-12-VPN-backhaul-drupal-8-and-new-team-members/
 ---
@@ -11,18 +11,15 @@ Curious what’s new that you might find helpful as a cloud.gov user? Here are h
 
 ## Announcements
 
-
-*Update*: Due to changes in customer needs, private network rollout was halted.
-
+_Update_: Due to changes in customer needs, private network rollout was halted.
 
 ### 2019 FedRAMP annual assessment completed, cloud.gov granted re-authorization
 
-Every year, to maintain [our FedRAMP Authorization]({{ site.baseurl }}/overview/security/fedramp-tracker/), cloud.gov goes through a robust security compliance audit to ensure our security measures are up to date with current federal standards. This enables our customer systems to inherit a significant amount of compliance from the cloud.gov platform, supporting faster ATOs and less work for their teams.
+Every year, to maintain [our FedRAMP Authorization](/overview/security/fedramp-tracker/), cloud.gov goes through a robust security compliance audit to ensure our security measures are up to date with current federal standards. This enables our customer systems to inherit a significant amount of compliance from the cloud.gov platform, supporting faster ATOs and less work for their teams.
 
-Our team has successfully completed this year’s re-authorization. Current and prospective customers can view our audit materials in the FedRAMP document repository on MAX.gov by [requesting access from FedRAMP]({{ site.baseurl }}/overview/security/fedramp-tracker/#start-the-ato-process).
+Our team has successfully completed this year’s re-authorization. Current and prospective customers can view our audit materials in the FedRAMP document repository on MAX.gov by [requesting access from FedRAMP](/overview/security/fedramp-tracker/#start-the-ato-process).
 
 ## New additions
-
 
 ### Try an experimental feature for no-downtime deployments
 
@@ -30,11 +27,11 @@ It’s often a challenge to build a process for deploying new versions of your a
 
 ### Functions support for MySQL databases
 
-If you need to set up a MySQL schema that includes functions, procedures, and triggers, you can now create new databases that have that feature enabled. [To do this, see the “Options” documentation for RDS databases.]({{ site.baseurl }}/docs/services/relational-database/#options) This allows you to build a wider range of applications on cloud.gov.
+If you need to set up a MySQL schema that includes functions, procedures, and triggers, you can now create new databases that have that feature enabled. [To do this, see the “Options” documentation for RDS databases.](/docs/services/relational-database/#options) This allows you to build a wider range of applications on cloud.gov.
 
 ### Improved instructions for running Drupal 8 for managing content
 
-A lot of government teams run Drupal for content management for their websites, including the [Drupal 8](https://www.drupal.org/8) version. With some modifications, Drupal runs well on cloud.gov. We’ve improved our [instructions and sample code](https://github.com/18F/cf-ex-drupal8) showing how to run Drupal in cloud.gov with best practices including configuration-as-code and continuous deployment principles. 
+A lot of government teams run Drupal for content management for their websites, including the [Drupal 8](https://www.drupal.org/8) version. With some modifications, Drupal runs well on cloud.gov. We’ve improved our [instructions and sample code](https://github.com/18F/cf-ex-drupal8) showing how to run Drupal in cloud.gov with best practices including configuration-as-code and continuous deployment principles.
 
 ### Automatically label your applications with version control information
 
@@ -50,7 +47,7 @@ We routinely update the operating system underneath your applications to ensure 
 
 ### Removed: CNAME ALIAS method for verifying DNS ownership
 
-When using the [CDN service]({{ site.baseurl }}/docs/services/cdn-route/) to set up a custom domain name for an application, cloud.gov now only offers certificate provisioning via DNS challenges. We stopped supporting the CNAME ALIAS method. See the [updated steps for setting up DNS]({{ site.baseurl }}/docs/services/cdn-route/#how-to-set-up-dns).
+When using the [CDN service](/docs/services/cdn-route/) to set up a custom domain name for an application, cloud.gov now only offers certificate provisioning via DNS challenges. We stopped supporting the CNAME ALIAS method. See the [updated steps for setting up DNS](/docs/services/cdn-route/#how-to-set-up-dns).
 
 ### Removed: Experimental NFS (Network File System) volume service
 
@@ -62,7 +59,7 @@ We are excited to announce new people joining cloud.gov. Please welcome our newe
 
 ### Eddie Tejeda, cloud.gov Director
 
-Eddie has fifteen years of experience building technology products for civic institutions. At 18F, he worked on a range of topics, including security training, open data, and served as the Director of [Pages (formerly Federalist)](https://cloud.gov/pages/). Before joining 18F, he co-founded Civic Insight (acquired in 2015), a data platform used by residents across the country to search and visualize building permits, planning and code enforcement data. 
+Eddie has fifteen years of experience building technology products for civic institutions. At 18F, he worked on a range of topics, including security training, open data, and served as the Director of [Pages (formerly Federalist)](https://cloud.gov/pages/). Before joining 18F, he co-founded Civic Insight (acquired in 2015), a data platform used by residents across the country to search and visualize building permits, planning and code enforcement data.
 
 In 2012, he served as a Code for America Fellow and worked with the city of New Orleans to help residents track the progress of vacant and abandoned homes. He also worked with Cornell University and the Department of Transportation (DOT) to develop Regulation Room, a commenting platform used to increase public participation in the regulatory process. Eddie is engaged in his local community and co-founded OpenOakland, a non-profit that promotes civic engagement, and served as Vice Chair in the City of Oakland's Public Ethics Commission.
 
@@ -76,9 +73,9 @@ Born and raised in Prince Georges County, MD, Alex has a combined Computer Scien
 
 ### Jessyka Castillo, cloud.gov Agency Partnerships
 
-Jessyka grew up in Miami, Florida. She went to Florida International University undergrad (Go Panthers!) for Communications and The George Washington University graduate school (Go Colonials!) for Systems Engineering & Management with a concentration in public-private partnerships. Prior to joining TTS, she spent some time in New York City working as a public relations and marketing professional, working for a multicultural marketing agency representing Procter & Gamble clients, managing strategic communication plans for fortune 500 companies, and contributing successful consumer focused product development marketing campaigns for multi-million dollar projects. 
+Jessyka grew up in Miami, Florida. She went to Florida International University undergrad (Go Panthers!) for Communications and The George Washington University graduate school (Go Colonials!) for Systems Engineering & Management with a concentration in public-private partnerships. Prior to joining TTS, she spent some time in New York City working as a public relations and marketing professional, working for a multicultural marketing agency representing Procter & Gamble clients, managing strategic communication plans for fortune 500 companies, and contributing successful consumer focused product development marketing campaigns for multi-million dollar projects.
 
-Most recently, she contributed her area of expertise to the public sector, working for HHS on Michelle Obama’s *Let’s Move* campaign and also serving as the Interim Director for The George Washington University’s Upward Bound Program, federally sponsored by the Department of Education. As of September 2017, Jessyka joined GSA’s Emerging Leaders Program (ELP), as a rotational Program Analyst where she gained experience in the fields of innovation and incubator technology, systems and framework engineering, finance, contracting and acquisitions, as well as strategic public-private partnerships as a GSA ELPer. After 6 rotations throughout GSA, she is more than confident that 18F is home for her.
+Most recently, she contributed her area of expertise to the public sector, working for HHS on Michelle Obama’s _Let’s Move_ campaign and also serving as the Interim Director for The George Washington University’s Upward Bound Program, federally sponsored by the Department of Education. As of September 2017, Jessyka joined GSA’s Emerging Leaders Program (ELP), as a rotational Program Analyst where she gained experience in the fields of innovation and incubator technology, systems and framework engineering, finance, contracting and acquisitions, as well as strategic public-private partnerships as a GSA ELPer. After 6 rotations throughout GSA, she is more than confident that 18F is home for her.
 
 ### Ron Williams, cloud.gov Operations Site Reliability Engineer
 

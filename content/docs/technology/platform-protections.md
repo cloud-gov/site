@@ -43,7 +43,7 @@ Since AWS handles the CHALLENGE response for requests exceeding the rate-limit t
 
 ### AWS CloudFront & CDNs
 
-Cloud.gov offers [Amazon CloudFront as a CDN]({{ site.baseurl }}{{ '/docs/services/external-domain-service.md' | url }}) to enhance protection against traffic surges.  CloudFront can cache requests, reducing the load on your application.
+Cloud.gov offers [Amazon CloudFront as a CDN]({{ '/docs/services/external-domain-service.md' | url }}) to enhance protection against traffic surges. CloudFront can cache requests, reducing the load on your application.
 
 CloudFront CDNs managed by Cloud.gov receive additional protections:
 

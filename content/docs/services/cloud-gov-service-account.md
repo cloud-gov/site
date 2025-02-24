@@ -5,23 +5,23 @@ name: "cloud-gov-service-account"
 description: "cloud.gov service accounts for automated access by programs"
 status: "Beta"
 redirect_from:
-- /docs/services/deployer-account/
+  - /docs/services/deployer-account/
 ---
 
 To set up your application to be deployed with an automated system, you need a deployer account that has access to push your application.
 
 ## Plans
 
-Plan Name | Description | Cloud Foundry Role
---------- | ----------- | -------------------|
-`space-deployer` | A service account for continuous deployment, initially limited to a single space | SpaceDeveloper | 
-`space-auditor` | A service account for auditing configuration and monitoring events, initially limited to a single space | SpaceAuditor |
+| Plan Name        | Description                                                                                             | Cloud Foundry Role |
+| ---------------- | ------------------------------------------------------------------------------------------------------- | ------------------ |
+| `space-deployer` | A service account for continuous deployment, initially limited to a single space                        | SpaceDeveloper     |
+| `space-auditor`  | A service account for auditing configuration and monitoring events, initially limited to a single space | SpaceAuditor       |
 
-The `space-deployer` service account is assigned the `SpaceDeveloper` role in the space (pushing apps, provisioning services, etc). The `space-auditor` service account is assigned the `SpaceAuditor` role in the space (read-only access). For details on the capabilities associated with the SpaceDeveloper and SpaceAuditor roles, please see the Cloud Foundry documentation: https://docs.cloudfoundry.org/concepts/roles.html. 
+The `space-deployer` service account is assigned the `SpaceDeveloper` role in the space (pushing apps, provisioning services, etc). The `space-auditor` service account is assigned the `SpaceAuditor` role in the space (read-only access). For details on the capabilities associated with the SpaceDeveloper and SpaceAuditor roles, please see the Cloud Foundry documentation: https://docs.cloudfoundry.org/concepts/roles.html.
 
 > Note: Service accounts will initially be assigned a single role (SpaceDeveloper or SpaceAuditor) in a single space. However, you can add/remove roles for this account in any org and/or space using the `cf` CLI. Please be sure to read the documentation and understand the ramifications of role modifications before proceeding: https://docs.cloudfoundry.org/concepts/roles.html.
 
-*These instances are available in [sandbox spaces]({{ site.baseurl }}/docs/pricing/free-limited-sandbox#sandbox-limitations).*
+_These instances are available in [sandbox spaces](/docs/pricing/free-limited-sandbox#sandbox-limitations)._
 
 ## How to create an instance
 
@@ -50,8 +50,8 @@ The last command will return a username/password pair, that you can use, like th
 
 ```json
 {
- "password": "oYasdfliaweinasfdliecV",
- "username": "deadbeed-aabb-1234-feha0987654321000"
+  "password": "oYasdfliaweinasfdliecV",
+  "username": "deadbeed-aabb-1234-feha0987654321000"
 }
 ```
 
@@ -61,7 +61,6 @@ After you create one of these service keys, you will see a new "user" in your or
 
 You can use these credentials with the [`cf auth`](http://cli.cloudfoundry.org/en-US/cf/auth.html) command in automated deployment scripts.
 
-
 ### If you can't find your service keys
 
 <!-- this description matches on cloud-gov-identity-provider.md and cloud-gov-service-account.md -->
@@ -70,7 +69,7 @@ If you're trying to retrieve credentials for a service instance created before J
 
 ## More information
 
-To use this service, see [continuous deployment]({{ site.baseurl }}/docs/management/continuous-deployment).
+To use this service, see [continuous deployment](/docs/management/continuous-deployment).
 
 ### Rotating credentials
 

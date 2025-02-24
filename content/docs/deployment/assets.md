@@ -1,7 +1,7 @@
 ---
 showInSidenav: true
 redirect_from:
-    - /docs/apps/assets/
+  - /docs/apps/assets/
 title: Building static assets
 ---
 
@@ -9,7 +9,7 @@ Applications with non-trivial static assets (Javascript and CSS files) often inc
 
 ## Build assets on CI
 
-For applications [deployed from a continuous integration service]({{ site.baseurl }}/docs/management/continuous-deployment), building assets on CI is a natural fit. Before deploying to cloud.gov, the CI service runs the asset build process. Then the compiled assets are pushed to cloud.gov along with the application code. Here's a minimal example for Travis CI:
+For applications [deployed from a continuous integration service](/docs/management/continuous-deployment), building assets on CI is a natural fit. Before deploying to cloud.gov, the CI service runs the asset build process. Then the compiled assets are pushed to cloud.gov along with the application code. Here's a minimal example for Travis CI:
 
 ```yaml
 # .travis.yml
@@ -31,7 +31,7 @@ This approach avoids the need to use multiple or custom buildpacks.
 
 Examples in the wild:
 
-* [eRegulations: Notice & Comment](https://github.com/eregs/notice-and-comment)
+- [eRegulations: Notice & Comment](https://github.com/eregs/notice-and-comment)
 
 ## Build assets on cloud.gov
 

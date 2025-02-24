@@ -53,7 +53,7 @@ To [create a space](http://cli.cloudfoundry.org/en-US/cf/create-space.html):
 cf create-space SPACENAME
 ```
 
-**Note:**  To create a space within a given org, you must have the `OrgManager` role. You can see which users are managers for your org with:
+**Note:** To create a space within a given org, you must have the `OrgManager` role. You can see which users are managers for your org with:
 
 ```shell
 cf org-users ORGNAME
@@ -61,7 +61,7 @@ cf org-users ORGNAME
 
 ## Target
 
-The Cloud Foundry CLI keeps a global state of the [organization]({{ site.baseurl }}#organizations)+[space](#spaces) you're interacting with. This is known as the "target", and you can set it with:
+The Cloud Foundry CLI keeps a global state of the [organization](#organizations)+[space](#spaces) you're interacting with. This is known as the "target", and you can set it with:
 
 ```shell
 cf target -o ORGNAME -s SPACENAME
@@ -71,7 +71,7 @@ cf target -o ORGNAME -s SPACENAME
 
 All apps need to use a "buildpack" specific to their language, which sets up dependencies for their language stack. There are [standard buildpacks for most languages](https://docs.cloudfoundry.org/buildpacks/), and Cloud Foundry usually auto-detects and auto-applies the appropriate one when you deploy an app (one exception is that it doesn't auto-apply the special [binary buildpack](https://docs.cloudfoundry.org/buildpacks/binary/index.html)). We strongly encourage you to use the standard buildpacks. cloud.gov supports these standard buildpacks and provides security updates for them. (You'll need to redeploy or restage your application to pick up buildpack updates. You're also responsible for supporting and security-patching the application itself.)
 
-In the rare case where Cloud Foundry doesn't correctly auto-detect the buildpack, or if you want to use a binary buildpack or [custom buildpack]({{ site.baseurl }}/docs/deployment/custom-buildpacks), you can specify a buildpack in the [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) (as below) or with the `-b` flag. To reference a buildpack in a manifest, you may specifying using a name:
+In the rare case where Cloud Foundry doesn't correctly auto-detect the buildpack, or if you want to use a binary buildpack or [custom buildpack](/docs/deployment/custom-buildpacks), you can specify a buildpack in the [application manifest](http://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) (as below) or with the `-b` flag. To reference a buildpack in a manifest, you may specifying using a name:
 
 ```shell
 buildpacks:
@@ -87,10 +87,10 @@ buildpacks:
 
 **Multiple languages:** If your application requires multiple languages, we recommend evaluating these strategies to simplify your application:
 
-* Can you split your project into smaller applications that work together, so that you can use one language for each application and deploy each one separately?
-* Can you initiate long-running processes or schedule periodic jobs from outside your application [using the Tasks capability](https://docs.cloudfoundry.org/devguide/using-tasks.html)?
-* Can you [build your static assets using CI]({{ site.baseurl }}/docs/deployment/assets#build-assets-on-ci) prior to pushing your application, so that only the final built assets are deployed on cloud.gov?
+- Can you split your project into smaller applications that work together, so that you can use one language for each application and deploy each one separately?
+- Can you initiate long-running processes or schedule periodic jobs from outside your application [using the Tasks capability](https://docs.cloudfoundry.org/devguide/using-tasks.html)?
+- Can you [build your static assets using CI](/docs/deployment/assets#build-assets-on-ci) prior to pushing your application, so that only the final built assets are deployed on cloud.gov?
 
 If none of these strategies will help you deploy single-language applications, you can [explicitly specify a set of buildpacks to run in sequence](https://docs.cloudfoundry.org/buildpacks/use-multiple-buildpacks.html), one for each language.
 
-**Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack]({{ site.baseurl }}/docs/deployment/custom-buildpacks). When you use a custom buildpack, you're responsible for keeping your buildpack up-to-date and patching vulnerabilities in it. See [this chart illustrating your responsibilities]({{ site.baseurl }}/docs/technology/responsibilities) for more detail.
+**Custom buildpacks:** If your application can't use a standard buildpack, you can use a [custom buildpack](/docs/deployment/custom-buildpacks). When you use a custom buildpack, you're responsible for keeping your buildpack up-to-date and patching vulnerabilities in it. See [this chart illustrating your responsibilities](/docs/technology/responsibilities) for more detail.

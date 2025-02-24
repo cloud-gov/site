@@ -8,22 +8,27 @@ redirect_from:
 ---
 
 Curious what’s new that you might find helpful as a cloud.gov application developer? Here are highlights from our platform updates over the past week and a half.
+
 <!--more-->
 
 ### Fixed
-- TLS certificates (for custom domains) provided by the [CDN Route service]({{ site.baseurl }}/docs/services/cdn-route) are now automatically obtained with [less risk of rate-limiting](https://cloudgov.statuspage.io/incidents/z49pkl4ms21j).
-- We improved monitoring and reliability for the [Redis]({{ site.baseurl }}/docs/services/redis) and [Elasticsearch](https://github.com/cloud-gov/cg-site/blob/6418e8e933f887896a102d8575f1c7af468d1d2f/content/docs/services/elasticsearch24.md) services, enabling them to automatically restart if non-responsive.
+
+- TLS certificates (for custom domains) provided by the [CDN Route service](/docs/services/cdn-route) are now automatically obtained with [less risk of rate-limiting](https://cloudgov.statuspage.io/incidents/z49pkl4ms21j).
+- We improved monitoring and reliability for the [Redis](/docs/services/redis) and [Elasticsearch](https://github.com/cloud-gov/cg-site/blob/6418e8e933f887896a102d8575f1c7af468d1d2f/content/docs/services/elasticsearch24.md) services, enabling them to automatically restart if non-responsive.
 
 ### Removed
+
 - cloud.gov documentation no longer provides instructions for using the deprecated East/West environment, because all customer applications have migrated to the GovCloud environment.
 
 ### Platform releases
+
 cloud.gov now includes the following releases and upgrades. You will need to [restage your application](http://cli.cloudfoundry.org/en-US/cf/restage.html) to [incorporate fixes in the base filesystem](https://docs.cloudfoundry.org/devguide/deploy-apps/stacks.html#cli-commands) and ensure you’re running the most recent language version supported by your buildpack.
 
 We upgraded the Cloud Foundry deployment to [v262](https://github.com/cloudfoundry/cf-release/releases/tag/v262). This upgrade addresses this security vulnerability:
 [CVE-2017-4991: UAA password reset vulnerability](https://cloudfoundry.org/cve-2017-4991/)
 
 #### Additional upgrades
+
 - [PHP buildpack 4.3.33](https://github.com/cloudfoundry/php-buildpack/releases/tag/v4.3.33)
 - [.NET Core Buildpack 1.0.18](https://github.com/cloudfoundry/dotnet-core-buildpack/releases/tag/v1.0.18)
 - [Binary Buildpack 1.0.12](https://github.com/cloudfoundry/binary-buildpack/releases/tag/v1.0.12)

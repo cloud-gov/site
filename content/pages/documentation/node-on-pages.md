@@ -1,9 +1,6 @@
 ---
 title: Node on Pages
 permalink: /pages/documentation/node-on-pages/
-
-
-
 ---
 
 Pages supports using node and npm to build your entire site OR to build parts of your site before the build engine starts its work. This is helpful for doing things like compiling a site's assets, or employing a build tool such as [Fractal](https://github.com/frctl/fractal). To use node exclusively, be sure to set your site engine to ‘node.js’ in your site settings. If you want to use node alongside a different language, such as Jekyll or Hugo, do NOT change the site engine, Pages will detect the presence of a package.json file and will run the `federalist` or `pages` npm script.
@@ -15,10 +12,11 @@ Before running any other generator, the Pages build engine will check for a `pac
 ## Installing NPM dependencies
 
 Pages will install dependencies from NPM on your behalf, you **should not** include a call to `npm install` from your `federalist` or `pages` npm script or anywhere else. In particular, Pages runs `npm ci` which means:
+
 - Your project must have a `package-lock.json` file
 - The dependencies in `package-lock.json` must match those in `package.json`
 
-Note that this process is skipped if [build dependency caching]({{ site.baseurl }}/pages/documentation/cache-dependencies) is enabled.
+Note that this process is skipped if [build dependency caching](/pages/documentation/cache-dependencies) is enabled.
 
 See [npm-ci](https://docs.npmjs.com/cli/ci) and [npm-install](https://docs.npmjs.com/cli/install) for more details.
 
@@ -29,14 +27,15 @@ Pages only supports active and maintenance LTS (Long Term Support) [Node release
 You can specify a different version than the default by providing a file named `.nvmrc` at the root of your repository containing the desired version of Node. However, if an unsupported version is specified, the build will fail with a helpful error message.
 
 ### Examples
+
 If the current active and maintenance LTS release versions are 20 and 18:
 
-| .nvmrc | node version used |
-|:------:|:-----------------:|
-| none | `18` (latest) |
-| `18.19.0` | `18.19.0` |
-| `21.x` | fail |
-| `16.x` | fail |
+|  .nvmrc   | node version used |
+| :-------: | :---------------: |
+|   none    |   `18` (latest)   |
+| `18.19.0` |     `18.19.0`     |
+|  `21.x`   |       fail        |
+|  `16.x`   |       fail        |
 
 See [.nvmrc](https://github.com/nvm-sh/nvm#nvmrc) for details on how to specify node versions.
 
@@ -54,6 +53,7 @@ exclude:
 After adding that, jekyll will ignore the `node_modules` directory when building the site.
 
 ## Examples
+
 ### Use Webpack to pre-process javascript
 
 ```json
@@ -102,6 +102,7 @@ After adding that, jekyll will ignore the `node_modules` directory when building
 ```
 
 ### Use Node to build an Eleventy site
+
 ```json
 {
   "name": "pages-eleventy-template",
@@ -110,7 +111,7 @@ After adding that, jekyll will ignore the `node_modules` directory when building
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
-    "federalist": "npm run build",
+    "federalist": "npm run build"
   },
   "keywords": [],
   "author": "",
