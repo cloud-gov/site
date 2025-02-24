@@ -5,15 +5,15 @@ module.exports = {
   showtoc: true,
   permalink: function (data) {
     const fileName = data.page.inputPath
-      .replace('content/', '')
-      .split('.')
+      .replace("content/", "")
+      .split(".")
       .slice(0, -1)
-      .join('.');
+      .join(".");
     return `/${fileName}/`;
   },
   eleventyComputed: {
     parent: (data) => {
       return data.page.inputPath.replace("./content/docs/", "").split("/")[0];
-    }
-  }
+    },
+  },
 };

@@ -93,73 +93,78 @@ fact_sheets:
       - link: /assets/documents/Federalist-ATO-Extension-Letter.pdf
         description: Pages's compliance and Authority to Operate extension.
 ---
-
 <section class="usa-section">
   <div class="grid-container maxw-desktop">
     <div class="grid-row grid-gap">
       <div class="tablet:grid-col-7">
         <h1 class="font-heading-3xl">There’s no easier way to build, launch and manage government sites.</h1>
         <p class="usa-intro">
-          Pages is a publishing platform for modern <a href="{{ '/content/pages/documentation/21st-century-idea' }}">21st Century IDEA</a> websites.
+          Pages is a publishing platform for modern
+          <a href="{{ '/content/pages/documentation/21st-century-idea' }}">21st Century IDEA</a> websites.
         </p>
         <p class="padding-bottom-4">
           <a class="usa-button usa-button--big" href="https://pages.cloud.gov">Log in to dashboard</a>
         </p>
       </div>
       <div class="tablet:grid-col-4 tablet:grid-offset-1 usa-prose padding-5">
-          <h3>Trusted and Scalable</h3>
-          <ul class="margin-left-1">
-            <li><b>134</b> production .gov sites</li>
-            <li><b>9</b> federal agencies</li>
-            <li><b>100+</b> million visitors per year</li>
-            <li><b>400+</b> prototypes developed</li>
-            <li><b>639+</b> updates per week</li>
-          </ul>
+        <h3>Trusted and Scalable</h3>
+        <ul class="margin-left-1">
+          <li><b>134</b> production .gov sites</li>
+          <li><b>9</b> federal agencies</li>
+          <li><b>100+</b> million visitors per year</li>
+          <li><b>400+</b> prototypes developed</li>
+          <li><b>639+</b> updates per week</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <section class="usa-graphic-list usa-section usa-section--dark">
-<div class="grid-container maxw-desktop">
-  <a name="How it works"></a>
-  <div class="grid-row grid-gap">
-    <h2>How it works.</h2>
-  </div>
-  <div class="grid-row grid-gap-lg">
-    {% for item in how_it_works %}
-      <div class="tablet:grid-col-4 margin-y-4">
-        <div class="font-sans-sm text-heavy text-center"><span class="bg-primary display-inline-block padding-1 height-5 width-5 radius-pill">{{ forloop.index }}</span></div>
-        <p class="font-sans-lg text-uppercase text-center">
-          {{item.name}}
-        </p>
-        <img class="display-block margin-x-auto" src="{{item.image }}" alt="{{item.image_alt}}">
-        <div class="padding-x-2">
-          <p class="font-sans-xs line-height-sans-3">{{ item.description }}</p>
-          <a class="display-block font-sans-3xs line-height-sans-4" href="{{item.link }}">{{ item.link_text }}</a>
+  <div class="grid-container maxw-desktop">
+    <a name="How it works"></a>
+    <div class="grid-row grid-gap">
+      <h2>How it works.</h2>
+    </div>
+    <div class="grid-row grid-gap-lg">
+      {% for item in how_it_works %}
+        <div class="tablet:grid-col-4 margin-y-4">
+          <div class="font-sans-sm text-heavy text-center">
+            <span class="bg-primary display-inline-block padding-1 height-5 width-5 radius-pill">
+              {{- forloop.index -}}
+            </span>
+          </div>
+          <p class="font-sans-lg text-uppercase text-center">
+            {{ item.name }}
+          </p>
+          <img class="display-block margin-x-auto" src="{{item.image }}" alt="{{item.image_alt}}">
+          <div class="padding-x-2">
+            <p class="font-sans-xs line-height-sans-3">{{ item.description }}</p>
+            <a class="display-block font-sans-3xs line-height-sans-4" href="{{item.link }}">{{ item.link_text }}</a>
+          </div>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
     </div>
   </div>
 </section>
 
 <section class="usa-section margin-y-8">
   <div class="grid-container maxw-desktop usa-prose">
-      <h2>Launch your site in minutes.</h2>
-      <a name="Customers"></a>
-      <p>
-        Pages uses a <a href="https://github.com/">public code hosting service</a> to load and store code for your site. If your code is already on GitHub, Pages can securely deploy a website from your repository in minutes.
-      </p>
-      <h3>Agencies using Pages</h3>
+    <h2>Launch your site in minutes.</h2>
+    <a name="Customers"></a>
+    <p>
+      Pages uses a <a href="https://github.com/">public code hosting service</a> to load and store code for your site.
+      If your code is already on GitHub, Pages can securely deploy a website from your repository in minutes.
+    </p>
+    <h3>Agencies using Pages</h3>
     <div class="grid-row grid-gap margin-bottom-3">
       {% for agency in agencies_using %}
-      <div class="tablet:grid-col-3 text-center">
-        <figure class="margin-0 padding-2">
-          <img src="{{agency.seal }}" alt="Seal of the {{agency.name}}" height="64" width="64">
-          <figcaption>{{agency.name}}</figcaption>
-        </figure>
-      </div>
+        <div class="tablet:grid-col-3 text-center">
+          <figure class="margin-0 padding-2">
+            <img src="{{agency.seal }}" alt="Seal of the {{agency.name}}" height="64" width="64">
+            <figcaption>{{ agency.name }}</figcaption>
+          </figure>
+        </div>
       {% endfor %}
     </div>
     <a class="cg-arrow" href="{{ '/pages/success-stories/' }}">See success stories of Pages-powered sites</a>
@@ -172,13 +177,15 @@ fact_sheets:
     <a name="Case Studies"></a>
     <div class="grid-row grid-gap-lg">
       {% for study in case_studies %}
-      <div class="tablet:grid-col-4 bar-top">
-          <h3>{{study.name}}</h3>
-          <a class="display-block border-1px border-base-lighter margin-y-2" href="{{study.link }}"><img class="display-block" src="{{study.thumbnail }}" alt="{{study.thumbnail_alt}}"></a>
+        <div class="tablet:grid-col-4 bar-top">
+          <h3>{{ study.name }}</h3>
+          <a class="display-block border-1px border-base-lighter margin-y-2" href="{{study.link }}"
+            ><img class="display-block" src="{{study.thumbnail }}" alt="{{study.thumbnail_alt}}"
+          ></a>
           <p>
             <a href="{{study.link }}">{{ study.read_me_for }}</a>
           </p>
-      </div>
+        </div>
       {% endfor %}
     </div>
   </div>
@@ -189,7 +196,8 @@ fact_sheets:
     <div class="grid-row">
       <div class="tablet:grid-col">
         <p class="usa-intro tablet:grid-col-10">
-          Want to talk about what Pages can do for your agency? Questions about compliance? Want to try it out for yourself?
+          Want to talk about what Pages can do for your agency? Questions about compliance? Want to try it out for
+          yourself?
         </p>
         <p><a class="usa-button usa-button--big" href="{{ '/pages/contact/' }}">Get in touch</a></p>
       </div>
@@ -201,17 +209,17 @@ fact_sheets:
   <div class="grid-container maxw-desktop usa-prose">
     <div class="grid-row">
       <h2>Kickstart your website with one of our templates.</h2>
-      <p>
-        Our accessible, customizable templates let you spend more time on your content.
-      </p>
+      <p>Our accessible, customizable templates let you spend more time on your content.</p>
     </div>
     <div class="grid-row grid-gap margin-bottom-2">
-    {% for example_site in example_sites %}
-      <div class="tablet:grid-col-6 padding-2 text-center">
-        <a class="border border-base-lighter display-block margin-bottom-1" href="{{example_site.link }}"><img class="display-block" src="{{example_site.screenshot }}" alt="Screenshot of {{example_site.name}}"></a>
-        <a href="{{example_site.link }}">{{example_site.name}}</a>
-      </div>
-    {% endfor %}
+      {% for example_site in example_sites %}
+        <div class="tablet:grid-col-6 padding-2 text-center">
+          <a class="border border-base-lighter display-block margin-bottom-1" href="{{example_site.link }}"
+            ><img class="display-block" src="{{example_site.screenshot }}" alt="Screenshot of {{example_site.name}}"
+          ></a>
+          <a href="{{example_site.link }}">{{ example_site.name }}</a>
+        </div>
+      {% endfor %}
     </div>
     <div class="grid-row">
       <a class="cg-arrow" href="{{ '/pages/documentation/templates/' }}">See all templates</a>
@@ -224,23 +232,29 @@ fact_sheets:
     <div class="grid-row">
       <h2>Pages fact sheets</h2>
       <p>
-        Need more details about Pages? Need help convincing your executive team? The Pages team has developed these resources to help. See more on the <a href="{{ '/pages/documentation/' }}">Pages support site</a>.
+        Need more details about Pages? Need help convincing your executive team? The Pages team has developed these
+        resources to help. See more on the <a href="{{ '/pages/documentation/' }}">Pages support site</a>.
       </p>
     </div>
     <div class="grid-row grid-gap">
       {% for sheet in fact_sheets %}
-      <div class="tablet:grid-col-4 bar-top">
-        <div class="padding-2">
-          <a href="{{sheet.pdfs[0].link }}" class="display-block margin-bottom-2"><img class="border border-base-lighter display-block" src="{{sheet.thumbnail }}" alt="{{sheet.thumbnail_alt}}"></a>
-          <h3>{{sheet.name}}</h3>
-          {% for pdf in sheet.pdfs %}
-          <p>
-            {{pdf.description}}
-          </p>
-          <a class="cg-arrow" href="{{pdf.link }}">Download PDF</a>
-          {% endfor %}
+        <div class="tablet:grid-col-4 bar-top">
+          <div class="padding-2">
+            <a href="{{sheet.pdfs[0].link }}" class="display-block margin-bottom-2"
+              ><img
+                class="border border-base-lighter display-block"
+                src="{{sheet.thumbnail }}"
+                alt="{{sheet.thumbnail_alt}}"
+            ></a>
+            <h3>{{ sheet.name }}</h3>
+            {% for pdf in sheet.pdfs %}
+              <p>
+                {{ pdf.description }}
+              </p>
+              <a class="cg-arrow" href="{{pdf.link }}">Download PDF</a>
+            {% endfor %}
+          </div>
         </div>
-      </div>
       {% endfor %}
     </div>
   </div>

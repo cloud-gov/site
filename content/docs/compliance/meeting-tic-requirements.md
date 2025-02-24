@@ -5,9 +5,9 @@ redirect_from:
   - /docs/orgs/meeting-tic-requirements
 ---
 
-Agencies hosting workloads on cloud.gov need to ensure compliance with the [DHS CISA Trusted Internet Connections](https://www.cisa.gov/tic-guidance) program.  In September 2019, OMB released [Memo M-19-26](https://www.whitehouse.gov/wp-content/uploads/2019/09/M-19-26.pdf), that specified new standards for TIC 3.0, and DHS CISA is currently developing new guidance for workloads hosted in PaaS cloud environments.
+Agencies hosting workloads on cloud.gov need to ensure compliance with the [DHS CISA Trusted Internet Connections](https://www.cisa.gov/tic-guidance) program. In September 2019, OMB released [Memo M-19-26](https://www.whitehouse.gov/wp-content/uploads/2019/09/M-19-26.pdf), that specified new standards for TIC 3.0, and DHS CISA is currently developing new guidance for workloads hosted in PaaS cloud environments.
 
-We at cloud.gov are working with the TIC program office to ensure our customers have a smooth path to cloud adoption. At this point agencies are not expected to wait for the TIC PaaS Use Case before hosting workloads in cloud environments.  OMB and CISA have acknowledged that agencies are already utilizing PaaS, and they are working to embed current best practices, including those already in place at cloud.gov, into the forthcoming guidance.
+We at cloud.gov are working with the TIC program office to ensure our customers have a smooth path to cloud adoption. At this point agencies are not expected to wait for the TIC PaaS Use Case before hosting workloads in cloud environments. OMB and CISA have acknowledged that agencies are already utilizing PaaS, and they are working to embed current best practices, including those already in place at cloud.gov, into the forthcoming guidance.
 
 If you need agency user or developer traffic to traverse a TIC point, then some of the architectural guidance related to TIC 2.2 is provided below.
 

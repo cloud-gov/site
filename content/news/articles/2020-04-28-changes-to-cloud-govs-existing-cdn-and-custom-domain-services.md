@@ -6,6 +6,7 @@ date: 2020-04-28
 redirect_from:
   - /2020/04/28/changes-to-cloud-gov-s-existing-cdn-and-custom-domain-services-1/
 ---
+
 This message is to let you know about upcoming changes to cloud.gov’s CDN and domain services.
 
 **What is happening to the old services?**
@@ -14,7 +15,7 @@ Let’s Encrypt, which the cloud.gov custom domain service uses to provision SSL
 
 **Here are the details:**
 
-cloud.gov’s existing CDN service (provided by the cdn-broker) and the custom-domain service (provided by the domains-broker) will no longer be able to provision *new domains* starting June 1, 2020. All *existing domains* will continue to operate normally.
+cloud.gov’s existing CDN service (provided by the cdn-broker) and the custom-domain service (provided by the domains-broker) will no longer be able to provision _new domains_ starting June 1, 2020. All _existing domains_ will continue to operate normally.
 
 We are working on a new version of the service that will use the Let’s Encrypt v2 API and anticipate having a new service in place before the existing services retire in June.
 

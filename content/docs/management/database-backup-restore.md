@@ -1,10 +1,9 @@
 ---
 showInSidenav: true
 redirect_from:
-    - /docs/apps/database-backup-restore/
+  - /docs/apps/database-backup-restore/
 title: Perform a database backup or restore
 ---
-
 
 Use this procedure to perform a database backup or restore operation by using `cf-service-connect` to import and export data.
 

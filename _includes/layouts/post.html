@@ -1,26 +1,35 @@
 ---
 layout: layouts/default
 ---
-
 {% comment %}
-This is used in blog posts. The index page can be found at blog/index.html
+  This is used in blog posts. The index page can be found at blog/index.html
 {% endcomment %}
 
 <div class="usa-layout-docs usa-section post-layout">
   <div class="grid-container">
     <div class="grid-row grid-gap">
       <div class="usa-layout-docs__main desktop:grid-col-9 usa-prose">
-        <h2 class="title">{{title}}</h2>
+        <h2 class="title">{{ title }}</h2>
         <div class="text-base margin-bottom-2">
           <div class="margin-top-neg-105">
-            <!--By <span class="text-bold">{{ author }}</span> · -->{{ date | readableDate }}
+            <!-- By <span class="text-bold">{{ author }}</span> · -->
+            {{ date | readableDate }}
           </div>
         </div>
         {{ content }}
 
         <div class="grid-row">
           <div class="grid-col flex-4"></div>
-          <div class="grid-col flex-1"><p><a href="{{ site.github_url }}/edit/{{ site.github_branch }}/{{ page.relative_path }}" class="usa-link--external" target="_blank">Suggest edits</a></p></div>
+          <div class="grid-col flex-1">
+            <p>
+              <a
+                href="{{ site.github_url }}/edit/{{ site.github_branch }}/{{ page.relative_path }}"
+                class="usa-link--external"
+                target="_blank"
+                >Suggest edits</a
+              >
+            </p>
+          </div>
         </div>
       </div>
     </div>

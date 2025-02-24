@@ -7,6 +7,7 @@ excerpt: The cloud.gov platform acts as a concierge for your cloud deployments,
   removing a lot of the hard work of setting up a scalable and compliant
   infrastructure, and streamlining the ATO process.
 ---
+
 As a program manager or CIO tasked with moving applications to the cloud, one of the first questions you might find yourself faced with is: which cloud should I move to?
 
 One of the many benefits of the continued advancement of cloud technologies is that [there are lots of different cloud deployment and operational models](https://bluexp.netapp.com/blog/cvo-blg-cloud-computing-deployment-models-and-architectures) to choose from. And it’s also one of the main drawbacks. 
@@ -37,10 +38,10 @@ One of the defining characteristics of cloud.gov is this: it’s just plain easy
 
 When an app is deployed to cloud.gov, the platform’s concierge qualities really stand out. Simply by pushing an application, a project team gets all of the following courtesy of the cloud.gov platform:
 
-* The platform automatically loads the appropriate runtime for the application based on the programming language used. cloud.gov [currently supports almost a dozen different language runtimes.](https://cloud.gov/docs/overview/portfolio-analysis/)
-* The platform binds the application to [backing services](https://cloud.gov/docs/services/intro/), like an RDS service or a caching service, and automatically makes the credentials for these services available to the application, minimizing the need for complex configuration and credential management.
-* The platform automatically scales the application from one to dozens of instances depending on what is needed, and automatically load balances traffic between instances. 
-* The platform will continually monitor the health of an application and recycle app instances that become unhealthy, automatically routing traffic only to healthy app instances.
+- The platform automatically loads the appropriate runtime for the application based on the programming language used. cloud.gov [currently supports almost a dozen different language runtimes.](https://cloud.gov/docs/overview/portfolio-analysis/)
+- The platform binds the application to [backing services](https://cloud.gov/docs/services/intro/), like an RDS service or a caching service, and automatically makes the credentials for these services available to the application, minimizing the need for complex configuration and credential management.
+- The platform automatically scales the application from one to dozens of instances depending on what is needed, and automatically load balances traffic between instances. 
+- The platform will continually monitor the health of an application and recycle app instances that become unhealthy, automatically routing traffic only to healthy app instances.
 
 Because the cloud.gov platform handles all of the hard parts of deploying an application, a project team can focus on building a great app. Instead of worrying about the many details and requirements of setting up a cloud infrastructure, cloud.gov acts as a concierge service for your application, turning complex, risky, multi-step deployments simple and efficient.
 

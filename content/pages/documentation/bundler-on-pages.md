@@ -1,12 +1,9 @@
 ---
 title: Bundler on Pages
 permalink: /pages/documentation/bundler-on-pages/
-
-
 ---
 
-
-Pages uses [Bundler](https://bundler.io/) to manage your Pages site's dependencies.  By default, Pages runs Bundler version 1.
+Pages uses [Bundler](https://bundler.io/) to manage your Pages site's dependencies. By default, Pages runs Bundler version 1.
 
 ## Specifying a Bundler version
 

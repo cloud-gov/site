@@ -1,13 +1,12 @@
 ---
 title: RVM on Pages
 permalink: /pages/documentation/rvm-on-pages/
-
-
 ---
 
 Pages uses [RVM](https://rvm.io/) to select which ruby version to use to build a Pages site.
 
 ## Default Ruby version
+
 By default, the build will use Ruby version 3.1.4.
 
 ## Specifying a Ruby version

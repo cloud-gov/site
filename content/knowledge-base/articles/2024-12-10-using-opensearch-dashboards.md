@@ -5,7 +5,6 @@ date: 2024-12-10
 excerpt: This article briefly explains what opensearch dashboards does, what types of logs are available in Dashboards, creating dashboards, and how to create log visualizations in Dashboards.
 redirect_from:
   - /knowledge-base/2022-12-08-common-kibana-searches-on-clouddotgov/
-
 ---
 
 ## What does Dashboards do?
@@ -29,7 +28,7 @@ Cloud Foundry has 3 fields that can be very helpful to filter down what app logs
 
 Other fields that may be useful for querying:
 
-- `@message` - the app specific message attached to the log. This field supports full-text searching, so you can do a search of `@message: "foo"` to find all logs where `@message` contains `foo`. 
+- `@message` - the app specific message attached to the log. This field supports full-text searching, so you can do a search of `@message: "foo"` to find all logs where `@message` contains `foo`.
 - `@raw` - the raw message received by OpenSearch before parsing into other fields. This field also supports full-text searching
 
 ## How to visualize application traffic
@@ -42,16 +41,11 @@ After you have logged into Dashboards, click "Discover" in the left sidebar menu
 
 The next step is to visualize your search results based on a specific field. To visualize request logs over time, choose the `@timestamp` field from the left sidebar of "Available fields". Then, click "Visualize".
 
-
 {% image "_img/content/opensearch-timestamp.png" "Screenshot of Dashboards interface showing the selection of @timestamp as field to use for visualizing request logs" %}
-
-
 
 By default, visualizing logs based on `@timestamp` will produce a histogram chart. To change the chart type to line, which might be more useful for this type of data, click the "Metrics & axes" link in the chart configuration panel on the right side of the screen. Then, under "Metrics" and "Count", select "Line" from the "Chart type" drop-down. Finally, click the "Update" button at the bottom right of the screen and the chart should update to a line chart.
 
-
 {% image "_img/content/dashboard-line.png" "Screenshot of Dashboards visualization interface showing a line chart of requests over time with a panel for chart configuration options visible on the right side of the screen. In the chart configuration options, "line" is selected as the chart type" %}
-
 
 ## Fields for router requests
 
@@ -72,9 +66,7 @@ The full list of fields available for router logs can be found in [our OpenSearc
 
 OpenSearch allows for [generating a report](https://opensearch.org/docs/latest/reporting/report-dashboard-index/) from a saved search. This is done by choosing a search and clicking the **Reporting** menu option.
 
-
 {% image "_img/content/opensearch-reporting.png" "Screenshot of Dashboards interface showing dashboard selection" %}
-
 
 **Reports have a non-configurable 10,000 row limit**. They have no explicit size limit (for example, MB),
 but extremely large documents could cause report generation to fail

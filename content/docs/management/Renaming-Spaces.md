@@ -1,7 +1,7 @@
 ---
 showInSidenav: true
-redirect_from: 
-    - /docs/apps/renaming-spaces/
+redirect_from:
+  - /docs/apps/renaming-spaces/
 title: Renaming spaces
 ---
 

@@ -1,7 +1,7 @@
 ---
 showInSidenav: true
-redirect_from: 
-    - /docs/apps/headers/
+redirect_from:
+  - /docs/apps/headers/
 title: Security-related HTTP headers
 ---
 

@@ -12,10 +12,11 @@ The expiration of a Certificate Authority's root certificate may be causing some
 
 ### More details
 
-Cloud.gov uses Let's Encrypt to provision the TLS certificates on our platform. Let's Encrypt has their own root certificate (named `ISRG Root X1`), and a set of intermediate certificates (named `Let's Encrypt Authority X1`, `Let's Encrypt Authority X2`, `Let's Encrypt Authority X3`, and `Let's Encrypt Authority X4`). These intermediate certificates allow clients to build a trust chain to Let's Encrypt's root certificate `ISRG Root X1`. Additionally, these certificates are cross-signed to allow clients to build a trust chain to a different Certificate Authority's root certificate - IndenTrust's `DST Root CA X3`. Let's Encrypt has done this since 2016, and does so to maximize client compatibility. You can read more 
+Cloud.gov uses Let's Encrypt to provision the TLS certificates on our platform. Let's Encrypt has their own root certificate (named `ISRG Root X1`), and a set of intermediate certificates (named `Let's Encrypt Authority X1`, `Let's Encrypt Authority X2`, `Let's Encrypt Authority X3`, and `Let's Encrypt Authority X4`). These intermediate certificates allow clients to build a trust chain to Let's Encrypt's root certificate `ISRG Root X1`. Additionally, these certificates are cross-signed to allow clients to build a trust chain to a different Certificate Authority's root certificate - IndenTrust's `DST Root CA X3`. Let's Encrypt has done this since 2016, and does so to maximize client compatibility. You can read more
 about Let's Encrypt's certificate heirarchy and the reasoning behind it [here](https://letsencrypt.org/2020/09/17/new-root-and-intermediates.html).
 
 The core issue is that on September 30, 2021, the `DST Root CA X3` expired. For well-behaved clients with up-to-date trust stores, this causes not problems. For other clients, this can cause problems:
+
 - A client with `DST Root CA X3` as a trust anchor but not `ISRG Root X1`, they will probably get a certificate validation error because `DST Root CA X3` expired earlier that day.
 - A client with **both** certs in their trust anchors may give up after constructing a chain to the expired `DST Root CA 3`, but most well-behaved clients will continue checking for a valid chain, and will find the chain to `ISRG Root X1`.
 

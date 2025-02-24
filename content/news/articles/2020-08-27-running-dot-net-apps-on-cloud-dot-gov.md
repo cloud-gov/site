@@ -22,7 +22,7 @@ Yes, with one small caveat. You can easily connect your .NET Core application on
 
 However, because cloud.gov does not broker this service to your application directly as part of our marketplace, this falls outside the scope of our current FedRAMP approval, so there may be some additional compliance work required for you to get your application [authorized to operate in production](https://cloud.gov/docs/overview/fedramp-tracker/#how-you-can-use-this-p-ato). That said, there are no technical limitations on using SQL Server with your .NET Core application running on cloud.gov, and the set up to bind your application to SQL Server is simple and straightforward.
 
-It's also possible to use the [PostgreSQL or MySQL RDS services](https://cloud.gov/docs/services/relational-database/#plans) brokered from Amazon GovCloud by cloud.gov in your .NET Core application. So, migrating from SQL Server to one of these options may provide some additional compliance benefits, as they are within the cloud.gov P-ATO boundry. 
+It's also possible to use the [PostgreSQL or MySQL RDS services](https://cloud.gov/docs/services/relational-database/#plans) brokered from Amazon GovCloud by cloud.gov in your .NET Core application. So, migrating from SQL Server to one of these options may provide some additional compliance benefits, as they are within the cloud.gov P-ATO boundry.
 
 **Does cloud.gov provide any CI/CD tools to use in conjunction with my .NET application?**
 

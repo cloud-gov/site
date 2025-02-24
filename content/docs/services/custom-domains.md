@@ -114,7 +114,6 @@ You need to map [the domain you created](#how-to-create-an-instance-of-this-serv
 You can do that by adding the domain(s) to your application [`manifest.yml` file](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) under the [`routes`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#routes) section:
 
 ```yaml
-
 ---
 routes:
   - route: my.example.gov

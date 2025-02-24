@@ -2,7 +2,7 @@
 layout: layouts/post
 date: 2024-11-18 00:00:00 +00:00
 title: "November 18th Cloud.gov Release Notes"
-excerpt: The Cloud.gov team is working on providing release notes so everyone can see new features and updates. 
+excerpt: The Cloud.gov team is working on providing release notes so everyone can see new features and updates.
 ---
 
 # Release Notes

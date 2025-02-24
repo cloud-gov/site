@@ -1,8 +1,6 @@
 ---
 title: Pages Security and Compliance
 permalink: /pages/documentation/security-and-compliance/
-
-
 ---
 
 ## Pages security and compliance documentation

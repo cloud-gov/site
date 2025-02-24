@@ -18,6 +18,7 @@
     "dev:serve": "npx @11ty/eleventy --serve --watch",
     "dev:cms": "npx decap-server",
     "federalist": "npm run build",
+    "prettier": "prettier ./content --write",
     "serve": "npx @11ty/eleventy --serve",
     "start": "npx @11ty/eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -50,11 +51,13 @@
     "striptags": "^3.2.0"
   },
   "dependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.8.2",
     "@uswds/uswds": "^3.8.2",
     "anchor-js": "^5.0.0",
     "decap-cms": "^3.3.3",
     "eleventy-plugin-toc": "^1.1.5",
     "mermaid": "^11.2.1",
+    "prettier": "^3.5.2",
     "PrismJS": "git+https://github.com/PrismJS/prism-themes.git"
   }
 }

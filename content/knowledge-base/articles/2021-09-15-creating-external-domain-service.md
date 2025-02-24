@@ -17,7 +17,7 @@ This error is a result of the wrong role being set for the user attempting to cr
 
 Some things you can do:
 
-* You can check the existing roles in an organization by executing `cf org-users ORGANIZATION-NAME`
-* If you do not currently have the `SpaceDeveloper` role, a space manager can add it by executing `cf set-org-role USERNAME ORGANIZATION-NAME SpaceDeveloper`.
+- You can check the existing roles in an organization by executing `cf org-users ORGANIZATION-NAME`
+- If you do not currently have the `SpaceDeveloper` role, a space manager can add it by executing `cf set-org-role USERNAME ORGANIZATION-NAME SpaceDeveloper`.
 
 Users with a `SpaceDeveloper` role should be able to create an external domain service without issue. More information on roles [can be found here](https://docs.cloudfoundry.org/adminguide/cli-user-management.html).

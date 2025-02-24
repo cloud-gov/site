@@ -9,10 +9,12 @@ pagination:
   alias: pagesknowledgebase
   reverse: true
 ---
-
-<div id="blog" class="bg-primary-darker usa-section--dark usa-content font-serif-lg padding-y-6 sign-up-intro usa-graphic-list">
+<div
+  id="blog"
+  class="bg-primary-darker usa-section--dark usa-content font-serif-lg padding-y-6 sign-up-intro usa-graphic-list"
+>
   <div class="grid-container">
-    <h1 class="text-normal text-white margin-0">{{title}}</h1>
+    <h1 class="text-normal text-white margin-0">{{ title }}</h1>
   </div>
 </div>
 <div class="grid-container">
@@ -20,9 +22,9 @@ pagination:
     <div class="desktop:grid-col-8 usa-prose padding-right-4">
       <!-- This loops through the paginated posts -->
       {%- for post in pagesknowledgebase %}
-        {% include "collection-item.html" post: post %}
+        {% include 'collection-item.html', post: post %}
       {% endfor %}
-      {% include "pagination-links.html" %}
+      {% include 'pagination-links.html' %}
     </div>
   </div>
 </div>

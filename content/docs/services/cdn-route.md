@@ -146,7 +146,6 @@ You can do that by adding the domain(s) to your application [`manifest.yml` file
 [`routes`](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#routes) section:
 
 ```yaml
-
 ---
 routes:
   - route: my.example.gov

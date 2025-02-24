@@ -13,9 +13,9 @@ Note - if you are looking for options to send manual communications to your user
 
 Some things you can check:
 
-* What events potentially trigger an email from your application (e.g., a user password reset)?
-* What is the volume of email you expect your application to send?
-* What address / domain do your emails need to come from? Do you administer this domain, or are you in contact with the people who do?
+- What events potentially trigger an email from your application (e.g., a user password reset)?
+- What is the volume of email you expect your application to send?
+- What address / domain do your emails need to come from? Do you administer this domain, or are you in contact with the people who do?
 
 The cloud.gov platform does not directly offer a managed service for sending programmatically generated emails, but there are a few different approaches you can consider depending on your needs.
 

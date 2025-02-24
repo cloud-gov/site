@@ -7,7 +7,8 @@ excerpt: Federalist users that have not migrated their accounts to cloud.gov
   Pages will no longer be able to migrate their account or access the platform
   starting April 2nd, 2023.
 ---
-_*Note: This __DOES NOT__ apply to cloud.gov Pages users authenticating or logging into the platform at pages.cloud.gov with their email. Please disregard the following._
+
+_\*Note: This **DOES NOT** apply to cloud.gov Pages users authenticating or logging into the platform at pages.cloud.gov with their email. Please disregard the following._
 
 ### Attention Federalist Users:
 
