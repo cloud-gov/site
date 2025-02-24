@@ -7,7 +7,7 @@ redirect_from:
   - /updates/2018-02-13-elasticsearch-56-upcoming-cloud-foundry-summit-and-platform-updates/
 ---
 
-!["FEC case study illustration"]({{site.baseurl}}/img/"fec-case-study-illo.svg")
+!["FEC case study illustration"](/img/"fec-case-study-illo.svg")
 
 ### Announcements
 

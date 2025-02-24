@@ -37,7 +37,7 @@ You are responsible for ensuring compliance with any and all additional federal 
 
 Pages does not manage your domain name nor provide DNS services. To launch a site on Pages, you must configure the DNS for your domain to point to a domain provided by the Pages team (meaning, that visitors to that address will be pointed at Pages so they can load your site from us). Setting DNS for a new or existing domain may involve working with other offices at your agency; these processes typically vary.
 
-If your domain is not an apex (e.g. 2nd level) domain, the process may be more challenging as some DNS providers do not support all required DNS record types. We recommend that you plan a solution before signing an agreement, please see [custom domains]({{site.baseurl}}/pages/documentation/custom-domains) for more details.
+If your domain is not an apex (e.g. 2nd level) domain, the process may be more challenging as some DNS providers do not support all required DNS record types. We recommend that you plan a solution before signing an agreement, please see [custom domains](/pages/documentation/custom-domains) for more details.
 
 #### You must use a MAX.gov account to download the FedRAMP package.
 

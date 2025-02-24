@@ -21,4 +21,4 @@ Here are the templates currently available:
   </p>
 {% endfor %}
 
-Pages will build any Node.js, Hugo, or Jekyll website, supporting [custom website templates]({{site.baseurl}}/pages/documentation/how-builds-work).
+Pages will build any Node.js, Hugo, or Jekyll website, supporting [custom website templates](/pages/documentation/how-builds-work).

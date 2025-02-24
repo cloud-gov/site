@@ -1,30 +1,33 @@
 ---
 title: Supported Site Engines
 permalink: /pages/documentation/supported-site-engines/
-
-
 ---
 
 ## Current Support
+
 - [Hugo](https://gohugo.io/)
 - Node.js - Runs a [Node](https://nodejs.org) script
 - Static - Hosts the files in your repository without modifying them, useful for exports from content management systems or web development tools.
 - [Jekyll](http://jekyllrb.com)
 
 ## Requirements
+
 For all engines **except Static** Pages will serve whatever is in the `_site` folder so you should either:
+
 - configure the generator to produce output in the `_site` folder OR
 - create a symlink from `_site` to whatever folder will contain the generator's output
 
 ### Node
+
 A Node script can be run to generate a site OR as a preliminary step to generating one with Jekyll or Hugo. To use a Node script as the generator, choose **Node.js** as the **Site Engine** in the Advanced Settings configuration for your site.
 
-For more details on using Node see [node on cloud.gov Pages]({{site.baseurl}}/pages/documentation/node-on-pages).
+For more details on using Node see [node on cloud.gov Pages](/pages/documentation/node-on-pages).
 
 ## Jekyll Resources
+
 Pages can generate any Jekyll website, which lets you build custom websites hosted on Pages. For documentation on getting started with Jekyll, see [jekyllrb.com](http://jekyllrb.com/).
 
-For an example of a Jekyll site optimized for Pages, see our [templates]({{site.baseurl}}/pages/documentation/templates/).
+For an example of a Jekyll site optimized for Pages, see our [templates](/pages/documentation/templates/).
 
 ### Jekyll build features
 
@@ -44,21 +47,24 @@ To handle routing sites for previews, Pages automatically sets a `baseurl` path 
 
 All links to other pages or resources on the site require a `baseurl` prefix. If you're designing a custom template to work with Pages, make sure all references to relative links include `site.baseurl` prefixes, including trailing slashes, as follows:
 
-Link: `{% raw %}[About Us]({{site.baseurl}}/about-us){% endraw %}`
+Link: `{% raw %}[About Us](/about-us){% endraw %}`
 
-Image: `{% raw %}![18F]({{site.baseurl}}/uploads/18f-logo.png' | url }}){% endraw %}`
+Image: `{% raw %}![18F](/uploads/18f-logo.png' | url }}){% endraw %}`
 
 ### Conditionally set robots
 
 To instruct search engines not to index the `preview` builds of your site, try adding the following code within your site's `<head>` tags which are most likely found in your template's head.html or meta.html file:
 {% raw %}
+
 ```markdown
 {% unless site.branch == "main" %}
+
   <meta name="robots" content="noindex, nofollow">
 {% endunless %}
 ```
+
 {% endraw %}
-***Note:*** This code sample assumes the live version of your site's code is maintained in the `main` branch of your site's code repository.
+**_Note:_** This code sample assumes the live version of your site's code is maintained in the `main` branch of your site's code repository.
 
 For all versions of your site that aren't built from `main`, the source code of the site will contain the code above.
 
@@ -81,11 +87,15 @@ Pages can also generate websites with [Hugo](http://gohugo.io/), the Go-based si
 ### Hugo version
 
 When building a Pages site using Hugo, the desired version of Hugo for building your site must be specified in a `.hugo-version` file located in your repository's root directory.
->Sample .hugo-version file contents:
+
+> Sample .hugo-version file contents:
+
 ```markdown
 0.48.0
 ```
->For an extended Hugo version:
+
+> For an extended Hugo version:
+
 ```markdown
 extended_0.48.0
 ```
