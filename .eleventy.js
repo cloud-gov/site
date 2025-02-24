@@ -16,6 +16,7 @@ const striptags = require("striptags");
 const path = require("path");
 const matter = require("gray-matter");
 const { JSDOM } = require("jsdom");
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 // Helper function to synchronously determine if a file exists
 function fileExists(filePath) {
@@ -100,6 +101,8 @@ module.exports = function (config) {
     "./node_modules/@uswds/uswds/dist/img/sprite.svg": "img/sprite.svg",
     "./node_modules/anchor-js/anchor.min.js": "assets/js/anchor.min.js",
   });
+
+  config.addPlugin(EleventyHtmlBasePlugin);
 
   // Strips HTML content. Good for general use if needed, but specifically used on paginated areas for description content.
   config.addFilter("striptags", (content) => {
