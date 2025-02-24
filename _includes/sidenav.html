@@ -20,7 +20,7 @@
             aria-controls="side-nav-{{ category.id }}"
           >
             <svg class="usa-icon" aria-hidden="true" role="img">
-              <use xlink:href="{{ '/img/sprite.svg#' | append: category.icon }}"></use>
+              <use xlink:href="{{ '/img/sprite.svg#'| htmlBaseUrl | append: category.icon }}"></use>
             </svg>
             <span class="sidenav-category-label">{{ category.name }}</span>
           </a>
