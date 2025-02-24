@@ -1,8 +1,6 @@
 ---
 title: External Tools and Resources
 permalink: /pages/documentation/external-tools-and-resources/
-
-
 ---
 
 An outline of external tools and resources customer could leverage outside of the cloud.gov Pages platform to improve site accessibility, user experience, and security posture.
@@ -59,6 +57,7 @@ These tools run against the site to make it more accessible and improve the user
 - [Axe](https://www.deque.com/axe/)
 
 These tools do detailed scans of an individual page, and can be run from a web browser extension or bookmarklet:
+
 - [WAVE tools](https://wave.webaim.org/)
 - [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html)
 

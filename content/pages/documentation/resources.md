@@ -1,8 +1,6 @@
 ---
 title: Additional resources
 permalink: /pages/documentation/resources/
-
-
 ---
 
 ## Working with markdown
@@ -23,32 +21,28 @@ This is just a normal introductory paragraph.
 
 ## This is a second-level h2 heading
 
-*This text will be italic.*
+_This text will be italic._
 _This will also be italic._
 
 **This text will be bold.**
-__This will also be bold.__
+**This will also be bold.**
 
 _You **can** combine them._
 ```
 
 And this is what the above markup looks like when it is rendered on a web page:
 
-
 > # This is a top-level h1 heading
-> 
+>
 > This is just a normal introductory paragraph.
-> 
+>
 > ## This is a second-level h2 heading
-> 
-> *This text will be italic.*
-> _This will also be italic._
-> 
-> **This text will be bold.**
-> __This will also be bold.__
-> 
+>
+> _This text will be italic._ > _This will also be italic._
+>
+> **This text will be bold.** > **This will also be bold.**
+>
 > _You **can** combine them._
-
 
 ## Working with YAML
 
@@ -57,7 +51,6 @@ Variables defined in your YAML configuration can be used within your site.
 Comments are ignored by Pages. Indentation is important to keep related
 options together. We recommend using space characters instead of tabs for
 nesting configuration options.
-
 
 ```yaml
 # This is a YAML comment. It is ignored by Pages.
@@ -73,13 +66,11 @@ agency_contact:
 
 # This is a list
 list_of_departments:
-- "Department of A"
-- "Bureau of B"
-- "C Administration"
-
+  - "Department of A"
+  - "Bureau of B"
+  - "C Administration"
 # You can define any variables you like with YAML.
 ```
-
 
 ## Working with front matter
 
@@ -103,7 +94,6 @@ You can reference page variables like this:
 
 The title of the page is {% raw %}{{ page.title }}{% endraw %}.
 ```
-
 
 ## Site configuration
 

@@ -1,7 +1,7 @@
 ---
 showInSidenav: true
 redirect_from:
-    - /docs/apps/logs/
+  - /docs/apps/logs/
 title: Logs
 ---
 
@@ -31,8 +31,8 @@ cf logs APPNAME --recent
 
 ### See also
 
-* [Information about the log format](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html)
-* [Viewing your application's logs](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html#view)
+- [Information about the log format](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html)
+- [Viewing your application's logs](https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html#view)
 
 For other helpful cf CLI troubleshooting commands, including `cf events APP-NAME`, see [this Cloud Foundry list](https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#cf-commands).
 
@@ -40,8 +40,8 @@ For other helpful cf CLI troubleshooting commands, including `cf events APP-NAME
 
 If you receive `Error dialing trafficcontroller server`:
 
-* This can be caused by having an old version of the `cf` CLI. Try `cf -v` and see if it's older than the [latest version](https://github.com/cloudfoundry/cli/releases). If it is, [install the latest version]({{ site.baseurl }}/docs/getting-started/setup#set-up-the-command-line) and try again.
-* This can also be caused by outbound connections to port 443 being blocked on your network. If your organization requires your web browser to use a proxy for outbound access to https:// sites, you can [set up the `cf` CLI to use that proxy as well](https://docs.cloudfoundry.org/cf-cli/http-proxy.html). If it's simply blocked, you can talk to your network administrators about opening that port or try a different network.
+- This can be caused by having an old version of the `cf` CLI. Try `cf -v` and see if it's older than the [latest version](https://github.com/cloudfoundry/cli/releases). If it is, [install the latest version](/docs/getting-started/setup#set-up-the-command-line) and try again.
+- This can also be caused by outbound connections to port 443 being blocked on your network. If your organization requires your web browser to use a proxy for outbound access to https:// sites, you can [set up the `cf` CLI to use that proxy as well](https://docs.cloudfoundry.org/cf-cli/http-proxy.html). If it's simply blocked, you can talk to your network administrators about opening that port or try a different network.
 
 ## Web-based logs with historic log data
 
@@ -51,16 +51,15 @@ Logs are currently retained for 365 days for live search (three years offline), 
 
 After logging in, you'll see the App Overview dashboard.
 
-!["App Overview dashboard"]({{site.baseurl}}/img/content/app-overview.png)
+!["App Overview dashboard"](/img/content/app-overview.png)
 
 The default time period is "Last 15 minutes". To change the time period of data that you are viewing, or to turn on auto-refresh, click on the time period in the top right menu.
 
-!["Time period selection"]({{site.baseurl}}/img/content/time-period.png)
+!["Time period selection"](/img/content/time-period.png)
 
 You can also view several dashboards that present different visualizations of your log data. You can select these by going to "Dashboard" at left and clicking "Open" in the top toolbar.
 
-
-!["Select dashboards"]({{site.baseurl}}/img/content/select-dashboard.png)
+!["Select dashboards"](/img/content/select-dashboard.png)
 
 These visualizations are provided via OpenSearch Dashboards. You can learn more about
 
@@ -80,12 +79,14 @@ If your application logs are output in JSON, they will be easily searchable in [
 If you want to set up your own storage for your application logs, you can set up [a "log drain" service](https://docs.cloudfoundry.org/devguide/services/log-management.html#user-provided) that sends the logs to your preferred location.
 
 Create the user provided service and point it toward the endpoint where you want to send your logs:
+
 ```shell
       cf create-user-provided-service my-log-drain \
         -l syslog-tls://<your-log-drain-service-endpont>
 ```
 
 Then, bind the service you created to the app that you want connect:
+
 ```shell
       cf bind-service my-app my-log-drain
 ```
@@ -101,17 +102,18 @@ which are then sent to the application, and so on. This loop can quickly overwhe
 dropped logs and unnecessary resource consumption.
 
 An example manifest for a log shipper application might look like:
+
 ```yml
 ---
 # manifest.yml
 ---
 applications:
-- name: log-forwarder
-  route: ((forwarder-route))
-  memory: 256M
-  stack: cflinuxfs4
-  buildpacks:
-    - binary_buildpack
+  - name: log-forwarder
+    route: ((forwarder-route))
+    memory: 256M
+    stack: cflinuxfs4
+    buildpacks:
+      - binary_buildpack
 ```
 
 And the commands to create the log drain and bind it to your main application (not your log shipper application) would be:

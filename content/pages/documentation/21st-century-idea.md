@@ -1,10 +1,7 @@
 ---
 title: 21st Century IDEA
 permalink: /pages/documentation/21st-century-idea/
-
-
 ---
-
 
 The <b>21st Century Integrated Digital Experience Act (IDEA)</b> aims to improve the digital experience for government customers and reinforces existing requirements for federal public websites. Specifically, the Act requires all executive branch agencies to:
 

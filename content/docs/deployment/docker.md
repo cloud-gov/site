@@ -20,14 +20,14 @@ You can also push an image from a private Docker registry by providing the host 
 
 Details are in the Cloud Foundry documentation for [deploying an app with Docker](https://docs.cloudfoundry.org/devguide/deploy-apps/push-docker.html#private-repo). If you want to build your own Docker image, or if you want to read more about the implementation, check out the [Docker documentation](http://docs.cloudfoundry.org/adminguide/docker.html) in the Cloud Foundry project.
 
-Once you push a Docker image as your application, cloud.gov cannot update the baseline for your application, so you are responsible for keeping it up to date. **You are responsible** for maintaining the operating system, libraries, application code, and all of the associated configuration. See [this chart of responsibilities]({{ site.baseurl }}/docs/technology/responsibilities). This is not a recommended path and is only viable in some use cases; be aware that you lose a large set of features and some of the benefits of a PaaS system by leveraging this functionality.
+Once you push a Docker image as your application, cloud.gov cannot update the baseline for your application, so you are responsible for keeping it up to date. **You are responsible** for maintaining the operating system, libraries, application code, and all of the associated configuration. See [this chart of responsibilities](/docs/technology/responsibilities). This is not a recommended path and is only viable in some use cases; be aware that you lose a large set of features and some of the benefits of a PaaS system by leveraging this functionality.
 
 Here are some considerations to keep in mind when deciding to use Docker images instead of supported buildpacks in your application's deployment:
 
-|   | Supported buildpack | Docker container  |
-|---|---|---|
-| Pros | It "just works".<br />Automatic and constant security updates.<br />All you need to do is write code. | Can build container images and run containers on local workstation.<br />Fine-grained control over compilation and root filesystem. |
-| Cons | Difficult to recreate the execution environment locally.<br />Testing compilation and the result of staging is harder. | Added responsibility for all security updates and bug fixes.<br />More compliance responsibility means more work.  |
+|      | Supported buildpack                                                                                                    | Docker container                                                                                                                    |
+| ---- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Pros | It "just works".<br />Automatic and constant security updates.<br />All you need to do is write code.                  | Can build container images and run containers on local workstation.<br />Fine-grained control over compilation and root filesystem. |
+| Cons | Difficult to recreate the execution environment locally.<br />Testing compilation and the result of staging is harder. | Added responsibility for all security updates and bug fixes.<br />More compliance responsibility means more work.                   |
 
 <!-- Based on the table in this slide: https://twitter.com/benbravo73/status/781125385777999872 -->
 
@@ -63,9 +63,9 @@ When you deploy a Docker image that has a non-standard port exposed (e.g., port 
 
 In this scenario, if you want to enable external traffic to reach your Docker app running on a non-standard port, you'll need to do the following:
 
-* Deploy a proxy application to route traffic from outside cloud.gov to the internal route you assigned to your Docker app. This can be something as simple as an nginx app that [uses a `proxy_pass` directive](http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass) to route traffic to your Docker app. An example of this approach [can be seen here](https://github.com/cloud-gov/cf-redash).
+- Deploy a proxy application to route traffic from outside cloud.gov to the internal route you assigned to your Docker app. This can be something as simple as an nginx app that [uses a `proxy_pass` directive](http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass) to route traffic to your Docker app. An example of this approach [can be seen here](https://github.com/cloud-gov/cf-redash).
 
-* Enable container-to-container traffic by [adding a new network policy](https://cli.cloudfoundry.org/en-US/v6/add-network-policy.html) specifying the source app (your nginx proxy) and the destination app (your Docker app) as well as the port and protocol for the traffic.
+- Enable container-to-container traffic by [adding a new network policy](https://cli.cloudfoundry.org/en-US/v6/add-network-policy.html) specifying the source app (your nginx proxy) and the destination app (your Docker app) as well as the port and protocol for the traffic.
 
 ## Docker + Cloud Foundry examples
 

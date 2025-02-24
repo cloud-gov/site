@@ -1,7 +1,7 @@
 ---
 showInSidenav: true
-redirect_from: 
-    - /docs/apps/static/
+redirect_from:
+  - /docs/apps/static/
 title: Deploying static sites
 ---
 
@@ -11,24 +11,24 @@ To set up a "hello world" demo or a more complex static site, see the [Cloud Fou
 
 ### Builds
 
-If you are using a static site generator (e.g. [Jekyll](#jekyll) or [Hugo](http://gohugo.io/)) and/or it requires dependencies to be installed at deploy-time, you should set up [continuous deployment]({{ site.baseurl }}/docs/management/continuous-deployment). This way, the build happens in your Continuous Integration (CI) system rather than during the deploy itself within Cloud Foundry. This helps to make your deployments more reliable, have a smaller footprint, and reduce downtime.
+If you are using a static site generator (e.g. [Jekyll](#jekyll) or [Hugo](http://gohugo.io/)) and/or it requires dependencies to be installed at deploy-time, you should set up [continuous deployment](/docs/management/continuous-deployment). This way, the build happens in your Continuous Integration (CI) system rather than during the deploy itself within Cloud Foundry. This helps to make your deployments more reliable, have a smaller footprint, and reduce downtime.
 
 ### Jekyll
 
 Deploying a [Jekyll](http://jekyllrb.com/) site requires a few things:
 
-* Add or update your `Gemfile` to include the `jekyll` gem.
+- Add or update your `Gemfile` to include the `jekyll` gem.
 
-    ```ruby
-    source 'https://rubygems.org'
-    gem 'jekyll'
-    ```
+  ```ruby
+  source 'https://rubygems.org'
+  gem 'jekyll'
+  ```
 
-* Add a `Staticfile` pointing to the root of the built site, as specified in the [Cloud Foundry Staticfile buildpack documentation](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html#config-process).
+- Add a `Staticfile` pointing to the root of the built site, as specified in the [Cloud Foundry Staticfile buildpack documentation](https://docs.cloudfoundry.org/buildpacks/staticfile/index.html#config-process).
 
-    ```yaml
-    root: _site
-    ```
+  ```yaml
+  root: _site
+  ```
 
 See [18F/notalone](https://github.com/18F/notalone) for an example.
 

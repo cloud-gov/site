@@ -16,6 +16,7 @@ This project strives to be compliant with requirements set by [21st Century IDEA
 - is mobile-friendly.
 
 ## Key Functionality
+
 This repository contains the following examples and functionality:
 
 ✅ Publish blog posts, press releases, announcements, etc. To modify this code, check out `blog/index.html`, which manages how the posts are listed. You should then check out `_includes/layouts/post.html` to see how individual posts are structured.
@@ -52,10 +53,12 @@ searchgov:
 ```
 
 The logic for using Search.gov can be found in `_includes/searchgov/form.html` and supports displaying the results inline or sending the user to Search.gov the view the results. This setting defaults to "inline" but can be changed by setting
+
 ```
 searchgov:
   inline: false
 ```
+
 in `_data/site.yml`.
 
 ✅ [Digital Analytics Program (DAP)](https://digital.gov/services/dap/) integration - Once you have registered your site with DAP add your "agency" and optionally, `subagency` to `_data/site.yml` and uncomment the appropriate lines. Ex.
@@ -91,8 +94,6 @@ TODO
 
 ## Netlify CMS
 
-
-
 ### Config
 
 The Netlify CMS can be configured in [`/admin/config.yml`](./admin/config.yml) and you will update the
@@ -114,7 +115,7 @@ backend:
 You can run the Netlify CMS locally to more easily customize and troubleshoot the CMS to you content.
 We provide comments in the [`/admin/config.yml`](./admin/config.yml) instructing you how to change the `backend` values from your production site to the local development.
 
-> *Note: Make sure to not commit and push the config with the `backend` set for local develop to Github or
+> \*Note: Make sure to not commit and push the config with the `backend` set for local develop to Github or
 > else you will break your production site's Netlify CMS.
 
 ```yml
@@ -136,16 +137,6 @@ TODO
 ### Adding Static Data
 
 TODO
-
-### Creating links
-
-For preview links generated on the platform, we automatically set the `pathPrefix` in the [`.eleventy.js`](/.eleventy.js) file base on the `BASEURL` environment variable. We use the built-in 11ty filter for `url` to properly append the prefix path for the linked page.  When adding new links, use the following syntax:
-
-```liquid
-<a href="{{ '/myDir/' | url }}">Link to My Dir</a>
-```
-
-See the [11ty docs](https://www.11ty.dev/docs/filters/url/)
 
 ### Referencing Images
 

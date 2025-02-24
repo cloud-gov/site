@@ -6,40 +6,39 @@ redirect_from:
   - /docs/apps/databases
 ---
 
-
 If your application uses relational databases for storage, you can use the AWS RDS service to create a database instance. The `redundant` label in an RDS plan name indicates it is a [Multi-AZ (Availability Zone)](https://aws.amazon.com/rds/details/multi-az/) deployment.
 
 ## Plans
 
-| Plan Name                   | Description                                                                  | Software Version (default)     |
-| -----------------------------| ---                                                                          | ---                    |
-|  `micro-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                                   | 15.x* |
-|  `micro-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory                         | 15.x* |
-|  `small-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor                                   | 15.x* |
-|  `small-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memory                         | 15.x* |
-|  `medium-psql`               | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory                                  | 15.x* |
-|  `medium-psql-redundant`     | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory                        | 15.x* |
-|  `medium-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory                  | 15.x* |
-|  `medium-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory        | 15.x* |
-|  `large-gp-psql`             | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory                   | 15.x* |
-|  `large-gp-psql-redundant`   | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory         | 15.x* |
-|  `xlarge-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory                 | 15.x* |
-| `xlarge-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory        | 15.x* |
-|  `small-mysql`               | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory                                        | 8.x.x* |
-|  `small-mysql-redundant`     | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory                              | 8.x.x* |
-|  `medium-mysql`              | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory                                       | 8.x.x* |
-|  `medium-mysql-redundant`    | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory                             | 8.x.x* |
-|  `medium-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory                       | 8.x.x* |
-|  `medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory             | 8.x.x* |
-|  `large-gp-mysql`            | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory                       | 8.x.x* |
-|  `large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory              | 8.x.x* |
-|  `xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory                      | 8.x.x* |
-|  `xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory            | 8.x.x* |
-|  `medium-oracle-se2`         | Single-AZ RDS instance of Oracle SE2, minimum 1 core, minimum 4 GiB memory                                           | AWS RDS Latest Default |
+| Plan Name                   | Description                                                                  | Software Version (default) |
+| --------------------------- | ---------------------------------------------------------------------------- | -------------------------- |
+| `micro-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory   | 15.x\*                     |
+| `micro-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory    | 15.x\*                     |
+| `small-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor    | 15.x\*                     |
+| `small-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memory    | 15.x\*                     |
+| `medium-psql`               | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory   | 15.x\*                     |
+| `medium-psql-redundant`     | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory    | 15.x\*                     |
+| `medium-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory   | 15.x\*                     |
+| `medium-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory    | 15.x\*                     |
+| `large-gp-psql`             | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory   | 15.x\*                     |
+| `large-gp-psql-redundant`   | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory    | 15.x\*                     |
+| `xlarge-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory | 15.x\*                     |
+| `xlarge-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory  | 15.x\*                     |
+| `small-mysql`               | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory        | 8.x.x\*                    |
+| `small-mysql-redundant`     | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory         | 8.x.x\*                    |
+| `medium-mysql`              | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory       | 8.x.x\*                    |
+| `medium-mysql-redundant`    | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory        | 8.x.x\*                    |
+| `medium-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory        | 8.x.x\*                    |
+| `medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
+| `large-gp-mysql`            | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory        | 8.x.x\*                    |
+| `large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
+| `xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory      | 8.x.x\*                    |
+| `xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory       | 8.x.x\*                    |
+| `medium-oracle-se2`         | Single-AZ RDS instance of Oracle SE2, minimum 1 core, minimum 4 GiB memory   | AWS RDS Latest Default     |
 
-*\*Note: The actual database engine version used is the latest minor/patch version offered by AWS RDS for this major version*
+_\*Note: The actual database engine version used is the latest minor/patch version offered by AWS RDS for this major version_
 
-*Only the `micro-psql` and `small-mysql` plans are available in [sandbox spaces]({{ site.baseurl }}/docs/pricing/free-limited-sandbox#sandbox-limitations).*
+_Only the `micro-psql` and `small-mysql` plans are available in [sandbox spaces](/docs/pricing/free-limited-sandbox#sandbox-limitations)._
 
 You can always view an up-to-date version of this list directly in your command line as well with the following command (using `cf` CLI version 6):
 
@@ -53,9 +52,9 @@ Or, the following command (using `cf` CLI version 7 or later):
 cf marketplace -e aws-rds
 ```
 
-The dedicated plans listed above (marked "AWS RDS Latest") deploy the default version as advertised by AWS. If you need to determine the exact version of the RDS service deployed, see [this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-20-getting-rds-version-information/).
+The dedicated plans listed above (marked "AWS RDS Latest") deploy the default version as advertised by AWS. If you need to determine the exact version of the RDS service deployed, see [this knowledge base article](/knowledge-base/2021-05-20-getting-rds-version-information/).
 
-*Additional Cost:* All databases have a limit of 1TB in storage. After 1TB, each additional terabyte will cost $300 per month.
+_Additional Cost:_ All databases have a limit of 1TB in storage. After 1TB, each additional terabyte will cost $300 per month.
 
 ## Choosing a database plan
 
@@ -95,14 +94,14 @@ cf create-service aws-rds micro-psql my-service-db
 
 There are several optional parameters that you can specify when creating a new instance:
 
-| Name               | Description                                                    | Default Value          |
-| ---                | ---                                                            | ---                    |
-| `storage`          | Number of GB available to the database instance                | 10                     |
-| `enable_functions` | Boolean to enable functions, procedures, and triggers on MySQL databases             | false                  |
-| `version`          | Specifies a supported major version in RDS (must be in quotes) | PostgreSQL: `15`, MySQL `8.0` |
-| `backup_retention_period` | Specifies a number of days to retain daily snapshots. | 14           |
-| `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---           |
-| `enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above; see example below for details) | false           |
+| Name                      | Description                                                                                                                                                                                                                              | Default Value                 |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| `storage`                 | Number of GB available to the database instance                                                                                                                                                                                          | 10                            |
+| `enable_functions`        | Boolean to enable functions, procedures, and triggers on MySQL databases                                                                                                                                                                 | false                         |
+| `version`                 | Specifies a supported major version in RDS (must be in quotes)                                                                                                                                                                           | PostgreSQL: `15`, MySQL `8.0` |
+| `backup_retention_period` | Specifies a number of days to retain daily snapshots.                                                                                                                                                                                    | 14                            |
+| `binary_log_format`       | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---                           |
+| `enable_pg_cron`          | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above; see example below for details)                      | false                         |
 
 A couple of notes regarding the optional `version` parameter:
 
@@ -117,7 +116,7 @@ These are the current supported major versions for PostgreSQL:
 - 14
 - 15
 
-*\*Note: [**For PostgreSQL versions 15+ , using SSL is required when connecting to your database**](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL.Concepts.General.SSL.html#PostgreSQL.Concepts.General.SSL.Requiring). As such, you will need to configure your client library to use SSL when connecting to your database.*
+_\*Note: [**For PostgreSQL versions 15+ , using SSL is required when connecting to your database**](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL.Concepts.General.SSL.html#PostgreSQL.Concepts.General.SSL.Requiring). As such, you will need to configure your client library to use SSL when connecting to your database._
 
 These are the current supported major versions for MySQL:
 
@@ -210,7 +209,7 @@ name                 service   plan                bound apps   last operation
 test-oracle          aws-rds   medium-oracle-se2                create succeeded
 ```
 
-By default, when new spaces are created in your organization, an application security group (ASG) is applied that doesn't allow any outgoing traffic. You will need to [update egress traffic]({{ site.baseurl }}/docs/management/space-egress) rules to allow for your app to reach the database.
+By default, when new spaces are created in your organization, an application security group (ASG) is applied that doesn't allow any outgoing traffic. You will need to [update egress traffic](/docs/management/space-egress) rules to allow for your app to reach the database.
 
 ## Update an instance
 
@@ -220,7 +219,7 @@ To update an existing service instance to a different plan run the following com
 cf update-service ${SERVICE_NAME} -p ${NEW_SERVICE_PLAN_NAME}
 ```
 
-`${NEW_SERVICE_PLAN_NAME}` can be any of the *dedicated* service plans that are listed above.
+`${NEW_SERVICE_PLAN_NAME}` can be any of the _dedicated_ service plans that are listed above.
 
 There are a couple of caveats regarding this command with the `-p` flag:
 
@@ -229,20 +228,20 @@ There are a couple of caveats regarding this command with the `-p` flag:
 
 You can update to larger or smaller plans depending on your specific needs, and you can switch between redundant and non-redundant plans.
 
-**NOTE: All updates are applied immediately.  Performing an update in place like this will result in a brief period of downtime (seconds to minutes) while the service instance restarts as a part of the update.**
+**NOTE: All updates are applied immediately. Performing an update in place like this will result in a brief period of downtime (seconds to minutes) while the service instance restarts as a part of the update.**
 
 ### Setting optional parameters
 
 There are several optional parameters that you can specify when updating an existing instance:
 
-| Name               | Description                                     | Reboot required? |
-| ---                | ---                                             | --- |
-| `storage`          | Number of GB available to the database instance | No |
-| `backup_retention_period` | Specifies a number of days to retain daily snapshots. | No |
-| `binary_log_format` | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | Yes |
-| `enable_pg_cron` | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above) | Yes |
-| `enable_functions` | Boolean to enable functions, procedures, and triggers on MySQL databases             | Yes |
-| `storage_type` | [RDS storage type to use for the database](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html). Valid options: `gp3`             | No |
+| Name                      | Description                                                                                                                                                                                                                              | Reboot required? |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| `storage`                 | Number of GB available to the database instance                                                                                                                                                                                          | No               |
+| `backup_retention_period` | Specifies a number of days to retain daily snapshots.                                                                                                                                                                                    | No               |
+| `binary_log_format`       | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | Yes              |
+| `enable_pg_cron`          | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above)                                                     | Yes              |
+| `enable_functions`        | Boolean to enable functions, procedures, and triggers on MySQL databases                                                                                                                                                                 | Yes              |
+| `storage_type`            | [RDS storage type to use for the database](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html). Valid options: `gp3`                                                                                               | No               |
 
 #### Examples of optional parameters
 
@@ -300,12 +299,12 @@ For the parameters [identified as requiring a reboot](#setting-optional-paramete
 
 #### A note about upgrading major versions
 
-**You cannot update an existing instance to a new major version** with the `update-service` command.  If you'd like to update your existing database instance to a new major version, please email [support@cloud.gov]({{ site.support_email }}) for assistance.
+**You cannot update an existing instance to a new major version** with the `update-service` command. If you'd like to update your existing database instance to a new major version, please email [support@cloud.gov]({{ site.support_email }}) for assistance.
 
 ### Rotate your credentials
 
 > **NOTE: Rotating your database credentials will likely incur some downtime for your application.** [While AWS documentation states that existing connections using your current password are not dropped](https://repost.aws/knowledge-center/reset-master-user-password-rds), depending on how your application handles database connections you could see errors
-trying to establish new connections until the application is restaged with the new credentials.
+> trying to establish new connections until the application is restaged with the new credentials.
 
 To change the password of your database instance:
 
@@ -353,24 +352,25 @@ RDS automatically retains daily backups for 14 days. These backups are AWS RDS s
 **If you need to have a database restored** using one of these backups, email [support@cloud.gov]({{ site.support_email }}) with:
 
 the Cloud.gov organization name
+
 - the space name
 - the database to restore
-- the name of the application(s) connected to the impacted database service 
+- the name of the application(s) connected to the impacted database service
 - the point-in-time to restore (e.g. 15:15 EST on 12/12/2022).
 - phone numbers and contact information if it's an urgent situation
 - for non-emergency situations, please provide at least 48 hours advance notice.
 
-**Please *do not* share any passwords or details of any exploit or compromise.**  We'll call you if necessary, and we'll never ask you for a password over the phone.
+**Please _do not_ share any passwords or details of any exploit or compromise.** We'll call you if necessary, and we'll never ask you for a password over the phone.
 
 The Cloud.gov support team will restore to the nearest point in time BEFORE the time you've specified.
 
-We'll confirm your information and remind you that a restoration may result in a brief period of downtime with database connectivity.  Once we receive confirmation from you to proceed, we'll perform the restore, which results in a new DB instance being created in AWS RDS.  Cloud.gov support will take care of renaming the new instance and configuring it with the same VPC and security group as the old instance in AWS so that it can still be found by your bound application(s) once the restoration is complete.
+We'll confirm your information and remind you that a restoration may result in a brief period of downtime with database connectivity. Once we receive confirmation from you to proceed, we'll perform the restore, which results in a new DB instance being created in AWS RDS. Cloud.gov support will take care of renaming the new instance and configuring it with the same VPC and security group as the old instance in AWS so that it can still be found by your bound application(s) once the restoration is complete.
 
-When the restore process is completely finished, we'll notify you and ask you to confirm that your application(s) is still functioning properly and that the data is properly restored.  We'll also coordinate with you to determine when it would be appropriate to remove the old instance, particularly if it is needed for something such as a security audit or forensic analysis.
+When the restore process is completely finished, we'll notify you and ask you to confirm that your application(s) is still functioning properly and that the data is properly restored. We'll also coordinate with you to determine when it would be appropriate to remove the old instance, particularly if it is needed for something such as a security audit or forensic analysis.
 
-When we remove the old database instance, we will not retain snapshots or backups of it unless we're explicitly asked to do so.  We'll remind you of this when coordinating a specific date and time to remove the old instance.
+When we remove the old database instance, we will not retain snapshots or backups of it unless we're explicitly asked to do so. We'll remind you of this when coordinating a specific date and time to remove the old instance.
 
-If you deleted your database instance and want to recover it, the recovery must be done within 14 days of the instance being deleted.  We can perform a restoration using the automated backups that are retained for that 14 day window after a database is removed.
+If you deleted your database instance and want to recover it, the recovery must be done within 14 days of the instance being deleted. We can perform a restoration using the automated backups that are retained for that 14 day window after a database is removed.
 
 You can also create manual backups using the [export process](#exporting-a-database-manually) described below. In general, you are responsible for making sure that your backup procedures are adequate for your needs; see CP-9 in the Cloud.gov SSP.
 
@@ -450,23 +450,23 @@ This will create an export using `pg_dump` named `backup.pg`. Other options for 
 1. View the credentials for accessing your database by running `cf env app_name` for the app connected to your database and looking at the `credentials` for your RDS database
 1. In the separate terminal window/tab, create the backup file (be sure to tailor the backup/export command to your specific needs).
 
-    For example, to create a dump of a PostgreSQL database:
+   For example, to create a dump of a PostgreSQL database:
 
-    ```shell
-    $ pg_dump -F c \
-        --no-acl \
-        --no-owner \
-        -f backup.pg \
-        postgresql://<username>:${PASSWORD}@localhost:<port>/<db_name>
-    ```
+   ```shell
+   $ pg_dump -F c \
+       --no-acl \
+       --no-owner \
+       -f backup.pg \
+       postgresql://<username>:${PASSWORD}@localhost:<port>/<db_name>
+   ```
 
-    with the values:
+   with the values:
 
-    - `<username>` - username for accessing your database
-    - `<port>` - port opened for SSH tunnel to your database
-    - `<db_name>` - database name
+   - `<username>` - username for accessing your database
+   - `<port>` - port opened for SSH tunnel to your database
+   - `<db_name>` - database name
 
-    This command will create the `backup.pg` file on your local machine in the current working directory.
+   This command will create the `backup.pg` file on your local machine in the current working directory.
 
 1. When you are finished, you can terminate the SSH tunnel.
 
@@ -485,12 +485,12 @@ cg-manage-rds import -o "-F c" -f ./backup.pg ${SERVICE_NAME}
 Once you have a database backup file, you can import the dump into another database.
 
 1. If you want to restore to a cloud.gov hosted database, [you will need to first open a tunnel to that database which will expose a port on your local machine for connecting to the database](#tunneling-to-your-database).
-    - If you are restoring to a local database, opening a tunnel is not necessary.
+   - If you are restoring to a local database, opening a tunnel is not necessary.
 1. View the credentials necessary for accessing your database by running `cf env <app_name>` on the app connected to your database.
 1. Use the commands for PostgreSQL/MySQL below to restore your database.
 
-    - For importing to a cloud.gov database, the `<port>` value should be the port opened by the SSH tunnel on your local machine.
-    - For importing to a local database, the `<port>` value should be whatever is configured for that database service
+   - For importing to a cloud.gov database, the `<port>` value should be the port opened by the SSH tunnel on your local machine.
+   - For importing to a local database, the `<port>` value should be whatever is configured for that database service
 
 #### PostgreSQL
 
@@ -538,27 +538,27 @@ If you get an error like `ERROR: 1227` when trying to import to your database:
 
 1. Make sure that `enable_functions` is enabled for your database:
 
-    ```shell
-    # on Linux / Mac
-    cf update-service ${SERVICE_NAME} \
-        -c '{"enable_functions": true}'
+   ```shell
+   # on Linux / Mac
+   cf update-service ${SERVICE_NAME} \
+       -c '{"enable_functions": true}'
 
-    # on Windows
-    cf update-service ${SERVICE_NAME} \
-        -c "{\"enable_functions\": true}"
-    ```
+   # on Windows
+   cf update-service ${SERVICE_NAME} \
+       -c "{\"enable_functions\": true}"
+   ```
 
-    After making these changes, make sure to request a database reboot by contacting [cloud.gov support]({{ site.support_email }}).
+   After making these changes, make sure to request a database reboot by contacting [cloud.gov support]({{ site.support_email }}).
 
 1. Make sure that your database dump was generated with the `--set-gtid-purged=OFF` option. For example:
 
-    ```shell
-    mysqldump -h <host> \
-        -u <username> \
-        -p \
-        --set-gtid-purged=OFF \
-        <database_name> > backup.sql
-    ```
+   ```shell
+   mysqldump -h <host> \
+       -u <username> \
+       -p \
+       --set-gtid-purged=OFF \
+       <database_name> > backup.sql
+   ```
 
 If those steps do not help, additional remediation steps can be found in the [AWS knowledge center article on how to resolve this error](https://repost.aws/knowledge-center/definer-error-mysqldump).
 
@@ -592,24 +592,24 @@ By default, `cf connect-to-service` should open a database shell for the relevan
 1. [Create a tunnel to your database](#tunneling-to-your-database)
 2. In another terminal window, connect to the database:
 
-    ```shell
-    myapp_guid=$(cf app --guid <app_name>)
+   ```shell
+   myapp_guid=$(cf app --guid <app_name>)
 
-    creds=$(cf curl /v2/apps/$myapp_guid/env \
-        | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
-        | .username, .password] \
-        | join(":")')
+   creds=$(cf curl /v2/apps/$myapp_guid/env \
+       | jq -r '[.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
+       | .username, .password] \
+       | join(":")')
 
-    dbname=$(cf curl /v2/apps/$myapp_guid/env \
-        | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
-        | .name')
+   dbname=$(cf curl /v2/apps/$myapp_guid/env \
+       | jq -r '.system_env_json.VCAP_SERVICES."aws-rds"[0].credentials \
+       | .name')
 
-    psql postgres://$creds@localhost:5432/$dbname
-    ```
+   psql postgres://$creds@localhost:5432/$dbname
+   ```
 
-    with values:
+   with values:
 
-    - `<app_name>` - The name of the app connected to your database
+   - `<app_name>` - The name of the app connected to your database
 
 ## Encryption
 
@@ -617,7 +617,7 @@ Every RDS instance configured through cloud.gov is [encrypted at rest](https://d
 
 ## Working with OracleDB
 
-Since Oracle is not open-source there are fewer resources available online to get started working with OracleDB and Cloud Foundry. We provide a few tips here.  This example worked with `ojdbc8.jar`, and will likely needs some tweaks for `ojdbc10.jar`.
+Since Oracle is not open-source there are fewer resources available online to get started working with OracleDB and Cloud Foundry. We provide a few tips here. This example worked with `ojdbc8.jar`, and will likely needs some tweaks for `ojdbc10.jar`.
 
 ### Demo with Spring Music and Oracle
 

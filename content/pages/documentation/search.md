@@ -1,13 +1,11 @@
 ---
 title: Search on Pages Sites
 permalink: /pages/documentation/search/
-
-
 ---
 
 It's easy to add search functionality to a site.
 
-We recommend using [Search.gov][], a free site search and search analytics service for federal web sites. You will need to [register](https://search.usa.gov/signup) for Search.gov and follow their [instructions](https://search.gov/get-started/searchgov-for-cloudgov-pages.html) to integrate this service with your Pages site. For full details, visit [Search.gov][]. 
+We recommend using [Search.gov][], a free site search and search analytics service for federal web sites. You will need to [register](https://search.usa.gov/signup) for Search.gov and follow their [instructions](https://search.gov/get-started/searchgov-for-cloudgov-pages.html) to integrate this service with your Pages site. For full details, visit [Search.gov][].
 
 If you'd prefer another solution, you can configure a tool like [lunrjs](https://lunrjs.com/) that creates a search function run using the client browser. An example of this is at the [18F blog](https://18f.gsa.gov/blog/). This avoids any dependency on another service, but the search results are not as robust.
 
@@ -15,8 +13,7 @@ If you'd prefer another solution, you can configure a tool like [lunrjs](https:/
 
 ### Crawl/Index Pages sites
 
-Pages automatically handles search engine visibility for preview URLs via the Pages proxy. For traffic  served through a preview site, the Pages proxy automatically serves the appropriate HTTP robots header, `robots:none`. Preview URLs are not crawlable or indexable by design. Only webpages on the production domain are served with the  `robots: all` directive, indicating to crawlers and bots such as search.gov to index the site and enable search capabilities. 
-
+Pages automatically handles search engine visibility for preview URLs via the Pages proxy. For traffic served through a preview site, the Pages proxy automatically serves the appropriate HTTP robots header, `robots:none`. Preview URLs are not crawlable or indexable by design. Only webpages on the production domain are served with the `robots: all` directive, indicating to crawlers and bots such as search.gov to index the site and enable search capabilities.
 
 If you want to disable crawling and indexing for specific pages of your production site, you can include the `noindex/nofollow` meta tag in the head of those pages, or include those folders in your robots.txt, if your site generates one.
 
@@ -63,15 +60,14 @@ If you want to disable crawling and indexing for specific pages of your producti
   </tbody>
 </table>
 
+### Conditionally set robots - Eleventy (11ty)
 
-### Conditionally set robots - Eleventy (11ty) 
-
-Take advantage of Pages-provided environment variables to enable environment-specific functionality. Hardcode the condition and meta tags to check the branch from the `process.env` environment variable. This differs from how it is dealt with on a Jekyll site, you are able to add specificity with `process.env.BRANCH`. 
-You can use this code sample 
+Take advantage of Pages-provided environment variables to enable environment-specific functionality. Hardcode the condition and meta tags to check the branch from the `process.env` environment variable. This differs from how it is dealt with on a Jekyll site, you are able to add specificity with `process.env.BRANCH`.
+You can use this code sample
 
 ```html
 {% unless process.env.BRANCH == "main" %}
-  <meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex, nofollow" />
 {% endunless %}
 ```
 

@@ -15,7 +15,7 @@ To pin the buildpack version, specify the buildpack version URL in your applicat
 
 ```yaml
 buildpacks:
-- https://github.com/cloudfoundry/php-buildpack#v4.6.23
+  - https://github.com/cloudfoundry/php-buildpack#v4.6.23
 ```
 
 If you encounter any difficulties deploying this solution or have any questions, please contact [{{site.support_email_address}}]({{site.support_email}}) and we would be happy to assist you.

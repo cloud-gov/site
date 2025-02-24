@@ -1,15 +1,15 @@
 ---
 showInSidenav: true
 redirect_from:
-    - /docs/apps/limits/
+  - /docs/apps/limits/
 title: Set org, space, and app limits
 ---
 
-Org Managers are free to configure your org's [quota]({{ site.baseurl }}/docs/pricing/quotas) capacity among your spaces and applications as you see fit. This enables Org Managers to limit usage and corresponding costs.
+Org Managers are free to configure your org's [quota](/docs/pricing/quotas) capacity among your spaces and applications as you see fit. This enables Org Managers to limit usage and corresponding costs.
 
 ## Org
 
-See more about how to [manage your orgs' quotas]({{ site.baseurl }}/docs/orgs-spaces/limits).
+See more about how to [manage your orgs' quotas](/docs/orgs-spaces/limits).
 
 ## Space
 
@@ -22,6 +22,7 @@ Space Developers can specify application limits in your [application manifest](h
 ### Application limit options
 
 `memory: / -m`
+
 - **Default:** `1GB`
 - **Minimum:** `Based on the app's usage and runtime requirements`
 - **Maximum:** `Based on organization's quota and its provisioned apps`
@@ -29,6 +30,7 @@ Space Developers can specify application limits in your [application manifest](h
 The application memory limit. This setting has a dual-purpose, as your application compute limit is derived from its memory limit. This relationship is explained in detail [here](https://docs.cloudfoundry.org/concepts/container-security.html#cpu).
 
 `disk_quota / -k`
+
 - **Default:** `2GB`
 - **Minimum:** `Based on the app's source and dependencies disk size`
 - **Maximum:** `7GB`
@@ -36,6 +38,7 @@ The application memory limit. This setting has a dual-purpose, as your applicati
 The maximum amount of disk space available to your app.
 
 `instances: / -i`
+
 - **Default:** `1`
 - **Minimum:** `0`
 - **Maximum:** `Based on organization's quota and its provisioned apps`
@@ -46,7 +49,6 @@ Sets the number of application instances to launch. Each additional instance rec
 
 The application cannot access more than the specified amount of memory.
 
-
 ### Application limit options: sizing
 
 - The environment default of 512MB `memory:` is sufficient for most applications. Static sites and utility applications such as schedulers or loaders may require less. Use `cf app APPNAME` to check your application's current memory and compute utilization.
@@ -56,18 +58,17 @@ The application cannot access more than the specified amount of memory.
 routes:            test-python-flask-triumphant-springhare-yq.app.cloud.gov
 last uploaded:     Mon 09 Dec 15:51:15 EST 2024
 stack:             cflinuxfs4
-buildpacks:        
+buildpacks:
 	name               version   detect output   buildpack name
 	python_buildpack   1.8.30    python          python
 
 type:           web
-sidecars:       
+sidecars:
 instances:      1/1
 memory usage:   256M
      state     since                  cpu    memory          disk           details
 #0   running   2024-12-09T20:51:30Z   0.0%   30.3M of 256M   217.2M of 2G
 ```
-
 
 - Any application which exceeds its memory limit will be automatically restarted. Use `cf events APPNAME` to look for 'out of memory' crashes.
 

@@ -8,8 +8,7 @@ redirect_from:
   - /intro/overview/using-cloudgov-paas
 ---
 
-
-[There are a few ways to get started using cloud.gov.]({{ site.baseurl }}/pricing) Once your [system]({{ site.baseurl }}/sign-up#system) is set up, the cloud.gov team will make sure someone from your team is designated as an Organization Manager. After that, everything is self-service. We support the platform, infrastructure, and compliance. The rest of these capabilities belong to your team.
+[There are a few ways to get started using cloud.gov.](/pricing) Once your [system](/sign-up#system) is set up, the cloud.gov team will make sure someone from your team is designated as an Organization Manager. After that, everything is self-service. We support the platform, infrastructure, and compliance. The rest of these capabilities belong to your team.
 
 - You can instantly set up environments ("spaces") as needed for your team (for example: blue-green production spaces, testing, development).
 - You can manage access for individual team members at either the organization or space level.

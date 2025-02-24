@@ -10,11 +10,11 @@ You can leverage cloud.gov's identity hub to reduce the burden of authenticating
 
 ## Plans
 
-| Plan Name       | Description |
-|-----------------| ----------- |
-|  `oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app |
+| Plan Name      | Description                                                              |
+| -------------- | ------------------------------------------------------------------------ |
+| `oauth-client` | OAuth2 client credentials for authenticating cloud.gov users in your app |
 
-*These instances are available in [sandbox spaces]({{ site.baseurl }}/docs/pricing/free-limited-sandbox#sandbox-limitations).*
+_These instances are available in [sandbox spaces](/docs/pricing/free-limited-sandbox#sandbox-limitations)._
 
 ## How to create an instance
 
@@ -90,7 +90,7 @@ If you're trying to retrieve credentials for a service instance created before J
 
 ## More information
 
-See [leveraging authentication]({{ site.baseurl }}/docs/management/leveraging-authentication) for details.
+See [leveraging authentication](/docs/management/leveraging-authentication) for details.
 
 ### Rotating credentials
 

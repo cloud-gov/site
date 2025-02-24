@@ -1,8 +1,6 @@
 ---
 title: Why Use Pages?
 permalink: /pages/documentation/why-use-pages/
-
-
 ---
 
 If you’re a program manager or a federal web developer you’ve probably been given a seemingly simple task: create a website as part of an initiative at your agency. The hardest part is often not crafting the content or designing the website, but getting the security and privacy compliance in order to launch and maintain the actual website. For that work, you might have to hire a contractor or put extra strain on your agency’s web team.
@@ -17,13 +15,13 @@ Pages serves our fellow federal partners by expertly managing the backend and co
 
 - **Easy previews and content approvals** Pages builds out draft updates to your site at a special preview URL. This enables your team to know their changes will show up correctly when pushed to the main site, and makes it easy to get signoff on content updates from stakeholders.
 
-[![Diagram of Pages architecture]({{ '/img/pages/how-pages-works-diagram.png' | url }})]({{site.baseurl}}/assets/documents/how-pages-works-diagram.pdf)
+[![Diagram of Pages architecture]({{ '/img/pages/how-pages-works-diagram.png' }})](/assets/documents/how-pages-works-diagram.pdf)
 
 ## Why static websites?
 
 Pages generates static websites instead of using a more complex content management system (CMS) like Drupal or WordPress. There are several advantages to static websites:
 
-- **Less complexity and vulnerability:** Avoiding the use of a traditional CMS means avoiding problems like maintaining  server applications (no PHP or Apache / IIS) in addition to database scaling and redundancy. Production-level static sites generally require one simple static file server or service as opposed to dozens. This means that the whole website is easier to maintain and has fewer vulnerabilities.
+- **Less complexity and vulnerability:** Avoiding the use of a traditional CMS means avoiding problems like maintaining server applications (no PHP or Apache / IIS) in addition to database scaling and redundancy. Production-level static sites generally require one simple static file server or service as opposed to dozens. This means that the whole website is easier to maintain and has fewer vulnerabilities.
 
 - **Update content without writing code:** Static websites often store content in simple text files that anyone on the team can edit. The GitHub editor enables any team member to complete basic edits to their text files regardless of their experience writing code.
 
@@ -33,7 +31,7 @@ Pages generates static websites instead of using a more complex content manageme
 
 ## What can I build with Pages?
 
-Pages supports plain files and certain [site engines]({{site.baseurl}}/pages/documentation/supported-site-engines), and provides [starter templates]({{site.baseurl}}/pages/documentation/templates/) to deploy a site.
+Pages supports plain files and certain [site engines](/pages/documentation/supported-site-engines), and provides [starter templates](/pages/documentation/templates/) to deploy a site.
 
 Possible sites include:
 
@@ -43,4 +41,4 @@ Possible sites include:
 
 - A single page with information about a recently released report that may receive a lot of traffic.
 
-For real world examples, see this list of [existing sites]({{site.baseurl}}/pages/success-stories) out of the 134 sites currently live on Pages.
+For real world examples, see this list of [existing sites](/pages/success-stories) out of the 134 sites currently live on Pages.

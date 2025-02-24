@@ -19,35 +19,35 @@ The `domain-with-org-lb` plan offers load balancers dedicated to your Cloud.gov 
 
 ## Plans
 
-Plan Name            | Plan Description                                                                      |
----------------------|---------------------------------------------------------------------------------------|
-`domain`             | Custom domain with automatically renewing ssl certificate.                            |
-`domain-with-cdn`    | Caching distributed CDN with custom domain and automatically renewing ssl certificate |
-`domain-with-org-lb` | Custom domain on a load balancer dedicated to your Cloud.gov organization             |
+| Plan Name            | Plan Description                                                                      |
+| -------------------- | ------------------------------------------------------------------------------------- |
+| `domain`             | Custom domain with automatically renewing ssl certificate.                            |
+| `domain-with-cdn`    | Caching distributed CDN with custom domain and automatically renewing ssl certificate |
+| `domain-with-org-lb` | Custom domain on a load balancer dedicated to your Cloud.gov organization             |
 
 ### domain plan
 
-Name      | Required   | Description                   | Example                           |
-----------|------------|-------------------------------|-----------------------------------|
-`domains` | *Required* | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
+| Name      | Required   | Description                   | Example                                                                          |
+| --------- | ---------- | ----------------------------- | -------------------------------------------------------------------------------- |
+| `domains` | _Required_ | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
 
 ### domain-with-org-lb plan
 
-Name      | Required   | Description                   | Example                           |
-----------|------------|-------------------------------|-----------------------------------|
-`domains` | *Required* | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
+| Name      | Required   | Description                   | Example                                                                          |
+| --------- | ---------- | ----------------------------- | -------------------------------------------------------------------------------- |
+| `domains` | _Required_ | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
 
 ### domain-with-cdn plan
 
-Name              | Required   | Description                                   | Example                           |
-------------------|------------|-----------------------------------------------|-----------------------------------|
-`domains`         | *Required* | Your custom domain or domains                 |  `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]`|
-`origin`          | optional   | A custom origin to serve from                 | `external-app.example.gov`        |
-`insecure_origin` | optional   | Is the custom origin HTTP (not HTTPS)         | `true`                            |
-`forward_cookies` | optional   | List of cookies to forward                    | `"JSESSIONID,othercookiename"`    |
-`forward_headers` | optional   | List of headers to forward                    | `"x-my-header,x-another-one"`     |
-`error_responses` | optional   | dictionary of code:path to respond for errors | `{"404": "/errors/404.html"}`     |
-`path`            | optional   | A custom path to serve from                   | `/some/path`                      |
+| Name              | Required   | Description                                   | Example                                                                          |
+| ----------------- | ---------- | --------------------------------------------- | -------------------------------------------------------------------------------- |
+| `domains`         | _Required_ | Your custom domain or domains                 | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
+| `origin`          | optional   | A custom origin to serve from                 | `external-app.example.gov`                                                       |
+| `insecure_origin` | optional   | Is the custom origin HTTP (not HTTPS)         | `true`                                                                           |
+| `forward_cookies` | optional   | List of cookies to forward                    | `"JSESSIONID,othercookiename"`                                                   |
+| `forward_headers` | optional   | List of headers to forward                    | `"x-my-header,x-another-one"`                                                    |
+| `error_responses` | optional   | dictionary of code:path to respond for errors | `{"404": "/errors/404.html"}`                                                    |
+| `path`            | optional   | A custom path to serve from                   | `/some/path`                                                                     |
 
 #### origin and insecure_origin
 
@@ -257,7 +257,7 @@ This service requires you to create a CNAME or ALIAS record, and these are sligh
 
 CloudFront [uses](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html) your application's `Cache-Control` or `Expires` HTTP headers to determine how long to cache content. If your application does not provide these headers, CloudFront will use a default timeout of **24 hours**. This can be particularly confusing as different requests might be routed to different CloudFront Edge endpoints.
 
-While there is no mechanism for cloud.gov users to trigger a cache clear, [cloud.gov support]({{ site.baseurl }}/docs/help/) can. Cache invalidation is not instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are many distinct endpoints).
+While there is no mechanism for cloud.gov users to trigger a cache clear, [cloud.gov support](/docs/help/) can. Cache invalidation is not instantaneous; Amazon recommends expecting a lag time of 10-15 minutes (more if there are many distinct endpoints).
 
 All distributions are configured to forward and cache based on querystrings - that is querystrings are part of the cache key, and querystrings are forwarded to your application.
 

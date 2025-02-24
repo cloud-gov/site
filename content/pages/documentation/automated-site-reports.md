@@ -2,11 +2,9 @@
 title: Automated Site Reports
 permalink: /pages/documentation/automated-site-reports/
 
-
 redirect_from:
   - /pages/documentation/build-scans/
 ---
-
 
 Automated Site Reports are a new feature being offered by Pages.
 
@@ -14,7 +12,7 @@ Users can generate scheduled or on-demand reports which check their website for 
 
 ## ZAP Security Report
 
-The ZAP Security Report tests your published website for common security vulnerabilities. It uses the [Zed Attack Proxy (ZAP)](https://www.zaproxy.org/) software to passively scan the site for vulnerabilities but does not perform any attack or attempt to maliciously modify your site code. Example security findings include unintended exposure of sensitive data, SQL injection opportunities, cross-site scripting (XSS) flaws, and the use of components with known vulnerabilities. More details about the mechanisms used to generate this report and the resulting file output can be found at [ZAP -  Baseline Scan](https://www.zaproxy.org/docs/docker/baseline-scan/)
+The ZAP Security Report tests your published website for common security vulnerabilities. It uses the [Zed Attack Proxy (ZAP)](https://www.zaproxy.org/) software to passively scan the site for vulnerabilities but does not perform any attack or attempt to maliciously modify your site code. Example security findings include unintended exposure of sensitive data, SQL injection opportunities, cross-site scripting (XSS) flaws, and the use of components with known vulnerabilities. More details about the mechanisms used to generate this report and the resulting file output can be found at [ZAP - Baseline Scan](https://www.zaproxy.org/docs/docker/baseline-scan/)
 
 ## WCAG Accessibility Report
 
@@ -47,6 +45,7 @@ Pages sets headers for all sites with a single proxy application. Because header
 #### Cross-Domain JavaScript Source File Inclusion
 
 Inclusion of the Digital Analytics Program and Search.gov JavaScript files is the recommend pattern for using both services:
+
 - [Get started with DAP](https://digital.gov/guides/dap/get-started-with-dap/#step-2-add-the-dap-code-to-your-website-to-collect-data)
 - [Setting up Search.gov for Cloud.gov Pages sites](https://search.gov/get-started/searchgov-for-cloudgov-pages.html)
 

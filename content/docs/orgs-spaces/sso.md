@@ -17,36 +17,38 @@ The process for integrating with cloud.gov using your SSO solution is fairly sim
 
 1. Send an email to cloud.gov Support to get the process started, notifying us you'd like to integrate.
 1. cloud.gov Support will ask you for the necessary information to integrate with your provider:
-    - SAML 2.0
-      - Public SAML 2.0 Endpoint (preferred) or Federation Metadata, **required**
-      - 100x100 transparent PNG of your agency's seal, **required**
-      - List of email domains to authenticate users against, **required**
-    - OAuth
-      - Client ID/secret, **required**
-      - URL for authorize endpoint, **required**
-      - URL for token endpoint, **required**
-      - Token verification key **or** URL for token verification endpoint, **required**
-      - Issuer URL for token verification endpoint if it is different than the token endpoint, **optional**
-      - Attribute mappings, **required**
-          - given_name: Attribute holding given name in the access token
-          - family_name: Attribute holding family name in the access token
-          - user_name: Attribute holding email in the access token
-    - OIDC
-      - Client ID/secret, **required**
-      - List of email domains to authenticate users against, **required**
-      - Discovery URL, **optional** (e.g. <https://accounts.google.com/.well-known/openid-configuration>)
-        - If a discovery URL is provided, then you can omit several attributes like URLs for the issuer, authorization endpoint, token endpoint, userinfo endpoint, and token key endpoint
-      - Issuer URL, **required if discovery URL is not provided**
-      - URL for authorize endpoint, **required if discovery URL is not provided**
-      - URL for token endpoint, **required if discovery URL is not provided**
-      - URL for userinfo endpoint, **required if discovery URL is not provided**
-      - URL for token keys endpoint, **optional**
-      - Attribute mappings, **required**
-          - given_name: Attribute holding given name in the OIDC ID Token
-          - family_name: Attribute holding family name in the OIDC ID Token
-          - user_name: Attribute holding email in the OIDC ID Token
 
-    **Please note that displaying an agency seal when logging in is only supported for SAML integrations.**
+   - SAML 2.0
+     - Public SAML 2.0 Endpoint (preferred) or Federation Metadata, **required**
+     - 100x100 transparent PNG of your agency's seal, **required**
+     - List of email domains to authenticate users against, **required**
+   - OAuth
+     - Client ID/secret, **required**
+     - URL for authorize endpoint, **required**
+     - URL for token endpoint, **required**
+     - Token verification key **or** URL for token verification endpoint, **required**
+     - Issuer URL for token verification endpoint if it is different than the token endpoint, **optional**
+     - Attribute mappings, **required**
+       - given_name: Attribute holding given name in the access token
+       - family_name: Attribute holding family name in the access token
+       - user_name: Attribute holding email in the access token
+   - OIDC
+     - Client ID/secret, **required**
+     - List of email domains to authenticate users against, **required**
+     - Discovery URL, **optional** (e.g. <https://accounts.google.com/.well-known/openid-configuration>)
+       - If a discovery URL is provided, then you can omit several attributes like URLs for the issuer, authorization endpoint, token endpoint, userinfo endpoint, and token key endpoint
+     - Issuer URL, **required if discovery URL is not provided**
+     - URL for authorize endpoint, **required if discovery URL is not provided**
+     - URL for token endpoint, **required if discovery URL is not provided**
+     - URL for userinfo endpoint, **required if discovery URL is not provided**
+     - URL for token keys endpoint, **optional**
+     - Attribute mappings, **required**
+       - given_name: Attribute holding given name in the OIDC ID Token
+       - family_name: Attribute holding family name in the OIDC ID Token
+       - user_name: Attribute holding email in the OIDC ID Token
+
+   **Please note that displaying an agency seal when logging in is only supported for SAML integrations.**
+
 1. Once cloud.gov Support has the information, we'll schedule and then deploy the configuration to our staging environment. This aspect can take a few weeks as it requires manual steps from the cloud.gov Operations team.
 1. cloud.gov will notify you of when the IdP configuration is available in our staging environment.
 1. You can try to log into our staging environment's user portal to ensure the login process works as intended and verify with cloud.gov Support you can log in successfully.
@@ -56,7 +58,7 @@ We provide SSO integration with federal agencies at no cost, since using an agen
 
 ## System Information
 
-By default, your SSO integration will appear on our default login page for all customers with your agency seal (for SAML only) and base email domain for an easy user experience. Below is a list of things that you may find useful for integrating with us, depending on your IdP's configuration.  The only attribute cloud.gov needs to authenticate a user is the email attribute as we manage group membership independently of the downstream IdP.
+By default, your SSO integration will appear on our default login page for all customers with your agency seal (for SAML only) and base email domain for an easy user experience. Below is a list of things that you may find useful for integrating with us, depending on your IdP's configuration. The only attribute cloud.gov needs to authenticate a user is the email attribute as we manage group membership independently of the downstream IdP.
 
 ### Staging
 
@@ -133,11 +135,11 @@ This is a basic reference of steps used to configure Active Directory Federation
 
 #### Add a new Relying Party Trust
 
-You can find the Microsoft documentation for configuring a Relying Party Trust [here](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/create-a-relying-party-trust). You will need to select the *Claims-aware Trust* radio button.
+You can find the Microsoft documentation for configuring a Relying Party Trust [here](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/create-a-relying-party-trust). You will need to select the _Claims-aware Trust_ radio button.
 
 #### Select a Data Source
 
-Select the *Import data about the relying party published online or on a local network* radio button. While you can download the cloud.gov SAML SP metadata, by referencing our metadata endpoint, you can receive any updates as we push them out. Enter the staging or production metadata URL referenced in the System Information section.
+Select the _Import data about the relying party published online or on a local network_ radio button. While you can download the cloud.gov SAML SP metadata, by referencing our metadata endpoint, you can receive any updates as we push them out. Enter the staging or production metadata URL referenced in the System Information section.
 
 #### Specify Display Name
 
@@ -189,12 +191,12 @@ In order to properly map users in your SSO system to the cloud.gov SAML identifi
 1. Select the cloud.gov relying party trust.
 1. Right-click > Edit Claim Issuance Policy
 1. Add Rule
-1. You can name the rule whatever is easiest to understand, we recommend something similar to *Transform NameID to Email* so it's clear.
+1. You can name the rule whatever is easiest to understand, we recommend something similar to _Transform NameID to Email_ so it's clear.
 1. Here are the field values to set
-    1. Incoming claim type: *E-Mail Address*
-    1. Outgoing claim type: *Name ID*
-    1. Outgoing name ID format: *Email*
-1. Select the *Pass through all claim values* radio button.
+   1. Incoming claim type: _E-Mail Address_
+   1. Outgoing claim type: _Name ID_
+   1. Outgoing name ID format: _Email_
+1. Select the _Pass through all claim values_ radio button.
 1. Save the policy.
 
 #### Test

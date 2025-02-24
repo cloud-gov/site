@@ -2,7 +2,7 @@
 layout: layouts/post
 tags: news
 date: 2020-02-27
-title: "Introducing the new cloud.gov dashboard" 
+title: "Introducing the new cloud.gov dashboard"
 excerpt: "The new beta dashboard is here, making it easier for you to manage orgs and spaces."
 redirect_from:
   - /updates/2020-02-27-new-dashboard/

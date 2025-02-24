@@ -7,8 +7,8 @@ redirect_from:
   - /updates/2017-07-07-changes-to-credentials-broker/
 ---
 
-If you use the [cloud.gov identity provider]({{ site.baseurl }}/docs/services/cloud-gov-identity-provider)
-or [cloud.gov service account]({{ site.baseurl }}/docs/services/cloud-gov-service-account) services, check out their new instructions for obtaining credentials from new instances of these services.
+If you use the [cloud.gov identity provider](/docs/services/cloud-gov-identity-provider)
+or [cloud.gov service account](/docs/services/cloud-gov-service-account) services, check out their new instructions for obtaining credentials from new instances of these services.
 
 We've updated these services to give you credentials directly (using "service keys"), without needing to use temporary links from [Toaster (formerly Fugacious)](https://fugacious.18f.gov/). This simplifies how you set up these services, and it enables you to access the service credentials any time you need to.
 
@@ -19,4 +19,3 @@ We've updated these services to give you credentials directly (using "service ke
 Existing service accounts and identity providers will continue to work as normal (your existing credentials for existing service instances continue to work, so your deployments and authentication won’t be disrupted).
 
 To switch to using this new method for getting credentials, delete your service instances and create new ones.
-

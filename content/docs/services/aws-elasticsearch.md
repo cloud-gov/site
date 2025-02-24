@@ -10,31 +10,31 @@ cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-servic
 
 ## Plans
 
-Plan Name | Instance Type | Description | Number of nodes |
---------- | ------------- | ----------- | -----
-`es-dev` | t3.small.search | Single data node for non-prod use only | 1 |
-`es-medium` | c5.large.search | 3 Primary and 2 Data node cluster | 5 |
-`es-medium-ha` | c5.large.search | 3 Primary and 4 Data node cluster | 7 |
-`es-large` | c5.xlarge.search | 3 Primary and 2 Data node cluster | 5 |
-`es-large-ha` | c5.xlarge.search | 3 Primary and 4 Data node cluster | 7 |
-`es-xlarge` | c5.2xlarge.search | 3 Primary and 2 Data node cluster | 5 |
-`es-xlarge-ha` | c5.2xlarge.search | 3 Primary and 4 Data node cluster | 7 |
-`es-2xlarge-gp` | m5.2xlarge.search | 3 Primary and 2 Data node cluster | 5 |
-`es-2xlarge-gp-ha` | m5.2xlarge.search | 3 Primary and 4 Data node cluster | 7 |
-`es-4xlarge-gp` | m5.4xlarge.search | 3 Primary and 2 Data node cluster | 5 |
-`es-4xlarge-gp-ha` | m5.4xlarge.search | 3 Primary and 4 Data node cluster | 7 |
-`es-8xlarge-gp` | m5.4xlarge.search | 3 Primary and 4 Data node cluster (by request) | 7 |
-`es-8xlarge-gp-ha` | m5.4xlarge.search | 3 Primary and 8 Data node cluster (by request) | 11 |
-`es-12xlarge-gp` | m5.12xlarge.search | 3 Primary and 2 Data node cluster (by request) | 5 |
-`es-12xlarge-gp-ha` | m5.12xlarge.search | 3 Primary and 4 Data node cluster (by request) | 7 |
-`es-24xlarge-gp` | m5.12xlarge.search | 3 Primary and 4 Data node cluster (by request) | 7 |
-`es-24xlarge-gp-ha` | m5.12xlarge.search | 3 Primary and 8 Data node cluster (by request) | 11 |
+| Plan Name           | Instance Type      | Description                                    | Number of nodes |
+| ------------------- | ------------------ | ---------------------------------------------- | --------------- |
+| `es-dev`            | t3.small.search    | Single data node for non-prod use only         | 1               |
+| `es-medium`         | c5.large.search    | 3 Primary and 2 Data node cluster              | 5               |
+| `es-medium-ha`      | c5.large.search    | 3 Primary and 4 Data node cluster              | 7               |
+| `es-large`          | c5.xlarge.search   | 3 Primary and 2 Data node cluster              | 5               |
+| `es-large-ha`       | c5.xlarge.search   | 3 Primary and 4 Data node cluster              | 7               |
+| `es-xlarge`         | c5.2xlarge.search  | 3 Primary and 2 Data node cluster              | 5               |
+| `es-xlarge-ha`      | c5.2xlarge.search  | 3 Primary and 4 Data node cluster              | 7               |
+| `es-2xlarge-gp`     | m5.2xlarge.search  | 3 Primary and 2 Data node cluster              | 5               |
+| `es-2xlarge-gp-ha`  | m5.2xlarge.search  | 3 Primary and 4 Data node cluster              | 7               |
+| `es-4xlarge-gp`     | m5.4xlarge.search  | 3 Primary and 2 Data node cluster              | 5               |
+| `es-4xlarge-gp-ha`  | m5.4xlarge.search  | 3 Primary and 4 Data node cluster              | 7               |
+| `es-8xlarge-gp`     | m5.4xlarge.search  | 3 Primary and 4 Data node cluster (by request) | 7               |
+| `es-8xlarge-gp-ha`  | m5.4xlarge.search  | 3 Primary and 8 Data node cluster (by request) | 11              |
+| `es-12xlarge-gp`    | m5.12xlarge.search | 3 Primary and 2 Data node cluster (by request) | 5               |
+| `es-12xlarge-gp-ha` | m5.12xlarge.search | 3 Primary and 4 Data node cluster (by request) | 7               |
+| `es-24xlarge-gp`    | m5.12xlarge.search | 3 Primary and 4 Data node cluster (by request) | 7               |
+| `es-24xlarge-gp-ha` | m5.12xlarge.search | 3 Primary and 8 Data node cluster (by request) | 11              |
 
 Service name is `aws-elasticsearch` for all plans.
 
 ## When to use
 
-This service is geared toward applications that need to provide search capability, or interact with indexed data. Although Elasticsearch is often used as part of the ELK logging stack (Elasticsearch + Logstash + Kibana), this service **does not** include Kibana, and isn't suitable as a component of a logging solution. To find out more about logging on the cloud.gov platform, please see [the section on logs]({{ site.baseurl }}/docs/deployment/logs/#web-based-logs-with-historic-log-data).
+This service is geared toward applications that need to provide search capability, or interact with indexed data. Although Elasticsearch is often used as part of the ELK logging stack (Elasticsearch + Logstash + Kibana), this service **does not** include Kibana, and isn't suitable as a component of a logging solution. To find out more about logging on the cloud.gov platform, please see [the section on logs](/docs/deployment/logs/#web-based-logs-with-historic-log-data).
 
 ## Create an instance
 
@@ -54,10 +54,10 @@ Note: AWS Elasticsearch creation times will vary and is outside of Cloud.gov's c
 
 ### Setting optional parameters
 
-name             | required | description              | example
------------------|----------|--------------------------|---------
-`advanced_options` | false | map for advanced options | see below
-`ElasticsearchVersion`  | false | Specifies a supported major version in search (must be in "")   | `OpenSearch_2.11`
+| name                   | required | description                                                   | example           |
+| ---------------------- | -------- | ------------------------------------------------------------- | ----------------- |
+| `advanced_options`     | false    | map for advanced options                                      | see below         |
+| `ElasticsearchVersion` | false    | Specifies a supported major version in search (must be in "") | `OpenSearch_2.11` |
 
 These are the current supported major versions for Elasticsearch version:
 
@@ -78,12 +78,12 @@ cf create-service aws-elasticsearch \
 
 ### Advanced Options
 
-These are advanced tuning options that can have significant performance or behavior effects on your cluster. They are specified as key/value pairs under the `advanced_options` map in the core parameters. *Note*: although these all represent numbers, they are all specified as strings. Additionally, although they are dotted, they are not nested keys.
+These are advanced tuning options that can have significant performance or behavior effects on your cluster. They are specified as key/value pairs under the `advanced_options` map in the core parameters. _Note_: although these all represent numbers, they are all specified as strings. Additionally, although they are dotted, they are not nested keys.
 
-Name                                | description                                                 | default
-------------------------------------|-------------------------------------------------------------|--------
-indices.fielddata.cache.size        | percentage of JVM heap allocated to field data              | "20"
-indices.query.bool.max_clause_count | maximum number of clauses allowed in a Lucene boolean query | "1024"
+| Name                                | description                                                 | default |
+| ----------------------------------- | ----------------------------------------------------------- | ------- |
+| indices.fielddata.cache.size        | percentage of JVM heap allocated to field data              | "20"    |
+| indices.query.bool.max_clause_count | maximum number of clauses allowed in a Lucene boolean query | "1024"  |
 
 Here are some examples of how to set these values:
 
@@ -102,19 +102,19 @@ Note - if you are using the cf CLI utility on Windows, see the [examples section
 
 ### Shard/replica configuration for high availability
 
-The `medium` and `large` plans are mainly geared toward customers that need a single index and have coverage with 2 data nodes.  For customers wanting more coverage and more indexes,  the `medium-ha` nd `large-ha` plans scale the cluster to 4 data nodes to offer high availability (HA).
+The `medium` and `large` plans are mainly geared toward customers that need a single index and have coverage with 2 data nodes. For customers wanting more coverage and more indexes, the `medium-ha` nd `large-ha` plans scale the cluster to 4 data nodes to offer high availability (HA).
 
 For additional information on configuring your service for high availability when using anything other than the `es-dev` plan, you can refer to [this article from the Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/scalability.html) for an overview of how clusters work.
 
-AWS specific information can be found in the AWS [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html).  Note - AWS recently changed the name of this service to AWS OpenSearch.
+AWS specific information can be found in the AWS [Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html). Note - AWS recently changed the name of this service to AWS OpenSearch.
 
 ## Update an instance
 
 ### Setting optional parameters
 
-name             | required | description              | example
------------------|----------|--------------------------|---------
-`volume_type`  | false | Specifies the EBS storage volume type. Valid options: `gp3` | `gp3`
+| name          | required | description                                                 | example |
+| ------------- | -------- | ----------------------------------------------------------- | ------- |
+| `volume_type` | false    | Specifies the EBS storage volume type. Valid options: `gp3` | `gp3`   |
 
 ### Changing instance plans
 
@@ -133,61 +133,61 @@ cf update-service ${SERVICE_NAME} \
 
 ## Connecting to your service instance
 
-If you need to directly access your service instance from your local environment, please read [this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-20-connecting-to-brokered-service-instances/) for more information.
+If you need to directly access your service instance from your local environment, please read [this knowledge base article](/knowledge-base/2021-05-20-connecting-to-brokered-service-instances/) for more information.
 
 ## Managing backups
 
-By default AWS will create hourly snapshot backups of your Elasticsearch service instance and retain those snapshots for 14 days - 336 total snapshots are retained.  These snapshots are only accessible to cluster restore purposes only and can not be exported.
+By default AWS will create hourly snapshot backups of your Elasticsearch service instance and retain those snapshots for 14 days - 336 total snapshots are retained. These snapshots are only accessible to cluster restore purposes only and can not be exported.
 
 For customers that would like to import or export their Elasticsearch data, this can be done following the [AWS Elasticsearch Manual Snapshot Process](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains-snapshots.html)
 
 As part of the process of using manual snapshots, customers will need to assign an existing S3 bucket and the broker will provide a AWS policy ARN to use with the manual S3 snapshot process
 
-- Create an instance of the [S3 service]({{ site.baseurl }}/docs/services/s3):
+- Create an instance of the [S3 service](/docs/services/s3):
 
-    ```shell
-    cf create-service s3 basic my-s3-bucket
-    ```
+  ```shell
+  cf create-service s3 basic my-s3-bucket
+  ```
 
 - Create a [service key](https://docs.cloudfoundry.org/devguide/services/service-keys.html) to access S3 credentials:
 
-    ```shell
-    cf create-service-key my-s3-bucket my-key
-    ```
+  ```shell
+  cf create-service-key my-s3-bucket my-key
+  ```
 
 - Get your s3 bucket name:
 
-    ```shell
-    s3_credentials=$(cf service-key my-s3-bucket my-key | tail -n +3)
-    s3_bucket=$(echo "${s3_credentials}" | jq -r '.credentials.bucket')
-    ```
+  ```shell
+  s3_credentials=$(cf service-key my-s3-bucket my-key | tail -n +3)
+  s3_bucket=$(echo "${s3_credentials}" | jq -r '.credentials.bucket')
+  ```
 
 - Assign your new bucket to your Elasticsearch instance:
 
-    ```shell
-    cf create-service-key my-elastic-service my-key -c '{"bucket":"${s3_bucket}"}'
-    ```
+  ```shell
+  cf create-service-key my-elastic-service my-key -c '{"bucket":"${s3_bucket}"}'
+  ```
 
 - Find your AWS ARN for your AWS policy to reference for your backup:
 
-    ```shell
-    es_arn=$(cf service-key my-elastic-service my-key | tail -n +3)
-    snapshotRoleARN=$(echo "${es_arn}" | jq -r '.credentials.snapshotRoleARN')
-    ```
+  ```shell
+  es_arn=$(cf service-key my-elastic-service my-key | tail -n +3)
+  snapshotRoleARN=$(echo "${es_arn}" | jq -r '.credentials.snapshotRoleARN')
+  ```
 
- Once you have your s3 bucket connected and have the `snapshotRoleARN` you can then inside your application connect to the AWS ES host and register your s3 repository endpoint and then perform your snapshot export/import operations using [AWS signed HTTP headers](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-request-signing.html).  Due to the nature of [AWS Signature Calculations](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html) there is no direct way with curl to perform these operations and it's best left to client libraries in a programing language your applications are written in.
+Once you have your s3 bucket connected and have the `snapshotRoleARN` you can then inside your application connect to the AWS ES host and register your s3 repository endpoint and then perform your snapshot export/import operations using [AWS signed HTTP headers](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-request-signing.html). Due to the nature of [AWS Signature Calculations](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-header-based-auth.html) there is no direct way with curl to perform these operations and it's best left to client libraries in a programing language your applications are written in.
 
- cloud.gov does offer a code sample repository on Github - [aws-elasticsearch-example](https://github.com/cloud-gov/aws-elasticsearch-example) that shows an example in Python on how to interact with the new ES service using signed headers.  Our customers are encouraged to submit PRs of other examples to share with fellow customers.
+cloud.gov does offer a code sample repository on Github - [aws-elasticsearch-example](https://github.com/cloud-gov/aws-elasticsearch-example) that shows an example in Python on how to interact with the new ES service using signed headers. Our customers are encouraged to submit PRs of other examples to share with fellow customers.
 
 ## Encryption
 
 Every non-dev AWS Elasticsearch instance configured through cloud.gov is [encrypted at rest](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/encryption-at-rest.html). We use the industry standard AES-256 encryption algorithm to encrypt your data on the server that hosts your AWS Elasticsearch instance.
 
-Service Name | Plan Name | Encryption at Rest |
------------- | --------- | --------------- |
-`aws-elasticsearch` | `es-dev` | No |
-`aws-elasticsearch` | `es-medium` | Yes |
-`aws-elasticsearch` | `es-medium-ha` | Yes |
+| Service Name        | Plan Name      | Encryption at Rest |
+| ------------------- | -------------- | ------------------ |
+| `aws-elasticsearch` | `es-dev`       | No                 |
+| `aws-elasticsearch` | `es-medium`    | Yes                |
+| `aws-elasticsearch` | `es-medium-ha` | Yes                |
 
 Note: If you have access to larger service plans, they will mirror same settings as `es-medium` or `es-medium-ha`.
 

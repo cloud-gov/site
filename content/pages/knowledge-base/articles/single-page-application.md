@@ -3,19 +3,16 @@ layout: layouts/post
 title: "Hosting Single Page Applications on Pages"
 date: 2023-11-09 00:00:00 +00:00
 excerpt: Take a look at how Pages handles single page applications
-tags:
-  pagesknowledgebase
+tags: pagesknowledgebase
 ---
 
-
-cloud.gov Pages hosts static sites, but this doesn’t mean that developers are limited to only using [“static site generators”](https://jamstack.org/generators/): anything that can be compiled down into HTML can be run on Pages. You can use a single-page application framework like Vue.js, Svelte, Angular, React, etc. and host it seamlessly on the Pages platform. This is achieved via the `npm run pages` command which allows developers to add a custom build script, and we’ll automatically publish everything in the `_site` folder. For this particular single page application we’ll be leveraging [vite](https://vitejs.dev/guide/why.html) as our build tool.  
+cloud.gov Pages hosts static sites, but this doesn’t mean that developers are limited to only using [“static site generators”](https://jamstack.org/generators/): anything that can be compiled down into HTML can be run on Pages. You can use a single-page application framework like Vue.js, Svelte, Angular, React, etc. and host it seamlessly on the Pages platform. This is achieved via the `npm run pages` command which allows developers to add a custom build script, and we’ll automatically publish everything in the `_site` folder. For this particular single page application we’ll be leveraging [vite](https://vitejs.dev/guide/why.html) as our build tool.
 
 In this example we will be taking a look at a simple single-page application which uses the React library and React Router v6. You can view a repository with a full example here <https://github.com/cloud-gov/pages-example-spa> and see the results in Pages [here](https://federalist-01aa8660-8aca-452d-a270-5e58ffa18645.sites.pages.cloud.gov/preview/cloud-gov/pages-example-spa/content/). There are also more detailed instructions on how to run this locally in the repositories’ README.md. This article serves as a high level overview and will highlight three key features:
 
-* Application routing
-* Environment variables
-* 404 Pages
-
+- Application routing
+- Environment variables
+- 404 Pages
 
 ## Application Routing
 
@@ -25,46 +22,50 @@ All of the routing is located in the `main.jsx` file. Here we import all our com
 
 ```js
 const router = createBrowserRouter(
- createRoutesFromElements(
-   // set route as the path plus layout
-   <Route path='/' element={<Layout />}>
-     <Route index element={<Home />}/>
-     <Route path="stuff" element={<Stuff />}/>
-     <Route path="contact" element={<Contact />}/>
-     <Route path="*" element={<Page404 />}/>
-   </Route>
- ),
- {basename: import.meta.env.BASE_URL}
+  createRoutesFromElements(
+    // set route as the path plus layout
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="stuff" element={<Stuff />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="*" element={<Page404 />} />
+    </Route>,
+  ),
+  { basename: import.meta.env.BASE_URL },
 );
 
 createRoot(document.getElementById("root")).render(
- <React.StrictMode>
-   <RouterProvider router={router} />
- </React.StrictMode>
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>,
 );
 ```
 
-
-
-Additionally within the `Layout` component is where we house all the `NavLinks` and `navbar` which are located at the top of the page. The `Outlet` component tells the `react router` where to output the child route page components within the layout. 
+Additionally within the `Layout` component is where we house all the `NavLinks` and `navbar` which are located at the top of the page. The `Outlet` component tells the `react router` where to output the child route page components within the layout.
 
 ```js
 class Layout extends Component {
-   render() {
-       return (
-           <div>
-               <h1>Simple SPA</h1>
-               <ul className="header">
-                   <li><NavLink to='/'>Home</NavLink></li>
-                   <li><NavLink to="stuff">Stuff</NavLink></li>
-                   <li><NavLink to="contact">Contact</NavLink></li>
-               </ul>
-               <div className="content">
-                   <Outlet />
-               </div>
-           </div>
-       )
-   }
+  render() {
+    return (
+      <div>
+        <h1>Simple SPA</h1>
+        <ul className="header">
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="stuff">Stuff</NavLink>
+          </li>
+          <li>
+            <NavLink to="contact">Contact</NavLink>
+          </li>
+        </ul>
+        <div className="content">
+          <Outlet />
+        </div>
+      </div>
+    );
+  }
 }
 ```
 
@@ -72,14 +73,13 @@ It’s important to remember that none of these routes are creating new HTML fil
 
 ## Environment variables
 
-Pages provides [certain environment variables](https://cloud.gov/pages/documentation/env-vars-on-pages-builds/) in each build container and you can also add customer variables in your “Site Settings”. In the case of `vite`, the library we’re using in this example, [we are using a single variable provided by Pages](https://vitejs.dev/guide/env-and-mode) in two separate places:
-    - `BASEURL`: This variable is supplied by the Pages build container and cannot be modified. This will insert the Pages site path based on the branch and associated domain. We’ll utilize this environment variable in our config file, `vite.config.js`, to set the [base](https://vitejs.dev/config/shared-options.html#base) variable which will be used to update our assets path.
+Pages provides [certain environment variables](https://cloud.gov/pages/documentation/env-vars-on-pages-builds/) in each build container and you can also add customer variables in your “Site Settings”. In the case of `vite`, the library we’re using in this example, [we are using a single variable provided by Pages](https://vitejs.dev/guide/env-and-mode) in two separate places: - `BASEURL`: This variable is supplied by the Pages build container and cannot be modified. This will insert the Pages site path based on the branch and associated domain. We’ll utilize this environment variable in our config file, `vite.config.js`, to set the [base](https://vitejs.dev/config/shared-options.html#base) variable which will be used to update our assets path.
 
 ```js
-base: process.env.BASEURL
+base: process.env.BASEURL;
 ```
 
-Once the `base` variable is set in the vite configuration, it statically injects a variable, `import.meta.env.BASE_URL`, at build time. In our `main.jsx` file react router can use that variable to set [`opts.basename`](https://reactrouter.com/en/main/routers/create-browser-router#optsbasename) which ensures that routing is handled correctly regardless of where the application is served from. When a site is viewed at a non-production domain or preview URL it is not served from the root of the domain but rather a sub path.  
+Once the `base` variable is set in the vite configuration, it statically injects a variable, `import.meta.env.BASE_URL`, at build time. In our `main.jsx` file react router can use that variable to set [`opts.basename`](https://reactrouter.com/en/main/routers/create-browser-router#optsbasename) which ensures that routing is handled correctly regardless of where the application is served from. When a site is viewed at a non-production domain or preview URL it is not served from the root of the domain but rather a sub path.
 
 ```js
 const router = createBrowserRouter(
@@ -88,21 +88,15 @@ const router = createBrowserRouter(
 );
 ```
 
-
-
-
-
-
-
 ## 404 Pages
 
-In our application code, we created a 404 page as another component to be imported into the `index.jsx` file to be handled by `react-router`. The Route for the 404 page was set as a wildcard catch-all so that when any path entered is not `/`, `/contact` or `/stuff` the Page404 component will be rendered. 
+In our application code, we created a 404 page as another component to be imported into the `index.jsx` file to be handled by `react-router`. The Route for the 404 page was set as a wildcard catch-all so that when any path entered is not `/`, `/contact` or `/stuff` the Page404 component will be rendered.
 
 ```js
-<Route path="*" element={<Page404 />}/>
+<Route path="*" element={<Page404 />} />
 ```
 
-If users navigate to a sub-path of your site directly, we need special handling for this type of 404 because the application will not have loaded your index.jsx file (or associated router). 
+If users navigate to a sub-path of your site directly, we need special handling for this type of 404 because the application will not have loaded your index.jsx file (or associated router).
 
 It is important to note that:
 

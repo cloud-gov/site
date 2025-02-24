@@ -9,21 +9,21 @@ tags:
 
 Applications sometimes need to restrict access to content, functionality, or components. This is particularly true of applications that are built using microservices, or that utilize backend APIs to power front-end interfaces.
 
-There are different ways of restricting access to your applications on cloud.gov, and the approach you choose may benefit from a discussion of the relative pros and cons of each. 
+There are different ways of restricting access to your applications on cloud.gov, and the approach you choose may benefit from a discussion of the relative pros and cons of each.
 
 ### Route service
 
-The Cloud Foundry platform offers a feature called [route services](https://docs.cloudfoundry.org/services/route-services.html) that enable you to set up a special service that modifies requests to your application (e.g., filtering by IP address) before the traffic is delivered to your app.  
+The Cloud Foundry platform offers a feature called [route services](https://docs.cloudfoundry.org/services/route-services.html) that enable you to set up a special service that modifies requests to your application (e.g., filtering by IP address) before the traffic is delivered to your app.
 
-Route services are a good option to choose if you have a website or application that needs access restricted to a small group of authenticated users, or to a specific set of IP addresses (or IP range). This is common for intranet like applications that provide content or information that is not for public consumption, but rather for sharing inside an agency or office. 
+Route services are a good option to choose if you have a website or application that needs access restricted to a small group of authenticated users, or to a specific set of IP addresses (or IP range). This is common for intranet like applications that provide content or information that is not for public consumption, but rather for sharing inside an agency or office.
 
 You can think of a route service as working in tandem with the network infrastructure that manages traffic between the outside world and the cloud.gov environment. When you [register a route service](https://docs.cloud.service.gov.uk/deploying_services/route_services/#implement-a-route-service) for your app:
 
-* The router that manages inbound traffic first send requests for your application to the route service.
-* The route service manipulates or checks the incoming requests, as it's logic dictates.
-* The route service then sends the request back to the router, which sees that the route service has finished its work, and then sends the request on to your app.
+- The router that manages inbound traffic first send requests for your application to the route service.
+- The route service manipulates or checks the incoming requests, as it's logic dictates.
+- The route service then sends the request back to the router, which sees that the route service has finished its work, and then sends the request on to your app.
 
-In short, all traffic to your app is first sent by the router to your route service, before it is then sent on to your app. 
+In short, all traffic to your app is first sent by the router to your route service, before it is then sent on to your app.
 
 ### Internal route
 
@@ -33,9 +33,9 @@ Internal routes are a good option to choose if you have components of your appli
 
 The cloud.gov team has some good documentation and resources available for those interested in learning about and using internal routes.
 
-* The cloud.gov team [presented a tech talk on internal](https://www.youtube.com/watch?v=2m4FP522DU8)
-* There are some [examples apps that went along with this talk here](https://github.com/cloud-gov/tech-talk-internal-routes)
-* [More resources](https://github.com/cloud-gov/tech-talk-internal-routes#additional-resources) that might be useful are here
+- The cloud.gov team [presented a tech talk on internal](https://www.youtube.com/watch?v=2m4FP522DU8)
+- There are some [examples apps that went along with this talk here](https://github.com/cloud-gov/tech-talk-internal-routes)
+- [More resources](https://github.com/cloud-gov/tech-talk-internal-routes#additional-resources) that might be useful are here
 
 ### Potential areas of confusion
 

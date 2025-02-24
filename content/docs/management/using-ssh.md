@@ -1,11 +1,11 @@
 ---
 showInSidenav: true
 redirect_from:
-    - /docs/apps/using-ssh/
+  - /docs/apps/using-ssh/
 title: Using SSH
 ---
 
-You can use SSH to inspect how your app is operating, transfer files via SCP, or interact directly with your bound services. [More information about one-off tasks.]({{ site.baseurl }}/docs/management/one-off-tasks)
+You can use SSH to inspect how your app is operating, transfer files via SCP, or interact directly with your bound services. [More information about one-off tasks.](/docs/management/one-off-tasks)
 
 You can get a shell via the [`cf
 ssh`](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#ssh-command)
@@ -28,7 +28,7 @@ This overrides the port health check with the `process` check, and sets the star
 
 SSH access is enabled by default. Space Developers can disable SSH access to individual applications, and Space Managers can disable SSH access to all apps running within a space. See [Enabling and Disabling SSH Access](https://docs.cloudfoundry.org/devguide/deploy-apps/ssh-apps.html#enable-disable-ssh) for the commands.
 
-You should [disable SSH access for production applications]({{ site.baseurl }}/docs/deployment/production-ready#prevent-non-auditable-changes-to-production-apps) to ensure you can audit changes to those applications.
+You should [disable SSH access for production applications](/docs/deployment/production-ready#prevent-non-auditable-changes-to-production-apps) to ensure you can audit changes to those applications.
 
 ## SSH version information
 
@@ -36,4 +36,4 @@ Application containers use the SSH-2.0 protocol. The SSH service uses the [Cloud
 
 ## Troubleshooting SSH issues
 
-If you are having trouble connecting to your application via SSH, [please refer to this knowledge base article]({{ site.baseurl }}/knowledge-base/2021-05-17-troubleshooting-ssh-connections/).
+If you are having trouble connecting to your application via SSH, [please refer to this knowledge base article](/knowledge-base/2021-05-17-troubleshooting-ssh-connections/).

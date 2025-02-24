@@ -5,16 +5,15 @@ date: 2022-05-05 00:00:00 +00:00
 excerpt: How to use postgres-tinsmith service broker to quickly create PostgreSQL databases from a shared RDS instance
 tags:
   - posts
-
 ---
 
-The cloud.gov team [recently deprecated shared database instance plans]({{ site.baseurl }}/_posts/2022-04-25-deprecation-notice).
+The cloud.gov team [recently deprecated shared database instance plans](/_posts/2022-04-25-deprecation-notice).
 
 Unlike dedicated instance plans, which each provision a separate RDS database instance and take a
 while to create, shared instance plans re-used the same RDS database instance and created new
 databases within the same instance, which completed almost instantly.
 
-You can replicate the behavior of the deprecated shared instance plans using an 
+You can replicate the behavior of the deprecated shared instance plans using an
 open-source service broker known as [`postgres-tinsmith`](https://github.com/blacksmith-community/cf-postgres-tinsmith).
 
 Please note that while this approach has been tested manually, the `postgres-tinsmith` repo is not
@@ -61,11 +60,11 @@ Alternately, you can [bind the database service to your application using a `man
 
 ### Verifying your bound database service
 
-Running `cf env <application>` (e.g. `cf env postgres-example-app`) should show information about the 
-bound `<db-name>` in the `VCAP_SERVICES` environment variable. See the [CloudFoundry 
+Running `cf env <application>` (e.g. `cf env postgres-example-app`) should show information about the
+bound `<db-name>` in the `VCAP_SERVICES` environment variable. See the [CloudFoundry
 documentation for more information about `VCAP_SERVICES`](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES).
 
 ## 5. Use the database in your application
 
-Make sure that your application properly reads and implements the credentials for the database from 
+Make sure that your application properly reads and implements the credentials for the database from
 the `VCAP_SERVICES` environment variable.

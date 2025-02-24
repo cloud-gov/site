@@ -7,6 +7,7 @@ excerpt: Cloud.gov currently supports mission-critical applications for some of
   the federal government’s most visible agencies, and enables highly-available
   and resilient solutions the American public depends on.
 ---
+
 So, your agency is considering a move off cloud.gov and building a custom cloud platform. Your agency has been using cloud.gov for a while now, it works well and everyone is enjoying the experience. However, your team has heard that cloud.gov is a stepping stone for agencies to move to their own cloud platform. Is it time to migrate off cloud.gov to a custom made cloud instance?
 
 Cloud.gov doesn’t need to be a stepping stone. It is a platform as a service (PaaS) designed to make your agency’s cloud experience easier. Cloud.gov currently supports mission-critical applications for some of the federal government’s most visible agencies, and enables highly-available and resilient solutions the American public depends on.

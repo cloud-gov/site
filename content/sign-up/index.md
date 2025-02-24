@@ -25,6 +25,7 @@ register, you’ll need access to your email and a smartphone with an authentica
 Microsoft Authenticator, or Authy).
 
 <a href="https://account.fr.cloud.gov/signup" class="usa-button usa-button--big">Get access</a>
+
 </div>
 </div>
 </section>
@@ -35,9 +36,7 @@ Microsoft Authenticator, or Authy).
 <h2>2.<br />Go build in your sandbox</h2>
 
 Follow any of the tutorials to launch your own web application from your sandbox. You’ll need your cloud.gov account and
-some familiarity with Windows Powershell or Mac/Linux terminal. Learn more about [sandbox spaces]({{ site.baseurl
-}}/docs/pricing/free-limited-sandbox/) and [sandbox limitations]({{ site.baseurl
-}}/docs/pricing/free-limited-sandbox/#sandbox-limitations).
+some familiarity with Windows Powershell or Mac/Linux terminal. Learn more about [sandbox spaces](/docs/pricing/free-limited-sandbox/) and [sandbox limitations](/docs/pricing/free-limited-sandbox/#sandbox-limitations).
 
 <a href="https://account.fr.cloud.gov/signup" class="usa-button usa-button--big">Set up cloud.gov</a>
 
@@ -58,7 +57,7 @@ or [via email](mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0
 <h4>Sample applications</h4>
 <ul>
         <li>
-        <a href="{{ '/docs/getting-started/code-samples/' | url }}">Sample applications in .Net Core, PHP, Python, R, Ruby, NodeJS and Clojure</a>
+        <a href="{{ '/docs/getting-started/code-samples/' }}">Sample applications in .Net Core, PHP, Python, R, Ruby, NodeJS and Clojure</a>
         </li>
         <li>
         <a href="https://github.com/cloudfoundry-samples">Cloud Foundry community collection of sample applications</a>

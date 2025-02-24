@@ -14,10 +14,10 @@ New here? Start with the top of the sidebar and work your way down. The docs inc
 
 Shortcuts to common tasks:
 
-- [Set up the command line]({{ site.baseurl }}/docs/getting-started/setup#set-up-the-command-line)
-- [Basic deployment tips]({{ site.baseurl }}/docs/deployment/deployment)
-- [Custom domains]({{ site.baseurl }}/docs/management/custom-domains)
-- [Managing teammates]({{ site.baseurl }}/docs/orgs-spaces/roles)
+- [Set up the command line](/docs/getting-started/setup#set-up-the-command-line)
+- [Basic deployment tips](/docs/deployment/deployment)
+- [Custom domains](/docs/management/custom-domains)
+- [Managing teammates](/docs/orgs-spaces/roles)
 
 ## cloud.gov team docs
 

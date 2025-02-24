@@ -1,141 +1,180 @@
 <footer class="usa-footer site-footer" role="contentinfo">
-
-    <!-- Helpful Links Section -->
-    <div class="usa-footer__primary-section bg-accent-warm-light border-top border-accent-warm-dark padding-bottom-4">
-        <div class="grid-container">
-            <nav class="usa-footer__nav padding-0" aria-label="Footer navigation">
-                <div class="grid-row grid-gap-4">
-                    <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                        <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                            <h4 class="usa-footer__primary-link">Get in touch</h4>
-                            <ul class="usa-list usa-list--unstyled">
-                                <li class="usa-footer__secondary-link">
-                                    <a href="{{ '/contact' | url }}">Customer support</a>
-                                </li>
-                                <li class="usa-footer__secondary-link">
-                                    <a href="mailto:inquiries@cloud.gov">Business inquiries</a>
-                                </li>
-                                <li class="usa-footer__secondary-link">
-                                    <a href="https://join.tts.gsa.gov/" class="usa-link--external" target="_blank">Join our team</a>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
-                    <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                        <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                            <h4 class="usa-footer__primary-link">For developers</h4>
-                            <ul class="usa-list usa-list--unstyled">
-                                <li class="usa-footer__secondary-link">
-                                    <a href="{{ '/docs/ops/repos/#repositories' | url }}">Repositories</a>
-                                </li>
-                                <li class="usa-footer__secondary-link">
-                                    <a href="{{ '/docs/pricing/free-limited-sandbox/' | url }}">Free developer sandbox</a>
-                                </li>
-                                <li class="usa-footer__secondary-link">
-                                    <a href="https://cloudgov.statuspage.io/" class="usa-link--external" target="_blank">cloud.gov status</a>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
-                    <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                        <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                            <h4 class="usa-footer__primary-link">Policies</h4>
-                            <ul class="usa-list usa-list--unstyled">
-                                <li class="usa-footer__secondary-link">
-                                    <a href="https://www.gsa.gov/vulnerability-disclosure-policy" class="usa-link--external" target="_blank">
-                                        Vulnerability disclosure policy</a>
-                                </li>
-                                <li class="usa-footer__secondary-link">
-                                    <a href="https://18f.gsa.gov/open-source-policy/" class="usa-link--external" target="_blank">Open source policy</a>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-            </nav>
+  <!-- Helpful Links Section -->
+  <div class="usa-footer__primary-section bg-accent-warm-light border-top border-accent-warm-dark padding-bottom-4">
+    <div class="grid-container">
+      <nav class="usa-footer__nav padding-0" aria-label="Footer navigation">
+        <div class="grid-row grid-gap-4">
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+              <h4 class="usa-footer__primary-link">Get in touch</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li class="usa-footer__secondary-link">
+                  <a href="{{ '/contact' }}">Customer support</a>
+                </li>
+                <li class="usa-footer__secondary-link">
+                  <a href="mailto:inquiries@cloud.gov">Business inquiries</a>
+                </li>
+                <li class="usa-footer__secondary-link">
+                  <a href="https://join.tts.gsa.gov/" class="usa-link--external" target="_blank">Join our team</a>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+              <h4 class="usa-footer__primary-link">For developers</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li class="usa-footer__secondary-link">
+                  <a href="{{ '/docs/ops/repos/#repositories' }}">Repositories</a>
+                </li>
+                <li class="usa-footer__secondary-link">
+                  <a href="{{ '/docs/pricing/free-limited-sandbox/' }}">Free developer sandbox</a>
+                </li>
+                <li class="usa-footer__secondary-link">
+                  <a href="https://cloudgov.statuspage.io/" class="usa-link--external" target="_blank"
+                    >cloud.gov status</a
+                  >
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+              <h4 class="usa-footer__primary-link">Policies</h4>
+              <ul class="usa-list usa-list--unstyled">
+                <li class="usa-footer__secondary-link">
+                  <a
+                    href="https://www.gsa.gov/vulnerability-disclosure-policy"
+                    class="usa-link--external"
+                    target="_blank"
+                  >
+                    Vulnerability disclosure policy</a
+                  >
+                </li>
+                <li class="usa-footer__secondary-link">
+                  <a href="https://18f.gsa.gov/open-source-policy/" class="usa-link--external" target="_blank"
+                    >Open source policy</a
+                  >
+                </li>
+              </ul>
+            </section>
+          </div>
         </div>
+      </nav>
     </div>
+  </div>
 
-    <!-- Cloud.gov Logo & Email -->
-    <div class="usa-footer__secondary-section bg-accent-warm">
-        <div class="grid-container">
-            <div class="usa-footer__logo grid-row grid-gap-2">
-                <div class="grid-col-auto">
-                    {% image_with_class "./_img/cloud-gov-logo.svg" "width-card-lg height-auto" site.title %}
-                </div>
-                <div class="grid-col-auto desktop:margin-left-auto">
-                    <p class="">
-                        <a href="mailto:{{site.email}}">{{site.email}}</a>
-                    </p>
-                </div>
-            </div>
+  <!-- Cloud.gov Logo & Email -->
+  <div class="usa-footer__secondary-section bg-accent-warm">
+    <div class="grid-container">
+      <div class="usa-footer__logo grid-row grid-gap-2">
+        <div class="grid-col-auto">
+          {% image_with_class "./_img/cloud-gov-logo.svg" "width-card-lg height-auto" site.title %}
         </div>
+        <div class="grid-col-auto desktop:margin-left-auto">
+          <p class="">
+            <a href="mailto:{{site.email}}">{{ site.email }}</a>
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Universal Footer from Pages -->
-    <div class="usa-identifier site-identifier">
-        <section class="usa-identifier__section usa-identifier__section--masthead" aria-label="Agency identifier">
-            <div class="usa-identifier__container">
-                <div class="usa-identifier__logos">
-                    <a href="https://www.gsa.gov" class="usa-link--external" target="_blank">
-                        {% image_with_class "_img/gsa-logo.svg" "usa-identifier__logo" "GSA logo identifier" %}
-                    </a>
-                </div>
-                <div class="usa-identifier__identity" aria-label="Agency description">
-                    <p class="usa-identifier__identity-domain">cloud.gov</p>
-                    <p class="usa-identifier__identity-disclaimer">
-                        An official website of the <a href="https://gsa.gov" class="usa-link--external" target="_blank">General Services Administration</a>
-                    </p>
-                </div>
-            </div>
-        </section>
-        <nav class="usa-identifier__section usa-identifier__section--required-links" aria-label="Important links">
-            <div class="usa-identifier__container">
-                <ul class="usa-identifier__required-links-list">
-                    <li class="usa-identifier__required-links-item">
-                        <a href="https://www.gsa.gov/about-us" class="usa-identifier__required-link usa-link usa-link--external" target="_blank">
-                            About GSA
-                        </a>
-                    </li>
-                    <li class="usa-identifier__required-links-item">
-                        <a href="https://www.gsa.gov/website-information/accessibility-aids" class="usa-identifier__required-link usa-link usa-link--external" target="_blank">
-                            Accessibility support
-                        </a>
-                    </li>
-                    <li class="usa-identifier__required-links-item">
-                        <a href="https://www.gsa.gov/reference/freedom-of-information-act-foia" class="usa-identifier__required-link usa-link usa-link--external" target="_blank">
-                            FOIA requests
-                        </a>
-                    </li>
-                    <li class="usa-identifier__required-links-item">
-                        <a href="https://www.gsa.gov/reference/civil-rights-programs/notification-and-federal-employee-antidiscrimination-and-retaliation-act-of-2002" target="_blank" class="usa-identifier__required-link usa-link  usa-link--external">
-                            No FEAR Act data
-                        </a>
-                    </li>
-                    <li class="usa-identifier__required-links-item">
-                        <a href="https://www.gsaig.gov/" class="usa-identifier__required-link usa-link usa-link--external" target="_blank">
-                            Office of the Inspector General
-                        </a>
-                    </li>
-                    <li class="usa-identifier__required-links-item">
-                        <a href="https://www.gsa.gov/reference/reports/budget-performance" class="usa-identifier__required-link usa-link usa-link--external" target="_blank">
-                            Performance reports
-                        </a>
-                    </li>
-                    <li class="usa-identifier__required-links-item">
-                        <a href="https://www.gsa.gov/website-information/website-policies" class="usa-identifier__required-link usa-link usa-link--external" target="_blank">
-                            Privacy policy
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <section class="usa-identifier__section usa-identifier__section--usagov" aria-label="Government information and services">
-            <div class="usa-identifier__container">
-                <div class="usa-identifier__usagov-description">Looking for U.S. government information and services?</div>
-                <a href="https://www.usa.gov/" class="usa-link--external" target="_blank">Visit USA.gov</a>
-            </div>
-        </section>
-    </div>
-
+  <!-- Universal Footer from Pages -->
+  <div class="usa-identifier site-identifier">
+    <section class="usa-identifier__section usa-identifier__section--masthead" aria-label="Agency identifier">
+      <div class="usa-identifier__container">
+        <div class="usa-identifier__logos">
+          <a href="https://www.gsa.gov" class="usa-link--external" target="_blank">
+            {% image_with_class "_img/gsa-logo.svg" "usa-identifier__logo" "GSA logo identifier" %}
+          </a>
+        </div>
+        <div class="usa-identifier__identity" aria-label="Agency description">
+          <p class="usa-identifier__identity-domain">cloud.gov</p>
+          <p class="usa-identifier__identity-disclaimer">
+            An official website of the
+            <a href="https://gsa.gov" class="usa-link--external" target="_blank">General Services Administration</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <nav class="usa-identifier__section usa-identifier__section--required-links" aria-label="Important links">
+      <div class="usa-identifier__container">
+        <ul class="usa-identifier__required-links-list">
+          <li class="usa-identifier__required-links-item">
+            <a
+              href="https://www.gsa.gov/about-us"
+              class="usa-identifier__required-link usa-link usa-link--external"
+              target="_blank"
+            >
+              About GSA
+            </a>
+          </li>
+          <li class="usa-identifier__required-links-item">
+            <a
+              href="https://www.gsa.gov/website-information/accessibility-aids"
+              class="usa-identifier__required-link usa-link usa-link--external"
+              target="_blank"
+            >
+              Accessibility support
+            </a>
+          </li>
+          <li class="usa-identifier__required-links-item">
+            <a
+              href="https://www.gsa.gov/reference/freedom-of-information-act-foia"
+              class="usa-identifier__required-link usa-link usa-link--external"
+              target="_blank"
+            >
+              FOIA requests
+            </a>
+          </li>
+          <li class="usa-identifier__required-links-item">
+            <a
+              href="https://www.gsa.gov/reference/civil-rights-programs/notification-and-federal-employee-antidiscrimination-and-retaliation-act-of-2002"
+              target="_blank"
+              class="usa-identifier__required-link usa-link  usa-link--external"
+            >
+              No FEAR Act data
+            </a>
+          </li>
+          <li class="usa-identifier__required-links-item">
+            <a
+              href="https://www.gsaig.gov/"
+              class="usa-identifier__required-link usa-link usa-link--external"
+              target="_blank"
+            >
+              Office of the Inspector General
+            </a>
+          </li>
+          <li class="usa-identifier__required-links-item">
+            <a
+              href="https://www.gsa.gov/reference/reports/budget-performance"
+              class="usa-identifier__required-link usa-link usa-link--external"
+              target="_blank"
+            >
+              Performance reports
+            </a>
+          </li>
+          <li class="usa-identifier__required-links-item">
+            <a
+              href="https://www.gsa.gov/website-information/website-policies"
+              class="usa-identifier__required-link usa-link usa-link--external"
+              target="_blank"
+            >
+              Privacy policy
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section
+      class="usa-identifier__section usa-identifier__section--usagov"
+      aria-label="Government information and services"
+    >
+      <div class="usa-identifier__container">
+        <div class="usa-identifier__usagov-description">Looking for U.S. government information and services?</div>
+        <a href="https://www.usa.gov/" class="usa-link--external" target="_blank">Visit USA.gov</a>
+      </div>
+    </section>
+  </div>
 </footer>

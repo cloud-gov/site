@@ -1,10 +1,7 @@
 ---
 title: Build Errors
 permalink: /pages/documentation/build-errors/
-
-
 ---
-
 
 The following is a non-exhausitve list of commmon issues we see partners run into:
 

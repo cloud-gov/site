@@ -33,7 +33,7 @@ saw 25% faster builds, saving 1 minute 40 seconds on average.
 <h4 class="margin-0">Median Build Times (in minutes) for Digital.gov by Month</h4>
 <p class="margin-top-1 font-sans-2xs text-base margin-bottom--3">Digital.gov was taking seventeen minutes to build on cloud.gov Pages with most of the time spent uploading new files. After the October release of publishing improvements, build times were reduced to about seven or eight minutes.</p>
 
-!["Chart - Faster Builds"]({{site.baseurl}}/img/content/cloud-gov-pages-faster-builds-1.svg)
+!["Chart - Faster Builds"](/img/content/cloud-gov-pages-faster-builds-1.svg)
 
   <table class="usa-sr-only" aria-describedby="source_line">
     <caption>Median Build Times for Digital.gov by Month</caption>
@@ -89,7 +89,7 @@ minutes. You can see the effect of both of these changes in our median build tim
 <h4 class="margin-0">Median Build Times (in minutes) for cloud.gov Pages Sites by Month</h4>
 <p class="margin-top-1 font-sans-2xs text-base margin-bottom--3">Sites were taking about six minutes to build in mid-2022. Publishing improvements in October helped reduce the time by about two minutes. Caching improvements in January reduced the build time by about another minute.</p>
 
-!["Chart - Faster Builds 2"]({{site.baseurl}}/img/content/could-gov-pages-faster-builds-2.svg)
+!["Chart - Faster Builds 2"](/img/content/could-gov-pages-faster-builds-2.svg)
 
   <table class="usa-sr-only" aria-describedby="source_line">
     <caption>Median Build Times for cloud.gov Pages Sites by Month</caption>

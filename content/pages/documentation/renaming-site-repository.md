@@ -1,8 +1,6 @@
 ---
 title: Renaming a site's repository
 permalink: /pages/documentation/renaming-site-repository/
-
-
 ---
 
 ## Renaming your Pages site repository

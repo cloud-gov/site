@@ -14,32 +14,32 @@ As a Platform as a Service, Cloud.gov is responsible for maintenance and securit
 
 Here's a chart to illustrate this in three example use cases:
 
-!["Diagram of responsibilities, described in text below"]({{site.baseurl}}/img/content/boundaries.svg)
+!["Diagram of responsibilities, described in text below"](/img/content/boundaries.svg)
 
 <!-- Source for this diagram is https://docs.google.com/drawings/d/1UBiOteSPXpA72KE52Kh-j7aYr73zTkzJ_oMuw5F293I/edit -->
 
-App #1 uses a [standard buildpack]({{ "/docs/getting-started/concepts" | url }}#buildpacks). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
+App #1 uses a [standard buildpack]({{ "/docs/getting-started/concepts" }}#buildpacks). (A buildpack provides support for a programming language.) The customer is only responsible for the app code and its dependencies.
 
-App #2 uses a [custom buildpack]({{ "/docs/deployment/custom-buildpacks" | url }}), so the customer's responsibility expands from the app code to managing the custom buildpack and its dependencies. If you choose to use a custom buildpack, you are responsible for:
+App #2 uses a [custom buildpack]({{ "/docs/deployment/custom-buildpacks" }}), so the customer's responsibility expands from the app code to managing the custom buildpack and its dependencies. If you choose to use a custom buildpack, you are responsible for:
 
-* Ensuring your application framework/runtime and all dependencies are supported versions with no known vulnerabilities.
-* Continually updating your runtime and dependencies as new vulnerabilities are discovered and fixed.
-* Maintaining a best practice baseline configuration for your application framework/runtime that meets all applicable security standards.
+- Ensuring your application framework/runtime and all dependencies are supported versions with no known vulnerabilities.
+- Continually updating your runtime and dependencies as new vulnerabilities are discovered and fixed.
+- Maintaining a best practice baseline configuration for your application framework/runtime that meets all applicable security standards.
 
-App #3 is a Docker setup, where the customer is fully responsible for their Docker container and custom image. [Learn about this feature.]({{ "/docs/deployment/docker" | url }})
+App #3 is a Docker setup, where the customer is fully responsible for their Docker container and custom image. [Learn about this feature.]({{ "/docs/deployment/docker" }})
 
 Cloud.gov is always responsible for the following components at its platform level:
 
-* Operating system
-* Continuous monitoring
-* Anti-malware
-* Network security
-* Versioning
-* Scaling
-* Logging
-* Alerting
+- Operating system
+- Continuous monitoring
+- Anti-malware
+- Network security
+- Versioning
+- Scaling
+- Logging
+- Alerting
 
-**See also**: The Cloud.gov [customer service objectives]({{ "/docs/overview/customer-service-objectives" | url }})
+**See also**: The Cloud.gov [customer service objectives]({{ "/docs/overview/customer-service-objectives" }})
 
 ## Deprecation policy
 
@@ -53,7 +53,6 @@ Deprecations happen in steps:
 1. At least 30 days after the initial email, we stop allowing new instances of the deprecated service, but continue allowing existing instances to work.
 1. Every two weeks after we stop allowing new instances of the deprecated service, we email customers who are still using the deprecated service.
 1. At least 150 days after the initial email, we shut down existing instances of deprecated service.
-
 
 Here's an example:
 

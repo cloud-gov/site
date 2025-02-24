@@ -18,7 +18,7 @@ The increased traffic to AirNow.gov during this event put more load on the web s
 
 As a service providing public health data, it is vital for AirNow.gov to remain available, especially during wildfire smoke events when poor air quality can affect millions of people.
 
-To better handle these unanticipated traffic surges in the future, the EPA AirNow team began to look at their options for migrating to cloud infrastructure. The team quickly discovered that the EPA’s Office of Mission Support had [a prototyping agreement with Cloud.gov]({{ site.baseurl }}/pricing/) which they could leverage to deploy AirNow.gov in the cloud.
+To better handle these unanticipated traffic surges in the future, the EPA AirNow team began to look at their options for migrating to cloud infrastructure. The team quickly discovered that the EPA’s Office of Mission Support had [a prototyping agreement with Cloud.gov](/pricing/) which they could leverage to deploy AirNow.gov in the cloud.
 
 In the summer of 2019, the EPA AirNow team began deploying AirNow on Cloud.gov.
 
@@ -39,15 +39,15 @@ Not only was the traffic volume higher than ever before, it also grew at a faste
 
 Even in the face of this unprecedented traffic and load, AirNow.gov was completely stable. “My team and I were amazed it did not slow down or show any signs of having trouble before we could get in to monitor it”, said Dickerson.
 
-The AirNow team attributed the stability of AirNow.gov [to their ability to easily scale their applications on Cloud.gov]({{ site.baseurl }}/docs/management/multiple-instances). Additionally, the EPA AirNow team credited the [CDN (Content Distribution Network) service]({{ site.baseurl }}/docs/services/external-domain-service) for efficiently handling many site requests thereby reducing load on their application instances. “The elasticity and the CDN kept everything humming along pretty well before we even knew this was going to be a major episode”, said Dickerson.
+The AirNow team attributed the stability of AirNow.gov [to their ability to easily scale their applications on Cloud.gov](/docs/management/multiple-instances). Additionally, the EPA AirNow team credited the [CDN (Content Distribution Network) service](/docs/services/external-domain-service) for efficiently handling many site requests thereby reducing load on their application instances. “The elasticity and the CDN kept everything humming along pretty well before we even knew this was going to be a major episode”, said Dickerson.
 
 > <span class="quote">“I will say this right up front – Cloud.gov is the single biggest factor in our success last week. The traffic we saw was astounding and beyond anything we tested for or ever even anticipated. Our ability to expand resources, combined with the CDN service in front of AirNow, made us incredibly stable.”</span><span class="source">- Phil Dickerson, EPA Office of Air Quality Planning and Standards</span>
 
 As the EPA discovered, while the platform infrastructure offered by Cloud.gov is designed to scale, it also empowers users to scale their applications as necessary. To take advantage of this flexibility offered by Cloud.gov, the EPA AirNow team developed a standard operating procedure for when they observe increased traffic from their analytics:
 
-* [Scale up the number of their application instances]({{ site.baseurl }}/docs/management/multiple-instances)
-* Modify the cache headers on their site assets to increase cache lifetime in the CDN and decrease load on their applications
-* Use plugins like [“cf top” to monitor the health of their instances](https://github.com/ECSTeam/cloudfoundry-top-plugin)
+- [Scale up the number of their application instances](/docs/management/multiple-instances)
+- Modify the cache headers on their site assets to increase cache lifetime in the CDN and decrease load on their applications
+- Use plugins like [“cf top” to monitor the health of their instances](https://github.com/ECSTeam/cloudfoundry-top-plugin)
 
 Building on the solid foundation offered by cloud.gov, the AirNow.gov team is delivering for the public even under the most extreme conditions.
 
