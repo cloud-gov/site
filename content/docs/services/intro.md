@@ -68,7 +68,7 @@ To list all the managed services and plans available to a given space, you run `
 {% else %}
 {% assign itemurl = '/docs/services/' | append: item.name %}
 {% endif %}
-<tr><td><a href="{{ itemurl | url }}">{{ item.name }}</a></td><td>{{ item.description | markdown }}</td><td>{{ item.status }}</td></tr>
+<tr><td><a href="{{ itemurl }}">{{ item.name }}</a></td><td>{{ item.description | markdown }}</td><td>{{ item.status }}</td></tr>
 {% endfor %}
 </tbody>
 </table>

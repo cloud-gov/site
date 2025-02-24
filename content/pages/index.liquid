@@ -100,7 +100,7 @@ fact_sheets:
       <div class="tablet:grid-col-7">
         <h1 class="font-heading-3xl">There’s no easier way to build, launch and manage government sites.</h1>
         <p class="usa-intro">
-          Pages is a publishing platform for modern <a href="{{ '/content/pages/documentation/21st-century-idea' | url }}">21st Century IDEA</a> websites.
+          Pages is a publishing platform for modern <a href="{{ '/content/pages/documentation/21st-century-idea' }}">21st Century IDEA</a> websites.
         </p>
         <p class="padding-bottom-4">
           <a class="usa-button usa-button--big" href="https://pages.cloud.gov">Log in to dashboard</a>
@@ -133,10 +133,10 @@ fact_sheets:
         <p class="font-sans-lg text-uppercase text-center">
           {{item.name}}
         </p>
-        <img class="display-block margin-x-auto" src="{{item.image | url}}" alt="{{item.image_alt}}">
+        <img class="display-block margin-x-auto" src="{{item.image }}" alt="{{item.image_alt}}">
         <div class="padding-x-2">
           <p class="font-sans-xs line-height-sans-3">{{ item.description }}</p>
-          <a class="display-block font-sans-3xs line-height-sans-4" href="{{item.link | url }}">{{ item.link_text }}</a>
+          <a class="display-block font-sans-3xs line-height-sans-4" href="{{item.link }}">{{ item.link_text }}</a>
         </div>
       </div>
     {% endfor %}
@@ -156,13 +156,13 @@ fact_sheets:
       {% for agency in agencies_using %}
       <div class="tablet:grid-col-3 text-center">
         <figure class="margin-0 padding-2">
-          <img src="{{agency.seal | url}}" alt="Seal of the {{agency.name}}" height="64" width="64">
+          <img src="{{agency.seal }}" alt="Seal of the {{agency.name}}" height="64" width="64">
           <figcaption>{{agency.name}}</figcaption>
         </figure>
       </div>
       {% endfor %}
     </div>
-    <a class="cg-arrow" href="{{ '/pages/success-stories/' | url }}">See success stories of Pages-powered sites</a>
+    <a class="cg-arrow" href="{{ '/pages/success-stories/' }}">See success stories of Pages-powered sites</a>
   </div>
 </section>
 
@@ -174,9 +174,9 @@ fact_sheets:
       {% for study in case_studies %}
       <div class="tablet:grid-col-4 bar-top">
           <h3>{{study.name}}</h3>
-          <a class="display-block border-1px border-base-lighter margin-y-2" href="{{study.link | url}}"><img class="display-block" src="{{study.thumbnail | url}}" alt="{{study.thumbnail_alt}}"></a>
+          <a class="display-block border-1px border-base-lighter margin-y-2" href="{{study.link }}"><img class="display-block" src="{{study.thumbnail }}" alt="{{study.thumbnail_alt}}"></a>
           <p>
-            <a href="{{study.link | url}}">{{ study.read_me_for }}</a>
+            <a href="{{study.link }}">{{ study.read_me_for }}</a>
           </p>
       </div>
       {% endfor %}
@@ -191,7 +191,7 @@ fact_sheets:
         <p class="usa-intro tablet:grid-col-10">
           Want to talk about what Pages can do for your agency? Questions about compliance? Want to try it out for yourself?
         </p>
-        <p><a class="usa-button usa-button--big" href="{{ '/pages/contact/' | url }}">Get in touch</a></p>
+        <p><a class="usa-button usa-button--big" href="{{ '/pages/contact/' }}">Get in touch</a></p>
       </div>
     </div>
   </div>
@@ -208,13 +208,13 @@ fact_sheets:
     <div class="grid-row grid-gap margin-bottom-2">
     {% for example_site in example_sites %}
       <div class="tablet:grid-col-6 padding-2 text-center">
-        <a class="border border-base-lighter display-block margin-bottom-1" href="{{example_site.link | url }}"><img class="display-block" src="{{example_site.screenshot | url }}" alt="Screenshot of {{example_site.name}}"></a>
-        <a href="{{example_site.link | url}}">{{example_site.name}}</a>
+        <a class="border border-base-lighter display-block margin-bottom-1" href="{{example_site.link }}"><img class="display-block" src="{{example_site.screenshot }}" alt="Screenshot of {{example_site.name}}"></a>
+        <a href="{{example_site.link }}">{{example_site.name}}</a>
       </div>
     {% endfor %}
     </div>
     <div class="grid-row">
-      <a class="cg-arrow" href="{{ '/pages/documentation/templates/' | url }}">See all templates</a>
+      <a class="cg-arrow" href="{{ '/pages/documentation/templates/' }}">See all templates</a>
     </div>
   </div>
 </section>
@@ -224,20 +224,20 @@ fact_sheets:
     <div class="grid-row">
       <h2>Pages fact sheets</h2>
       <p>
-        Need more details about Pages? Need help convincing your executive team? The Pages team has developed these resources to help. See more on the <a href="{{ '/pages/documentation/' | url }}">Pages support site</a>.
+        Need more details about Pages? Need help convincing your executive team? The Pages team has developed these resources to help. See more on the <a href="{{ '/pages/documentation/' }}">Pages support site</a>.
       </p>
     </div>
     <div class="grid-row grid-gap">
       {% for sheet in fact_sheets %}
       <div class="tablet:grid-col-4 bar-top">
         <div class="padding-2">
-          <a href="{{sheet.pdfs[0].link | url }}" class="display-block margin-bottom-2"><img class="border border-base-lighter display-block" src="{{sheet.thumbnail | url }}" alt="{{sheet.thumbnail_alt}}"></a>
+          <a href="{{sheet.pdfs[0].link }}" class="display-block margin-bottom-2"><img class="border border-base-lighter display-block" src="{{sheet.thumbnail }}" alt="{{sheet.thumbnail_alt}}"></a>
           <h3>{{sheet.name}}</h3>
           {% for pdf in sheet.pdfs %}
           <p>
             {{pdf.description}}
           </p>
-          <a class="cg-arrow" href="{{pdf.link | url}}">Download PDF</a>
+          <a class="cg-arrow" href="{{pdf.link }}">Download PDF</a>
           {% endfor %}
         </div>
       </div>

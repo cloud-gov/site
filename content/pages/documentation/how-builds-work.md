@@ -1,10 +1,7 @@
 ---
 title: How Builds Work
 permalink: /pages/documentation/how-builds-work/
-
-
 ---
-
 
 Pages is a continuous deployment-like build environment for sites. It works by setting a webhook on your site's GitHub repository and generates your site on each `push` event to that repository, then uploads your site files to S3. Changes made to the site's content and files in its repository through the GitHub web editor or otherwise launch rebuild tasks of the site in a build environment container.
 
@@ -16,11 +13,12 @@ When building out your sites, please remember that all government websites must 
 
 ## Scheduling nightly builds
 
-Sites with public repositories can schedule builds to occur nightly at 1am Eastern Time.  If you wish to schedule automatic daily builds of your live or demo site, add the following information to your site/demo configuration in the "Site settings" tab:
+Sites with public repositories can schedule builds to occur nightly at 1am Eastern Time. If you wish to schedule automatic daily builds of your live or demo site, add the following information to your site/demo configuration in the "Site settings" tab:
+
 ```shell
 schedule: nightly
 ```
 
 as shown below.
 
-![Site Configuration pane showing schedule: nightly]({{ '/img/pages/schedule-nightly.png' | url }})
+![Site Configuration pane showing schedule: nightly]({{ '/img/pages/schedule-nightly.png' }})

@@ -16,7 +16,7 @@ Here are the templates currently available:
     </a>
   </p>
   <p>
-    {% assign default_docs_url = template.url | prepend: site.baseurl %}
+    {% assign default_docs_url = template.url %}
     <a href="{{ template.docs_url | default: default_docs_url }}">Read the template documentation.</a>
   </p>
 {% endfor %}

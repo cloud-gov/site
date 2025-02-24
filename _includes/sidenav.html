@@ -13,7 +13,7 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
                    aria-expanded={% if category.id == parent %}true{% else %}false{% endif %}
                    aria-controls="side-nav-{{ category.id }}">
                     <svg class="usa-icon" aria-hidden="true" role="img">
-                        <use xlink:href="{{ '/img/sprite.svg#' | append: category.icon | url }}"></use>
+                        <use xlink:href="{{ '/img/sprite.svg#' | append: category.icon }}"></use>
                     </svg>&nbsp;
                     <span class="sidenav-category-label">{{ category.name }}</span>
                 </a>
@@ -21,7 +21,7 @@ _layouts/page.html layout template, or you can add "sidenav: true" in the front-
                     id="side-nav-{{ category.id }}" aria-hidden="true">
                     {%- for navLink in category.children -%}
                     <li class="usa-sidenav__item">
-                        <a href="{{ navLink.url | url }}" class="{% if navLink.url == page.url %}usa-current{% endif %}">
+                        <a href="{{ navLink.url }}" class="{% if navLink.url == page.url %}usa-current{% endif %}">
                             {{ navLink.title }}
                         </a>
                         <!--<ul class="usa-sidenav__sublist">

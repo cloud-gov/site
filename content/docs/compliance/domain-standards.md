@@ -3,7 +3,7 @@ showInSidenav: true
 title: IPv6, HTTPS, DNSSEC, and Certificates
 ---
 
-Here's what cloud.gov does to support relevant federal standards and recommendations, for applications on `*.app.cloud.gov` and [custom domains]({{ "/docs/management/custom-domains" | url }}).
+Here's what cloud.gov does to support relevant federal standards and recommendations, for applications on `*.app.cloud.gov` and [custom domains]({{ "/docs/management/custom-domains" }}).
 
 ## IPv6
 
@@ -15,11 +15,11 @@ cloud.gov ensures all applications are accessible only over HTTPS with [HTTP Str
 
 ### [HSTS preloading](https://https.cio.gov/guide/#options-for-hsts-compliance)
 
-cloud.gov sets [`Strict-Transport-Security`]({{ "/docs/management/headers" | url }}) headers for all applications by default, and has added the `cloud.gov` domain/subdomains to the HSTS preload list for most major browsers.
+cloud.gov sets [`Strict-Transport-Security`]({{ "/docs/management/headers" }}) headers for all applications by default, and has added the `cloud.gov` domain/subdomains to the HSTS preload list for most major browsers.
 
-You are responsible for setting up HSTS preloading for your [custom domain]({{ "/docs/management/custom-domains" | url }}). cloud.gov doesn't set this up for you. If you need HSTS preloading, follow [the guidance from the maintainers of the HSTS preload list](https://hstspreload.org/#opt-in). The HTTPS-Only Standard encourages HSTS preloading.
+You are responsible for setting up HSTS preloading for your [custom domain]({{ "/docs/management/custom-domains" }}). cloud.gov doesn't set this up for you. If you need HSTS preloading, follow [the guidance from the maintainers of the HSTS preload list](https://hstspreload.org/#opt-in). The HTTPS-Only Standard encourages HSTS preloading.
 
-_Additional details are available in the [cloud.gov FedRAMP P-ATO documentation package]({{ "/docs/overview/fedramp-tracker" | url }}#how-you-can-use-this-p-ato), including in System Security Plan controls SC-8, SC-12, and SC-20._
+_Additional details are available in the [cloud.gov FedRAMP P-ATO documentation package]({{ "/docs/overview/fedramp-tracker" }}#how-you-can-use-this-p-ato), including in System Security Plan controls SC-8, SC-12, and SC-20._
 
 ### SSL/TLS Implementation
 
@@ -76,7 +76,7 @@ cloud.gov does not currently support DNSSEC on `cloud.gov` domains. For example,
 
 If you do need DNSSEC for your custom domain, you are responsible for configuring DNSSEC in your DNS system. cloud.gov can't configure DNSSEC for you because cloud.gov does not have access to your DNS system.
 
-cloud.gov supports mapping your DNSSEC-enabled custom domain to your applications hosted on cloud.gov -- see [DNSSEC support for the CDN service]({{ "/docs/services/cdn-route" | url }}#dnssec-support) and [DNSSEC support for the custom domain service]({{ "/docs/services/custom-domains" | url }}#dnssec-support).
+cloud.gov supports mapping your DNSSEC-enabled custom domain to your applications hosted on cloud.gov -- see [DNSSEC support for the CDN service]({{ "/docs/services/cdn-route" }}#dnssec-support) and [DNSSEC support for the custom domain service]({{ "/docs/services/custom-domains" }}#dnssec-support).
 
 _Additional details are available the cloud.gov System Security Plan, including controls SC-20, SC-21, SC-22, and SC-23._
 

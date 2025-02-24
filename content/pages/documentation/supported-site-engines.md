@@ -49,7 +49,7 @@ All links to other pages or resources on the site require a `baseurl` prefix. If
 
 Link: `{% raw %}[About Us](/about-us){% endraw %}`
 
-Image: `{% raw %}![18F](/uploads/18f-logo.png' | url }}){% endraw %}`
+Image: `{% raw %}![18F](/uploads/18f-logo.png' }}){% endraw %}`
 
 ### Conditionally set robots
 

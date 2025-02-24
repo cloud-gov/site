@@ -139,10 +139,10 @@ Before the platform can launch a custom domain for your site, you will need to c
 
 2. Click the `Add new domain` button and enter the name of the custom domain into the `Domain Name` input and select the branch name you want to associate in the `Branch Context` input.
 
-   ![Site Custom Domain]({{ '/img/pages/custom-domain-create.png' | url }})
+   ![Site Custom Domain]({{ '/img/pages/custom-domain-create.png' }})
 
    _If you do not see the branch name in the `Branch Context` select, go to the **Site Settings** page and enter the branch name in the `Live site` or `Demo site` inputs under `Branch Configurations`._
 
-   ![Site Settings Branch Configurations]({{ '/img/pages/pages-site-settings-branch-config.png' | url }})
+   ![Site Settings Branch Configurations]({{ '/img/pages/pages-site-settings-branch-config.png' }})
 
 3. The Pages platform will be ready to launch your new custom domain, so email the Pages team to complete launch of the custom domain.
