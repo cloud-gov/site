@@ -188,7 +188,11 @@
   $theme-lead-font-family: 'heading',
   $theme-lead-font-size: 'lg',
   $theme-lead-line-height: 6,
-  $theme-lead-measure: 6
+  $theme-lead-measure: 6,
+
+  // Banner
+  $theme-banner-background-color: 'ink'
+
 );
 
 @forward "uswds";
