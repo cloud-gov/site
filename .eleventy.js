@@ -159,12 +159,12 @@ module.exports = function (config) {
 
   config.addFilter(
     "debug",
-    (content) => `<pre><code>${inspect(content)}</code></pre>`
+    (content) => `<pre><code>${inspect(content)}</code></pre>`,
   );
 
   config.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "LLLL d, yyyy"
+      "LLLL d, yyyy",
     );
   });
 
@@ -201,7 +201,7 @@ module.exports = function (config) {
 
   function filterTagList(tags) {
     return (tags || []).filter(
-      (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1
+      (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1,
     );
   }
 
@@ -262,7 +262,7 @@ module.exports = function (config) {
         for (const subfolder of subfolders) {
           const subfolderPath = path.join(folderPath, subfolder.name);
           const categoryConfig = loadConfig(
-            path.join(subfolderPath, ".SIDENAVCATEGORY")
+            path.join(subfolderPath, ".SIDENAVCATEGORY"),
           );
 
           if (categoryConfig) {
@@ -374,9 +374,10 @@ module.exports = function (config) {
       md.renderer.rules.code_inline = (tokens, idx, { langPrefix = "" }) => {
         const token = tokens[idx];
         return `<code class="${langPrefix}plaintext">${htmlEntities(
-          token.content
+          token.content,
         )}</code>&nbsp;`;
       };
+      md.linkify.set({ fuzzyLink: false });
     })
     .use(markdownItAnchor, {
       permalink: markdownItAnchor.permalink.ariaHidden({
