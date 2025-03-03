@@ -3,14 +3,15 @@ permalink: /
 layout: layouts/wide
 title: Home
 ---
+
 {% comment %}
-  You'll notice that this page only makes reference to two other html files: hero.html and highlights.html
+You'll notice that this page only makes reference to two other html files: hero.html and highlights.html
 
-  To the edit the home page, you can edit those files directly, create new ones or add content directly to
-  this page.
+To the edit the home page, you can edit those files directly, create new ones or add content directly to
+this page.
 
-  We recommend splitting apart your site's components into their own smaller section so that its easier to
-  manage in the long term.
+We recommend splitting apart your site's components into their own smaller section so that its easier to
+manage in the long term.
 {% endcomment %}
 
 <div class="grid-container maxw-desktop">
@@ -20,7 +21,6 @@ title: Home
       <p class="usa-intro tablet:grid-col-8">
         cloud.gov helps government agencies buy, build, and authorize modern cloud services.
       </p>
-
       <div class="grid-row grid-gap">
         <div class="tablet:grid-col-5 usa-prose bar-top">
           <p><a href="{{ '/docs/overview/what-is-cloudgov/' }}" class="cg-arrow">Platform overview</a></p>
@@ -29,7 +29,7 @@ title: Home
           <p><a href="{{ '/docs/technology/responsibilities/' }}" class="cg-arrow">Security and compliance</a></p>
         </div>
       </div>
-    </div>
+    </div> 
   </section>
 </div>
 
@@ -125,7 +125,7 @@ title: Home
             >
           </li>
           <li>
-            <a href="/resources/cloudgov-overview-2018.pdf" class="cg-arrow"
+            <a href="/assets/documents/cloudgov-overview-2018.pdf" class="cg-arrow"
               ><i
                 class="fa fa-fw fa-file-pdf-o"
                 aria-hidden="true"
@@ -134,7 +134,7 @@ title: Home
             >
           </li>
           <li>
-            <a href="/resources/cloudgov-customers.pdf" class="cg-arrow"
+            <a href="/assets/documents/cloudgov-customers.pdf" class="cg-arrow"
               ><i
                 class="fa fa-fw fa-file-pdf-o"
                 aria-hidden="true"
