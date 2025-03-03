@@ -3,17 +3,6 @@ permalink: /
 layout: layouts/wide
 title: Home
 ---
-
-{% comment %}
-You'll notice that this page only makes reference to two other html files: hero.html and highlights.html
-
-To the edit the home page, you can edit those files directly, create new ones or add content directly to
-this page.
-
-We recommend splitting apart your site's components into their own smaller section so that its easier to
-manage in the long term.
-{% endcomment %}
-
 <div class="grid-container maxw-desktop">
   <section class="usa-section">
     <div class="site-welcome">
@@ -29,7 +18,7 @@ manage in the long term.
           <p><a href="{{ '/docs/technology/responsibilities/' }}" class="cg-arrow">Security and compliance</a></p>
         </div>
       </div>
-    </div> 
+    </div>
   </section>
 </div>
 
