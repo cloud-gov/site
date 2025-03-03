@@ -203,7 +203,3 @@
 @forward "footer";
 
 @forward "pages/index";
-
-footer a.usa-link--external::after {
-        content: none;
-}
