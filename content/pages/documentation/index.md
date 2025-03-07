@@ -11,7 +11,7 @@ After we execute an Inter-Agency Agreement (IAA), and you are a live customer, w
 
 In general, when helping out with support requests, it is always helpful for users to include:
 
-- Full repository URL (like https://github.com/&lt;organization&gt;/&lt;repository&gt;)
+- Full repository URL (like https\://github\.com/organization/repository)
 - The custom domain being used, if any
 - The name of the branch that is experiencing problems
 - Full build logs for the failing build
