@@ -13,7 +13,7 @@ Pages pages are static websites. This means that while you can add a form to you
 
 Several requirements may apply to your agency's digital form, whether posting to Pages or another site.
 
-#### [The Paperwork Reduction Act (PRA)](https://digital.gov/resources/paperwork-reduction-act-44-u-s-c-3501-et-seq/)
+#### [The Paperwork Reduction Act (PRA)](https://pra.digital.gov/about/)
 
 What it is: The PRA determines how federal agencies collect information from the public. Adhering to this law doesn't have to be complicated: this [guide to the PRA](https://pra.digital.gov/) will help you understand if and how PRA is applicable to your form.
 

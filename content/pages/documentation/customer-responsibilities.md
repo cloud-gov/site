@@ -5,7 +5,7 @@ permalink: /pages/documentation/customer-responsibilities/
 
 ## Your Responsibilities
 
-Using Pages places certain responsibilities on you as the government user of Pages. GSA has many internal sites running on Pages, but GSA cannot guarantee that Pages is compatable with your agency's specific policies.
+Using Pages places certain responsibilities on you as the government user of Pages. GSA has many internal sites running on Pages, but GSA cannot guarantee that Pages is compatible with your agency's specific policies.
 
 Pages retains other responsibilities, clarified below. The intent of these policies is to empower you to use Pages to its full potential with awareness of your responsibilities when using advanced features.
 
@@ -13,7 +13,7 @@ Pages retains other responsibilities, clarified below. The intent of these polic
 
 Pages is a service that leverages GitHub repositories for publishing. A Pages user with editing access to a repository must authorize the Pages application on their GitHub account **and** Pages must be approved by the parent organizations of repos that are hosted with Pages. We strongly recommend that users and organizations enable two factor authentication for their GitHub accounts.
 
-GitHub is used across the government (see [this dashboard](https://gsa.github.io/github-federal-stats/) from our partners in GSA's Office of Government-wide Policy), and a majority of cabinet agencies have a GitHub presence. However, GSA does not endorse Github and there are other ways to launch sites if your agency is not prepared to use GitHub. At this time, no prospective Pages customer has been deterred by integration with GitHub.
+GitHub is used across the government and a majority of cabinet agencies have a GitHub presence. However, GSA does not endorse Github and there are other ways to launch sites if your agency is not prepared to use GitHub. At this time, no prospective Pages customer has been deterred by integration with GitHub.
 
 #### You own your content
 
