@@ -4,7 +4,6 @@ title: Try a free sandbox space
 weight: -10
 redirect_from:
   - /overview/pricing/free-limited-sandbox/
-  - /docs/pricing/free-limited-sandbox/
 ---
 
 A sandbox is a free space that you can use to see if cloud.gov might suit your team’s needs. From the [setup process](/docs/getting-started/setup) through [deploying an app](/docs/getting-started/your-first-deploy), it works similarly to other spaces that are included in [paid access packages](/pricing/), with [some limitations](#sandbox-limitations).

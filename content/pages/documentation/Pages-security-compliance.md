@@ -1,6 +1,9 @@
 ---
 title: Pages Security and Compliance
 permalink: /pages/documentation/security-and-compliance/
+redirect_from:
+  - /assets/documents/Federalist-ATO-Extension-Letter.pdf
+  - /assets/documents/pages-compliance-memo.pdf
 ---
 
 ## Pages security and compliance documentation

@@ -5,6 +5,8 @@ kicker: Case study
 redirect_from:
   - /overview/customer-stories/environmental-protection-agency-airnow-gov/
   - /case-studies/epa-airnow-gov/
+  - /resources/cloud-gov-customers.pdf
+  - /assets/documents/cloudgov-select-customers.pdf
 ---
 
 <figure class="content-image">

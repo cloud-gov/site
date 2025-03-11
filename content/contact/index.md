@@ -6,7 +6,6 @@ sidenavIdentifier: "docs"
 title: Contact
 redirect_from:
   - /help
-  - /contact/
   - /docs/help/
 ---
 

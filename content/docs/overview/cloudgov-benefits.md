@@ -10,10 +10,10 @@ redirect_from:
   - /overview/security/improving-application-security/
   - /docs/intro/security/improving-application-security
   - /intro/security/improving-application-security
-  - /overview/security/improving-application-security/
   - /docs/intro/overview/why-available-other-agencies
   - /intro/overview/why-available-other-agencies
   - /overview/overview/why-available-other-agencies
+  - /resources/cloudgov-overview-2018.pdf
 ---
 
 ## Security

@@ -7,7 +7,6 @@ redirect_from:
   - /docs/ops/broker-credentials/
   - /docs/ops/configuration-management/
   - /docs/ops/contingency-plan/
-  - /docs/ops/contingency-plan/
   - /docs/ops/continuous-integration/
   - /docs/ops/continuous-monitoring/
   - /docs/ops/create-org/
@@ -20,7 +19,6 @@ redirect_from:
   - /docs/ops/federated-identity/
   - /docs/ops/maintenance-list/
   - /docs/ops/making-announcements/
-  - /docs/ops/managing-users/
   - /docs/ops/managing-users/
   - /docs/ops/private-egress/
   - /docs/ops/quotas/
@@ -50,11 +48,13 @@ redirect_from:
   - /docs/ops/system-tooling-overview/
   - /docs/ops/tls-certs/
   - /docs/ops/updating-cf/
-  - /docs/overview/portfolio-analysis/
   - /docs/intro/security/auditing-contributing-security
   - /intro/security/auditing-contributing-security
   - /docs/ops/aws-accounts/
   - /docs/ops/security-ir-checklist/
+  - /resources/cloud.gov-CIS-Worksheet.xlsx
+  - /resources/Contingency-plan-exercise-template.docx
+  - /resources/Contingency-plan-exercise-template.pdf
 ---
 
 To reduce confusion about our public documentation and to continue evolving our security practices, the cloud.gov team has moved these docs to a private location. If you are part of a team in government who previously referenced this documentation or you have questions about how we work, please reach out to [{{ site.support_email_address }}]({{ site.support_email }}).

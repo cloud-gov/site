@@ -1,8 +1,6 @@
 ---
 showInSidenav: true
 title: Troubleshooting
-redirect_from:
-  - /docs/apps/troubleshooting/
 linktitle: Troubleshooting
 weight: 100
 ---

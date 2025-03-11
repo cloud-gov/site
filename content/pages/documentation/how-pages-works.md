@@ -1,7 +1,9 @@
 ---
 title: How Pages Works
 permalink: /pages/documentation/how-pages-works/
-
+redirect_from:
+  - /assets/documents/federalist-system-architecture.pdf
+  - /assets/documents/how-federalist-works-for-presentation.pdf
 published: false
 ---
 

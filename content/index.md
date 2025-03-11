@@ -2,6 +2,8 @@
 permalink: /
 layout: layouts/wide
 title: Home
+redirect_from:
+  - /resources/cloudgov-vendors-2019.pdf
 ---
 
 {% comment %}

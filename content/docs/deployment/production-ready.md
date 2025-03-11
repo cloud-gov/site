@@ -1,7 +1,5 @@
 ---
 showInSidenav: true
-redirect_from:
-  - /docs/apps/production-ready/
 title: Production-ready guide
 weight: -90
 ---

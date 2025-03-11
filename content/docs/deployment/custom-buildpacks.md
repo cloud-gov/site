@@ -4,7 +4,6 @@ redirect_from:
   - /apps/multi-buildpack-deploys/
   - /apps/apt-get/
   - /apps/experimental/custom-buildpacks/
-  - /docs/apps/assets/
 title: More languages (custom buildpacks)
 weight: 30
 ---

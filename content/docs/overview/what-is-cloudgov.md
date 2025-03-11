@@ -7,7 +7,6 @@ redirect_from:
   - /overview/overview/what-is-cloudgov/
   - /docs/intro/overview/what-is-cloudgov
   - /intro/overview/what-is-cloudgov
-  - /docs
 ---
 
 cloud.gov is a secure and compliant Platform as a Service (PaaS). cloud.gov helps federal agencies deliver the services the public deserves in a faster, more user-centered way.

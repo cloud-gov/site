@@ -4,6 +4,8 @@ title: AWS Elasticache Redis
 name: "aws-elasticache"
 description: "AWS Elasticache Redis: an in-memory data structure store"
 status: "Production Ready"
+redirect_from:
+  - /assets/documents/Office_Hours_EC_ES_Tech_Talk.pdf
 ---
 
 cloud.gov offers [aws-elasticache-redis](https://aws.amazon.com/elasticache/) Redis as a service.

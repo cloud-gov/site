@@ -1,7 +1,5 @@
 ---
 showInSidenav: true
-redirect_from:
-  - /docs/apps/static/
 title: Deploying static sites
 ---
 
