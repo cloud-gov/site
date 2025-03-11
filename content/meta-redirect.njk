@@ -5,10 +5,7 @@
     size: 1,
     alias: "redirect",
     before: function (data) {
-      console.log("****************************************************")
       return data.reduce((redirects, page) => {
-        console.log(page)
-
         if (Array.isArray(page.data.redirect_from)) {
           for (let url of page.data.redirect_from) {
             redirects.push({ to: page.url, from: url });
