@@ -18,7 +18,7 @@
     },
     addAllPagesToCollections: false,
   },
-  permalink: "{{ redirect.from }}/index.html",
+  permalink: "{% if '.' in redirect.from %}{{ redirect.from }}.html{% else %}{{ redirect.from }}/index.html{% endif %}",
   eleventyExcludeFromCollections: true,
 }
 ---
