@@ -5,14 +5,9 @@ permalink: /pages/documentation/resources/
 
 ## Working with markdown
 
-Markdown is a plain-text simple markup language designed to be readable for
-content editors. The syntax is easy to learn and is also used on GitHub.
-Markdown is used to format the content on your website without having to read or
-write HTML.
+Markdown is a plain-text simple markup language designed to be readable for content editors. The syntax is easy to learn and is also used on GitHub. Markdown is used to format the content on your website without having to read or write HTML.
 
-GitHub has an excellent guide for [learning
-markdown](https://guides.github.com/features/mastering-markdown/). Here's
-a sample of what it looks like:
+GitHub has an excellent guide for [learning markdown](https://guides.github.com/features/mastering-markdown/). Here's a sample of what it looks like:
 
 ```markdown
 # This is a top-level h1 heading
@@ -74,10 +69,7 @@ list_of_departments:
 
 ## Working with front matter
 
-Front matter contains YAML configuration variables on a per-page basis. Some
-variables are important to Jekyll like `layout` or `permalink`. You can also
-include your own variables that can be referenced in your page content and
-layouts. Learn more about [Jekyll front matter](https://jekyllrb.com/docs/frontmatter/).
+Front matter contains YAML configuration variables on a per-page basis. Some variables are important to Jekyll like `layout` or `permalink`. You can also include your own variables that can be referenced in your page content and layouts. Learn more about [Jekyll front matter](https://jekyllrb.com/docs/frontmatter/).
 
 ```yaml
 ---

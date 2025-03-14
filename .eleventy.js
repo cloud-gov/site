@@ -89,7 +89,8 @@ module.exports = function (config) {
 
   // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
   config.addPassthroughCopy({
-    admin: "admin",
+    admin: "admin", 
+    ".well-known": ".well-known",
     _assets: "assets",
     _img: "img",
     resources: "resources",

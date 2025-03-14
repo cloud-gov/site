@@ -7,7 +7,7 @@ tags:
   - posts
 ---
 
-The cloud.gov team [recently deprecated shared database instance plans](/_posts/2022-04-25-deprecation-notice).
+The cloud.gov team [recently deprecated shared database instance plans](/news/articles/2022-04-25-deprecation-notice/).
 
 Unlike dedicated instance plans, which each provision a separate RDS database instance and take a
 while to create, shared instance plans re-used the same RDS database instance and created new
