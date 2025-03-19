@@ -15,4 +15,4 @@ cloud.gov, in turn, can refer potential customers to Pages and enable them to sa
 
 Sometimes, customer needs may justify using both a cloud.gov system and Pages site, especially when showing data visualizations sourced from an API. Working together, a API server and Pages site can provide all of the functionality of a web server with a much smaller attack surface. You should consider using cloud.gov with Pages when you need to receive/store information from site users in a custom system, or when you want your Pages site to work together with an API.
 
-If your site involves content that shouldn't be public, or primarily involves complex user interactions, it may be better to directly leverage cloud.gov. You can find detailed contact help at [their site](/docs/help/).
+If your site involves content that shouldn't be public, or primarily involves complex user interactions, it may be better to directly leverage cloud.gov. You can find detailed contact help at [their site](https://cloud.gov/contact/).
