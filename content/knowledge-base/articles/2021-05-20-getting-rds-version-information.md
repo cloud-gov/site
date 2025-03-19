@@ -15,4 +15,4 @@ There is currently no way to verify ahead of time the version of an RDS service 
 - MySQL: `SELECT VERSION();`
 - Oracle: `SELECT * FROM v$version;`
 
-Note that you can also look at the AWS RDS User Guides for [PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions), [MySQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html), and [Oracle](Oracle) for version information, but these documents sometimes lists versions that are not yet available on AWS GovCloud.
+Note that you can also look at the AWS RDS User Guides for [PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions), [MySQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html), and [Oracle](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Oracle.Concepts.database-versions.html) for version information, but these documents sometimes lists versions that are not yet available on AWS GovCloud.

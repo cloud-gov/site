@@ -7,7 +7,7 @@ excerpt: Changes to expect in our logging system in December 2024
 
 ## What's Changing in December 2024
 
-As we [announced on November 21, 2024](/content/news/articles/2024-11-21-new-logging-system.md), we are upgrading the Cloud.gov customer application logging system and the user interface at <https://logs.fr.cloud.gov>. The application logs interface prior to December 2024 was based on [_Kibana_](https://www.elastic.co/kibana), and we are migrating to one
+As we [announced on November 21, 2024](https://cloud.gov/2024/11/21/new-logging-system/), we are upgrading the Cloud.gov customer application logging system and the user interface at <https://logs.fr.cloud.gov>. The application logs interface prior to December 2024 was based on [_Kibana_](https://www.elastic.co/kibana), and we are migrating to one
 based on [_OpenSearch Dashboards_](https://www.opensearch.org/docs/latest/dashboards/).
 
 While all the underlying functionality is unchanged, or improved, there are some differences between Kibana (old) and OpenSearch (new), which we'll outline here.

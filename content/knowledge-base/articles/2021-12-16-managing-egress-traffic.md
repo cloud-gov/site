@@ -7,7 +7,7 @@ tags:
   - posts
 ---
 
-The cloud.gov team [recently announced a new feature](/_posts/2021-11-16-controlled-space-egress) of our platform that allows developers to control how traffic leaves their application instances.
+The cloud.gov team [recently announced a new feature](https://cloud.gov/2021/11/16/controlled-space-egress/) of our platform that allows developers to control how traffic leaves their application instances.
 
 By default, when new spaces are created in your organization an application security group (ASG) is applied that restricts access to only the internal cloud.gov network. Applications running in this ASG can respond to incoming requests, but new egress traffic to cloud.gov brokered services or to the public internet can't be initiated from these instances.
 
