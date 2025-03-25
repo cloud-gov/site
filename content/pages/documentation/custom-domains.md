@@ -139,10 +139,6 @@ Configure the following DNS records, replacing **`sub.example.gov`** with your a
     </tbody>
   </table>
 </div>
-<!-- | type    | name                                       | value                                                                            |
-| ------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
-| `CNAME` | `_acme-challenge.`**`sub.example.gov`**`.` | `_acme-challenge.`**`sub.example.gov`**`.external-domains-production.cloud.gov.` |
-| `CNAME` | **`sub.example.gov`**`.`                   | **`sub.example.gov`**`.external-domains-production.cloud.gov.`                   | -->
 
 #### Minimizing downtime
 
