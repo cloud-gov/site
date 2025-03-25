@@ -9,16 +9,17 @@ If you are migrating an existing site to Pages and wish to minimize downtime, se
 
 It is possible to add up to 2 custom domains for your site, each one requires the completion of the following 3 steps:
 
-1. [Configure your DNS](#configure-your-dns)
-   - [Determine your domain type](#determine-your-domain-type)
-   - [Adding an apex domain](#adding-an-apex-domain)
-     - [Your DNS provider supports `ALIAS` records](#your-dns-provider-supports-alias-records)
-     - [Your DNS provider does **not** support `ALIAS` records](#your-dns-provider-does-not-support-alias-records)
-   - [Adding a subdomain](#adding-a-subdomain)
-     - [Minimizing downtime](#minimizing-downtime)
-   - [CAA records](#caa-records)
-2. [Notify Pages](#notify-pages)
-3. [Configure your custom domain](#configure-your-custom-domain)
+- [Configure your DNS](#configure-your-dns)
+  - [Determine your domain type](#determine-your-domain-type)
+    - [Examples](#examples)
+  - [Adding an apex domain](#adding-an-apex-domain)
+    - [Your DNS provider supports `ALIAS` records](#your-dns-provider-supports-alias-records)
+    - [Your DNS provider does **not** support `ALIAS` records](#your-dns-provider-does-not-support-alias-records)
+  - [Adding a subdomain](#adding-a-subdomain)
+    - [Minimizing downtime](#minimizing-downtime)
+  - [CAA records](#caa-records)
+- [Notify Pages](#notify-pages)
+- [Configure your custom domain](#configure-your-custom-domain)
 
 ---
 
@@ -49,17 +50,45 @@ An "apex" or "2nd level" domain is the "root" of your domain and will contain on
 
 Because Pages does not currently provide static IP addresses, in order for Pages to serve a site at an apex domain your DNS provider must support `ALIAS` records. If they do not, you may require additional help for Pages to be able to serve your site at that domain.
 
-- [Your DNS provider supports `ALIAS` records](#your-dns-provider-supports-alias-records)
-- [Your DNS provider does **not** support `ALIAS` records](#your-dns-provider-does-not-support-alias-records)
+- [Configure your DNS](#configure-your-dns)
+  - [Determine your domain type](#determine-your-domain-type)
+    - [Examples](#examples)
+  - [Adding an apex domain](#adding-an-apex-domain)
+    - [Your DNS provider supports `ALIAS` records](#your-dns-provider-supports-alias-records)
+    - [Your DNS provider does **not** support `ALIAS` records](#your-dns-provider-does-not-support-alias-records)
+  - [Adding a subdomain](#adding-a-subdomain)
+    - [Minimizing downtime](#minimizing-downtime)
+  - [CAA records](#caa-records)
+- [Notify Pages](#notify-pages)
+- [Configure your custom domain](#configure-your-custom-domain)
 
 #### Your DNS provider supports `ALIAS` records
 
 Then you only need to configure the following DNS records, replacing **`example.gov`** with your actual domain:
 
-| type    | name                                 | value                                                                        |
-| ------- | ------------------------------------ | ---------------------------------------------------------------------------- |
-| `CNAME` | `_acme-challenge.`**`example.gov`**. | `_acme-challenge.`**`example.gov`**`.external-domains-production.cloud.gov.` |
-| `ALIAS` | **`example.gov`**`.`                 | **`example.gov`**`.external-domains-production.cloud.gov.`                   |
+<div class="usa-table-container--scrollable" tabindex="0">
+  <table class="usa-table usa-table--striped">
+    <thead>
+      <tr>
+        <th>type</th>
+        <th>name</th>
+        <th>value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>CNAME</code></td>
+        <td><code>_acme-challenge.</code><strong>example.gov</strong>.</td>
+        <td><code>_acme-challenge.</code><strong>example.gov</strong><code>.external-domains-production.cloud.gov.</code></td>
+      </tr>
+      <tr>
+        <td><code>ALIAS</code></td>
+        <td><strong>example.gov</strong>.</td>
+        <td><strong>example.gov</strong><code>.external-domains-production.cloud.gov.</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 #### Your DNS provider does **not** support `ALIAS` records
 
@@ -87,10 +116,33 @@ If your agency or DNS provider has an available service, you (or they) can follo
 
 Configure the following DNS records, replacing **`sub.example.gov`** with your actual domain:
 
-| type    | name                                       | value                                                                            |
+<div class="usa-table-container--scrollable" tabindex="0">
+  <table class="usa-table usa-table--striped">
+    <thead>
+      <tr>
+        <th>type</th>
+        <th>name</th>
+        <th>value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>CNAME</code></td>
+        <td><code>_acme-challenge.</code><strong>sub.example.gov</strong>.</td>
+        <td><code>_acme-challenge.</code><strong>sub.example.gov</strong><code>.external-domains-production.cloud.gov.</code></td>
+      </tr>
+      <tr>
+        <td><code>CNAME</code></td>
+        <td><strong>sub.example.gov</strong>.</td>
+        <td><strong>sub.example.gov</strong><code>.external-domains-production.cloud.gov.</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- | type    | name                                       | value                                                                            |
 | ------- | ------------------------------------------ | -------------------------------------------------------------------------------- |
 | `CNAME` | `_acme-challenge.`**`sub.example.gov`**`.` | `_acme-challenge.`**`sub.example.gov`**`.external-domains-production.cloud.gov.` |
-| `CNAME` | **`sub.example.gov`**`.`                   | **`sub.example.gov`**`.external-domains-production.cloud.gov.`                   |
+| `CNAME` | **`sub.example.gov`**`.`                   | **`sub.example.gov`**`.external-domains-production.cloud.gov.`                   | -->
 
 #### Minimizing downtime
 
