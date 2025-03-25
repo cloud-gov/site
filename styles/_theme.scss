@@ -186,9 +186,10 @@
   .usa-table tr {
     @include u-padding-y(3);
     border-top: units(1px) solid color('base-lighter');
-    display: flex;
   }
-
+  .usa-table th {
+    border-width:0;
+  }
   .usa-table td {
     background-color: transparent;
     border: none;
