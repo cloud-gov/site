@@ -114,7 +114,7 @@ title: Home
             >
           </li>
           <li>
-            <a href="/assets/documents/cloudgov-overview-2018.pdf" class="cg-arrow"
+            <a href="/docs/overview/cloudgov-benefits/" class="cg-arrow"
               ><i
                 class="fa fa-fw fa-file-pdf-o"
                 aria-hidden="true"

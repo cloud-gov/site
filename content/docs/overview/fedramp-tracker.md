@@ -41,7 +41,7 @@ We publish two CIS/CRM documents, one for the Paas/Platform service and one for 
 
 #### Cloud.gov Platform
 
-- [cloud.gov PaaS CIS Worksheet](/resources/cloud.gov-CIS-Worksheet.xlsx) summarizes each Low and Moderate security control and whether it is handled by cloud.gov (inheritable), a shared responsibility, or a customer responsibility. It includes guidance on which controls a customer on the Platform can fully or partially inherit from cloud.gov.
+- [cloud.gov PaaS CIS Worksheet](/docs/ops/moved/) summarizes each Low and Moderate security control and whether it is handled by cloud.gov (inheritable), a shared responsibility, or a customer responsibility. It includes guidance on which controls a customer on the Platform can fully or partially inherit from cloud.gov.
   - Last Update: 2023-03-17 - Updated front matter
 
 #### Cloud.gov Pages
