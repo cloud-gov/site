@@ -64,7 +64,7 @@ To view the dashboards for application metrics, follow these steps:
 
 1. Enter `App - Metrics` in the search bar on the Dashboards page and click the link to the `App - Metrics` dashboard in the results.
 
-   !["Screenshot of Kibana dashboards search page with App - Metrics as the search query"](../../img//content/opensearch-click-dashboard-link.png)
+   !["Screenshot of Kibana dashboards search page with App - Metrics as the search query"](../../img/content/opensearch-click-dashboard-link.png)
 
 1. The `App - Metrics` dashboard should automatically populate with metrics for a graph of CPU usage, memory usage (in bytes), and disk usage for all of your applications. Add filters (e.g. `@cf.space`) to limit the results to the desired applications and adjust the time filter to see metrics for the desired time period.
 
