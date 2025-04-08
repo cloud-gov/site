@@ -4,6 +4,7 @@ title: External domain service
 name: "external-domain-service"
 description: "Custom domains and TLS certificates with automatic renewal"
 status: "Production Ready"
+showInSidenav: true
 ---
 
 This service provides three different plans allowing you to use custom domains for your apps running on cloud.gov.

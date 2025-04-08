@@ -4,6 +4,7 @@ title: RDS - Relational databases
 description: "Persistent, relational databases using Amazon RDS"
 redirect_from:
   - /docs/apps/databases
+showInSidenav: true
 ---
 
 If your application uses relational databases for storage, you can use the AWS RDS service to create a database instance. The `redundant` label in an RDS plan name indicates it is a [Multi-AZ (Availability Zone)](https://aws.amazon.com/rds/details/multi-az/) deployment.

@@ -4,6 +4,7 @@ title: cloud.gov identity provider
 name: "cloud-gov-identity-provider"
 description: "Authenticate cloud.gov users in your app"
 status: "Beta"
+showInSidenav: true
 ---
 
 You can leverage cloud.gov's identity hub to reduce the burden of authenticating users from government agencies and partners in your app.

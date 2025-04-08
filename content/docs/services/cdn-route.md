@@ -4,6 +4,7 @@ title: CDN service (deprecated)
 name: "cdn-route"
 description: "Custom domains, CDN caching, and TLS certificates with automatic renewal"
 status: "Production Ready"
+showInSidenav: true
 ---
 
 ## Deprecated
