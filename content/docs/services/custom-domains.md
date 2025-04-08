@@ -4,6 +4,7 @@ title: Custom domain service (deprecated)
 name: "custom-domain"
 description: "Custom domains and TLS certificates with automatic renewal"
 status: "Production Ready"
+showInSidenav: true
 ---
 
 ## Deprecated

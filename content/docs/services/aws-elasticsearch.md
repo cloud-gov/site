@@ -4,6 +4,7 @@ title: "AWS Elasticsearch"
 name: aws-elasticsearch"
 description: "AWS search: a distributed, RESTful search and analytics engine"
 status: "Production Ready"
+showInSidenav: true
 ---
 
 cloud.gov offers [aws-elasticsearch](https://aws.amazon.com/elasticsearch-service/) as a service hosted in AWS Elasticsearch and Opensearch.

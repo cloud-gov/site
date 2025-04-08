@@ -4,6 +4,7 @@ title: Application AutoScaler
 name: "app-autoscaler"
 description: "Cloud Foundry App-AutoScaler: scale number of application instances based on metrics"
 status: "Beta"
+showInSidenav: true
 ---
 
 We are pleased to introduce App-AutoScaler to the platform. [Cloud.gov](https://www.cloud.gov/) has always made it easy to handle increased traffic by scaling your application memory or instances with a single command. With App-Autoscaler, responding to changes in traffic and resource usage is now even easier.
