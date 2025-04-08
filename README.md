@@ -1,6 +1,6 @@
 # cloud.gov
 
-This site uses the [cloud.gov Pages USWDS 11ty template](https://github.com/cloud-gov/pages-uswds-11ty). [cloud.gov Pages](https://cloud.gov/pages/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov get the benefits of a maintained template as well as a way to test out new functionality in the template.
+This site uses the [cloud.gov Pages USWDS 11ty template](https://github.com/cloud-gov/pages-uswds-11ty). [cloud.gov Pages](https://cloud.gov/pages/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov gets the benefits of a maintained template as well as a way to test out new functionality in the template.
 
 This [11ty static site generator](https://www.11ty.dev/) uses the [U.S. Web Design System v 3.0](https://designsystem.digital.gov/) and provides developers a starter kit and reference implementation for cloud.gov Pages websites.
 
@@ -23,49 +23,49 @@ This repository contains the following examples and functionality:
 
 ✅ Publish single one-off pages. Instead of creating lots of folders throughout the root directory, you should put single pages in the `content/pages` folder and change the `permalink` at the top of each page. Use sub-folders only when you really need to.
 
-<!-- ✅ Publish data (for example: job listings, links, references), you can use the template `_layouts/data.html`. Just create a file in you `_pages` folder with the following options:
-
-```
----
-title: Collections Page
-layout: data
-permalink: /collections
-datafile: collections
----
-```
-
-The reference to `datafile` referers to the name of the file in `_data/collections.yml` and loops through the values. Feel free to modify this as needed. -->
-
-✅ There are two different kinds of `pages`, one does not have a side bar navigation, and the other uses `_includes/sidenav.html`. You can enable this option by adding `sidenav: true` to your page front matter.
+✅ There are two different kinds of `pages`, one does not have a side bar navigation, and the other uses `_includes/components/sidenav.html`. You can enable this option by adding `sidenav: true` to your page front matter.
 
 ```
 ---
 title: Document with Sidenav
-layout: page
+layout: layouts/base
 sidenav: true
 permalink: /document-with-sidenav
 ---
 ```
 
-✅ Enable search with [Search.gov](https://search.gov) by adding option to `_data/site.yml`.
+✅ [Search.gov](https://search.gov) integration - Once you have registered and configured Search.gov for your site by following [these instructions](https://cloud.gov/pages/documentation/search/), add your "affiliate" and "access key" to `_data/site.yml`. Ex.
 
 ```
----
 searchgov:
-  endpoint: https://search.usa.gov  # You should not change this.
-  affiliate: pages-uswds-example # replace this with your search.gov account
-  access_key: your-access-key # This is placeholder. Not private.
-  inline: false #this renders the results on the same domain. Otherwise, it will render the results in the search.gov domain
----
+
+  # You should not change this.
+  endpoint: https://search.usa.gov
+
+  # replace this with your search.gov account
+  affiliate: pages-uswds-example
+
+  # replace with your access key
+  access_key: xX1gtb2RcnLbIYkHAcB6IaTRr4ZfN-p16ofcyUebeko=
+
+  # this renders the results within the page instead of sending the user to search.gov
+  inline: true
 ```
+
+The logic for using Search.gov can be found in `_includes/searchgov/form.html` and supports displaying the results inline or sending the user to Search.gov the view the results. This setting defaults to "inline" but can be changed by setting
+```
+searchgov:
+  inline: false
+```
+in `_data/site.yml`.
 
 ## How to edit cloud.gov content
 
-- Non-developers should focus on editing markdown content in the `docs` and `pages` folder. Generally most of the cloud.gov content will be in the `content` folder.
+- Non-developers should focus on editing markdown content in the `content` folder. Generally most of the cloud.gov content will be in the `content` folder.
 
 - Pricing updates can go directly into `_data/pricing.yml` file and if any of the aws services need to be updated that can occur in the `_data/services.yml` file.
 
-- We try to keep configuration options to a minimum so you can easily change functionality. You should review `site.yaml` to see the options that are available to you. There are a few values on top that you **need** to change. They refer to the agency name and contact information. The rest of `site.yaml` has a range of more advanced options.
+- We try to keep configuration options to a minimum so you can easily change functionality. You should review `.eleventy.js` to see the options that are available to you. There are a few values on top that you **need** to change. They refer to the agency name and contact information. The rest of `.eleventy.js` has a range of more advanced options.
 
 - If you look at `package.json` you will see that the `npm run build` command that will run when running on the cloud.gov Pages platform.
 
