@@ -1,17 +1,17 @@
-# 11ty-uswds-template
+# cloud.gov
 
-## Why this project
+This site uses the [cloud.gov Pages USWDS 11ty template](https://github.com/cloud-gov/pages-uswds-11ty). [cloud.gov Pages](https://cloud.gov/pages/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov gets the benefits of a maintained template as well as a way to test out new functionality in the template.
 
-This is an [11ty](https://www.11ty.dev/) static site generator (SSG) template using [U.S. Web Design System v 3.0 (USWDS)](https://designsystem.digital.gov/) and is focused on providing developers a starter template and reference implementation for Federalist/Cloud.gov Pages websites.
+This [11ty static site generator](https://www.11ty.dev/) uses the [U.S. Web Design System v 3.0](https://designsystem.digital.gov/) and provides developers a starter kit and reference implementation for cloud.gov Pages websites.
 
-This project strives to be compliant with requirements set by [21st Century IDEA Act](https://www.meritalk.com/articles/senate-passes-idea-act/). The standards require that a website or digital service:
+This site uses [U.S. Web Design System](https://designsystem.digital.gov/) and strives to be compliant with requirements set by [21st Century IDEA Act](https://designsystem.digital.gov/website-standards/). The standards require that a website or digital service:
 
 - is accessible to individuals with disabilities;
 - has a consistent appearance;
 - does not duplicate any legacy websites (the legislation also requires agencies to ensure that legacy websites are regularly reviewed, removed, and consolidated);
 - has a search function;
 - uses an industry standard secure connection;
-- “is designed around user needs with data-driven analysis influencing management and development decisions, using qualitative and quantitative data to determine user goals, needs, and behaviors, and continually test the website, web-based form, web-based application, or digital service to ensure that user needs are addressed;”
+- is designed around user needs with data-driven analysis influencing management and development decisions, using qualitative and quantitative data to determine user goals, needs, and behaviors, and continually test the website, web-based form, web-based application, or digital service to ensure that user needs are addressed;
 - allows for user customization; and
 - is mobile-friendly.
 
@@ -21,20 +21,20 @@ This repository contains the following examples and functionality:
 
 ✅ Publish blog posts, press releases, announcements, etc. To modify this code, check out `blog/index.html`, which manages how the posts are listed. You should then check out `_includes/layouts/post.html` to see how individual posts are structured.
 
-✅ Publish single one-off pages. Instead of creating lots of folders throughout the root directory, you should put single pages in `pages` folder and change the `permalink` at the top of each page. Use sub-folders only when you really need to.
+✅ Publish single one-off pages. Instead of creating lots of folders throughout the root directory, you should put single pages in the `content/pages` folder and change the `permalink` at the top of each page. Use sub-folders only when you really need to.
 
-✅ There are two different kinds of `pages`, one does not have a side bar navigation, and the other uses `_includes/sidenav.html`. You can enable this option by adding `sidenav: true` to your page front matter.
+✅ There are two different kinds of `pages`, one does not have a side bar navigation, and the other uses `_includes/components/sidenav.html`. You can enable this option by adding `sidenav: true` to your page front matter.
 
 ```
 ---
 title: Document with Sidenav
-layout: layout/page
+layout: layouts/base
 sidenav: true
 permalink: /document-with-sidenav
 ---
 ```
 
-✅ [Search.gov](https://search.gov) integration - Once you have registered and configured Search.gov for your site by following [these instructions](https://federalist.18f.gov/documentation/search/), add your "affiliate" and "access key" to `_data/site.yml`. Ex.
+✅ [Search.gov](https://search.gov) integration - Once you have registered and configured Search.gov for your site by following [these instructions](https://cloud.gov/pages/documentation/search/), add your "affiliate" and "access key" to `_data/site.yml`. Ex.
 
 ```
 searchgov:
@@ -43,136 +43,108 @@ searchgov:
   endpoint: https://search.usa.gov
 
   # replace this with your search.gov account
-  affiliate: federalist-uswds-example
+  affiliate: pages-uswds-example
 
   # replace with your access key
   access_key: xX1gtb2RcnLbIYkHAcB6IaTRr4ZfN-p16ofcyUebeko=
 
-  # this renders the results within the page instead of sending to user to search.gov
+  # this renders the results within the page instead of sending the user to search.gov
   inline: true
 ```
 
 The logic for using Search.gov can be found in `_includes/searchgov/form.html` and supports displaying the results inline or sending the user to Search.gov the view the results. This setting defaults to "inline" but can be changed by setting
-
 ```
 searchgov:
   inline: false
 ```
-
 in `_data/site.yml`.
 
-✅ [Digital Analytics Program (DAP)](https://digital.gov/services/dap/) integration - Once you have registered your site with DAP add your "agency" and optionally, `subagency` to `_data/site.yml` and uncomment the appropriate lines. Ex.
+## How to edit cloud.gov content
 
-```
-dap:
-  # agency: your-agency
+- Non-developers should focus on editing markdown content in the `content` folder. Generally most of the cloud.gov content will be in the `content` folder.
 
-  # Optional
-  # subagency: your-subagency
-```
+- Pricing updates can go directly into `_data/pricing.yml` file and if any of the aws services need to be updated that can occur in the `_data/services.yml` file.
 
-✅ [Google Analytics](https://analytics.google.com/analytics/web/) integration - If you have a Google Analytics account to use, add your "ua" to `_data/site.yml` and uncomment the appropriate lines. Ex.
+- We try to keep configuration options to a minimum so you can easily change functionality. You should review `.eleventy.js` to see the options that are available to you. There are a few values on top that you **need** to change. They refer to the agency name and contact information. The rest of `.eleventy.js` has a range of more advanced options.
 
-```
-ga:
-  # ua: your-ua
-```
+- If you look at `package.json` you will see that the `npm run build` command that will run when running on the cloud.gov Pages platform.
 
-## Getting Started
+- Do not edit files in the `_site/` folder. These files are auto-generated, and any change you make in the folder will be overwritten.
 
-### Installing Dependencies
+- To edit the look and feel of the site, you need to edit files in `_includes/` folder, which render key components, like the menu, side navigation, and logos.
 
-`npm install`
+- Some pages are styled to be `.html` rather than markdown you can find these in the `_layouts` folder.
 
-TODO
+  - The `homepage` can be edited more directly in `index.liquid` file.
+  - The `pricing` page is mostly edited with the `index.liquid` file.
 
-### Running a Dev Instance
+- `_layouts/` may require the least amount of editing of all the files since they are primarily responsible for printing the content.
 
-`npm run dev`
+- `_includes/searchgov/form.html` is used by search.gov.
 
-TODO
+- If you make major changes to content, let the [#search](https://gsa-tts.slack.com/archives/C33CZQG2D) team know and they can reindex the site. More information on the search.gov account here: https://search.usa.gov/sites/6217
 
-## Netlify CMS
+## Updating content on your own computer
 
-### Config
-
-The Netlify CMS can be configured in [`/admin/config.yml`](./admin/config.yml) and you will update the
-`repo` key to be your Github organization and repository name.
-
-```yml
-backend:
-  name: github
-  repo: <your-github-org>/<your-repository-name>
-  base_url: https://federalistapp.18f.gov
-  auth_endpoint: external/auth/github
-  preview_context: federalist/build
-  branch: master
-  use_graphql: true
+```shell
+    git clone https://github.com/cloud-gov/cg-site
+    cd cg-site
 ```
 
-### Running Locally
+Note that when built by cloud.gov Pages, `npm run build` is used instead of the
+`build` script.
 
-You can run the Netlify CMS locally to more easily customize and troubleshoot the CMS to you content.
-We provide comments in the [`/admin/config.yml`](./admin/config.yml) instructing you how to change the `backend` values from your production site to the local development.
+### Install dependencies and run app
 
-> \*Note: Make sure to not commit and push the config with the `backend` set for local develop to Github or
-> else you will break your production site's Netlify CMS.
-
-```yml
-# Local development backend
-backend:
-  name: git-gateway
-local_backend: true
+```shell
+    npm install
+    npm run assets:build && npx @11ty/eleventy
+    npx @11ty/eleventy --serve
 ```
 
-Once you [`/admin/config.yml`](./admin/config.yml) is set to local development, you run `npm run dev:cms` to
-serve as a development authentication server.
+Open your web browser to [localhost:4000](http://localhost:4000/) to view your
+site.
 
-## How To
+### Link checking
 
-### Adding Collections
+This project uses [`lychee`](https://github.com/lycheeverse/lychee) and the accompanying [GitHub action](https://github.com/lycheeverse/lychee-action) to verify that all the links in this documentation are valid.
 
-TODO
+Default configuration for `lychee` can be found in [`lychee.toml`](./lychee.toml).
 
-### Adding Static Data
+Default URL patterns that are ignored by `lychee` can be found in [`.lycheeignore`](./.lycheeignore).
 
-TODO
+<!-- #### Running locally
 
-### Referencing Images
+First, install `lychee`:
 
-All of your images will be stored in the `_img/` directory. To reference your images in your templates you can use the `shortcodes` built into the template.
-
-For referencing an image without a style class, you will pass the template shortcode the image's source path and the alternative image name in that order. ie:
-
-```
-{% image "_img/my-image.png" "My PNG Image Alternative Name" %}
+```shell
+brew install lychee
 ```
 
-For referencing an image with a style class, you will pass the template shortcode the image's source path, class names, and the alternative image name in that order. ie:
+To run `lychee` locally, use the `link-checker` npm script:
 
-```
-{% image_with_class "_img/my-image.png" "img-class another-class" "My PNG Image Alternative Name" %}
-```
-
-### Referencing USWDS Sprite Icons
-
-USWDS has sprite icons available for use. Here is the [list of icons](https://designsystem.digital.gov/components/icon/) available when using the sprite shortcode `uswds_icon` in the template. The following example is how you can reference the icon in a template.
-
-```
-{% uswds_icon "<USWDS sprite name>" %}
+```shell
+# can use any globbing pattern or filepath
+GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./_site/**/*.html
 ```
 
-### Expanding SCSS Styles
+You can also use multiple patterns/filepaths:
 
-CSS and SASS can be added or imported into the `styles/styles.scss`. You can also use [USWDS Design Tokens](https://designsystem.digital.gov/design-tokens/) in the `styles/themes` files to update colors, fonts, and layout to fit your site's branding. This template uses [esbuild](https://esbuild.github.io/)and [autoprefixer](https://github.com/postcss/autoprefixer) to bundle your SASS/CSS and fingerprint the files in the site build.
+```shell
+GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./*.md ./_site/**/*.html
+```
 
-### Adding custom Javascript
+Including a `GITHUB_TOKEN` environment variable will reduce the number of 429 responses returned by GitHub, since
+by default GitHub throttles requests without a token.
 
-Javascript can be added to the admin UI or site UI by adding or importing code into the `js/admin.js` or `js/app.js` files respectively. This template uses [esbuild](https://esbuild.github.io/) to bundle your javascript and fingerprint the files in the site build.
+When you run this script, results from the `lychee` link scan will be generated in `lychee-out.md` so that you can
+review and address any errors. -->
 
-### Customizing 11ty
+## Technologies you should be familiarize yourself with
 
-TODO
+- [11ty](https://www.11ty.dev/) - The primary site engine that builds your code and content.
+- [Front Matter](https://www.11ty.dev/docs/data-frontmatter/) - The top of each page/post includes keywords within `---` tags. This is meta data that helps 11ty build the site, but you can also use it to pass custom variables.
+- [U.S. Web Design System v 3.0](https://designsystem.digital.gov/)
 
 ## Contributing
 
@@ -182,6 +154,12 @@ See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
 
 This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
 
-> This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+> This project is in the public domain within the United States, and copyright
+> and related rights in the work worldwide are waived through the [CC0 1.0
+> Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 >
-> All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
+> All contributions to this project will be released under the CC0 dedication.
+> By submitting a pull request, you are agreeing to comply with this waiver of
+> copyright interest.
+
+See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
