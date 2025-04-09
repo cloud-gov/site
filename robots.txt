@@ -1,0 +1,4 @@
+Sitemap: https://cloud.gov/sitemap.xml
+
+User-agent: *
+Disallow:
