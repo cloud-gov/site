@@ -13,7 +13,7 @@
 }
 
 .usa-graphic-list {
-  @include u-font-family('sans');
+  @include u-font-family("sans");
 }
 
 @media screen and (min-width: 640px) {
@@ -51,67 +51,67 @@
 }
 
 .site-banner {
-  background-color: color('base-darkest');
+  background-color: color("base-darkest");
 
   .usa-banner__content {
-    color: color('white');
+    color: color("white");
   }
 
   .usa-banner__header-action {
-    color: color('base-light');
+    color: color("base-light");
     &::after {
-      mask: url('../_img/content/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
-      background-color: color('base-light');
+      mask: url("../_img/content/chevron.svg") no-repeat center / 1.3128205128ex
+        0.8ex;
+      background-color: color("base-light");
     }
     &:hover {
-      color: color('white');
+      color: color("white");
       &::after {
-        background-color: color('white');
+        background-color: color("white");
       }
     }
   }
 
-  .usa-banner__button[aria-expanded='true']::before {
+  .usa-banner__button[aria-expanded="true"]::before {
     background: transparent !important;
   }
 
-  .usa-banner__button[aria-expanded='true']::after {
-    @include u-bg('white');
-    mask: url('../_img/content/close-alt.svg') no-repeat center/1rem 1rem;
+  .usa-banner__button[aria-expanded="true"]::after {
+    @include u-bg("white");
+    mask: url("../_img/content/close-alt.svg") no-repeat center/1rem 1rem;
   }
 
-  @include at-media('tablet') {
+  @include at-media("tablet") {
     .usa-banner__button,
-    .usa-banner__button[aria-expanded='true'] {
-      color: color('base-light');
+    .usa-banner__button[aria-expanded="true"] {
+      color: color("base-light");
       &::after {
-        mask: url('../_img/content/chevron.svg') no-repeat center / 1.3128205128ex 0.8ex;
-        background-color: color('base-light');
+        mask: url("../_img/content/chevron.svg") no-repeat center /
+          1.3128205128ex 0.8ex;
+        background-color: color("base-light");
       }
       &:hover {
-        color: color('white');
+        color: color("white");
         &::after {
-          background-color: color('white');
+          background-color: color("white");
         }
       }
     }
   }
 
   .usa-banner__header-text {
-    color: color('white');
+    color: color("white");
   }
 
   .usa-banner__header-action {
-    color: color('gray-30');
+    color: color("gray-30");
   }
 }
 
 .site-footer {
-  @include u-bg('accent-warm');
+  @include u-bg("accent-warm");
   //@include u-font('body', '3xs');
-  @include u-color('ink');
-
-
+  @include u-color("ink");
 }
 
 @media screen and (min-width: 640px) {
@@ -149,17 +149,17 @@
 
 //Docs
 .usa-section.bg-accent-warm-light {
-  @include at-media('tablet') {
+  @include at-media("tablet") {
     @include u-padding-y(8);
   }
 }
 
 .usa-layout-docs-sidenav {
-  @include at-media('mobile') {
-    @include u-flex('fill');
-    @include u-order('last');
+  @include at-media("mobile") {
+    @include u-flex("fill");
+    @include u-order("last");
   }
-  @include at-media('desktop') {
+  @include at-media("desktop") {
     order: 0;
     flex: none;
   }
@@ -167,17 +167,17 @@
 
 // Pricing Page
 .usa-content.bg-accent-warm-light {
-  @include at-media('tablet') {
+  @include at-media("tablet") {
     @include u-padding-top(4);
     @include u-padding-bottom(8);
   }
 }
 
 .products-pricing {
-  @include at-media('tablet') {
+  @include at-media("tablet") {
     .intro {
       h2 {
-        @include u-font-size('sans', 10);
+        @include u-font-size("sans", 10);
         height: 60px;
       }
     }
@@ -185,10 +185,10 @@
 
   .usa-table tr {
     @include u-padding-y(3);
-    border-top: units(1px) solid color('base-lighter');
+    border-top: units(1px) solid color("base-lighter");
   }
   .usa-table th {
-    border-width:0;
+    border-width: 0;
   }
   .usa-table td {
     background-color: transparent;
@@ -202,14 +202,14 @@
     }
 
     &.small-info {
-      @include u-font-size('sans', '2xs');
-      @include at-media('desktop') {
+      @include u-font-size("sans", "2xs");
+      @include at-media("desktop") {
         min-height: 83px;
       }
     }
 
     &.intro-info {
-      @include at-media('desktop') {
+      @include at-media("desktop") {
         min-height: 133px;
         &.description {
           height: 270px;
@@ -231,13 +231,13 @@
   }
 
   .pricing-total {
-    @include u-text('semibold');
+    @include u-text("semibold");
     display: block;
     @include u-margin-top(5);
   }
 
   span {
-    @include u-float('right');
+    @include u-float("right");
   }
 }
 
@@ -245,39 +245,39 @@
 ul.home-list {
   list-style: none;
   @include u-border-bottom(1px);
-  @include u-border-bottom('base-light');
+  @include u-border-bottom("base-light");
 
   li {
     @include u-border-top(1px);
-    @include u-border-top('base-light');
-    @include u-padding-y('105');
+    @include u-border-top("base-light");
+    @include u-padding-y("105");
 
     &:first-of-type {
-      border-top: 1px solid 'base-light';
+      border-top: 1px solid "base-light";
     }
   }
 }
 
 a.cg-arrow {
-  @include u-color('ink');
-  @include u-font-family('ui');
+  @include u-color("ink");
+  @include u-font-family("ui");
 
   display: block;
 
   &:before {
-    content: '\02192';
+    content: "\02192";
     display: inline-block;
-    @include u-padding-right('105');
-    @include u-text('secondary-vivid');
-    @include u-font-family('serif');
+    @include u-padding-right("105");
+    @include u-text("secondary-vivid");
+    @include u-font-family("serif");
   }
 }
-@include at-media('tablet') {
+@include at-media("tablet") {
   .bar-top {
     @include u-padding-top(4);
     &:before {
-      @include u-bg('base-light');
-      content: '';
+      @include u-bg("base-light");
+      content: "";
       height: 2px;
       left: 16px;
       position: absolute;
@@ -289,7 +289,7 @@ a.cg-arrow {
 
 .bg-primary-darker {
   h1 {
-    @include u-text('bold');
+    @include u-text("bold");
   }
 }
 
@@ -297,7 +297,7 @@ a.cg-arrow {
   @include u-margin-top(4);
 
   h1 {
-    @include u-font-size('sans', 16);
+    @include u-font-size("sans", 16);
     line-height: 4rem;
     margin-top: -1rem;
   }
@@ -319,26 +319,26 @@ a.cg-arrow {
     }
   }
   p.usa-intro {
-    @include u-font-size('serif', 'lg');
+    @include u-font-size("serif", "lg");
   }
 }
 
 a {
-  @include u-color('primary-dark');
+  @include u-color("primary-dark");
 
   &:hover {
-    @include u-color('primary-darker');
+    @include u-color("primary-darker");
   }
 }
 
 .sign-up-intro {
-  background-color: 'primary-darkest';
+  background-color: "primary-darkest";
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: 1040px 148px;
 
-  @include at-media('desktop') {
-    background-image: url('../_img/content/peaks.svg');
+  @include at-media("desktop") {
+    background-image: url("../_img/content/peaks.svg");
   }
 }
 
@@ -356,37 +356,41 @@ a {
   }
 }
 
-.is-cloud-right .home-list {
-  padding-left: 0;
+.is-cloud-right {
+  padding-bottom: 0;
+
+  .home-list {
+    padding-left: 0;
+  }
 }
 
 .partner-card {
   @include u-margin(1);
   @include u-padding-y(1);
   @include u-border(1px);
-  @include u-border('base-light');
+  @include u-border("base-light");
 
   h5 {
     @include u-margin-y(1);
   }
 
   a {
-    @include u-color('ink');
+    @include u-color("ink");
   }
 
   img {
     @include u-square(9);
-    @include u-float('left');
+    @include u-float("left");
     @include u-padding-right(2);
   }
 }
 
 code.language-plaintext {
-  @include u-display('inline');
+  @include u-display("inline");
 }
 
 .usa-section.want-more {
-  @include at-media('tablet') {
+  @include at-media("tablet") {
     @include u-padding-bottom(8);
   }
 }
@@ -400,7 +404,7 @@ code.language-plaintext {
 }
 
 #table-of-contents ol {
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding: 0;
   list-style-position: inside;
 }
@@ -412,12 +416,13 @@ code.language-plaintext {
 }
 
 h1 {
-  @include u-font-family('sans')
+  @include u-font-family("sans");
 }
 
-.usa-intro, .usa-prose>h1+p {
+.usa-intro,
+.usa-prose > h1 + p {
   max-width: 88ex;
-  @include u-font('body', 'lg');
+  @include u-font("body", "lg");
 }
 
 .usa-sidenav {

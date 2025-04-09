@@ -136,46 +136,6 @@ title: Home
     </div>
   </section>
 
-  <section class="usa-section packages">
-    <div class="grid-row grid-gap">
-      <div class="tablet:grid-col">
-        <h2>Packages</h2>
-      </div>
-    </div>
-    <div class="grid-row grid-gap">
-      <div class="tablet:grid-col usa-prose bar-top">
-        <h3>Sandbox space</h3>
-        <p>
-          <a href="/pricing/">Sandbox spaces</a> are free. All you need is a federal email address &mdash; no paperwork,
-          no hassle.
-        </p>
-        <p>
-          <a href="/sign-up/" class="cg-arrow">Get a free trial sandbox</a>
-        </p>
-      </div>
-      <div class="tablet:grid-col usa-prose bar-top">
-        <h3>Prototyping packages</h3>
-        <p>
-          Upgrade to a <a href="/pricing/">prototyping package</a> and develop new apps in a production-ready
-          environment. $1,780 per month for full access for unlimited users.
-        </p>
-        <p>
-          <a href="/pricing/" class="cg-arrow">Learn about purchasing</a>
-        </p>
-      </div>
-      <div class="tablet:grid-col usa-prose bar-top">
-        <h3>Production packages</h3>
-        <p>
-          Production packages range from $2,380 per month for a FISMA Low system to $10,700 per month for a FISMA
-          Moderate system.
-        </p>
-        <p>
-          <a href="/pricing/" class="cg-arrow">Learn about purchasing</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
   <section class="usa-section">
     <div class="grid-row">
       <h2>Who we work with</h2>
