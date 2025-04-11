@@ -202,9 +202,7 @@
 
 @forward "theme";
 @forward "mermaid";
+@forward "prism";
 @forward "helpers";
 @forward "footer";
-
 @forward "pages/index";
-
-@import "../node_modules/PrismJS/themes/prism-coldark-dark.css";
