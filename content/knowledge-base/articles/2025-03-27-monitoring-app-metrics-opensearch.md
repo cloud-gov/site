@@ -11,7 +11,7 @@ The most important metrics for monitoring your application's health are the memo
 
 - If your application has enough memory provisioned per instance
 - If your application is experiencing CPU spikes and associated performance issues
-- If you need [to horizontally scale your application instances](/knowledge-base/2023-08-07-advantages-of-multiple-application-instances.md)
+- If you need [to horizontally scale your application instances](/knowledge-base/2023-08-07-advantages-of-multiple-application-instances)
 
 ## A note about CPU metrics
 
