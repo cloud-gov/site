@@ -1,6 +1,6 @@
 ---
 title: Site previews and Builds
-permalink: /pages/documentation/site-previews/
+permalink: /pages/documentation/previews/
 ---
 
 ## Site previews

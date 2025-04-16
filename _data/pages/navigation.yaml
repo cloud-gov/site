@@ -60,7 +60,7 @@ sidenav:
       - text: Included with Pages
         href: /pages/documentation/included-with-pages/
       - text: Site previews
-        href: /pages/documentation/site-previews/
+        href: /pages/documentation/previews/
       - text: Custom domains
         href: /pages/documentation/custom-domains/
       - text: Migration guide
