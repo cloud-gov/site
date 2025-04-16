@@ -59,8 +59,8 @@ sidenav:
         href: /pages/documentation/getting-started-with-decap-cms/
       - text: Included with Pages
         href: /pages/documentation/included-with-pages/
-      - text: Builds and previews
-        href: /pages/documentation/previews/
+      - text: Site previews
+        href: /pages/documentation/site-previews/
       - text: Custom domains
         href: /pages/documentation/custom-domains/
       - text: Migration guide

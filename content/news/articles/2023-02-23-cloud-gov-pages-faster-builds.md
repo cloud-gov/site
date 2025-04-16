@@ -3,11 +3,11 @@ layout: layouts/post
 tags: news
 title: Faster build times on cloud.gov Pages
 date: 2023-02-23
-excerpt: We advertise that cloud.gov Pages, previously known as Federalist, can “securely deploy a website from your repository in minutes.” Getting your content on the web quickly, seeing fast previews, and even seeing errors early are all important to good maintenance of a website
+excerpt: We advertise that cloud.gov Pages, previously known as Federalist, can “securely deploy a website from your repository in minutes.” Getting your content on the web quickly, seeing fast site previews, and even seeing errors early are all important to good maintenance of a website
 ---
 
 We advertise that [cloud.gov Pages](https://cloud.gov/pages), previously known as Federalist, can “securely deploy a
-website from your repository in minutes.” Getting your content on the web quickly, seeing fast previews, and even seeing
+website from your repository in minutes.” Getting your content on the web quickly, seeing fast site previews, and even seeing
 errors early are all important to good maintenance of a website. But as sites become larger and more complex, this can
 be a difficult task. We’ve made two recent changes to cloud.gov Pages to make website deployment faster so you can focus
 on your code, design, and content.
