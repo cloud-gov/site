@@ -6,7 +6,7 @@ excerpt: How to use the new alerting feature for your Cloud.gov logs
 ---
 
 Alerting is now available for the Cloud.gov logging system. This new feature allows users to monitor their logs and send notifications when certain conditions or thresholds are met.
-	
+
 You will be able to setup monitors for different conditions using fields, including:
 
 - The size of a field value
@@ -73,3 +73,12 @@ A monitor allows you to specify multiple conditions, and it can send alerts to d
 8. Create a **Trigger**, this can be for any alert condition or specific queries/tags.
 9. Under **Actions** fill out the notification info.
 10. When the trigger is activated next, it will notify users.
+
+### High Memory Usage Example
+Here is an example of putting a monitor on memory usage of a test app.
+{% image "_img/content/opensearch-memory-alerting-query.png" "Screenshot of Dashboards interface showing dashboard selection" %}
+The metric is MAX OF containermetric.memory_bytes and the app is specified.
+You can see a graph for monitor performance, this shows the value for that field over the last few datapoints (in this example it is 6 points seperated by 30 minutes), So we know the average is about 170,000,000
+
+{% image "_img/content/opensearch-reporting.png" "Screenshot of Dashboards interface showing dashboard selection" %}
+This alert will trigger if the value of the containermetric.memory_bytes field is above 177000000 whenthe query is triggered.
