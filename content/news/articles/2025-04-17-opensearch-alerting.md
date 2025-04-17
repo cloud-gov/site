@@ -1,19 +1,23 @@
 ---
 layout: post
-title: "OpenSearch Alerting"
+title: "Now available: alerting for Cloud.gov logs"
 date: April 17th, 2025
-excerpt: How to setup alerting for your applications on Cloud.gov using OpenSearch
+excerpt: How to use the new alerting feature for your Cloud.gov logs
 ---
 
-Opensearch Alerting has been added to Cloud.Gov opensearch, this new feature allows for users to monitor data and send alert when certain conditions or thresholds are met.
+Alerting is now available for the Cloud.gov logging system. This new feature allows users to monitor their logs and send notifications when certain conditions or thresholds are met.
+	
+You will be able to setup monitors for different conditions using fields, including:
 
-You will be able to setup monitors for different conditions using fields, this will allow you to do things such as
+- The size of a field value
+- The contents of a field value
+- Writing a query to only match under certain conditions(e.g. only in your prod space, only for a specific app)
 
-1. Track the metrics of your logs
-2. Query based on field specific filters (size of value, contents of value,etc)
-3. Write a query for a specific section of your logs in which you want to look for conditions to trigger on. (Alert on prod space only, This app only, etc)
+The potential applications of the new alerting feature include (but are not limited to):
 
-This will allow to see if your logs have a increase in 404 messages in a certain timeframe, track log contents for certain words, etc..
+- Monitor for an increase in 404 responses in a certain timeframe
+- Monitor for appearance of certain words (e.g. exceptions, failures) in log contents
+- Monitor when your application's memory usage exceeds a certain threshold
 
 ## How access for OpenSearch notifications works
 
@@ -65,7 +69,7 @@ A monitor allows you to specify multiple conditions, and it can send alerts to d
 
 5. Select the desired timeframe under **Schedule**
 6. Under **index** put "logs-app-\*" (this will put a wildcard to match index pattern)
-7. Fill out **Query** refereeing to Monitor Types for your chose monitor
+7. Fill out **Query** referring to Monitor Types for your chose monitor
 8. Create a **Trigger**, this can be for any alert condition or specific queries/tags.
 9. Under **Actions** fill out the notification info.
 10. When the trigger is activated next, it will notify users.
