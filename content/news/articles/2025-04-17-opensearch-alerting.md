@@ -22,11 +22,11 @@ The potential applications of the new alerting feature include (but are not limi
 
 ## How access for OpenSearch notifications works
 
-Most of the objects that you create in OpenSearch, such as queries, visualization, or dashboards, are only visible to other members of your OpenSearch tenant. We have configured OpenSearch to have tenants for each cloud.gov organization, meaning there is a one-to-one mapping between tenants and organizations. For whichever tenant you choose when using OpenSearch, only other members of the associated cloud.gov organization can see your objects.
+Most of the objects that you create in OpenSearch, such as queries, visualization, or dashboards, are only visible to other members of your OpenSearch tenant. We have configured OpenSearch to have tenants for each cloud.gov organization, meaning there is a one-to-one mapping between tenants and organizations. For whichever tenant you choose when using OpenSearch, only other members of the associated Cloud.gov organization can see your objects.
 
 Unfortunately, the OpenSearch alerting plugin [does not support the use of tenants for storing associated objects such as email recipient groups or channels](https://github.com/opensearch-project/alerting-dashboards-plugin/issues/1096).
 
-Given the current behavior of the OpenSearch alerting plugin, to ensure maximum security we have customized OpenSearch so that **only users who share all of the same cloud.gov organizations as your user will be able to see the notification objects that you create**. If another user shares some but not all of the same cloud.gov organizations as you, the names of your notification objects will be visible to the other user, but they will not be able to see any details about those objects.
+Given the current behavior of the OpenSearch alerting plugin, to ensure maximum security we have customized OpenSearch so that **only users who share all of the same cloud.gov organizations as your user will be able to see the notification objects that you create**. If another user shares some but not all of the same Cloud.gov organizations as you, the names of your notification objects will be visible to the other user, but they will not be able to see any details about those objects.
 
 In OpenSearch 3.x, the concept of "workspaces" is going to be introduced, which may allow for a permissions model for notifications that more closely matches how we handle multi-tenancy for other OpenSearch objects.
 
@@ -47,13 +47,13 @@ To setup a notification you need to setup an email group and channel.
 2. Choose **Channels**
 3. Click **Create channel**
 4. Provide a name and description for the channel.
-5. Under **Channel Type** select email (Note: Cloud.gov does not support other channel types)
+5. Under **Channel Type** select email (**Note: Cloud.gov does not support other channel types**)
 6. Under **SMTP sender** choose **cloudgovemail**
-7. Under **default recipients** put the chosen email group you created earlier.
+7. Under **default recipients**, choose the email recipient group that you created earlier.
 
 ## Setting up an alert
 
-To create an alert, you must first create a monitor that will trigger the alert when the specified conditions are met.
+To receive alerts, you must create a monitor that will trigger the alert when the specified conditions are met.
 
 ### Creating a monitor
 
@@ -64,12 +64,12 @@ A monitor allows you to specify multiple conditions, and it can send alerts to d
 3. Give the monitor a descriptive name.
 4. Choose a monitor type from the list of available options below.
 
-- **per query**: Runs a query and generates alert notifications based on the matching criteria. See [Per query monitors](https://OpenSearch.org/docs/latest/observing-your-data/alerting/per-query-bucket-monitors/) for information about creating and using this monitor type.
-- **per document**: Runs a query (or multiple queries combined by a tag) that returns individual documents that match the alert notification trigger condition. See [Per document monitors](https://OpenSearch.org/docs/latest/observing-your-data/alerting/per-document-monitors/) for information about creating and using this monitor type.
-- **composite monitor**: Runs multiple monitors in a single workflow and generates a single alert based on multiple trigger conditions. See [Composite monitors](https://OpenSearch.org/docs/latest/observing-your-data/alerting/composite-monitors/) for information about creating and using this monitor type.
+  - **per query**: Runs a query and generates alert notifications based on the matching criteria. See [Per query monitors](https://OpenSearch.org/docs/latest/observing-your-data/alerting/per-query-bucket-monitors/) for information about creating and using this monitor type.
+  - **per document**: Runs a query (or multiple queries combined by a tag) that returns individual documents that match the alert notification trigger condition. See [Per document monitors](https://OpenSearch.org/docs/latest/observing-your-data/alerting/per-document-monitors/) for information about creating and using this monitor type.
+  - **composite monitor**: Runs multiple monitors in a single workflow and generates a single alert based on multiple trigger conditions. See [Composite monitors](https://OpenSearch.org/docs/latest/observing-your-data/alerting/composite-monitors/) for information about creating and using this monitor type.
 
 5. Select the desired timeframe under **Schedule**
-6. Under **index** put "logs-app-\*" (this will put a wildcard to match index pattern)
+6. Under **index** put `logs-app*` (the `*` wildcard index pattern means that that the separate indices for every day will be searched, e.g. `logs-app-2024-04-17`)
 7. Fill out **Query** referring to Monitor Types for your chose monitor
 8. Create a **Trigger**, this can be for any alert condition or specific queries/tags.
 9. Under **Actions** fill out the notification info.
