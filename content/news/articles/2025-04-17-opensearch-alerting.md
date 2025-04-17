@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: layouts/post
+tags: news
 title: "Now available: alerting for Cloud.gov logs"
-date: April 17th, 2025
+date: 2025-04-17
 excerpt: How to use the new alerting feature for your Cloud.gov logs
 ---
 
