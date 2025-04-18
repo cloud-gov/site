@@ -95,13 +95,13 @@ cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
 1. For each of the domains you want to add to the service, create a DNS CNAME or ALIAS record with the name:
 
    ```text
-   _acme-challenge.<DOMAIN>.
+   _acme-challenge.&lt;DOMAIN&gt;.
    ```
 
    and the value:
 
    ```text
-   _acme-challenge.<DOMAIN>.external-domains-production.cloud.gov.
+   _acme-challenge.&lt;DOMAIN&gt;.external-domains-production.cloud.gov.
    ```
 
    For example, if you wanted to set up a service for `example.gov`, you would create a CNAME or ALIAS record with the name:
