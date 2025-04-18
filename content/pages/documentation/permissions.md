@@ -54,7 +54,7 @@ Collaborators with write access to a site's repository can:
 - view site build history and build logs
 - view site collaborator list
 - view and update site settings
-- view site branches, branch previews and uploaded files
+- view site branches, branch previews and file storage
 
 ### Administrator
 
