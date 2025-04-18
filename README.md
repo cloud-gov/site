@@ -25,7 +25,7 @@ This repository contains the following examples and functionality:
 
 ✅ There are two different kinds of `pages`, one does not have a side bar navigation, and the other uses `_includes/components/sidenav.html`. You can enable this option by adding `sidenav: true` to your page front matter.
 
-```
+```yaml
 ---
 title: Document with Sidenav
 layout: layouts/base
@@ -36,7 +36,7 @@ permalink: /document-with-sidenav
 
 ✅ [Search.gov](https://search.gov) integration - Once you have registered and configured Search.gov for your site by following [these instructions](https://cloud.gov/pages/documentation/search/), add your "affiliate" and "access key" to `_data/site.yml`. Ex.
 
-```
+```yaml
 searchgov:
 
   # You should not change this.
@@ -53,10 +53,12 @@ searchgov:
 ```
 
 The logic for using Search.gov can be found in `_includes/searchgov/form.html` and supports displaying the results inline or sending the user to Search.gov the view the results. This setting defaults to "inline" but can be changed by setting
-```
+
+```yaml
 searchgov:
   inline: false
 ```
+
 in `_data/site.yml`.
 
 ## How to edit cloud.gov content
@@ -82,13 +84,13 @@ in `_data/site.yml`.
 
 - `_includes/searchgov/form.html` is used by search.gov.
 
-- If you make major changes to content, let the [#search](https://gsa-tts.slack.com/archives/C33CZQG2D) team know and they can reindex the site. More information on the search.gov account here: https://search.usa.gov/sites/6217
+- If you make major changes to content, let the [#search](https://gsa-tts.slack.com/archives/C33CZQG2D) team know and they can reindex the site. More information on the search.gov account here: <https://search.usa.gov/sites/6217>
 
 ## Updating content on your own computer
 
 ```shell
-    git clone https://github.com/cloud-gov/cg-site
-    cd cg-site
+    git clone https://github.com/cloud-gov/site
+    cd site
 ```
 
 Note that when built by cloud.gov Pages, `npm run build` is used instead of the
@@ -104,41 +106,6 @@ Note that when built by cloud.gov Pages, `npm run build` is used instead of the
 
 Open your web browser to [localhost:4000](http://localhost:4000/) to view your
 site.
-
-### Link checking
-
-This project uses [`lychee`](https://github.com/lycheeverse/lychee) and the accompanying [GitHub action](https://github.com/lycheeverse/lychee-action) to verify that all the links in this documentation are valid.
-
-Default configuration for `lychee` can be found in [`lychee.toml`](./lychee.toml).
-
-Default URL patterns that are ignored by `lychee` can be found in [`.lycheeignore`](./.lycheeignore).
-
-<!-- #### Running locally
-
-First, install `lychee`:
-
-```shell
-brew install lychee
-```
-
-To run `lychee` locally, use the `link-checker` npm script:
-
-```shell
-# can use any globbing pattern or filepath
-GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./_site/**/*.html
-```
-
-You can also use multiple patterns/filepaths:
-
-```shell
-GITHUB_TOKEN=<your-github-token> npm run link-checker -- ./*.md ./_site/**/*.html
-```
-
-Including a `GITHUB_TOKEN` environment variable will reduce the number of 429 responses returned by GitHub, since
-by default GitHub throttles requests without a token.
-
-When you run this script, results from the `lychee` link scan will be generated in `lychee-out.md` so that you can
-review and address any errors. -->
 
 ## Technologies you should be familiarize yourself with
 
