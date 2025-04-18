@@ -69,7 +69,7 @@ A monitor allows you to specify multiple conditions, and it can send alerts to d
   - **composite monitor**: Runs multiple monitors in a single workflow and generates a single alert based on multiple trigger conditions. See [Composite monitors](https://OpenSearch.org/docs/latest/observing-your-data/alerting/composite-monitors/) for information about creating and using this monitor type.
 
 5. Select the desired timeframe under **Schedule**
-6. Under **index** put `logs-app*` (the `*` wildcard index pattern means that that the separate indices for every day will be searched, e.g. `logs-app-2024-04-17`)
+6. Under **index** put `logs-app-*` (the `*` wildcard index pattern means that that the separate indices for every day will be searched, e.g. `logs-app-2024-04-17`)
 7. Fill out **Query** referring to Monitor Types for your chose monitor
 8. Create a **Trigger**, this can be for any alert condition or specific queries/tags.
 9. Under **Actions** fill out the notification info.
