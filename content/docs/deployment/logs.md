@@ -125,6 +125,8 @@ $ cf create-user-provided-service main-log-drain \
 $ cf bind-service my-main-app main-log-drain
 ```
 
+Other product teams at GSA-TTS rely on a **[reference Cloud.gov log shipper service](https://github.com/gsa-tts/cg-logshipper)**. We recommend reviewing their implementation before undertaking your own. There's also [Terraform code](https://github.com/GSA-TTS/terraform-cloudgov/tree/main/logshipper) for deploying and running the service.
+
 ## Troubleshooting missing logs
 
 Not seeing the logs you expect? Here are a few questions to ask yourself to help identify the problem.
