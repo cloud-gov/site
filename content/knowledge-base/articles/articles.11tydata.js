@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   tags: "posts",
   permalink: function (data) {
     const fileName = data.page.inputPath

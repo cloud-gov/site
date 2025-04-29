@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   layout: "layouts/docs",
   sidenav: true,
   sidenavIdentifier: "docs",

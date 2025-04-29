@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   name: "Overview",
   icon: "home",
   weight: 0

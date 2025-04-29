@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   name: "Team documentation",
   icon: "build",
   weight: 60

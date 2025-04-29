@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   name: "Compliance",
   icon: "verified",
   weight: 40

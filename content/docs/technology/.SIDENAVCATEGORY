@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   name: "Technology and security",
   icon: "lock",
   weight: 5

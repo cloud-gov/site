@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   name: "Getting Started",
   icon: "check_circle",
   weight: 15
