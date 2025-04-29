@@ -16,7 +16,7 @@ This table shows a handful of common operations, with the recommended way to per
 
 ## Run periodic scheduled tasks
 
-If you'd like to run a periodic scheduled task (similar to a cron job), you should find a cron-like library in the programming language that you're working with, and implement the task using that library. You may run this as part of an existing application or as a separate application.
+If you'd like to run a periodic scheduled task (similar to a cron job), you can find a cron-like library in the programming language that you're working with, and implement the task using that library. You may run this as part of an existing application or as a separate application. The Cloud.gov team has published two basic examples as [cron-task (JavaScript)](https://github.com/cloud-gov/cf-hello-worlds/tree/main/cron-task) and [cf-cron (Supercronic app)](https://github.com/cloud-gov/cf-hello-worlds/tree/main/cf-cron).
 
 If you use [continuous deployment](/docs/management/continuous-deployment), you can use a timer as an input to a task or pipeline that runs a [Cloud Foundry Task](https://docs.cloudfoundry.org/devguide/using-tasks.html). You can see [a demonstration of this approach](https://github.com/cloud-gov/cf-ci-triggered-task) using the Travis CI/CD platform here. Note - this same approach can be easily adapted to other common CI/CD platforms like Jenkins, CircleCI and GitHub Actions.
 
