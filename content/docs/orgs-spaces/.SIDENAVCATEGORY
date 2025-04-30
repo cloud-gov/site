@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   name: "Managing orgs",
   icon: "groups",
   weight: 35

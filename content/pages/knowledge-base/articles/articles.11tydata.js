@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   permalink: function (data) {
     const fileName = data.page.inputPath
       .replace("content/", "")

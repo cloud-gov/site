@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   name: "Services",
   icon: "account_balance",
   weight: 25

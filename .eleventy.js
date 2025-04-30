@@ -1,22 +1,22 @@
-const { DateTime } = require("luxon");
-const fs = require("fs");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const { markdownItTable } = require("markdown-it-table");
-const yaml = require("js-yaml");
-const svgSprite = require("eleventy-plugin-svg-sprite");
-const { imageShortcode, imageWithClassShortcode } = require("./config");
-const pluginTOC = require("eleventy-plugin-toc");
-const pluginMermaid = require("@kevingimbel/eleventy-plugin-mermaid");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const inspect = require("util").inspect;
-const striptags = require("striptags");
-const path = require("path");
-const matter = require("gray-matter");
-const { JSDOM } = require("jsdom");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+import { DateTime } from "luxon";
+import fs from "fs";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginNavigation from "@11ty/eleventy-navigation";
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+import { markdownItTable } from "markdown-it-table";
+import yaml from "js-yaml";
+import svgSprite from "eleventy-plugin-svg-sprite";
+import { imageShortcode, imageWithClassShortcode } from "./config/index.cjs";
+import pluginTOC from "eleventy-plugin-toc";
+import pluginMermaid from "@kevingimbel/eleventy-plugin-mermaid";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import striptags from "striptags";
+import path from "path";
+import matter from "gray-matter";
+import { JSDOM } from "jsdom";
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import hljs from "highlight.js";
 
 // Helper function to synchronously determine if a file exists
 function fileExists(filePath) {
@@ -64,32 +64,13 @@ function getFrontMatterSync(filePath) {
   }
 }
 
-// Returns page metadata from 11ty
-function getPageData(filePath) {
-  const pageData = {}; // Default structure
-
-  // Try to resolve Eleventy page metadata (if available)
-  try {
-    const eleventyPage = require(filePath); // Simulate page loading
-    if (eleventyPage) {
-      pageData.url = eleventyPage.url;
-      pageData.fileSlug = eleventyPage.fileSlug;
-      pageData.outputPath = eleventyPage.outputPath;
-    }
-  } catch (error) {
-    console.warn(`Could not load 11ty page data for: ${filePath}`, error);
-  }
-
-  return pageData;
-}
-
-module.exports = function (config) {
+export default function (config) {
   // Set pathPrefix for site
   let pathPrefix = "/";
 
   // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
   config.addPassthroughCopy({
-    admin: "admin", 
+    admin: "admin",
     ".well-known": ".well-known",
     _assets: "assets",
     _img: "img",
@@ -156,11 +137,6 @@ module.exports = function (config) {
   // Allow yaml to be used in the _data dir
   config.addDataExtension("yaml", (contents) => yaml.load(contents));
 
-  config.addFilter(
-    "debug",
-    (content) => `<pre><code>${inspect(content)}</code></pre>`,
-  );
-
   config.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
       "LLLL d, yyyy",
@@ -222,7 +198,7 @@ module.exports = function (config) {
    *  - This file can be empty. It just indicates the existence of navigation
    * A ".SIDENAVCATEGORY" file describes information about the top level category.
    *  - Example: content/docs/apps/.SIDENAVCATEGORY
-   *  - module.exports = {
+   *  - export default {
    *      name: "Compliance",
    *      icon: "fa-check-square-o"
    *    }
@@ -317,7 +293,6 @@ module.exports = function (config) {
       }
 
       // Use the default syntax highlighting for other languages
-      const hljs = require("highlight.js");
       if (hljs.getLanguage(lang)) {
         return `<pre><code class="language-${lang}">${
           hljs.highlight(str, { language: lang }).value
@@ -464,4 +439,4 @@ module.exports = function (config) {
       output: "_site",
     },
   };
-};
+}
