@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   name: "Customer Stories",
   icon: "star",
   weight: 10
