@@ -19,7 +19,12 @@ permalink: /pages/documentation/included-with-pages/
 
 ### Large file hosting
 
-GitHub isn't generally set up to host more than a gigabyte of file content and Pages' build container can't accommodate extremely large repositories in the build process. Instead, you should store very large files separately and link to them from your Pages site.
+We're excited to announce an upcoming new public file storage feature! 🎉 With this new feature, you'll be able to upload and share files publicly from your existing site and simply manage your public files in Pages.
+
+This functionality facilitates the hosting and organization of files intended for public dissemination and enables direct file uploads to your site, generating persistent URLs associated with the site's custom domain. This eliminates previous file size limitations and offers an optimized approach to content sharing.
+
+Interested in trying out the new public file storage? Reach out to us at [pages-support@cloud.gov](mailto:pages-support@cloud.gov) to get on the waitlist!
+
 
 ### Code editing tools
 
