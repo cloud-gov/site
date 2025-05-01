@@ -18,7 +18,7 @@ git clone https://github.com/cloud-gov/cf-hello-worlds.git
 # Change to the python hello world directory
 cd cf-hello-worlds/python-flask
 # Push the python hello world app
-cf push -f manifest.yml
+cf push
 # View information about your new app, including the route
 cf app test-python-flask
 # Make a test request to the app using the route from the previous step
