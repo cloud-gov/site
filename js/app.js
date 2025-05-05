@@ -48,7 +48,7 @@ ready(function () {
     });
   }
 
-  // Migrated functionality from cg-site
+  // Migrated functionality from site
   if (location.search === "?b") {
     document.querySelector('#main-content > .usa-section:first-child').classList.add('usa-section--dark');
     document.querySelector('#main-content > .usa-section:nth-child(2)').classList.remove('usa-section--dark');
