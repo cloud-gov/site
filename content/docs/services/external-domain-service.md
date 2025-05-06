@@ -30,46 +30,57 @@ The `domain-with-org-lb` plan offers load balancers dedicated to your Cloud.gov 
 
 | Name      | Required   | Description                   | Example                                                                          |
 | --------- | ---------- | ----------------------------- | -------------------------------------------------------------------------------- |
-| `domains` | _Required_ | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
+| `domains` | _Required_ | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov","www.my-domain.gov"]` |
 
 ### domain-with-org-lb plan
 
 | Name      | Required   | Description                   | Example                                                                          |
 | --------- | ---------- | ----------------------------- | -------------------------------------------------------------------------------- |
-| `domains` | _Required_ | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
+| `domains` | _Required_ | Your custom domain or domains | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov","www.my-domain.gov"]` |
 
 ### domain-with-cdn plan
 
-| Name              | Required   | Description                                   | Example                                                                          |
+| Name              | Required   | Description                                   | Example                                                                   |
 | ----------------- | ---------- | --------------------------------------------- | -------------------------------------------------------------------------------- |
-| `domains`         | _Required_ | Your custom domain or domains                 | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov",  "www.my-domain.gov"]` |
+| `domains`         | _Required_ | Your custom domain or domains                 | `"my-domain.gov,www.my-domain.gov"` or `["my-domain.gov","www.my-domain.gov"]` |
 | `origin`          | optional   | A custom origin to serve from                 | `external-app.example.gov`                                                       |
 | `insecure_origin` | optional   | Is the custom origin HTTP (not HTTPS)         | `true`                                                                           |
 | `forward_cookies` | optional   | List of cookies to forward                    | `"JSESSIONID,othercookiename"`                                                   |
 | `forward_headers` | optional   | List of headers to forward                    | `"x-my-header,x-another-one"`                                                    |
 | `error_responses` | optional   | dictionary of code:path to respond for errors | `{"404": "/errors/404.html"}`                                                    |
-| `path`            | optional   | A custom path to serve from                   | `/some/path`                                                                     |
+| `path`            | optional   | A custom path to serve from                   | `/some/path` |
+| `cache_policy` | optional | [An AWS managed cache policy to use][managed-cache-policies]       | `Managed-CachingOptimized` |
 
-#### origin and insecure_origin
+#### `origin` and `insecure_origin`
 
-You can use this option to send traffic to a custom origin, rather than to your app running on cloud.gov
-If your custom origin is served over HTTP without HTTPS available, set `insecure_origin` to `true`. This flag
-does not apply to apps hosted on cloud.gov.
+You can use the `origin` parameter to send traffic to a custom origin, rather than to your app running on cloud.gov. If your custom origin is served over HTTP without HTTPS available, set `insecure_origin` to `true`. This flag does not apply to apps hosted on cloud.gov.
 
-#### forward_cookies option
+#### `forward_cookies` parameter
 
-This option allows you to control what cookies to pass on to your application. By default, all cookies are passed. You can specify a list of cookie names (comma-separated) to forward, ignoring others. To pass no cookies, pass an empty string, e.g. `cf create-service external-domain domain-with-cdn my-cdn -c '{"domains": "example.gov,www.example.gov", "forward_cookies": ""}'`. You can explicitly set the default of forwarding all cookies with the string `"*"` (note that this is a special string, not a glob/regex).
+> Note: If you set the `cache_policy` parameter, this parameter is ignored
 
-#### forward_headers option
-
-This option lets you configure what headers to forward to your application. [CloudFront preconfigures some of these](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior), and unless you are using a custom origin, we set the `Host` header. You can add up to nine additional headers or header patterns but note that CloudFront considers forwarded headers in its cache calculation, so more unique header combinations will cause more cache misses.
-
-#### error_responses option
-
-This option lets you send custom error pages for specific error codes. Set this with an object, where the keys are the error codes (as strings) and the values are the path to the custom error page, for example:
+This parameter allows you to control what cookies to pass on to your application. By default, all cookies are passed. You can specify a list of cookie names (comma-separated) to forward, ignoring others. To pass no cookies, pass an empty string:
 
 ```shell
-cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov", "error_responses": {"404": "/errors/404.html", "403": "/login.html"}}'
+cf create-service external-domain domain-with-cdn my-cdn \
+    -c '{"domains": "example.gov,www.example.gov", "forward_cookies": ""}'
+```
+
+You can explicitly set the default of forwarding all cookies with the string `"*"` (note that this is a special string, not a glob/regex).
+
+#### `forward_headers` parameter
+
+> Note: If you set the `cache_policy` parameter, this parameter is ignored
+
+This parameter lets you configure what headers to forward to your application. [CloudFront preconfigures some of these](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#request-custom-headers-behavior), and unless you are using a custom origin, we set the `Host` header. You can add up to nine additional headers or header patterns but note that CloudFront considers forwarded headers in its cache calculation, so more unique header combinations will cause more cache misses.
+
+#### `error_responses` parameter
+
+This parameter lets you send custom error pages for specific error codes. Set this with an object, where the keys are the error codes (as strings) and the values are the path to the custom error page, for example:
+
+```shell
+cf create-service external-domain domain-with-cdn \
+    -c '{"domains": "example.gov", "error_responses": {"404": "/errors/404.html", "403": "/login.html"}}'
 ```
 
 Be careful when setting this for 5xx responses: 5xx responses indicate a server error and setting a custom error response will increase the load on a potentially unhealthy application.
@@ -77,17 +88,38 @@ Be careful when setting this for 5xx responses: 5xx responses indicate a server 
 The default for this setting is `{}`, so errors are passed to the client exactly as the CDN receives them, and you can use the same setting to reset to the default:
 
 ```shell
-cf create-service external-domain domain-with-cdn -c '{"domains": "example.gov", "error_responses": {}}'
+cf create-service external-domain domain-with-cdn \
+    -c '{"domains": "example.gov", "error_responses": {}}'
 ```
 
-Note that only these error codes can be customized: 400, 403, 404, 405, 414, 416, 500, 501, 502, 503, 504
+Note that only these error codes can be customized: 400, 403, 404, 405, 414, 416, 500, 501, 502, 503, 504.
 
-#### path option
+#### `path` parameter
 
 You can use this option to send traffic to a custom path at either the default or custom origin.
 
 ```shell
-cf create-service external-domain domain-with-cdn -c '{"path": "/some/path"}'
+cf create-service external-domain domain-with-cdn \
+    -c '{"path": "/some/path"}'
+```
+
+#### `cache_policy` parameter
+
+> Note: If you set the `cache_policy` parameter, the `forward_headers` and `forward_cookies` parameters are ignored.
+
+[AWS managed cache policies][managed-cache-policies] provide a simplified way for managing the caching behavior of your CloudFront distribution. Only the following cache policies are supported:
+
+- [`Managed-CachingDisabled`](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html#managed-cache-policy-caching-disabled)
+- [`Managed-CachingOptimized`](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html#managed-cache-caching-optimized)
+- [`Managed-CachingOptimizedForUncompressedObjects`](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html#managed-cache-policy-caching-disabled)
+- [`UseOriginCacheControlHeaders`](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html#managed-cache-policy-caching-disabled)
+- [`UseOriginCacheControlHeaders-QueryStrings`](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html#managed-cache-policy-origin-cache-headers-query-strings)
+
+Please note that while the [AWS documentation on managed cache policies][managed-cache-policies] may refer to these policies by different names, **only the names listed above are allowed values for `cache_policy`**.
+
+```shell
+cf create-service external-domain domain-with-cdn \
+    -c '{"cache_policy": "Managed-CachingOptimized"}'
 ```
 
 ## How to create an instance of this service
@@ -273,3 +305,5 @@ CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/Amazon
 ### Migrating from another AWS account
 
 No two CloudFront distributions may have the same alternate domain names (CNAMEs) across all AWS accounts. AWS has instructions for [moving an alternate domain name to a different distribution using wildcard domains](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move). However, because the external domain broker does not currently support wildcard domains, you must delete your source distribution and related DNS CNAME records before creating the new domain-with-cdn service instance in cloud.gov. This will require downtime for your site during your migration.
+
+[managed-cache-policies]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html#managed-cache-policy-origin-cache-headers-query-strings
