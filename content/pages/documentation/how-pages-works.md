@@ -18,7 +18,7 @@ We use GitHub to manage our work on Pages. The main code repository for the Page
 
 ### Documentation
 
-- **[cloud.gov Pages](https://github.com/cloud-gov/site/tree/main/content/pages/documentation)** The documentation website.
+- **[cloud.gov Pages]({{site.github_url}}/tree/main/content/pages/documentation)** The documentation website.
 
 ### Templates
 
