@@ -12,7 +12,7 @@ Cloud.gov is happy to announce that we have added support for using AWS [managed
 
 One of the benefits of external domain CDN services is [caching, which can reduce load on your origin server by responding to requests with content served directly from the cache](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ConfiguringCaching.html).
 
-CloudFront, the underlying AWS service for external domain services, offers many options for controllling how and when content from your origin server is cached.
+CloudFront, the underlying AWS service for external domain services, offers many options for controlling how and when content from your origin server is cached.
 
 To simplify the management of your CloudFront distribution's caching behavior, [AWS offers managed cache policies][managed-cache-policies].
 
