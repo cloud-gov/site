@@ -28,6 +28,10 @@ To find your audit events in the logging system:
 
     {% image "_img/content/audit-event-results.png" "Screenshot of OpenSearch Dashboards interface showing the results of a search for audit events" %}
 
+5. Apply additional filters on the audit event fields as desired. For example, to filter for app restart events, add a filter of `type: audit.app.restart`:
+
+    {% image "_img/content/filter-audit-app-restart-events.png" "Screenshot of OpenSearch Dashboards interface showing a filtered search for app restart audit events" %}
+
 ## Audit event fields
 
 The fields available on audit event records are:
