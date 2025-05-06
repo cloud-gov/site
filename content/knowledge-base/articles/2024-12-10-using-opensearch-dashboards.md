@@ -62,7 +62,7 @@ Listed below are the explanations of some field names for router (RTR) logs:
 
 The full list of fields available for router logs can be found in [our OpenSearch field mapping configuration](https://github.com/cloud-gov/opensearch-boshrelease/blob/2078ff06dec204c12bc64a45fe707f71e1c9e303/jobs/opensearch_templates/templates/component-index-mappings-app.json.erb#L46)
 
-## Generate report of logs.
+## Generate report of logs
 
 OpenSearch allows for [generating a report](https://opensearch.org/docs/latest/reporting/report-dashboard-index/) from a saved search. This is done by choosing a search and clicking the **Reporting** menu option.
 
