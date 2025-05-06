@@ -49,7 +49,8 @@ The `domain-with-org-lb` plan offers load balancers dedicated to your Cloud.gov 
 | `forward_headers` | optional   | List of headers to forward                    | `"x-my-header,x-another-one"`                                                    |
 | `error_responses` | optional   | dictionary of code:path to respond for errors | `{"404": "/errors/404.html"}`                                                    |
 | `path`            | optional   | A custom path to serve from                   | `/some/path` |
-| `cache_policy` | optional | [An AWS managed cache policy to use][managed-cache-policies]       | `Managed-CachingOptimized` |
+| `cache_policy` | optional | [An AWS managed cache policy][managed-cache-policies]       | `Managed-CachingOptimized` |
+| `origin_request_policy` | optional | [An AWS managed origin request policy][managed-origin-request-policies] | `Managed-AllViewer` |
 
 #### `origin` and `insecure_origin`
 
@@ -107,7 +108,9 @@ cf create-service external-domain domain-with-cdn \
 
 > Note: If you set the `cache_policy` parameter, the `forward_headers` and `forward_cookies` parameters are ignored.
 
-[AWS managed cache policies][managed-cache-policies] provide a simplified way for managing the caching behavior of your CloudFront distribution. Only the following cache policies are supported:
+[AWS managed cache policies][managed-cache-policies] provide a simplified way for managing the caching behavior of your CloudFront distribution.
+
+Only the following managed cache policies are supported by the broker:
 
 - [`Managed-CachingDisabled`](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html#managed-cache-policy-caching-disabled)
 - [`Managed-CachingOptimized`](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html#managed-cache-caching-optimized)
@@ -120,6 +123,22 @@ Please note that while the [AWS documentation on managed cache policies][managed
 ```shell
 cf create-service external-domain domain-with-cdn \
     -c '{"cache_policy": "Managed-CachingOptimized"}'
+```
+
+#### `origin_request_policy` parameter
+
+[AWS managed origin request policies][managed-origin-request-policies] provide a simplified way to control how the request is forwarded from CloudFront to your origin server.
+
+Only the following origin request policies are supported by the broker:
+
+- [`Managed-AllViewer`](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html#managed-origin-request-policy-all-viewer)
+- [`Managed-AllViewerAndCloudFrontHeaders-2022-06`](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html#managed-origin-request-policy-all-viewer-and-cloudfront)
+
+Please note that while the [AWS documentation on managed origin request policies][managed-origin-request-policies] may refer to these policies by different names, **only the names listed above are allowed values for `origin_request_policy`**.
+
+```shell
+cf create-service external-domain domain-with-cdn \
+    -c '{"origin_request_policy": "Managed-AllViewer"}'
 ```
 
 ## How to create an instance of this service
@@ -307,3 +326,4 @@ CloudFront forwards a [limited set of headers](http://docs.aws.amazon.com/Amazon
 No two CloudFront distributions may have the same alternate domain names (CNAMEs) across all AWS accounts. AWS has instructions for [moving an alternate domain name to a different distribution using wildcard domains](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#alternate-domain-names-move). However, because the external domain broker does not currently support wildcard domains, you must delete your source distribution and related DNS CNAME records before creating the new domain-with-cdn service instance in cloud.gov. This will require downtime for your site during your migration.
 
 [managed-cache-policies]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html#managed-cache-policy-origin-cache-headers-query-strings
+[managed-origin-request-policies]: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html
