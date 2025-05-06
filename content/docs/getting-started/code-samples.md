@@ -158,7 +158,7 @@ If youâ€™re done, you can delete your app by running `cf delete <APPNAME>` (itâ€
 
 If you've run into any issues with these tutorials, please [Contact support at cloud.gov](mailto:support@cloud.gov). We're happy to help.
 
-Did we miss a tip or useful resource that you think we should add? [Submit a suggestion on GitHub](https://github.com/cloud-gov/site/issues/new) or [send us an email](mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
+Did we miss a tip or useful resource that you think we should add? [Submit a suggestion on GitHub]({{site.github_url}}/issues/new) or [send us an email](mailto:inquiries@cloud.gov?subject=%5BSuggestion%5D%20&body=%0A%0A%0A%0ARefcode:%20quickstart).
 
 ### Additional sample applications
 
