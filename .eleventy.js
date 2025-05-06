@@ -16,7 +16,6 @@ const striptags = require("striptags");
 const path = require("path");
 const matter = require("gray-matter");
 const { JSDOM } = require("jsdom");
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 // Helper function to synchronously determine if a file exists
 function fileExists(filePath) {
@@ -83,13 +82,15 @@ function getPageData(filePath) {
   return pageData;
 }
 
-module.exports = function (config) {
+module.exports = async function (config) {
+  const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
+
   // Set pathPrefix for site
   let pathPrefix = "/";
 
   // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
   config.addPassthroughCopy({
-    admin: "admin", 
+    admin: "admin",
     ".well-known": ".well-known",
     _assets: "assets",
     _img: "img",
