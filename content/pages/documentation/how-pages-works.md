@@ -7,18 +7,18 @@ published: false
 
 Pages is a hosted service run by [cloud.gov](https://cloud.gov/) for use by US federal government agencies. The software behind this service is open source and released to the public domain for anyone to use. We also welcome your contributions and ideas.
 
-We use GitHub to manage our work on Pages. The main code repository for the Pages is at [https://github.com/18F/federalist](https://github.com/18F/federalist). In addition to hosting code, we use the issue queue on this repository to manage our development tasks and milestones. If you're interested in getting involved with this project, please see the [contributing guide](https://github.com/18F/federalist/blob/main/CONTRIBUTING.md). Here is a specific description of each of Pages' modular repositories:
+We use GitHub to manage our work on Pages. The main code repository for the Pages is at [https://github.com/cloud-gov/pages-core](https://github.com/cloud-gov/pages-core). In addition to hosting code, we use the issue queue on this repository to manage our development tasks and milestones. If you're interested in getting involved with this project, please see the [contributing guide](https://github.com/18F/federalist/blob/main/CONTRIBUTING.md). Here is a specific description of each of Pages' modular repositories:
 
 ### Functional Repositories
 
-- **[federalist](https://github.com/18F/federalist)** This is the core application for Pages and contains the frontend interface as well as the code that interacts with the GitHub API and sets up new Pages sites, including a GitHub webhook that triggers messages into the build queue through the app. It has a cloud.gov PostgreSQL database service instance for session storage and persistent data storage of users, sites, and logs.
-- **[federalist-builder](https://github.com/18F/federalist-builder)** This application launches build tasks for Pages in a Linux Garden container based on messages from a queue and contains scheduling logic.
-- **[federalist-proxy](https://github.com/18F/federalist-proxy)** This application serves as a proxy for the S3 bucket to which Pages deploys static content. It adds some required headers for compliance.
-- **[federalist-garden-build](https://github.com/18F/federalist-garden-build)** This container image contains the code to build Pages sites in Garden Linux containers.
+- **[pages-core](https://github.com/18F/federalist)** This is the core application for Pages and contains the frontend interface as well as the code that interacts with the GitHub API and sets up new Pages sites, including a GitHub webhook that triggers messages into the build queue through the app. It has a cloud.gov PostgreSQL database service instance for session storage and persistent data storage of users, sites, and logs.
+- **[pages-builder](https://github.com/18F/federalist-builder)** This application launches build tasks for Pages in a Linux Garden container based on messages from a queue and contains scheduling logic.
+- **[pages-proxy](https://github.com/18F/federalist-proxy)** This application serves as a proxy for the S3 bucket to which Pages deploys static content. It adds some required headers for compliance.
+- **[pages-build-container](https://github.com/18F/federalist-garden-build)** This container image contains the code to build Pages sites in Garden Linux containers.
 
 ### Documentation
 
-- **[cloud.gov Pages](https://github.com/cloud-gov/cg-site/_pages/pages/)** The documentation website.
+- **[cloud.gov Pages]({{site.github_url}}/tree/main/content/pages/documentation)** The documentation website.
 
 ### Templates
 
@@ -27,9 +27,11 @@ We use GitHub to manage our work on Pages. The main code repository for the Page
 
 ## Architecture
 
-Pages is located on cloud.gov's GovCloud environment, which has [received FedRAMP certification](https://marketplace.fedramp.gov/index.html#/product/18f-cloudgov). [This blog post](https://18f.gsa.gov/2017/02/02/cloud-gov-is-now-fedramp-authorized/) explains more about FedRAMP.
+Pages is located on cloud.gov's GovCloud environment, which has [received FedRAMP certification](https://marketplace.fedramp.gov/index.html#/product/18f-cloudgov).
 
-The diagram for Federalist's architecture is below. It's not intended for general audiences and is focused on concisely showing all of the components of Federalist as required for compliance. Please contact us with any questions: we aren't expecting this diagram to be useful by itself to gain an understanding of Federalist. [![Diagram of Federalist architecture]({{ '/img/pages/Federalist System Diagram 3-8-18.png' }})]({{ '/img/pages/Federalist System Diagram 3-8-18.png' }})
+The diagram for Pages's architecture is below. It's not intended for general audiences and is focused on concisely showing all of the components of cloud.gov Page's as required for compliance. Please contact us with any questions: we aren't expecting this diagram to be useful by itself to gain an understanding of Pages. 
+
+{% image "_img/pages/Federalist System Diagram 3-8-18.png" "High Level Pages Architecture" %}
 
 ### https://pages.cloud.gov
 
