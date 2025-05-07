@@ -1,6 +1,6 @@
 const { DateTime } = require("luxon");
 const fs = require("fs");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
@@ -133,7 +133,24 @@ module.exports = async function (config) {
   });
 
   // Add plugins
-  config.addPlugin(pluginRss);
+  config.addPlugin(feedPlugin, {
+    type: "atom", // or "rss", "json"
+    outputPath: "/updates.xml",
+    collection: {
+      name: "news", // iterate over `collections.news`
+      limit: 10, // 0 means no limit
+    },
+    metadata: {
+      language: "en",
+      title: "Cloud.gov",
+      subtitle: "Cloud.gov News",
+      base: "https://cloud.gov/",
+      author: {
+        name: "Cloud.gov",
+        email: "", // Optional
+      },
+    },
+  });
   config.addPlugin(pluginNavigation);
 
   //// SVG Sprite Plugin for USWDS USWDS icons
