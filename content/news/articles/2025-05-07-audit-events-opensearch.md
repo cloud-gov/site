@@ -23,8 +23,7 @@ then follow the link for ["Audit - Overview"](https://logs.fr.cloud.gov/app/dash
 
 {% image "_img/content/finding_audit_overview_dashboard.png" "Screenshot of searching OpenSearch Dashboards for ones with 'Audit' in the name" %}
 
-The example "Audit - Overview" dashboard below shows sample audit events for restarting an app, and then SSH'ing to it. When using this dashboard,
-bear in mind that events [may be delayed by 15 minutes](#how-audit-events-are-ingested-into-the-logging-system).
+The example "Audit - Overview" dashboard below shows sample audit events for restarting an app, and then SSH'ing to it. When using this dashboard, bear in mind that events [may be delayed by 15 minutes](#how-audit-events-are-ingested-into-the-logging-system).
 
 {% image "_img/content/example_audit_overview_dashboard.png" "Screenshot of searching OpenSearch Dashboards showing histogram of events, and sample events" %}
 
