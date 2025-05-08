@@ -2,7 +2,7 @@
 layout: layouts/post
 tags: news
 title: Audit events now available in Cloud.gov logging system
-date: 2025-05-07
+date: 2025-05-08
 excerpt: "Use audit events in the Cloud.gov logging system to monitor activity on your resources"
 ---
 
@@ -11,6 +11,22 @@ Audit events are recorded by the Cloud.gov platform [to track activity against a
 While audit events can be [queried from the platform via an API](https://docs.cloudfoundry.org/running/managing-cf/audit-events.html#querying), [they are only retained by the platform for 31 days by default](https://docs.cloudfoundry.org/running/managing-cf/audit-events.html#considerations).
 
 To simplify customer access to audit events and to satisfy [M-21-31 guidelines][m-21-31] for the retention of these logs, audit events are now available in the [Cloud.gov logging system][logs].
+
+## Using the Audit - Overview dashboard
+
+A quick way to view audit events is to:
+
+1. Log in to the [logging system][logs]
+2. Click on "Discover" in the left sidebar menu
+3. Enter "Audit" in search bar, as shown below,
+then follow the link for ["Audit - Overview"](https://logs.fr.cloud.gov/app/dashboards#/view/audit-overview)
+
+{% image "_img/content/finding_audit_overview_dashboard.png" "Screenshot of searching OpenSearch Dashboards for ones with 'Audit' in the name" %}
+
+The example "Audit - Overview" dashboard below shows sample audit events for restarting an app, and then SSH'ing to it. When using this dashboard,
+bear in mind that events [may be delayed by 15 minutes](#how-audit-events-are-ingested-into-the-logging-system).
+
+{% image "_img/content/example_audit_overview_dashboard.png" "Screenshot of searching OpenSearch Dashboards showing histogram of events, and sample events" %}
 
 ## How to search audit events in the logging system
 
