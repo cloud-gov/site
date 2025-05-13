@@ -82,7 +82,7 @@ In order for our example web server to handle HTTP requests, dispatch responses,
 
 #### 2. Set up the secure database connection
 
-Because we’ve set up the database using RDS and bound to the service in this cloud.gov org space, we have direct access to the database credentials via application environment variables. Cloud.gov and RDS make it easy to set up a secure connection to the database using these environment variables. Here is how we connect to our database using the `DARABASE_URL` environment variable provided by the Cloud.gov platform in our Flask application:
+Because we’ve set up the database using RDS and bound to the service in this cloud.gov org space, we have direct access to the database credentials via application environment variables. Cloud.gov and RDS make it easy to set up a secure connection to the database using these environment variables. Here is how we connect to our database using the `DATABASE_URL` environment variable provided by the Cloud.gov platform in our Flask application:
 
 ```py
 aws_rds = app_env.get_service(name="example-website-api-database")
