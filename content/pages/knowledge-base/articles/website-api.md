@@ -41,7 +41,7 @@ When you create an RDS service instance, cloud.gov automatically creates the def
 
 In our case, we provisioned a PostgreSQL v15 database instance within cloud.gov to store some sample data. For the purposes of filling out an example database, we sourced a CSV from FDIC which itemizes recently failed banks, and then imported the CSV into the database’s single row table using the syntax [COPY/FROM](https://www.postgresql.org/docs/current/sql-copy.html).
 
-When queried via the API application, the database will select a number of rows, convert them to a Python dictionary via the [RealDictCursor module](https://www.psycopg.org/docs/extras.html#real-dictionary-cursor), and return that collection.
+When queried via the API application, the database will select a number of rows, convert them to a Python dictionary via the [Row factories module](https://www.psycopg.org/psycopg3/docs/advanced/rows.html), and return that collection.
 
 ```shell
 Bank Name                | City          | State | Cert  | Acquiring Institution               | Closing Date | Fund  | id
@@ -70,26 +70,33 @@ In order for our example web server to handle HTTP requests, dispatch responses,
 
 `- cfenv` for interacting with Cloud Foundry environment variables
 
-`- psycopg2` and `psycopg2.extras` for interacting with PostgreSQL database and running queries
-
-`- RealDictCursor` for fetching database results as dictionaries
+`- dict_row` for fetching database results as dictionaries
 
 `- flask_cors` and `CORS` for handling Cross-Origin Resource Sharing (CORS), which is what allows Pages and the server to talk to one another even though they’re on separate domains
 
+`- ConnectionPool` for managing the set of open PostgreSQL database connections, this allows for efficient reuse of existing open connections which reduces latency
+
+`- OperationalError` for reporting database connection failures, if a failure occurs the application will be able to recognize it and automatically recreate the connection pool
+
+`- atexit` ensures proper cleanup of database connection pool upon application termination 
+
 #### 2. Set up the secure database connection
 
-Because we’ve set up the database using RDS and bound to the service in this cloud.gov org space, we have direct access to the database credentials via application environment variables. Cloud.gov and RDS make it easy to set up a secure connection to the database using these environment variables. Here is how we connect to our database using the psycopg2 Python module in our Flask app:
+Because we’ve set up the database using RDS and bound to the service in this cloud.gov org space, we have direct access to the database credentials via application environment variables. Cloud.gov and RDS make it easy to set up a secure connection to the database using these environment variables. Here is how we connect to our database using the `DATABASE_URL` environment variable provided by the Cloud.gov platform in our Flask application:
 
 ```py
-aws_rds = app_env.get_service(name='your-database-name-here')
+aws_rds = app_env.get_service(name="example-website-api-database")
 
-connection = psycopg2.connect(
-   host=aws_rds.credentials.get('host'),
-   user=aws_rds.credentials.get('username'),
-   password=aws_rds.credentials.get('password'),
-   database=aws_rds.credentials.get('name'),
-   port=aws_rds.credentials.get('port'),
-)
+def setup_connection_pool():
+    
+    database_url = os.getenv("DATABASE_URL")
+    
+    pool = ConnectionPool(
+        conninfo=database_url,
+        min_size=1,
+        max_size=20,
+    )
+    return pool
 ```
 
 #### 3. Define the routes
@@ -100,14 +107,17 @@ The server application can now access the database, so we need it to provide end
 - The second route (`"/get_table"`) is the one we use for accessing data from the database. When an HTTP request visits **https://cfpyapi.app.cloud.gov/get_table**, the Flask app will execute our `get_table()` function, which queries the database using the above credentials, finds matching results, and returns them in JSON format. Serving data and handling requests from a route endpoint makes the API more organized and easier to understand. When you need more endpoints for other queries in the future, it’s easy to add more routes.
 
 ```py
-@app.route('/', methods=['GET'])
+@app.route("/", methods=["GET"])
 def hello():
-   return 'There is a table right behind this door!'
+    try:
+        return "There is a table right behind this door!"
 
 
-@app.route('/get_table', methods=['GET'])
-def get_table(page):
-   cursor = connection.cursor(cursor_factory=RealDictCursor)
+@app.route("/get_table", methods=["GET"])
+def get_table():   
+    global connection_pool
+    try:
+        return fetch_fdic_banks(connection_pool)
 ```
 
 #### 4. Make the API available to your Pages app
