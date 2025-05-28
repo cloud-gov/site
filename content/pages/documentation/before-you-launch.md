@@ -39,4 +39,4 @@ We've worked to make publishing a government site on Pages as simple as possible
 1. Notify Pages support that you are ready to launch your site
 2. [Configure your DNS]({{ '/pages/documentation/custom-domains' }}#configure-your-dns)
 3. Notify Pages support
-4. [Configure your custom domain]({{ '/pages/documentation/custom-domains' }}#configure-your-custom-domain))
+4. [Configure your custom domain]({{ '/pages/documentation/custom-domains' }}#configure-your-custom-domain)
