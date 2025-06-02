@@ -51,4 +51,4 @@ communications for your application.
 For example, consider writing down who you need to notify at your agency if you have a security incident in your
 application, as well as which role on your team is responsible for [notifying cloud.gov of the incident and asking
 cloud.gov for support](/docs/help/). If your agency doesn’t provide a template, NIST provides templates, and feel free
-to adapt the [cloud.gov incident response plan](/docs/ops/security-ir/).
+to adapt the [cloud.gov incident response plan](https://cloud.gov/docs/ops/moved/).
