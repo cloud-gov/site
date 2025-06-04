@@ -20,13 +20,11 @@ Instead of complete HTML files, Jekyll uses the [Liquid templating language](htt
 
 ## Assets
 
-Assets are things like images, PDFs, CSS, and JavaScript files that are served with your site. The theme will house many of them. These can also be overridden
-in your repo by including your own version under the same file path.
+Assets are things like images, PDFs, CSS, and JavaScript files that are served with your site. The theme will house many of them. These can also be overridden in your repo by including your own version under the same file path.
 
 ## Sass
 
-You can use CSS with Jekyll just like any other static asset. However, one of Jekyll’s most powerful features is how it uses Sass to make writing CSS easier.
-Sass files use the `scss` file extension. Your main scss file should live under the `assets/` directory. Learn more about [Sass](https://sass-lang.com/).
+You can use CSS with Jekyll just like any other static asset. However, one of Jekyll’s most powerful features is how it uses Sass to make writing CSS easier. Sass files use the `scss` file extension. Your main scss file should live under the `assets/` directory. Learn more about [Sass](https://sass-lang.com/).
 
 {% capture content %}
 When you include an scss file under the assets/ directory, Jekyll will only process it as Sass if you include the front matter marker (three dashes `---`).
@@ -34,15 +32,13 @@ When you include an scss file under the assets/ directory, Jekyll will only proc
 {% include "pages/components/alert--note.html" content: content %}
 
 {% capture content %}
-Sass files under \_sass/ can be imported by using the `@import` syntax in your main scss file. You can use this to organize individual UI component styles with
-individual scss files, and then import them from an `assets/site.scss` file.
+Sass files under \_sass/ can be imported by using the `@import` syntax in your main scss file. You can use this to organize individual UI component styles with individual scss files, and then import them from an `assets/site.scss` file.
 {% endcapture %}
 {% include "pages/components/alert--best-practice.html" content: content %}
 
 ## U.S. Web Design System
 
-The [U.S. Web Design System](https://designsystem.digital.gov/) (USWDS) is
-a design system for the federal government backed by user research to design and build fast, accessible, mobile-friendly government websites.
+The [U.S. Web Design System](https://designsystem.digital.gov/) (USWDS) is a design system for the federal government backed by user research to design and build fast, accessible, mobile-friendly government websites.
 
 The USWDS is written in Sass, which is compiled by Jekyll to CSS. It is designed to be configurable, so you can make customizations by overriding variables or
 including additional CSS rules. Learn more about [customizing the U.S. Web Design System](https://designsystem.digital.gov/documentation/getting-started/developers/phase-three-customize/).
@@ -57,8 +53,7 @@ Pages would also like to learn more about how the theme is or is not working for
 
 If a user navigates to a page on your site that does not exist, they will see a “404 Page” (webspeak for a page that doesn’t exist). Pages provides a default 404 Page (shown below), but you may prefer something that looks and feels like it is part of your site.
 
-_**\*NOTE:**_ Only one custom 404 page can be set for the site's preview, demo, and live site deployments that do not have a custom domain
-associated with them. We automatically set the 404 to the live site's deployment path so all other branch deployments will send 404 requests to the live site's 404. If you are adding a custom domain to a branch deployment for a demo site, we can add the custom 404 page. See [Custom domain 404 page](#custom-domain-404-page).
+_**\*NOTE:**_ Only one custom 404 page can be set for the site's preview, demo, and live site deployments that do not have a custom domain associated with them. We automatically set the 404 to the live site's deployment path so all other branch deployments will send 404 requests to the live site's 404. If you are adding a custom domain to a branch deployment for a demo site, we can add the custom 404 page. See [Custom domain 404 page](#custom-domain-404-page).
 
 ## Pages default 404 page
 
