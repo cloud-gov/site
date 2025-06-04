@@ -156,7 +156,18 @@ cf create-service external-domain domain-with-cdn \
 
 | Name              | Required   | Description                                   | Example                                                                   |
 | ----------------- | ---------- | --------------------------------------------- | -------------------------------------------------------------------------------- |
-| `alarm_notification_email`         | _Required_ | An email to receive notifications sent by the broker          | `example@agency.gov` |
+| `alarm_notification_email`         | _Required_ | An email to receive notifications sent by the broker          | `email@agency.gov` |
+
+#### `alarm_notification_email` parameter
+
+This parameter specifies the email address that will receive any notifications sent by the broker for detected DDoS attacks against your domain or detected downtime for your domain.
+
+To create an instance of the service with this parameter:
+
+```shell
+cf create-service external-domain domain-with-cdn-dedicated-waf my-cdn \
+    -c '{"domains": "example.gov,www.example.gov", "alarm_notification_email": "email@agency.gov"}'
+```
 
 ## How to create an instance of this service
 
