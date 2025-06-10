@@ -1,7 +1,7 @@
 ---
 layout: layouts/post
 tags: news
-title: New Metrics for OpenSearch/Elasticsearch Domain Monitoring and S3 Bucket Size
+title: Now available: Metrics for OpenSearch/Elasticsearch domains and S3 buckets
 date: 2025-06-10
 excerpt: "Use detailed performance metrics to monitor your Cloud.gov OpenSearch/Elasticsearch domains and S3 buckets"
 ---
