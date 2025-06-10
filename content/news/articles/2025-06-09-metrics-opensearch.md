@@ -18,16 +18,19 @@ Cloud.gov has introduced comprehensive Elasticsearch/OpenSearch domain metrics t
 ### System Resource Metrics
 
 #### CPU Utilization
+These metrics help identify processing load and potential performance bottlenecks.
+
 - Overall domain CPU usage, metric name: `CPUUtilization`
 - Master node CPU usage, metric name: `MasterCPUUtilization`
-- Helps identify processing load and potential performance bottlenecks
+
 
 #### Memory Pressure
+These metrics monitor memory consumption and other potential memory-related issues.
+
 - JVM Memory Pressure, metric name: `JVMMemoryPressure`
 - Old Generation JVM Memory Pressure, metric name: `OldGenJVMMemoryPressure`
 - Master Node Memory Pressure, metric name: `MasterJVMMemoryPressure`
 - Old Generation Master Node Memory Pressure, metric name: `MasterOldGenJVMMemoryPressure`
-- Monitors memory consumption and potential memory-related issues
 
 ### Storage and Capacity Metrics
 
@@ -43,9 +46,10 @@ This metric helps track storage capacity and plan for scaling.
 - Write Queue Rejected Requests, metric name: `ThreadpoolWriteRejected`
 
 #### Search Queue Metrics
+These metrics monitor background processing and potential system overload:
+
 - Search Queue Count, metric name: `ThreadpoolSearchQueue`
 - Search Queue Rejected Requests, metric name: `ThreadpoolSearchRejected`
-- Monitors background processing and potential system overload
 
 ## Using the Services - S3 Dashboard
 A quick way to view domain metrics is to:
@@ -94,8 +98,11 @@ An automated job runs every 10 minutes to pull metric events from the platform a
 Metric events are retained in the logging system for 12 months and in offline storage for an additional 18 months in accordance with [M-21-31 guidelines][m-21-31].
 
 ## Benefits
+
 1. Domain monitoring
+
 2. Early detection of resource constraints
+
 3. Access to S3 bucket sizes
 
 [logs]: https://logs.fr.cloud.gov
