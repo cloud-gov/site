@@ -2,7 +2,7 @@
 layout: layouts/post
 tags: news
 title: New Metrics for OpenSearch/Elasticsearch Domain Monitoring and S3 Bucket Size
-date: 2025-05-08
+date: 2025-06-10
 excerpt: "Track detailed performance metrics for your Cloud.gov domains and S3"
 ---
 
