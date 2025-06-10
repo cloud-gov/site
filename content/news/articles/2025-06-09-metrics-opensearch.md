@@ -6,7 +6,10 @@ date: 2025-06-10
 excerpt: "Use detailed performance metrics to monitor your Cloud.gov OpenSearch/Elasticsearch domains and S3 buckets"
 ---
 
-Cloud.gov has introduced comprehensive Elasticsearch/OpenSearch domain metrics to help teams monitor system performance and resource utilization for brokered domains. As part of this update, Cloud.gov has also implemented a new metric that allows teams to easily track the size of their S3 buckets.
+The Cloud.gov team is excited to announce some new additions to the [logging system][logs] that will allow customers to monitor their services more effectively:
+
+- Comprehensive Elasticsearch/OpenSearch domain metrics to help teams monitor system performance and resource utilization for brokered domains
+- A new metric that allows teams to easily track the size of their S3 buckets
 
 ## Available S3 Metrics
 
