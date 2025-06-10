@@ -13,7 +13,7 @@ Cloud.gov has introduced comprehensive Elasticsearch/OpenSearch domain metrics t
 ### Storage and Capacity Metrics
 - **Bucket Size in Bytes**, metric name: `BucketSizeBytes`
 
-## Available Domain Metrics
+## Available OpenSearch/Elasticsearch Metrics
 
 ### System Resource Metrics
 
@@ -34,10 +34,10 @@ These metrics monitor memory consumption and other potential memory-related issu
 
 ### Storage and Capacity Metrics
 
-#### Free Storage Space, metric name: `FreeStorageSpace`
+#### Free Storage Space
 This metric helps track storage capacity and plan for scaling.
 
-- Available storage in gigabytes
+- Available storage in gigabytes, metric name: `FreeStorageSpace`
 
 ### Threadpool Performance
 
@@ -97,13 +97,6 @@ An automated job runs every 10 minutes to pull metric events from the platform a
 ## Retention
 Metric events are retained in the logging system for 12 months and in offline storage for an additional 18 months in accordance with [M-21-31 guidelines][m-21-31].
 
-## Benefits
-
-1. Domain monitoring
-
-2. Early detection of resource constraints
-
-3. Access to S3 bucket sizes
 
 [logs]: https://logs.fr.cloud.gov
 [m-21-31]: https://www.whitehouse.gov/wp-content/uploads/2021/08/M-21-31-Improving-the-Federal-Governments-Investigative-and-Remediation-Capabilities-Related-to-Cybersecurity-Incidents.pdf
