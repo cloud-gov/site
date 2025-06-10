@@ -11,7 +11,7 @@ Cloud.gov has introduced comprehensive Elasticsearch/OpenSearch domain metrics t
 ## Available S3 Metrics
 
 ### Storage and Capacity Metrics
-- **Bucket Size in Bytes**, metric name: `BucketSizeBytes`
+- Bucket Size in Bytes, metric name: `BucketSizeBytes`
 
 ## Available OpenSearch/Elasticsearch Metrics
 
