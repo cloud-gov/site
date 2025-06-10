@@ -13,38 +13,39 @@ This update allows customers to access metrics and satisfy [M-21-31 guidelines][
 ## Available S3 Metrics
 
 ### Storage and Capacity Metrics
-- **Bucket Size in Bytes**
+- **Bucket Size in Bytes**, metric name: `BucketSizeBytes`
 
 ## Available Domain Metrics
 
 ### System Resource Metrics
 
 #### CPU Utilization
-- Overall domain CPU usage
-- Master node CPU usage
+- Overall domain CPU usage, metric name: `CPUUtilization`
+- Master node CPU usage, metric name: `MasterCPUUtilization`
 - Helps identify processing load and potential performance bottlenecks
 
 #### Memory Pressure
-- JVM Memory Pressure
-- Old Generation JVM Memory Pressure
-- Master Node Memory Pressure
+- JVM Memory Pressure, metric name: `JVMMemoryPressure`
+- Old Generation JVM Memory Pressure, metric name: `OldGenJVMMemoryPressure`
+- Master Node Memory Pressure, metric name: `MasterJVMMemoryPressure`
+- Old Generation Master Node Memory Pressure, metric name: `MasterOldGenJVMMemoryPressure`
 - Monitors memory consumption and potential memory-related issues
 
 ### Storage and Capacity Metrics
 
-#### Free Storage Space
+#### Free Storage Space, metric name: `FreeStorageSpace`
 - Available storage in gigabytes
 - Helps track storage capacity and plan for scaling
 
 ### Threadpool Performance
 
 #### Write Queue Metrics
-- Write Queue Count
-- Write Queue Rejected Requests
+- Write Queue Count, metric name: `ThreadpoolWriteQueue`
+- Write Queue Rejected Requests, metric name: `ThreadpoolWriteRejected`
 
 #### Search Queue Metrics
-- Search Queue Count
-- Search Queue Rejected Requests
+- Search Queue Count, metric name: `ThreadpoolSearchQueue`
+- Search Queue Rejected Requests, metric name: `ThreadpoolSearchRejected`
 - Monitors background processing and potential system overload
 
 ## Using the Services - S3 Dashboard
