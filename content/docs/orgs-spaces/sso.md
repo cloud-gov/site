@@ -1,5 +1,6 @@
 ---
 parent: orgs-spaces
+showInSidenav: true
 title: Single Sign-On Integration
 ---
 

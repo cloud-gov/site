@@ -1,5 +1,6 @@
 ---
 parent: orgs-spaces
+showInSidenav: true
 title: Create a new org
 ---
 
