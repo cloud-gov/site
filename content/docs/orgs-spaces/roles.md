@@ -1,5 +1,6 @@
 ---
 parent: orgs-spaces
+showInSidenav: true
 redirect_from:
   - /docs/apps/managing-teammates/
   - /docs/management/managing-teammates/
