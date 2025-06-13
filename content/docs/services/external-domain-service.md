@@ -7,24 +7,33 @@ status: "Production Ready"
 showInSidenav: true
 ---
 
-This service provides three different plans allowing you to use custom domains for your apps running on cloud.gov.
+This service provides four different plans allowing you to use custom domains for your apps running on cloud.gov.
 
 All plans offer:
 
 1. Custom domain support, so that your application can have your domain instead of the default `*.app.cloud.gov` domain.
 1. HTTPS support via free TLS certificates with auto-renewal (using [Let's Encrypt](https://letsencrypt.org/)), so that user traffic is encrypted.
 
-The `domain-with-cdn` plan also provides Content Distribution Network (CDN) caching (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)) for fast delivery of content to your users.
-
-The `domain-with-org-lb` plan offers load balancers dedicated to your Cloud.gov organization. This plan is not enabled by default for all organizations. Please contact [**{{site.support_email_address}}**]({{site.support_email}}) if you are interested in using the `domain-with-org-lb` plan for your Cloud.gov organization.
-
 ## Plans
 
 | Plan Name            | Plan Description                                                                      |
 | -------------------- | ------------------------------------------------------------------------------------- |
-| `domain`             | Custom domain with automatically renewing ssl certificate.                            |
-| `domain-with-cdn`    | Caching distributed CDN with custom domain and automatically renewing ssl certificate |
+| `domain`             | Custom domain                       |
+| `domain-with-cdn`    | CDN with custom domain  |
 | `domain-with-org-lb` | Custom domain on a load balancer dedicated to your Cloud.gov organization             |
+| `domain-with-cdn-dedicated-waf` | CDN with custom domain and a dedicated WAF web ACL       |
+
+The `domain-with-org-lb` plan offers load balancers dedicated to your Cloud.gov organization.
+
+The `domain-with-cdn` and `domain-with-cdn-dedicated-waf` plans provide a Content Distribution Network (CDN) which leverages caching and distributed edge locations (using [AWS CloudFront](https://aws.amazon.com/cloudfront/)) for fast delivery of content to your users.
+
+In addition to a CDN for your custom domain, the `domain-with-cdn-dedicated-waf` plan also includes:
+
+- A dedicated [WAF web ACL](https://docs.aws.amazon.com/waf/latest/developerguide/how-aws-waf-works.html) for your CDN
+- Alerts on DDoS attacks against your domain
+- Alerts for any detected downtime on your domain
+
+The `domain-with-cdn-dedicated-waf` and `domain-with-org-lb` plans are not enabled by default for all organizations. Please contact [**{{site.support_email_address}}**]({{site.support_email}}) if you are interested in using these plans for your Cloud.gov organization.
 
 ### domain plan
 
@@ -139,6 +148,25 @@ Please note that while the [AWS documentation on managed origin request policies
 ```shell
 cf create-service external-domain domain-with-cdn \
     -c '{"origin_request_policy": "Managed-AllViewer"}'
+```
+
+### domain-with-cdn-dedicated-waf plan
+
+> Note: All of the parameters for the `domain-with-cdn` plan are applicable to this plan as well, in addition to the ones listed below
+
+| Name              | Required   | Description                                   | Example                                                                   |
+| ----------------- | ---------- | --------------------------------------------- | -------------------------------------------------------------------------------- |
+| `alarm_notification_email`         | _Required_ | An email to receive notifications sent by the broker          | `email@agency.gov` |
+
+#### `alarm_notification_email` parameter
+
+This parameter specifies the email address that will receive any notifications sent by the broker for detected DDoS attacks against your domain or detected downtime for your domain.
+
+To create an instance of the service with this parameter:
+
+```shell
+cf create-service external-domain domain-with-cdn-dedicated-waf my-cdn \
+    -c '{"domains": "example.gov,www.example.gov", "alarm_notification_email": "email@agency.gov"}'
 ```
 
 ## How to create an instance of this service
