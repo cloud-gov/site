@@ -1,7 +1,7 @@
 ---
 layout: layouts/post
 title: "End-of-life for CloudFoundry API v2"
-date: "2025-01-07"
+date: 2025-01-07
 excerpt: "You may need to update versions of the CF CLI, terraform, and some other tools to support v3"
 ---
 
@@ -63,6 +63,8 @@ versions, if applicable:
 
 ## Deprecation timeline
 
+**Update 2025-06-17: This deprecation timeline is no longer in effect. See [V2 API end-of-life delayed][eol_delay]**
+
 - January 2025: Cloud.gov will start publishing statistics on usage of `v2` vs `v3` endpoints to track progress to decommissioning.
   - v2 CF CLI clients will trigger an alert that they need updating.
 - February 2025: Cloud.gov will publish our v2 "brownout" schedule. Brownouts are when we intentionally disable the
@@ -76,3 +78,7 @@ The Cloud.gov team may accelerate this schedule if v2 usage has ceased, or if ma
 ## Updates
 
 Updates to this page, or links to additional documentation will be listed below:
+
+* 2025-06-18: See [V2 API end-of-life delayed][eol_delay]
+
+[eol_delay]: {{ site.baseurl }}/2025/06/17/v2api-eol-delay
