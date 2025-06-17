@@ -63,7 +63,7 @@ versions, if applicable:
 
 ## Deprecation timeline
 
-**Update 2025-06-17: This deprecation timeline is no longer in effect. See [V2 API end-of-life delayed][eol_delay]
+**Update 2025-06-17: This deprecation timeline is no longer in effect. See [V2 API end-of-life delayed][eol_delay]**
 
 - January 2025: Cloud.gov will start publishing statistics on usage of `v2` vs `v3` endpoints to track progress to decommissioning.
   - v2 CF CLI clients will trigger an alert that they need updating.
@@ -81,4 +81,4 @@ Updates to this page, or links to additional documentation will be listed below:
 
 * 2025-06-18: See [V2 API end-of-life delayed][eol_delay]
 
-[eol_delay]: /2025-06-18/v2-eol-delay
+[eol_delay]: {{ site.baseurl }}/2025-06-18/v2-eol-delay
