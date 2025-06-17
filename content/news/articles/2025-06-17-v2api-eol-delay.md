@@ -1,7 +1,7 @@
 ---
 layout: layouts/post
 title: "Delaying end-of-life for CloudFoundry API v2"
-date: 2025-06-18
+date: 2025-06-17
 excerpt: "Cloud.gov customers will have until September to complete their transition"
 ---
 
