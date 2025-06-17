@@ -81,4 +81,4 @@ Updates to this page, or links to additional documentation will be listed below:
 
 * 2025-06-18: See [V2 API end-of-life delayed][eol_delay]
 
-[eol_delay]: {{ site.baseurl }}/2025-06-17/v2api-eol-delay
+[eol_delay]: {{ site.baseurl }}/2025/06/17/v2api-eol-delay
