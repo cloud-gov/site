@@ -18,9 +18,10 @@ Plan Name | Description | Cloud Foundry Role
 `space-deployer` | A service account for continuous deployment, initially limited to a single space | SpaceDeveloper | 
 `space-auditor` | A service account for auditing configuration and monitoring events, initially limited to a single space | SpaceAuditor |
 
-The `space-deployer` service account is assigned the `SpaceDeveloper` role in the space (pushing apps, provisioning
-services, etc). 
+The `space-deployer` service account is assigned the `SpaceDeveloper` role in the space (pushing apps, provisioning services, etc). 
+
 The `space-auditor` service account is assigned the `SpaceAuditor` role in the space (read-only access).
+
 For details on the capabilities associated with the SpaceDeveloper and SpaceAuditor roles, please see the Cloud Foundry
 documentation: https://docs.cloudfoundry.org/concepts/roles.html.
 
