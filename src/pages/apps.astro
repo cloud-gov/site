@@ -1,0 +1,182 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Topics from "../components/Topics.astro";
+import Tiles from "../components/Tiles.astro";
+import CTA from "../components/CTA.astro";
+
+const hero = {
+  heading: "Modern Application Hosting for Government",
+  intro:
+    "Government software projects often feel like **a marathon of challenges**—instead of building services, you’re navigating procurement and security.",
+  align: "center",
+  buttons: [
+    { label: "Get a free sandbox", url: "/sign-up" },
+    { label: "Connect with our team", url: "/demo", variant: "outline" },
+  ],
+};
+
+const moreWithLess = {
+  heading: "Built to help federal software and IT teams achieve more with less",
+  intro: `
+Government software projects often feel like running a marathon of challenges you never signed up for: navigating contracts, managing compliance, and keeping systems current—instead of focusing on the work that actually matters.
+
+From purchasing to production operations, we simplify cloud infrastructure acquisition, management, and security so your team can stay focused on delivering services, not managing servers.
+  `,
+  items: [
+    {
+      heading: "Inherited security controls for easy ATOs",
+      text: "Cloud.gov is FedRAMP Moderate Authorized, which means it complies with federal security requirements. When you build on Cloud.gov, you leverage our compliance practices and reduce the amount of work you need to do.",
+      link: {
+        label: "Our cybersecurity practices",
+        url: "/security",
+      },
+      icon: "check_circle",
+    },
+    {
+      heading: "Acquire cloud services faster",
+      text: "We partner with your team using a straightforward Interagency Agreement (IAA) with GSA. By selecting a flexible pricing tier, you can choose the cloud services that meet the needs of your agency’s digital initiatives.",
+      link: {
+        label: "Faster and easier cloud purchasing",
+        url: "/pricing",
+      },
+      icon: "check_circle",
+    },
+  ],
+};
+
+const whatYouGet = {
+  heading: "What you get on Cloud.gov",
+  intro:
+    "We support the platform—you own the application. As a Cloud.gov customer, you have everything you need to define the deployment workflows, application logic, and data handling that works for you.",
+  items: [
+    {
+      heading: "Self-service resource management, your way",
+      text: "Scale services, add memory, and manage apps via CLI, API, or dashboard—no tickets, no wait.",
+    },
+    {
+      heading: "Your team’s identity and access management",
+      text: "Integrate with your agency’s login system to manage who can deploy, edit, or view.",
+    },
+    {
+      heading: "Shared services, not shared headaches",
+      text: "PostgreSQL, MySQL, Redis, Elasticsearch, S3, and more. Provision databases, storage, and more in minutes, without separate contracts.",
+    },
+    {
+      heading: "Language & runtime support",
+      text: "Deploy full-stack applications in the language your team already knows: Python, .NET Core, PHP, Node.js, Ruby, Java, Go, and more.",
+    },
+    {
+      heading: "In-house Helpdesk & Office Hours",
+      text: "Chat, email, or drop into weekly office hours to talk with our in-house engineers.",
+    },
+    {
+      heading: "Built-in logging and metrics",
+      text: "App logs and platform metrics are available out of the box. Stream them in real time or export as needed for audits and analysis.",
+    },
+    {
+      heading: "Browser or terminal—your choice",
+      text: "Review logs, manage apps, and adjust settings however your team members prefer to work.",
+    },
+    {
+      heading: "Easy invoicing",
+      text: "Simple government-to-government billing through an Interagency agreement with GSA.",
+    },
+  ],
+  outro: `Want full tech specs? [View all supported languages and services on docs.cloud.gov](https://docs.cloud.gov/)`,
+};
+
+const whatYouCanBuild = {
+  heading: "What you can build with us",
+  intro:
+    "Whether you're modernizing legacy tools, launching a new citizen-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.",
+  items: [
+    {
+      heading: "Internal tools & forms",
+      text: "Interfaces, workflows, and approval systems built for federal teams.",
+      icon: "check_circle",
+    },
+    {
+      heading: "Full stack web applications",
+      text: "Deploy apps built with the stack you know best—Java, Python, Node.js, Ruby, and more.",
+      icon: "check_circle",
+    },
+    {
+      heading: "ETL pipelines & dashboards",
+      text: "Visualizations that tell your program's story—publicly or privately.",
+      icon: "check_circle",
+    },
+    {
+      heading: "Integrations and APIs",
+      text: "Lightweight data layers that power other services or agencies.",
+      icon: "check_circle",
+    },
+
+    {
+      heading: "Dynamic websites",
+      text: "Sites powered by tools like Drupal and WordPress that rely on databases, user roles, and frequent updates",
+      icon: "check_circle",
+    },
+    {
+      heading: "Budget management",
+      text: "Track spend, usage, or application metrics in real time.",
+      icon: "check_circle",
+    },
+  ],
+};
+
+const noRFP = {
+  heading: "Top-tier cloud services without an RFP",
+  text: "Forget months-long vendor negotiations and complex Request for Proposal (RFP) processes. As a federal team within GSA, we've redesigned procurement to work the way government actually works.",
+  buttons: [{ label: "See our pricing", url: "/pricing" }],
+};
+
+const otherOfferings = {
+  heading: "More of what we offer",
+  intro:
+    "Whether you are looking to stand up a new federal website or deploy your software securely, we have the tools to help. See more of what we offer:",
+  items: [
+    {
+      heading: "Compliant federal public websites",
+      text: "Easily publish accessible, fast, and federally compliant websites.",
+      link: {
+        label: "Learn about Cloud.gov Pages",
+        url: "/pages",
+      },
+    },
+    {
+      heading: "DevSecOps workspaces for federal teams",
+      text: "A Secure GitLab environment with quicker setup and deployment tools.",
+      link: {
+        label: "Learn about Cloud.gov Workshop",
+        url: "/workshop",
+      },
+    },
+  ],
+};
+
+const tryItYourself = {
+  heading: "Try it for yourself",
+  heading_level: "h3",
+  align: "center",
+  background: "base-lightest",
+  text: "We offer a free, no-strings-attached sandbox environment for federal staff and contractors. Test deployments, evaluate fit, and explore how Cloud​.​gov supports your workflows.",
+  buttons: [
+    { label: "Connect with our team", url: "/demo", variant: "outline" },
+    { label: "Get a free sandbox", url: "/sign-up" },
+  ],
+};
+---
+
+<Layout>
+  <Hero {...hero} />
+  <Topics {...moreWithLess} />
+  <hr />
+  <Tiles {...whatYouCanBuild} />
+  <CTA {...tryItYourself} />
+  <Topics {...whatYouGet} />
+  <hr />
+  <CTA {...noRFP} />
+  <hr />
+  <Tiles {...otherOfferings} />
+</Layout>

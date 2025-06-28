@@ -1,0 +1,29 @@
+// Styles the USWDS using our tokens
+@use './uswds-tokens.scss';
+
+// gives you access to functions from USWDS
+@use "@uswds/uswds/packages/uswds-core" as *;
+
+.usa-button {
+  -webkit-font-smoothing: antialiased;
+}
+
+.usa-button.usa-button--outline {
+  background-color: #fff;
+}
+
+@media (min-width: 40em) {
+  .usa-section {
+      padding-bottom: 4rem;
+      padding-top: 3rem;
+  }
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: color("base-light");
+  margin-top: units(3);
+  margin-bottom: units(3);
+
+}

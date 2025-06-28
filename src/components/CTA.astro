@@ -1,0 +1,44 @@
+---
+import Markdown from "./Markdown.astro";
+
+interface Button {
+  label: string;
+  url: string;
+  variant?: string;
+}
+
+export interface Props {
+  heading: string;
+  heading_level?: "h2" | "h3" | "h4" | "h5";
+  text?: string;
+  align?: "left" | "center";
+  buttons?: Button[];
+  background: string;
+}
+
+const { heading, heading_level = "h2", text, align = "left", buttons = [], background = "white" } = Astro.props;
+
+const HeadingTag = heading_level;
+---
+
+<section class={`bg-${background} padding-y-6 text-${align}`}>
+  <div class="grid-container">
+    <div class="grid-row">
+      <div class="grid-col-12">
+        {heading && <HeadingTag class="font-heading-xl margin-bottom-2">{heading}</HeadingTag>}
+        {text && <Markdown content={text} classes="font-sans-lg line-height-sans-5 margin-bottom-3" />}
+        {
+          buttons.length > 0 && (
+            <div class={`usa-button-group margin-top-2 ${align === "center" ? "flex-justify-center" : ""}`}>
+              {buttons.map((btn) => (
+                <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""}`}>
+                  {btn.label}
+                </a>
+              ))}
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

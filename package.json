@@ -1,0 +1,28 @@
+{
+  "name": "astro-site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "npm run copy:uswds && concurrently \"npm run watch:uswds\" \"astro dev\"",
+    "build": "npm run build:uswds && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "federalist": "npm run build",
+    "copy:uswds": "mkdir -p public/assets/uswds/fonts public/assets/uswds/img && cp -R node_modules/@uswds/uswds/dist/fonts/* public/assets/uswds/fonts/ && cp -R node_modules/@uswds/uswds/dist/img/* public/assets/uswds/img/",
+    "build:uswds": "npm run copy:uswds && sass --load-path=node_modules --load-path=node_modules/@uswds/uswds/packages src/styles/uswds-theme.scss public/styles/uswds-theme.css --quiet-deps ",
+    "watch:uswds": "sass --watch --load-path=node_modules --load-path=node_modules/@uswds/uswds/packages src/styles/uswds-theme.scss:public/styles/uswds-theme.css --quiet-deps "
+  },
+  "dependencies": {
+    "astro": "^5.10.1",
+    "lit": "^3.3.0",
+    "rollup-plugin-copy": "^3.5.0"
+  },
+  "devDependencies": {
+    "@astrojs/mdx": "^4.3.0",
+    "@types/markdown-it": "^14.1.2",
+    "@uswds/uswds": "^3.13.0",
+    "concurrently": "^9.2.0",
+    "markdown-it": "^14.1.0",
+    "sass": "^1.89.2"
+  }
+}
