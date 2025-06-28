@@ -16,6 +16,12 @@ import { headerProps } from "../data/header";
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="preload"
+      href={`${Astro.site}/styles/uswds-theme.css`}
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
   </head>
   <body>
     <script src="@uswds/uswds/components/usa-banner"></script>
@@ -31,8 +37,6 @@ import { headerProps } from "../data/header";
     />
 
     <slot />
-    <link rel="stylesheet" href={`${Astro.site}/styles/uswds-theme.css`} />
-
     <script>
       import "@uswds/uswds";
     </script>
