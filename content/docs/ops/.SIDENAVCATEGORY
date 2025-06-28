@@ -1,5 +1,0 @@
-module.exports = {
-  name: "Team documentation",
-  icon: "build",
-  weight: 60
-}

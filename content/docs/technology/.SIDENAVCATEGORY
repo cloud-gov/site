@@ -1,5 +1,0 @@
-module.exports = {
-  name: "Technology and security",
-  icon: "lock",
-  weight: 5
-}
