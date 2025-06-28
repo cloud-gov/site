@@ -1,0 +1,97 @@
+title: Get Started with Cloud.gov  
+description: Ready to launch? Request access to Cloud.gov and start building secure, compliant sites and apps today.
+
+hero:
+  heading: "Try Cloud.gov for free"
+  intro: |
+    Have a .gov or .mil? You’re invited!
+  art: "trial"
+  color: "primary"
+  buttons:
+    - label: "Connect with our team"
+      url: "contact"
+      variant: "outline"
+    - label: "Create a Cloud.gov account"
+      url: "https://account.fr.cloud.gov/signup"
+
+kickTires:
+  heading: "Go ahead, kick the tires"
+  intro: |
+    If you’re a federal employee or contractor with an email ending in .mil, .gov, or .fed.us, you’re eligible for a free sandbox space. [Register now](https://account.fr.cloud.gov/signup) with your government email and a device with Multi-Factor Authentication (MFA).
+
+    Your Cloud.gov account grants you access to a sandbox organization and space within the Cloud.gov ecosystem. From there, you can:
+  items:
+    - heading: "**Experiment with the CLI**"
+      text: "Dive right in with extensive self-documentation and community plugins"
+    - heading: "**Deploy a demo app or two**"
+      text: "You can use [one of these sample apps]() or your own code."
+    - heading: "**Create some services**"
+      text: "Create and bind a PostgreSQL or MySQL database instance for free"
+    - heading: "**Review app logs**"
+      text: "Diagnose performance and troubleshoot issues instantly."
+    - heading: "**Invite a teammate**"
+      text: "Collaborate by assigning another user the “space developer” role easily"
+    - heading: "**Check out the console**"
+      text: "Cloud.gov’s dashboard is your mission control for cloud applications."
+  checks: true
+
+
+sandboxLimitations:
+  heading: "Free sandbox limitations"
+  intro: "Your complimentary Cloud.gov sandbox provides you with enough space to prototype your ideas, with clear pathways when your team is ready to scale."
+  color: "white"
+  
+  items:
+    - heading: "1 GB memory cap"
+      text: "In addition, each application instance can utilize up to 7 GB of disk space."
+      icon: "severe_weather"
+    - heading: "Up to 10 brokered services"
+      text: "Experiment with databases, object storage, and more to try out the platform."
+      icon: "update"
+    - heading: "No production domains"
+      text: "Eager to launch? [Reach out to us]() before you go live."
+      icon: "do_not_disturb"
+    - heading: "Limited user roles"
+      text: "No org manager, but you can invite to your space. For team prototyping, consider [a handful of app credits]()."
+      icon: "group_add"
+    - heading: "Agency IDP or Cloud.gov"
+      text: "You can use our IDP as long as your agency hasn’t already integrated with Cloud.gov via SAML or OAuth."
+      icon: "alternate_email"
+    - heading: "90-day persistence"
+      text: "We clear all sandbox contents every 90 days. Don’t worry, we’ll reach out via email at least five days before."
+      icon: "hourglass_empty"
+  outro: "If your team has an idea and a mission, we help you get it live—securely, and in weeks, not quarters."
+
+
+servicesFeature:
+  heading: "What do you want to build today?"
+  intro: |
+    Follow any of the tutorials to launch your own web application from your sandbox. 
+    You’ll need a Cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal.
+  items:
+    - heading: "Try it yourself"
+      text: |
+        Deploy a [sample app](https://docs.cloud.gov/getting-started/code-samples) in minutes using the CLI and built-in buildpacks. Cloud.gov gives you a self-service, API-friendly platform with support for languages like Node.js, Python, Ruby, and Java. 
+        
+         Easily connect to services like PostgreSQL, MySQL, Redis (via ElastiCache), and S3-compatible storage through our service brokers — simple automations that let you provision and bind services with just a CLI command, no ticket required. 
+      mediaComponent: "ServiceLogos"
+      link:
+        label: "Install the CLI"
+        url: "https://docs.cloudfoundry.org/cf-cli/getting-started.html"
+    - heading: "Watch a demo"
+      text: "You can also check out our video tutorials on an [overview of the Cloud.gov PaaS](https://www.youtube.com/watch?v=LKb0liZyepA&feature=emb_logo) (27 mins), a walk through of the [account registration process](https://www.youtube.com/watch?v=ip8G_Rafb_c&feature=emb_logo), (7 mins) and a hands-on [workshop on how to start running applications](https://www.youtube.com/watch?v=G2J8dxSF0-I&feature=emb_logo) (41 mins)"
+      mediaComponent: "Terminal"
+      link:
+        label: "Create a Cloud.gov account"
+        url: "https://account.fr.cloud.gov/"
+  color: "primary-vivid"
+
+
+
+approachIds:
+  - security
+  - pricing
+
+offeringIds:
+  - apps
+  - pages

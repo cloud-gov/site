@@ -1,7 +1,8 @@
 ---
 import Markdown from "./Markdown.astro";
+import PageSection from "./PageSection.astro";
 
-interface Link {
+interface Button {
   label: string;
   url: string;
 }
@@ -10,7 +11,8 @@ interface Item {
   icon?: string;
   heading?: string;
   text?: string;
-  link?: Link;
+  link?: string;
+  button?: Button;
 }
 
 interface Props {
@@ -19,33 +21,39 @@ interface Props {
   outro?: string;
   items?: Item[];
   align?: "center" | "left";
+  id?: string;
+  color?: string;
 }
 
-const { heading, intro, outro, items = [], align = "center" } = Astro.props;
-const justTwo = items.length == 2 ? true : false;
+const { items = [], align = "center", color = "base", ...props } = Astro.props;
 ---
 
-<section class="usa-section">
-  <div class="grid-container">
-    {heading && <h2 class="font-sans-xl margin-bottom-2">{heading}</h2>}
+<PageSection align={align} color={color} {...props}>
+  <div class="tiles">
+    {
+      items.map((item) => {
+        const TileWrapper = item.link ? "a" : "div";
+        const tileWrapperProps = item.link
+          ? {
+              href: item.link,
+              class: `tile__link usa-link--unstyled shadow-1 display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border color bg-white border-base-lighter text-${align}`,
+            }
+          : {
+              class: `display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border color bg-white border-base-lighter text-${align}`,
+            };
 
-    {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-5 margin-bottom-3" inline />}
-
-    <div
-      class={`margin-top-6 grid-row grid-gap-lg ${align === "center" ? "text-center" : ""} ${justTwo ? "flex-justify-center" : ""} `}>
-      {
-        items.map((item) => (
-          <div class="grid-col-12 tablet:grid-col-4 margin-bottom-3">
-            <div class="display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border border-base-light">
+        return (
+          <div class="tile__item">
+            <TileWrapper {...tileWrapperProps}>
               {item.icon && (
                 <span class="margin-bottom-1 display-block">
-                  <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
+                  <svg class="usa-icon usa-icon--size-5 accent" role="img" aria-hidden="true">
                     <use href={`${Astro.site}/assets/uswds/img/sprite.svg#${item.icon}`} />
                   </svg>
                 </span>
               )}
 
-              {item.heading && <h3 class="font-body-lg margin-bottom-1 margin-top-2">{item.heading}</h3>}
+              {item.heading && <h3 class="accent font-body-lg margin-bottom-1 margin-top-2">{item.heading}</h3>}
 
               {item.text && (
                 <Markdown
@@ -55,24 +63,70 @@ const justTwo = items.length == 2 ? true : false;
                 />
               )}
 
-              {item.link && (
+              {item.button && (
                 <div
                   class={`usa-button-group margin-top-2 margin-bottom-0 ${align === "center" ? "flex-justify-center" : ""}`}>
-                  <a class="usa-button usa-button--outline" href={item.link.url}>
-                    {item.link.label}
+                  <a class="usa-button usa-button--outline" href={item.button.url}>
+                    {item.button.label}
                   </a>
                 </div>
               )}
-            </div>
+            </TileWrapper>
           </div>
-        ))
-      }
-    </div>
-
-    {
-      outro && (
-        <Markdown content={outro} classes="margin-top-5 font-sans-md line-height-sans-5 margin-bottom-3" inline />
-      )
+        );
+      })
     }
   </div>
-</section>
+</PageSection>
+<style lang="scss">
+  .tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .tile__item {
+    -webkit-font-smoothing: initial;
+    flex-basis: 100%;
+    max-width: 100%;
+    .border {
+      border-color: var(--section-border, #fff);
+    }
+    .color {
+      color: var(--section-card-text, #333);
+    }
+    .accent {
+      color: var(--section-accent, #333);
+      fill: var(--section-accent, #333);
+    }
+    .tile__link {
+      text-decoration: none;
+      &:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        border-color: var(--theme-color-primary);
+      }
+      &.border {
+        border-color: var(--theme-color-primary-lightest);
+        border-width: 2px;
+        &:hover {
+          border-color: var(--theme-color-primary-vivid);
+        }
+      }
+      .color {
+        color: var(--theme-color-primary, #333);
+      }
+      .accent {
+        color: var(--theme-color-primary, #333);
+        fill: var(--theme-color-primary, #333);
+      }
+    }
+    @media (min-width: 640px) {
+      max-width: 32em;
+    }
+    @media (min-width: 800px) {
+      flex: 1 1 calc(33.333% - 1rem);
+      max-width: calc(33.333% - 1rem);
+    }
+  }
+</style>

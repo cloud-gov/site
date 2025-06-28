@@ -1,0 +1,109 @@
+search:
+  affiliate: "cloud.gov"
+
+meta:
+  title: "Cloud.gov"
+  description: "Cloud.gov helps federal teams deploy secure, compliant web apps and sites quickly."
+
+newsletter:
+  heading: "Keep in touch"
+  intro: "Get release notes, beta invitations, and platform news"
+  account_id: "USGSATTS"
+  category_id: "GSA_CLOUD"
+
+freeSandbox:
+  heading: "Try it for yourself"
+  intro: |
+    We offer a **free, no-strings-attached sandbox environment** for federal staff and contractors.  Test deployments, evaluate fit, and explore how Cloud.gov supports your workflows.
+  align: "left"
+  color: "primary"
+  art: "trial"
+  buttons:
+    - label: "Connect with our team"
+      url: "contact"
+      variant: "outline"
+    - label: "Get a free sandbox"
+      url: "sign-up"
+
+supportTiles:
+  heading: "Our team is here to support yours"
+  intro: "Cloud.gov is developed and maintained by a dedicated federal team within GSA’s Technology Transformation Services."
+  content: "We understand how government operates — because we’re part of it. When you work with us, you're working with a team of engineers, cybersecurity professionals, designers, and technology leaders who understand your constraints, your goals, and your urgency."
+  color: "primary"
+  align: "center"
+  art: "g2g"
+  items:
+    - heading: "Still have questions?"
+      text: "Email [support@cloud.gov](mailto:support@cloud.gov) or drop into weekly office hours to talk with our in-house engineers."
+      icon: "support_agent"
+      button:
+        label: "Get in touch"
+        url: "mailto:support@cloud.gov"
+    - heading: "Check out the docs"
+      text: "Learn more about Cloud.gov's services in our documentation."
+      icon: "bookmark"
+      button:
+        label: "Go to docs.cloud.gov"
+        url: "https://docs.cloud.gov"
+
+ourApproach:
+  heading: "What makes Cloud.gov different?"
+  intro: |
+    Whether you're modernizing existing tools, launching a new public-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.
+  items:
+    - id: "g2g"
+      heading: "Built for gov, by gov"
+      text: "Our infrastructure, pricing, and onboarding are designed specifically for government—so you can focus on delivery, not procurement."
+      link:
+        label: "Our approach"
+        url: ""
+      icon: "verified_user"
+    - id: "pricing"
+      heading: "Easier and faster acquisitions"
+      text: "We partner with your team using a straightforward Interagency Agreement (IAA) with GSA. By selecting a flexible pricing tier, you can choose the cloud services that meet the needs of your agency’s digital initiatives."
+      link:
+        label: "Faster and easier cloud purchasing"
+        url: "pricing"
+      icon: "attach_money"
+    - id: "security"
+      heading: "Easier and faster ATOs"
+      text: "Cloud.gov is FedRAMP Moderate Authorized, which means it complies with federal security requirements. When you build on Cloud.gov, you leverage our compliance practices and reduce the amount of work you need to do."
+      link:
+        label: "Our cybersecurity practices"
+        url: "security"
+      icon: "verified_user"
+
+otherOfferings:
+  heading: "More of what we offer"
+  intro: |
+    Whether you are looking to stand up a new federal website or deploy your software securely, we have the tools to help. See more of what we offer:
+  color: "base"
+  items:
+    - id: "apps"
+      heading: "Modern Application Hosting for Government"
+      text: "Secure, scalable infrastructure without the vendor sprawl"
+      button:
+        label: "Learn about Apps"
+        url: "apps"
+    - id: "pages"
+      heading: "Compliant federal public websites"
+      text: "Easily publish accessible, fast, and federally compliant websites."
+      button:
+        label: "Learn about Pages"
+        url: "pages"
+    - id: "tools"
+      heading: "DevSecOps workspaces for federal teams"
+      text: "A Secure GitLab environment with quicker setup and deployment tools."
+      button:
+        label: "Learn about Workshop"
+        url: "workshop"
+
+serviceLogos:
+  - cloudfront
+  - docker
+  - elasticache
+  - elasticsearch
+  - letsencrypt
+  - rds
+  - route53
+  - s3

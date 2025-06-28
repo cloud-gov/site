@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Tiles from "../components/Tiles.astro";
+import Subscribe from "../components/Subscribe.astro";
+
+import content from "../data/pages/contact.yaml";
+import sitewide from "../data/sitewide.yaml";
+---
+
+<Layout title={content.title} description={content.description}>
+  <Hero {...content.hero} />
+  <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></script><iframe
+    class="airtable-embed airtable-dynamic-height"
+    src="https://airtable.com/embed/appbHJFEYs3H7fmA8/shrNrGC5KQnLgJqWc"
+    frameborder="0"
+    onmousewheel=""
+    width="100%"
+    height="533"
+    style="background: url('./assets/img/loading.gif') no-repeat center 10% white; background-size: 10vw"></iframe>
+  <Tiles {...sitewide.supportTiles} />
+  <Subscribe {...sitewide.newsletter} />
+</Layout>
+
+<style></style>

@@ -1,5 +1,5 @@
 ---
-import Markdown from './Markdown.astro';
+import Markdown from "./Markdown.astro";
 
 interface Button {
   label: string;
@@ -9,44 +9,63 @@ interface Button {
 
 export interface Props {
   heading?: string;
-  align?: 'left' | 'center';
   intro?: string;
+  art?: string;
   buttons?: Button[];
+  color?: string;
+  content?: string;
 }
 
-const {
-  heading,
-  align = 'left',
-  intro,
-  buttons = [],
-} = Astro.props;
+const { heading, intro, buttons = [], color = "white", art, content } = Astro.props;
 ---
 
-<section class={`bg-base-lightest padding-y-6 text-${align}`}>
+<section
+  class={`${art && `section-art section-art--${art}`} bg-${color}-lightest text-base-darkest text-${color}-darkest border-base-lighter border-bottom-1px padding-y-6 text-left`}>
   <div class="grid-container">
     <div class="grid-row">
-      <div class="grid-col-12 tablet:grid-col-10 tablet:grid-offset-1">
-        {heading && (
-          <h1 class="font-sans-3xl text-semibold margin-bottom-4 margin-top-0">
-            {heading}
-          </h1>
-        )}
-        
-        {intro && (
-          <Markdown content={intro} classes="font-sans-lg line-height-sans-5 margin-bottom-3" inline />
-          )}
-        {buttons.length > 0 && (
-          <div class="usa-button-group margin-top-2 flex-justify-center">
-            {buttons.map((btn) => (
-              <a
-                href={btn.url}
-                class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ''}`}
-              >
-                {btn.label}
-              </a>
-            ))}
-          </div>
-        )}
+      <div class="grid-col-12 desktop:grid-col-9">
+        {
+          heading && (
+            <Markdown
+              content={heading}
+              classes="font-sans-xl desktop:font-sans-3xl text-semibold margin-bottom-4 margin-top-0"
+              tag="h1"
+              inline
+            />
+          )
+        }
+
+        {
+          intro && (
+            <Markdown
+              content={intro}
+              classes="text-base font-sans-lg line-height-sans-5 margin-bottom-3 measure-3 text-light"
+              inline
+            />
+          )
+        }
+
+        {
+          content && (
+            <Markdown
+              content={content}
+              classes="top-divider top-divider--center-mobile section__markdown font-body-md line-height-sans-5 measure-5"
+              inline
+            />
+          )
+        }
+        {
+          buttons.length > 0 && (
+            <div class="usa-button-group margin-top-2 flex-justify-center">
+              {buttons.map((btn) => (
+                <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""}`}>
+                  {btn.label}
+                </a>
+              ))}
+            </div>
+          )
+        }
+        <slot />
       </div>
     </div>
   </div>

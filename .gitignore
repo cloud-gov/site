@@ -122,3 +122,4 @@ _site
 /public/assets/uswds/**
 /public/styles/**
 node_modules
+public/data/credits.json

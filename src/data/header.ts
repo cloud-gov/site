@@ -1,27 +1,28 @@
 export const headerProps = {
   logoText: 'Cloud.gov',
-  logoHref: '/',
+  logoUrl: '',
   dropdowns: [
     {
       label: 'Solutions',
       links: [
-        { label: 'Fast & Scalable Federal Apps', href: '/solutions/federal-apps' },
-        { label: 'Federal Public Websites', href: '/solutions/public-websites' },
-        { label: 'Developer Collaboration Tools', href: '/solutions/devtools' }
+        { label: 'Fast & Scalable Federal Apps', url: 'apps' },
+        { label: 'Federal Public Websites', url: 'pages' },
+        { label: 'Developer Collaboration Tools', url: 'workshop' }
       ]
     },
   ],
   navLinks: [
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Security & Compliance', href: '/security' },
+    { label: 'Pricing', url: 'pricing' },
+    { label: 'Security & Compliance', url: 'security' },
   ],
   secondaryLinks: [
-    { label: 'Resources', href: '/resources' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'Status', href: 'https://status.cloud.gov' }
+    { label: 'Support', url: 'support' },
+    { label: 'Contact', url: 'contact' },
+    { label: 'Status', url: 'https://cloudgov.statuspage.io/' }
   ],
   buttonLinks: [
-    { label: 'Sign up', href: '/sign-up' },
-    { label: 'Log in', href: 'https://login.fr.cloud.gov', class: 'outline' }
-  ]
+    { label: 'Get a free sandbox', url: 'sign-up' },
+    { label: 'Log in', url: 'https://login.fr.cloud.gov', class: 'outline' }
+  ],
+  searchPlaceholder: "Search for..."
 };

@@ -1,0 +1,312 @@
+{
+  "services": [
+    {
+      "name": "AWS RDS",
+      "plans": [
+        {
+          "plan": "micro-psql",
+          "instanceClass": "db.t3.micro",
+          "credits": 1
+        },
+        {
+          "plan": "micro-psql-redundant",
+          "instanceClass": "db.t3.micro",
+          "credits": 2
+        },
+        {
+          "plan": "small-psql",
+          "instanceClass": "db.t3.small",
+          "credits": 2
+        },
+        {
+          "plan": "small-psql-redundant",
+          "instanceClass": "db.t3.small",
+          "credits": 4
+        },
+        {
+          "plan": "medium-psql",
+          "instanceClass": "db.t3.medium",
+          "credits": 4
+        },
+        {
+          "plan": "medium-psql-redundant",
+          "instanceClass": "db.t3.medium",
+          "credits": 8
+        },
+        {
+          "plan": "medium-gp-psql",
+          "instanceClass": "db.m5.large",
+          "credits": 10
+        },
+        {
+          "plan": "medium-gp-psql-redundant",
+          "instanceClass": "db.m5.large",
+          "credits": 20
+        },
+        {
+          "plan": "large-gp-psql",
+          "instanceClass": "db.m5.large",
+          "credits": 10
+        },
+        {
+          "plan": "large-gp-psql-redundant",
+          "instanceClass": "db.m5.large",
+          "credits": 20
+        },
+        {
+          "plan": "xlarge-gp-psql",
+          "instanceClass": "db.m5.xlarge",
+          "credits": 20
+        },
+        {
+          "plan": "xlarge-gp-psql-redundant",
+          "instanceClass": "db.m5.xlarge",
+          "credits": 39
+        },
+        {
+          "plan": "2xlarge-gp-psql",
+          "instanceClass": "db.m5.2xlarge",
+          "credits": 39
+        },
+        {
+          "plan": "2xlarge-gp-psql-redundant",
+          "instanceClass": "db.m5.2xlarge",
+          "credits": 78
+        },
+        {
+          "plan": "xlarge-gp-psql-m6",
+          "instanceClass": "db.m6g.xlarge",
+          "credits": 17
+        },
+        {
+          "plan": "xlarge-gp-psql-m6-redundant",
+          "instanceClass": "db.m6g.xlarge",
+          "credits": 34
+        },
+        {
+          "plan": "micro-mysql",
+          "instanceClass": "db.t3.micro",
+          "credits": 1
+        },
+        {
+          "plan": "micro-mysql-redundant",
+          "instanceClass": "db.t3.micro",
+          "credits": 2
+        },
+        {
+          "plan": "small-mysql",
+          "instanceClass": "db.t3.small",
+          "credits": 2
+        },
+        {
+          "plan": "small-mysql-redundant",
+          "instanceClass": "db.t3.small",
+          "credits": 4
+        },
+        {
+          "plan": "medium-mysql",
+          "instanceClass": "db.t3.medium",
+          "credits": 4
+        },
+        {
+          "plan": "medium-mysql-redundant",
+          "instanceClass": "db.t3.medium",
+          "credits": 7
+        },
+        {
+          "plan": "medium-gp-mysql",
+          "instanceClass": "db.m5.large",
+          "credits": 9
+        },
+        {
+          "plan": "medium-gp-mysql-redundant",
+          "instanceClass": "db.m5.large",
+          "credits": 19
+        },
+        {
+          "plan": "large-gp-mysql",
+          "instanceClass": "db.m5.large",
+          "credits": 9
+        },
+        {
+          "plan": "large-gp-mysql-redundant",
+          "instanceClass": "db.m5.large",
+          "credits": 19
+        },
+        {
+          "plan": "xlarge-gp-mysql",
+          "instanceClass": "db.m5.xlarge",
+          "credits": 19
+        },
+        {
+          "plan": "xlarge-gp-mysql-redundant",
+          "instanceClass": "db.m5.xlarge",
+          "credits": 37
+        },
+        {
+          "plan": "medium-oracle-se2",
+          "instanceClass": "db.t3.medium",
+          "credits": 7
+        },
+        {
+          "plan": "large-gp-sqlserver-se",
+          "instanceClass": "db.m5.large",
+          "credits": 46
+        }
+      ]
+    },
+    {
+      "name": "AWS OpenSearch",
+      "plans": [
+        {
+          "plan": "es-dev",
+          "instanceClass": "t3.small.search",
+          "credits": 2
+        },
+        {
+          "plan": "es-medium",
+          "instanceClass": "c5.large.search",
+          "credits": 34
+        },
+        {
+          "plan": "es-medium-ha",
+          "instanceClass": "c5.large.search",
+          "credits": 48
+        },
+        {
+          "plan": "es-large",
+          "instanceClass": "c5.xlarge.search",
+          "credits": 69
+        },
+        {
+          "plan": "es-large-ha",
+          "instanceClass": "c5.xlarge.search",
+          "credits": 96
+        },
+        {
+          "plan": "es-xlarge",
+          "instanceClass": "c5.2xlarge.search",
+          "credits": 137
+        },
+        {
+          "plan": "es-xlarge-ha",
+          "instanceClass": "c5.2xlarge.search",
+          "credits": 192
+        },
+        {
+          "plan": "es-2xlarge-gp",
+          "instanceClass": "m5.2xlarge.search",
+          "credits": 163
+        },
+        {
+          "plan": "es-2xlarge-gp-ha",
+          "instanceClass": "m5.2xlarge.search",
+          "credits": 228
+        },
+        {
+          "plan": "es-4xlarge-gp",
+          "instanceClass": "m5.4xlarge.search",
+          "credits": 326
+        },
+        {
+          "plan": "es-4xlarge-gp-ha",
+          "instanceClass": "m5.4xlarge.search",
+          "credits": 456
+        }
+      ]
+    },
+    {
+      "name": "AWS ElastiCache",
+      "plans": [
+        {
+          "plan": "redis-dev",
+          "instanceClass": "cache.t3.micro",
+          "credits": 1
+        },
+        {
+          "plan": "redis-3node",
+          "instanceClass": "cache.t3.micro",
+          "credits": 2
+        },
+        {
+          "plan": "redis-5node",
+          "instanceClass": "cache.t3.micro",
+          "credits": 4
+        },
+        {
+          "plan": "redis-3node-large",
+          "instanceClass": "cache.t3.small",
+          "credits": 5
+        },
+        {
+          "plan": "redis-5node-large",
+          "instanceClass": "cache.t3.small",
+          "credits": 8
+        }
+      ]
+    },
+    {
+      "name": "App memory",
+      "metered": {
+        "unit": "GB",
+        "unitsPerCredit": 1,
+        "credits": 3
+      }
+    },
+    {
+      "name": "AWS RDS storage",
+      "metered": {
+        "unit": "GB/month",
+        "unitsPerCredit": 100,
+        "credits": 1
+      }
+    },
+    {
+      "name": "AWS OpenSearch storage",
+      "metered": {
+        "unit": "GB/month",
+        "unitsPerCredit": 100,
+        "credits": 1
+      }
+    },
+    {
+      "name": "AWS S3 storage",
+      "metered": {
+        "unit": "GB/month",
+        "unitsPerCredit": 400,
+        "credits": 1
+      }
+    },
+    {
+      "name": "AWS SES (Emails)",
+      "metered": {
+        "unit": "emails sent",
+        "unitsPerCredit": 150000,
+        "credits": 1
+      }
+    },
+    {
+      "name": "AWS SES (Attachments)",
+      "metered": {
+        "unit": "GB",
+        "unitsPerCredit": 120,
+        "credits": 1
+      }
+    },
+    {
+      "name": "Autoscaler",
+      "free": true,
+      "credits": 0
+    },
+    {
+      "name": "External Domain",
+      "free": true,
+      "credits": 0
+    },
+    {
+      "name": "UAA Service Account",
+      "free": true,
+      "credits": 0
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+---
+import Markdown from "./Markdown.astro";
+import ServiceLogos from "./media/ServiceLogos.astro";
+import Terminal from "./media/Terminal.astro";
+
+interface Link {
+  label: string;
+  url: string;
+}
+
+interface Item {
+  heading?: string;
+  text?: string;
+  link?: Link;
+  mediaComponent?: "ServiceLogos" | "Terminal";
+}
+interface Props {
+  heading?: string;
+  intro?: string;
+  outro?: string;
+  items?: Item[];
+  id?: string;
+  color?: string;
+  align?: "center" | "left";
+}
+
+const { heading = false, intro = false, outro = false, color = "white", items = [], id } = Astro.props;
+---
+
+<section {...id && { id }} class={`usa-section section section--${color}`}>
+  <div class="section__container">
+    <div class="section__intro margin-bottom-4 maxw-tablet-lg">
+      {heading && <h2 class="font-sans-2xl margin-bottom-2">{heading}</h2>}
+
+      {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-4" inline />}
+    </div>
+    {
+      items.map((item, index) => (
+        <div class="section__item" {...(index % 2 === 1 && { "data-odd": "" })}>
+          <div class="section__text top-divider top-divider--center-mobile">
+            {item.heading && <h3 class="font-body-xl text-medium">{item.heading}</h3>}
+
+            {item.text && (
+              <Markdown content={item.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
+            )}
+
+            {item.link && (
+              <div class="margin-top-2 margin-bottom-0">
+                <a class="usa-button usa-button--inverse" href={item.link.url}>
+                  {item.link.label}
+                </a>
+              </div>
+            )}
+          </div>
+          <div class="section__media">
+            {item.mediaComponent === "ServiceLogos" && <ServiceLogos />}
+            {item.mediaComponent === "Terminal" && <Terminal />}
+          </div>
+        </div>
+      ))
+    }
+
+    {
+      outro && (
+        <div class="section__outro">
+          <Markdown content={outro} classes="margin-top-2 font-sans-lg line-height-sans-4 margin-bottom-0" inline />
+        </div>
+      )
+    }
+  </div>
+</section>

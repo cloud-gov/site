@@ -1,16 +1,141 @@
 // Styles the USWDS using our tokens
 @use './uswds-tokens.scss';
-
+@use './variables';
 // gives you access to functions from USWDS
 @use "@uswds/uswds/packages/uswds-core" as *;
+// centralizes common page styles using css variables
+@use './pageSection';
 
-.usa-button {
+h1, h2, h3, h4, h5, p, li {
+  text-wrap: pretty;
+}
+h2 {
+  font-weight: 600;
+}
+ul li, ol li {
+  margin-bottom: 1rem;
+}
+
+.text-white {
   -webkit-font-smoothing: antialiased;
 }
 
-.usa-button.usa-button--outline {
-  background-color: #fff;
+.usa-button:not(input) {
+  padding: units(2) units(3);
 }
+.usa-button {
+  -webkit-font-smoothing: antialiased;
+  font-size: font-size($theme-button-font-family, "md");
+  font-weight: font-weight(500);
+ 
+  &.usa-button--outline {
+    background-color: #fff;
+    -webkit-font-smoothing: inherit;
+  }
+
+  &.usa-button--in-nav {
+    font-size: font-size($theme-button-font-family, "xs");
+    font-weight: font-weight(500);
+    padding: units(1) units(1.5);
+    @media (min-width: 64em) {
+      padding: units(1.5) units(2);
+    }
+  }
+}
+
+// rework nav to put buttons in top right
+
+@media (min-width: 64em) and (max-width: 74.99em) {
+  .usa-header--extended .usa-nav__inner {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .usa-header {
+    padding-bottom: 0.25rem;
+
+    [type=search] {
+      min-width: 21.4ch;
+      border-color: color("base-light");
+      &::placeholder {
+        font-style: italic;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .usa-header--extended {
+    .usa-navbar {
+      position: relative;
+    }
+    .usa-navbar-button-group {
+      position: absolute;
+      right: 1.5rem;
+      bottom: 0;
+    }
+
+    .usa-nav {
+      border-top-width: 0;
+    }
+    .usa-nav__primary {
+      padding: 0 0 .25rem;
+    }
+    .usa-nav__primary > .usa-nav__primary-item,
+    .usa-nav__primary button {
+      font-size: 1.05rem;
+      font-weight: 700;
+      -webkit-font-smoothing: antialiased;
+    }
+    .usa-nav__submenu .usa-nav__submenu-item a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+    }
+    .usa-nav__submenu {
+      width: 20rem;
+    }
+    .usa-nav__primary-item {
+      position: relative;
+      bottom: -0.5rem;
+    }
+    .usa-nav__secondary {
+      bottom: 0.5rem;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 0;
+    }
+    .usa-nav__secondary-links {
+      margin: auto 1rem;
+      padding-top: 2px;
+      a {
+        color: color("base");
+      }
+    }
+    .usa-nav__secondary .usa-search {
+      margin-top: 0;
+    }
+    .usa-logo {
+      margin: 1rem 0 0.5rem 0rem;
+    }
+  }
+
+}
+
+.usa-footer__nav {
+  @media (min-width: 480px) and (max-width:1023px) {
+    text-align: center !important;
+    .usa-footer__primary-link {
+      justify-content: center !important;
+    }
+    .footer-logo img {
+      margin: 0 auto 1rem;
+      }
+  }
+}
+
 
 @media (min-width: 40em) {
   .usa-section {
@@ -23,7 +148,220 @@ hr {
   border: 0;
   height: 1px;
   background-color: color("base-light");
-  margin-top: units(3);
-  margin-bottom: units(3);
+  margin: 0;
 
+}
+
+$theme-footer-link-color: 'blue-warm-10v';
+$footer-context: "Footer";
+$theme-footer-background-color: "primary";
+
+@mixin footer-secondary-link {
+  @include set-link-from-bg(
+    $theme-footer-background-color,
+    $theme-footer-link-color,
+    $context: $footer-context
+  );
+}
+
+
+.usa-footer__secondary-section {
+  @include set-text-and-bg(
+    $theme-footer-background-color,
+    $context: $footer-context
+  );
+  color: color("white");
+  a {
+    @include footer-secondary-link;
+  }
+}
+.usa-identifier {
+  -webkit-font-smoothing: antialiased;
+  filter: saturate(0.9);
+  color: color("white")
+}
+
+.usa-process-list > .usa-process-list__item {
+  max-width: unset;
+}
+
+.usa-process-list.checks {
+  -webkit-font-smoothing: antialiased;
+  .usa-process-list__item {
+    position: relative;
+    padding-bottom: 1.5rem;
+    border-color: color("base-lightest");
+    &::before {
+      border-radius: 0;
+      content: "";
+      @include u-square(3);
+      left: -1rem;
+      margin-top: -2px;
+      border-width: 2px;
+      box-shadow: 0 0 0 units($theme-process-list-counter-gap-width) color("base-lightest");
+    }
+    &::after {
+      content: "";
+      position:absolute;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      height: 2.25rem;
+      width: 2.25rem;
+      left: -1rem;
+      top: -0.8rem;
+      line-height: 1;
+      mask: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iYmxhY2siIGQ9Ik05IDE2LjE3TDQuODMgMTIgMy40MSAxMy40MSA5IDE5IDIxIDcgMTkuNTkgNS41OXoiLz48L3N2Zz4=") no-repeat center;
+      background-color: color($theme-color-secondary);
+    }
+    &:last-child .usa-process-list__heading:after {
+      border-bottom: none;
+    }
+  }
+  .usa-process-list__heading {
+    font-size: font-size($theme-body-font-family, "md");
+    font-weight: font-weight(500);
+    line-height: 1.3;
+    &::after {
+      content: "";
+      position:absolute;
+      border-bottom: 1px solid color($theme-color-base-light);
+      width: 100%;
+      left: -1rem;
+      bottom: .75rem;
+    }
+    b, strong {
+      font-weight: font-weight(700);
+    }
+  }
+  .usa-process-list__text {
+    font-weight: font-weight(500);
+
+  }
+
+}
+
+
+.top-divider {
+  padding-top: 3rem;
+  position: relative;
+  &:before {
+    position: absolute;
+    top: calc(1.5rem - 3px);
+    height: 0;
+    width: 10ch;
+    display: inline-block;
+    content: "";
+    border-top: 3px solid color($theme-color-base-lighter);
+  }
+  &:has(.usa-icon):before {
+    left: 3rem;
+  }
+  &.top-divider--center-mobile::before {
+    @media (max-width: 799px) {
+      display: block;
+      position: relative;
+      top: - 1.5rem;
+
+    }
+  }
+}
+
+.pricing-table {
+  -webkit-font-smoothing:antialiased;
+  thead {
+    th {
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      background-color: color("blue-cool-60");
+      border-color: color("blue-cool-70");
+      color: white;
+      border-bottom-width: 0;
+    }
+  }
+  th, td {
+    border-style: solid;
+    border-top-width: 0;
+    padding: .35rem .75rem;
+    &[rowspan] {
+      border-left-width: 1px;
+    }
+  }
+  .pricing-for {
+
+    &--1 {
+      td, th {      
+        color: color("blue-cool-80");
+        background-color: color("blue-cool-5");
+        border-color: color("blue-cool-20");
+      }
+    }
+    &--2 {
+      td, th {      
+        color: color("blue-cool-80");
+        background-color: color("blue-cool-10");
+        border-color: color("blue-cool-20");
+      }
+    }
+    &--3 {
+      td, th {    
+        color: color("blue-cool-80");
+        background-color: color("blue-cool-20");
+        border-color: color("blue-cool-30");
+      }
+    }
+    &--4 {
+      td, th {      
+        color: white;
+        background-color: color("blue-cool-50");
+        border-color: color("blue-cool-40");
+      }
+    }
+    &--5 {
+      td, th {      
+        color: white;
+        background-color: color("blue-cool-60");
+        border-color: color("blue-cool-40");
+      }
+    }
+  }
+  // show colspan on narrow widths, rowspan when there's room
+  // rowspan no, colspan yes
+  td[rowspan] {
+    display: none;
+  }
+  th[colspan] {
+    display: table-cell;
+    padding: .65rem .75rem;
+    font-weight: 400;
+    border-top-width: 4px;
+  }
+  // rowspan yes, colspan no
+  @media (min-width: 640px) and (max-width: 1023px) {
+    td[rowspan] {
+      display: table-cell;
+    }
+    th[colspan] {
+      display: none;
+    }
+  }
+  // rowspan no, colspan yes
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    td[rowspan] {
+      display: none;
+    }
+    th[colspan] {
+      display: table-cell;
+    }
+  }
+    // rowspan yes, colspan no
+    @media (min-width: 1200px) {
+      td[rowspan] {
+        display: table-cell;
+      }
+      th[colspan] {
+        display: none;
+      }
+    }
 }

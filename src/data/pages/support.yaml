@@ -1,0 +1,59 @@
+title: Support
+description: Get help using Cloud.gov. Open a ticket, access onboarding resources, and find answers to common questions.
+
+
+hero:
+  heading: "How can we help?"
+  color: "primary"
+  art: "support"
+
+productDocs:
+  heading: "Looking for documentation?"
+  intro: "We gave our docs a new home—and maybe moved the thing you were looking for. Let’s get you back on track."
+  color: "transparent"
+  align: "left"
+  items:
+    - heading: "Cloud.gov Apps docs"
+      icon: "cloud-apps"
+      link: "https://docs.cloud.gov/apps"
+    - heading: "Cloud.gov Pages docs"
+      icon: "cloud-pages"
+      link: "https://docs.cloud.gov/pages"
+    - heading: "Cloud.gov Workshop docs"
+      icon: "cloud-workshop"
+      link: "https://docs.cloud.gov/workshop"
+
+commonSupportTopics:
+  color: white
+  heading: "Common support topics"
+  intro: "Find answers to the most frequently asked questions, including how to deploy, manage access, and stay in compliance. Wherever you're stuck, we're here to help."
+  items:
+    - heading: "Open a ticket"
+      text: "Need help? Email **support@cloud.gov** to open a support ticket in our help desk."
+      icon: "support_agent"
+      link: "mailto:support@cloud.gov"
+
+    - heading: "Onboarding"
+      text: "Follow our step-by-step onboarding guides to set up accounts, permissions, and projects."
+      icon: "login"
+      link: "#"
+
+    - heading: "Report an issue"
+      text: "Let us know if something isn’t working as expected and we’ll investigate promptly."
+      icon: "bug_report"
+      link: "#"
+
+    - heading: "Billing and procurement"
+      text: "Get help with pricing, billing questions, and purchasing Cloud.gov."
+      icon: "topic"
+      link: "#"
+
+    - heading: "ATO and compliance"
+      text: "Use our compliance resources and pre-filled documentation to support your ATO process."
+      icon: "spellcheck"
+      link: "#"
+
+    - heading: "Users and accounts"
+      text: "Learn how to manage user access, credentials, and authentication for your team."
+      icon: "group_add"
+      link: "#"

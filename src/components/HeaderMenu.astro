@@ -1,114 +1,120 @@
 ---
-import closeIcon from '@uswds/uswds/img/usa-icons/close.svg';
-import searchIcon from '@uswds/uswds/img/usa-icons-bg/search--white.svg';
+import closeIcon from "@uswds/uswds/img/usa-icons/close.svg";
+import searchIcon from "@uswds/uswds/img/usa-icons-bg/search--white.svg";
+import logoImg from "../assets/cloud-gov-logo.png";
 
-type NavLink = { label: string; href: string };
-type ButtonLink = { label: string; href: string; class?: string; };
+import sitewide from "../data/sitewide.yaml";
+
+type NavLink = { label: string; url: string };
+type ButtonLink = { label: string; url: string; class?: string };
 type NavSection = { label: string; links: NavLink[] };
 
 interface Props {
   logoText: string;
-  logoHref: string;
-  sections: NavSection[];
+  logoUrl: string;
+  dropdowns: NavSection[];
   navLinks: NavLink[];
   secondaryLinks: NavLink[];
   buttonLinks: ButtonLink[];
+  searchPlaceholder: string;
 }
 
-const { logoText, logoHref, sections, navLinks, secondaryLinks, buttonLinks } = Astro.props;
+const { logoText, logoUrl, dropdowns, navLinks, secondaryLinks, buttonLinks, searchPlaceholder } = Astro.props;
+
+function normalizePath(path: string): string {
+  if (!path.startsWith("/")) path = "/" + path;
+  return path.replace(/\/+$/, ""); // remove trailing slash(es)
+}
 ---
 
 <div class="usa-overlay"></div>
 <header class="usa-header usa-header--extended border-bottom-1px border-base-lighter">
   <div class="usa-navbar">
     <div class="usa-logo">
-      <em class="usa-logo__text">
-        <a href={logoHref} title={logoText}>{logoText}</a>
-      </em>
+      <a href={logoUrl} title={logoText}>
+        <img class="height-5 display-block" src={logoImg.src} alt={logoText} />
+      </a>
+    </div>
+    <div class="display-none tablet:display-block usa-navbar-button-group">
+      {
+        buttonLinks.map((link, index) => (
+          <a href={link.url} class={`usa-button--in-nav usa-button${link.class ? ` usa-button--${link.class}` : ""}`}>
+            {link.label}
+          </a>
+        ))
+      }
     </div>
     <button type="button" class="usa-menu-btn">Menu</button>
   </div>
 
-  <nav aria-label="Primary navigation" class="usa-nav ">
+  <nav aria-label="Primary navigation" class="usa-nav">
     <div class="usa-nav__inner">
       <button type="button" class="usa-nav__close" aria-label="Close menu">
-        <img
-          src={closeIcon.src}
-          role="img"
-          alt="Close"
-      />
+        <img src={closeIcon.src} role="img" alt="Close" />
       </button>
       <ul class="usa-nav__primary usa-accordion">
-        {sections.map((section, i) => (
-          <li class="usa-nav__primary-item">
-            <button
-              type="button"
-              class="usa-accordion__button usa-nav__link"
-              aria-expanded="false"
-              aria-controls={`nav-section-${i}`}
-            >
-              <span>{section.label}</span>
-            </button>
-            <ul id={`nav-section-${i}`} class="usa-nav__submenu">
-              {section.links.map(link => (
-                <li class="usa-nav__submenu-item">
-                  <a href={link.href}>
-                    <span>{link.label}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
+        {
+          dropdowns.map((dropdown, i) => (
+            <li class="usa-nav__primary-item">
+              <button
+                type="button"
+                class="usa-accordion__button usa-nav__link"
+                aria-expanded="false"
+                aria-controls={`nav-section-${i}`}>
+                <span>{dropdown.label}</span>
+              </button>
+              <ul id={`nav-section-${i}`} class="usa-nav__submenu">
+                {dropdown.links.map((link) => (
+                  <li class="usa-nav__submenu-item">
+                    <a href={link.url}>
+                      <span>{link.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))
+        }
 
-        {navLinks.map(link => (
-          <li class="usa-nav__primary-item">
-            <a href={link.href} class="usa-nav-link">
-              <span>{link.label}</span>
-            </a>
-          </li>
-        ))}
-
-        {buttonLinks.map((link, index) => (
-          <li
-          class={`button-item  display-flex align-items-center padding-y-05 ${index === 0 ? ' margin-left-auto ' : ''}`}
-          >
-            <a 
-              href={link.href} 
-              class={`usa-button${link.class ? ` usa-button--${link.class}` : ''}`}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-
+        {
+          navLinks.map((link) => (
+            <li class="usa-nav__primary-item">
+              <a
+                href={link.url}
+                class={`usa-nav-link${normalizePath(Astro.url.pathname) === normalizePath(link.url) ? " usa-current" : ""}`}
+                aria-current={normalizePath(Astro.url.pathname) === normalizePath(link.url) ? "page" : undefined}>
+                <span>{link.label}</span>
+              </a>
+            </li>
+          ))
+        }
       </ul>
 
       <div class="usa-nav__secondary">
         <ul class="usa-nav__secondary-links">
-          {secondaryLinks.map(link => (
-            <li class="usa-nav__secondary-item">
-              <a href={link.href} class="usa-nav-link">
-                <span>{link.label}</span>
-              </a>
-            </li>
-          ))}
+          {
+            secondaryLinks.map((link) => (
+              <li class="usa-nav__secondary-item margin-bottom-0">
+                <a href={link.url} class="usa-nav-link">
+                  <span>{link.label}</span>
+                </a>
+              </li>
+            ))
+          }
         </ul>
+
         <section aria-label="Search component">
-          <form class="usa-search usa-search--small" role="search">
+          <form
+            class="usa-search usa-search--small"
+            role="search"
+            action="https://search.usa.gov/search"
+            accept-charset="UTF-8"
+            method="get">
             <label class="usa-sr-only" for="search-field">Search</label>
-            <input
-              class="usa-input"
-              id="search-field"
-              type="search"
-              name="search"
-            />
-            <button class="usa-button" type="submit">
-              <img
-              src={searchIcon.src}
-              class="usa-search__submit-icon"
-              alt="Search"
-            />
+            <input type="hidden" name="affiliate" id="affiliate" value={sitewide.search.affiliate} autocomplete="off" />
+            <input class="usa-input" id="search-field" type="search" placeholder={searchPlaceholder} name="query" />
+            <button class="usa-button" value="Search" type="submit">
+              <img src={searchIcon.src} class="usa-search__submit-icon" alt="Search" />
             </button>
           </form>
         </section>
@@ -116,58 +122,3 @@ const { logoText, logoHref, sections, navLinks, secondaryLinks, buttonLinks } = 
     </div>
   </nav>
 </header>
-
-<style>
- /* adjustments to fit buttons in header  */
-@media (min-width: 64em) and (min-width: 64em) {
-  .usa-header--extended .usa-nav__inner {
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
-  }
-}
-@media (min-width: 64em) {
-  .usa-header {
-    padding-bottom: .25rem;
-  }
-  .usa-header--extended .usa-nav {
-    border-top-width: 0;
-  }
-  .usa-header--extended .usa-nav__primary {
-      margin-left: -0.25rem;
-      padding: .25rem 0;
-  }
-  .usa-nav__primary > .usa-nav__primary-item,
-  .usa-header--extended .usa-nav__primary button {
-      font-size: 1.05rem;
-      font-weight: 700;
-      -webkit-font-smoothing: antialiased;
-    }
-  .usa-nav__submenu .usa-nav__submenu-item a {
-    font-size: .95rem;
-    font-weight: 600;
-    -webkit-font-smoothing: antialiased;
-  }
-  .usa-nav__submenu {
-    width: 20rem;
-  }
-  .usa-header--extended .usa-nav__primary-item {
-    position: relative;
-    bottom: -0.5rem;
-  }
-  .usa-nav__secondary {
-    flex-direction: row;
-    align-items: center;
-    margin-top: 0;
-  }
-  .usa-nav__secondary-links {
-    margin: auto 1rem;
-  }
-  .usa-nav__secondary .usa-search {
-    margin-top: 0;
-  }
-  .usa-header--extended .usa-logo {
-    margin: 1.5rem 0 0.5rem;
-  }
-
-}
-</style>

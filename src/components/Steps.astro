@@ -1,0 +1,46 @@
+---
+import ProcessList from "../components/ProcessList.astro";
+import PageSection from "./PageSection.astro";
+
+interface Step {
+  heading: string;
+  text?: string;
+  items?: string[];
+}
+
+export interface Props {
+  stepHeadingLevel?: "h3" | "h4";
+  items: Step[];
+  heading?: string;
+  intro?: string;
+  outro?: string;
+  color?: string;
+  checks?: boolean;
+}
+const checksClasses =
+  "bg-base-lightest border-base-lighter border-1px padding-y-1 padding-x-4 radius-md margin-bottom-4 has-checks";
+const classes = "margin-x-auto margin-bottom-0 no-checks";
+const { color = "white", stepHeadingLevel = "h3", checks = false, items, ...props } = Astro.props;
+---
+
+<PageSection {...props} color={color} align="left">
+  <div class={checks ? checksClasses : classes}>
+    <ProcessList steps={items} headingLevel={stepHeadingLevel} checks={checks} />
+  </div>
+</PageSection>
+<style lang="scss">
+  .has-checks {
+    max-width: 75ch;
+    margin: 1rem auto;
+    @media (min-width: 800px) and (max-width: 1199px) {
+      max-width: 70vw;
+    }
+  }
+  .no-checks {
+    max-width: 100ch;
+    margin: 1rem auto;
+    @media (min-width: 800px) and (max-width: 1199px) {
+      padding: 0 8.33vw; // roughly 1/12th screen width
+    }
+  }
+</style>

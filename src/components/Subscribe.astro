@@ -1,0 +1,48 @@
+---
+import PageSection from "./PageSection.astro";
+import sitewide from "../data/sitewide.yaml";
+
+export interface Props {
+  heading: string;
+  text?: string;
+  align?: "left" | "center";
+  color?: string;
+  account_id?: string;
+  category_id?: string;
+  id?: string;
+}
+
+const {
+  align = "center",
+  color = "white",
+  account_id = sitewide.newsletter?.account_id,
+  category_id = sitewide.newsletter?.category_id,
+  ...props
+} = Astro.props;
+---
+
+<PageSection align={align} color={color} {...props}>
+  <form
+    action={`https://public.govdelivery.com/accounts/${account_id}/subscribers/qualify`}
+    method="post"
+    accept-charset="UTF-8"
+    class="margin-top-0 display-flex flex-row flex-justify-center">
+    <input type="hidden" name="utf8" value="✓" />
+    <input type="hidden" name="category_id" id="category_id" value={category_id} />
+    <label class="usa-sr-only" for="email">Email address</label>
+    <input
+      class="usa-input bg-primary-lightest border-primary-light margin-top-0 padding-y-1 maxw-card-lg"
+      type="email"
+      name="email"
+      id="email"
+      placeholder="you@agency.gov"
+      required
+    />
+    <input
+      class="usa-button margin-0 padding-y-1 radius-left-0 margin-left-neg-1px"
+      type="submit"
+      name="commit"
+      value="Sign up"
+    />
+  </form>
+</PageSection>

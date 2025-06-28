@@ -1,89 +1,32 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Topics from '../components/Topics.astro';
-import Tiles from '../components/Tiles.astro';
-import CTA from '../components/CTA.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Topics from "../components/Topics.astro";
+import PageSection from "../components/PageSection.astro";
+import Tiles from "../components/Tiles.astro";
+import CTA from "../components/CTA.astro";
+import Steps from "../components/Steps.astro";
+import Subscribe from "../components/Subscribe.astro";
 
-const topicList = {
-  heading: "What you get on Cloud.gov",
-  intro: `Whether you're modernizing legacy tools, launching a new citizen-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.`,
-  items: [
-    {
-      heading: "Self-service resource management, your way",
-      text: `Scale services, add memory, and manage apps via CLI, API, or dashboard—no tickets, no wait.`,
-      icon: "check_circle",
-			link: {
-				label: "Get a free sandbox",
-				url: "/sign-up",
-			}
-    },
-    {
-      heading: "In-house Helpdesk & Office Hours",
-      text: `Chat, email, or drop into weekly office hours to talk with our in-house engineers.`,
-      icon: "check_circle",
-			link: {
-				label: "Get a free sandbox",
-				url: "/sign-up",
-			}
-    },
-    {
-      heading: "Built-in logging and metrics",
-      text: `App logs and platform metrics are available out of the box.`,
-      icon: "check_circle",
-			link: {
-				label: "Get a free sandbox",
-				url: "/sign-up",
-			}
-    },
-  ],
-  outro: `Want full tech specs? [View all supported languages and services on docs.cloud.gov](https://docs.cloud.gov/).`,
+import content from "../data/pages/home.yaml";
+import sitewide from "../data/sitewide.yaml";
+
+const ourApproach = {
+  ...sitewide.ourApproach,
+  items: sitewide.ourApproach.items.filter((item) => content.approachIds.includes(item.id)),
 };
-
-
-const headerSection = {
-	heading: "Modern Application Hosting for Government",
-	intro: "Government software projects often feel like **a marathon of challenges**— instead of building services, you’re navigating procurement and security.",
-	align: "center",
-	buttons: [
-		{
-			label: "Get a free sandbox",
-			url: "/sign-up",
-		},
-		{
-			label: "Connect with our team",
-			url: "/demo",
-			variant: "outline"
-		}
-	]
-}
-
-
-const CTASection = {
-	heading: "Modern Application Hosting for Government",
-	heading_level: "h3",
-	text: "Government software projects often feel like **a marathon of challenges**— instead of building services, you’re navigating procurement and security.",
-	align: "center",
-	buttons: [
-		{
-			label: "Get a free sandbox",
-			url: "/sign-up",
-		},
-		{
-			label: "Connect with our team",
-			url: "/demo",
-			variant: "outline"
-		}
-	]
-}
 ---
 
-<Layout>
-
-	<Hero {...headerSection}/>
-	<Topics {...topicList} />
-	<CTA {...CTASection} />
-	<Tiles {...topicList} />
-
-
+<Layout title={content.title} description={content.description}>
+  <Hero {...content.hero} />
+  <Tiles {...content.g2g} />
+  <Steps {...content.getCoding} />
+  <CTA {...sitewide.freeSandbox} />
+  <Steps {...content.stepsList} />
+  <hr />
+  <PageSection {...content.mandatesHandled} />
+  <hr />
+  <Topics {...ourApproach} />
+  <Tiles {...sitewide.supportTiles} />
+  <Subscribe {...sitewide.newsletter} />
 </Layout>
