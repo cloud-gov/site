@@ -1,0 +1,23 @@
+---
+import { renderMarkdown } from '../utils/renderMarkdown';
+
+interface Props {
+  content: string;
+  classes?: string;
+  tag?: keyof HTMLElementTagNameMap;
+  inline?: boolean;
+}
+
+const {
+  content = '',
+  classes = '',
+  tag = 'div',
+  inline = false,
+} = Astro.props;
+
+const html = renderMarkdown(content, inline);
+const openTag = `<${tag} class="${classes}">`;
+const closeTag = `</${tag}>`;
+---
+
+<Fragment set:html={`${openTag}${html}${closeTag}`} />

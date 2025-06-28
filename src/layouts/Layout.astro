@@ -1,0 +1,40 @@
+---
+const { ...props } = Astro.props;
+import Meta from "../components/Meta.astro";
+import HeaderMenu from "../components/HeaderMenu.astro";
+import { headerProps } from "../data/header";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <Meta />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script src="@uswds/uswds/components/usa-banner"></script>
+    <usa-banner></usa-banner>
+
+    <HeaderMenu
+      logoText={headerProps.logoText}
+      logoHref={headerProps.logoHref}
+      sections={headerProps.dropdowns}
+      navLinks={headerProps.navLinks}
+      secondaryLinks={headerProps.secondaryLinks}
+      buttonLinks={headerProps.buttonLinks}
+    />
+
+    <slot />
+    <link rel="stylesheet" href={`${Astro.site}/styles/uswds-theme.css`} />
+
+    <script>
+      import "@uswds/uswds";
+    </script>
+  </body>
+</html>
