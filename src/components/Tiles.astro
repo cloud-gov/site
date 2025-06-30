@@ -27,52 +27,57 @@ const justTwo = items.length == 2 ? true : false;
 
 <section class="usa-section">
   <div class="grid-container">
-    {heading && <h2 class="font-sans-xl margin-bottom-2">{heading}</h2>}
-
-    {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-5 margin-bottom-3" inline />}
-
-    <div
-      class={`margin-top-6 grid-row grid-gap-lg ${align === "center" ? "text-center" : ""} ${justTwo ? "flex-justify-center" : ""} `}>
-      {
-        items.map((item) => (
-          <div class="grid-col-12 tablet:grid-col-4 margin-bottom-3">
-            <div class="display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border border-base-light">
-              {item.icon && (
-                <span class="margin-bottom-1 display-block">
-                  <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
-                    <use href={`${Astro.site}/assets/uswds/img/sprite.svg#${item.icon}`} />
-                  </svg>
-                </span>
-              )}
-
-              {item.heading && <h3 class="font-body-lg margin-bottom-1 margin-top-2">{item.heading}</h3>}
-
-              {item.text && (
-                <Markdown
-                  content={item.text}
-                  classes="font-body-sm line-height-body-3 margin-top-05 margin-bottom-0"
-                  inline
-                />
-              )}
-
-              {item.link && (
-                <div
-                  class={`usa-button-group margin-top-2 margin-bottom-0 ${align === "center" ? "flex-justify-center" : ""}`}>
-                  <a class="usa-button usa-button--outline" href={item.link.url}>
-                    {item.link.label}
-                  </a>
-                </div>
-              )}
-            </div>
-          </div>
-        ))
-      }
+    <div class="grid-row">
+      <div class="grid-col-12 tablet:grid-col-10 desktop-lg:grid-col-12 margin-x-auto">
+        {heading && <h2 class="font-sans-xl margin-bottom-2">{heading}</h2>}
+        {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-5 margin-bottom-3" inline />}
+      </div>
     </div>
 
-    {
-      outro && (
-        <Markdown content={outro} classes="margin-top-5 font-sans-md line-height-sans-5 margin-bottom-3" inline />
-      )
-    }
+    <div class="grid-col-12 tablet:grid-col-10 desktop-lg:grid-col-12 margin-x-auto">
+      <div
+        class={`margin-top-6 grid-row grid-gap-lg ${align === "center" ? "text-center" : ""} ${justTwo ? "flex-justify-center" : ""} `}>
+        {
+          items.map((item) => (
+            <div class="grid-col-12 tablet-lg:grid-col-6 desktop-lg:grid-col-4 margin-bottom-3">
+              <div class="display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border border-base-light">
+                {item.icon && (
+                  <span class="margin-bottom-1 display-block">
+                    <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
+                      <use href={`${Astro.site}/assets/uswds/img/sprite.svg#${item.icon}`} />
+                    </svg>
+                  </span>
+                )}
+
+                {item.heading && <h3 class="font-body-lg margin-bottom-1 margin-top-2">{item.heading}</h3>}
+
+                {item.text && (
+                  <Markdown
+                    content={item.text}
+                    classes="font-body-sm line-height-body-3 margin-top-05 margin-bottom-0"
+                    inline
+                  />
+                )}
+
+                {item.link && (
+                  <div
+                    class={`usa-button-group margin-top-2 margin-bottom-0 ${align === "center" ? "flex-justify-center" : ""}`}>
+                    <a class="usa-button usa-button--outline" href={item.link.url}>
+                      {item.link.label}
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      {
+        outro && (
+          <Markdown content={outro} classes="margin-top-5 font-sans-md line-height-sans-5 margin-bottom-3" inline />
+        )
+      }
+    </div>
   </div>
 </section>

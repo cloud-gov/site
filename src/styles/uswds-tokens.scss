@@ -12,7 +12,7 @@
     // 480px
     "tablet": true,
     // 640px
-    "tablet-lg": false,
+    "tablet-lg": true,
     // 880px
     "desktop": true,
     // 1024px
@@ -67,14 +67,14 @@
   $theme-text-reverse-color: "gray-warm-3",
   $theme-banner-background-color: "gray-warm-5",
 
-  $theme-color-base-family: "gray-cool",
+  $theme-color-base-family: "gray",
   $theme-color-base-lightest: "gray-warm-5",
   $theme-color-base-lighter: "gray-warm-10",
   $theme-color-base-light: "gray-warm-20",
-  $theme-color-base: "gray-cool-70",
-  $theme-color-base-dark: "gray-cool-70",
-  $theme-color-base-darker: "gray-cool-80",
-  $theme-color-base-darkest: "gray-cool-90",
+  $theme-color-base: "gray-70",
+  $theme-color-base-dark: "gray-70",
+  $theme-color-base-darker: "gray-80",
+  $theme-color-base-darkest: "gray-90",
 
   $theme-color-primary-family: "blue-vivid",
   $theme-color-primary-lightest: "blue-5v",

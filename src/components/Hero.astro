@@ -1,5 +1,5 @@
 ---
-import Markdown from './Markdown.astro';
+import Markdown from "./Markdown.astro";
 
 interface Button {
   label: string;
@@ -9,44 +9,32 @@ interface Button {
 
 export interface Props {
   heading?: string;
-  align?: 'left' | 'center';
+  align?: "left" | "center";
   intro?: string;
   buttons?: Button[];
 }
 
-const {
-  heading,
-  align = 'left',
-  intro,
-  buttons = [],
-} = Astro.props;
+const { heading, align = "left", intro, buttons = [] } = Astro.props;
 ---
 
 <section class={`bg-base-lightest padding-y-6 text-${align}`}>
   <div class="grid-container">
     <div class="grid-row">
-      <div class="grid-col-12 tablet:grid-col-10 tablet:grid-offset-1">
-        {heading && (
-          <h1 class="font-sans-3xl text-semibold margin-bottom-4 margin-top-0">
-            {heading}
-          </h1>
-        )}
-        
-        {intro && (
-          <Markdown content={intro} classes="font-sans-lg line-height-sans-5 margin-bottom-3" inline />
-          )}
-        {buttons.length > 0 && (
-          <div class="usa-button-group margin-top-2 flex-justify-center">
-            {buttons.map((btn) => (
-              <a
-                href={btn.url}
-                class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ''}`}
-              >
-                {btn.label}
-              </a>
-            ))}
-          </div>
-        )}
+      <div class="grid-col-12 tablet:grid-col-10 margin-x-auto">
+        {heading && <h1 class="font-sans-3xl text-semibold margin-bottom-4 margin-top-0">{heading}</h1>}
+
+        {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-5 margin-bottom-3" inline />}
+        {
+          buttons.length > 0 && (
+            <div class="usa-button-group margin-top-2 flex-justify-center">
+              {buttons.map((btn) => (
+                <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""}`}>
+                  {btn.label}
+                </a>
+              ))}
+            </div>
+          )
+        }
       </div>
     </div>
   </div>
