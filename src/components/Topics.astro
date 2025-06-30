@@ -62,6 +62,13 @@ const { heading, intro, outro, items = [], background = "white" } = Astro.props;
                   <p class="font-body-xs line-height-body-3 margin-top-1 margin-bottom-0">
                     <a class="usa-link" href={item.link.url}>
                       {item.link.label}
+                      <svg
+                        class="usa-icon text-bottom width-2 height-205"
+                        aria-hidden="true"
+                        focusable="false"
+                        role="img">
+                        <use href={`${Astro.site}/assets/uswds/img/sprite.svg#navigate_next`} />
+                      </svg>
                     </a>
                   </p>
                 )}
@@ -79,3 +86,12 @@ const { heading, intro, outro, items = [], background = "white" } = Astro.props;
     </div>
   </div>
 </section>
+<style>
+  .usa-link {
+    position: relative;
+  }
+  .usa-link .usa-icon {
+    position: absolute;
+    right: -1rem;
+  }
+</style>
