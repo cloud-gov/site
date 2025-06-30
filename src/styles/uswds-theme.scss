@@ -6,10 +6,105 @@
 
 .usa-button {
   -webkit-font-smoothing: antialiased;
+  font-size: font-size($theme-button-font-family, "md");
+  font-weight: font-weight(500);
+  padding: units(2) units(3);
+
+ 
+  &.usa-button--outline {
+    background-color: #fff;
+  }
+
+  &.usa-button--in-nav {
+    font-size: font-size($theme-button-font-family, "xs");
+    font-weight: font-weight(500);
+    padding: units(1) units(1.5);
+    @media (min-width: 64em) {
+      padding: units(1.5) units(2);
+    }
+  }
 }
 
-.usa-button.usa-button--outline {
-  background-color: #fff;
+// rework nav to put buttons in top right
+
+@media (min-width: 64em) and (max-width: 74.99em) {
+  .usa-header--extended .usa-nav__inner {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .usa-header {
+    padding-bottom: 0.25rem;
+
+    [type=search] {
+      min-width: 21.4ch;
+      border-color: color("base-light");
+      &::placeholder {
+        font-style: italic;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  .usa-header--extended {
+    .usa-navbar {
+      position: relative;
+    }
+    .usa-navbar-button-group {
+      position: absolute;
+      right: 1.5rem;
+      bottom: 0;
+    }
+
+    .usa-nav {
+      border-top-width: 0;
+    }
+    .usa-nav__primary {
+      margin-left: -0.25rem;
+      padding: 0 0 .25rem;
+    }
+    .usa-nav__primary > .usa-nav__primary-item,
+    .usa-nav__primary button {
+      font-size: 1.05rem;
+      font-weight: 700;
+      -webkit-font-smoothing: antialiased;
+    }
+    .usa-nav__submenu .usa-nav__submenu-item a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+    }
+    .usa-nav__submenu {
+      width: 20rem;
+    }
+    .usa-nav__primary-item {
+      position: relative;
+      bottom: -0.5rem;
+    }
+    .usa-nav__secondary {
+      bottom: 0.5rem;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 0;
+    }
+    .usa-nav__secondary-links {
+      margin: auto 1rem;
+      padding-top: 2px;
+      a {
+        color: color("base");
+      }
+    }
+    .usa-nav__secondary .usa-search {
+      margin-top: 0;
+    }
+    .usa-logo {
+      margin: 1rem 0 0.5rem 0.75rem;
+    }
+  }
+
 }
 
 @media (min-width: 40em) {

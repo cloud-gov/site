@@ -27,14 +27,7 @@ import { headerProps } from "../data/header";
     <script src="@uswds/uswds/components/usa-banner"></script>
     <usa-banner></usa-banner>
 
-    <HeaderMenu
-      logoText={headerProps.logoText}
-      logoHref={headerProps.logoHref}
-      sections={headerProps.dropdowns}
-      navLinks={headerProps.navLinks}
-      secondaryLinks={headerProps.secondaryLinks}
-      buttonLinks={headerProps.buttonLinks}
-    />
+    <HeaderMenu {...headerProps} />
 
     <slot />
     <script>

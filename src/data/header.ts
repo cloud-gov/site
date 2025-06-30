@@ -21,7 +21,8 @@ export const headerProps = {
     { label: 'Status', href: 'https://status.cloud.gov' }
   ],
   buttonLinks: [
-    { label: 'Sign up', href: '/sign-up' },
+    { label: 'Get a free sandbox', href: '/sign-up' },
     { label: 'Log in', href: 'https://login.fr.cloud.gov', class: 'outline' }
-  ]
+  ],
+  searchPlaceholder: "Search for..."
 };

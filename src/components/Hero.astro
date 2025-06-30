@@ -23,7 +23,11 @@ const { heading, align = "left", intro, buttons = [] } = Astro.props;
       <div class="grid-col-12 tablet:grid-col-10 margin-x-auto">
         {heading && <h1 class="font-sans-3xl text-semibold margin-bottom-4 margin-top-0">{heading}</h1>}
 
-        {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-5 margin-bottom-3" inline />}
+        {
+          intro && (
+            <Markdown content={intro} classes="font-sans-xl text-light line-height-sans-5 margin-bottom-3" inline />
+          )
+        }
         {
           buttons.length > 0 && (
             <div class="usa-button-group margin-top-2 flex-justify-center">
