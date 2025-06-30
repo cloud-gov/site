@@ -5,6 +5,9 @@ import mdx from '@astrojs/mdx';
 import copy from 'rollup-plugin-copy';
 
 
+import sitemap from '@astrojs/sitemap';
+
+
 // https://astro.build/config
 
 console.log('BASEURL:', process.env.BASEURL);
@@ -20,7 +23,7 @@ export default defineConfig({
     : 'http://localhost:4321',
   base: process.env.BASEURL || '',
   redirects: redirects,
-  integrations: [mdx()],
+  integrations: [mdx(), sitemap()],
   vite: {
     ssr: {
       noExternal: ['@uswds/uswds'],
@@ -49,4 +52,3 @@ export default defineConfig({
     // ],
   }
 });
-

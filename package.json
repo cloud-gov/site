@@ -13,6 +13,7 @@
     "watch:uswds": "sass --watch --load-path=node_modules --load-path=node_modules/@uswds/uswds/packages src/styles/uswds-theme.scss:public/styles/uswds-theme.css --quiet-deps "
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.4.1",
     "astro": "^5.10.1",
     "lit": "^3.3.0",
     "rollup-plugin-copy": "^3.5.0"
