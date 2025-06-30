@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import Topics from "../components/Topics.astro";
 import Tiles from "../components/Tiles.astro";
 import CTA from "../components/CTA.astro";
+import Subscribe from "../components/Subscribe.astro";
 
 const hero = {
   heading: "Modern Application Hosting for Government",
@@ -139,7 +140,7 @@ const otherOfferings = {
       heading: "Compliant federal public websites",
       text: "Easily publish accessible, fast, and federally compliant websites.",
       link: {
-        label: "Learn about Cloud.gov Pages",
+        label: "Learn about Pages",
         url: "/pages",
       },
     },
@@ -147,7 +148,7 @@ const otherOfferings = {
       heading: "DevSecOps workspaces for federal teams",
       text: "A Secure GitLab environment with quicker setup and deployment tools.",
       link: {
-        label: "Learn about Cloud.gov Workshop",
+        label: "Learn about Workshop",
         url: "/workshop",
       },
     },
@@ -165,6 +166,14 @@ const tryItYourself = {
     { label: "Get a free sandbox", url: "/sign-up" },
   ],
 };
+
+const newsletter = {
+  heading: "Keep in touch",
+  text: "Get release notes, beta invitations, and platform news",
+  account_id: "USGSATTS",
+  category_id: "GSA_CLOUD",
+  background: "primary-lightest",
+};
 ---
 
 <Layout>
@@ -178,4 +187,5 @@ const tryItYourself = {
   <CTA {...noRFP} />
   <hr />
   <Tiles {...otherOfferings} />
+  <Subscribe {...newsletter} />
 </Layout>

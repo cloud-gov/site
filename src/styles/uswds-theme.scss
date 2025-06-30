@@ -4,7 +4,7 @@
 // gives you access to functions from USWDS
 @use "@uswds/uswds/packages/uswds-core" as *;
 
-.usa-button {
+.usa-button:not(input) {
   -webkit-font-smoothing: antialiased;
   font-size: font-size($theme-button-font-family, "md");
   font-weight: font-weight(500);
