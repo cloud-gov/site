@@ -2,13 +2,13 @@
 import closeIcon from "@uswds/uswds/img/usa-icons/close.svg";
 import searchIcon from "@uswds/uswds/img/usa-icons-bg/search--white.svg";
 
-type NavLink = { label: string; href: string };
-type ButtonLink = { label: string; href: string; class?: string };
+type NavLink = { label: string; url: string };
+type ButtonLink = { label: string; url: string; class?: string };
 type NavSection = { label: string; links: NavLink[] };
 
 interface Props {
   logoText: string;
-  logoHref: string;
+  logoUrl: string;
   dropdowns: NavSection[];
   navLinks: NavLink[];
   secondaryLinks: NavLink[];
@@ -16,7 +16,7 @@ interface Props {
   searchPlaceholder: string;
 }
 
-const { logoText, logoHref, dropdowns, navLinks, secondaryLinks, buttonLinks, searchPlaceholder } = Astro.props;
+const { logoText, logoUrl, dropdowns, navLinks, secondaryLinks, buttonLinks, searchPlaceholder } = Astro.props;
 ---
 
 <div class="usa-overlay"></div>
@@ -24,13 +24,13 @@ const { logoText, logoHref, dropdowns, navLinks, secondaryLinks, buttonLinks, se
   <div class="usa-navbar">
     <div class="usa-logo">
       <em class="usa-logo__text">
-        <a href={logoHref} title={logoText}>{logoText}</a>
+        <a href={logoUrl} title={logoText}>{logoText}</a>
       </em>
     </div>
     <div class="usa-navbar-button-group">
       {
         buttonLinks.map((link, index) => (
-          <a href={link.href} class={`usa-button--in-nav usa-button${link.class ? ` usa-button--${link.class}` : ""}`}>
+          <a href={link.url} class={`usa-button--in-nav usa-button${link.class ? ` usa-button--${link.class}` : ""}`}>
             {link.label}
           </a>
         ))
@@ -58,7 +58,7 @@ const { logoText, logoHref, dropdowns, navLinks, secondaryLinks, buttonLinks, se
               <ul id={`nav-section-${i}`} class="usa-nav__submenu">
                 {dropdown.links.map((link) => (
                   <li class="usa-nav__submenu-item">
-                    <a href={link.href}>
+                    <a href={link.url}>
                       <span>{link.label}</span>
                     </a>
                   </li>
@@ -71,7 +71,7 @@ const { logoText, logoHref, dropdowns, navLinks, secondaryLinks, buttonLinks, se
         {
           navLinks.map((link) => (
             <li class="usa-nav__primary-item">
-              <a href={link.href} class="usa-nav-link">
+              <a href={link.url} class="usa-nav-link">
                 <span>{link.label}</span>
               </a>
             </li>
@@ -84,7 +84,7 @@ const { logoText, logoHref, dropdowns, navLinks, secondaryLinks, buttonLinks, se
           {
             secondaryLinks.map((link) => (
               <li class="usa-nav__secondary-item margin-bottom-0">
-                <a href={link.href} class="usa-nav-link">
+                <a href={link.url} class="usa-nav-link">
                   <span>{link.label}</span>
                 </a>
               </li>

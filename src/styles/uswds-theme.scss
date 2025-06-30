@@ -5,14 +5,16 @@
 @use "@uswds/uswds/packages/uswds-core" as *;
 
 .usa-button:not(input) {
+  padding: units(2) units(3);
+}
+.usa-button {
   -webkit-font-smoothing: antialiased;
   font-size: font-size($theme-button-font-family, "md");
   font-weight: font-weight(500);
-  padding: units(2) units(3);
-
  
   &.usa-button--outline {
     background-color: #fff;
+    -webkit-font-smoothing: inherit;
   }
 
   &.usa-button--in-nav {
@@ -118,7 +120,30 @@ hr {
   border: 0;
   height: 1px;
   background-color: color("base-light");
-  margin-top: units(3);
-  margin-bottom: units(3);
+  margin: 0;
 
+}
+
+$theme-footer-link-color: 'blue-warm-10v';
+$footer-context: "Footer";
+$theme-footer-background-color: "primary";
+
+@mixin footer-secondary-link {
+  @include set-link-from-bg(
+    $theme-footer-background-color,
+    $theme-footer-link-color,
+    $context: $footer-context
+  );
+}
+
+
+.usa-footer__secondary-section {
+  // background: color("primary-darker");
+  @include set-text-and-bg(
+    $theme-footer-background-color,
+    $context: $footer-context
+  );
+  a {
+    @include footer-secondary-link;
+  }
 }

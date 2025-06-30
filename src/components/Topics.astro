@@ -18,12 +18,13 @@ interface Props {
   intro?: string;
   outro?: string;
   items?: Item[];
+  background?: string;
 }
 
-const { heading, intro, outro, items = [] } = Astro.props;
+const { heading, intro, outro, items = [], background = "white" } = Astro.props;
 ---
 
-<section class="usa-section">
+<section class={`bg-${background} usa-section`}>
   <div class="grid-container">
     <div class="grid-row">
       <div class="grid-col-12 tablet:grid-col-10 desktop-lg:grid-col-12 margin-x-auto">

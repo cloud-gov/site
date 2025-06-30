@@ -153,17 +153,18 @@ const otherOfferings = {
       },
     },
   ],
+  background: "base-lightest",
 };
 
 const tryItYourself = {
   heading: "Try it for yourself",
   heading_level: "h3",
   align: "center",
-  background: "base-lightest",
+  background: "primary-lightest",
   text: "We offer a free, no-strings-attached sandbox environment for federal staff and contractors. Test deployments, evaluate fit, and explore how Cloud​.​gov supports your workflows.",
   buttons: [
-    { label: "Connect with our team", url: "/demo", variant: "outline" },
     { label: "Get a free sandbox", url: "/sign-up" },
+    { label: "Connect with our team", url: "/demo", variant: "outline" },
   ],
 };
 
@@ -172,7 +173,6 @@ const newsletter = {
   text: "Get release notes, beta invitations, and platform news",
   account_id: "USGSATTS",
   category_id: "GSA_CLOUD",
-  background: "primary-lightest",
 };
 ---
 
@@ -185,7 +185,6 @@ const newsletter = {
   <Topics {...whatYouGet} />
   <hr />
   <CTA {...noRFP} />
-  <hr />
   <Tiles {...otherOfferings} />
   <Subscribe {...newsletter} />
 </Layout>

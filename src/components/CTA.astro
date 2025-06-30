@@ -13,7 +13,7 @@ export interface Props {
   text?: string;
   align?: "left" | "center";
   buttons?: Button[];
-  background: string;
+  background?: string;
 }
 
 const { heading, heading_level = "h2", text, align = "left", buttons = [], background = "white" } = Astro.props;
