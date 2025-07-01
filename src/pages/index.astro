@@ -3,12 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Topics from "../components/Topics.astro";
 import Markdown from "../components/Markdown.astro";
-
 import PageSection from "../components/PageSection.astro";
-
 import Tiles from "../components/Tiles.astro";
 import CTA from "../components/CTA.astro";
 import Steps from "../components/Steps.astro";
+import Subscribe from "../components/Subscribe.astro";
 
 const headerSection = {
   heading: "Faster, easier, and built for government from the start",
@@ -27,17 +26,17 @@ const g2g = {
     {
       heading: "No RFP required",
       text: "Get your team onboarded in days, not months, under [a simple IAA with GSA](/pricing).",
-      icon: "check_circle",
+      icon: "account_balance",
     },
     {
       heading: "No multi-year contract traps",
       text: "We’re incentivized to serve your mission and our platform, not maximize profit.",
-      icon: "check_circle",
+      icon: "lock_open",
     },
     {
       heading: "No vendor lock-in",
       text: "Your team retains control of your apps, data, and repos. Forever.",
-      icon: "check_circle",
+      icon: "groups",
     },
   ],
 };
@@ -60,25 +59,26 @@ const getCoding = {
 };
 
 const CTASection = {
-  heading: "Modern Application Hosting for Government",
-  text: "Government software projects often feel like **a marathon of challenges**— instead of building services, you’re navigating procurement and security.",
+  heading: "Try it for yourself",
+  text: "We offer a free, no-strings-attached sandbox environment for federal staff and contractors. Test deployments, evaluate fit, and explore how Cloud.gov supports your workflows.",
   align: "center",
   background: "base",
   buttons: [
     {
-      label: "Get a free sandbox",
-      url: "/sign-up",
-    },
-    {
       label: "Connect with our team",
       url: "/demo",
       variant: "outline",
+    },
+    {
+      label: "Get a free sandbox",
+      url: "/sign-up",
     },
   ],
 };
 
 const stepsList = {
   heading: "How an IAA with Cloud.gov works for you",
+  intro: `Buying services with us is unlike any other provider.`,
   outro: `Ready to get started? [Reach out to start the conversation](/demo).`,
   step_heading_level: "h3",
   step_headings_only: false,
@@ -117,11 +117,13 @@ const supportTiles = {
   heading: "Our team is here to support yours",
   intro:
     "Cloud.gov is developed and maintained by federal employees within GSA’s Technology Transformation Services. We know how government works, because we are government, too. When you work with us, you're working with a team that understands your constraints, your goals, and your urgency.",
+  background: "primary",
+  align: "center",
   items: [
     {
       heading: "Still have questions?",
       text: `Chat, email, or drop into weekly office hours to talk with our in-house engineers.`,
-      icon: "check_circle",
+      icon: "support_agent",
       link: {
         label: "Get in touch",
         url: "/contact",
@@ -130,13 +132,44 @@ const supportTiles = {
     {
       heading: "See what Cloud.gov offers",
       text: `Scale services, add memory, and manage apps via CLI, API, or dashboard`,
-      icon: "check_circle",
+      icon: "insights",
       link: {
         label: "All solutions",
         url: "/",
       },
     },
   ],
+};
+
+const ourApproach = {
+  heading: "More about our approach",
+  intro: `Whether you're modernizing legacy tools, launching a new citizen-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.`,
+  items: [
+    {
+      heading: "Easier and faster ATOs",
+      text: "Cloud.gov is FedRAMP Moderate Authorized, which means it complies with federal security requirements. When you build on Cloud.gov, you leverage our compliance practices and reduce the amount of work you need to do.",
+      link: {
+        label: "Our cybersecurity practices",
+        url: "/security",
+      },
+      icon: "verified_user",
+    },
+    {
+      heading: "Easier and faster acquisitions",
+      text: "We partner with your team using a straightforward Interagency Agreement (IAA) with GSA. By selecting a flexible pricing tier, you can choose the cloud services that meet the needs of your agency’s digital initiatives.",
+      link: {
+        label: "Faster and easier cloud purchasing",
+        url: "/pricing",
+      },
+      icon: "attach_money",
+    },
+  ],
+};
+const newsletter = {
+  heading: "Keep in touch",
+  text: "Get release notes, beta invitations, and platform news",
+  account_id: "USGSATTS",
+  category_id: "GSA_CLOUD",
 };
 ---
 
@@ -154,4 +187,7 @@ const supportTiles = {
     />
   </PageSection>
   <Tiles {...supportTiles} />
+  <Topics {...ourApproach} />
+  <hr />
+  <Subscribe {...newsletter} />
 </Layout>

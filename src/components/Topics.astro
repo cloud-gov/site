@@ -27,7 +27,7 @@ const { heading, intro, outro, items = [], background = "white" } = Astro.props;
 <PageSection heading={heading} intro={intro} outro={outro} background={background} align="left">
   {
     items.map((item) => (
-      <div class="grid-col-12 tablet-lg:grid-col-6 display-flex flex-row padding-bottom-3">
+      <div class="grid-col-12 tablet-lg:grid-col-6 display-flex flex-row padding-bottom-3 top-divider">
         {item.icon && (
           <div class="width-4 margin-right-2">
             <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
@@ -37,7 +37,7 @@ const { heading, intro, outro, items = [], background = "white" } = Astro.props;
         )}
 
         <div class="display-flex flex-column height-full padding-right-2">
-          {item.heading && <h3 class="font-body-md margin-bottom-05 margin-top-1 minh-3">{item.heading}</h3>}
+          {item.heading && <h3 class="font-body-lg margin-bottom-05 margin-top-1 minh-3">{item.heading}</h3>}
 
           {item.text && (
             <Markdown

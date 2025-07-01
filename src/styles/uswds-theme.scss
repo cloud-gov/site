@@ -213,3 +213,20 @@ $theme-footer-background-color: "primary";
     }
   }
 }
+
+
+.top-divider {
+  padding-top: 3rem;
+  position: relative;
+  &:before {
+    position: absolute;
+    top: calc(1.5rem - 3px);
+    width: 10ch;
+    display: inline-block;
+    content: "";
+    border-top: 3px solid color($theme-color-base-lighter);
+  }
+  &:has(.usa-icon):before {
+    left: 3.75rem;
+  }
+}

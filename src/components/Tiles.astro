@@ -26,15 +26,15 @@ interface Props {
 const { heading, intro, outro, items = [], align = "center", background = "base" } = Astro.props;
 ---
 
-<PageSection heading={heading} intro={intro} outro={outro} background={background} align="left">
+<PageSection heading={heading} intro={intro} outro={outro} background={background} align={align}>
   {
     items.map((item) => (
       <div class="grid-col-12 tablet-lg:grid-col-6 desktop-lg:grid-col-4 margin-bottom-3">
         <div
-          class={`display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border bg-white border-${background}-lighter text-${background}-vivid text-${align}`}>
+          class={`display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border bg-white border-${background}-lighter text-${background} text-${align}`}>
           {item.icon && (
             <span class="margin-bottom-1 display-block">
-              <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
+              <svg class="usa-icon usa-icon--size-5" role="img" aria-hidden="true">
                 <use href={`${Astro.site}/assets/uswds/img/sprite.svg#${item.icon}`} />
               </svg>
             </span>
