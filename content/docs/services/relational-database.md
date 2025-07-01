@@ -15,26 +15,37 @@ If your application uses relational databases for storage, you can use the AWS R
 | --------------------------- | ---------------------------------------------------------------------------- | -------------------------- |
 | `micro-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory   | 15.x\*                     |
 | `micro-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory    | 15.x\*                     |
+| `micro-psql-replica`      | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 1 GiB memory    | 15.x\*                     |
 | `small-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor    | 15.x\*                     |
 | `small-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memory    | 15.x\*                     |
+| `small-psql-replica`      | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 2 GiB memory    | 15.x\*                     |
 | `medium-psql`               | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory   | 15.x\*                     |
 | `medium-psql-redundant`     | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory    | 15.x\*                     |
+| `medium-psql-replica`     | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 4 GiB memory    | 15.x\*                     |
 | `medium-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory   | 15.x\*                     |
 | `medium-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory    | 15.x\*                     |
+| `medium-gp-psql-replica`  | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 8 GiB memory    | 15.x\*                     |
 | `large-gp-psql`             | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory   | 15.x\*                     |
 | `large-gp-psql-redundant`   | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory    | 15.x\*                     |
+| `large-gp-psql-replica`   | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 8 GiB memory    | 15.x\*                     |
 | `xlarge-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory | 15.x\*                     |
 | `xlarge-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory  | 15.x\*                     |
+| `xlarge-gp-psql-replica`  | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 2 cores, minimum 16 GiB memory  | 15.x\*                     |
 | `small-mysql`               | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory        | 8.x.x\*                    |
 | `small-mysql-redundant`     | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory         | 8.x.x\*                    |
+| `small-mysql-replica`     | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 2 GiB memory         | 8.x.x\*                    |
 | `medium-mysql`              | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory       | 8.x.x\*                    |
 | `medium-mysql-redundant`    | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory        | 8.x.x\*                    |
+| `medium-mysql-replica`    | Multi-AZ RDS instance of MySQL with read replica, minimum 2 cores, minimum 4 GiB memory        | 8.x.x\*                    |
 | `medium-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory        | 8.x.x\*                    |
 | `medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
+| `medium-gp-mysql-replica` | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
 | `large-gp-mysql`            | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory        | 8.x.x\*                    |
 | `large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
+| `large-gp-mysql-replica`  | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
 | `xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory      | 8.x.x\*                    |
 | `xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory       | 8.x.x\*                    |
+| `xlarge-gp-mysql-replica` | Multi-AZ RDS instance of MySQL with read replica, minimum 2 cores, minimum 16 GiB memory       | 8.x.x\*                    |
 | `medium-oracle-se2`         | Single-AZ RDS instance of Oracle SE2, minimum 1 core, minimum 4 GiB memory   | AWS RDS Latest Default     |
 
 _\*Note: The actual database engine version used is the latest minor/patch version offered by AWS RDS for this major version_
