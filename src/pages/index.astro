@@ -2,69 +2,68 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Topics from "../components/Topics.astro";
+import Markdown from "../components/Markdown.astro";
+
+import PageSection from "../components/PageSection.astro";
+
 import Tiles from "../components/Tiles.astro";
 import CTA from "../components/CTA.astro";
 import Steps from "../components/Steps.astro";
-import type { ACTION_ERROR_CODES } from "astro:actions";
-
-const topicList = {
-  heading: "What you get on Cloud.gov",
-  intro: `Whether you're modernizing legacy tools, launching a new citizen-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.`,
-  items: [
-    {
-      heading: "Self-service resource management, your way",
-      text: `Scale services, add memory, and manage apps via CLI, API, or dashboard—no tickets, no wait.`,
-      icon: "check_circle",
-      link: {
-        label: "Get a free sandbox",
-        url: "/sign-up",
-      },
-    },
-    {
-      heading: "In-house Helpdesk & Office Hours",
-      text: `Chat, email, or drop into weekly office hours to talk with our in-house engineers.`,
-      icon: "check_circle",
-      link: {
-        label: "Get a free sandbox",
-        url: "/sign-up",
-      },
-    },
-    {
-      heading: "Built-in logging and metrics",
-      text: `App logs and platform metrics are available out of the box.`,
-      icon: "check_circle",
-      link: {
-        label: "Get a free sandbox",
-        url: "/sign-up",
-      },
-    },
-  ],
-  outro: `Want full tech specs? [View all supported languages and services on docs.cloud.gov](https://docs.cloud.gov/).`,
-};
 
 const headerSection = {
-  heading: "Modern Application Hosting for Government",
-  intro:
-    "Government software projects often feel like **a marathon of challenges**— instead of building services, you’re navigating procurement and security.",
+  heading: "Faster, easier, and built for government from the start",
+  intro: `Most federal dev teams spend more time pushing paperwork around than pushing to production.
+
+Because we operate inside the General Services Administration (GSA), you don’t need to navigate vendor contracts, new security reviews, or external approvals. Our infrastructure, pricing, and onboarding are designed specifically for government—**so you can focus on delivery, not procurement**.`,
+  align: "left",
+};
+
+const g2g = {
+  heading: "Government-to-government, not just “govtech”",
+  intro: "We’re not a vendor. We’re government, just like you. That means:",
+  background: "primary",
   align: "center",
-  buttons: [
+  items: [
     {
-      label: "Get a free sandbox",
-      url: "/sign-up",
+      heading: "No RFP required",
+      text: "Get your team onboarded in days, not months, under [a simple IAA with GSA](/pricing).",
+      icon: "check_circle",
     },
     {
-      label: "Connect with our team",
-      url: "/demo",
-      variant: "outline",
+      heading: "No multi-year contract traps",
+      text: "We’re incentivized to serve your mission and our platform, not maximize profit.",
+      icon: "check_circle",
+    },
+    {
+      heading: "No vendor lock-in",
+      text: "Your team retains control of your apps, data, and repos. Forever.",
+      icon: "check_circle",
     },
   ],
+};
+
+const getCoding = {
+  heading: "Get coding in hours, not months",
+  intro: `Cloud.gov works with government agencies of every scale and complexity — from small teams to large departments, with diverse budgetary structures and procurement processes. With Cloud.gov, your team can:`,
+  items: [
+    { heading: "Start building in a [free sandbox]() within hours" },
+    { heading: "Immediately set up development environments and spaces" },
+    { heading: "Manage access and permissions for your entire team, space or organization" },
+    { heading: "Create managed service instances (databases, search) automatically" },
+    { heading: "Monitor metrics, logs, and application performance" },
+    { heading: "Manage your applications and infrastructure directly through our platform" },
+    { heading: "Instantly scale resources without waiting weeks for ticket approvals" },
+    { heading: "Move into production once you’re ready, and redeploy as often as you like" },
+    { heading: "[Pay only for what you need](), not for a bundle of extras" },
+  ],
+  checks: true,
 };
 
 const CTASection = {
   heading: "Modern Application Hosting for Government",
-  heading_level: "h3",
   text: "Government software projects often feel like **a marathon of challenges**— instead of building services, you’re navigating procurement and security.",
   align: "center",
+  background: "base",
   buttons: [
     {
       label: "Get a free sandbox",
@@ -102,12 +101,57 @@ const stepsList = {
     },
   ],
 };
+
+const mandatesHandled = {
+  heading: "The latest 2025 federal compliance mandates, handled",
+  intro: `Cloud.gov is already FedRAMP Authorized (Moderate), so your agency can reuse our compliance package without a second review. That means on day one, you can check these off your list:`,
+  content: `- Our continuous monitoring meets **every 2025 FISMA metric for OMB M-25-04**
+- Cloud.gov’s completely “Zero Trust” model satisfies **Executive Order 14028**
+- All active cryptographic modules are validated against the **FIPS 140-3 Standard**
+- Customers on Cloud.gov get priority access to the upcoming **FedRAMP 20x OSCAL packages**`,
+  outro: `You don’t have to set up your own platform team to meet federal compliance requirements. 
+**We’re already operating one for you.**`,
+};
+
+const supportTiles = {
+  heading: "Our team is here to support yours",
+  intro:
+    "Cloud.gov is developed and maintained by federal employees within GSA’s Technology Transformation Services. We know how government works, because we are government, too. When you work with us, you're working with a team that understands your constraints, your goals, and your urgency.",
+  items: [
+    {
+      heading: "Still have questions?",
+      text: `Chat, email, or drop into weekly office hours to talk with our in-house engineers.`,
+      icon: "check_circle",
+      link: {
+        label: "Get in touch",
+        url: "/contact",
+      },
+    },
+    {
+      heading: "See what Cloud.gov offers",
+      text: `Scale services, add memory, and manage apps via CLI, API, or dashboard`,
+      icon: "check_circle",
+      link: {
+        label: "All solutions",
+        url: "/",
+      },
+    },
+  ],
+};
 ---
 
 <Layout>
   <Hero {...headerSection} />
-  <Topics {...topicList} />
+  <Tiles {...g2g} />
+  <Steps {...getCoding} />
   <CTA {...CTASection} />
   <Steps {...stepsList} />
-  <Tiles {...topicList} />
+  <hr />
+  <PageSection {...mandatesHandled}>
+    <Markdown
+      content={mandatesHandled.content}
+      classes="font-body-lg margin-top-neg-2 margin-bottom-2 desktop-lg:margin-left-neg-2 line-height-sans-4"
+    />
+  </PageSection>
+  <Tiles {...supportTiles} />
 </Layout>

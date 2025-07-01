@@ -1,0 +1,48 @@
+---
+import Markdown from "./Markdown.astro";
+
+interface Props {
+  heading?: string;
+  intro?: string;
+  outro?: string;
+  background?: string;
+  align?: "center" | "left";
+}
+
+const { heading = false, intro = false, outro = false, background = "white", align = "left" } = Astro.props;
+---
+
+<section
+  class={`bg-${background}-lightest border-${background}-lighter border-y-1px border-transparent usa-section text-${align}`}>
+  <div class="grid-container">
+    <div class="grid-row">
+      <div class={`grid-col-12 margin-x-auto tablet:grid-col-10 ${align !== "center" && "desktop-lg:grid-col-12"}`}>
+        {heading && <h2 class="font-sans-xl margin-bottom-2">{heading}</h2>}
+
+        {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-4 margin-bottom-4" inline />}
+      </div>
+
+      <div class="grid-col-12 tablet:grid-col-10 desktop-lg:grid-col-12 margin-x-auto">
+        <div class="grid-row grid-gap-lg flex-justify-center">
+          <slot />
+        </div>
+      </div>
+      <div class={`grid-col-12 margin-x-auto tablet:grid-col-10 ${align !== "center" && "desktop-lg:grid-col-12"}`}>
+        {
+          outro && (
+            <Markdown content={outro} classes="margin-top-2 font-sans-lg line-height-sans-4 margin-bottom-0" inline />
+          )
+        }
+      </div>
+    </div>
+  </div>
+  <style>
+    .usa-link {
+      position: relative;
+    }
+    .usa-link .usa-icon {
+      position: absolute;
+      right: -1rem;
+    }
+  </style>
+</section>

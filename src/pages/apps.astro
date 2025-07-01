@@ -10,6 +10,7 @@ const hero = {
   heading: "Modern Application Hosting for Government",
   intro: "Secure and scalable cloud infrastructure made easy",
   align: "center",
+  background: "base",
   buttons: [
     { label: "Get a free sandbox", url: "/sign-up" },
     { label: "Connect with our team", url: "/demo", variant: "outline" },
@@ -88,6 +89,7 @@ const whatYouCanBuild = {
   heading: "What you can build with us",
   intro:
     "Whether you're modernizing legacy tools, launching a new citizen-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.",
+  background: "primary",
   items: [
     {
       heading: "Internal tools & forms",
@@ -150,14 +152,13 @@ const otherOfferings = {
       },
     },
   ],
-  background: "base-lightest",
+  background: "base",
 };
 
 const tryItYourself = {
   heading: "Try it for yourself",
   heading_level: "h3",
   align: "center",
-  background: "primary-lightest",
   text: "We offer a free, no-strings-attached sandbox environment for federal staff and contractors. Test deployments, evaluate fit, and explore how Cloud​.​gov supports your workflows.",
   buttons: [
     { label: "Get a free sandbox", url: "/sign-up" },
@@ -176,9 +177,9 @@ const newsletter = {
 <Layout>
   <Hero {...hero} />
   <Topics {...moreWithLess} />
-  <hr />
   <Tiles {...whatYouCanBuild} />
   <CTA {...tryItYourself} />
+  <hr />
   <Topics {...whatYouGet} />
   <hr />
   <CTA {...noRFP} />

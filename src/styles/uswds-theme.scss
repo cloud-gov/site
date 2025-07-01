@@ -4,6 +4,14 @@
 // gives you access to functions from USWDS
 @use "@uswds/uswds/packages/uswds-core" as *;
 
+h1, h2, h3, h4, h5, p, li {
+  text-wrap: pretty;
+}
+h2 {
+  font-weight: 600;
+}
+
+
 .usa-button:not(input) {
   padding: units(2) units(3);
 }
@@ -158,6 +166,7 @@ $theme-footer-background-color: "primary";
 }
 
 .usa-process-list.checks {
+  -webkit-font-smoothing: antialiased;
   .usa-process-list__item {
     position: relative;
     padding-bottom: 1.5rem;

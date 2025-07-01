@@ -12,22 +12,20 @@ export interface Props {
   align?: "left" | "center";
   intro?: string;
   buttons?: Button[];
+  background?: string;
 }
 
-const { heading, align = "left", intro, buttons = [] } = Astro.props;
+const { heading, align = "left", intro, buttons = [], background = "white" } = Astro.props;
 ---
 
-<section class={`bg-base-lightest padding-y-6 text-${align}`}>
+<section
+  class={`bg-${background}-lightest text-base-darkest text-${background}-darkest border-base-lighter border-bottom-1px padding-y-6 text-${align}`}>
   <div class="grid-container">
     <div class="grid-row">
-      <div class="grid-col-12 tablet:grid-col-10 margin-x-auto">
+      <div class={`grid-col-12 margin-x-auto tablet:grid-col-10 ${align !== "center" && "desktop-lg:grid-col-12"}`}>
         {heading && <h1 class="font-sans-3xl text-semibold margin-bottom-4 margin-top-0">{heading}</h1>}
 
-        {
-          intro && (
-            <Markdown content={intro} classes="font-sans-xl text-light line-height-sans-4 margin-bottom-3" inline />
-          )
-        }
+        {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-4 margin-bottom-3" inline />}
         {
           buttons.length > 0 && (
             <div class="usa-button-group margin-top-2 flex-justify-center">

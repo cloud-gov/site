@@ -11,6 +11,7 @@ const hero = {
   heading: "Everything you need to run your compliant government website",
   intro: "Easy-to-manage public websites for federal agencies",
   align: "center",
+  background: "base",
   buttons: [
     { label: "Connect with our team", url: "/demo", variant: "outline" },
     { label: "See pricing", url: "/pricing" },
@@ -74,6 +75,10 @@ const whatYouGet = {
       heading: "Automated compliance scans",
       text: "Pages handles monthly checks for cybersecurity and accessibility issues, so your site is always secure and ready to serve the public.",
     },
+    {
+      heading: "",
+      text: "",
+    },
   ],
   outro: `We’re experts in government websites. Whether you need a little help or full support, we’ve got experience with agency needs at every scale.
   
@@ -84,6 +89,7 @@ const whatYouCanBuild = {
   heading: "What you can build with us",
   intro:
     "From mission-critical services to public transparency portals, Cloud.gov Pages empowers federal teams to build, launch, and manage websites quickly—without the usual infrastructure burden.",
+  background: "primary",
   items: [
     {
       heading: "Agency brochure sites",
@@ -131,9 +137,10 @@ Picture three months from now—do you want your RFP cleared, or your site live?
 
 const relyOnPages = {
   heading: "Dozens of agencies across government rely on Pages",
-  text: "You don’t need a whole IT department to run a compliant federal website. You just need Cloud.gov Pages.",
-  buttons: [{ label: "Connect with our team", url: "/demo" }],
-  background: "base-lightest",
+  text: `You don’t need a whole IT department to run a compliant federal website. 
+  You just need Cloud.gov Pages.`,
+  buttons: [{ label: "Connect with our team", url: "/demo", variant: "outline" }],
+  background: "primary",
   align: "center",
 };
 
@@ -158,7 +165,7 @@ const otherOfferings = {
       },
     },
   ],
-  background: "base-lightest",
+  background: "base",
 };
 
 const newsletter = {
@@ -172,11 +179,9 @@ const newsletter = {
 <Layout>
   <Hero {...hero} />
   <Steps {...moreWithLess} />
-  <hr />
-  <Tiles {...whatYouCanBuild} />
   <CTA {...relyOnPages} />
   <Topics {...whatYouGet} />
-  <hr />
+  <Tiles {...whatYouCanBuild} />
   <CTA {...noRFP} />
   <Tiles {...otherOfferings} />
   <Subscribe {...newsletter} />
