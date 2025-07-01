@@ -88,6 +88,8 @@ Once you have chosen a plan size, you should consider whether you need to run yo
 
 For databases used for development or staging environments, redundancy may not be as critical. **But for databases used in production applications, you should always use a `*-redundant` database plan.**
 
+If you need or want [a read replica for your database](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html), use one of the `*-replica` database plans. The `*-replica` database plans also include redundancy of your database in multiple availability zones.
+
 ## Create an instance
 
 To create a service instance run the following command:
@@ -238,7 +240,7 @@ There are a couple of caveats regarding this command with the `-p` flag:
 - You can only update using plans with the same database engine as your existing service instance. This means that if your original service instance was using a PostgreSQL plan (e.g., `micro-psql`), you can only update to one of the other `psql`-based plans.
 - You can **only** switch service plans with this command; you cannot do things like upgrade your database version.
 
-You can update to larger or smaller plans depending on your specific needs, and you can switch between redundant and non-redundant plans.
+You can update to larger or smaller plans depending on your specific needs, and you can switch between redundant and non-redundant plans. You can also switch from a plan without a read replica to one with a read replica.
 
 **NOTE: All updates are applied immediately. Performing an update in place like this will result in a brief period of downtime (seconds to minutes) while the service instance restarts as a part of the update.**
 
