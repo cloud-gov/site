@@ -1,0 +1,29 @@
+---
+import Markdown from "./Markdown.astro";
+
+interface Step {
+  heading: string;
+  text?: string;
+  list?: string[];
+}
+
+export interface Props {
+  headingLevel?: "h3" | "h4";
+  checks?: boolean;
+  steps: Step[];
+}
+
+const { headingLevel = "h3", checks = false, steps } = Astro.props;
+const HeadingTag = headingLevel;
+---
+
+<ol class={`usa-process-list ${checks && "checks"}`}>
+  {
+    steps.map((step) => (
+      <li class="usa-process-list__item">
+        <HeadingTag class="usa-process-list__heading">{step.heading}</HeadingTag>
+        {step.text && <Markdown content={step.text} classes="font-sans-sm line-height-sans-4 margin-bottom-3" inline />}
+      </li>
+    ))
+  }
+</ol>

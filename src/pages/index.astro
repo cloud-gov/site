@@ -1,9 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Topics from '../components/Topics.astro';
-import Tiles from '../components/Tiles.astro';
-import CTA from '../components/CTA.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Topics from "../components/Topics.astro";
+import Tiles from "../components/Tiles.astro";
+import CTA from "../components/CTA.astro";
+import Steps from "../components/Steps.astro";
+import type { ACTION_ERROR_CODES } from "astro:actions";
 
 const topicList = {
   heading: "What you get on Cloud.gov",
@@ -13,77 +15,99 @@ const topicList = {
       heading: "Self-service resource management, your way",
       text: `Scale services, add memory, and manage apps via CLI, API, or dashboard—no tickets, no wait.`,
       icon: "check_circle",
-			link: {
-				label: "Get a free sandbox",
-				url: "/sign-up",
-			}
+      link: {
+        label: "Get a free sandbox",
+        url: "/sign-up",
+      },
     },
     {
       heading: "In-house Helpdesk & Office Hours",
       text: `Chat, email, or drop into weekly office hours to talk with our in-house engineers.`,
       icon: "check_circle",
-			link: {
-				label: "Get a free sandbox",
-				url: "/sign-up",
-			}
+      link: {
+        label: "Get a free sandbox",
+        url: "/sign-up",
+      },
     },
     {
       heading: "Built-in logging and metrics",
       text: `App logs and platform metrics are available out of the box.`,
       icon: "check_circle",
-			link: {
-				label: "Get a free sandbox",
-				url: "/sign-up",
-			}
+      link: {
+        label: "Get a free sandbox",
+        url: "/sign-up",
+      },
     },
   ],
   outro: `Want full tech specs? [View all supported languages and services on docs.cloud.gov](https://docs.cloud.gov/).`,
 };
 
-
 const headerSection = {
-	heading: "Modern Application Hosting for Government",
-	intro: "Government software projects often feel like **a marathon of challenges**— instead of building services, you’re navigating procurement and security.",
-	align: "center",
-	buttons: [
-		{
-			label: "Get a free sandbox",
-			url: "/sign-up",
-		},
-		{
-			label: "Connect with our team",
-			url: "/demo",
-			variant: "outline"
-		}
-	]
-}
-
+  heading: "Modern Application Hosting for Government",
+  intro:
+    "Government software projects often feel like **a marathon of challenges**— instead of building services, you’re navigating procurement and security.",
+  align: "center",
+  buttons: [
+    {
+      label: "Get a free sandbox",
+      url: "/sign-up",
+    },
+    {
+      label: "Connect with our team",
+      url: "/demo",
+      variant: "outline",
+    },
+  ],
+};
 
 const CTASection = {
-	heading: "Modern Application Hosting for Government",
-	heading_level: "h3",
-	text: "Government software projects often feel like **a marathon of challenges**— instead of building services, you’re navigating procurement and security.",
-	align: "center",
-	buttons: [
-		{
-			label: "Get a free sandbox",
-			url: "/sign-up",
-		},
-		{
-			label: "Connect with our team",
-			url: "/demo",
-			variant: "outline"
-		}
-	]
-}
+  heading: "Modern Application Hosting for Government",
+  heading_level: "h3",
+  text: "Government software projects often feel like **a marathon of challenges**— instead of building services, you’re navigating procurement and security.",
+  align: "center",
+  buttons: [
+    {
+      label: "Get a free sandbox",
+      url: "/sign-up",
+    },
+    {
+      label: "Connect with our team",
+      url: "/demo",
+      variant: "outline",
+    },
+  ],
+};
+
+const stepsList = {
+  heading: "How an IAA with Cloud.gov works for you",
+  outro: `Ready to get started? [Reach out to start the conversation](/demo).`,
+  step_heading_level: "h3",
+  step_headings_only: false,
+  items: [
+    {
+      heading: "Initial consultation with our expert procurement staff",
+      text: "Our cloud services and federal procurement specialists will listen closely to your agency's mission, asking strategic questions to map your technology requirements. We partner with you to identify the right cloud services for your mission requirements.",
+    },
+    {
+      heading: "Proven and seamless agreement design",
+      text: "We help estimate your usage and scope an Inter-Agency Agreement that precisely matches your agency's needs. Choose one or multiple Cloud.gov products, add professional support services, and plan for your future with standardized language crafted from hundreds of our existing federal agreements.",
+    },
+    {
+      heading: "Simplified approvals and execution",
+      text: "We work with you throughout the approval and billing process, supported by GSA’s fully electronic G-invoicing system. This phase usually takes our customers a few weeks from start to finish, compared to months-long traditional procurement cycles.",
+    },
+    {
+      heading: "Flexible deployments and renewals",
+      text: "Launch your cloud services with a one-year renewable agreement designed for continuous adaptation. Months before you renew, we reach out to you about your evolving technology needs, ensuring your technology always matches your mission.",
+    },
+  ],
+};
 ---
 
 <Layout>
-
-	<Hero {...headerSection}/>
-	<Topics {...topicList} />
-	<CTA {...CTASection} />
-	<Tiles {...topicList} />
-
-
+  <Hero {...headerSection} />
+  <Topics {...topicList} />
+  <CTA {...CTASection} />
+  <Steps {...stepsList} />
+  <Tiles {...topicList} />
 </Layout>

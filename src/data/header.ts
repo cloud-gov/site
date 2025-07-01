@@ -5,9 +5,9 @@ export const headerProps = {
     {
       label: 'Solutions',
       links: [
-        { label: 'Fast & Scalable Federal Apps', url: '/solutions/federal-apps' },
-        { label: 'Federal Public Websites', url: '/solutions/public-websites' },
-        { label: 'Developer Collaboration Tools', url: '/solutions/devtools' }
+        { label: 'Fast & Scalable Federal Apps', url: '/apps' },
+        { label: 'Federal Public Websites', url: '/pages' },
+        { label: 'Developer Collaboration Tools', url: '/tools' }
       ]
     },
   ],
@@ -18,7 +18,7 @@ export const headerProps = {
   secondaryLinks: [
     { label: 'Resources', url: '/resources' },
     { label: 'Contact', url: '/contact' },
-    { label: 'Status', url: 'https://status.cloud.gov' }
+    { label: 'Status', url: 'https://cloudgov.statuspage.io/' }
   ],
   buttonLinks: [
     { label: 'Get a free sandbox', url: '/sign-up' },
