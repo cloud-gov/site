@@ -58,6 +58,26 @@ Once you have created or updated a service with a read replica, you need to bind
 ```shell
 cf unbind-service <app-name> <your-service-name> # if service is already bound to an app
 cf bind-service <app-name> <your-service-name>
+# make sure to restage for replcia credentials to be available to the app
+cf restage <app-name> --strategy rolling
 ```
 
-You can also [create a service key](https://cli.cloudfoundry.org/en-US/v8/create-service-key.html) to get the credentials for accessing your read replica.
+You can also [create a service key](https://cli.cloudfoundry.org/en-US/v8/create-service-key.html) to get the credentials for accessing your read replica:
+
+```shell
+cf create-service-key <your-service-name> <service-key-name>
+```
+
+After you have bound the service to an application or created a service key, then you can inspect the bound credentials:
+
+```shell
+cf env <app-name> # view bound services and their credentials for an app
+cf service-key <your-service-name> <service-key-name> # view contents of a service key
+```
+
+The bound credentials for a database with a read replica should include:
+
+- `replica_uri`: a full URI for connecting to your read replica database.
+- `replica_host`: the host for connecting to your read replica database. The `replica_host` can be used in combination with the other properties (`username`, `password`, `db_name`, `port`) to connect to the read replica database.
+
+Using these properties in your application code or other tools, you should be able to connect to your read replica database and use it. **Remember that read replica databases are read-only, so you cannot write to them**.
