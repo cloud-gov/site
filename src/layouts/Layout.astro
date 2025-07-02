@@ -18,12 +18,7 @@ import { footerProps } from "../data/footer";
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="preload"
-      href={`${Astro.site}/styles/uswds-theme.css`}
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
+    <link rel="preload" href="styles/uswds-theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   </head>
   <body>
     <script src="@uswds/uswds/components/usa-banner"></script>

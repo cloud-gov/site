@@ -5,7 +5,7 @@ export const footerProps = {
       links: [
         {
           text: "Customer support",
-          url: "/support"
+          url: "support"
         },
         {
           text: "Business Inquiries",
@@ -22,7 +22,7 @@ export const footerProps = {
         },
         {
           text: "Free sandbox",
-          url: "/sign-up"
+          url: "sign-up"
         },
         {
           text: "Status",

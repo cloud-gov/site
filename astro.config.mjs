@@ -19,9 +19,9 @@ export default defineConfig({
   // where siteurl matches a custom domain
   // site: `https://${siteurl}`
   site: process.env.BASEURL
-    ? `https://federalist-f689d682-d20c-4d0b-af7b-c1a42fcd49f5.sites.pages.cloud.gov`
+    ? `https://federalist-f689d682-d20c-4d0b-af7b-c1a42fcd49f5.sites.pages.cloud.gov${process.env.BASEURL}`
     : 'http://localhost:4321',
-  base: process.env.BASEURL || '',
+  base: process.env.BASEURL ? process.env.BASEURL + '/' : '/',
   redirects: redirects,
   integrations: [mdx(), sitemap()],
   vite: {
