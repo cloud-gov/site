@@ -10,7 +10,9 @@ h1, h2, h3, h4, h5, p, li {
 h2 {
   font-weight: 600;
 }
-
+.text-white {
+  -webkit-font-smoothing: antialiased;
+}
 
 .usa-button:not(input) {
   padding: units(2) units(3);

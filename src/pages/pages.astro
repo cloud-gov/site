@@ -6,6 +6,7 @@ import Steps from "../components/Steps.astro";
 import Tiles from "../components/Tiles.astro";
 import CTA from "../components/CTA.astro";
 import Subscribe from "../components/Subscribe.astro";
+import FeaturedSection from "../components/FeaturedSection.astro";
 
 const hero = {
   heading: "Everything you need to run your compliant government website",
@@ -140,7 +141,7 @@ const relyOnPages = {
   text: `You don’t need a whole IT department to run a compliant federal website. 
   You just need Cloud.gov Pages.`,
   buttons: [{ label: "Connect with our team", url: "/demo", variant: "outline" }],
-  background: "primary",
+  background: "white",
   align: "center",
 };
 
@@ -174,15 +175,42 @@ const newsletter = {
   account_id: "USGSATTS",
   category_id: "GSA_CLOUD",
 };
+
+const AtoFeature = {
+  heading: "Designed for the way government launches software",
+  intro:
+    "Cloud.gov’s shared responsibility model gives federal teams a head start, whether you’re seeking a new ATO or reauthorizing an existing system. With Cloud.gov’s position, context, and expertise inside government, we understand firsthand what’s hard for agency customers.",
+  items: [
+    {
+      heading: "Guided security support with our in-house experts",
+      text: "We work directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessment (SIA).",
+      link: {
+        label: "Check us out on the FedRAMP marketplace",
+        url: "#",
+      },
+    },
+    {
+      heading: "You don't have to BYO ATO",
+      text: "Cloud.gov Pages offers a simple Authority to Use (ATU) approach. After guiding dozens of government agencies through the compliance authorization process, our experts have streamlined each step of the process, from initial documentation to final approval.",
+      link: {
+        label: "Review our compliance docs on Connect.gov",
+        url: "#",
+      },
+    },
+  ],
+  background: "base",
+};
 ---
 
 <Layout>
   <Hero {...hero} />
   <Steps {...moreWithLess} />
-  <CTA {...relyOnPages} />
+  <FeaturedSection {...AtoFeature} />
   <Topics {...whatYouGet} />
   <Tiles {...whatYouCanBuild} />
   <CTA {...noRFP} />
+  <hr />
+  <CTA {...relyOnPages} />
   <Tiles {...otherOfferings} />
   <Subscribe {...newsletter} />
 </Layout>
