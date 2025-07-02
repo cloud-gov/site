@@ -223,6 +223,7 @@ $theme-footer-background-color: "primary";
   &:before {
     position: absolute;
     top: calc(1.5rem - 3px);
+    height: 0;
     width: 10ch;
     display: inline-block;
     content: "";
@@ -230,6 +231,13 @@ $theme-footer-background-color: "primary";
   }
   &:has(.usa-icon):before {
     left: 3rem;
+  }
+  &.top-divider--center-mobile::before {
+    @media (max-width: 799px) {
+      position: relative;
+      top: - 1.5rem;
+
+    }
   }
 }
 

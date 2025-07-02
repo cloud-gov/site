@@ -39,108 +39,230 @@ interface Props {
   heading?: string;
   intro?: string;
   outro?: string;
-  pages?: Pages;
-  apps?: Apps;
+  pages: Pages;
+  apps: Apps;
   color?: string;
 }
 
 const { apps, pages, color = "white" } = Astro.props;
 ---
 
-<section class={`bg-${color}-lightest border-${color}-lighter text-${color}-darkest border-y-1px usa-section`}>
-  <div class="grid-container">
-    <div class="grid-row">
-      <div class="grid-col desktop-lg:margin-left-0 tablet-lg:grid-offset-1">
-        <div class="grid-row grid-gap-lg flex-justify flex-align-center">
+<section class={`usa-section section section--${color}`}>
+  <div class="section__container">
+    <div class="section__item">
+      <div class="section__text top-divider top-divider--center-mobile">
+        <h3 class="font-body-sm text-uppercase text-ls-2 text-medium">{apps.subhead}</h3>
+        <h4 class="font-body-xl text-medium">{apps.heading}</h4>
+
+        <Markdown content={apps.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
+
+        {
+          apps.link && (
+            <a class="usa-button usa-button--inverse" href={apps.link.url}>
+              {apps.link.label}
+            </a>
+          )
+        }
+      </div>
+      <div class="section__media">
+        <div class="border radius-lg bg-white height-full overflow-hidden text-left width-full maxw-tablet">
           <div
-            class={`grid-col-12 tablet:grid-col-10 tablet:grid-offset-1 tablet-lg:grid-col-6 tablet-lg:margin-left-0 desktop:grid-col-6 margin-y-8`}>
-            <h3 class="font-body-sm text-uppercase text-ls-2 text-medium">{apps.subhead}</h3>
-            <h4 class="font-body-xl text-medium">{apps.heading}</h4>
+            class="bg-base-lightest padding-top-2 padding-bottom-105 padding-x-3 text-bold font-sans-sm display-flex flex-align-center">
+            <div class="flex-1">Tier</div>
+            <div class="flex-1 text-right">Credits</div>
+            <div class="flex-1 text-right">Annual Price</div>
+          </div>
 
-            <Markdown content={apps.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
-
+          <ul class="usa-list usa-list--unstyled margin-0">
             {
-              apps.link && (
-                <div class="usa-button-group margin-top-2 margin-bottom-0">
-                  <a class="usa-button usa-button--inverse" href={apps.link.url}>
-                    {apps.link.label}
-                  </a>
-                </div>
-              )
+              apps.tiers.map((tier) => (
+                <li class="border-top border-base-lighter padding-y-1 padding-x-3 display-flex flex-align-center font-sans-sm">
+                  <div class="flex-1 text-medium">{tier.name}</div>
+                  <div class="flex-1 text-right font-mono-sm">{tier.credits.toLocaleString()}</div>
+                  <div class="flex-1 text-right text-medium">{tier.price}</div>
+                </li>
+              ))
             }
-          </div>
-          <div
-            class="grid-col-12 tablet:grid-col-8 tablet:grid-offset-1 tablet-lg:margin-left-0 tablet-lg:grid-col-5 desktop:grid-col-5 margin-y-auto text-left">
-            <div
-              class={`border border-base-lighter border-${color}-light radius-lg bg-white height-full overflow-hidden`}>
-              <div
-                class="bg-base-lightest padding-top-2 padding-bottom-105 padding-x-3 text-bold font-sans-sm display-flex flex-align-center">
-                <div class="flex-1">Tier</div>
-                <div class="flex-1 text-right">Credits</div>
-                <div class="flex-1 text-right">Annual Price</div>
-              </div>
-
-              <ul class="usa-list usa-list--unstyled margin-0">
-                {
-                  apps.tiers.map((tier) => (
-                    <li class="border-top border-base-lighter padding-y-1 padding-x-3 display-flex flex-align-center font-sans-sm">
-                      <div class="flex-1 text-medium">{tier.name}</div>
-                      <div class="flex-1 text-right font-mono-sm">{tier.credits.toLocaleString()}</div>
-                      <div class="flex-1 text-right text-medium">{tier.price}</div>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          </div>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <div class="grid-row grid-gap-lg flex-justify flex-align-center">
-          <div
-            class="grid-col-12 tablet:grid-col-10 tablet:grid-offset-1 tablet-lg:grid-col-6 tablet-lg:margin-left-0 margin-y-8 tablet-lg:order-last">
-            <h3 class="font-body-sm text-uppercase text-ls-2 text-medium">{pages.subhead}</h3>
-            <h4 class="font-body-xl text-medium">{pages.heading}</h4>
+    <div class="section__item" data-odd>
+      <div class="section__text top-divider top-divider--center-mobile">
+        <h3 class="font-body-sm text-uppercase text-ls-2 text-medium subhead">{pages.subhead}</h3>
+        <h4 class="font-body-xl text-medium heading">{pages.heading}</h4>
 
-            <Markdown content={pages.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
+        <Markdown content={pages.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
+        {
+          pages.link && (
+            <a class="usa-button usa-button--inverse" href={pages.link.url}>
+              {pages.link.label}
+            </a>
+          )
+        }
+      </div>
+      <div class="section__media">
+        <div class="padding-4 border radius-lg bg-white height-full maxw-mobile-lg">
+          <h3 class="font-sans-xl text-bold margin-bottom-1 text-center">
+            {pages.pricing.name}
+          </h3>
 
-            {
-              pages.link && (
-                <div class="usa-button-group margin-top-2 margin-bottom-0">
-                  <a class="usa-button usa-button--inverse" href={pages.link.url}>
-                    {pages.link.label}
-                  </a>
-                </div>
-              )
-            }
+          <div class="text-center line-height-sans-1 margin-bottom-3">
+            <span class="display-inline-block font-sans-lg text-bold">$</span>
+            <span class="font-sans-3xl text-bold">{pages.pricing.price}</span>
+            <span class="display-inline-block font-sans-sm text-normal">{pages.pricing.unit}</span>
           </div>
-          <div
-            class="grid-col-12 tablet:grid-col-8 tablet:grid-offset-1 tablet-lg:margin-left-0 tablet-lg:grid-col-5 desktop:grid-col-5 margin-y-auto text-center">
-            <div class={`padding-4 border border-base-lighter border-${color}-light radius-lg bg-white height-full`}>
-              <h3 class="font-sans-xl text-bold margin-bottom-1 text-center">
-                {pages.pricing.name}
-              </h3>
-
-              <div class="text-center line-height-sans-1 margin-bottom-3">
-                <span class="display-inline-block font-sans-lg text-bold">$</span>
-                <span class="font-sans-3xl text-bold">{pages.pricing.price}</span>
-                <span class="display-inline-block font-sans-sm text-normal">{pages.pricing.unit}</span>
-              </div>
-              <ul class="usa-list font-body-md line-height-body-4 text-left">
-                {pages.pricing.features.map((feature) => <li class="padding-y-05">{feature}</li>)}
-              </ul>
-            </div>
-          </div>
+          <ul class="usa-list font-body-md line-height-body-4 text-left">
+            {pages.pricing.features.map((feature) => <li class="padding-y-05">{feature}</li>)}
+          </ul>
         </div>
       </div>
     </div>
   </div>
-  <style>
-    .usa-link {
-      position: relative;
-    }
-    .usa-link .usa-icon {
-      position: absolute;
-      right: -1rem;
-    }
-  </style>
 </section>
+
+<style lang="scss">
+  .section {
+    --section-bg: #fff;
+    --section-text: var(--theme-color-base-darkest);
+    --section-border: var(--theme-color-primary-lightest);
+
+    padding: var(--size-section, 4rem) 0;
+    border: 1px solid var(--section-border);
+    border-width: 1px 0;
+
+    background-color: var(--section-bg);
+    color: var(--section-text);
+
+    // themes to choose from
+    &.section--white {
+      --section-bg: #fff;
+      --section-text: var(--theme-color-base-darkest);
+      --section-border: var(--theme-color-primary-lightest);
+    }
+    &.section--base,
+    &.section--base-light {
+      --section-bg: var(--theme-color-base-lightest);
+      --section-text: var(--theme-color-base-darkest);
+      --section-border: var(--theme-color-base-lighter);
+    }
+    &.section--primary,
+    &.section--primary-light {
+      --section-bg: var(--theme-color-primary-lightest);
+      --section-text: var(--theme-color-primary-darkest);
+      --section-border: var(--theme-color-primary-lighter);
+    }
+    &.section--primary-dark {
+      -webkit-font-smoothing: antialiased;
+      --section-bg: var(--theme-color-primary-dark);
+      --section-text: #fff;
+      --section-border: var(--theme-color-primary-darker);
+    }
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: var(--breakpoint-desktop-lg, 64rem);
+      margin-inline: auto;
+      padding-inline: 1.5rem;
+      width: 100%;
+      text-align: center;
+      justify-items: center;
+
+      @media (min-width: 800px) {
+        grid-template-columns: repeat(12, 1fr);
+        text-align: left;
+        justify-items: start;
+      }
+    }
+
+    &__intro,
+    &__outro {
+      grid-column: 1 / -1;
+
+      @media (min-width: 800px) and (max-width: 1199px) {
+        grid-column: 2 / span 8;
+      }
+      @media (min-width: 1200px) {
+        grid-column: 1 / span 8;
+      }
+    }
+
+    &__item {
+      grid-column: 1 / -1;
+
+      @media (min-width: 800px) and (max-width: 1199px) {
+        grid-column: 2 / span 10;
+      }
+    }
+
+    .section__item {
+      display: grid;
+      align-items: center;
+      grid-template-columns: inherit;
+      padding: 0;
+      @media (min-width: 1024px) {
+        padding: 0 0 2rem;
+      }
+    }
+
+    .section__text,
+    .section__media {
+      grid-column: 1 / -1;
+    }
+
+    .section__text {
+      @media (min-width: 1024px) {
+        grid-row: 1;
+        grid-column: 1 / span 6;
+      }
+      @media (min-width: 1199px) {
+        grid-column: 1 / span 5;
+      }
+      .subhead {
+        color: var(--section-text, #333);
+        opacity: 0.9;
+      }
+    }
+
+    .section__media {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 0 0;
+      justify-items: center;
+
+      @media (min-width: 1024px) {
+        padding: 0;
+        grid-row: 1;
+        grid-column: 8 / span 5;
+      }
+      .border {
+        border-color: var(--section-border, #fff);
+      }
+    }
+
+    // Alternate layout when odd
+    .section__item[data-odd] {
+      .section__text {
+        @media (min-width: 1024px) {
+          grid-column-start: 7;
+        }
+        @media (min-width: 1199px) {
+          grid-column-start: 8;
+        }
+      }
+
+      .section__media {
+        @media (min-width: 1024px) {
+          grid-column-start: 1;
+        }
+        @media (min-width: 1199px) {
+        }
+      }
+    }
+    .top-divider:before {
+      border-color: var(--section-border, #fff);
+    }
+  }
+</style>

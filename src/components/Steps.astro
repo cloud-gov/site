@@ -18,7 +18,7 @@ export interface Props {
   checks?: boolean;
 }
 const checksClasses =
-  "bg-base-lightest border-base-lighter border-1px padding-y-1 padding-x-4 radius-md margin-bottom-4 checks";
+  "bg-base-lightest border-base-lighter border-1px padding-y-1 padding-x-4 radius-md margin-bottom-4 has-checks";
 const classes = "margin-x-auto margin-bottom-0 no-checks";
 const { color = "white", stepHeadingLevel = "h3", checks = false, items, ...props } = Astro.props;
 ---
@@ -29,8 +29,12 @@ const { color = "white", stepHeadingLevel = "h3", checks = false, items, ...prop
   </div>
 </PageSection>
 <style lang="scss">
-  .checks {
+  .has-checks {
+    max-width: 75ch;
+    margin: 1rem auto;
   }
   .no-checks {
+    max-width: 100ch;
+    margin: 1rem auto;
   }
 </style>

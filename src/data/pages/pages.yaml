@@ -142,4 +142,4 @@ AtoFeature:
       link:
         label: "Review our compliance docs on Connect.gov"
         url: "#"
-  color: "base"
+  color: "primary-dark"

@@ -16,69 +16,179 @@ interface Props {
   intro?: string;
   outro?: string;
   items?: Item[];
+  id?: string;
   color?: string;
   align?: "center" | "left";
 }
 
-const { heading = false, intro = false, outro = false, color = "white", items = [] } = Astro.props;
+const { heading = false, intro = false, outro = false, color = "white", items = [], id } = Astro.props;
 ---
 
-<section
-  class={`bg-primary-darker bg-${color}-vivid border-${color}-dark border-y-1px usa-section text-white text-medium`}>
-  <div class="grid-container">
-    <div class="grid-row">
-      <div class="grid-col-12 tablet:grid-col-10 desktop-lg:grid-col-12 desktop-lg:margin-left-0 tablet:grid-offset-1">
-        {heading && <h2 class="font-sans-2xl margin-bottom-2">{heading}</h2>}
-      </div>
+<section {...id && { id }} class={`usa-section section section--${color}`}>
+  <div class="section__container">
+    <div class="section__intro margin-bottom-4">
+      {heading && <h2 class="font-sans-2xl margin-bottom-2">{heading}</h2>}
 
-      <div class="grid-col-12 tablet:grid-col-8 desktop-lg:grid-col-8 desktop-lg:margin-left-0 tablet:grid-offset-1">
-        {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-4 margin-bottom-4" inline />}
-      </div>
+      {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-4" inline />}
     </div>
-    <div class="grid-row">
-      <div class="grid-col desktop-lg:margin-left-0 tablet:grid-offset-1">
-        {
-          items.map((item, index) => (
-            <div class="grid-row grid-gap-lg">
-              <div
-                class={`grid-col-12 tablet:grid-col-7 desktop:grid-col-5 margin-y-6  ${index % 2 === 1 && "order-last"}`}>
-                {item.heading && <h3 class="font-body-xl text-medium">{item.heading}</h3>}
+    {
+      items.map((item, index) => (
+        <div class="section__item" data-odd={index % 2 === 1}>
+          <div class="section__text top-divider top-divider--center-mobile">
+            {item.heading && <h3 class="font-body-xl text-medium">{item.heading}</h3>}
 
-                {item.text && (
-                  <Markdown content={item.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
-                )}
+            {item.text && (
+              <Markdown content={item.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
+            )}
 
-                {item.link && (
-                  <div class="usa-button-group margin-top-2 margin-bottom-0">
-                    <a class="usa-button usa-button--inverse" href={item.link.url}>
-                      {item.link.label}
-                    </a>
-                  </div>
-                )}
+            {item.link && (
+              <div class="margin-top-2 margin-bottom-0">
+                <a class="usa-button usa-button--inverse" href={item.link.url}>
+                  {item.link.label}
+                </a>
               </div>
-              <div class="grid-col-12 tablet:grid-col-5 desktop:grid-col-7 margin-y-auto text-center">art here</div>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-    <div class="grid-row">
-      <div class="grid-col-12 margin-x-auto tablet:grid-col-10 desktop-lg:grid-col-12">
-        {
-          outro && (
-            <Markdown content={outro} classes="margin-top-2 font-sans-lg line-height-sans-4 margin-bottom-0" inline />
-          )
-        }
-      </div>
-    </div>
+            )}
+          </div>
+          <div class="section__media">art here</div>
+        </div>
+      ))
+    }
+
+    {
+      outro && (
+        <div class="section__outro">
+          <Markdown content={outro} classes="margin-top-2 font-sans-lg line-height-sans-4 margin-bottom-0" inline />
+        </div>
+      )
+    }
   </div>
-  <style>
-    .usa-link {
-      position: relative;
-    }
-    .usa-link .usa-icon {
-      position: absolute;
-      right: -1rem;
-    }
-  </style>
 </section>
+
+<style lang="scss">
+  .section {
+    --section-bg: #fff;
+    --section-text: var(--theme-color-base-darkest);
+    --section-border: var(--theme-color-primary-lightest);
+
+    padding: var(--size-section, 4rem) 0;
+    border: 1px solid var(--section-border);
+    border-width: 1px 0;
+
+    background-color: var(--section-bg);
+    color: var(--section-text);
+
+    // themes to choose from
+    &.section--white {
+      --section-bg: #fff;
+      --section-text: var(--theme-color-base-darkest);
+      --section-border: var(--theme-color-primary-lightest);
+    }
+    &.section--base,
+    &.section--base-light {
+      --section-bg: var(--theme-color-base-lightest);
+      --section-text: var(--theme-color-base-darkest);
+      --section-border: var(--theme-color-base-lighter);
+    }
+    &.section--primary,
+    &.section--primary-light {
+      --section-bg: var(--theme-color-primary-lightest);
+      --section-text: var(--theme-color-primary-darkest);
+      --section-border: var(--theme-color-primary-lighter);
+    }
+    &.section--primary-dark {
+      -webkit-font-smoothing: antialiased;
+      --section-bg: var(--theme-color-primary-dark);
+      --section-text: #fff;
+      --section-border: var(--theme-color-primary-darker);
+    }
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: var(--breakpoint-desktop-lg, 64rem);
+      margin-inline: auto;
+      padding-inline: 1.5rem;
+      width: 100%;
+      text-align: center;
+      justify-items: center;
+
+      @media (min-width: 800px) {
+        grid-template-columns: repeat(12, 1fr);
+        text-align: left;
+        justify-items: start;
+      }
+    }
+
+    &__intro,
+    &__outro {
+      grid-column: 1 / -1;
+
+      @media (min-width: 800px) and (max-width: 1199px) {
+        grid-column: 2 / span 8;
+      }
+      @media (min-width: 1200px) {
+        grid-column: 1 / span 8;
+      }
+    }
+
+    &__item {
+      grid-column: 1 / -1;
+
+      @media (min-width: 800px) and (max-width: 1199px) {
+        grid-column: 2 / span 10;
+      }
+    }
+
+    .section__item {
+      display: grid;
+      align-items: center;
+      grid-template-columns: inherit;
+      margin-bottom: 2rem;
+    }
+
+    .section__text,
+    .section__media {
+      grid-column: 1 / -1;
+    }
+
+    .section__text {
+      @media (min-width: 1024px) {
+        grid-row: 1;
+        grid-column: 1 / span 6;
+      }
+      @media (min-width: 1199px) {
+        grid-column: 1 / span 5;
+      }
+    }
+
+    .section__media {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 2rem 0;
+      @media (min-width: 1024px) {
+        grid-row: 1;
+        grid-column: 7 / span 6;
+      }
+    }
+
+    // Alternate layout when odd
+    .section__item[data-odd="true"] {
+      .section__text {
+        @media (min-width: 1024px) {
+          grid-column-start: 7;
+        }
+        @media (min-width: 1199px) {
+          grid-column-start: 8;
+        }
+      }
+
+      .section__media {
+        @media (min-width: 1024px) {
+          grid-column-start: 1;
+        }
+        @media (min-width: 1199px) {
+        }
+      }
+    }
+  }
+</style>
