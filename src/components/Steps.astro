@@ -32,9 +32,15 @@ const { color = "white", stepHeadingLevel = "h3", checks = false, items, ...prop
   .has-checks {
     max-width: 75ch;
     margin: 1rem auto;
+    @media (min-width: 800px) and (max-width: 1199px) {
+      max-width: 70vw;
+    }
   }
   .no-checks {
     max-width: 100ch;
     margin: 1rem auto;
+    @media (min-width: 800px) and (max-width: 1199px) {
+      padding: 0 8.33vw; // roughly 1/12th screen width
+    }
   }
 </style>

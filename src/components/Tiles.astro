@@ -77,11 +77,10 @@ const { items = [], align = "center", color = "base", ...props } = Astro.props;
   .tile__item {
     flex-basis: 100%;
     max-width: 100%;
-    @media (min-width: 800px) {
-      flex: 1 1 calc(50% - 1rem);
-      max-width: calc(50% - 1rem);
+    @media (min-width: 640px) {
+      max-width: 32em;
     }
-    @media (min-width: 1199px) {
+    @media (min-width: 800px) {
       flex: 1 1 calc(33.333% - 1rem);
       max-width: calc(33.333% - 1rem);
     }

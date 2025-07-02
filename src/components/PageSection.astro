@@ -31,19 +31,20 @@ const {
 
       {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-4" inline />}
     </div>
-    <div class="section__slot">
-      <slot />
-    </div>
+
     {
       content && (
         <div class="section__content">
           <Markdown
             content={content}
-            classes="section__markdown font-body-lg margin-top-neg-2 margin-bottom-2 line-height-sans-4"
+            classes="section__markdown font-body-lg margin-top-neg-2 margin-bottom-neg-4 line-height-sans-4"
           />
         </div>
       )
     }
+    <div class="section__slot">
+      <slot />
+    </div>
     {
       outro && (
         <div class="section__outro">

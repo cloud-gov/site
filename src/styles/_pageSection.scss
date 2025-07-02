@@ -76,8 +76,7 @@
       justify-items: center;    }
   }
 
-  &__content,
-  &__slot {
+  &__content {
     grid-column: 1 / -1;
     width: 100%;
 
@@ -85,6 +84,15 @@
       grid-column: 2 / span 10;
     }
     @media (min-width: 1200px) {
+      grid-column: 1 / span 12;
+    }
+  }
+
+  &__slot {
+    grid-column: 1 / -1;
+    width: 100%;
+
+    @media (min-width: 800px)  {
       grid-column: 1 / span 12;
     }
   }
