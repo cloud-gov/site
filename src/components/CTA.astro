@@ -9,16 +9,16 @@ interface Button {
 
 export interface Props {
   heading: string;
-  text?: string;
+  intro?: string;
   align?: "left" | "center";
   buttons?: Button[];
   background?: string;
 }
 
-const { heading, text, align = "left", buttons = [], background = "white" } = Astro.props;
+const { align = "left", buttons = [], background = "white", ...props } = Astro.props;
 ---
 
-<PageSection heading={heading} intro={text} background={background} align={align}>
+<PageSection {...props} background={background} align={align}>
   <div class="grid-col">
     {
       buttons.length > 0 && (

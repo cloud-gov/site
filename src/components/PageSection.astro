@@ -1,9 +1,11 @@
 ---
+import { fade } from "astro:transitions";
 import Markdown from "./Markdown.astro";
 
 interface Props {
   heading?: string;
   intro?: string;
+  content?: string;
   outro?: string;
   classes?: string;
   id?: string;
@@ -15,6 +17,7 @@ const {
   heading = false,
   intro = false,
   outro = false,
+  content = false,
   background = "white",
   align = "left",
   classes = "",
@@ -36,6 +39,14 @@ const {
       <div class="grid-col-12 tablet:grid-col-10 desktop-lg:grid-col-12 margin-x-auto">
         <div class="grid-row grid-gap-lg flex-justify-center">
           <slot />
+          {
+            content && (
+              <Markdown
+                content={content}
+                classes="font-body-lg margin-top-neg-2 margin-bottom-2 desktop-lg:margin-left-neg-15 line-height-sans-4"
+              />
+            )
+          }
         </div>
       </div>
       <div class={`grid-col-12 margin-x-auto tablet:grid-col-10 ${align !== "center" && "desktop-lg:grid-col-12"}`}>

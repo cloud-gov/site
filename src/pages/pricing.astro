@@ -15,12 +15,7 @@ import content from "../data/pages/pricing.yaml";
 <Layout>
   <Hero {...content.headerSection} />
   <Tiles {...content.g2g} />
-  <PageSection {...content.noRFP}>
-    <Markdown
-      content={content.noRFP.content}
-      classes="font-body-lg margin-top-neg-2 margin-bottom-2 desktop-lg:margin-left-neg-2 line-height-sans-4"
-    />
-  </PageSection>
+  <PageSection {...content.noRFP} />
   <Pricing {...content.pricingContent} />
   <Steps {...content.stepsList} />
   <hr />

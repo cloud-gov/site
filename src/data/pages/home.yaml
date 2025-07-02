@@ -40,7 +40,7 @@ getCoding:
 
 CTASection:
   heading: "Try it for yourself"
-  text: "We offer a free, no-strings-attached sandbox environment for federal staff and contractors. Test deployments, evaluate fit, and explore how Cloud.gov supports your workflows."
+  intro: "We offer a free, no-strings-attached sandbox environment for federal staff and contractors. Test deployments, evaluate fit, and explore how Cloud.gov supports your workflows."
   align: "center"
   background: "base"
   buttons:
@@ -119,5 +119,5 @@ ourApproach:
 
 newsletter:
   heading: "Keep in touch"
-  text: "Get release notes, beta invitations, and platform news"
+  intro: "Get release notes, beta invitations, and platform news"
 

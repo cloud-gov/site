@@ -18,13 +18,14 @@ interface Props {
   intro?: string;
   outro?: string;
   items?: Item[];
+  id?: string;
   background?: string;
 }
 
-const { heading, intro, outro, items = [], background = "white" } = Astro.props;
+const { items = [], background = "white", id, ...props } = Astro.props;
 ---
 
-<PageSection heading={heading} intro={intro} outro={outro} background={background} align="left">
+<PageSection align="left" background={background} {...props}>
   {
     items.map((item) => (
       <div class="grid-col-12 tablet-lg:grid-col-6 display-flex flex-row padding-bottom-3 top-divider">

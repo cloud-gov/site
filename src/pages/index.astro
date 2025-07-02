@@ -19,12 +19,7 @@ import content from "../data/pages/home.yaml";
   <CTA {...content.CTASection} />
   <Steps {...content.stepsList} />
   <hr />
-  <PageSection {...content.mandatesHandled}>
-    <Markdown
-      content={content.mandatesHandled.content}
-      classes="font-body-lg margin-top-neg-2 margin-bottom-2 desktop-lg:margin-left-neg-2 line-height-sans-4"
-    />
-  </PageSection>
+  <PageSection {...content.mandatesHandled} />
   <Tiles {...content.supportTiles} />
   <Topics {...content.ourApproach} />
   <hr />

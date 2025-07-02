@@ -85,7 +85,7 @@ whatYouCanBuild:
 
 noRFP:
   heading: "Publish a website in the time it takes to post an RFP"
-  text: |
+  intro: |
     Forget months-long vendor negotiations and complex Request for Proposal (RFP) processes. As a federal team within GSA, we've streamlined procurement to work the way government actually works.
 
     We partner directly with your team using a straightforward Interagency Agreement (IAA) with GSA. Run up to five websites with a fixed firm starting package, and add more sites as you grow.
@@ -97,7 +97,7 @@ noRFP:
 
 relyOnPages:
   heading: "Dozens of agencies across government rely on Pages"
-  text: |
+  intro: |
     You don’t need a whole IT department to run a compliant federal website. 
     You just need Cloud.gov Pages.
   buttons:
@@ -126,7 +126,7 @@ otherOfferings:
 
 newsletter:
   heading: "Keep in touch"
-  text: "Get release notes, beta invitations, and platform news"
+  intro: "Get release notes, beta invitations, and platform news"
 
 AtoFeature:
   heading: "Designed for the way government launches software"

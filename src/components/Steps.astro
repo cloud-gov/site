@@ -20,10 +20,10 @@ export interface Props {
 const checksClasses =
   "bg-base-lightest border-base-lighter border-1px padding-y-1 padding-x-4 radius-md tablet-lg:grid-offset-1 tablet-lg:grid-col-10 desktop-lg:grid-col-8 margin-bottom-4";
 const classes = "grid-col-12 desktop:grid-col-10 tablet:grid-col-12 margin-x-auto margin-bottom-0";
-const { heading, intro, outro, background = "white", stepHeadingLevel = "h3", checks = false, items } = Astro.props;
+const { background = "white", stepHeadingLevel = "h3", checks = false, items, ...props } = Astro.props;
 ---
 
-<PageSection heading={heading} intro={intro} outro={outro} background={background} align="left">
+<PageSection {...props} background={background} align="left">
   <div class={checks ? checksClasses : classes}>
     <ProcessList steps={items} headingLevel={stepHeadingLevel} checks={checks} />
   </div>
