@@ -9,7 +9,7 @@ interface Props {
   outro?: string;
   classes?: string;
   id?: string;
-  background?: string;
+  color?: string;
   align?: "center" | "left";
 }
 
@@ -18,44 +18,119 @@ const {
   intro = false,
   outro = false,
   content = false,
-  background = "white",
+  color = "white",
   align = "left",
   classes = "",
   id = false,
 } = Astro.props;
 ---
 
-<section
-  {...id && { id }}
-  class={`bg-${background}-lightest border-${background}-lighter border-y-1px border-transparent usa-section text-base-darkest text-${background}-darkest text-${align} ${classes}`}>
-  <div class="grid-container">
-    <div class="grid-row">
-      <div class={`grid-col-12 margin-x-auto tablet:grid-col-10 ${align !== "center" && "desktop-lg:grid-col-12"}`}>
-        {heading && <h2 class="font-sans-xl margin-bottom-2">{heading}</h2>}
+<section {...id && { id }} class={`usa-section section section--${color} align-${align} ${classes}`}>
+  <div class="section__container">
+    <div class="section__intro">
+      {heading && <h2 class="font-sans-xl margin-bottom-2">{heading}</h2>}
 
-        {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-4 margin-bottom-4" inline />}
-      </div>
-
-      <div class="grid-col-12 tablet:grid-col-10 desktop-lg:grid-col-12 margin-x-auto">
-        <div class="grid-row grid-gap-lg flex-justify-center">
-          <slot />
-          {
-            content && (
-              <Markdown
-                content={content}
-                classes="font-body-lg margin-top-neg-2 margin-bottom-2 desktop-lg:margin-left-neg-15 line-height-sans-4"
-              />
-            )
-          }
-        </div>
-      </div>
-      <div class={`grid-col-12 margin-x-auto tablet:grid-col-10 ${align !== "center" && "desktop-lg:grid-col-12"}`}>
-        {
-          outro && (
-            <Markdown content={outro} classes="margin-top-2 font-sans-lg line-height-sans-4 margin-bottom-0" inline />
-          )
-        }
-      </div>
+      {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-4" inline />}
     </div>
+    <div class="section__slot">
+      <slot />
+    </div>
+    {
+      content && (
+        <div class="section__content">
+          <Markdown
+            content={content}
+            classes="section__markdown font-body-lg margin-top-neg-2 margin-bottom-2 line-height-sans-4"
+          />
+        </div>
+      )
+    }
+    {
+      outro && (
+        <div class="section__outro">
+          <Markdown content={outro} classes="margin-top-2 font-sans-lg line-height-sans-4 margin-bottom-0" inline />
+        </div>
+      )
+    }
   </div>
+
+  <style lang="scss">
+    .section {
+      --section-bg: #fff;
+      --section-text: var(--theme-color-base-darkest);
+      --section-border: var(--theme-color-primary-lightest);
+
+      padding: var(--size-section, 4rem) 0;
+      border: 1px solid var(--section-border);
+      border-width: 1px 0;
+
+      background-color: var(--section-bg);
+      color: var(--section-text);
+
+      // themes to choose from
+      &.section--white {
+        --section-bg: #fff;
+        --section-text: var(--theme-color-base-darkest);
+        --section-border: var(--theme-color-primary-lightest);
+      }
+      &.section--base,
+      &.section--base-light {
+        --section-bg: var(--theme-color-base-lightest);
+        --section-text: var(--theme-color-base-darkest);
+        --section-border: var(--theme-color-base-lighter);
+      }
+      &.section--primary,
+      &.section--primary-light {
+        --section-bg: var(--theme-color-primary-lightest);
+        --section-text: var(--theme-color-primary-darkest);
+        --section-border: var(--theme-color-primary-lighter);
+      }
+      &.section--primary-dark {
+        --section-bg: var(--theme-color-primary-dark);
+        --section-text: #fff;
+        --section-border: var(--theme-color-primary-darker);
+      }
+      &__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: var(--breakpoint-desktop-lg, 64rem);
+        margin-inline: auto;
+        padding-inline: 1.5rem;
+        width: 100%;
+
+        @media (min-width: 800px) {
+          grid-template-columns: repeat(12, 1fr);
+        }
+      }
+
+      &__intro,
+      &__content,
+      &__slot,
+      &__outro {
+        grid-column: 1 / -1;
+
+        @media (min-width: 800px) and (max-width: 1199px) {
+          grid-column: 2 / span 10;
+        }
+      }
+
+      &.align-left {
+        text-align: left;
+        justify-items: start;
+      }
+
+      &.align-center {
+        text-align: center;
+        justify-items: center;
+
+        .section__intro,
+        .section__content,
+        .section__outro {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  </style>
 </section>

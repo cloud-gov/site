@@ -41,14 +41,13 @@ interface Props {
   outro?: string;
   pages?: Pages;
   apps?: Apps;
-  background?: string;
+  color?: string;
 }
 
-const { apps, pages, background = "white" } = Astro.props;
+const { apps, pages, color = "white" } = Astro.props;
 ---
 
-<section
-  class={`bg-${background}-lightest border-${background}-lighter text-${background}-darkest border-y-1px usa-section`}>
+<section class={`bg-${color}-lightest border-${color}-lighter text-${color}-darkest border-y-1px usa-section`}>
   <div class="grid-container">
     <div class="grid-row">
       <div class="grid-col desktop-lg:margin-left-0 tablet-lg:grid-offset-1">
@@ -73,7 +72,7 @@ const { apps, pages, background = "white" } = Astro.props;
           <div
             class="grid-col-12 tablet:grid-col-8 tablet:grid-offset-1 tablet-lg:margin-left-0 tablet-lg:grid-col-5 desktop:grid-col-5 margin-y-auto text-left">
             <div
-              class={`border border-base-lighter border-${background}-light radius-lg bg-white height-full overflow-hidden`}>
+              class={`border border-base-lighter border-${color}-light radius-lg bg-white height-full overflow-hidden`}>
               <div
                 class="bg-base-lightest padding-top-2 padding-bottom-105 padding-x-3 text-bold font-sans-sm display-flex flex-align-center">
                 <div class="flex-1">Tier</div>
@@ -116,8 +115,7 @@ const { apps, pages, background = "white" } = Astro.props;
           </div>
           <div
             class="grid-col-12 tablet:grid-col-8 tablet:grid-offset-1 tablet-lg:margin-left-0 tablet-lg:grid-col-5 desktop:grid-col-5 margin-y-auto text-center">
-            <div
-              class={`padding-4 border border-base-lighter border-${background}-light radius-lg bg-white height-full`}>
+            <div class={`padding-4 border border-base-lighter border-${color}-light radius-lg bg-white height-full`}>
               <h3 class="font-sans-xl text-bold margin-bottom-1 text-center">
                 {pages.pricing.name}
               </h3>

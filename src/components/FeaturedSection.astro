@@ -16,15 +16,15 @@ interface Props {
   intro?: string;
   outro?: string;
   items?: Item[];
-  background?: string;
+  color?: string;
   align?: "center" | "left";
 }
 
-const { heading = false, intro = false, outro = false, background = "white", items = [] } = Astro.props;
+const { heading = false, intro = false, outro = false, color = "white", items = [] } = Astro.props;
 ---
 
 <section
-  class={`bg-primary-darker bg-${background}-vivid border-${background}-dark border-y-1px usa-section text-white text-medium`}>
+  class={`bg-primary-darker bg-${color}-vivid border-${color}-dark border-y-1px usa-section text-white text-medium`}>
   <div class="grid-container">
     <div class="grid-row">
       <div class="grid-col-12 tablet:grid-col-10 desktop-lg:grid-col-12 desktop-lg:margin-left-0 tablet:grid-offset-1">

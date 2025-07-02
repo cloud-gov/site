@@ -12,24 +12,22 @@ export interface Props {
   intro?: string;
   align?: "left" | "center";
   buttons?: Button[];
-  background?: string;
+  color?: string;
 }
 
-const { align = "left", buttons = [], background = "white", ...props } = Astro.props;
+const { align = "left", buttons = [], color = "white", ...props } = Astro.props;
 ---
 
-<PageSection {...props} background={background} align={align}>
-  <div class="grid-col">
-    {
-      buttons.length > 0 && (
-        <div class={`usa-button-group margin-top-2 ${align === "center" && "flex-justify-center"}`}>
-          {buttons.map((btn) => (
-            <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""}`}>
-              {btn.label}
-            </a>
-          ))}
-        </div>
-      )
-    }
-  </div>
+<PageSection {...props} color={color} align={align}>
+  {
+    buttons.length > 0 && (
+      <div class={`usa-button-group margin-top-2 ${align === "center" && "flex-justify-center"}`}>
+        {buttons.map((btn) => (
+          <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""}`}>
+            {btn.label}
+          </a>
+        ))}
+      </div>
+    )
+  }
 </PageSection>

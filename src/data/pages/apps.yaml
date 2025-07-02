@@ -2,7 +2,7 @@ hero:
   heading: "Modern Application Hosting for Government"
   intro: "Secure and scalable cloud infrastructure made easy"
   align: "center"
-  background: "base"
+  color: "base"
   buttons:
     - label: "Get a free sandbox"
       url: "sign-up"
@@ -56,7 +56,7 @@ whatYouGet:
 whatYouCanBuild:
   heading: "What you can build with us"
   intro: "Whether you're modernizing legacy tools, launching a new citizen-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster."
-  background: "primary"
+  color: "primary"
   items:
     - heading: "Internal tools & forms"
       text: "Interfaces, workflows, and approval systems built for federal teams"
@@ -98,7 +98,7 @@ otherOfferings:
       link:
         label: "Learn about Workshop"
         url: "workshop"
-  background: "base"
+  color: "base"
 
 tryItYourself:
   heading: "Try it for yourself"

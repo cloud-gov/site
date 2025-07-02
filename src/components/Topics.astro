@@ -19,47 +19,65 @@ interface Props {
   outro?: string;
   items?: Item[];
   id?: string;
-  background?: string;
+  color?: string;
 }
 
-const { items = [], background = "white", id, ...props } = Astro.props;
+const { items = [], color = "white", id, ...props } = Astro.props;
 ---
 
-<PageSection align="left" background={background} {...props}>
-  {
-    items.map((item) => (
-      <div class="grid-col-12 tablet-lg:grid-col-6 display-flex flex-row padding-bottom-3 top-divider">
-        {item.icon && (
-          <div class="width-4 margin-right-2">
-            <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
-              <use href={`${Astro.site}/assets/uswds/img/sprite.svg#${item.icon}`} />
-            </svg>
+<PageSection align="left" color={color} {...props}>
+  <div class="topics">
+    {
+      items.map((item) => (
+        <div class="display-flex flex-row top-divider">
+          {item.icon && (
+            <div class="width-4 margin-right-2">
+              <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
+                <use href={`${Astro.site}/assets/uswds/img/sprite.svg#${item.icon}`} />
+              </svg>
+            </div>
+          )}
+
+          <div class="display-flex flex-column height-full padding-right-2">
+            {item.heading && <h3 class="font-body-lg margin-bottom-05 margin-top-1">{item.heading}</h3>}
+
+            {item.text && (
+              <Markdown
+                content={item.text}
+                classes="font-body-sm line-height-body-3 margin-top-05 margin-bottom-0"
+                inline
+              />
+            )}
+
+            {item.link && (
+              <p class="font-body-xs line-height-body-3 margin-top-1 margin-bottom-0">
+                <a class="usa-link" href={item.link.url}>
+                  {item.link.label}
+                  <svg class="usa-icon text-bottom width-2 height-205" aria-hidden="true" focusable="false" role="img">
+                    <use href={`${Astro.site}/assets/uswds/img/sprite.svg#navigate_next`} />
+                  </svg>
+                </a>
+              </p>
+            )}
           </div>
-        )}
-
-        <div class="display-flex flex-column height-full padding-right-2">
-          {item.heading && <h3 class="font-body-lg margin-bottom-05 margin-top-1 minh-3">{item.heading}</h3>}
-
-          {item.text && (
-            <Markdown
-              content={item.text}
-              classes="font-body-sm line-height-body-3 margin-top-05 margin-bottom-0 minh-4"
-              inline
-            />
-          )}
-
-          {item.link && (
-            <p class="font-body-xs line-height-body-3 margin-top-1 margin-bottom-0">
-              <a class="usa-link" href={item.link.url}>
-                {item.link.label}
-                <svg class="usa-icon text-bottom width-2 height-205" aria-hidden="true" focusable="false" role="img">
-                  <use href={`${Astro.site}/assets/uswds/img/sprite.svg#navigate_next`} />
-                </svg>
-              </a>
-            </p>
-          )}
         </div>
-      </div>
-    ))
-  }
+      ))
+    }
+  </div>
 </PageSection>
+
+<style lang="scss">
+  .topics {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    @media (min-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 2rem; // top divider adds vertical space
+    }
+
+    @media (min-width: 1200px) {
+      gap: 1rem 6rem;
+    }
+  }
+</style>

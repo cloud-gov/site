@@ -9,7 +9,7 @@ headerSection:
 g2g:
   heading: "Government-to-government, not just “govtech”"
   intro: "We’re not a vendor. We’re government, just like you. That means:"
-  background: "primary"
+  color: "primary"
   align: "center"
   items:
     - heading: "No RFP required"
@@ -42,7 +42,7 @@ CTASection:
   heading: "Try it for yourself"
   intro: "We offer a free, no-strings-attached sandbox environment for federal staff and contractors. Test deployments, evaluate fit, and explore how Cloud.gov supports your workflows."
   align: "center"
-  background: "base"
+  color: "base"
   buttons:
     - label: "Connect with our team"
       url: "demo"
@@ -82,7 +82,7 @@ mandatesHandled:
 supportTiles:
   heading: "Our team is here to support yours"
   intro: "Cloud.gov is developed and maintained by federal employees within GSA’s Technology Transformation Services. We know how government works, because we are government, too. When you work with us, you're working with a team that understands your constraints, your goals, and your urgency."
-  background: "primary"
+  color: "primary"
   align: "center"
   items:
     - heading: "Still have questions?"

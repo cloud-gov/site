@@ -23,7 +23,7 @@ g2g:
       icon: "groups"
 
 pricingContent:
-  background: "primary"
+  color: "primary"
   apps:
     subhead: "Cloud.gov Apps pricing"
     heading: "Scalable pricing for every mission"
@@ -131,7 +131,7 @@ noRFP:
 supportTiles:
   heading: "Our team is here to support yours"
   intro: "Cloud.gov is developed and maintained by federal employees within GSA’s Technology Transformation Services. We know how government works, because we are government, too. When you work with us, you're working with a team that understands your constraints, your goals, and your urgency."
-  background: "primary"
+  color: "primary"
   align: "center"
   items:
     - heading: "Still have questions?"

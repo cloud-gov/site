@@ -12,14 +12,14 @@ export interface Props {
   align?: "left" | "center";
   intro?: string;
   buttons?: Button[];
-  background?: string;
+  color?: string;
 }
 
-const { heading, align = "left", intro, buttons = [], background = "white" } = Astro.props;
+const { heading, align = "left", intro, buttons = [], color = "white" } = Astro.props;
 ---
 
 <section
-  class={`bg-${background}-lightest text-base-darkest text-${background}-darkest border-base-lighter border-bottom-1px padding-y-6 text-${align}`}>
+  class={`bg-${color}-lightest text-base-darkest text-${color}-darkest border-base-lighter border-bottom-1px padding-y-6 text-${align}`}>
   <div class="grid-container">
     <div class="grid-row">
       <div class={`grid-col-12 margin-x-auto tablet:grid-col-10 ${align !== "center" && "desktop-lg:grid-col-12"}`}>

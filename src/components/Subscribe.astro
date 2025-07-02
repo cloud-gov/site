@@ -7,7 +7,7 @@ export interface Props {
   heading: string;
   text?: string;
   align?: "left" | "center";
-  background?: string;
+  color?: string;
   account_id?: string;
   category_id?: string;
   id?: string;
@@ -15,14 +15,14 @@ export interface Props {
 
 const {
   align = "center",
-  background = "white",
+  color = "white",
   account_id = siteProps.newsletter?.account_id,
   category_id = siteProps.newsletter?.category_id,
   ...props
 } = Astro.props;
 ---
 
-<PageSection align={align} background={background} {...props}>
+<PageSection align={align} color={color} {...props}>
   <form
     action={`https://public.govdelivery.com/accounts/${account_id}/subscribers/qualify`}
     method="post"
