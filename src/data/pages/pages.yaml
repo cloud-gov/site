@@ -124,10 +124,6 @@ otherOfferings:
         url: "workshop"
   color: "base"
 
-newsletter:
-  heading: "Keep in touch"
-  intro: "Get release notes, beta invitations, and platform news"
-
 AtoFeature:
   heading: "Designed for the way government launches software"
   intro: "Cloud.gov’s shared responsibility model gives federal teams a head start, whether you’re seeking a new ATO or reauthorizing an existing system. With Cloud.gov’s position, context, and expertise inside government, we understand firsthand what’s hard for agency customers."

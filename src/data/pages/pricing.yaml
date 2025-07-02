@@ -164,7 +164,3 @@ ourApproach:
         label: "Faster and easier cloud purchasing"
         url: "pricing"
       icon: "attach_money"
-
-newsletter:
-  heading: "Keep in touch"
-  intro: "Get release notes, beta invitations, and platform news"

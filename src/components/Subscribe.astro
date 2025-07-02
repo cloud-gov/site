@@ -1,7 +1,6 @@
 ---
 import PageSection from "./PageSection.astro";
-import { siteProps } from "../data/site";
-import type { ACTION_ERROR_CODES, ACTION_QUERY_PARAMS } from "astro:actions";
+import sitewide from "../data/sitewide.yaml";
 
 export interface Props {
   heading: string;
@@ -16,8 +15,8 @@ export interface Props {
 const {
   align = "center",
   color = "white",
-  account_id = siteProps.newsletter?.account_id,
-  category_id = siteProps.newsletter?.category_id,
+  account_id = sitewide.newsletter?.account_id,
+  category_id = sitewide.newsletter?.category_id,
   ...props
 } = Astro.props;
 ---

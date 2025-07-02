@@ -1,8 +1,10 @@
 .section {
   --section-bg: #fff;
   --section-text: var(--theme-color-base-darkest);
+  --section-card-text: var(--section-text);
   --section-border: var(--theme-color-primary-lightest);
-
+  --section-accent: var(--theme-color-base);
+  
   padding: var(--size-section, 4rem) 0;
   border: 1px solid var(--section-border);
   border-width: 1px 0;
@@ -14,32 +16,39 @@
   &.section--white {
     --section-bg: #fff;
     --section-text: var(--theme-color-base-darkest);
-    --section-border: var(--theme-color-base-light);
+    --section-accent: var(--theme-color-base-darkest);
+    --section-border: transparent;
     border-width:0;
   }
   &.section--base,
   &.section--base-light {
     --section-bg: var(--theme-color-base-lightest);
     --section-text: var(--theme-color-base-darkest);
+    --section-accent: var(--theme-color-base);
     --section-border: var(--theme-color-base-lighter);
   }
   &.section--base-dark {
     -webkit-font-smoothing: antialiased;
     --section-bg: var(--theme-color-base-darker);
     --section-text: #fff;
-    --section-border: var(--theme-base-primary);
+    --section-card-text: var(--theme-color-base-dark);
+    --section-accent: var(--theme-color-base-light);
+    --section-border: var(--theme-color-base-darker);
   }
   &.section--primary,
   &.section--primary-light {
     --section-bg: var(--theme-color-primary-lightest);
     --section-text: var(--theme-color-primary-darkest);
+    --section-accent: var(--theme-color-primary);
     --section-border: var(--theme-color-primary-lighter);
   }
   &.section--primary-dark {
     -webkit-font-smoothing: antialiased;
     --section-bg: var(--theme-color-primary-darker);
     --section-text: #fff;
-    --section-border: var(--theme-color-primary);
+    --section-card-text: var(--theme-color-primary-darkest);
+    --section-accent: var(--theme-color-primary-light);
+    --section-border: var(--theme-color-primary-darker);
   }
 
   &__container {
@@ -188,6 +197,7 @@
   }
   
   .top-divider:before {
-    border-color: var(--section-border, #fff);
+    opacity: 0.25;
+    border-color: var(--section-accent, #fff);
   }
 }

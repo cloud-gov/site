@@ -33,21 +33,21 @@ const { items = [], align = "center", color = "base", ...props } = Astro.props;
       items.map((item) => (
         <div class="tile__item">
           <div
-            class={`display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border bg-white border-${color}-lighter text-${color} text-${align}`}>
+            class={`display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border color bg-white border-base-lighter text-${align}`}>
             {item.icon && (
               <span class="margin-bottom-1 display-block">
-                <svg class="usa-icon usa-icon--size-5" role="img" aria-hidden="true">
+                <svg class="usa-icon usa-icon--size-5 accent" role="img" aria-hidden="true">
                   <use href={`${Astro.site}/assets/uswds/img/sprite.svg#${item.icon}`} />
                 </svg>
               </span>
             )}
 
-            {item.heading && <h3 class="font-body-lg margin-bottom-1 margin-top-2">{item.heading}</h3>}
+            {item.heading && <h3 class="accent font-body-lg margin-bottom-1 margin-top-2">{item.heading}</h3>}
 
             {item.text && (
               <Markdown
                 content={item.text}
-                classes={`font-body-sm line-height-body-3 margin-top-05 margin-bottom-0 text-${color}-darkest`}
+                classes="font-body-sm line-height-body-3 margin-top-05 margin-bottom-0"
                 inline
               />
             )}
@@ -75,8 +75,19 @@ const { items = [], align = "center", color = "base", ...props } = Astro.props;
   }
 
   .tile__item {
+    -webkit-font-smoothing: initial;
     flex-basis: 100%;
     max-width: 100%;
+    .border {
+      border-color: var(--section-border, #fff);
+    }
+    .color {
+      color: var(--section-card-text, #333);
+    }
+    .accent {
+      color: var(--section-accent, #333);
+      fill: var(--section-accent, #333);
+    }
     @media (min-width: 640px) {
       max-width: 32em;
     }

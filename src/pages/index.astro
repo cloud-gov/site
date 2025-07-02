@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Topics from "../components/Topics.astro";
-import Markdown from "../components/Markdown.astro";
 import PageSection from "../components/PageSection.astro";
 import Tiles from "../components/Tiles.astro";
 import CTA from "../components/CTA.astro";
@@ -10,18 +9,19 @@ import Steps from "../components/Steps.astro";
 import Subscribe from "../components/Subscribe.astro";
 
 import content from "../data/pages/home.yaml";
+import sitewide from "../data/sitewide.yaml";
 ---
 
 <Layout>
   <Hero {...content.headerSection} />
   <Tiles {...content.g2g} />
   <Steps {...content.getCoding} />
-  <CTA {...content.CTASection} />
+  <CTA {...sitewide.freeSandbox} />
   <Steps {...content.stepsList} />
   <hr />
   <PageSection {...content.mandatesHandled} />
-  <Tiles {...content.supportTiles} />
-  <Topics {...content.ourApproach} />
+  <Tiles {...sitewide.supportTiles} />
+  <Topics {...sitewide.ourApproach} />
   <hr />
-  <Subscribe {...content.newsletter} />
+  <Subscribe {...sitewide.newsletter} />
 </Layout>

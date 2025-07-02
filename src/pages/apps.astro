@@ -7,17 +7,20 @@ import CTA from "../components/CTA.astro";
 import Subscribe from "../components/Subscribe.astro";
 
 import content from "../data/pages/apps.yaml";
+import sitewide from "../data/sitewide.yaml";
 ---
 
 <Layout>
   <Hero {...content.hero} />
   <Topics {...content.moreWithLess} />
   <Tiles {...content.whatYouCanBuild} />
-  <CTA {...content.tryItYourself} />
+  <CTA {...sitewide.freeSandbox} />
   <hr />
   <Topics {...content.whatYouGet} />
   <hr />
   <CTA {...content.noRFP} />
   <Tiles {...content.otherOfferings} />
-  <Subscribe {...content.newsletter} />
+  <Topics {...sitewide.ourApproach} />
+  <Tiles {...sitewide.supportTiles} />
+  <Subscribe {...sitewide.newsletter} />
 </Layout>

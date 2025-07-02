@@ -99,19 +99,3 @@ otherOfferings:
         label: "Learn about Workshop"
         url: "workshop"
   color: "base"
-
-tryItYourself:
-  heading: "Try it for yourself"
-  heading_level: "h3"
-  align: "center"
-  intro: "We offer a free, no-strings-attached sandbox environment for federal staff and contractors. Test deployments, evaluate fit, and explore how Cloud​.gov supports your workflows."
-  buttons:
-    - label: "Get a free sandbox"
-      url: "sign-up"
-    - label: "Connect with our team"
-      url: "demo"
-      variant: "outline"
-
-newsletter:
-  heading: "Keep in touch"
-  intro: "Get release notes, beta invitations, and platform news"

@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Topics from "../components/Topics.astro";
-import Markdown from "../components/Markdown.astro";
+import CTA from "../components/CTA.astro";
 import PageSection from "../components/PageSection.astro";
 import Pricing from "../components/Pricing.astro";
 import Tiles from "../components/Tiles.astro";
@@ -10,6 +10,7 @@ import Steps from "../components/Steps.astro";
 import Subscribe from "../components/Subscribe.astro";
 
 import content from "../data/pages/pricing.yaml";
+import { siteProps } from "../data/site";
 ---
 
 <Layout>
@@ -18,8 +19,8 @@ import content from "../data/pages/pricing.yaml";
   <PageSection {...content.noRFP} />
   <Pricing {...content.pricingContent} />
   <Steps {...content.stepsList} />
-  <hr />
+  <CTA {...siteProps.freeSandbox} />
   <Topics {...content.ourApproach} />
   <Tiles {...content.supportTiles} />
-  <Subscribe {...content.newsletter} />
+  <Subscribe {...siteProps.newsletter} />
 </Layout>
