@@ -9,206 +9,22 @@ import Tiles from "../components/Tiles.astro";
 import Steps from "../components/Steps.astro";
 import Subscribe from "../components/Subscribe.astro";
 
-const headerSection = {
-  heading: "Straightforward pricing. Federal-first procurement.",
-  intro: `Federal digital teams deserve pricing that's as agile as their missions. Cloud.gov offers a straightforward, predictable approach that lets you deploy applications and scale infrastructure without budget surprises — scaling up or down without contract negotiations or hidden costs.
-
-Whether you’re managing a single website or an entire digital ecosystem, our pricing model adapts to your agency's evolving needs. **You'll always know exactly what you're paying for**, with no hidden costs or unnecessary bundled services.`,
-  align: "left",
-};
-
-const g2g = {
-  heading: "One agreement, unlimited innovation",
-  intro:
-    "Our enterprise customers unlock significant savings in time, resources, and long-term planning. When multiple teams share Cloud.gov access through a single agreement, agencies benefit from:",
-  align: "center",
-  items: [
-    {
-      heading: "Streamlined acquisition",
-      text: "Reduced administrative overhead with G-invoicing and fewer IAAs to manage",
-      icon: "fast_forward",
-    },
-    {
-      heading: "Greater visibility",
-      text: "Monitor cloud usage and expenses across programs from a central view",
-      icon: "assessment",
-    },
-    {
-      heading: "Open collaboration",
-      text: "No per-seat pricing—every team member can access, develop, and innovate",
-      icon: "groups",
-    },
-  ],
-};
-
-const pricingContent = {
-  background: "primary",
-  apps: {
-    subhead: "Cloud.gov Apps pricing",
-    heading: "Scalable pricing for every mission",
-    text: `You purchase access to **Cloud.gov Apps** by buying a tier with enough credits to support your needs. Credits can be spent on application memory or managed cloud services like databases.
-
-Credits can be used flexibly throughout the year. That means if your usage varies, you can scale up or down as needed—**without changing your agreement** or paying all year for short-term peaks. 
-
-Check our our [cost estimator](#) for more details.`,
-    link: {
-      label: "More about Cloud.gov Apps",
-      url: "/apps",
-    },
-    tiers: [
-      { name: "Sandbox", credits: 8, price: "$0" },
-      { name: "Femto", credits: 50, price: "$30,000" },
-      { name: "Pico", credits: 100, price: "$60,000" },
-      { name: "Nano", credits: 150, price: "$90,000" },
-      { name: "Micro", credits: 250, price: "$150,000" },
-      { name: "Milli", credits: 350, price: "$210,000" },
-      { name: "Centi", credits: 500, price: "$300,000" },
-      { name: "Deci", credits: 650, price: "$390,000" },
-      { name: "Deka", credits: 800, price: "$456,000" },
-      { name: "Hecto", credits: 1000, price: "$540,000" },
-      { name: "Kilo", credits: 1250, price: "$637,500" },
-      { name: "Mega", credits: 1500, price: "$720,000" },
-      { name: "Giga", credits: 2000, price: "$936,000" },
-    ],
-  },
-  pages: {
-    subhead: "Cloud.gov Pages pricing",
-    heading: "Predictable pricing for any site",
-    text: `Powered by the same secure, FedRAMP-authorized infrastructure as cloud.gov, **Pages offers a straightforward annual pricing model** for federal digital teams.
-
-One annual fee unlocks a comprehensive suite of website development and hosting tools designed specifically for your needs.`,
-    link: {
-      label: "More about Cloud.gov Pages",
-      url: "/pages",
-    },
-    pricing: {
-      name: "Cloud.gov Pages",
-      price: "35,000",
-      unit: "/ year",
-      features: [
-        "USWDS starter kits in JavaScript and Ruby with DAP and Search.gov",
-        "Automated vulnerability and accessibility ConMon scans",
-        "Highly scalable content delivery network (CDN)",
-        "Automatic HTTPS certificates and renewals",
-        "Unlimited deploys and preview sites",
-        "Includes up to 5 production websites. Additional production domains are available in sets of 3 for $21,000/year.",
-        "No charges for storage or bandwidth",
-      ],
-    },
-  },
-};
-
-const stepsList = {
-  heading: "How an IAA with Cloud.gov works for you",
-  intro: `Buying services with us is unlike any other provider.`,
-  outro: `Ready to get started? [Reach out to start the conversation](contact).`,
-  step_heading_level: "h3",
-  step_headings_only: false,
-  items: [
-    {
-      heading: "Initial consultation with our expert procurement staff",
-      text: "Our cloud services and federal procurement specialists will listen closely to your agency's mission, asking strategic questions to map your technology requirements. We partner with you to identify the right cloud services for your mission requirements.",
-    },
-    {
-      heading: "Proven and seamless agreement design",
-      text: "We help estimate your usage and scope an Inter-Agency Agreement that precisely matches your agency's needs. Choose one or multiple Cloud.gov products, add professional support services, and plan for your future with standardized language crafted from hundreds of our existing federal agreements.",
-    },
-    {
-      heading: "Simplified approvals and execution",
-      text: "We work with you throughout the approval and billing process, supported by GSA’s fully electronic G-invoicing system. This phase usually takes our customers a few weeks from start to finish, compared to months-long traditional procurement cycles.",
-    },
-    {
-      heading: "Flexible deployments and renewals",
-      text: "Launch your cloud services with a one-year renewable agreement designed for continuous adaptation. Months before you renew, we reach out to you about your evolving technology needs, ensuring your technology always matches your mission.",
-    },
-  ],
-};
-
-const noRFP = {
-  heading: "Top-tier cloud services without an RFP",
-  intro: `Forget months-long vendor negotiations and complex Request for Proposal (RFP) processes. As a federal team within GSA, we've redesigned procurement to work the way government actually works.
-
-We simplify government technology, we don't monetize its difficulty. Our Interagency Agreement (IAA) model is purpose-built for federal agencies like yours, eliminating the friction and cost of traditional IT procurement by offering:`,
-  content: `- **Direct agency partnership:** Work directly with fellow government employees, not sales teams
-- **Rapid onboarding:** Most agencies complete our IAA process in weeks, not months
-- **Proven track record:** We’ve executed hundreds of previous IAAs across federal agencies
-- **Zero vendor overhead:** 100% of your investment goes directly to platform development`,
-  outro: "Most cloud providers see federal tech as a lucrative problem to exploit. We know it’s a mission to support.",
-};
-
-const supportTiles = {
-  heading: "Our team is here to support yours",
-  intro:
-    "Cloud.gov is developed and maintained by federal employees within GSA’s Technology Transformation Services. We know how government works, because we are government, too. When you work with us, you're working with a team that understands your constraints, your goals, and your urgency.",
-  background: "primary",
-  align: "center",
-  items: [
-    {
-      heading: "Still have questions?",
-      text: `Chat, email, or drop into weekly office hours to talk with our in-house engineers.`,
-      icon: "support_agent",
-      link: {
-        label: "Get in touch",
-        url: "contact",
-      },
-    },
-    {
-      heading: "See what Cloud.gov offers",
-      text: `Scale services, add memory, and manage apps via CLI, API, or dashboard`,
-      icon: "insights",
-      link: {
-        label: "All solutions",
-        url: "",
-      },
-    },
-  ],
-};
-
-const ourApproach = {
-  heading: "More about our approach",
-  intro: `Whether you're modernizing legacy tools, launching a new citizen-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.`,
-  items: [
-    {
-      heading: "Easier and faster ATOs",
-      text: "Cloud.gov is FedRAMP Moderate Authorized, which means it complies with federal security requirements. When you build on Cloud.gov, you leverage our compliance practices and reduce the amount of work you need to do.",
-      link: {
-        label: "Our cybersecurity practices",
-        url: "security",
-      },
-      icon: "verified_user",
-    },
-    {
-      heading: "Easier and faster acquisitions",
-      text: "We partner with your team using a straightforward Interagency Agreement (IAA) with GSA. By selecting a flexible pricing tier, you can choose the cloud services that meet the needs of your agency’s digital initiatives.",
-      link: {
-        label: "Faster and easier cloud purchasing",
-        url: "pricing",
-      },
-      icon: "attach_money",
-    },
-  ],
-};
-const newsletter = {
-  heading: "Keep in touch",
-  text: "Get release notes, beta invitations, and platform news",
-  account_id: "USGSATTS",
-  category_id: "GSA_CLOUD",
-};
+import content from "../data/pages/pricing.yaml";
 ---
 
 <Layout>
-  <Hero {...headerSection} />
-  <Tiles {...g2g} />
-  <PageSection {...noRFP}>
+  <Hero {...content.headerSection} />
+  <Tiles {...content.g2g} />
+  <PageSection {...content.noRFP}>
     <Markdown
-      content={noRFP.content}
+      content={content.noRFP.content}
       classes="font-body-lg margin-top-neg-2 margin-bottom-2 desktop-lg:margin-left-neg-2 line-height-sans-4"
     />
   </PageSection>
-  <Pricing {...pricingContent} />
-  <Steps {...stepsList} />
+  <Pricing {...content.pricingContent} />
+  <Steps {...content.stepsList} />
   <hr />
-  <Topics {...ourApproach} />
-  <Tiles {...supportTiles} />
-  <Subscribe {...newsletter} />
+  <Topics {...content.ourApproach} />
+  <Tiles {...content.supportTiles} />
+  <Subscribe {...content.newsletter} />
 </Layout>

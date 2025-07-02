@@ -1,16 +1,24 @@
 ---
 import PageSection from "./PageSection.astro";
+import { siteProps } from "../data/site";
 
 export interface Props {
   heading: string;
   text?: string;
   align?: "left" | "center";
   background?: string;
-  account_id: string;
-  category_id: string;
+  account_id?: string;
+  category_id?: string;
 }
 
-const { heading, text, align = "center", background = "white", account_id, category_id } = Astro.props;
+const {
+  heading,
+  text,
+  align = "center",
+  background = "white",
+  account_id = siteProps.newsletter?.account_id,
+  category_id = siteProps.newsletter?.category_id,
+} = Astro.props;
 ---
 
 <PageSection heading={heading} intro={text} background={background} align={align}>

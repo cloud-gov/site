@@ -5,15 +5,26 @@ interface Props {
   heading?: string;
   intro?: string;
   outro?: string;
+  classes?: string;
+  id?: string;
   background?: string;
   align?: "center" | "left";
 }
 
-const { heading = false, intro = false, outro = false, background = "white", align = "left" } = Astro.props;
+const {
+  heading = false,
+  intro = false,
+  outro = false,
+  background = "white",
+  align = "left",
+  classes = "",
+  id = false,
+} = Astro.props;
 ---
 
 <section
-  class={`bg-${background}-lightest border-${background}-lighter border-y-1px border-transparent usa-section text-base-darkest text-${background}-darkest text-${align}`}>
+  {...id && { id }}
+  class={`bg-${background}-lightest border-${background}-lighter border-y-1px border-transparent usa-section text-base-darkest text-${background}-darkest text-${align} ${classes}`}>
   <div class="grid-container">
     <div class="grid-row">
       <div class={`grid-col-12 margin-x-auto tablet:grid-col-10 ${align !== "center" && "desktop-lg:grid-col-12"}`}>
@@ -36,13 +47,4 @@ const { heading = false, intro = false, outro = false, background = "white", ali
       </div>
     </div>
   </div>
-  <style>
-    .usa-link {
-      position: relative;
-    }
-    .usa-link .usa-icon {
-      position: absolute;
-      right: -1rem;
-    }
-  </style>
 </section>

@@ -1,0 +1,123 @@
+headerSection:
+  heading: "Faster, easier, and built for government from the start"
+  intro: |
+    Most federal dev teams spend more time pushing paperwork around than pushing to production.
+
+    Because we operate inside the General Services Administration (GSA), you don’t need to navigate vendor contracts, new security reviews, or external approvals. Our infrastructure, pricing, and onboarding are designed specifically for government—**so you can focus on delivery, not procurement**.
+  align: "left"
+
+g2g:
+  heading: "Government-to-government, not just “govtech”"
+  intro: "We’re not a vendor. We’re government, just like you. That means:"
+  background: "primary"
+  align: "center"
+  items:
+    - heading: "No RFP required"
+      text: "Get your team onboarded in days, not months, under [a simple IAA with GSA](pricing)."
+      icon: "account_balance"
+    - heading: "No multi-year contract traps"
+      text: "We’re incentivized to serve your mission and our platform, not maximize profit."
+      icon: "lock_open"
+    - heading: "No vendor lock-in"
+      text: "Your team retains control of your apps, data, and repos. Forever."
+      icon: "groups"
+
+getCoding:
+  heading: "Get coding in hours, not months"
+  intro: |
+    Cloud.gov works with government agencies of every scale and complexity — from small teams to large departments, with diverse budgetary structures and procurement processes. With Cloud.gov, your team can:
+  items:
+    - heading: "Start building in a [free sandbox](sign-up) within hours"
+    - heading: "Immediately set up development environments and spaces"
+    - heading: "Manage access and permissions for your entire team, space or organization"
+    - heading: "Create managed service instances (databases, search) automatically"
+    - heading: "Monitor metrics, logs, and application performance"
+    - heading: "Manage your applications and infrastructure directly through our platform"
+    - heading: "Instantly scale resources without waiting weeks for ticket approvals"
+    - heading: "Move into production once you’re ready, and redeploy as often as you like"
+    - heading: "[Pay only for what you need](pricing), not for a bundle of extras"
+  checks: true
+
+CTASection:
+  heading: "Try it for yourself"
+  text: "We offer a free, no-strings-attached sandbox environment for federal staff and contractors. Test deployments, evaluate fit, and explore how Cloud.gov supports your workflows."
+  align: "center"
+  background: "base"
+  buttons:
+    - label: "Connect with our team"
+      url: "demo"
+      variant: "outline"
+    - label: "Get a free sandbox"
+      url: "sign-up"
+
+stepsList:
+  heading: "How an IAA with Cloud.gov works for you"
+  intro: "Buying services with us is unlike any other provider."
+  outro: "Ready to get started? [Reach out to start the conversation](contact)."
+  step_heading_level: "h3"
+  step_headings_only: false
+  items:
+    - heading: "Initial consultation with our expert procurement staff"
+      text: "Our cloud services and federal procurement specialists will listen closely to your agency's mission, asking strategic questions to map your technology requirements. We partner with you to identify the right cloud services for your mission requirements."
+    - heading: "Proven and seamless agreement design"
+      text: "We help estimate your usage and scope an Inter-Agency Agreement that precisely matches your agency's needs. Choose one or multiple Cloud.gov products, add professional support services, and plan for your future with standardized language crafted from hundreds of our existing federal agreements."
+    - heading: "Simplified approvals and execution"
+      text: "We work with you throughout the approval and billing process, supported by GSA’s fully electronic G-invoicing system. This phase usually takes our customers a few weeks from start to finish, compared to months-long traditional procurement cycles."
+    - heading: "Flexible deployments and renewals"
+      text: "Launch your cloud services with a one-year renewable agreement designed for continuous adaptation. Months before you renew, we reach out to you about your evolving technology needs, ensuring your technology always matches your mission."
+
+mandatesHandled:
+  heading: "The latest 2025 federal compliance mandates, handled"
+  intro: |
+    Cloud.gov is already FedRAMP Authorized (Moderate), so your agency can reuse our compliance package without a second review. That means on day one, you can check these off your list:
+  content: |
+    - Our continuous monitoring meets **every 2025 FISMA metric for OMB M-25-04**
+    - Cloud.gov’s completely “Zero Trust” model satisfies **Executive Order 14028**
+    - All active cryptographic modules are validated against the **FIPS 140-3 Standard**
+    - Customers on Cloud.gov get priority access to the upcoming **FedRAMP 20x OSCAL packages**
+  outro: |
+    You don’t have to set up your own platform team to meet federal compliance requirements. 
+    **We’re already operating one for you.**
+
+supportTiles:
+  heading: "Our team is here to support yours"
+  intro: "Cloud.gov is developed and maintained by federal employees within GSA’s Technology Transformation Services. We know how government works, because we are government, too. When you work with us, you're working with a team that understands your constraints, your goals, and your urgency."
+  background: "primary"
+  align: "center"
+  items:
+    - heading: "Still have questions?"
+      text: |
+        Chat, email, or drop into weekly office hours to talk with our in-house engineers.
+      icon: "support_agent"
+      link:
+        label: "Get in touch"
+        url: "contact"
+    - heading: "See what Cloud.gov offers"
+      text: "Scale services, add memory, and manage apps via CLI, API, or dashboard"
+      icon: "insights"
+      link:
+        label: "All solutions"
+        url: ""
+
+ourApproach:
+  heading: "More about our approach"
+  intro: |
+    Whether you're modernizing legacy tools, launching a new citizen-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.
+  items:
+    - heading: "Easier and faster ATOs"
+      text: "Cloud.gov is FedRAMP Moderate Authorized, which means it complies with federal security requirements. When you build on Cloud.gov, you leverage our compliance practices and reduce the amount of work you need to do."
+      link:
+        label: "Our cybersecurity practices"
+        url: "security"
+      icon: "verified_user"
+    - heading: "Easier and faster acquisitions"
+      text: "We partner with your team using a straightforward Interagency Agreement (IAA) with GSA. By selecting a flexible pricing tier, you can choose the cloud services that meet the needs of your agency’s digital initiatives."
+      link:
+        label: "Faster and easier cloud purchasing"
+        url: "pricing"
+      icon: "attach_money"
+
+newsletter:
+  heading: "Keep in touch"
+  text: "Get release notes, beta invitations, and platform news"
+

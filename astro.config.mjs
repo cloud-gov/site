@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import { redirects } from './redirects'
 import mdx from '@astrojs/mdx';
 import copy from 'rollup-plugin-copy';
+import yaml from '@rollup/plugin-yaml';
 
 
 import sitemap from '@astrojs/sitemap';
@@ -38,17 +39,18 @@ export default defineConfig({
     build: {
       target: 'esnext', // ensures modern browser output for native custom elements
     },
-    // plugins: [
-    //   copy({
-    //     targets: [
-    //       {
-    //         src: 'node_modules/@uswds/uswds/dist/img/sprite.svg',
-    //         dest: 'public/assets/uswds/img'
-    //       },
-    //     ],
-    //     hook: 'buildStart',
-    //     copyOnce: true,
-    //   }),
-    // ],
+    plugins: [
+      yaml(),
+      // copy({
+      //   targets: [
+      //     {
+      //       src: 'node_modules/@uswds/uswds/dist/img/sprite.svg',
+      //       dest: 'public/assets/uswds/img'
+      //     },
+      //   ],
+      //   hook: 'buildStart',
+      //   copyOnce: true,
+      // }),
+    ],
   }
 });
