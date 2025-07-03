@@ -6,7 +6,7 @@ date: 2025-07-01
 excerpt: "Add a read replica for your RDS databases to handle read-only workloads"
 ---
 
-The Cloud.gov team is excited to announce that adding a read replica is now supported for your databases on the platform.
+The Cloud.gov team is excited to announce support for adding read replicas to your databases.
 
 [A read replica is a read-only copy of your database which automatically replicates the data in your primary database](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html).
 
