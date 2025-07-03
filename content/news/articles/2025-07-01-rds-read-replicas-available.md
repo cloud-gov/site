@@ -8,9 +8,7 @@ excerpt: "Add a read replica for your RDS databases to handle read-only workload
 
 The Cloud.gov team is excited to announce support for adding read replicas to your databases.
 
-[A read replica is a read-only copy of your database which automatically replicates the data in your primary database](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html).
-
-Read replicas are useful for offloading tasks that are read intensive while your primary database handles create, update, and deletion of records. Isolating read operations to the read replica reduces the load on your primary database and also avoids database locking issues between read and write operations.
+A read replica is a [read-only copy of your database which automatically replicates the data in your primary database](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html). You can offload read-heavy tasks to a read replica while your primary database handles writes. Isolating read operations to the replica reduces the load and lock contention on your primary database.
 
 Use cases for a read replica include:
 
