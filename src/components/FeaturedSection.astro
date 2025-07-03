@@ -1,5 +1,7 @@
 ---
 import Markdown from "./Markdown.astro";
+import ServiceLogos from "./media/ServiceLogos.astro";
+import Terminal from "./media/Terminal.astro";
 
 interface Link {
   label: string;
@@ -10,6 +12,7 @@ interface Item {
   heading?: string;
   text?: string;
   link?: Link;
+  mediaComponent?: "ServiceLogos" | "Terminal";
 }
 interface Props {
   heading?: string;
@@ -49,7 +52,10 @@ const { heading = false, intro = false, outro = false, color = "white", items = 
               </div>
             )}
           </div>
-          <div class="section__media">art here</div>
+          <div class="section__media">
+            {item.mediaComponent === "ServiceLogos" && <ServiceLogos />}
+            {item.mediaComponent === "Terminal" && <Terminal />}
+          </div>
         </div>
       ))
     }

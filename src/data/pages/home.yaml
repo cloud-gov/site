@@ -3,7 +3,7 @@ headerSection:
   intro: |
     Most federal dev teams spend more time pushing paperwork around than pushing to production.
 
-    Because we operate inside the General Services Administration (GSA), you don’t need to navigate vendor contracts, new security reviews, or external approvals. Our infrastructure, pricing, and onboarding are designed specifically for government—**so you can focus on delivery, not procurement**.
+    Because we operate a FedRAMP-authorized cloud services platform inside the General Services Administration (GSA), our customers don’t need to navigate vendor contracts, new security reviews, or external approvals. Our infrastructure, pricing, and onboarding are designed specifically for government—**so you can focus on delivery, not procurement**.
   align: "left"
 
 g2g:
@@ -25,7 +25,7 @@ g2g:
 getCoding:
   heading: "Get coding in hours, not months"
   intro: |
-    Cloud.gov works with government agencies of every scale and complexity — from small teams to large departments, with diverse budgetary structures and procurement processes. With Cloud.gov, your team can:
+    Cloud.gov works with government agencies of every scale and complexity — from small teams to large departments, with diverse budgetary structures and procurement processes. With Cloud.gov, your digital services team can:
   items:
     - heading: "Start building in a [free sandbox](sign-up) within hours"
     - heading: "Immediately set up development environments and spaces"

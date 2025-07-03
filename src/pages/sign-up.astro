@@ -7,6 +7,7 @@ import Tiles from "../components/Tiles.astro";
 import CTA from "../components/CTA.astro";
 import Steps from "../components/Steps.astro";
 import Subscribe from "../components/Subscribe.astro";
+import FeaturedSection from "../components/FeaturedSection.astro";
 
 import content from "../data/pages/sign-up.yaml";
 import sitewide from "../data/sitewide.yaml";
@@ -24,7 +25,7 @@ const otherOfferings = {
 <Layout>
   <Hero {...content.headerSection} />
   <Steps {...content.kickTires} />
-  <hr />
+  <FeaturedSection {...content.servicesFeature} />
   <Tiles {...content.sandboxLimitations} />
   <Tiles {...sitewide.supportTiles} />
   <Topics {...ourApproach} />

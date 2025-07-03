@@ -34,6 +34,9 @@
     --section-card-text: var(--theme-color-base-dark);
     --section-accent: var(--theme-color-base-darkest);
     --section-border: var(--theme-color-base-darkest);
+    a {
+      color: #fff;
+    }
   }
   &.section--primary,
   &.section--primary-light {
@@ -49,6 +52,20 @@
     --section-card-text: var(--theme-color-primary-darkest);
     --section-accent: var(--theme-color-primary-light);
     --section-border: var(--theme-color-primary-darker);
+    a {
+      color: #fff;
+    }
+  }
+  &.section--primary-vivid {
+    -webkit-font-smoothing: antialiased;
+    --section-bg: var(--theme-color-primary-vivid);
+    --section-text: #fff;
+    --section-card-text: var(--theme-color-primary-darkest);
+    --section-accent: var(--theme-color-primary-light);
+    --section-border: var(--theme-color-primary-vivid);
+    a {
+      color: #fff;
+    }
   }
 
   &__container {
@@ -163,7 +180,7 @@
   .section__media {
     grid-column: 1 / -1;
     text-align: center;
-    padding: 3rem 0 0;
+    padding: 1rem 0 0;
     @media (min-width: 1024px) {
       &--pricing {
         padding: 0;

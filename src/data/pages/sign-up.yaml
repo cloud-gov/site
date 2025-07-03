@@ -59,6 +59,37 @@ sandboxLimitations:
       icon: "hourglass_empty"
   outro: "If your team has an idea and a mission, we help you get it live—securely, and in weeks, not quarters."
 
+
+servicesFeature:
+  heading: "What do you want to build today?"
+  intro: |
+    Follow any of the tutorials to launch your own web application from your sandbox. 
+    You’ll need a Cloud.gov account and some familiarity with Windows Powershell or Mac/Linux terminal.
+  items:
+    - heading: "Try it yourself"
+      text: |
+        [Install the CLI]() to deploy a basic .NET Core, PHP, Python, R, Ruby, NodeJS or Clojure app with just one command
+
+        Or check out these sample applications available in:
+        - [Java]() + any of MySQL, Oracle, Postgres or Redis
+        - [Drupal 7]() and [Drupal 8]()
+        - [WordPress]() (PHP)
+        - Rails, Go, .NET, Python and more from the [community]()
+      
+      mediaComponent: "ServiceLogos"
+      link:
+        label: "Install the CLI"
+        url: "#"
+    - heading: "Watch a demo"
+      text: "In addition to more than a dozen [“Hello World” example apps](), you can also check out our video tutorials on an [overview of the Cloud.gov PaaS]() (27 mins), a walk through of the [account registration process](), (7 mins) and a hands-on [workshop on how to start running applications]() (41 mins)"
+      mediaComponent: "Terminal"
+      link:
+        label: "Create a Cloud.gov account"
+        url: "https://account.fr.cloud.gov/"
+  color: "primary-vivid"
+
+
+
 approachIds:
   - security
   - pricing

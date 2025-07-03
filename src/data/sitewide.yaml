@@ -6,8 +6,8 @@ newsletter:
 
 freeSandbox:
   heading: "Try it for yourself"
-  intro: >
-    We offer a free, no-strings-attached sandbox environment for federal staff and contractors.
+  intro: |
+    We offer a **free, no-strings-attached sandbox environment** for federal staff and contractors.
     Test deployments, evaluate fit, and explore how Cloud.gov supports your workflows.
   align: "center"
   color: "primary"
@@ -88,3 +88,13 @@ otherOfferings:
       link:
         label: "Learn about Workshop"
         url: "workshop"
+
+serviceLogos:
+  - cloudfront
+  - docker
+  - elasticache
+  - elasticsearch
+  - letsencrypt
+  - rds
+  - route53
+  - s3

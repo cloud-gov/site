@@ -15,7 +15,7 @@ moreWithLess:
   intro: |
     Government software projects often feel like running a marathon of challenges you never signed up for: navigating contracts, managing compliance, and keeping systems current—instead of focusing on the work that actually matters.
     
-    From purchasing to production operations, we simplify cloud infrastructure acquisition, management, and security so your team can stay focused on delivering services, not managing servers.
+    From purchase orders to production operations, we simplify cloud infrastructure acquisition, application management, and cybersecurity so your team can stay focused on delivering services, not managing servers.
   items:
     - heading: "Inherited security controls for easy ATOs"
       text: "Cloud.gov is FedRAMP Moderate Authorized, which means it complies with federal security requirements. When you build on Cloud.gov, you leverage our compliance practices and reduce the amount of work you need to do."
