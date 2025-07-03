@@ -30,13 +30,13 @@ To update an existing database to a read replica plan:
 cf update-service <your-service-name> -p micro-psql-replica
 ```
 
-> **Note:** `micro-psql-replica` is just an example of a service plan that supports database replicas. If you are updating an existing service to add a read replica, you should use the replica plan corresponding to your current database service (e.g. for databases currently using `medium-gp-psql*` plans, use the `medium-gp-psql-replica` plan).
->
-> To see the list available of replica plans (which all end in `-replica`):
->
-> ```shell
-> cf marketplace -e aws-rds
-> ```
+Read replicas are supported for all `aws-rds` plans. To add a read replica to an existing instance, use the replica plan corresponding to its current plan. For example, an instance using the `medium-gp-psql` plan should update to `medium-gp-psql-replica`.
+
+To see the list available of replica plans (which all end in `-replica`):
+
+```shell
+cf marketplace -e aws-rds
+```
 
 While your database service is being created or updated to add a read replica, running `cf service <your-service-name>` should report on the status of the create or update operation:
 
