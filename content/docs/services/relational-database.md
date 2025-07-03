@@ -351,15 +351,20 @@ Lastly, you need to restage your application so that it uses the updated credent
 cf restage <application-name> --strategy rolling
 ```
 
-### Bind to an application
+## Bind to an application
 
 To use the service instance from your application, bind the service instance to the application. For an overview of this process and how to retrieve the credentials for the service instance from environment variables, see [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/managing-services.html#bind) and the linked details at [Delivering Service Credentials to an Application](https://docs.cloudfoundry.org/devguide/services/application-binding.html).
 
 In short, `cf bind-service` will provide a `DATABASE_URL` environment variable for your app, which is then picked up by the `restage`.
 
-The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of this and all other environment variables as sensitive.
+The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of `DATABASE_URL` and all other environment variables as sensitive.
 
-Please note: If you are binding a service instance to a new space, please review and adjust your space egress setting. By default, all newly made spaces have their space egress set to closed which means any requests to the open internet or our brokered services will be blocked. For an overview of space egress settings, see [Space Egress](https://cloud.gov/docs/management/space-egress/).
+If you are using a service plan that includes a read replica, then the bound credentials for the database with a read replica will include:
+
+- `replica_uri`: a full URI for connecting to your read replica database.
+- `replica_host`: the host for connecting to your read replica database. The `replica_host` can be used in combination with the other properties (`username`, `password`, `db_name`, `port`) to connect to the read replica database.
+
+**Please note:** If you are binding a service instance to a new space, please review and adjust your space egress setting. **By default, all newly made spaces have their space egress set to closed which means*any requests to the open internet or our brokered services will be blocked**. For an overview of space egress settings, see [Space Egress](https://cloud.gov/docs/management/space-egress/).
 
 ## Backups and Recovery
 

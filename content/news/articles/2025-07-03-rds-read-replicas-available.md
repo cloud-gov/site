@@ -18,7 +18,19 @@ Use cases for a read replica include:
 
 ## How to create a read replica service
 
-Creating a read replica requires creating a service or updating a service to use a database service plan that supports read replicas. See the [database service documentation]({{ site.baseurl }}/docs/services/relational-database) for more information on how to create or update database services.
+To create a new database service with a read replica:
+
+```shell
+cf create-service aws-rds micro-psql-replica <your-service-name>
+```
+
+To update an existing database to a read replica plan:
+
+```shell
+cf update-service <your-service-name> -p micro-psql-replica
+```
+
+See the [database service documentation]({{ site.baseurl }}/docs/services/relational-database) for more information on how to create or update database services.
 
 Read replicas are supported for all `aws-rds` plans. To add a read replica to an existing instance, use the replica plan corresponding to its current plan. For example, an instance using the `medium-gp-psql` plan should update to `medium-gp-psql-replica`.
 
@@ -41,31 +53,12 @@ Showing status of last operation:
 
 ## Using your read replica
 
-Once you have created or updated a service with a read replica, you need to bind that service to an application to get the credentials to access it. If the service is already bound to an application, you will need to un-bind and then re-bind the service to the application.
+Once you have created or updated a service with a read replica, you need to bind that service to an application to get the credentials to access it.
 
-```shell
-cf unbind-service <app-name> <your-service-name> # if service is already bound to an app
-cf bind-service <app-name> <your-service-name>
-# make sure to restage for replcia credentials to be available to the app
-cf restage <app-name> --strategy rolling
-```
+[See the database service documentation for general guidance on how to bind database services to an application]({{ site.baseurl }}/docs/services/relational-database#bind-to-an-application).
 
-You can also [create a service key](https://cli.cloudfoundry.org/en-US/v8/create-service-key.html) to get the credentials for accessing your read replica:
+In particular, note the extra `replica_uri` and `replica_host` values that are available for any database service with a read replica.
 
-```shell
-cf create-service-key <your-service-name> <service-key-name>
-```
+If you updated an existing database service from a non-replica plan to a replica plan, then you will need to un-bind and re-bind that service to include the credentials for accessing the read replica. As always, when binding or re-binding a service to an application, you should then restage the application.
 
-After you have bound the service to an application or created a service key, then you can inspect the bound credentials:
-
-```shell
-cf env <app-name> # view bound services and their credentials for an app
-cf service-key <your-service-name> <service-key-name> # view contents of a service key
-```
-
-The bound credentials for a database with a read replica should include:
-
-- `replica_uri`: a full URI for connecting to your read replica database.
-- `replica_host`: the host for connecting to your read replica database. The `replica_host` can be used in combination with the other properties (`username`, `password`, `db_name`, `port`) to connect to the read replica database.
-
-Using these properties in your application code or other tools, you should be able to connect to your read replica database and use it. **Remember that read replica databases are read-only, so you cannot write to them**.
+Using these credentials in your application code or other tools, you should be able to connect to your read replica database and use it. **Remember that read replica databases are read-only, so you cannot write to them**.
