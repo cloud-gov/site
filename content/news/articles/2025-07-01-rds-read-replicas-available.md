@@ -2,7 +2,7 @@
 layout: layouts/post
 tags: news
 title: Read replicas now available for RDS databases
-date: 2025-07-01
+date: 2025-07-03
 excerpt: "Add a read replica for your RDS databases to handle read-only workloads"
 ---
 
