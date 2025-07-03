@@ -79,3 +79,6 @@ mandatesHandled:
     You don’t have to set up your own platform team to meet federal compliance requirements. 
     **We’re already operating one for you.**
 
+approachIds:
+  - security
+  - pricing

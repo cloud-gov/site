@@ -10,6 +10,16 @@ import FeaturedSection from "../components/FeaturedSection.astro";
 
 import content from "../data/pages/security.yaml";
 import sitewide from "../data/sitewide.yaml";
+
+const ourApproach = {
+  ...sitewide.ourApproach,
+  items: sitewide.ourApproach.items.filter((item) => content.approachIds.includes(item.id)),
+};
+
+const otherOfferings = {
+  ...sitewide.otherOfferings,
+  items: sitewide.otherOfferings.items.filter((item) => content.offeringIds.includes(item.id)),
+};
 ---
 
 <Layout>
@@ -19,7 +29,8 @@ import sitewide from "../data/sitewide.yaml";
   <FeaturedSection {...content.AtoFeature} />
   <Tiles {...content.yourMissionOurInfra} />
   <CTA {...sitewide.freeSandbox} />
-  <Topics {...sitewide.ourApproach} />
+  <Tiles {...otherOfferings} />
+  <Topics {...ourApproach} />
   <Tiles {...sitewide.supportTiles} />
   <Subscribe {...sitewide.newsletter} />
 </Layout>

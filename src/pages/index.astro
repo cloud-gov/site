@@ -10,6 +10,11 @@ import Subscribe from "../components/Subscribe.astro";
 
 import content from "../data/pages/home.yaml";
 import sitewide from "../data/sitewide.yaml";
+
+const ourApproach = {
+  ...sitewide.ourApproach,
+  items: sitewide.ourApproach.items.filter((item) => content.approachIds.includes(item.id)),
+};
 ---
 
 <Layout>
@@ -21,7 +26,7 @@ import sitewide from "../data/sitewide.yaml";
   <hr />
   <PageSection {...content.mandatesHandled} />
   <Tiles {...sitewide.supportTiles} />
-  <Topics {...sitewide.ourApproach} />
+  <Topics {...ourApproach} />
   <hr />
   <Subscribe {...sitewide.newsletter} />
 </Layout>

@@ -10,7 +10,17 @@ import Steps from "../components/Steps.astro";
 import Subscribe from "../components/Subscribe.astro";
 
 import content from "../data/pages/pricing.yaml";
-import { siteProps } from "../data/site";
+import sitewide from "../data/sitewide.yaml";
+
+const ourApproach = {
+  ...sitewide.ourApproach,
+  items: sitewide.ourApproach.items.filter((item) => content.approachIds.includes(item.id)),
+};
+
+const otherOfferings = {
+  ...sitewide.otherOfferings,
+  items: sitewide.otherOfferings.items.filter((item) => content.offeringIds.includes(item.id)),
+};
 ---
 
 <Layout>
@@ -19,8 +29,9 @@ import { siteProps } from "../data/site";
   <PageSection {...content.noRFP} />
   <Pricing {...content.pricingContent} />
   <Steps {...content.stepsList} />
-  <CTA {...siteProps.freeSandbox} />
-  <Topics {...content.ourApproach} />
-  <Tiles {...content.supportTiles} />
-  <Subscribe {...siteProps.newsletter} />
+  <CTA {...sitewide.freeSandbox} />
+  <Tiles {...otherOfferings} />
+  <Topics {...ourApproach} />
+  <Tiles {...sitewide.supportTiles} />
+  <Subscribe {...sitewide.newsletter} />
 </Layout>

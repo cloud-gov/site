@@ -107,22 +107,6 @@ relyOnPages:
   color: "white"
   align: "center"
 
-otherOfferings:
-  heading: "More of what we offer"
-  intro: |
-    Whether you are looking to stand up a new federal website or deploy your software securely, we have the tools to help. See more of what we offer:
-  items:
-    - heading: "Modern Application Hosting for Government"
-      text: "Secure, scalable infrastructure without the vendor sprawl"
-      link:
-        label: "Learn about Apps"
-        url: "apps"
-    - heading: "DevSecOps workspaces for federal teams"
-      text: "A Secure GitLab environment with quicker setup and deployment tools."
-      link:
-        label: "Learn about Workshop"
-        url: "workshop"
-  color: "base"
 
 AtoFeature:
   heading: "Designed for the way government launches software"
@@ -139,3 +123,11 @@ AtoFeature:
         label: "Review our compliance docs on Connect.gov"
         url: "#"
   color: "primary-dark"
+
+approachIds:
+  - g2g
+  - pricing
+
+offeringIds:
+  - apps
+  - tools

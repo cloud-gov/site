@@ -8,19 +8,27 @@ import Subscribe from "../components/Subscribe.astro";
 
 import content from "../data/pages/apps.yaml";
 import sitewide from "../data/sitewide.yaml";
+
+const ourApproach = {
+  ...sitewide.ourApproach,
+  items: sitewide.ourApproach.items.filter((item) => content.approachIds.includes(item.id)),
+};
+
+const otherOfferings = {
+  ...sitewide.otherOfferings,
+  items: sitewide.otherOfferings.items.filter((item) => content.offeringIds.includes(item.id)),
+};
 ---
 
 <Layout>
   <Hero {...content.hero} />
   <Topics {...content.moreWithLess} />
   <Tiles {...content.whatYouCanBuild} />
-  <CTA {...sitewide.freeSandbox} />
-  <hr />
   <Topics {...content.whatYouGet} />
-  <hr />
+  <CTA {...sitewide.freeSandbox} />
   <CTA {...content.noRFP} />
-  <Tiles {...content.otherOfferings} />
-  <Topics {...sitewide.ourApproach} />
+  <Tiles {...otherOfferings} />
+  <Topics {...ourApproach} />
   <Tiles {...sitewide.supportTiles} />
   <Subscribe {...sitewide.newsletter} />
 </Layout>

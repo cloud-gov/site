@@ -78,3 +78,11 @@ yourMissionOurInfra:
       icon: "assessment"
     - heading: "Defining deployment workflows that work for you"
       icon: "groups"
+
+approachIds:
+  - g2g
+  - pricing
+
+offeringIds:
+  - apps
+  - pages
