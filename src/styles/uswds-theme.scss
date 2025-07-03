@@ -180,7 +180,7 @@ $theme-footer-background-color: "primary";
       content: "";
       @include u-square(3);
       left: -1rem;
-      margin-top: -3px;
+      margin-top: -2px;
       border-width: 2px;
       box-shadow: 0 0 0 units($theme-process-list-counter-gap-width) color("base-lightest");
     }
@@ -215,7 +215,15 @@ $theme-footer-background-color: "primary";
       left: -1rem;
       bottom: .75rem;
     }
+    b, strong {
+      font-weight: font-weight(700);
+    }
   }
+  .usa-process-list__text {
+    font-weight: font-weight(500);
+
+  }
+
 }
 
 

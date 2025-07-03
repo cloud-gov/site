@@ -22,7 +22,13 @@ const HeadingTag = headingLevel;
     steps.map((step) => (
       <li class="usa-process-list__item">
         <Markdown content={step.heading} tag={HeadingTag} classes="usa-process-list__heading" inline />
-        {step.text && <Markdown content={step.text} classes="font-sans-md line-height-sans-4 margin-bottom-3" inline />}
+        {step.text && (
+          <Markdown
+            content={step.text}
+            classes="usa-process-list__text font-sans-md line-height-sans-4 margin-bottom-3"
+            inline
+          />
+        )}
       </li>
     ))
   }

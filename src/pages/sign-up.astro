@@ -2,29 +2,32 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Topics from "../components/Topics.astro";
+import PageSection from "../components/PageSection.astro";
 import Tiles from "../components/Tiles.astro";
+import CTA from "../components/CTA.astro";
 import Steps from "../components/Steps.astro";
 import Subscribe from "../components/Subscribe.astro";
-import CTA from "../components/CTA.astro";
-import FeaturedSection from "../components/FeaturedSection.astro";
 
-import content from "../data/pages/security.yaml";
+import content from "../data/pages/sign-up.yaml";
 import sitewide from "../data/sitewide.yaml";
 
 const ourApproach = {
   ...sitewide.ourApproach,
   items: sitewide.ourApproach.items.filter((item) => content.approachIds.includes(item.id)),
 };
+const otherOfferings = {
+  ...sitewide.otherOfferings,
+  items: sitewide.otherOfferings.items.filter((item) => content.offeringIds.includes(item.id)),
+};
 ---
 
 <Layout>
   <Hero {...content.headerSection} />
-  <Tiles {...content.g2g} />
-  <Steps {...content.launchNow} />
-  <FeaturedSection {...content.AtoFeature} />
-  <Tiles {...content.yourMissionOurInfra} />
-  <CTA {...sitewide.freeSandbox} />
-  <Topics {...ourApproach} />
+  <Steps {...content.kickTires} />
+  <hr />
+  <Tiles {...content.sandboxLimitations} />
   <Tiles {...sitewide.supportTiles} />
+  <Topics {...ourApproach} />
+  <Tiles {...otherOfferings} />
   <Subscribe {...sitewide.newsletter} />
 </Layout>

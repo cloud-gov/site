@@ -29,11 +29,11 @@
   }
   &.section--base-dark {
     -webkit-font-smoothing: antialiased;
-    --section-bg: var(--theme-color-base-darker);
+    --section-bg: var(--theme-color-base-darkest);
     --section-text: #fff;
     --section-card-text: var(--theme-color-base-dark);
-    --section-accent: var(--theme-color-base-light);
-    --section-border: var(--theme-color-base-darker);
+    --section-accent: var(--theme-color-base-darkest);
+    --section-border: var(--theme-color-base-darkest);
   }
   &.section--primary,
   &.section--primary-light {

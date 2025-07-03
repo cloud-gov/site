@@ -38,18 +38,6 @@ getCoding:
     - heading: "[Pay only for what you need](pricing), not for a bundle of extras"
   checks: true
 
-CTASection:
-  heading: "Try it for yourself"
-  intro: "We offer a free, no-strings-attached sandbox environment for federal staff and contractors. Test deployments, evaluate fit, and explore how Cloud.gov supports your workflows."
-  align: "center"
-  color: "base"
-  buttons:
-    - label: "Connect with our team"
-      url: "demo"
-      variant: "outline"
-    - label: "Get a free sandbox"
-      url: "sign-up"
-
 stepsList:
   heading: "How an IAA with Cloud.gov works for you"
   intro: "Buying services with us is unlike any other provider."

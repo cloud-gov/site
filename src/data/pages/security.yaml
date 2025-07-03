@@ -11,16 +11,17 @@ g2g:
   heading: "Zero-trust infrastructure that meets every government expectation"
   intro: "Cloud.gov provides you with a FIPS 140-2 compliant environment designed for U.S. federal workloads, where we can offer top-requested security features like:"
   align: "center"
+  color: "base-dark"
   items:
     - heading: "Supply-chain hardening"
-      text: "100% of our images are built using pre-scanned, signed, and reproducible buildpacks "
-      icon: "fast_forward"
+      text: "100% of our images are built using pre-scanned, signed, and reproducible buildpacks."
+      icon: "verified_user"
     - heading: "Per-app isolation"
-      text: "Every container runs in its own trust zone with mutual encryption enforced on every route"
-      icon: "assessment"
+      text: "Every container runs in its own trust zone with mutual encryption enforced on every route."
+      icon: "safety_divider"
     - heading: "Least privilege strategy"
-      text: "We deny service-to-service access by default and grant it only through explicit policies"
-      icon: "groups"
+      text: "We deny service-to-service access by default and grant it only through explicit policies."
+      icon: "do_not_touch"
 
 launchNow:
   heading: "Launch securely now, not next quarter"
@@ -73,11 +74,11 @@ yourMissionOurInfra:
   color: "white"
   items:
     - heading: "Your application logic and data handling"
-      icon: "fast_forward"
+      icon: "code"
     - heading: "Your team’s identity and access management policies"
-      icon: "assessment"
+      icon: "identification"
     - heading: "Defining deployment workflows that work for you"
-      icon: "groups"
+      icon: "directions"
 
 approachIds:
   - g2g
