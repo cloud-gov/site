@@ -12,7 +12,7 @@ The Cloud.gov team is excited to announce support for adding read replicas to yo
 
 Read replicas are useful for offloading tasks that are read intensive while your primary database handles create, update, and deletion of records. Isolating read operations to the read replica reduces the load on your primary database and also avoids database locking issues between read and write operations.
 
-Examples of read intensive tasks that may good use cases for a read replica include (but are not limited to):
+Use cases for a read replica include:
 
 - Generating reports from your data
 - Serving data for API requests
