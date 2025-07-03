@@ -240,7 +240,11 @@ There are a couple of caveats regarding this command with the `-p` flag:
 - You can only update using plans with the same database engine as your existing service instance. This means that if your original service instance was using a PostgreSQL plan (e.g., `micro-psql`), you can only update to one of the other `psql`-based plans.
 - You can **only** switch service plans with this command; you cannot do things like upgrade your database version.
 
-You can update to larger or smaller plans depending on your specific needs, and you can switch between redundant and non-redundant plans. You can also switch from a plan without a read replica to one with a read replica.
+By specifying the `-p` flag to `cf update-service`, you can:
+
+- update to larger or smaller plans depending on your specific needs
+- switch between redundant and non-redundant plans
+- switch from a plan without a read replica to one with a read replica
 
 **NOTE: All updates are applied immediately. Performing an update in place like this will result in a brief period of downtime (seconds to minutes) while the service instance restarts as a part of the update.**
 

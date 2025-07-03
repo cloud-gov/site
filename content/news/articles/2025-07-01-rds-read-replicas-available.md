@@ -16,19 +16,9 @@ Use cases for a read replica include:
 - Serving data for API requests
 - Performing analytics queries
 
-## How to create a read replica
+## How to create a read replica service
 
-To create a new database service with a read replica:
-
-```shell
-cf create-service aws-rds micro-psql-replica <your-service-name>
-```
-
-To update an existing database to a read replica plan:
-
-```shell
-cf update-service <your-service-name> -p micro-psql-replica
-```
+Creating a read replica requires creating a service or updating a service to use a database service plan that supports read replicas. See the [database service documentation]({{ site.baseurl }}/docs/services/relational-database) for more information on how to create or update database services.
 
 Read replicas are supported for all `aws-rds` plans. To add a read replica to an existing instance, use the replica plan corresponding to its current plan. For example, an instance using the `medium-gp-psql` plan should update to `medium-gp-psql-replica`.
 
