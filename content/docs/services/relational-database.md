@@ -15,26 +15,37 @@ If your application uses relational databases for storage, you can use the AWS R
 | --------------------------- | ---------------------------------------------------------------------------- | -------------------------- |
 | `micro-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory   | 15.x\*                     |
 | `micro-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory    | 15.x\*                     |
+| `micro-psql-replica`      | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 1 GiB memory    | 15.x\*                     |
 | `small-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor    | 15.x\*                     |
 | `small-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memory    | 15.x\*                     |
+| `small-psql-replica`      | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 2 GiB memory    | 15.x\*                     |
 | `medium-psql`               | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory   | 15.x\*                     |
 | `medium-psql-redundant`     | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory    | 15.x\*                     |
+| `medium-psql-replica`     | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 4 GiB memory    | 15.x\*                     |
 | `medium-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory   | 15.x\*                     |
 | `medium-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory    | 15.x\*                     |
+| `medium-gp-psql-replica`  | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 8 GiB memory    | 15.x\*                     |
 | `large-gp-psql`             | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory   | 15.x\*                     |
 | `large-gp-psql-redundant`   | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 8 GiB memory    | 15.x\*                     |
+| `large-gp-psql-replica`   | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 8 GiB memory    | 15.x\*                     |
 | `xlarge-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory | 15.x\*                     |
 | `xlarge-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory  | 15.x\*                     |
+| `xlarge-gp-psql-replica`  | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 2 cores, minimum 16 GiB memory  | 15.x\*                     |
 | `small-mysql`               | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory        | 8.x.x\*                    |
 | `small-mysql-redundant`     | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory         | 8.x.x\*                    |
+| `small-mysql-replica`     | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 2 GiB memory         | 8.x.x\*                    |
 | `medium-mysql`              | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory       | 8.x.x\*                    |
 | `medium-mysql-redundant`    | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory        | 8.x.x\*                    |
+| `medium-mysql-replica`    | Multi-AZ RDS instance of MySQL with read replica, minimum 2 cores, minimum 4 GiB memory        | 8.x.x\*                    |
 | `medium-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory        | 8.x.x\*                    |
 | `medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
+| `medium-gp-mysql-replica` | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
 | `large-gp-mysql`            | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory        | 8.x.x\*                    |
 | `large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
+| `large-gp-mysql-replica`  | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
 | `xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory      | 8.x.x\*                    |
 | `xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory       | 8.x.x\*                    |
+| `xlarge-gp-mysql-replica` | Multi-AZ RDS instance of MySQL with read replica, minimum 2 cores, minimum 16 GiB memory       | 8.x.x\*                    |
 | `medium-oracle-se2`         | Single-AZ RDS instance of Oracle SE2, minimum 1 core, minimum 4 GiB memory   | AWS RDS Latest Default     |
 
 _\*Note: The actual database engine version used is the latest minor/patch version offered by AWS RDS for this major version_
@@ -76,6 +87,8 @@ In general, the following guidance can be offered for the database plan sizes:
 Once you have chosen a plan size, you should consider whether you need to run your database in [multiple availability zones](https://aws.amazon.com/rds/features/multi-az/), which increases the availability and durability of your database.
 
 For databases used for development or staging environments, redundancy may not be as critical. **But for databases used in production applications, you should always use a `*-redundant` database plan.**
+
+If you need or want [a read replica for your database](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html), use one of the `*-replica` database plans. The `*-replica` database plans also include redundancy of your database in multiple availability zones.
 
 ## Create an instance
 
@@ -227,7 +240,11 @@ There are a couple of caveats regarding this command with the `-p` flag:
 - You can only update using plans with the same database engine as your existing service instance. This means that if your original service instance was using a PostgreSQL plan (e.g., `micro-psql`), you can only update to one of the other `psql`-based plans.
 - You can **only** switch service plans with this command; you cannot do things like upgrade your database version.
 
-You can update to larger or smaller plans depending on your specific needs, and you can switch between redundant and non-redundant plans.
+By specifying the `-p` flag to `cf update-service`, you can:
+
+- update to larger or smaller plans depending on your specific needs
+- switch between redundant and non-redundant plans
+- switch from a plan without a read replica to one with a read replica
 
 **NOTE: All updates are applied immediately. Performing an update in place like this will result in a brief period of downtime (seconds to minutes) while the service instance restarts as a part of the update.**
 
@@ -334,15 +351,20 @@ Lastly, you need to restage your application so that it uses the updated credent
 cf restage <application-name> --strategy rolling
 ```
 
-### Bind to an application
+## Bind to an application
 
 To use the service instance from your application, bind the service instance to the application. For an overview of this process and how to retrieve the credentials for the service instance from environment variables, see [Bind a Service Instance](https://docs.cloudfoundry.org/devguide/services/managing-services.html#bind) and the linked details at [Delivering Service Credentials to an Application](https://docs.cloudfoundry.org/devguide/services/application-binding.html).
 
 In short, `cf bind-service` will provide a `DATABASE_URL` environment variable for your app, which is then picked up by the `restage`.
 
-The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of this and all other environment variables as sensitive.
+The contents of the `DATABASE_URL` environment variable contain the credentials to access your database. Treat the contents of `DATABASE_URL` and all other environment variables as sensitive.
 
-Please note: If you are binding a service instance to a new space, please review and adjust your space egress setting. By default, all newly made spaces have their space egress set to closed which means any requests to the open internet or our brokered services will be blocked. For an overview of space egress settings, see [Space Egress](https://cloud.gov/docs/management/space-egress/).
+If you are using a service plan that includes a read replica, then the bound credentials for the database with a read replica will include:
+
+- `replica_uri`: a full URI for connecting to your read replica database.
+- `replica_host`: the host for connecting to your read replica database. The `replica_host` can be used in combination with the other properties (`username`, `password`, `db_name`, `port`) to connect to the read replica database.
+
+**Please note:** If you are binding a service instance to a new space, please review and adjust your space egress setting. **By default, all newly made spaces have their space egress set to closed which means*any requests to the open internet or our brokered services will be blocked**. For an overview of space egress settings, see [Space Egress](https://cloud.gov/docs/management/space-egress/).
 
 ## Backups and Recovery
 
