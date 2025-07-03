@@ -50,7 +50,10 @@ const serviceLogos: ServiceLogosMap = import.meta.glob("../../assets/service-log
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
     animation: var(--float-animation) var(--float-speed, 15s) linear infinite;
     will-change: transform;
-    transition: transform 0.3s;
+    transition:
+      top 0.5s ease,
+      left 0.5s ease,
+      transform 0.3s;
   }
 
   .bubble {
@@ -147,25 +150,50 @@ const serviceLogos: ServiceLogosMap = import.meta.glob("../../assets/service-log
 </style>
 
 <script>
-  const shadows = document.querySelectorAll(".bubble-shadow");
   const animations = ["float1", "float2", "float3"];
+  let debounceTimeout: ReturnType<typeof setTimeout> | null = null;
 
-  shadows.forEach((shadow) => {
-    const container = shadow.parentElement;
+  function positionBubbles(target = null) {
+    const container = document.querySelector(".bubble-container");
     const containerWidth = container.offsetWidth;
     const containerHeight = container.offsetHeight;
 
-    const x = Math.random() * (containerWidth - 100);
-    const y = Math.random() * (containerHeight - 100);
-    const speed = 10 + Math.random() * 10;
-    const delay = Math.random() * 2;
-    const anim = animations[Math.floor(Math.random() * animations.length)];
+    const bubbles = target ? [target] : document.querySelectorAll(".bubble-shadow");
 
-    shadow.style.top = `${y}px`;
-    shadow.style.left = `${x}px`;
-    shadow.style.setProperty("--float-speed", `${speed}s`);
-    shadow.style.setProperty("--float-animation", anim);
-    shadow.style.animationDelay = `${delay}s`;
-    shadow.style.zIndex = Math.floor(Math.random() * 10);
+    bubbles.forEach((shadow) => {
+      const x = Math.random() * (containerWidth - 100);
+      const y = Math.random() * (containerHeight - 100);
+      const speed = 10 + Math.random() * 10;
+      const delay = Math.random() * 2;
+      const anim = animations[Math.floor(Math.random() * animations.length)];
+
+      shadow.style.top = `${y}px`;
+      shadow.style.left = `${x}px`;
+      shadow.style.setProperty("--float-speed", `${speed}s`);
+      shadow.style.setProperty("--float-animation", anim);
+      shadow.style.animationDelay = `${delay}s`;
+      shadow.style.zIndex = Math.floor(Math.random() * 10);
+    });
+  }
+
+  positionBubbles();
+
+  window.addEventListener("resize", () => {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+      positionBubbles();
+      debounceTimeout = null; // 👈 reset it here
+    }, 200);
+  });
+
+  document.querySelectorAll(".bubble-shadow").forEach((shadow) => {
+    shadow.addEventListener("mouseenter", () => {
+      if (debounceTimeout) return;
+
+      positionBubbles(shadow);
+      debounceTimeout = setTimeout(() => {
+        debounceTimeout = null;
+      }, 400);
+    });
   });
 </script>
