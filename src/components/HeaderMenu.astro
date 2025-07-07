@@ -17,6 +17,11 @@ interface Props {
 }
 
 const { logoText, logoUrl, dropdowns, navLinks, secondaryLinks, buttonLinks, searchPlaceholder } = Astro.props;
+
+function normalizePath(path: string): string {
+  if (!path.startsWith("/")) path = "/" + path;
+  return path.replace(/\/+$/, ""); // remove trailing slash(es)
+}
 ---
 
 <div class="usa-overlay"></div>
@@ -71,7 +76,10 @@ const { logoText, logoUrl, dropdowns, navLinks, secondaryLinks, buttonLinks, sea
         {
           navLinks.map((link) => (
             <li class="usa-nav__primary-item">
-              <a href={link.url} class="usa-nav-link">
+              <a
+                href={link.url}
+                class={`usa-nav-link${normalizePath(Astro.url.pathname) === normalizePath(link.url) ? " usa-current" : ""}`}
+                aria-current={normalizePath(Astro.url.pathname) === normalizePath(link.url) ? "page" : undefined}>
                 <span>{link.label}</span>
               </a>
             </li>

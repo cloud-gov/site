@@ -16,7 +16,7 @@ export const headerProps = {
     { label: 'Security & Compliance', url: 'security' },
   ],
   secondaryLinks: [
-    { label: 'Resources', url: 'resources' },
+    { label: 'Resources', url: 'support' },
     { label: 'Contact', url: 'contact' },
     { label: 'Status', url: 'https://cloudgov.statuspage.io/' }
   ],

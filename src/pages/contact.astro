@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Tiles from "../components/Tiles.astro";
+import Subscribe from "../components/Subscribe.astro";
+
+import content from "../data/pages/contact.yaml";
+import sitewide from "../data/sitewide.yaml";
+---
+
+<Layout>
+  <Hero {...content.headerSection} />
+  <Tiles {...content.contactTiles} />
+  <Subscribe {...sitewide.newsletter} />
+</Layout>
