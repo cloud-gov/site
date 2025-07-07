@@ -246,6 +246,14 @@
       ]
     },
     {
+      "name": "App memory",
+      "metered": {
+        "unit": "GB",
+        "unitsPerCredit": 1,
+        "credits": 3
+      }
+    },
+    {
       "name": "AWS RDS storage",
       "metered": {
         "unit": "GB/month",

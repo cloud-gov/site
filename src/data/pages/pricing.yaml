@@ -35,7 +35,7 @@ pricingContent:
       1 credit buys you 1GB of app memory for 4 months, or 100 GB-months of RDS or OpenSearch storage, or 150,000 emails via SES, or a micro PostgreSQL instance. You don’t need to allocate these upfront—just use credits where needed throughout the year.
 
     link:
-      label: "Try our cost estimator"
+      label: "Estimate your credit usage"
       url: "./pricing#estimator"
     tiers:
       - name: "Sandbox"
@@ -109,8 +109,8 @@ pricingContent:
 
       One annual fee unlocks a comprehensive suite of website development and hosting tools designed specifically for your needs.
     link:
-      label: "More about Cloud.gov Pages"
-      url: "./pages"
+      label: "Connect with our team"
+      url: "./contact"
     pricing:
       name: "Cloud.gov Pages"
       price: "35,000"
@@ -127,7 +127,7 @@ pricingContent:
 stepsList:
   heading: "How an IAA with Cloud.gov works for you"
   intro: "Buying services with us is unlike any other provider."
-  outro: "Ready to get started? [Reach out to start the conversation](contact)."
+  outro: "Ready to get started? [Reach out to start the conversation](./contact)."
   step_heading_level: "h3"
   step_headings_only: false
   items:
