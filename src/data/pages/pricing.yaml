@@ -28,51 +28,76 @@ pricingContent:
     subhead: "Cloud.gov Apps pricing"
     heading: "Scalable pricing for every mission"
     text: |
-      You purchase access to **Cloud.gov Apps** by buying a tier with enough credits to support your needs. Credits can be spent on application memory or managed cloud services like databases.
+      You purchase access to **Cloud.gov Apps** by buying a tier with enough monthly credits to support your needs. 
 
-      Credits can be used flexibly throughout the year. That means if your usage varies, you can scale up or down as needed—**without changing your agreement** or paying all year for short-term peaks. 
+      Credits can be used flexibly throughout the year — think of them like rollover minutes. That means if your usage varies, you can scale up or down as needed—**without changing your agreement** or paying all year for short-term peaks. 
 
-      Check our our [cost estimator](#) for more details.
+      1 credit buys you 1GB of app memory for 4 months, or 100 GB-months of RDS or OpenSearch storage, or 150,000 emails via SES, or a micro PostgreSQL instance. You don’t need to allocate these upfront—just use credits where needed throughout the year.
+
     link:
-      label: "More about Cloud.gov Apps"
-      url: "/apps"
+      label: "Try our cost estimator"
+      url: "./pricing#estimator"
     tiers:
       - name: "Sandbox"
         credits: 8
         price: "$0"
+        for: "**Free:** Internal testing only"
+        rowspan: 1
       - name: "Femto"
         credits: 50
         price: "$30,000"
+        for: "**Small:** Lightweight apps with limited services"
+        rowspan: 2
       - name: "Pico"
         credits: 100
         price: "$60,000"
+        for: null
+        rowspan: 0
       - name: "Nano"
         credits: 150
         price: "$90,000"
+        for: "**Medium:** One or two production systems with supporting environments"
+        rowspan: 3
       - name: "Micro"
         credits: 250
         price: "$150,000"
+        for: null
+        rowspan: 0
       - name: "Milli"
         credits: 350
         price: "$210,000"
+        for: null
+        rowspan: 0
       - name: "Centi"
         credits: 500
         price: "$300,000"
+        for: "**Large:** Multiple applications with scaling needs or high availability"
+        rowspan: 3
       - name: "Deci"
         credits: 650
         price: "$390,000"
+        for: null
+        rowspan: 0
       - name: "Deka"
         credits: 800
         price: "$456,000"
+        for: null
+        rowspan: 0
       - name: "Hecto"
         credits: 1000
         price: "$540,000"
+        for: "**Enterprise:** Department-wide systems or shared platform for many teams"
+        rowspan: 4
       - name: "Kilo"
         credits: 1250
         price: "$637,500"
+        for: null
+        rowspan: 0
       - name: "Mega"
         credits: 1500
         price: "$720,000"
+        for: null
+        rowspan: 0
       - name: "Giga"
         credits: 2000
         price: "$936,000"
@@ -85,7 +110,7 @@ pricingContent:
       One annual fee unlocks a comprehensive suite of website development and hosting tools designed specifically for your needs.
     link:
       label: "More about Cloud.gov Pages"
-      url: "/pages"
+      url: "./pages"
     pricing:
       name: "Cloud.gov Pages"
       price: "35,000"

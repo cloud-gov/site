@@ -41,16 +41,12 @@ export default defineConfig({
     },
     plugins: [
       yaml(),
-      // copy({
-      //   targets: [
-      //     {
-      //       src: 'node_modules/@uswds/uswds/dist/img/sprite.svg',
-      //       dest: 'public/assets/uswds/img'
-      //     },
-      //   ],
-      //   hook: 'buildStart',
-      //   copyOnce: true,
-      // }),
+      copy({
+        targets: [
+          { src: 'src/data/credits.json', dest: 'public/data' }
+        ],
+        hook: 'buildStart'
+      })
     ],
   }
 });

@@ -250,3 +250,101 @@ $theme-footer-background-color: "primary";
     }
   }
 }
+
+.pricing-table {
+  -webkit-font-smoothing:antialiased;
+  thead {
+    th {
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      background-color: color("blue-cool-60");
+      border-color: color("blue-cool-70");
+      color: white;
+      border-bottom-width: 0;
+    }
+  }
+  th, td {
+    border-style: solid;
+    border-top-width: 0;
+    padding: .35rem .75rem;
+    &[rowspan] {
+      border-left-width: 1px;
+    }
+  }
+  .pricing-for {
+
+    &--1 {
+      td, th {      
+        color: color("blue-cool-80");
+        background-color: color("blue-cool-5");
+        border-color: color("blue-cool-20");
+      }
+    }
+    &--2 {
+      td, th {      
+        color: color("blue-cool-80");
+        background-color: color("blue-cool-10");
+        border-color: color("blue-cool-20");
+      }
+    }
+    &--3 {
+      td, th {    
+        color: color("blue-cool-80");
+        background-color: color("blue-cool-20");
+        border-color: color("blue-cool-30");
+      }
+    }
+    &--4 {
+      td, th {      
+        color: white;
+        background-color: color("blue-cool-50");
+        border-color: color("blue-cool-40");
+      }
+    }
+    &--5 {
+      td, th {      
+        color: white;
+        background-color: color("blue-cool-60");
+        border-color: color("blue-cool-40");
+      }
+    }
+  }
+  // show colspan on narrow widths, rowspan when there's room
+  // rowspan no, colspan yes
+  td[rowspan] {
+    display: none;
+  }
+  th[colspan] {
+    display: table-cell;
+    padding: .65rem .75rem;
+    font-weight: 400;
+    border-top-width: 4px;
+  }
+  // rowspan yes, colspan no
+  @media (min-width: 640px) and (max-width: 1023px) {
+    td[rowspan] {
+      display: table-cell;
+    }
+    th[colspan] {
+      display: none;
+    }
+  }
+  // rowspan no, colspan yes
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    td[rowspan] {
+      display: none;
+    }
+    th[colspan] {
+      display: table-cell;
+    }
+  }
+    // rowspan yes, colspan no
+    @media (min-width: 1200px) {
+      td[rowspan] {
+        display: table-cell;
+      }
+      th[colspan] {
+        display: none;
+      }
+    }
+}
