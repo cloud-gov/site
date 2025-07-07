@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Tiles from "../components/Tiles.astro";
+import Subscribe from "../components/Subscribe.astro";
+
+import content from "../data/pages/support.yaml";
+import sitewide from "../data/sitewide.yaml";
+---
+
+<Layout>
+  <Hero {...content.headerSection}>
+    <section class="margin-x-auto text-center width-mobile">
+      <form class="usa-search" role="search">
+        <label class="usa-sr-only" for="search-field">Search</label>
+        <input class="usa-input" id="search-field" type="search" placeholder="How do I..." name="search" />
+        <button class="usa-button" type="submit"> Search </button>
+      </form>
+    </section>
+  </Hero>
+  <Tiles {...content.productDocs} />
+  <Tiles {...content.commonSupportTopics} />
+  <Tiles {...sitewide.supportTiles} />
+  <Subscribe {...sitewide.newsletter} />
+</Layout>

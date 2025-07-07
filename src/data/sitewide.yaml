@@ -27,15 +27,15 @@ supportTiles:
     - heading: "Still have questions?"
       text: "Chat, email, or drop into weekly office hours to talk with our in-house engineers."
       icon: "support_agent"
-      link:
+      button:
         label: "Get in touch"
         url: "contact"
-    - heading: "See what Cloud.gov offers"
-      text: "Scale services, add memory, and manage apps via CLI, API, or dashboard"
-      icon: "insights"
-      link:
-        label: "All solutions"
-        url: ""
+    - heading: "Check out the docs"
+      text: "Learn more about Cloud.gov's services in our documentation."
+      icon: "bookmark"
+      button:
+        label: "Go to Docs.Cloud.gov"
+        url: "https://docs.cloud.gov"
 
 ourApproach:
   heading: "More about our approach"
@@ -73,19 +73,19 @@ otherOfferings:
     - id: "apps"
       heading: "Modern Application Hosting for Government"
       text: "Secure, scalable infrastructure without the vendor sprawl"
-      link:
+      button:
         label: "Learn about Apps"
         url: "apps"
     - id: "pages"
       heading: "Compliant federal public websites"
       text: "Easily publish accessible, fast, and federally compliant websites."
-      link:
+      button:
         label: "Learn about Pages"
         url: "pages"
     - id: "tools"
       heading: "DevSecOps workspaces for federal teams"
       text: "A Secure GitLab environment with quicker setup and deployment tools."
-      link:
+      button:
         label: "Learn about Workshop"
         url: "workshop"
 
