@@ -364,7 +364,7 @@ If you are using a service plan that includes a read replica, then the bound cre
 - `replica_uri`: a full URI for connecting to your read replica database.
 - `replica_host`: the host for connecting to your read replica database. The `replica_host` can be used in combination with the other properties (`username`, `password`, `db_name`, `port`) to connect to the read replica database.
 
-**Please note:** If you are binding a service instance to a new space, please review and adjust your space egress setting. **By default, all newly made spaces have their space egress set to closed which means*any requests to the open internet or our brokered services will be blocked**. For an overview of space egress settings, see [Space Egress](https://cloud.gov/docs/management/space-egress/).
+**Please note:** If you are binding a service instance to a new space, please review and adjust your space egress setting. **By default, all newly made spaces have their space egress set to closed which means any requests to the open internet or our brokered services will be blocked**. For an overview of space egress settings, see [Space Egress](https://cloud.gov/docs/management/space-egress/).
 
 ## Backups and Recovery
 
