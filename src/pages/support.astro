@@ -11,10 +11,11 @@ import sitewide from "../data/sitewide.yaml";
 <Layout>
   <Hero {...content.headerSection}>
     <section class="margin-x-auto text-center width-mobile">
-      <form class="usa-search" role="search">
-        <label class="usa-sr-only" for="search-field">Search</label>
-        <input class="usa-input" id="search-field" type="search" placeholder="How do I..." name="search" />
-        <button class="usa-button" type="submit"> Search </button>
+      <form class="usa-search" role="search" action="https://search.usa.gov/search" accept-charset="UTF-8" method="get">
+        <label class="usa-sr-only" for="query">Search</label>
+        <input type="hidden" name="affiliate" id="affiliate" value={sitewide.search.affiliate} autocomplete="off" />
+        <input class="usa-input" name="query" id="query" type="search" placeholder="How do I..." />
+        <button class="usa-button" value="Search" type="submit"> Search </button>
       </form>
     </section>
   </Hero>
