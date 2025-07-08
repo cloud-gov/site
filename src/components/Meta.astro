@@ -12,7 +12,7 @@ const { title, url = Astro.url.href, description = sitewide.meta.description, no
 
 const fullTitle = title ? `${title} | ${sitewide.meta.title}` : sitewide.meta.title;
 
-const imageUrl = `${Astro.site}cloud-gov-logo.png`; // needs to be absolute path to public image
+const imageUrl = `${Astro.site}/cloud-gov-logo.png`; // needs to be absolute path to public image
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
@@ -34,7 +34,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageUrl} />
 
-<link rel="icon" type="image/svg+xml" href={`${Astro.site}favicon.ico`} />
+<link rel="icon" type="image/svg+xml" href={`${Astro.site}/favicon.ico`} />
 <meta name="generator" content={Astro.generator} />
 
 <base href={import.meta.env.BASE_URL} />
