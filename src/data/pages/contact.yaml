@@ -5,5 +5,5 @@ headerSection:
   heading: "Talk to a human"
   intro: "If you’re interested in using Cloud.gov, email [inquiries@cloud.gov](mailto:inquiries@cloud.gov)."
   align: "center"
-  color: "white"
+  color: "primary"
 
