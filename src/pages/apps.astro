@@ -20,7 +20,7 @@ const otherOfferings = {
 };
 ---
 
-<Layout>
+<Layout title={content.title} description={content.description}>
   <Hero {...content.hero} />
   <Topics {...content.moreWithLess} />
   <Tiles {...content.whatYouCanBuild} />

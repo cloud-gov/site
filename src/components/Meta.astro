@@ -1,37 +1,47 @@
 ---
-const {
-  titlePlaceholder = "Cloud.gov",
-  descriptionPlaceholder = "This is going to be a great website",
-  imagePlaceholder = Astro.site + "/favicon.ico",
-  siteUrlPlaceholder = Astro.site,
-  ...props
-} = Astro.props;
-// TODO: Check all these placeholders and replace
+import sitewide from "../data/sitewide.yaml";
+
+interface Props {
+  title: string;
+  description?: string;
+  url?: string;
+  noIndex?: boolean;
+}
+
+const { title, url = Astro.url.href, description = sitewide.meta.description, noIndex = false } = Astro.props;
+
+const fullTitle = title ? `${title} | ${sitewide.meta.title}` : sitewide.meta.title;
+
+const imageUrl = `${Astro.site}cloud-gov-logo.png`; // needs to be absolute path to public image
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
-<link rel="icon" type="image/svg+xml" href={`${Astro.site}/favicon.ico`} />
-<meta name="generator" content={Astro.generator} />
-<title>{titlePlaceholder}</title>
-<base href={import.meta.env.BASE_URL} />
-<link rel="sitemap" href="/sitemap.xml" />
-<link rel="canonical" href={siteUrlPlaceholder} />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+{noIndex && <meta name="robots" content="noindex, nofollow" />}
 
-<title>{titlePlaceholder}</title>
-<meta name="description" content={descriptionPlaceholder} />
+<!-- Open Graph -->
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={url} />
+<meta property="og:image" content={imageUrl} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<link rel="icon" type="image/svg+xml" href={`${Astro.site}favicon.ico`} />
+<meta name="generator" content={Astro.generator} />
+
+<base href={import.meta.env.BASE_URL} />
+<link rel="sitemap" href="sitemap-index.xml" />
+<link rel="canonical" href={canonicalUrl} />
 
 <!-- Web analytics -->
-
-<!-- Open Graph tags -->
-<meta property="og:title" content={titlePlaceholder} />
-<meta property="og:type" content="website" />
-<meta property="og:url" content={siteUrlPlaceholder} />
-<meta property="og:description" content={descriptionPlaceholder} />
-<meta property="og:image" content={imagePlaceholder} />
-<meta property="og:image:alt" content="" />
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content={titlePlaceholder} />
-<meta name="twitter:description" content={descriptionPlaceholder} />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="HandheldFriendly" content="True" />
