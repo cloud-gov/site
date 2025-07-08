@@ -8,7 +8,7 @@ export const footerProps = {
           url: "support"
         },
         {
-          text: "Business Inquiries",
+          text: "Business inquiries",
           url: "mailto:inquiries@cloud.gov"
         }
       ]
@@ -19,6 +19,10 @@ export const footerProps = {
         {
           text: "Our repositiories",
           url: "https://github.com/cloud-gov/"
+        },
+        {
+          text: "Documentation",
+          url: "https://docs.cloud.gov"
         },
         {
           text: "Free sandbox",

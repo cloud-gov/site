@@ -1,6 +1,8 @@
 ---
 import closeIcon from "@uswds/uswds/img/usa-icons/close.svg";
 import searchIcon from "@uswds/uswds/img/usa-icons-bg/search--white.svg";
+import logoImg from "../assets/cloud-gov-logo.png";
+
 import sitewide from "../data/sitewide.yaml";
 
 type NavLink = { label: string; url: string };
@@ -29,11 +31,11 @@ function normalizePath(path: string): string {
 <header class="usa-header usa-header--extended border-bottom-1px border-base-lighter">
   <div class="usa-navbar">
     <div class="usa-logo">
-      <em class="usa-logo__text">
-        <a href={logoUrl} title={logoText}>{logoText}</a>
-      </em>
+      <a href={logoUrl} title={logoText}>
+        <img class="height-5 display-block" src={logoImg.src} alt={logoText} />
+      </a>
     </div>
-    <div class="usa-navbar-button-group">
+    <div class="display-none tablet:display-block usa-navbar-button-group">
       {
         buttonLinks.map((link, index) => (
           <a href={link.url} class={`usa-button--in-nav usa-button${link.class ? ` usa-button--${link.class}` : ""}`}>

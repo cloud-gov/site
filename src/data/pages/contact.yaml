@@ -1,24 +1,6 @@
 headerSection:
-  heading: "Contact Cloud.gov"
-  intro: "We love to talk shop."
+  heading: "Talk to a human"
+  intro: "If you’re interested in using Cloud.gov, email [inquiries@cloud.gov](mailto:inquiries@cloud.gov)."
   align: "center"
   color: "white"
 
-contactTiles:
-  heading: "We’re ready to help."
-  intro: "If you’re interested in using Cloud.gov, email [inquiries@cloud.gov](mailto:inquiries@cloud.gov)."
-  color: "primary"
-  align: "center"
-  items:
-    - heading: "Need a hand?"
-      text: "We’re available by email at [support@cloud.gov](mailto:support@cloud.gov) or in our public Slack channels."
-      icon: "support_agent"
-      button:
-        label: "Contact support"
-        url: "mailto:support@cloud.gov"
-    - heading: "Connect with our team"
-      text: "Our federal platform and procurement experts would love to hear about your mission."
-      icon: "forum"
-      button:
-        label: "Get in touch"
-        url: "mailto:inquiries@cloud.gov"

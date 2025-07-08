@@ -28,16 +28,16 @@ supportTiles:
   align: "center"
   items:
     - heading: "Still have questions?"
-      text: "Chat, email, or drop into weekly office hours to talk with our in-house engineers."
+      text: "Email [support@cloud.gov](mailto:support@cloud.gov) or drop into weekly office hours to talk with our in-house engineers."
       icon: "support_agent"
       button:
         label: "Get in touch"
-        url: "contact"
+        url: "mailto:support@cloud.gov"
     - heading: "Check out the docs"
       text: "Learn more about Cloud.gov's services in our documentation."
       icon: "bookmark"
       button:
-        label: "Go to Docs.Cloud.gov"
+        label: "Go to docs.cloud.gov"
         url: "https://docs.cloud.gov"
 
 ourApproach:

@@ -1,6 +1,8 @@
 
 headerSection:
-  heading: "Straightforward pricing. Federal-first procurement."
+  heading: |
+    Straightforward pricing. 
+    Federal-first procurement.
   intro: |
     Federal digital teams deserve pricing that's as agile as their missions. Cloud.gov offers a straightforward, predictable approach that lets you deploy applications and scale infrastructure without budget surprises — scaling up or down without contract negotiations or hidden costs.
 

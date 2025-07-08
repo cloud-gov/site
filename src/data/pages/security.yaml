@@ -11,7 +11,7 @@ g2g:
   heading: "Zero-trust infrastructure that meets every government expectation"
   intro: "Cloud.gov provides you with a FIPS 140-2 compliant environment designed for U.S. federal workloads, where we can offer top-requested security features like:"
   align: "center"
-  color: "base-dark"
+  color: "base"
   items:
     - heading: "Supply-chain hardening"
       text: "100% of our images are built using pre-scanned, signed, and reproducible buildpacks."
@@ -26,7 +26,7 @@ g2g:
 launchNow:
   heading: "Launch securely now, not next quarter"
   intro: |
-    Skip months of security configuration. Our multi-zone availability platform includes enterprise-level protections designed to meet the most stringent federal requirements. 
+    Skip months of security configuration. Our multi-availability zone platform includes enterprise-level protections designed to meet the most stringent federal requirements. 
     
     When you run your FISMA Low or Moderate system on Cloud.gov, you automatically inherit coverage for more than 300 of the NIST 800-53 Rev 5 controls. That means on day one, you can check these off your list:
 
@@ -58,12 +58,12 @@ AtoFeature:
       text: "We work directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessment (SIA)."
       link:
         label: "Check us out on the FedRAMP marketplace"
-        url: "#"
-    - heading: "You don't have to BYO ATO"
-      text: "Cloud.gov Pages offers a simple Authority to Use (ATU) approach. After guiding dozens of government agencies through the compliance authorization process, our experts have streamlined each step of the process, from initial documentation to final approval."
+        url: "https://marketplace.fedramp.gov/products/F1607067912"
+    - heading: "We do more, so you do less"
+      text: "Cloud.gov isn’t just _technically_ compliant—it’s built with the realities of federal security in mind. We’ve supported dozens of agencies through audits, ATOs, and reauthorizations, and we’ve shaped our platform and docs around what teams actually need to succeed."
       link:
         label: "Review our compliance docs on Connect.gov"
-        url: "#"
+        url: "https://www.connect.gov/"
   color: "primary-dark"
 
 

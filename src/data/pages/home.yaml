@@ -34,6 +34,7 @@ getCoding:
     - heading: "Monitor metrics, logs, and application performance"
     - heading: "Manage your applications and infrastructure directly through our platform"
     - heading: "Instantly scale resources without waiting weeks for ticket approvals"
+    - heading: "Launch FedRAMP Moderate inherited environments instantly and accelerate your ATO."
     - heading: "Move into production once you’re ready, and redeploy as often as you like"
     - heading: "[Pay only for what you need](pricing), not for a bundle of extras"
   checks: true
@@ -57,12 +58,16 @@ stepsList:
 mandatesHandled:
   heading: "The latest 2025 federal compliance mandates, handled"
   intro: |
-    Cloud.gov is already FedRAMP Authorized (Moderate), so your agency can reuse our compliance package without a second review. That means on day one, you can check these off your list:
+    Cloud.gov is already FedRAMP Authorized (Moderate), so your agency can reuse our compliance package. That means on day one, you can check these off your list:
   content: |
     - Our continuous monitoring meets **every 2025 FISMA metric for OMB M-25-04**
     - Cloud.gov’s completely “Zero Trust” model satisfies **Executive Order 14028**
     - All active cryptographic modules are validated against the **FIPS 140-3 Standard**
     - Customers on Cloud.gov get priority access to the upcoming **FedRAMP 20x OSCAL packages**
+  buttons: 
+  # TODO add links
+    - label: "More about compliance"
+      url: "compliance"
   outro: |
     You don’t have to set up your own platform team to meet federal compliance requirements. 
     **We’re already operating one for you.**

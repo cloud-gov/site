@@ -1,5 +1,10 @@
 ---
 import Markdown from "./Markdown.astro";
+interface Button {
+  label: string;
+  url: string;
+  variant?: string;
+}
 
 interface Props {
   heading?: string;
@@ -10,6 +15,7 @@ interface Props {
   id?: string;
   color?: string;
   align?: "center" | "left";
+  buttons?: Button[];
 }
 
 const {
@@ -20,6 +26,7 @@ const {
   color = "white",
   align = "left",
   classes = "",
+  buttons = [],
   id = false,
 } = Astro.props;
 ---
@@ -49,6 +56,17 @@ const {
       outro && (
         <div class="section__outro">
           <Markdown content={outro} classes="margin-top-2 font-sans-lg line-height-sans-4 margin-bottom-0" inline />
+        </div>
+      )
+    }
+    {
+      buttons.length > 0 && (
+        <div class="section__outro">
+          {buttons.map((btn) => (
+            <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""}`}>
+              {btn.label}
+            </a>
+          ))}
         </div>
       )
     }

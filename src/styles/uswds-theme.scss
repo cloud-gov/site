@@ -121,6 +121,19 @@ h2 {
 
 }
 
+.usa-footer__nav {
+  @media (min-width: 480px) and (max-width:1023px) {
+    text-align: center !important;
+    .usa-footer__primary-link {
+      justify-content: center !important;
+    }
+    .footer-logo img {
+      margin: 0 auto 1rem;
+      }
+  }
+}
+
+
 @media (min-width: 40em) {
   .usa-section {
       padding-bottom: 4rem;
