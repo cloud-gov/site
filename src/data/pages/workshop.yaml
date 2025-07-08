@@ -1,0 +1,24 @@
+title: Page title goes here
+description: SEO description goes here
+
+hero:
+  heading: "Cal and Zach will write this page"
+  intro: "And it will be great"
+  align: "center"
+  color: "base"
+  buttons:
+    - label: "do thing one"
+      url: "#"
+    - label: "do thing two"
+      url: "#"
+      variant: "outline"
+
+# declare your objects here following the established patterns of other pages
+
+approachIds:
+  - security
+  - pricing
+
+offeringIds:
+  - pages
+  - apps

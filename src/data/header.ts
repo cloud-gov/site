@@ -7,7 +7,7 @@ export const headerProps = {
       links: [
         { label: 'Fast & Scalable Federal Apps', url: 'apps' },
         { label: 'Federal Public Websites', url: 'pages' },
-        { label: 'Developer Collaboration Tools', url: 'tools' }
+        { label: 'Developer Collaboration Tools', url: 'workshop' }
       ]
     },
   ],

@@ -10,7 +10,7 @@ hero:
     - label: "Get a free sandbox"
       url: "sign-up"
     - label: "Connect with our team"
-      url: "demo"
+      url: "contact"
       variant: "outline"
 
 moreWithLess:
