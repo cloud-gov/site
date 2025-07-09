@@ -123,3 +123,7 @@ _site
 /public/styles/**
 node_modules
 public/data/credits.json
+
+# Astro
+_data/assetPaths.json
+.astro/types.d.ts
