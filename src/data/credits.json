@@ -14,6 +14,11 @@
           "credits": 2
         },
         {
+          "plan": "micro-psql-replica",
+          "instanceClass": "db.t3.micro",
+          "credits": 4
+        },
+        {
           "plan": "small-psql",
           "instanceClass": "db.t3.small",
           "credits": 2
@@ -22,6 +27,11 @@
           "plan": "small-psql-redundant",
           "instanceClass": "db.t3.small",
           "credits": 4
+        },
+        {
+          "plan": "small-psql-replica",
+          "instanceClass": "db.t3.small",
+          "credits": 8
         },
         {
           "plan": "medium-psql",
@@ -34,6 +44,11 @@
           "credits": 8
         },
         {
+          "plan": "medium-psql-replica",
+          "instanceClass": "db.t3.medium",
+          "credits": 16
+        },
+        {
           "plan": "medium-gp-psql",
           "instanceClass": "db.m5.large",
           "credits": 10
@@ -42,6 +57,11 @@
           "plan": "medium-gp-psql-redundant",
           "instanceClass": "db.m5.large",
           "credits": 20
+        },
+        {
+          "plan": "medium-gp-psql-replica",
+          "instanceClass": "db.m5.large",
+          "credits": 40
         },
         {
           "plan": "large-gp-psql",
@@ -54,6 +74,11 @@
           "credits": 20
         },
         {
+          "plan": "large-gp-psql-replica",
+          "instanceClass": "db.m5.large",
+          "credits": 40
+        },
+        {
           "plan": "xlarge-gp-psql",
           "instanceClass": "db.m5.xlarge",
           "credits": 20
@@ -62,6 +87,11 @@
           "plan": "xlarge-gp-psql-redundant",
           "instanceClass": "db.m5.xlarge",
           "credits": 39
+        },
+        {
+          "plan": "xlarge-gp-psql-replica",
+          "instanceClass": "db.m5.xlarge",
+          "credits": 78
         },
         {
           "plan": "2xlarge-gp-psql",
@@ -74,6 +104,11 @@
           "credits": 78
         },
         {
+          "plan": "2xlarge-gp-psql-replica",
+          "instanceClass": "db.m5.2xlarge",
+          "credits": 156
+        },
+        {
           "plan": "xlarge-gp-psql-m6",
           "instanceClass": "db.m6g.xlarge",
           "credits": 17
@@ -82,6 +117,11 @@
           "plan": "xlarge-gp-psql-m6-redundant",
           "instanceClass": "db.m6g.xlarge",
           "credits": 34
+        },
+        {
+          "plan": "xlarge-gp-psql-m6-replica",
+          "instanceClass": "db.m6g.xlarge",
+          "credits": 68
         },
         {
           "plan": "micro-mysql",
@@ -94,6 +134,11 @@
           "credits": 2
         },
         {
+          "plan": "micro-mysql-replica",
+          "instanceClass": "db.t3.micro",
+          "credits": 4
+        },
+        {
           "plan": "small-mysql",
           "instanceClass": "db.t3.small",
           "credits": 2
@@ -102,6 +147,11 @@
           "plan": "small-mysql-redundant",
           "instanceClass": "db.t3.small",
           "credits": 4
+        },
+        {
+          "plan": "small-mysql-replica",
+          "instanceClass": "db.t3.small",
+          "credits": 8
         },
         {
           "plan": "medium-mysql",
@@ -114,6 +164,11 @@
           "credits": 7
         },
         {
+          "plan": "medium-mysql-replica",
+          "instanceClass": "db.t3.medium",
+          "credits": 14
+        },
+        {
           "plan": "medium-gp-mysql",
           "instanceClass": "db.m5.large",
           "credits": 9
@@ -122,6 +177,11 @@
           "plan": "medium-gp-mysql-redundant",
           "instanceClass": "db.m5.large",
           "credits": 19
+        },
+        {
+          "plan": "medium-gp-mysql-replica",
+          "instanceClass": "db.m5.large",
+          "credits": 38
         },
         {
           "plan": "large-gp-mysql",
@@ -134,6 +194,11 @@
           "credits": 19
         },
         {
+          "plan": "large-gp-mysql-replica",
+          "instanceClass": "db.m5.large",
+          "credits": 38
+        },
+        {
           "plan": "xlarge-gp-mysql",
           "instanceClass": "db.m5.xlarge",
           "credits": 19
@@ -142,6 +207,11 @@
           "plan": "xlarge-gp-mysql-redundant",
           "instanceClass": "db.m5.xlarge",
           "credits": 37
+        },
+        {
+          "plan": "xlarge-gp-mysql-replica",
+          "instanceClass": "db.m5.xlarge",
+          "credits": 74
         },
         {
           "plan": "medium-oracle-se2",
@@ -300,8 +370,12 @@
     },
     {
       "name": "External Domain",
-      "free": true,
-      "credits": 0
+      "plans": [
+        {
+          "plan": "domain-with-cdn-dedicated-waf",
+          "credits": 1
+        }
+      ]
     },
     {
       "name": "UAA Service Account",
