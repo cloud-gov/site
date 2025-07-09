@@ -5,7 +5,11 @@ import creditsData from "../data/credits.json";
 <>
   <h2 class="margin-top-0">Cloud.gov Credit Estimator</h2>
 
-  <div id="estimator-rows" class="bg-primary-lightest border-primary-light border"></div>
+  <div
+    id="estimator-rows"
+    class="bg-primary-lightest border-primary-light border"
+  >
+  </div>
 
   <button type="button" class="usa-button usa-button--outline margin-right-0" id="add-row">+ Add service</button>
 
@@ -16,7 +20,9 @@ import creditsData from "../data/credits.json";
   <template id="row-template">
     <div class="estimator-row border-primary-light border-top-1px">
       <div class="service-container">
-        <label class="usa-label text-bold" for="service-select">Service type</label>
+        <label class="usa-label text-bold" for="service-select"
+          >Service type</label
+        >
         <select class="usa-select service-select" id="service-select">
           <option disabled selected>— Choose a service —</option>
         </select>
@@ -51,9 +57,15 @@ import creditsData from "../data/credits.json";
         <span class="credit-output font-sans-md">0</span>
       </div>
       <div class="remove-container">
-        <button type="button" title="Remove" class="usa-button--unstyled remove-btn" aria-label="Remove row">
+        <button
+          type="button"
+          title="Remove"
+          class="usa-button--unstyled remove-btn"
+          aria-label="Remove row"
+        >
           <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
-            <use href={`${Astro.site}/assets/uswds/img/sprite.svg#delete`}></use>
+            <use href={`${Astro.site}/assets/uswds/img/sprite.svg#delete`}
+            ></use>
           </svg>
         </button>
       </div>
