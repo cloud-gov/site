@@ -26,8 +26,7 @@ application code and data.
 For example, consider writing down which roles on your team are subscribed to [cloud.gov status
 updates](https://cloudgov.statuspage.io) (such as Application System Owner and Product Manager), and link to parts of
 the cloud.gov documentation that give instructions for re-deploying your application or restoring data backups. If your
-agency doesn't provide a template, NIST provides templates, and feel free to adapt [the cloud.gov contingency
-plan](/docs/ops/contingency-plan/).
+agency doesn't provide a template, NIST provides templates, and feel free to adapt the [cloud.gov contingency plan](/docs/ops/moved/). 
 
 ### Functional exercise plan template
 
