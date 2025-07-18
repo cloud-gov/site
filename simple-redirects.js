@@ -7,7 +7,7 @@ const docsDir = './content/docs';
 const pagesDir = './content/pages';
 const kbDir = './content/knowledge-base/articles';
 const pageskbDir = './content/pages/knowledge-base/articles';
-const newSiteUrl = 'https://docs.cloud.gov';
+const newSiteUrl = 'https://docs.cloud.gov/content';
 
 // output file
 const outputFile = './_data/redirects.json';
