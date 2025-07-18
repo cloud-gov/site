@@ -1,9 +1,12 @@
 const fs = require('fs');
+const { url } = require('inspector');
 const path = require('path');
 
 // Config
 const docsDir = './content/docs';
 const pagesDir = './content/pages';
+const kbDir = './content/knowledge-base/articles';
+const pageskbDir = './content/pages/knowledge-base/articles';
 const newSiteUrl = 'https://docs.cloud.gov';
 
 // output file
@@ -63,6 +66,32 @@ pagesFiles.forEach(file => {
     //Convert path using regex as above
     const urlPath = file
     .replace('./content/pages', '/pages')
+
+    const destination = newSiteUrl + urlPath;
+    redirects[urlPath] = destination;
+});
+
+// Find platform kb articles
+const kbFiles = findMarkdownfiles(kbDir);
+
+kbFiles.forEach(file => {
+    // Convert path and remove file extension
+    const urlPath = file
+    .replace('./content/knowledge-base', '/knowledge-base')
+    .replace(/\.mdx?$/, '');
+
+    const destination = newSiteUrl + urlPath;
+    redirects[urlPath] = destination;
+});
+
+// Find pages knowledge-base
+const pageskbFiles = findMarkdownfiles(pageskbDir);
+
+pageskbFiles.forEach(file => {
+    // Conversion
+    const urlPath = file
+    .replace('./content/pages', '/pages')
+    .replace(/\.mdx?$/, '');
 
     const destination = newSiteUrl + urlPath;
     redirects[urlPath] = destination;

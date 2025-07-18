@@ -16,7 +16,7 @@ Happy April! The cloud.gov team is working on providing change logs so everyone 
 
 ### CF-Deployment - v19.0.0 up from v18.0.0
 
-- Changes will be below broken up by component :)
+- Changes will be below broken up by component
 
 ### Java Buildpack - v4.48.1 up from v4.48
 
