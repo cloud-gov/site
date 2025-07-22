@@ -1,9 +1,8 @@
 ---
-layout: layouts/post
 title: "Configuring Dependabot"
-date: 2023-05-22 00:00:00 +00:00
+date: 2023-05-22
 excerpt: Configure Dependabot to assist with managing pull requests
-tags: pagesknowledgebase
+redirect_from: /content/pages/knowledge-base/articles/dependabot-with-pages
 ---
 
 ## GitHub Dependabot defined
