@@ -1,6 +1,9 @@
 ---
 showInSidenav: true
 title: ATO process
+permalink: /docs/compliance/ato-process.md
+redirect: https://docs.cloud.gov/platform/compliance/ato-process
+layout: redirect.njk
 ---
 
 This is an outline of a typical ATO process for a cloud.gov customer system. All agencies handle the ATO process in their own way, so you should talk with your agency's security compliance specialists, but this can give you a broad overview.

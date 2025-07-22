@@ -1,6 +1,7 @@
 ---
 layout: layouts/post
 title: "Troubleshooting SSH Connections"
+redirect_from: content/knowledge-base/articles/2021-05-17-troubleshooting-ssh-connections
 date: 2021-05-17 00:00:00 +00:00
 author:
 description: Some tips and tricks for logging into app instances using SSH
