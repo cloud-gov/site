@@ -3,7 +3,7 @@ description: SEO description goes here
 
 hero:
   heading: "One FedRAMP Moderate SaaS Platform to Rule Them All"
-  intro: "Build, Host, and Deploy your applications without all the comploiance headaches."
+  intro: "Build, host, and deploy your applications without all the compliance headaches."
   align: "center"
   color: "base"
   buttons:
