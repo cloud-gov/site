@@ -1,9 +1,9 @@
-title: Page title goes here
+title: Cloud.gov Workshop
 description: SEO description goes here
 
 hero:
-  heading: "Cal and Zach will write this page"
-  intro: "And it will be great"
+  heading: "One FedRAMP Moderate SaaS Platform to Rule Them All"
+  intro: "Build, Host, and Deploy your applications without all the comploiance headaches."
   align: "center"
   color: "base"
   buttons:
