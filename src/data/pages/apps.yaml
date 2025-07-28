@@ -2,7 +2,7 @@ title: Deploy Custom Applications
 description: Build and run cloud-native applications with Cloud.gov’s fully managed platform-as-a-service.
 
 hero:
-  heading: "Modern Application Hosting for Government"
+  heading: "Cloud.gov Platform logotype -->    line break    --> Modern Application Hosting for Government"
   intro: "Secure and scalable cloud infrastructure made easy"
   align: "center"
   color: "base"
@@ -17,7 +17,7 @@ moreWithLess:
   heading: "Built to help federal software and IT teams achieve more with less"
   intro: |
     Government software projects often feel like running a marathon of challenges you never signed up for: navigating contracts, managing compliance, and keeping systems current—instead of focusing on the work that actually matters.
-    
+
     From purchase orders to production operations, we simplify cloud infrastructure acquisition, application management, and cybersecurity so your team can stay focused on delivering services, not managing servers.
   items:
     - heading: "Inherited security controls for easy ATOs"
@@ -94,3 +94,4 @@ approachIds:
 offeringIds:
   - pages
   - tools
+

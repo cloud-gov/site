@@ -1,9 +1,9 @@
 title: Launch Public Websites
 description: Cloud.gov Pages helps federal agencies launch secure, compliant websites with a modern publishing workflow and no infrastructure headaches.
 
-
 hero:
-  heading: "Everything you need to run your compliant government website"
+  heading: "Cloud.gov Pages logotype -->     line break      --> Cloud.gov Pages has everything you need to run your compliant government website"
+
   intro: "Easy-to-manage public websites for federal agencies"
   align: "center"
   color: "base"
@@ -17,9 +17,9 @@ hero:
 moreWithLess:
   heading: "Built to help federal teams publish websites with confidence"
   intro: |
-    Publishing an agency update may seem simple, but federal websites are held to the highest standards for security, accessibility, and trust. That means wearing a lot of hats.... **teams tasked with public communication and service delivery are also expected to be infrastructure, cybersecurity, and web design experts** — usually with limited access to training, budget, and staff.
+    Publishing an agency update may seem simple, but it’s one of the most visible responsibilities an agency has. Federal websites are held to the highest standards for security, accessibility, and trust. That means wearing a lot of hats.... **teams tasked with public communication and service delivery are also expected to be infrastructure, cybersecurity, and web design experts** — usually with limited access to training, budget, and staff.
 
-    Today’s federal website managers must meet a growing list of responsibilities, including:
+    It shouldn’t require enterprise-scale effort from a two-person team. Cloud.gov Pages shrinks the burden by providing these capabilities right out of the box:
   items:
     - heading: "Audit your site for outdated or inaccurate content"
     - heading: "Check accessibility on every page (Section 508 compliance)"
@@ -34,8 +34,6 @@ moreWithLess:
     - heading: "Release datasets in machine-readable formats"
     - heading: "Archive past versions to meet records retention requirements"
   checks: true
-  outro: |
-    Managing all parts of a public-facing site is often buried under ‘other duties as assigned,’ but it’s one of the most visible responsibilities an agency has. It shouldn’t require enterprise-scale effort from a two-person team.
 
 whatYouGet:
   heading: "What you get on Cloud.gov Pages"
@@ -59,7 +57,7 @@ whatYouGet:
       text: ""
   outro: |
     We’re experts in government websites. Whether you need a little help or full support, we’ve got experience with agency needs at every scale.
-    
+
     For technical details about hosting your site, [visit the Cloud.gov Pages documentation.](https://docs.cloud.gov/pages)
 
 whatYouCanBuild:
@@ -111,7 +109,6 @@ relyOnPages:
   color: "white"
   align: "center"
 
-
 AtoFeature:
   heading: "Designed for the way government launches software"
   intro: "Cloud.gov’s shared responsibility model gives federal teams a head start, whether you’re seeking a new ATO or reauthorizing an existing system. With Cloud.gov’s position, context, and expertise inside government, we understand firsthand what’s hard for agency customers."
@@ -135,3 +132,4 @@ approachIds:
 offeringIds:
   - apps
   - tools
+
