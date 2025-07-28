@@ -31,7 +31,7 @@ commonSupportTopics:
     - heading: "Open a ticket"
       text: "Need help? Email **support@cloud.gov** to open a support ticket in our help desk."
       icon: "support_agent"
-      link: "mailto:support@cloud.gov"
+      link: "javascript:zE&&zE('webWidget', 'open')||location.assign('mailto:support@cloud.gov')"
 
     - heading: "Onboarding"
       text: "Follow our step-by-step onboarding guides to set up accounts, permissions, and projects."
