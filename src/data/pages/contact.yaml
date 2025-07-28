@@ -1,9 +1,8 @@
-title: Contact Us  
+title: Contact Us
 description: Reach out to the Cloud.gov team with questions about our platform, pricing, compliance, or how to get started.
 
 headerSection:
   heading: "Talk to a human"
-  intro: "If you’re interested in using Cloud.gov, email [inquiries@cloud.gov](mailto:inquiries@cloud.gov)."
+  intro: "If you’re interested in using Cloud.gov products, email [inquiries@cloud.gov](mailto:inquiries@cloud.gov)."
   align: "center"
   color: "primary"
-
