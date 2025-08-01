@@ -58,7 +58,7 @@ whatYouGet:
 
 whatYouCanBuild:
   heading: "What you can build with us"
-  intro: "Whether you're modernizing legacy tools, launching a new public-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster."
+  intro: "Whether you're modernizing existing tools, launching a new public-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster."
   color: "primary"
   items:
     - heading: "Internal tools & forms"

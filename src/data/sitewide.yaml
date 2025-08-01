@@ -47,7 +47,7 @@ supportTiles:
 ourApproach:
   heading: "More about our approach"
   intro: |
-    Whether you're modernizing legacy tools, launching a new public-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.
+    Whether you're modernizing existing tools, launching a new public-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.
   items:
     - id: "g2g"
       heading: "Built for gov, by gov"

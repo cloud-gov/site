@@ -20,10 +20,10 @@ g2g:
       text: "Reduce your administrative overhead with fewer IAAs to manage"
       icon: "fast_forward"
     - heading: "Greater visibility"
-      text: "Monitor cloud usage and expenses across programs from a central view"
+      text: "Monitor cloud usage and expenses across programs"
       icon: "assessment"
     - heading: "Open collaboration"
-      text: "No per-seat pricing—every team member can access, develop, and innovate"
+      text: "Share resources and services across projects"
       icon: "groups"
 
 pricingContent:
@@ -156,7 +156,7 @@ noRFP:
     - **Rapid onboarding:** Most agencies complete our IAA process in weeks, not months
     - **Proven track record:** We’ve executed hundreds of previous IAAs across federal agencies
     - **Zero vendor overhead:** 100% of your investment goes directly to platform development
-  outro: "Most cloud providers see federal tech as a lucrative problem to exploit. We know it’s a mission to support."
+  outro: "Many technology providers simply repurpose private sector tools, leaving you to navigate critical compliance and integration challenges on your own. At Cloud.​gov, we proactively address these challenges, building in compliance and integration from the start, so you can focus on your mission."
 
 
 approachIds:
