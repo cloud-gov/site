@@ -5,9 +5,9 @@ export const headerProps = {
     {
       label: "Solutions",
       links: [
-        { label: "Platform: Fast & Scalable Federal Apps", url: "apps" },
-        { label: "Pages: Federal Public Websites", url: "pages" },
-        { label: "Workshop: Developer Collaboration Tools", url: "workshop" },
+        { label: "Fast & Scalable Federal Apps", url: "apps" },
+        { label: "Federal Public Websites", url: "pages" },
+        { label: "Developer Collaboration Tools", url: "workshop" },
       ],
     },
   ],
