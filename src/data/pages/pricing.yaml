@@ -17,7 +17,7 @@ g2g:
   align: "center"
   items:
     - heading: "Streamlined acquisition"
-      text: "Reduced administrative overhead with G-invoicing and fewer IAAs to manage"
+      text: "Reduce your administrative overhead with fewer IAAs to manage"
       icon: "fast_forward"
     - heading: "Greater visibility"
       text: "Monitor cloud usage and expenses across programs from a central view"
@@ -32,11 +32,12 @@ pricingContent:
     subhead: "Cloud.gov Apps pricing"
     heading: "Scalable pricing for every mission"
     text: |
-      You purchase access to **Cloud.gov Apps** by buying a tier with enough monthly credits to support your needs. 
 
-      Credits can be used flexibly throughout the year — think of them like rollover minutes. That means if your usage varies, you can scale up or down as needed—**without changing your agreement** or paying all year for short-term peaks. 
+      Optimize your team's costs with our flexible credit system, which lets you dedicate your infrastructure spend towards the specific services you need, when you need them.
+      
+      Credits empower you to tune your cloud resources  throughout the year. Think of them like rollover minutes. As your needs change, you can scale up or down as needed—**without modifying your agreement** or paying a premium all year for short-term peaks. 
 
-      1 credit buys you 1GB of app memory for 4 months, or 100 GB-months of RDS or OpenSearch storage, or 150,000 emails via SES, or a micro PostgreSQL instance. You don’t need to allocate these upfront—just use credits where needed throughout the year.
+      Your credits unlock a wide range of cloud services, from pre-configured database and caching instances to dynamically metered resources like storage, memory, and SES, giving you granular control over your infrastructure and cost. 
 
     link:
       label: "Estimate your credit usage"
@@ -135,19 +136,19 @@ stepsList:
   step_heading_level: "h3"
   step_headings_only: false
   items:
-    - heading: "Initial consultation with our expert procurement staff"
-      text: "Our cloud services and federal procurement specialists will listen closely to your agency's mission, asking strategic questions to map your technology requirements. We partner with you to identify the right cloud services for your mission requirements."
+    - heading: "Initial consultation with our expert cloud services staff"
+      text: "Our cloud services engineers will listen closely to your agency's mission, asking strategic questions to map your technology requirements. We partner with you to identify the right cloud services for your mission requirements."
     - heading: "Proven and seamless agreement design"
-      text: "We help estimate your usage and scope an Inter-Agency Agreement that precisely matches your agency's needs. Choose one or multiple Cloud.gov products, add professional support services, and plan for your future with standardized language crafted from hundreds of our existing federal agreements."
+      text: "We help estimate your usage and scope an Interagency Agreement that precisely matches your agency's needs. Consider one or multiple Cloud.gov products, add professional support services, and plan for your future with standardized language crafted from hundreds of our existing federal agreements."
     - heading: "Simplified approvals and execution"
       text: "We work with you throughout the approval and billing process, supported by GSA’s fully electronic G-invoicing system. This phase usually takes our customers a few weeks from start to finish, compared to months-long traditional procurement cycles."
     - heading: "Flexible deployments and renewals"
       text: "Launch your cloud services with a one-year renewable agreement designed for continuous adaptation. Months before you renew, we reach out to you about your evolving technology needs, ensuring your technology always matches your mission."
 
 noRFP:
-  heading: "Top-tier cloud services without an RFP"
+  heading: "Top-tier cloud services without the RFP"
   intro: |
-    Forget months-long vendor negotiations and complex Request for Proposal (RFP) processes. As a federal team within GSA, we've redesigned procurement to work the way government actually works.
+    Forget months-long vendor negotiations and complex Request for Proposal (RFP) processes. We've redesigned procurement to work the way government actually works.
 
     We simplify government technology, we don't monetize its difficulty. Our Interagency Agreement (IAA) model is purpose-built for federal agencies like yours, eliminating the friction and cost of traditional IT procurement by offering:
   content: |

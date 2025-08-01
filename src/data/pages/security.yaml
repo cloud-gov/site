@@ -1,5 +1,5 @@
 title: Security & Compliance
-description: Cloud.gov helps federal teams meet compliance requirements faster with a FedRAMP-authorized platform and in-house security support.
+description: Cloud.gov helps teams meet federal compliance requirements faster with a FedRAMP-authorized platform and in-house security support.
 
 headerSection:
   heading: "Build the right thing, not everything."
@@ -57,7 +57,7 @@ AtoFeature:
   intro: "Cloud.gov’s shared responsibility model gives federal teams a head start, whether you’re seeking a new ATO or reauthorizing an existing system. With Cloud.gov’s position, context, and expertise inside government, we understand firsthand what’s hard for agency customers."
   items:
     - heading: "Guided security support with our in-house experts"
-      text: "We work directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessment (SIA)."
+      text: "We work directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessments (SIA)."
       link:
         label: "Check us out on the FedRAMP marketplace"
         url: "https://marketplace.fedramp.gov/products/F1607067912"

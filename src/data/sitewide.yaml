@@ -27,7 +27,7 @@ freeSandbox:
 
 supportTiles:
   heading: "Our team is here to support yours"
-  intro: "Cloud.gov is developed and maintained by federal employees within GSA’s Technology Transformation Services. We know how government works, because we are government, too. When you work with us, you're working with a team that understands your constraints, your goals, and your urgency."
+  intro: "Cloud.gov is developed and maintained by a dedicated federal team within GSA’s Technology Transformation Services. We understand how government operates — because we’re part of it. When you work with us, you're working with a team of engineers, cybersecurity professionals, designers, and technology leaders who understand your constraints, your goals, and your urgency."
   color: "primary"
   align: "center"
   items:
@@ -47,7 +47,7 @@ supportTiles:
 ourApproach:
   heading: "More about our approach"
   intro: |
-    Whether you're modernizing legacy tools, launching a new citizen-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.
+    Whether you're modernizing legacy tools, launching a new public-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.
   items:
     - id: "g2g"
       heading: "Built for gov, by gov"

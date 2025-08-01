@@ -15,7 +15,7 @@ hero:
       url: "pricing"
 
 moreWithLess:
-  heading: "Built to help federal teams publish websites with confidence"
+  heading: "Built to help teams publish federal websites with confidence"
   intro: |
     Publishing an agency update may seem simple, but federal websites are held to the highest standards for security, accessibility, and trust. That means wearing a lot of hats.... **teams tasked with public communication and service delivery are also expected to be infrastructure, cybersecurity, and web design experts** — usually with limited access to training, budget, and staff.
 
@@ -64,7 +64,7 @@ whatYouGet:
 
 whatYouCanBuild:
   heading: "What you can build with us"
-  intro: "From mission-critical services to public transparency portals, Cloud.gov Pages empowers federal teams to build, launch, and manage websites quickly—without the usual infrastructure burden."
+  intro: "From mission-critical services to public transparency portals, Cloud.gov Pages empowers teams to build, launch, and manage federal websites quickly—without the usual infrastructure burden."
   color: "primary"
   items:
     - heading: "Agency brochure sites"
@@ -92,7 +92,7 @@ noRFP:
   intro: |
     Forget months-long vendor negotiations and complex Request for Proposal (RFP) processes. As a federal team within GSA, we've streamlined procurement to work the way government actually works.
 
-    We partner directly with your team using a straightforward Interagency Agreement (IAA) with GSA. Run up to five websites with a fixed firm starting package, and add more sites as you grow.
+    We partner directly with your team using a straightforward Interagency Agreement (IAA) with GSA. Run up to five websites with a firm fixed starting package, and add more sites as you grow.
 
     Picture three months from now—do you want your RFP cleared, or your site live?
   buttons:
@@ -117,7 +117,7 @@ AtoFeature:
   intro: "Cloud.gov’s shared responsibility model gives federal teams a head start, whether you’re seeking a new ATO or reauthorizing an existing system. With Cloud.gov’s position, context, and expertise inside government, we understand firsthand what’s hard for agency customers."
   items:
     - heading: "Guided security support with our in-house experts"
-      text: "We work directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessment (SIA)."
+      text: "We work directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessments (SIA)."
       link:
         label: "Check us out on the FedRAMP marketplace"
         url: "#"

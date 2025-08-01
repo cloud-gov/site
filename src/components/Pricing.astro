@@ -48,6 +48,14 @@ interface Props {
 
 const { apps, pages, color = "white" } = Astro.props;
 let groupIndex = 0;
+
+function formatNum(num = 0) {
+  return new Intl.NumberFormat().format(num);
+}
+
+function yearlyFromMonthly(num = 0) {
+  return formatNum(num * 12);
+}
 ---
 
 <dialog id="estimator-dialog">
@@ -79,8 +87,8 @@ let groupIndex = 0;
             class="usa-table usa-table--borderless width-full font-sans-sm margin-0 overflow-hidden radius-lg pricing-table">
             <thead>
               <tr>
-                <th scope="col">Credit tier</th>
-                <th scope="col" class="text-right">Cost/yr</th>
+                <th scope="col">Tier</th>
+                <th scope="col" class="text-right">Credits</th>
                 <th
                   scope="col"
                   class="display-none tablet:display-table-cell desktop:display-none desktop-lg:display-table-cell"
@@ -104,10 +112,16 @@ let groupIndex = 0;
                       ) : null}
                       <tr class={rowClass}>
                         <th scope="row">
-                          {tier.name}
-                          <span class="text-normal">{tier.credits}/month</span>
+                          <span class="font-sans-md text-bold">{tier.name}</span>
+                          <br />
+                          <span class="font-sans-sm text-normal">{tier.price}</span>
                         </th>
-                        <td class="text-right font-sans-sm">{tier.price}</td>
+
+                        <td class="text-right line-height-sans-3">
+                          <span class="font-sans-md text-bold">{yearlyFromMonthly(tier.credits)}/yr</span>
+                          <br />
+                          <span class="font-sans-sm text-normal text-italic">~{formatNum(tier.credits)}/mo</span>
+                        </td>
                         {tier.rowspan > 0 ? (
                           <td rowspan={tier.rowspan}>
                             <Markdown content={tier.for} classes="font-body-sm line-height-body-3" inline />
