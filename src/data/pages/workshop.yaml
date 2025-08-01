@@ -1,4 +1,4 @@
-title: Cloud.gov Workshop
+tctitle: Cloud.gov Workshop
 description: SEO description goes here
 
 hero:
@@ -32,11 +32,11 @@ whatYouGet:
     - heading: "Infrastructure as Code"
       text: "Manage your computing needs through an array of tools that streamline collaboration, compliance, automation, and CI/CD"
     - heading: "Developer-centered Compliance as Code"
-      text: ""
+      text: "Some good copy here"
     - heading: "Simple migration"
-      text: ""
+      text: "Some good copy here"
     - heading: "Use our runners, or bring your own"
-      text: ""
+      text: "Some good copy here"
     - heading: "In-house Helpdesk & Office Hours"
       text: "Chat, email, or drop into weekly office hours to talk with our in-house engineers."
     - heading: "Easy invoicing"
