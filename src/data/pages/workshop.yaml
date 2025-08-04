@@ -10,7 +10,7 @@ hero:
 moreWithLess:
   heading: "Secure software development tools, authorized at a FedRAMP Moderate impact level"
   intro: |
-    "Federal software engineers are most productive when they can stay focused on building solutions that solve the public’s problems. Workshop clears the tediousness of fragmented tooling and compliance friction, and provides a modern, efficient alternative for gettig this shipped."  
+    Federal software engineers are most productive when they can stay focused on building solutions that solve the public’s problems. Workshop clears the tediousness of fragmented tooling and compliance friction, and provides a modern, efficient alternative for getting this shipped.
   items:
     - heading: "An easier path to ATO"
       text: "Cloud.gov complies with federal security requirements right out of the box -- reducing the time spent to get up and running."
