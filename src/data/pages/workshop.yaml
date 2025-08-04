@@ -21,9 +21,9 @@ moreWithLess:
     - heading: "Turnkey cloud services"
       text: "Workshop can deploy to either the Cloud.gov platform or the customer's infrastructure of choice."
       link:
-        label: "Faster and easier cloud purchasing"
-        url: "pricing"
-      icon: "attach_money"
+        label: "Flexible deployment"
+        url: ""
+      icon: "icon"
 
 whatYouGet:
   heading: "What you get with Cloud.gov Workshop"
