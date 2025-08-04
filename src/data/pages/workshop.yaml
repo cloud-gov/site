@@ -13,7 +13,7 @@ moreWithLess:
     Federal software engineers are most productive when they can stay focused on building solutions that solve the public’s problems. Workshop clears the tediousness of fragmented tooling and compliance friction, and provides a modern, efficient alternative for getting this shipped.
   items:
     - heading: "An easier path to ATO"
-      text: "Cloud.gov complies with federal security requirements right out of the box — reducing the time spent to get up and running."
+      text: "Workshop complies with federal security requirements right out of the box — reducing the time spent to get up and running."
       link:
         label: "Our cybersecurity practices"
         url: "security"
