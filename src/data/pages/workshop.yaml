@@ -62,7 +62,7 @@ whatYouCanBuild:
 
 noRFP:
   heading: "State of the Art DevSecOps without an RFP"
-  intro: "Forget months-long vendor negotiations. Since Workshop is part of the Cloud.gov suite, you can focus on delivery."
+  intro: "Forget months-long vendor negotiations. Since Workshop is part of the Cloud.gov suite of products, you can focus on delivery."
   buttons:
     - label: "See our pricing"
       url: "pricing"
