@@ -43,7 +43,7 @@ cf share-service SERVICE-INSTANCE -s OTHER-SPACE [-o OTHER-ORG]
 
 ## Bind the service instance
 
-For services that apply to an application ([Elasticsearch](/docs/services/aws-elasticsearch), [Redis](/docs/services/aws-elasticache), [relational databases (RDS)](/docs/services/relational-database), and [S3](/docs/services/s3)), the service instance must be bound to the application which will access it. (The [CDN service](/docs/services/cdn-route), [identity provider](/docs/services/cloud-gov-identity-provider), and [service account](/docs/services/cloud-gov-service-account) have different instructions, available in their service documentation.)
+For services that apply to an application ([Elasticsearch](/docs/services/aws-elasticsearch), [Redis](/docs/services/aws-elasticache), [relational databases (RDS)](/docs/services/relational-database), [SES](/docs/services/aws-ses) and [S3](/docs/services/s3)), the service instance must be bound to the application which will access it. (The [CDN service](/docs/services/cdn-route), [identity provider](/docs/services/cloud-gov-identity-provider), and [service account](/docs/services/cloud-gov-service-account) have different instructions, available in their service documentation.)
 
 Binding to an application can be done in a single step by adding a binding to the application's `manifest.yml`, for example:
 
