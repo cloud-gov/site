@@ -85,3 +85,31 @@ mandatesHandled:
 approachIds:
   - security
   - pricing
+
+allOfferings:
+  heading: "Meet your team"
+  intro: |
+    Whether you are looking to stand up a new federal website or deploy your software securely, we have the tools to help.
+  color: "primary"
+  items:
+    - id: "apps"
+      heading: "Modern Application Hosting for Government"
+      text: "Secure, scalable infrastructure without the vendor sprawl"
+      icon: "logo-cloud-apps"
+      button:
+        label: "Learn about Apps"
+        url: "apps"
+    - id: "pages"
+      heading: "Compliant federal public websites"
+      text: "Easily publish accessible, fast, and federally compliant websites."
+      icon: "logo-cloud-pages"
+      button:
+        label: "Learn about Pages"
+        url: "pages"
+    - id: "tools"
+      heading: "DevSecOps workspaces for federal teams"
+      text: "A Secure GitLab environment with quicker setup and deployment tools."
+      icon: "logo-cloud-workshop"
+      button:
+        label: "Learn about Workshop"
+        url: "workshop"

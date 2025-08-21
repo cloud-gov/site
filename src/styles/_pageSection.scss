@@ -13,12 +13,24 @@
   color: var(--section-text);
 
   // themes to choose from
+  &.section--transparent,
   &.section--white {
     --section-bg: #fff;
     --section-text: var(--theme-color-base-darkest);
     --section-accent: var(--theme-color-base-darkest);
     --section-border: transparent;
     border-width:0;
+  }
+  &.section--white-with-card-border {
+    --section-bg: #fff;
+    --section-text: var(--theme-color-base-darkest);
+    --section-accent: var(--theme-color-primary-light);
+    --section-border: var(--theme-color-primary-light);
+    border-width: 0;
+    // fix for lightest one
+    .tile__link:hover {
+      --section-border: var(--theme-color-primary-lightest);
+    }
   }
   &.section--base,
   &.section--base-light {

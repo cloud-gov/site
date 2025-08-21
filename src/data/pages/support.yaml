@@ -14,17 +14,17 @@ productDocs:
   align: "left"
   items:
     - heading: "Cloud.gov Docs"
-      icon: "logo-cloud-apps"
+      icon: "reverse-logo-cloud-apps"
       link: "https://docs.cloud.gov"
     - heading: "Cloud.gov Pages Docs"
-      icon: "logo-cloud-pages"
+      icon: "reverse-logo-cloud-pages"
       link: "https://docs.cloud.gov/pages"
     - heading: "Cloud.gov Workshop Docs"
-      icon: "logo-cloud-workshop"
+      icon: "reverse-logo-cloud-workshop"
       link: "https://docs.cloud.gov/workshop"
 
 commonSupportTopics:
-  color: white
+  color: "white-with-card-border"
   heading: "Common resources"
   intro: " Wherever you're stuck, we're here to help."
   items:

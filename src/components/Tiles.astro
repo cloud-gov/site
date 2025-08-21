@@ -2,6 +2,7 @@
 import { late } from "astro:schema";
 import Markdown from "./Markdown.astro";
 import PageSection from "./PageSection.astro";
+import { Image } from "astro:assets";
 
 interface Button {
   label: string;
@@ -28,16 +29,15 @@ interface Props {
 
 const { items = [], align = "center", color = "base", ...props } = Astro.props;
 
-const tileLinkClasses = `tile__link usa-link--unstyled shadow-1 display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border color bg-white border-base-lighter text-${align}`;
+const tileReverseLogoClasses = "tile__link tile__reverse usa-link--unstyled";
 
-const tileLogoClasses =
-  "tile__link tile__link--has-logo usa-link--unstyled display-flex flex-column height-full padding-y-5 padding-x-3 radius-lg margin-y-2";
-
-const tileClasses = `display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border color bg-white border-base-lighter text-${align}`;
+const tileWrapperClasses = `tile__wrapper text-${align}`;
+const tileLinkClasses = `tile__link ${tileWrapperClasses}`;
 
 let TileWrapper = "div";
-let tileWrapperProps = { class: tileClasses, href: "" };
+let tileWrapperProps = { class: tileWrapperClasses, href: "" };
 let tileIsLogo = false;
+let tileIsReverseLogo = false;
 function formatTileWrapper(tileItem: Item) {
   // is Tile a link?
   if (tileItem.link) {
@@ -47,10 +47,14 @@ function formatTileWrapper(tileItem: Item) {
   }
   TileWrapper = tileItem.link ? "a" : "div";
 
-  // is Tile a brand logo?
+  // is icon a brand logo? is it reversed (for docs link) or just an icon?
+  if (tileItem.icon && tileItem.icon.startsWith("reverse-logo-cloud-")) {
+    tileIsReverseLogo = true;
+    tileWrapperProps.class = `tile__${tileItem.icon} ${tileReverseLogoClasses}`;
+  }
   if (tileItem.icon && tileItem.icon.startsWith("logo-cloud-")) {
     tileIsLogo = true;
-    tileWrapperProps.class = `tile__link--has-${tileItem.icon} ${tileLogoClasses}`;
+    tileWrapperProps.class = `tile__icon tile__icon-${tileItem.icon} ${tileWrapperClasses}`;
   }
 }
 ---
@@ -61,24 +65,30 @@ function formatTileWrapper(tileItem: Item) {
       items.map((item) => {
         formatTileWrapper(item);
 
-        return tileIsLogo ? (
+        return tileIsReverseLogo ? (
           <div class="tile__item">
             <TileWrapper {...tileWrapperProps}>
-              <span class={`tile__link__logo tile__link__${item.icon}`} aria-label={item.heading} />
+              <span class="tile__logo" aria-label={item.heading} />
             </TileWrapper>
           </div>
         ) : (
           <div class="tile__item">
             <TileWrapper {...tileWrapperProps}>
-              {item.icon && (
-                <span class="margin-bottom-1 display-block">
-                  <svg class="usa-icon usa-icon--size-5 accent" role="img" aria-hidden="true">
+              {item.icon && tileIsLogo ? (
+                <Image
+                  class="logo-icondisplay-block height-8"
+                  src={import(`./../assets/${item.icon}.svg`)}
+                  alt={item.icon}
+                />
+              ) : (
+                <span class="display-block">
+                  <svg class="usa-icon usa-icon--size-6 accent" role="img" aria-hidden="true">
                     <use href={`${Astro.site}/assets/uswds/img/sprite.svg#${item.icon}`} />
                   </svg>
                 </span>
               )}
 
-              {item.heading && <h3 class="accent font-body-lg margin-bottom-1 margin-top-2">{item.heading}</h3>}
+              {item.heading && <h3 class="accent font-body-lg margin-0">{item.heading}</h3>}
 
               {item.text && (
                 <Markdown
@@ -89,8 +99,7 @@ function formatTileWrapper(tileItem: Item) {
               )}
 
               {item.button && (
-                <div
-                  class={`usa-button-group margin-top-2 margin-bottom-0 ${align === "center" ? "flex-justify-center" : ""}`}>
+                <div class={`usa-button-group ${align === "center" ? "flex-justify-center" : ""}`}>
                   <a class="usa-button usa-button--outline" href={item.button.url}>
                     {item.button.label}
                   </a>
@@ -115,8 +124,17 @@ function formatTileWrapper(tileItem: Item) {
     -webkit-font-smoothing: initial;
     flex-basis: 100%;
     max-width: 100%;
-    .border {
-      border-color: var(--section-border, #fff);
+
+    .tile__wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 2rem 1.5rem;
+      border-radius: 0.5rem;
+      background: #fff;
+      color: var(--section-card-text, #333);
+      border: 1px solid var(--section-border, #fff);
+      gap: 1.5rem;
     }
     .color {
       color: var(--section-card-text, #333);
@@ -127,18 +145,12 @@ function formatTileWrapper(tileItem: Item) {
     }
     .tile__link {
       text-decoration: none;
-      transition-property: border, box-shadow;
-      border-color: var(--theme-color-primary);
+      transition-property: border, background;
+      border-color: var(--section-border, #fff);
       transition-duration: 150ms;
       &:hover {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-      }
-      &.border {
-        border-color: var(--theme-color-primary-lightest);
-        border-width: 2px;
-        &:hover {
-          border-color: var(--theme-color-primary-vivid);
-        }
+        border-color: var(--section-accent, #fff);
+        background-color: var(--section-border, #fff);
       }
       .color {
         color: var(--theme-color-primary, #333);
@@ -157,57 +169,64 @@ function formatTileWrapper(tileItem: Item) {
     }
   }
 
-  .tile__item .tile__link--has-logo {
-    background-color: var(--theme-color-primary, #2672de);
+  .tile__item .tile__icon {
+    padding: 2.5rem;
+    .accent {
+      color: var(--theme-color-base-dark, #222);
+    }
+  }
+  .tile__item .tile__reverse {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
     width: 100%;
+    display: flex;
+    border: 1px solid var(--theme-color-cloud-hover, #2672de);
+    background-color: var(--theme-color-primary, #2672de);
     transition-property: background-color, box-shadow;
     transition-duration: 150ms;
-    border: 1px solid var(--theme-color-cloud-hover, #2672de);
+    border-radius: 0.5rem;
+    padding: 2.5rem 1.5rem;
+    height: 100%;
+    flex-direction: column;
     &:hover {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
     }
-    &-cloud-apps,
-    &-cloud {
+    .tile__logo {
+      display: flex;
+      background-image: url("../../public/assets/img/logo-cloud-gov-horizontal-reverse.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      flex: 1 1 4rem;
+    }
+    &-logo-cloud-apps,
+    &-logo-cloud {
       background-color: var(--theme-color-cloud, #2672de);
       &:hover {
         background-color: var(--theme-color-cloud-hover, #2672de);
       }
+      .tile__logo {
+        background-image: url("../assets/img/logo-cloud-apps-horizontal-reverse.svg");
+      }
     }
-    &-cloud-pages {
+    &-logo-cloud-pages {
       border-color: var(--theme-color-pages-hover, #01a1b9);
       background-color: var(--theme-color-pages, #009ec1);
       &:hover {
         background-color: var(--theme-color-pages-hover, #01a1b9);
       }
+      .tile__logo {
+        background-image: url("../assets/img/logo-cloud-pages-horizontal-reverse.svg");
+      }
     }
-    &-cloud-workshop {
+    &-logo-cloud-workshop {
       border-color: var(--theme-color-workshop-hover, #de4b00);
       background-color: var(--theme-color-workshop, #ff580a);
       &:hover {
         background-color: var(--theme-color-workshop-hover, #de4b00);
       }
+      .tile__logo {
+        background-image: url("../assets/img/logo-cloud-workshop-horizontal-reverse.svg");
+      }
     }
-  }
-  .tile__link__logo {
-    display: flex;
-    background-image: url("../../public/assets/img/logo-cloud-gov-horizontal-reverse.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    flex: 1 1 3rem;
-  }
-  .tile__link__logo-cloud-apps {
-    background-image: url("../assets/img/logo-cloud-apps-horizontal-reverse.svg");
-  }
-
-  .tile__link__logo-cloud {
-    background-image: url("../assets/img/logo-cloud-gov-horizontal-reverse.svg");
-  }
-  .tile__link__logo-cloud-pages {
-    background-image: url("../assets/img/logo-cloud-pages-horizontal-reverse.svg");
-  }
-  .tile__link__logo-cloud-workshop {
-    background-image: url("../assets/img/logo-cloud-workshop-horizontal-reverse.svg");
   }
 </style>
