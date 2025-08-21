@@ -58,7 +58,9 @@ const { heading, intro, buttons = [], color = "white", art, content } = Astro.pr
           buttons.length > 0 && (
             <div class="usa-button-group margin-top-2 flex-justify-center">
               {buttons.map((btn) => (
-                <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""}`}>
+                <a
+                  href={btn.url}
+                  class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""} margin-bottom-05`}>
                   {btn.label}
                 </a>
               ))}

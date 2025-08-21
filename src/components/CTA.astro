@@ -23,7 +23,7 @@ const { align = "left", buttons = [], color = "white", ...props } = Astro.props;
     buttons.length > 0 && (
       <div class={`align-${align} section__outro`}>
         {buttons.map((btn) => (
-          <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""}`}>
+          <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""} margin-bottom-05`}>
             {btn.label}
           </a>
         ))}

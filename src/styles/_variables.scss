@@ -28,5 +28,14 @@
   --theme-color-primary-darker: #{color($theme-color-primary-darker)};
   --theme-color-primary-darkest: #{color($theme-color-primary-darkest)};
 
+
+  --theme-color-cloud: #{color($theme-color-primary)};
+  --theme-color-cloud-hover: #{color($theme-color-primary-vivid)};
+  --theme-color-pages: #0FADD0;
+  --theme-color-pages-hover: #01a1b9;
+  --theme-color-workshop: #{color($theme-color-accent-warm)};
+  --theme-color-workshop-hover: #de4b00;
+
+
 }
 

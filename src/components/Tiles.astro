@@ -1,4 +1,5 @@
 ---
+import { late } from "astro:schema";
 import Markdown from "./Markdown.astro";
 import PageSection from "./PageSection.astro";
 
@@ -26,23 +27,47 @@ interface Props {
 }
 
 const { items = [], align = "center", color = "base", ...props } = Astro.props;
+
+const tileLinkClasses = `tile__link usa-link--unstyled shadow-1 display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border color bg-white border-base-lighter text-${align}`;
+
+const tileLogoClasses =
+  "tile__link tile__link--has-logo usa-link--unstyled display-flex flex-column height-full padding-y-5 padding-x-3 radius-lg margin-y-2";
+
+const tileClasses = `display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border color bg-white border-base-lighter text-${align}`;
+
+let TileWrapper = "div";
+let tileWrapperProps = { class: tileClasses, href: "" };
+let tileIsLogo = false;
+function formatTileWrapper(tileItem: Item) {
+  // is Tile a link?
+  if (tileItem.link) {
+    TileWrapper = "a";
+    tileWrapperProps.href = tileItem.link;
+    tileWrapperProps.class = tileLinkClasses;
+  }
+  TileWrapper = tileItem.link ? "a" : "div";
+
+  // is Tile a brand logo?
+  if (tileItem.icon && tileItem.icon.startsWith("logo-cloud-")) {
+    tileIsLogo = true;
+    tileWrapperProps.class = `tile__link--has-${tileItem.icon} ${tileLogoClasses}`;
+  }
+}
 ---
 
 <PageSection align={align} color={color} {...props}>
   <div class="tiles">
     {
       items.map((item) => {
-        const TileWrapper = item.link ? "a" : "div";
-        const tileWrapperProps = item.link
-          ? {
-              href: item.link,
-              class: `tile__link usa-link--unstyled shadow-1 display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border color bg-white border-base-lighter text-${align}`,
-            }
-          : {
-              class: `display-flex flex-column height-full padding-y-4 padding-x-3 radius-lg border color bg-white border-base-lighter text-${align}`,
-            };
+        formatTileWrapper(item);
 
-        return (
+        return tileIsLogo ? (
+          <div class="tile__item">
+            <TileWrapper {...tileWrapperProps}>
+              <span class={`tile__link__logo tile__link__${item.icon}`} aria-label={item.heading} />
+            </TileWrapper>
+          </div>
+        ) : (
           <div class="tile__item">
             <TileWrapper {...tileWrapperProps}>
               {item.icon && (
@@ -102,9 +127,11 @@ const { items = [], align = "center", color = "base", ...props } = Astro.props;
     }
     .tile__link {
       text-decoration: none;
+      transition-property: border, box-shadow;
+      border-color: var(--theme-color-primary);
+      transition-duration: 150ms;
       &:hover {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-        border-color: var(--theme-color-primary);
       }
       &.border {
         border-color: var(--theme-color-primary-lightest);
@@ -128,5 +155,59 @@ const { items = [], align = "center", color = "base", ...props } = Astro.props;
       flex: 1 1 calc(33.333% - 1rem);
       max-width: calc(33.333% - 1rem);
     }
+  }
+
+  .tile__item .tile__link--has-logo {
+    background-color: var(--theme-color-primary, #2672de);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    width: 100%;
+    transition-property: background-color, box-shadow;
+    transition-duration: 150ms;
+    border: 1px solid var(--theme-color-cloud-hover, #2672de);
+    &:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+    }
+    &-cloud-apps,
+    &-cloud {
+      background-color: var(--theme-color-cloud, #2672de);
+      &:hover {
+        background-color: var(--theme-color-cloud-hover, #2672de);
+      }
+    }
+    &-cloud-pages {
+      border-color: var(--theme-color-pages-hover, #01a1b9);
+      background-color: var(--theme-color-pages, #009ec1);
+      &:hover {
+        background-color: var(--theme-color-pages-hover, #01a1b9);
+      }
+    }
+    &-cloud-workshop {
+      border-color: var(--theme-color-workshop-hover, #de4b00);
+      background-color: var(--theme-color-workshop, #ff580a);
+      &:hover {
+        background-color: var(--theme-color-workshop-hover, #de4b00);
+      }
+    }
+  }
+  .tile__link__logo {
+    display: flex;
+    background-image: url("../../public/assets/img/logo-cloud-gov-horizontal-reverse.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex: 1 1 3rem;
+  }
+  .tile__link__logo-cloud-apps {
+    background-image: url("../assets/img/logo-cloud-apps-horizontal-reverse.svg");
+  }
+
+  .tile__link__logo-cloud {
+    background-image: url("../assets/img/logo-cloud-gov-horizontal-reverse.svg");
+  }
+  .tile__link__logo-cloud-pages {
+    background-image: url("../assets/img/logo-cloud-pages-horizontal-reverse.svg");
+  }
+  .tile__link__logo-cloud-workshop {
+    background-image: url("../assets/img/logo-cloud-workshop-horizontal-reverse.svg");
   }
 </style>
