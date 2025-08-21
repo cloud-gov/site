@@ -12,6 +12,7 @@ interface Props {
   content?: string;
   outro?: string;
   classes?: string;
+  art?: string;
   id?: string;
   color?: string;
   align?: "center" | "left";
@@ -23,6 +24,7 @@ const {
   intro = false,
   outro = false,
   content = false,
+  art = "",
   color = "white",
   align = "left",
   classes = "",
@@ -31,31 +33,39 @@ const {
 } = Astro.props;
 ---
 
-<section {...id && { id }} class={`usa-section section section--${color} align-${align} ${classes}`}>
+<section
+  {...id && { id }}
+  class={`usa-section section section--${color} align-${align} ${art && art.length > 0 && `section-art section-art--${art} `}${classes}`}>
   <div class="section__container">
     <div class="section__intro">
       {heading && <h2 class="font-sans-xl margin-bottom-2">{heading}</h2>}
 
-      {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-4" inline />}
+      {intro && <Markdown content={intro} classes="font-sans-lg line-height-sans-4 text-light" inline />}
     </div>
 
     {
       content && (
         <div class="section__content">
-          <Markdown
-            content={content}
-            classes="section__markdown font-body-lg margin-top-neg-2 margin-bottom-neg-4 line-height-sans-4"
-          />
+          <Markdown content={content} classes="section__markdown font-sans-md margin-top-0 margin-bottom-2" />
         </div>
       )
     }
-    <div class="section__slot">
-      <slot />
-    </div>
+    {
+      Astro.slots.has("default") && (
+        <div class="section__slot">
+          <slot />
+        </div>
+      )
+    }
     {
       outro && (
         <div class="section__outro">
-          <Markdown content={outro} classes="margin-top-2 font-sans-lg line-height-sans-4 margin-bottom-0" inline />
+          {art.length > 0 && <div class="top-divider" />}
+          <Markdown
+            content={outro}
+            classes="margin-top-0 font-sans-lg line-height-sans-4 text-light margin-bottom-2"
+            inline
+          />
         </div>
       )
     }

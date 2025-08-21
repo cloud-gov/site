@@ -14,10 +14,10 @@ newsletter:
 freeSandbox:
   heading: "Try it for yourself"
   intro: |
-    We offer a **free, no-strings-attached sandbox environment** for federal staff and contractors.
-    Test deployments, evaluate fit, and explore how Cloud.gov supports your workflows.
-  align: "center"
+    We offer a **free, no-strings-attached sandbox environment** for federal staff and contractors.  Test deployments, evaluate fit, and explore how Cloud.gov supports your workflows.
+  align: "left"
   color: "primary"
+  art: "trial"
   buttons:
     - label: "Connect with our team"
       url: "contact"
@@ -27,9 +27,11 @@ freeSandbox:
 
 supportTiles:
   heading: "Our team is here to support yours"
-  intro: "Cloud.gov is developed and maintained by a dedicated federal team within GSA’s Technology Transformation Services. We understand how government operates — because we’re part of it. When you work with us, you're working with a team of engineers, cybersecurity professionals, designers, and technology leaders who understand your constraints, your goals, and your urgency."
+  intro: "Cloud.gov is developed and maintained by a dedicated federal team within GSA’s Technology Transformation Services."
+  content: "We understand how government operates — because we’re part of it. When you work with us, you're working with a team of engineers, cybersecurity professionals, designers, and technology leaders who understand your constraints, your goals, and your urgency."
   color: "primary"
   align: "center"
+  art: "g2g"
   items:
     - heading: "Still have questions?"
       text: "Email [support@cloud.gov](mailto:support@cloud.gov) or drop into weekly office hours to talk with our in-house engineers."
@@ -45,7 +47,7 @@ supportTiles:
         url: "https://docs.cloud.gov"
 
 ourApproach:
-  heading: "More about our approach"
+  heading: "What makes Cloud.gov different?"
   intro: |
     Whether you're modernizing existing tools, launching a new public-facing service, or prototyping with a small team, Cloud.gov helps you get to production faster.
   items:

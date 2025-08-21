@@ -1,13 +1,15 @@
 title: Security & Compliance
 description: Cloud.gov helps teams meet federal compliance requirements faster with a FedRAMP-authorized platform and in-house security support.
 
-headerSection:
+hero:
   heading: "Build the right thing, not everything."
   intro: |
+    We handle the infrastructure. You focus on your application.
+
+  content: |
     When you build on Cloud.gov, **you inherit hundreds of security and operational controls** from our FedRAMP-authorized platform—reducing the time, effort, and risk required to achieve an ATO.
 
-    We handle the infrastructure. You focus on your application.
-  align: "left"
+  art: "compliance"
 
 g2g:
   heading: "Zero-trust infrastructure that meets every government expectation"

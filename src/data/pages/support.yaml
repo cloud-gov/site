@@ -2,10 +2,10 @@ title: Support
 description: Get help using Cloud.gov. Open a ticket, access onboarding resources, and find answers to common questions.
 
 
-headerSection:
+hero:
   heading: "How can we help?"
-  align: "center"
   color: "primary"
+  art: "support"
 
 productDocs:
   heading: "Looking for documentation?"

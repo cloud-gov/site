@@ -12,6 +12,10 @@ h1, h2, h3, h4, h5, p, li {
 h2 {
   font-weight: 600;
 }
+ul li, ol li {
+  margin-bottom: 1rem;
+}
+
 .text-white {
   -webkit-font-smoothing: antialiased;
 }
@@ -256,6 +260,7 @@ $theme-footer-background-color: "primary";
   }
   &.top-divider--center-mobile::before {
     @media (max-width: 799px) {
+      display: block;
       position: relative;
       top: - 1.5rem;
 

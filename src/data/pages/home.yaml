@@ -2,13 +2,13 @@ title: Our Approach
 description: A platform-as-a-service built for government. Deploy secure, compliant sites and apps without managing infrastructure.
 
 
-headerSection:
+hero:
   heading: "Faster, easier, and built for government from the start"
   intro: |
     Most federal software development teams spend more time pushing paperwork around than pushing to production.
-
+  content: |
     As a FedRAMP-authorized Cloud Services Provider within General Services Administration (GSA), our customers don’t need to navigate vendor contracts, exhaustive security reviews, or external approvals. Our infrastructure, pricing, and onboarding are designed specifically for government—**so you can focus on delivery, not procurement**.
-  align: "left"
+  art: "g2g"
 
 g2g:
   heading: "Government-to-government, not just “govtech”"
@@ -61,6 +61,8 @@ stepsList:
 
 mandatesHandled:
   heading: "The latest 2025 federal compliance mandates, handled"
+  art: "compliance-alt"
+  color: "primary-vivid"
   intro: |
     Cloud.gov is already FedRAMP Authorized (Moderate), so your agency can reuse our compliance package. That means on day one, you can check these off your list:
   content: |
@@ -78,8 +80,7 @@ mandatesHandled:
     - label: "More about compliance"
       url: "security"
   outro: |
-    You don’t have to set up your own platform to meet federal compliance requirements. 
-    **We’re already operating one for you.**
+    You don’t have to set up your own platform to meet federal compliance requirements. **We’re already operating one for you.**
 
 approachIds:
   - security

@@ -1,15 +1,15 @@
 title: Pricing & Procurement
 description: Simple, transparent pricing for federal teams. Learn how Cloud.gov charges in credits and how to estimate your costs.
 
-headerSection:
+hero:
   heading: |
     Straightforward pricing. 
     Federal-first procurement.
   intro: |
-    Federal digital teams deserve pricing that's as agile as their missions. Cloud.gov offers a straightforward, predictable approach that lets you deploy applications and scale infrastructure without budget surprises — scaling up or down without contract negotiations or hidden costs.
-
+    Federal digital teams deserve a straightforward, predictable approach to deploying and scaling without budget surprises, contract negotiations, or hidden costs.
+  content: |
     Whether you’re managing a single website or an entire digital ecosystem, our pricing model adapts to your agency's evolving needs. **You'll always know exactly what you're paying for**, with no hidden costs or unnecessary bundled services.
-  align: "left"
+  art: "procurement"
 
 g2g:
   heading: "One agreement, unlimited innovation"
@@ -147,16 +147,19 @@ stepsList:
 
 noRFP:
   heading: "Top-tier cloud services without the RFP"
+  art: "procurement-alt"
   intro: |
     Forget months-long vendor negotiations and complex Request for Proposal (RFP) processes. We've redesigned procurement to work the way government actually works.
 
-    We simplify government technology, we don't monetize its difficulty. Our Interagency Agreement (IAA) model is purpose-built for federal agencies like yours, eliminating the friction and cost of traditional IT procurement by offering:
   content: |
+    We simplify government technology, we don't monetize its difficulty. Our Interagency Agreement (IAA) model is purpose-built for federal agencies like yours, eliminating the friction and cost of traditional IT procurement by offering:
+
     - **Direct agency partnership:** Work directly with fellow government employees, not sales teams
     - **Rapid onboarding:** Most agencies complete our IAA process in weeks, not months
     - **Proven track record:** We’ve executed hundreds of previous IAAs across federal agencies
     - **Zero vendor overhead:** 100% of your investment goes directly to platform development
-  outro: "Many technology providers simply repurpose private sector tools, leaving you to navigate critical compliance and integration challenges on your own. At Cloud.​gov, we proactively address these challenges, building in compliance and integration from the start, so you can focus on your mission."
+
+    Many technology providers simply repurpose private sector tools, leaving you to navigate critical compliance and integration challenges on your own. At Cloud.​gov, we proactively address these challenges, building in compliance and integration from the start, so you can focus on your mission.
 
 
 approachIds:

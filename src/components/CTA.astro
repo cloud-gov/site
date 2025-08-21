@@ -21,7 +21,7 @@ const { align = "left", buttons = [], color = "white", ...props } = Astro.props;
 <PageSection {...props} color={color} align={align}>
   {
     buttons.length > 0 && (
-      <div class={`align-${align}`}>
+      <div class={`align-${align} section__outro`}>
         {buttons.map((btn) => (
           <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""}`}>
             {btn.label}

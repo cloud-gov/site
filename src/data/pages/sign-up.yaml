@@ -1,11 +1,11 @@
 title: Get Started with Cloud.gov  
 description: Ready to launch? Request access to Cloud.gov and start building secure, compliant sites and apps today.
 
-headerSection:
+hero:
   heading: "Try Cloud.gov for free"
   intro: |
     Have a .gov or .mil? You’re invited!
-  align: "center"
+  art: "trial"
   color: "primary"
   buttons:
     - label: "Connect with our team"

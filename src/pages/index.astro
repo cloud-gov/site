@@ -18,15 +18,15 @@ const ourApproach = {
 ---
 
 <Layout title={content.title} description={content.description}>
-  <Hero {...content.headerSection} />
+  <Hero {...content.hero} />
   <Tiles {...content.g2g} />
   <Steps {...content.getCoding} />
   <CTA {...sitewide.freeSandbox} />
   <Steps {...content.stepsList} />
   <hr />
   <PageSection {...content.mandatesHandled} />
-  <Tiles {...sitewide.supportTiles} />
-  <Topics {...ourApproach} />
   <hr />
+  <Topics {...ourApproach} />
+  <Tiles {...sitewide.supportTiles} />
   <Subscribe {...sitewide.newsletter} />
 </Layout>
