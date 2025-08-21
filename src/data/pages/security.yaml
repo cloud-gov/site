@@ -15,7 +15,7 @@ g2g:
   heading: "Zero-trust infrastructure that meets every government expectation"
   intro: "Cloud.gov provides you with a FIPS 140-2 compliant environment designed for U.S. federal workloads, where we can offer top-requested security features like:"
   align: "center"
-  color: "base"
+  color: "primary-vivid"
   items:
     - heading: "Supply-chain hardening"
       text: "100% of our images are built using pre-scanned, signed, and reproducible buildpacks."
@@ -29,9 +29,11 @@ g2g:
 
 launchNow:
   heading: "Launch securely now, not next quarter"
+  art: "compliance-alt"
   intro: |
     Skip months of security configuration. Our multi-availability zone platform includes enterprise-level protections designed to meet the most stringent federal requirements. 
     
+  content: | 
     When you run your FISMA Low or Moderate system on Cloud.gov, you automatically inherit coverage for more than 300 of the NIST 800-53 Rev 5 controls. That means on day one, you can check these off your list:
 
   checks: true
@@ -50,8 +52,7 @@ launchNow:
     - heading: Platform patching, backups, and system monitoring (SI, AU, CM families)
     - heading:  A FIPS 140-2 compliant environment
   outro: |
-    You don’t have to set up your own platform team to meet federal compliance requirements. 
-    **We’re already operating one for you.**
+    You don’t have to set up your own platform team to meet federal compliance requirements.  **We’re already operating one for you.**
 
 
 AtoFeature:

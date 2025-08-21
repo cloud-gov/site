@@ -13,7 +13,7 @@ hero:
 g2g:
   heading: "Government-to-government, not just “govtech”"
   intro: "We’re not a vendor. We’re government, just like you. That means:"
-  color: "primary"
+  color: "primary-vivid"
   align: "center"
   items:
     - heading: "No RFP required"

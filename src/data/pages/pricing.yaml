@@ -15,6 +15,7 @@ g2g:
   heading: "One agreement, unlimited innovation"
   intro: "Our enterprise customers unlock significant savings in time, resources, and long-term planning. When multiple teams share Cloud.gov access through a single agreement, agencies benefit from:"
   align: "center"
+  color: "primary-vivid"
   items:
     - heading: "Streamlined acquisition"
       text: "Reduce your administrative overhead with fewer IAAs to manage"

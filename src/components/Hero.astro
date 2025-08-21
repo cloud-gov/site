@@ -20,7 +20,7 @@ const { heading, intro, buttons = [], color = "white", art, content } = Astro.pr
 ---
 
 <section
-  class={`${art && `section-art section-art--${art}`} bg-${color}-lightest text-base-darkest text-${color}-darkest border-base-lighter border-bottom-1px padding-y-6 text-left`}>
+  class={`${art && `section-art section-art--${art}`} bg-${color}-lightest text-base-darkest text-${color}-darkest border-base-lighter border-bottom-1${art ? "" : "px"} padding-y-6 text-left`}>
   <div class="grid-container">
     <div class="grid-row">
       <div class="grid-col-12 desktop:grid-col-9">
