@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+const slug = name.split("Illustration-")[1];
+---
+
+<div class="illustration-container">
+  <Image class="illustration-image" src={import(`./../../assets/illustrations/${slug}.svg`)} alt={name} />
+</div>
+
+<style>
+  .illustration-image {
+    height: 70%;
+    width: 70%;
+  }
+</style>

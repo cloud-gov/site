@@ -274,8 +274,8 @@ $theme-footer-background-color: "primary";
     th {
       padding-top: .75rem;
       padding-bottom: .75rem;
-      background-color: color("blue-cool-60");
-      border-color: color("blue-cool-70");
+      background-color: color("blue-warm-60v");
+      border-color: color("blue-warm-70v");
       color: white;
       border-bottom-width: 0;
     }
@@ -292,37 +292,37 @@ $theme-footer-background-color: "primary";
 
     &--1 {
       td, th {      
-        color: color("blue-cool-80");
-        background-color: color("blue-cool-5");
-        border-color: color("blue-cool-20");
+        color: color("base-dark");
+        background-color: white;
+        border-color: color("blue-warm-20v");
       }
     }
     &--2 {
       td, th {      
-        color: color("blue-cool-80");
-        background-color: color("blue-cool-10");
-        border-color: color("blue-cool-20");
+        color: color("blue-warm-80v");
+        background-color: color("blue-warm-10v");
+        border-color: color("blue-warm-20v");
       }
     }
     &--3 {
       td, th {    
-        color: color("blue-cool-80");
-        background-color: color("blue-cool-20");
-        border-color: color("blue-cool-30");
+        color: color("blue-warm-80v");
+        background-color: color("blue-warm-20v");
+        border-color: color("blue-warm-30v");
       }
     }
     &--4 {
       td, th {      
         color: white;
-        background-color: color("blue-cool-50");
-        border-color: color("blue-cool-40");
+        background-color: color("blue-warm-50v");
+        border-color: color("blue-warm-40v");
       }
     }
     &--5 {
       td, th {      
         color: white;
-        background-color: color("blue-cool-60");
-        border-color: color("blue-cool-40");
+        background-color: color("blue-warm-60v");
+        border-color: color("blue-warm-40v");
       }
     }
   }

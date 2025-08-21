@@ -2,6 +2,7 @@
 import Markdown from "./Markdown.astro";
 import ServiceLogos from "./media/ServiceLogos.astro";
 import Terminal from "./media/Terminal.astro";
+import Illustration from "./media/Illustration.astro";
 
 interface Link {
   label: string;
@@ -12,7 +13,7 @@ interface Item {
   heading?: string;
   text?: string;
   link?: Link;
-  mediaComponent?: "ServiceLogos" | "Terminal";
+  mediaComponent?: "ServiceLogos" | "Terminal" | "Illustration";
 }
 interface Props {
   heading?: string;
@@ -55,6 +56,9 @@ const { heading = false, intro = false, outro = false, color = "white", items = 
           <div class="section__media">
             {item.mediaComponent === "ServiceLogos" && <ServiceLogos />}
             {item.mediaComponent === "Terminal" && <Terminal />}
+            {item.mediaComponent && item.mediaComponent.startsWith("Illustration") && (
+              <Illustration name={item.mediaComponent} />
+            )}
           </div>
         </div>
       ))
