@@ -52,7 +52,8 @@
     --section-card-text: var(--theme-color-primary-darkest);
     --section-accent: var(--theme-color-primary-light);
     --section-border: var(--theme-color-primary-darker);
-    .section__content a {
+    .section__content a, 
+    .section__item a {
       color: #fff;
     }
   }
@@ -63,7 +64,8 @@
     --section-card-text: var(--theme-color-primary-darkest);
     --section-accent: var(--theme-color-primary-vivid);
     --section-border: var(--theme-color-primary-vivid);
-    .section__content a {
+    .section__content a, 
+    .section__item a {
       color: #fff;
     }
   }
