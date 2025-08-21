@@ -312,6 +312,12 @@
   &--trial {
     background-image: url('../assets/img/bg-tiled-trial.png');
   }
+  &--404 {
+    background-image: url('../assets/img/bg-404.svg');
+    min-height: 40vh;
+    background-position-y: center;
+    background-size: 30vh;
+  }
 }
 
 }

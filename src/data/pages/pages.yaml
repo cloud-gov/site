@@ -124,7 +124,7 @@ AtoMedia:
         url: "#"
     - heading: "You don't have to BYO ATO"
       text: "Cloud.gov Pages offers a simple Authority to Use (ATU) approach. After guiding dozens of government agencies through the compliance authorization process, our experts have streamlined each step of the process, from initial documentation to final approval."
-      mediaComponent: "Terminal"
+      mediaComponent: "Illustration-Security"
       link:
         label: "Review our compliance docs on Connect.gov"
         url: "#"

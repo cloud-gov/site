@@ -118,6 +118,7 @@ function formatTileWrapper(tileItem: Item) {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
+    margin: 2rem 0 1rem;
   }
 
   .tile__item {
@@ -170,7 +171,9 @@ function formatTileWrapper(tileItem: Item) {
   }
 
   .tile__item .tile__icon {
-    padding: 2.5rem;
+    @media (min-width: 1200px) {
+      padding: 2.5rem;
+    }
     .accent {
       color: var(--theme-color-base-dark, #222);
     }
