@@ -24,18 +24,32 @@ moreWithLess:
 
     Today’s federal website managers must meet a growing list of responsibilities, including:
   items:
-    - heading: "Audit your site for outdated or inaccurate content"
-    - heading: "Check accessibility on every page (Section 508 compliance)"
-    - heading: "Prove you're hosted on a FedRAMP-authorized platform"
-    - heading: "Scan for vulnerabilities and address findings"
-    - heading: "Renew HTTPS certs before they expire"
-    - heading: "Complete and update your ATO documentation"
-    - heading: "Review DAP analytics and identify areas to improve"
-    - heading: "Confirm all content is searchable (e.g. integrated with Search.gov)"
-    - heading: "Ensure you're using USWDS components and tokens correctly"
-    - heading: "Publish federally required notices (privacy, FOIA, accessibility)"
-    - heading: "Release datasets in machine-readable formats"
-    - heading: "Archive past versions to meet records retention requirements"
+    - heading: "**Audit your site for outdated or inaccurate content**"
+      text:    "(OMB M-23-22; OMB Circular A-130; 21st Century IDEA)"
+    - heading: "**Check accessibility on every page**"
+      text:    "(Section 508, 29 U.S.C. § 794d; 36 CFR Part 1194; 21st Century IDEA; OMB M-23-22)"
+    - heading: "**Host your site on a FedRAMP-authorized platform**"
+      text:    "(FedRAMP Authorization Act; OMB FedRAMP policy; OMB Circular A-130)"
+    - heading: "**Scan for vulnerabilities and address findings**"
+      text:    "(CISA BOD 22-01; FISMA; OMB Circular A-130; NIST SP 800-53)"
+    - heading: "**Renew HTTPS certificates before they expire**"
+      text:    "(OMB M-15-13 HTTPS-Only; CISA BOD 18-01)"
+    - heading: "**Complete and update your ATO documentation**"
+      text:    "(FISMA; OMB Circular A-130; NIST RMF-SP 800-37; NIST SP 800-53)"
+    - heading: "**Review website analytics and identify areas to improve**"
+      text:    "(OMB M-23-22; Digital Analytics Program (DAP) requirements)"
+    - heading: "**Confirm all content is searchable**"
+      text:    "(OMB M-23-22; 21st Century IDEA; Search.gov)"
+    - heading: "**Use USWDS and adhere to the Federal Website Standards**"
+      text:    "(21st Century IDEA website standards; OMB M-23-22; USWDS guidance)"
+    - heading: "**Publish federally required notices**"
+      text:    "(FOIA 5 U.S.C. § 552(a)(2); Privacy Act; OMB privacy guidance; OMB M-23-22)"
+    - heading: "**Release datasets in machine-readable formats**"
+      text:    "(OPEN Government Data Act (Evidence Act Title II); OMB M-13-13 Open Data Policy)"
+    - heading: "**Archive past versions to meet records retention requirements**"
+      text:    "(NARA records management guidance; 36 CFR Subchapter B; OMB Circular A-130)"
+
+
   checks: true
   outro: |
     Managing all parts of a public-facing site is often buried under ‘other duties as assigned,’ but it’s one of the most visible responsibilities an agency has. It shouldn’t require **enterprise-scale effort from a two-person team**.

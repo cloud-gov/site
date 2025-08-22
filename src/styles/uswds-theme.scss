@@ -254,7 +254,8 @@ $theme-footer-background-color: "primary";
     }
   }
   .usa-process-list__text {
-    font-weight: font-weight(500);
+    // font-weight: font-weight(500);
+    font-size: font-size($theme-body-font-family, "sm");
 
   }
 
