@@ -126,4 +126,4 @@ public/data/credits.json
 
 # Astro
 _data/assetPaths.json
-.astro/types.d.ts
+.astro/*
