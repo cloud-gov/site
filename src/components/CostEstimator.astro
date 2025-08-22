@@ -29,15 +29,20 @@ import creditsData from "../data/credits.json";
         </select>
       </div>
 
-      <div class="usage-container" hidden>
-        <label class="usa-label text-bold" for="usage-input"
-          >Monthly usage per <span class="usage-unit">units</span></label
+      <div class="metered-container" hidden>
+        <label class="usa-label text-bold" for="metered-input"
+          ><span class="metered-unit">unit</span>s <span class="metered-type"></span> per month</label
         >
+        <input type="number" placeholder="units per month" class="usa-input metered-input" id="metered-input" min="1" />
+      </div>
+
+      <div class="multiplier-container" hidden>
+        <label class="usa-label text-bold" for="multiplier-input"># of Instances</label>
         <input
           type="number"
-          placeholder="Monthly usage per unit"
-          class="usa-input usage-input"
-          id="usage-input"
+          placeholder="# of Instances"
+          class="usa-input multiplier-input"
+          id="multiplier-input"
           min="1"
         />
       </div>
@@ -81,9 +86,12 @@ import creditsData from "../data/credits.json";
     const serviceSelect = node.querySelector(".service-select");
     const planContainer = node.querySelector(".plan-container");
     const planSelect = node.querySelector(".plan-select");
-    const usageContainer = node.querySelector(".usage-container");
-    const usageInput = node.querySelector(".usage-input");
-    const usageUnit = node.querySelector(".usage-unit");
+    const meteredContainer = node.querySelector(".metered-container");
+    const meteredInput = node.querySelector(".metered-input");
+    const meteredUnit = node.querySelector(".metered-unit");
+    const meteredType = node.querySelector(".metered-type");
+    const multiplierContainer = node.querySelector(".multiplier-container");
+    const multiplierInput = node.querySelector(".multiplier-input");
     const freeContainer = node.querySelector(".free-container");
     const creditOutput = node.querySelector(".credit-output");
     const removeBtn = node.querySelector(".remove-btn");
@@ -100,7 +108,8 @@ import creditsData from "../data/credits.json";
       let credits = 0;
 
       planContainer.hidden = true;
-      usageContainer.hidden = true;
+      meteredContainer.hidden = true;
+      multiplierContainer.hidden = true;
       freeContainer.hidden = true;
       planSelect.innerHTML = "";
 
@@ -132,19 +141,26 @@ import creditsData from "../data/credits.json";
 
         updateCredits();
       } else if (selected?.metered) {
-        usageContainer.hidden = false;
-        usageUnit.innerText = selected.metered.unit;
-        usageInput.placeholder = `Monthly usage per ${selected.metered.unit}`;
+        meteredContainer.hidden = false;
+        meteredUnit.innerText = selected.metered.unit;
+        meteredType.innerText = selected.metered.type;
+        meteredInput.placeholder = `${selected.metered.unit}s ${selected.metered.type} per month`;
+
+        if (selected?.multiplier) {
+          multiplierContainer.hidden = false;
+        }
 
         const updateCredits = () => {
-          const usage = Math.abs(parseFloat(usageInput.value)) || 0;
-          credits = Math.ceil(usage / selected.metered.unitsPerCredit) * selected.metered.credits;
+          const metered = Math.abs(parseFloat(meteredInput.value)) || 0;
+          const multiplier = Math.abs(parseFloat(multiplierInput.value)) || 1;
+          credits = Math.ceil(metered / selected.metered.unitsPerCredit) * multiplier * selected.metered.credits;
           creditOutput.textContent = credits;
           row.dataset.credits = credits;
           updateTotal();
         };
 
-        usageInput.addEventListener("input", updateCredits);
+        meteredInput.addEventListener("input", updateCredits);
+        multiplierInput.addEventListener("input", updateCredits);
         updateCredits(); // Initial update
       }
 
@@ -178,12 +194,14 @@ import creditsData from "../data/credits.json";
   .total {
     margin-top: 1rem;
     font-weight: bold;
+    font-size: 1.8rem;
   }
 
   #estimator-rows {
     display: flex;
     flex-flow: column;
-    min-width: 70vw;
+    width: 100%;
+    max-width: calc(100ch - 4rem);
     padding: 0.5rem 1rem 0;
     margin-bottom: 1rem;
   }
@@ -194,6 +212,7 @@ import creditsData from "../data/credits.json";
     justify-content: space-between;
     padding-bottom: 0.5rem;
     align-items: end;
+    gap: 1rem;
   }
   .estimator-row label.usa-label {
     margin-top: 0;
@@ -205,11 +224,9 @@ import creditsData from "../data/credits.json";
   .estimator-row:not(:first-of-type) label.usa-label {
     display: none;
   }
-  .service-container {
-    padding-right: 1rem;
-  }
   .plan-container,
-  .usage-container,
+  .metered-container,
+  .multiplier-container,
   .free-container {
     flex: 1;
     min-height: 2.5em;
@@ -238,14 +255,15 @@ import creditsData from "../data/credits.json";
     .estimator-row {
       flex-direction: row;
       align-items: stretch;
-      gap: 0.5rem;
+      gap: 1rem;
       padding: 1rem 0;
       flex-wrap: wrap;
     }
 
     .service-container,
     .plan-container,
-    .usage-container,
+    .metered-container,
+    .multiplier-container,
     .free-container {
       padding: 0;
       margin: 0;
@@ -268,7 +286,6 @@ import creditsData from "../data/credits.json";
 
     .subtotal-container,
     .remove-container {
-      width: 48%;
       margin-left: 0;
     }
 

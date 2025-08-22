@@ -1,6 +1,36 @@
 {
   "services": [
     {
+      "name": "AWS ElastiCache",
+      "plans": [
+        {
+          "plan": "redis-dev",
+          "instanceClass": "cache.t3.micro",
+          "credits": 1
+        },
+        {
+          "plan": "redis-3node",
+          "instanceClass": "cache.t3.micro",
+          "credits": 2
+        },
+        {
+          "plan": "redis-5node",
+          "instanceClass": "cache.t3.micro",
+          "credits": 4
+        },
+        {
+          "plan": "redis-3node-large",
+          "instanceClass": "cache.t3.small",
+          "credits": 5
+        },
+        {
+          "plan": "redis-5node-large",
+          "instanceClass": "cache.t3.small",
+          "credits": 8
+        }
+      ]
+    },
+    {
       "name": "AWS RDS",
       "plans": [
         {
@@ -226,6 +256,15 @@
       ]
     },
     {
+      "name": "AWS RDS storage",
+      "metered": {
+        "type": "reserved",
+        "unit": "GB/month",
+        "unitsPerCredit": 100,
+        "credits": 1
+      }
+    },
+    {
       "name": "AWS OpenSearch",
       "plans": [
         {
@@ -286,54 +325,9 @@
       ]
     },
     {
-      "name": "AWS ElastiCache",
-      "plans": [
-        {
-          "plan": "redis-dev",
-          "instanceClass": "cache.t3.micro",
-          "credits": 1
-        },
-        {
-          "plan": "redis-3node",
-          "instanceClass": "cache.t3.micro",
-          "credits": 2
-        },
-        {
-          "plan": "redis-5node",
-          "instanceClass": "cache.t3.micro",
-          "credits": 4
-        },
-        {
-          "plan": "redis-3node-large",
-          "instanceClass": "cache.t3.small",
-          "credits": 5
-        },
-        {
-          "plan": "redis-5node-large",
-          "instanceClass": "cache.t3.small",
-          "credits": 8
-        }
-      ]
-    },
-    {
-      "name": "App memory",
-      "metered": {
-        "unit": "GB",
-        "unitsPerCredit": 1,
-        "credits": 3
-      }
-    },
-    {
-      "name": "AWS RDS storage",
-      "metered": {
-        "unit": "GB/month",
-        "unitsPerCredit": 100,
-        "credits": 1
-      }
-    },
-    {
       "name": "AWS OpenSearch storage",
       "metered": {
+        "type": "reserved",
         "unit": "GB/month",
         "unitsPerCredit": 100,
         "credits": 1
@@ -342,6 +336,7 @@
     {
       "name": "AWS S3 storage",
       "metered": {
+        "type": "used",
         "unit": "GB/month",
         "unitsPerCredit": 400,
         "credits": 1
@@ -350,7 +345,8 @@
     {
       "name": "AWS SES (Emails)",
       "metered": {
-        "unit": "emails sent",
+        "type": "used",
+        "unit": "Send",
         "unitsPerCredit": 150000,
         "credits": 1
       }
@@ -358,9 +354,20 @@
     {
       "name": "AWS SES (Attachments)",
       "metered": {
+        "type": "used",
         "unit": "GB",
         "unitsPerCredit": 120,
         "credits": 1
+      }
+    },
+    {
+      "name": "App memory cap",
+      "multiplier": true,
+      "metered": {
+        "type": "reserved",
+        "unit": "GB",
+        "unitsPerCredit": 1,
+        "credits": 3
       }
     },
     {

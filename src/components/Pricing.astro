@@ -60,7 +60,7 @@ function yearlyFromMonthly(num = 0) {
 }
 ---
 
-<dialog id="estimator-dialog">
+<dialog id="estimator">
   <div class="dialog-content">
     <a href="#" id="close-estimator" class="dialog-close" aria-label="Close dialog">×</a>
     <CostEstimator />
@@ -179,13 +179,15 @@ function yearlyFromMonthly(num = 0) {
 
   <style>
     dialog {
-      max-width: 95vw;
+      width: 95vw;
+      max-width: 100ch;
       border: none;
       border-radius: 0.5rem;
+      padding: 0;
       box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
-      padding: 2rem;
     }
     .dialog-content {
+      padding: 2rem;
       display: flex;
       flex-flow: column;
       position: relative;
@@ -203,11 +205,11 @@ function yearlyFromMonthly(num = 0) {
       text-decoration: none;
       margin-left: auto;
       position: absolute;
-      right: 0;
+      right: 2rem;
     }
   </style>
   <script type="module">
-    const dialog = document.getElementById("estimator-dialog");
+    const dialog = document.getElementById("estimator");
     const closeLink = document.getElementById("close-estimator");
 
     function openDialogFromHash() {
@@ -224,7 +226,10 @@ function yearlyFromMonthly(num = 0) {
     openDialogFromHash();
 
     // Open on hash change (e.g. clicking a link)
-    window.addEventListener("hashchange", openDialogFromHash);
+    window.addEventListener("hashchange", (e) => {
+      e.preventDefault(); // no scroll
+      openDialogFromHash();
+    });
 
     closeLink.addEventListener("click", (e) => {
       e.preventDefault();
