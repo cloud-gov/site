@@ -1,6 +1,8 @@
 ---
 import Markdown from "./Markdown.astro";
 import CostEstimator from "./CostEstimator.astro";
+import { Image } from "astro:assets";
+
 interface Link {
   label: string;
   url: string;
@@ -153,18 +155,23 @@ function yearlyFromMonthly(num = 0) {
         </div>
         <div class="section__media section__media--pricing">
           <div class="padding-4 border radius-lg bg-white height-full maxw-mobile-lg">
-            <h3 class="font-sans-xl text-bold margin-bottom-1 text-center">
+            <!-- <h3 class="font-sans-xl text-bold margin-bottom-1 text-center">
               {pages.pricing.name}
-            </h3>
-
-            <div class="text-center line-height-sans-1 margin-bottom-3">
-              <span class="display-inline-block font-sans-lg text-bold">$</span>
-              <span class="font-sans-3xl text-bold">{pages.pricing.price}</span>
-              <span class="display-inline-block font-sans-sm text-normal">{pages.pricing.unit}</span>
-            </div>
-            <ul class="usa-list font-body-md line-height-body-4 text-left">
+            </h3> -->
+            <Image
+              class="height-10 width-auto margin-x-auto margin-y-2 display-block"
+              src={import(`./../assets/logo-cloud-pages.svg`)}
+              alt="Cloud.gov Pages Logo"
+            />
+            <ul
+              class="usa-list font-body-md line-height-body-4 text-left padding-y-3 border-y border-y-width-2px border-base-lighter">
               {pages.pricing.features.map((feature) => <li class="padding-y-05">{feature}</li>)}
             </ul>
+            <div class="text-center line-height-sans-1 margin-y-1 text-base-darker">
+              <span class="display-inline-block font-sans-lg">$</span>
+              <span class="font-sans-3xl text-bold text-accent-cool">{pages.pricing.price}</span>
+              <span class="display-inline-block font-sans-lg">{pages.pricing.unit}</span>
+            </div>
           </div>
         </div>
       </div>

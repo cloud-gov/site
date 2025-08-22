@@ -4,7 +4,7 @@ description: Get help using Cloud.gov. Open a ticket, access onboarding resource
 
 hero:
   heading: "How can we help?"
-  color: "primary"
+  color: "primary-lightest"
   art: "support"
 
 productDocs:

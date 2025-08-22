@@ -108,11 +108,11 @@
   $theme-color-secondary-darkest: "red-90",
 
   // pages
-  $theme-color-accent-cool-lightest: "cyan-5v",
+  $theme-color-accent-cool-lightest: "cyan-5",
   $theme-color-accent-cool-lighter: "cyan-5v",
   $theme-color-accent-cool-light: "cyan-10v",
-  $theme-color-accent-cool: "cyan-40v",
-  $theme-color-accent-cool-dark: "cyan-60v",
+  $theme-color-accent-cool: #03a1c4,
+  $theme-color-accent-cool-dark: #037d99,
   $theme-color-accent-cool-darker: "cyan-70v",
 
   // workshop?
@@ -128,6 +128,8 @@
   $theme-card-border-width: 1px,
   $theme-card-border-color: "base-light",
   $theme-button-border-radius: 'sm',
-  $theme-button-small-width: 1px
+  $theme-button-small-width: 1px,
+
+
 );
 

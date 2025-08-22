@@ -1,5 +1,6 @@
 ---
 import Markdown from "./Markdown.astro";
+import { Image } from "astro:assets";
 
 interface Button {
   label: string;
@@ -8,7 +9,7 @@ interface Button {
 }
 
 export interface Props {
-  heading?: string;
+  heading: string;
   intro?: string;
   art?: string;
   buttons?: Button[];
@@ -20,10 +21,20 @@ const { heading, intro, buttons = [], color = "white", art, content } = Astro.pr
 ---
 
 <section
-  class={`${art && `section-art section-art--${art}`} bg-${color}-lightest text-base-darkest text-${color}-darkest border-base-lighter border-bottom-1${art ? "" : "px"} padding-y-6 text-left`}>
+  class={`${art && `section-art section-art--${art}`} bg-${color} text-base-darkest text-base-darkest border-base-lighter border-bottom-1${art ? "" : "px"} padding-y-6 text-left`}>
   <div class="grid-container">
     <div class="grid-row">
       <div class="grid-col-12 desktop:grid-col-9">
+        {
+          art?.startsWith("cloud-") && (
+            <Image
+              class="product-logo"
+              class="height-9 width-auto margin-right-auto margin-bottom-3"
+              src={import(`./../assets/logo-${art}.svg`)}
+              alt={heading}
+            />
+          )
+        }
         {
           heading && (
             <Markdown
@@ -39,7 +50,7 @@ const { heading, intro, buttons = [], color = "white", art, content } = Astro.pr
           intro && (
             <Markdown
               content={intro}
-              classes="text-base font-sans-lg line-height-sans-5 margin-bottom-3 measure-3 text-light"
+              classes="text-base-darker font-sans-lg line-height-sans-5 margin-bottom-3 measure-3 text-light"
               inline
             />
           )
@@ -55,7 +66,7 @@ const { heading, intro, buttons = [], color = "white", art, content } = Astro.pr
         }
         {
           buttons.length > 0 && (
-            <div class="usa-button-group margin-top-2">
+            <div class="usa-button-group margin-top-4">
               {buttons.map((btn) => (
                 <a
                   href={btn.url}

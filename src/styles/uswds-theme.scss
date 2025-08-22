@@ -31,6 +31,25 @@ ul li, ol li {
   &.usa-button--outline {
     background-color: #fff;
     -webkit-font-smoothing: inherit;
+    &.usa-button--accent-warm {
+      box-shadow: inset 0 0 0 units($theme-button-stroke-width) color("accent-warm");
+      color: color("accent-warm");
+      &:hover {
+        box-shadow: inset 0 0 0 units($theme-button-stroke-width) color("accent-warm-dark");
+        color: color("accent-warm-dark");
+      }
+    }
+    &.usa-button--accent-cool {
+      box-shadow: inset 0 0 0 units($theme-button-stroke-width) color("accent-cool");
+      color: color("accent-cool");
+      &:hover {
+        box-shadow: inset 0 0 0 units($theme-button-stroke-width) color("accent-cool-dark");
+        color: color("accent-cool-dark");
+      }
+    }
+  }
+  &.usa-button--inverse.usa-button--accent-cool:hover {
+    background-color: color("cyan-60v");
   }
 
   &.usa-button--in-nav {

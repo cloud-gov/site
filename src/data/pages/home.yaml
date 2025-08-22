@@ -9,7 +9,12 @@ hero:
   content: |
     As a FedRAMP-authorized Cloud Services Provider within General Services Administration (GSA), our customers don’t need to navigate vendor contracts, exhaustive security reviews, or external approvals. Our infrastructure, pricing, and onboarding are designed specifically for government—**so you can focus on delivery, not procurement**.
   art: "g2g"
-
+  buttons:
+    - label: "Get a free sandbox"
+      url: "sign-up"
+    - label: "Connect with our team"
+      url: "contact"
+      variant: "outline"
 g2g:
   heading: "Government-to-government, not just “govtech”"
   intro: "We’re not a vendor. We’re government, just like you. That means:"

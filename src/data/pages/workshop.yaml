@@ -4,14 +4,15 @@ description: SEO description goes here
 hero:
   heading: "One FedRAMP Moderate SaaS Platform to Rule Them All"
   intro: "Build, host, and deploy your applications without all the compliance headaches."
-  align: "center"
-  color: "base"
+  art: "cloud-workshop"
+  color: "accent-warm-lighter"
   buttons:
     - label: "do thing one"
       url: "#"
+      variant: "accent-warm"
     - label: "do thing two"
       url: "#"
-      variant: "outline"
+      variant: "accent-warm usa-button--outline"
 
 # declare your objects here following the established patterns of other pages
 

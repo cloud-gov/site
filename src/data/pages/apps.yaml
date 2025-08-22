@@ -4,8 +4,8 @@ description: Build and run cloud-native applications with Cloud.gov’s fully ma
 hero:
   heading: "Modern Application Hosting for Government"
   intro: "Secure and scalable cloud infrastructure made easy"
-  align: "center"
-  color: "base"
+  color: "primary-lightest"
+  art: "cloud"
   buttons:
     - label: "Get a free sandbox"
       url: "sign-up"

@@ -5,19 +5,22 @@ description: Cloud.gov Pages helps federal agencies launch secure, compliant web
 hero:
   heading: "Everything you need to run your compliant government website"
   intro: "Easy-to-manage public websites for federal agencies"
-  align: "center"
-  color: "base"
+  color: "accent-cool-lighter"
+  art: "cloud-pages"
   buttons:
     - label: "Connect with our team"
       url: "contact"
-      variant: "outline"
+      variant: "accent-cool"
     - label: "See pricing"
       url: "pricing"
+      variant: "accent-cool usa-button--outline"
 
 moreWithLess:
-  heading: "Built to help teams publish federal websites with confidence"
+  heading: "We built Cloud.gov Pages to help teams publish federal websites with confidence"
   intro: |
-    Publishing an agency update may seem simple, but federal websites are held to the highest standards for security, accessibility, and trust. That means wearing a lot of hats.... **teams tasked with public communication and service delivery are also expected to be infrastructure, cybersecurity, and web design experts** — usually with limited access to training, budget, and staff.
+    Publishing an agency update may seem simple, but federal websites are held to the highest standards for security, accessibility, and trust. That means wearing a lot of hats.
+  content: |
+    Teams tasked with public communication and service delivery are also expected to be **infrastructure, cybersecurity, and web design experts** — usually with limited access to training, budget, and staff.
 
     Today’s federal website managers must meet a growing list of responsibilities, including:
   items:
@@ -35,7 +38,7 @@ moreWithLess:
     - heading: "Archive past versions to meet records retention requirements"
   checks: true
   outro: |
-    Managing all parts of a public-facing site is often buried under ‘other duties as assigned,’ but it’s one of the most visible responsibilities an agency has. It shouldn’t require enterprise-scale effort from a two-person team.
+    Managing all parts of a public-facing site is often buried under ‘other duties as assigned,’ but it’s one of the most visible responsibilities an agency has. It shouldn’t require **enterprise-scale effort from a two-person team**.
 
 whatYouGet:
   heading: "What you get on Cloud.gov Pages"
@@ -44,9 +47,9 @@ whatYouGet:
     - heading: "Custom, federally compliant, and accessible websites"
       text: "USWDS-based websites that are responsive, accessible, and compliant with Section 508 and Federal Website Standards."
     - heading: "Branding, web design, content strategy, & accessibility expertise"
-      text: "Need a little extra help? We offer design and content strategy services for Pages sites by the hour, tailored to federal needs."
+      text: "Need a little extra help? We offer design and content strategy services for Cloud.gov Pages sites by the hour, tailored to federal needs."
     - heading: "Fast, secure, and built to scale—no config required"
-      text: "Every Pages site is served over HTTPS and distributed via CDN with autoscaling and DDoS protection."
+      text: "Every Cloud.gov Pages site is served over HTTPS and distributed via CDN with autoscaling and DDoS protection."
     - heading: "In-house help desk & Office Hours"
       text: "Chat, email, or drop into weekly office hours to talk with our in-house engineers."
     - heading: "Easy invoicing"
@@ -63,9 +66,9 @@ whatYouGet:
     For technical details about hosting your site, [visit the Cloud.gov Pages documentation.](https://docs.cloud.gov/pages)
 
 whatYouCanBuild:
-  heading: "What you can build with us"
+  heading: "What you can build with Cloud.gov Pages"
   intro: "From mission-critical services to public transparency portals, Cloud.gov Pages empowers teams to build, launch, and manage federal websites quickly—without the usual infrastructure burden."
-  color: "primary"
+  color: "pages"
   items:
     - heading: "Agency brochure sites"
       text: "Public websites that evolve with your program and scale with your mission"
@@ -98,17 +101,19 @@ noRFP:
   buttons:
     - label: "See pricing"
       url: "/pricing"
+      variant: "accent-cool"
+
 
 relyOnPages:
-  heading: "Dozens of agencies across government rely on Pages"
+  heading: "Dozens of agencies across government rely on Cloud.gov Pages"
   intro: |
     You don’t need a whole IT department to run a compliant federal website. 
     You just need Cloud.gov Pages.
   buttons:
     - label: "Connect with our team"
       url: "contact"
-      variant: "outline"
-  color: "white"
+      variant: "accent-cool usa-button--inverse"
+  color: "pages-dark"
   align: "center"
 
 
@@ -118,17 +123,19 @@ AtoMedia:
   items:
     - heading: "Guided security support with our in-house experts"
       text: "We work directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessments (SIA)."
-      mediaComponent: "Illustration-ATO"
+      mediaComponent: "Illustration-ATO-Pages"
       link:
+        variant: "accent-cool"
         label: "Check us out on the FedRAMP marketplace"
-        url: "#"
+        url: "https://marketplace.fedramp.gov/products/F1607067912"
     - heading: "You don't have to BYO ATO"
       text: "Cloud.gov Pages offers a simple Authority to Use (ATU) approach. After guiding dozens of government agencies through the compliance authorization process, our experts have streamlined each step of the process, from initial documentation to final approval."
-      mediaComponent: "Illustration-Security"
+      mediaComponent: "Illustration-Security-Pages"
       link:
+        variant: "accent-cool"
         label: "Review our compliance docs on Connect.gov"
-        url: "#"
-  color: "primary-dark"
+        url: "https://www.connect.gov/"
+  color: "pages-dark"
 
 approachIds:
   - g2g

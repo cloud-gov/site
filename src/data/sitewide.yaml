@@ -19,11 +19,12 @@ freeSandbox:
   color: "primary"
   art: "trial"
   buttons:
+    - label: "Get a free sandbox"
+      url: "sign-up"
     - label: "Connect with our team"
       url: "contact"
       variant: "outline"
-    - label: "Get a free sandbox"
-      url: "sign-up"
+
 
 supportTiles:
   heading: "Our team is here to support yours"

@@ -31,10 +31,28 @@
 
   --theme-color-cloud: #{color($theme-color-primary)};
   --theme-color-cloud-hover: #{color($theme-color-primary-vivid)};
-  --theme-color-pages: #0FADD0;
-  --theme-color-pages-hover: #01a1b9;
-  --theme-color-workshop: #{color($theme-color-accent-warm)};
-  --theme-color-workshop-hover: #de4b00;
+
+
+  --theme-color-pages: #{color("accent-cool")};
+  --theme-color-pages-hover: #{color("accent-cool-dark")};
+  --theme-color-accent-cool-lightest: #{color($theme-color-accent-cool-lightest)};
+  --theme-color-accent-cool-lighter: #{color($theme-color-accent-cool-lighter)};
+  --theme-color-accent-cool-light: #{color($theme-color-accent-cool-light)};
+  --theme-color-accent-cool: #{color("accent-cool")};
+  --theme-color-accent-cool-alt: #{color("cyan-40v")};
+  --theme-color-accent-cool-dark: #{color("accent-cool-dark")};
+  --theme-color-accent-cool-darker: #{color($theme-color-accent-cool-darker)};
+
+
+  --theme-color-workshop: #{color("accent-warm")};
+  --theme-color-workshop-hover: #{color("accent-warm-dark")};
+  --theme-color-accent-warm-lightest: #{color($theme-color-accent-warm-lightest)};
+  --theme-color-accent-warm-lighter: #{color($theme-color-accent-warm-lighter)};
+  --theme-color-accent-warm-light: #{color($theme-color-accent-warm-light)};
+  --theme-color-accent-warm: #{color($theme-color-primary)};
+  --theme-color-accent-warm-dark: #{color($theme-color-accent-warm-dark)};
+  --theme-color-accent-warm-darker: #{color($theme-color-accent-warm-darker)};
+
 
 background-color: var(--theme-color-primary-vivid);
 

@@ -25,14 +25,13 @@ const otherOfferings = {
 <Layout title={content.title} description={content.description}>
   <Hero {...content.hero} />
   <Steps {...content.moreWithLess} />
-  <hr />
-  <CTA {...content.relyOnPages} />
   <MediaSection {...content.AtoMedia} />
   <Topics {...content.whatYouGet} />
   <Tiles {...content.whatYouCanBuild} />
   <CTA {...content.noRFP} />
-  <Tiles {...otherOfferings} />
+  <CTA {...content.relyOnPages} />
   <Topics {...ourApproach} />
-  <Tiles {...sitewide.supportTiles} />
+  <Tiles {...otherOfferings} />
+  <!-- <Tiles {...sitewide.supportTiles} /> -->
   <Subscribe {...sitewide.newsletter} />
 </Layout>

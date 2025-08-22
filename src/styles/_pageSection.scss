@@ -81,6 +81,25 @@
       color: #fff;
     }
   }
+  &.section--pages,
+  &.section--pages-light {
+    --section-bg: var(--theme-color-accent-cool-lightest);
+    --section-text: var(--theme-color-base-darker);
+    --section-accent: var(--theme-color-accent-cool);
+    --section-border: var(--theme-color-accent-cool-light);
+  }
+
+  &.section--pages-dark {
+    -webkit-font-smoothing: antialiased;
+    --section-bg: var(--theme-color-accent-cool-dark);
+    --section-text: #fff;
+    --section-accent: var(--theme-color-accent-cool-light);
+    --section-border: var(--theme-color-accent-cool-darker);
+    .section__content a, 
+    .section__item a {
+      color: #fff;
+    }
+  }
 
   &__container {
     display: grid;
@@ -317,6 +336,18 @@
     min-height: 40vh;
     background-position-y: center;
     background-size: 30vh;
+  }
+  &--cloud {
+    background-image: url('../assets/img/bg-tiled-apps.png');
+  }
+  &--cloud-apps {
+    background-image: url('../assets/img/bg-tiled-apps.png');
+  }
+  &--cloud-pages {
+    background-image: url('../assets/img/bg-tiled-pages.png');
+  }
+  &--cloud-workshop {
+    background-image: url('../assets/img/bg-tiled-workshop.png');
   }
 }
 
