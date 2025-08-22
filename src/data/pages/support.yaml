@@ -18,10 +18,10 @@ productDocs:
       link: "https://docs.cloud.gov"
     - heading: "Cloud.gov Pages Docs"
       icon: "reverse-logo-cloud-pages"
-      link: "https://docs.cloud.gov/pages"
+      link: "https://docs.cloud.gov/pages/using-pages/getting-started"
     - heading: "Cloud.gov Workshop Docs"
       icon: "reverse-logo-cloud-workshop"
-      link: "https://docs.cloud.gov/workshop"
+      link: "https://docs.cloud.gov/workshop/overview"
 
 commonSupportTopics:
   color: "white-with-card-border"
