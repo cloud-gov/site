@@ -1,7 +1,5 @@
 ---
 import Markdown from "./Markdown.astro";
-import ServiceLogos from "./media/ServiceLogos.astro";
-import Terminal from "./media/Terminal.astro";
 import Illustration from "./media/Illustration.astro";
 
 interface Link {
@@ -57,8 +55,6 @@ const { heading = false, intro = false, outro = false, color = "white", items = 
             )}
           </div>
           <div class="section__media">
-            {item.mediaComponent === "ServiceLogos" && <ServiceLogos />}
-            {item.mediaComponent === "Terminal" && <Terminal />}
             {item.mediaComponent && item.mediaComponent.startsWith("Illustration") && (
               <Illustration name={item.mediaComponent} />
             )}

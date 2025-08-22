@@ -138,40 +138,39 @@ function yearlyFromMonthly(num = 0) {
           </table>
         </div>
       </div>
+    </div>
+    <div class="section__item section__item--pricing" data-odd>
+      <div class="section__text top-divider top-divider--center-mobile">
+        <h3 class="font-body-sm text-uppercase text-ls-2 text-medium subhead">{pages.subhead}</h3>
+        <h4 class="font-body-xl text-medium heading">{pages.heading}</h4>
 
-      <div class="section__item section__item--pricing" data-odd>
-        <div class="section__text top-divider top-divider--center-mobile">
-          <h3 class="font-body-sm text-uppercase text-ls-2 text-medium subhead">{pages.subhead}</h3>
-          <h4 class="font-body-xl text-medium heading">{pages.heading}</h4>
-
-          <Markdown content={pages.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
-          {
-            pages.link && (
-              <a class="usa-button usa-button--inverse" href={pages.link.url}>
-                {pages.link.label}
-              </a>
-            )
-          }
-        </div>
-        <div class="section__media section__media--pricing">
-          <div class="padding-4 border radius-lg bg-white height-full maxw-mobile-lg">
-            <!-- <h3 class="font-sans-xl text-bold margin-bottom-1 text-center">
+        <Markdown content={pages.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
+        {
+          pages.link && (
+            <a class="usa-button usa-button--inverse" href={pages.link.url}>
+              {pages.link.label}
+            </a>
+          )
+        }
+      </div>
+      <div class="section__media section__media--pricing">
+        <div class="padding-4 border radius-lg bg-white height-full maxw-mobile-lg">
+          <!-- <h3 class="font-sans-xl text-bold margin-bottom-1 text-center">
               {pages.pricing.name}
             </h3> -->
-            <Image
-              class="height-10 width-auto margin-x-auto margin-y-2 display-block"
-              src={import(`./../assets/logo-cloud-pages.svg`)}
-              alt="Cloud.gov Pages Logo"
-            />
-            <ul
-              class="usa-list font-body-md line-height-body-4 text-left padding-y-3 border-y border-y-width-2px border-base-lighter">
-              {pages.pricing.features.map((feature) => <li class="padding-y-05">{feature}</li>)}
-            </ul>
-            <div class="text-center line-height-sans-1 margin-y-1 text-base-darker">
-              <span class="display-inline-block font-sans-lg">$</span>
-              <span class="font-sans-3xl text-bold text-accent-cool">{pages.pricing.price}</span>
-              <span class="display-inline-block font-sans-lg">{pages.pricing.unit}</span>
-            </div>
+          <Image
+            class="height-10 width-auto margin-x-auto margin-y-2 display-block"
+            src={import(`./../assets/logo-cloud-pages.svg`)}
+            alt="Cloud.gov Pages Logo"
+          />
+          <ul
+            class="usa-list font-body-md line-height-body-4 text-left padding-y-3 border-y border-y-width-2px border-base-lighter">
+            {pages.pricing.features.map((feature) => <li class="padding-y-05">{feature}</li>)}
+          </ul>
+          <div class="text-center line-height-sans-1 margin-y-1 text-base-darker">
+            <span class="display-inline-block font-sans-lg">$</span>
+            <span class="font-sans-3xl text-bold text-accent-cool">{pages.pricing.price}</span>
+            <span class="display-inline-block font-sans-lg">{pages.pricing.unit}</span>
           </div>
         </div>
       </div>

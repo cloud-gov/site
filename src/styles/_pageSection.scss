@@ -180,6 +180,7 @@
   .section__text,
   .section__media {
     grid-column: 1 / -1;
+    order: 1;
   }
 
   .section__text {
@@ -206,14 +207,21 @@
     grid-column: 1 / -1;
     text-align: center;
     padding: 1rem 0 0;
+    order: 0;
+    &--pricing {
+      order: 1;
+    }
     @media (min-width: 1024px) {
+      grid-row: 1;
+      grid-column: 7 / span 6;
+      order: 1;
       &--pricing {
+        order: 1;
         padding: 0;
         grid-row: 1;
         grid-column: 8 / span 5;
       }
-      grid-row: 1;
-      grid-column: 7 / span 6;
+
     }
     .border {
       border-color: var(--section-border, #fff);
