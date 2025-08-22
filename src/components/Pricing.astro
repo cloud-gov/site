@@ -211,25 +211,27 @@ function yearlyFromMonthly(num = 0) {
   <script type="module">
     const dialog = document.getElementById("estimator");
     const closeLink = document.getElementById("close-estimator");
+    const openLink = document.querySelectorAll("a[href='#estimator']")[0];
 
-    function openDialogFromHash() {
-      if (window.location.hash === "#estimator" && !dialog.open) {
-        dialog.showModal();
-      }
+    function openDialog() {
+      if (!dialog.open) dialog.showModal();
+      history.pushState("", document.title, window.location.pathname + "#estimator"); // add estimator
     }
+
     function closeDialog() {
-      dialog.close();
+      if (dialog.open) dialog.close();
       history.pushState("", document.title, window.location.pathname + window.location.search); // remove #estimator
     }
 
     // Open on page load
-    openDialogFromHash();
+    if (window.location.hash === "#estimator") {
+      openDialog();
+    }
 
-    // Open on hash change (e.g. clicking a link)
-    // window.addEventListener("hashchange", (e) => {
-    //   e.preventDefault(); // no scroll
-    //   openDialogFromHash();
-    // });
+    openLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      openDialog();
+    });
 
     closeLink.addEventListener("click", (e) => {
       e.preventDefault();
@@ -238,6 +240,10 @@ function yearlyFromMonthly(num = 0) {
 
     dialog.addEventListener("click", (e) => {
       if (e.target === dialog) closeDialog();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeDialog();
     });
   </script>
 </section>

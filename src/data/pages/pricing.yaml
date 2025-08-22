@@ -42,7 +42,7 @@ pricingContent:
 
     link:
       label: "Estimate your credit usage"
-      url: "./pricing#estimator"
+      url: "#estimator"
     tiers:
       - name: "Sandbox"
         credits: 8
