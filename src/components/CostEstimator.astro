@@ -7,7 +7,7 @@ import creditsData from "../data/credits.json";
 
   <div id="estimator-rows" class="bg-primary-lightest border-primary-light border"></div>
 
-  <button type="button" class="usa-button usa-button--outline margin-right-0" id="add-row">+ Add service</button>
+  <button type="button" class="usa-button usa-button--outline margin-right-0" id="add-row">+ Add resource</button>
 
   <p class="total">
     Estimated credits: <span id="credit-total"></span>
@@ -16,9 +16,9 @@ import creditsData from "../data/credits.json";
   <template id="row-template">
     <div class="estimator-row border-primary-light border-top-1px">
       <div class="service-container">
-        <label class="usa-label text-bold" for="service-select">Service type</label>
+        <label class="usa-label text-bold" for="service-select">Resources</label>
         <select class="usa-select service-select" id="service-select">
-          <option disabled selected>— Choose a service —</option>
+          <option disabled selected>— Choose from —</option>
         </select>
       </div>
 
@@ -29,6 +29,11 @@ import creditsData from "../data/credits.json";
         </select>
       </div>
 
+      <div class="multiplier-container" hidden>
+        <label class="usa-label text-bold" for="multiplier-input">Quantity</label>
+        <input type="number" placeholder="Quantity" class="usa-input multiplier-input" id="multiplier-input" min="1" />
+      </div>
+
       <div class="metered-container" hidden>
         <label class="usa-label text-bold" for="metered-input"
           ><span class="metered-unit">unit</span>s <span class="metered-type"></span> per month</label
@@ -36,19 +41,8 @@ import creditsData from "../data/credits.json";
         <input type="number" placeholder="units per month" class="usa-input metered-input" id="metered-input" min="1" />
       </div>
 
-      <div class="multiplier-container" hidden>
-        <label class="usa-label text-bold" for="multiplier-input"># of Instances</label>
-        <input
-          type="number"
-          placeholder="# of Instances"
-          class="usa-input multiplier-input"
-          id="multiplier-input"
-          min="1"
-        />
-      </div>
-
       <div class="free-container" hidden>
-        <span>This service is complementary — use at no charge.</span>
+        <span>This resource is complementary — use at no charge.</span>
       </div>
 
       <div class="subtotal-container text-right">

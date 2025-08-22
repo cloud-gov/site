@@ -226,10 +226,10 @@ function yearlyFromMonthly(num = 0) {
     openDialogFromHash();
 
     // Open on hash change (e.g. clicking a link)
-    window.addEventListener("hashchange", (e) => {
-      e.preventDefault(); // no scroll
-      openDialogFromHash();
-    });
+    // window.addEventListener("hashchange", (e) => {
+    //   e.preventDefault(); // no scroll
+    //   openDialogFromHash();
+    // });
 
     closeLink.addEventListener("click", (e) => {
       e.preventDefault();

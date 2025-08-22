@@ -259,7 +259,7 @@
       "name": "AWS RDS storage",
       "metered": {
         "type": "reserved",
-        "unit": "GB/month",
+        "unit": "GB",
         "unitsPerCredit": 100,
         "credits": 1
       }
@@ -328,7 +328,7 @@
       "name": "AWS OpenSearch storage",
       "metered": {
         "type": "reserved",
-        "unit": "GB/month",
+        "unit": "GB",
         "unitsPerCredit": 100,
         "credits": 1
       }
@@ -337,7 +337,7 @@
       "name": "AWS S3 storage",
       "metered": {
         "type": "used",
-        "unit": "GB/month",
+        "unit": "GB",
         "unitsPerCredit": 400,
         "credits": 1
       }
@@ -361,7 +361,7 @@
       }
     },
     {
-      "name": "App memory cap",
+      "name": "Containerized apps",
       "multiplier": true,
       "metered": {
         "type": "reserved",
