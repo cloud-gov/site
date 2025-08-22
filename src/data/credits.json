@@ -259,7 +259,7 @@
       "name": "AWS RDS storage",
       "metered": {
         "type": "reserved",
-        "unit": "GB",
+        "unit": "GBs",
         "unitsPerCredit": 100,
         "credits": 1
       }
@@ -328,7 +328,7 @@
       "name": "AWS OpenSearch storage",
       "metered": {
         "type": "reserved",
-        "unit": "GB",
+        "unit": "GBs",
         "unitsPerCredit": 100,
         "credits": 1
       }
@@ -337,7 +337,7 @@
       "name": "AWS S3 storage",
       "metered": {
         "type": "used",
-        "unit": "GB",
+        "unit": "GBs",
         "unitsPerCredit": 400,
         "credits": 1
       }
@@ -346,7 +346,7 @@
       "name": "AWS SES (Emails)",
       "metered": {
         "type": "used",
-        "unit": "Send",
+        "unit": "Sends",
         "unitsPerCredit": 150000,
         "credits": 1
       }
@@ -355,7 +355,7 @@
       "name": "AWS SES (Attachments)",
       "metered": {
         "type": "used",
-        "unit": "GB",
+        "unit": "GBs",
         "unitsPerCredit": 120,
         "credits": 1
       }
@@ -365,7 +365,7 @@
       "multiplier": true,
       "metered": {
         "type": "reserved",
-        "unit": "GB",
+        "unit": "GBs of memory",
         "unitsPerCredit": 1,
         "credits": 3
       }

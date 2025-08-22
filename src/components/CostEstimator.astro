@@ -5,7 +5,19 @@ import creditsData from "../data/credits.json";
 <>
   <h2 class="margin-top-0">Cloud.gov Credit Estimator</h2>
 
-  <div id="estimator-rows" class="bg-primary-lightest border-primary-light border"></div>
+  <div id="estimator-rows" class="bg-primary-lightest border-primary-light border" role="grid">
+    <div class="estimator-row">
+      <div class="service-container tablet:width-card-lg">
+        <span class="usa-label text-bold" role="columnheader">Resource</span>
+      </div>
+      <div class="multiplier-container">
+        <span class="usa-label text-bold" role="columnheader">Plan type or size</span>
+      </div>
+      <div class="service-container tablet:text-right">
+        <span class="usa-label text-bold" role="columnheader">Credits per month</span>
+      </div>
+    </div>
+  </div>
 
   <button type="button" class="usa-button usa-button--outline margin-right-0" id="add-row">+ Add resource</button>
 
@@ -14,42 +26,43 @@ import creditsData from "../data/credits.json";
   </p>
 
   <template id="row-template">
-    <div class="estimator-row border-primary-light border-top-1px">
-      <div class="service-container">
-        <label class="usa-label text-bold" for="service-select">Resources</label>
+    <div class="estimator-row border-primary-light border-top-1px" role="row">
+      <div class="service-container" role="gridcell">
+        <label class="usa-label text-bold hide-on-desktop" for="service-select">Resource</label>
         <select class="usa-select service-select" id="service-select">
           <option disabled selected>— Choose from —</option>
         </select>
       </div>
 
-      <div class="plan-container" hidden>
-        <label class="usa-label text-bold" for="plan-select">Plan size</label>
+      <div class="plan-container" role="gridcell" hidden>
+        <label class="usa-label text-bold hide-on-desktop" for="plan-select" hidden>Plan size</label>
         <select class="usa-select plan-select" id="plan-select">
           <option disabled selected>— Choose a plan size —</option>
         </select>
       </div>
 
-      <div class="multiplier-container" hidden>
-        <label class="usa-label text-bold" for="multiplier-input">Quantity</label>
-        <input type="number" placeholder="Quantity" class="usa-input multiplier-input" id="multiplier-input" min="1" />
+      <div class="multiplier-container" role="gridcell" hidden>
+        <input type="number" value="1" class="usa-input multiplier-input" id="multiplier-input" min="1" />
+        <label class="usa-label text-bold" for="multiplier-input" hidden>Quantity</label>
       </div>
 
-      <div class="metered-container" hidden>
-        <label class="usa-label text-bold" for="metered-input"
-          ><span class="metered-unit">unit</span>s <span class="metered-type"></span> per month</label
-        >
-        <input type="number" placeholder="units per month" class="usa-input metered-input" id="metered-input" min="1" />
+      <div class="metered-container" role="gridcell" hidden>
+        <input type="number" value="1" class="usa-input metered-input" id="metered-input" min="1" />
+        <label class="usa-label text-bold" for="metered-input" hidden>
+          <span class="metered-unit margin-right-05">units</span>
+          <span class="metered-type"></span>
+        </label>
       </div>
 
-      <div class="free-container" hidden>
+      <div class="free-container" role="gridcell" hidden>
         <span>This resource is complementary — use at no charge.</span>
       </div>
 
-      <div class="subtotal-container text-right">
-        <label class="usa-label text-bold">Credits/mo</label>
+      <div class="subtotal-container text-right" role="gridcell">
+        <label class="usa-label text-bold hide-on-desktop">Credits/mo</label>
         <span class="credit-output font-sans-md">0</span>
       </div>
-      <div class="remove-container">
+      <div class="remove-container" role="gridcell">
         <button type="button" title="Remove" class="usa-button--unstyled remove-btn" aria-label="Remove row">
           <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
             <use href={`${Astro.site}/assets/uswds/img/sprite.svg#delete`}></use>
@@ -115,7 +128,6 @@ import creditsData from "../data/credits.json";
         selected.plans.forEach((p, i) => {
           const opt = document.createElement("option");
           opt.value = i;
-          const creditLabel = `${p.credits} credit${p.credits === 1 ? "" : "s"}`;
           let optContent = p.plan;
           if (p.instanceClass !== undefined) {
             optContent += ` (${p.instanceClass})`;
@@ -138,7 +150,7 @@ import creditsData from "../data/credits.json";
         meteredContainer.hidden = false;
         meteredUnit.innerText = selected.metered.unit;
         meteredType.innerText = selected.metered.type;
-        meteredInput.placeholder = `${selected.metered.unit}s ${selected.metered.type} per month`;
+        meteredInput.placeholder = selected.metered.unit;
 
         if (selected?.multiplier) {
           multiplierContainer.hidden = false;
@@ -184,7 +196,7 @@ import creditsData from "../data/credits.json";
   createRow();
 </script>
 
-<style>
+<style lang="scss">
   .total {
     margin-top: 1rem;
     font-weight: bold;
@@ -208,16 +220,19 @@ import creditsData from "../data/credits.json";
     align-items: end;
     gap: 1rem;
   }
-  .estimator-row label.usa-label {
+  .estimator-row .usa-label[role="columnheader"] {
     margin-top: 0;
+    font-size: 1.2rem;
   }
 
   .estimator-row:first-of-type {
     border-width: 0;
   }
-  .estimator-row:not(:first-of-type) label.usa-label {
-    display: none;
-  }
+  /* @media (min-width: 800px) {
+    .estimator-row:not(:first-of-type) label.usa-label {
+      display: none;
+    }
+  } */
   .plan-container,
   .metered-container,
   .multiplier-container,
@@ -226,9 +241,29 @@ import creditsData from "../data/credits.json";
     min-height: 2.5em;
     align-content: center;
   }
+  .service-container,
+  .subtotal-container {
+    min-height: 2.5em;
+    align-content: center;
+  }
+  .metered-container:not([hidden]),
+  .multiplier-container:not([hidden]) {
+    display: flex;
+    flex-flow: row;
+    flex: auto;
+    gap: 1rem;
+    align-items: center;
+    input,
+    label {
+      margin-top: 0;
+    }
+    input[type="number"] {
+      width: 8ch;
+    }
+  }
 
   .subtotal-container {
-    width: 5rem;
+    width: 5ch;
     margin-left: auto;
   }
   .credit-output {
@@ -236,7 +271,7 @@ import creditsData from "../data/credits.json";
     line-height: 3rem;
   }
   .remove-container {
-    width: 4.5rem;
+    width: 2rem;
     height: 2.5rem;
     text-align: right;
     align-content: center;
@@ -244,7 +279,13 @@ import creditsData from "../data/credits.json";
   .remove-btn {
     cursor: pointer;
   }
-
+  @media (min-width: 800px) {
+    .hide-on-desktop {
+      position: absolute;
+      left: -999em;
+      right: auto;
+    }
+  }
   @media (max-width: 799px) {
     .estimator-row {
       flex-direction: row;
@@ -264,7 +305,6 @@ import creditsData from "../data/credits.json";
       width: 100%;
       flex: none;
     }
-
     .credit-output {
       line-height: inherit;
     }
