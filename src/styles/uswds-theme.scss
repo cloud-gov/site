@@ -20,6 +20,29 @@ ul li, ol li {
   -webkit-font-smoothing: antialiased;
 }
 
+@media (max-width: 800px) {
+  .font-sans-xl, 
+  .font-body-xl {
+    font-size: 1.6rem;
+  }
+  .font-sans-lg, 
+  .font-body-lg {
+    font-size: 1.2rem;
+  }
+  .font-sans-md, 
+  .font-body-md {
+    font-size: 1.15rem;
+  }
+  .font-sans-sm, 
+  .font-body-sm {
+    font-size: 1.1rem;
+  }
+  .font-sans-xs, 
+  .font-body-xs {
+    font-size: 1.05rem;
+  }
+}
+
 .usa-button:not(input) {
   padding: units(2) units(3);
 }
