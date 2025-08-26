@@ -7,6 +7,7 @@ import Tiles from "../components/Tiles.astro";
 import CTA from "../components/CTA.astro";
 import Subscribe from "../components/Subscribe.astro";
 import MediaSection from "../components/MediaSection.astro";
+import PageSection from "../components/PageSection.astro";
 
 import content from "../data/pages/workshop-original.yaml";
 import sitewide from "../data/sitewide.yaml";
@@ -28,6 +29,7 @@ const otherOfferings = {
   <!-- <MediaSection {...content.AtoMedia} /> -->
   <CTA {...content.aBetterWay} />
   <Topics {...content.sharedFrustrations} />
+  <PageSection {...content.simpleButExtensible} />
   <Tiles {...content.powerhouseTools} />
   <Tiles {...content.howItsBuilt} />
   <Topics {...ourApproach} />

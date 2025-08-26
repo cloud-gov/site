@@ -50,10 +50,27 @@ sharedFrustrations:
     - heading: Agile collaboration tools
       text: Highly configurable boards, issues, plans, and roadmaps to accommodate different organization sizes and team styles.
 
+simpleButExtensible:
+  color: base
+  heading: Workshop implementation is simple, but extensible enough to work across a wide range of project shapes and Government scenarios. It’s expressly designed to make sense to the people who make digital services happen, from engineering to program management and administration. 
+  content: | 
+    ### For practitioners (users)
+    Simple access to the tools you need with a "batteries included" feel  - You understand your own needs and want to be able to map out what meeting those needs will cost. You never want to be blocked on delivery by contracts and arbitrary constraints, and you don't want to have to constantly argue for more tools/features that you need.
+    ### For agency leaders
+    Simple and predictable costs scaled to team size - You want to understand the cost and not have to cast saving throws during the budget year. You need to be able to budget one or two years out, and you need to quickly map out the costs of major changes to team structures/sizes. You do not want to feel nickeled and dimed.
+    ### For contract and financial teams
+    Simple and predictable IAAs - Credits already accomplish most of this, but wherever possible, adding/changing usage of Workshop services should not cause more paperwork for you.
+    ### For existing Cloud.gov customers
+    Simple integration with what already works - Workshop plays well with cloud.gov Pages and Apps, and seamlessly blends with your existing program workflows.
+
+  outro: |
+    [Get in touch with us](contact) to schedule a demo that fits your needs.
+
 powerhouseTools:
   heading: Powerhouse tools at an optimal value 
   intro: |
     Assembling a similar toolset can be cost-prohibitive and complicated. But since Workshop is part of the Cloud.gov suite of products, purchasing and billing is straightforward and transparent. 
+  color: white
   items:
     - heading: Good structure
       text: Free namespaces allow agency partners to use less complicated permission structures, follow the principle of least privilege, and lay out their Cloud.gov Workshop spaces to meet program operational and security needs. This supports separation of duties, simplified permissions, and blast radius control. It also sidesteps the weaker structural choices that are sometimes necessitated when PaaS “organizations” (logical namespaces) are charged by structure. 
