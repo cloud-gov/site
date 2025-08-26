@@ -37,6 +37,7 @@ kickTires:
 
 
 sandboxLimitations:
+  id: "sandbox-limitations"
   heading: "Free sandbox limitations"
   intro: "Your complimentary Cloud.gov sandbox provides you with enough space to prototype your ideas, with clear pathways when your team is ready to scale."
   color: "white"
