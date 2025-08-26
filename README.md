@@ -17,11 +17,9 @@ View the website at <http://localhost:4321>
 Please review the [Astro developer documentation](https://docs.astro.build/en/getting-started/) if you're going to make code changes.
 
 ### Env variables & baseurl
-Because Pages preview links deploy to subdirectory paths and not root-level domains, it's important to make sure there's a `BASEURL` environment variable provided for production builds. To build absolute asset paths correctly (like the sitemap and canonical URLs), you should also provide the site domain, including protocol (`"https://cloud.gov/"`).
+Because Pages preview links deploy to subdirectory paths and not root-level domains, it's important to make sure there's a `FEDERALIST_URL` environment variable provided for production builds other than the final live domain. To build absolute asset paths correctly (like the sitemap and canonical URLs), the build process must provide the entire domain, including protocol (`"https://federalist-12345.sites.pages.cloud.gov/"`) and any containing directories. In production, the build process automatically prefixes relative urls automatically build for federalist previews of any branch other than `main`, using the ENV variables provided by Pages. See https://docs.cloud.gov/pages/developers/env-vars-on-pages-builds
 
-See https://docs.cloud.gov/pages/developers/env-vars-on-pages-builds
-
-In order to keep links easy whether we're building at the root level or within a folder, this layout makes use of the rarely-seen `<base>` [element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/base) to prefix all non-absolute links. This means that page links which visit `[this website]/foo` are defined without the first slash (`link: 'foo'`) in YAML and output without the first slash in HTML (`<a href="foo"`). 
+In order to keep links easy whether we're building the site at the root level or within a folder, this layout makes use of the rarely-seen `<base>` [element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/base) to prefix all non-absolute links. This means that page links which direct to `[this website]/foo` are defined without the first slash (`link: 'foo'`) in YAML and output without the first slash in HTML (`<a href="foo"`). 
 
 ## Editing Content
 
