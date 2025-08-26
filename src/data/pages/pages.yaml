@@ -52,7 +52,7 @@ moreWithLess:
 
   checks: true
   outro: |
-    Managing all parts of a public-facing site is often buried under ‘other duties as assigned,’ but it’s one of the most visible responsibilities an agency has. It shouldn’t require **enterprise-scale effort from a two-person team**.
+    Managing all parts of a public-facing site is often buried under ‘other duties as assigned’, but it’s one of the most visible responsibilities an agency has. It shouldn’t require **enterprise-scale effort from a two-person team**.
 
 whatYouGet:
   heading: "What you get on Cloud.gov Pages"

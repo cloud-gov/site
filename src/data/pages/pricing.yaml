@@ -122,7 +122,8 @@ pricingContent:
       price: "35,000"
       unit: "/ year"
       features:
-        - "USWDS starter kits in JavaScript and Ruby with DAP and Search.gov"
+        - "USWDS starter kits with DAP and Search.gov"
+        - "Support for static, NodeJS, Hugo, and Ruby runtimes"
         - "Automated vulnerability and accessibility ConMon scans"
         - "Highly scalable content delivery network (CDN)"
         - "Automatic HTTPS certificates and renewals"

@@ -101,6 +101,15 @@ function normalizePath(path: string): string {
               </li>
             ))
           }
+          {
+            buttonLinks.map((link) => (
+            <li class="usa-nav__secondary-item margin-bottom-0 desktop:display-none">
+                <a href={link.url} class="usa-nav-link">
+                  <span>{link.label}</span>
+                </a>
+              </li>
+            ))
+          }
         </ul>
 
         <section aria-label="Search component">
