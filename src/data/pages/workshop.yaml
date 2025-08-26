@@ -121,7 +121,7 @@ features:
       text: "Run inside Cloud.gov or extend to other environments — whatever works for your workflow."
       icon: "build"
     - heading: "BYO CI/CD runners"
-      text: "Use custom or managed runners meet your agency's policy and performance needs."
+      text: "Use custom or managed runners that meet your agency's policy and performance needs."
       icon: "check_circle"
     - heading: "Easy migrations"
       text: "Mirror your current repos or migrate through supported pathways, without refactoring your entire stack."
