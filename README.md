@@ -5,23 +5,26 @@ This repo uses Astro to build a static site, ready to be hosted on [Cloud.gov Pa
 ## Local Development
 
 `npm i` to install packages (use the LTS version of NodeJS)
+
 `npm run dev` to copy USWDS assets and start a dev server
 
-View the website at [http://localhost:4321]
+View the website at <http://localhost:4321>
 
 `npm run build` to build all assets locally
+
 `npm run federalist` to approximate the build that happens on Pages.
 
 Please review the [Astro developer documentation](https://docs.astro.build/en/getting-started/) if you're going to make code changes.
 
 ### Env variables & baseurl
-Because Pages preview links deploy to subdirectory paths and not root-level domains, 
-it's important to make sure there's a `BASEURL` environment variable provided for production builds. To build absolute asset paths correctly (like the sitemap and canonical URLs), you should also provide the site domain, including protocol (`"https://cloud.gov/"`).
+Because Pages preview links deploy to subdirectory paths and not root-level domains, it's important to make sure there's a `BASEURL` environment variable provided for production builds. To build absolute asset paths correctly (like the sitemap and canonical URLs), you should also provide the site domain, including protocol (`"https://cloud.gov/"`).
+
 See https://docs.cloud.gov/pages/developers/env-vars-on-pages-builds
 
 In order to keep links easy whether we're building at the root level or within a folder, this layout makes use of the rarely-seen `<base>` [element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/base) to prefix all non-absolute links. This means that page links which visit `[this website]/foo` are defined without the first slash (`link: 'foo'`) in YAML and output without the first slash in HTML (`<a href="foo"`). 
 
 ## Editing Content
+
 The site's content is in YAML or JSON data so that it can be easily edited from the GitHub web interface if you're not running the site locally.
 
 In `/src/data/`, you'll see some data files and a folder titled `pages`. All of the page-specific content is in a `page/[name].yaml` file. Sitewide content is in `sitewide.yaml`. You can edit the link in the header and footer in `header.ts` or `footer.ts` 
@@ -33,6 +36,7 @@ The order of the page sections in the HTML is controlled elsewhere. If you need 
   <Tiles {...content.g2g} />
   <CTA {...sitewide.freeSandbox} />
 ```
+
 The content sections all accept:
   - a `heading` field
   - an `intro` field (parsed as markdown)
@@ -58,17 +62,23 @@ Some sections also use lists to show content in colums, lists, or cards. These a
     The Topics component will style this "button" as a text link.
 
 ### Adding new pages
+
 Add a new `src/pages/[page].astro` file and its corresponding `src/data/pages[page].yaml`. Make sure your new astro file points to the content at your new YAML file. Match your YAML keys to the objects you're passing into the components. 
 
 ### Changing URLs
+
 Rename the [page].astro filename to change the path. (Really, it's ok) This is not controlled by the page YAML file. **AND THEN:**
 
 ### Deleting pages / Redirects
+
 Please add redirects to `redirects.ts` in the format:
+
 ```'/old': '/new',```
+
 **whenever** you delete or rename a page url. (Images and other assets can 404).
 
 ### Adding images
+
 There are two places for images:
 `src/assets/` is home to the images that are dynamically accessed and inserted into the page HTML at build time. These are minified and hashed by Astro, and their actual paths on the website are not stable. You cannot safely link directly to these assets using `src` or `href`, or in Markdown.
 
