@@ -8,7 +8,7 @@ import CTA from "../components/CTA.astro";
 import Subscribe from "../components/Subscribe.astro";
 import MediaSection from "../components/MediaSection.astro";
 
-import content from "../data/pages/workshop.yaml";
+import content from "../data/pages/workshop-original.yaml";
 import sitewide from "../data/sitewide.yaml";
 
 const ourApproach = {
@@ -24,13 +24,12 @@ const otherOfferings = {
 
 <Layout title={content.title} description={content.description}>
   <Hero {...content.hero} />
-  <Topics {...content.stakes} />
+  <Topics {...content.moreWithLess} />
   <!-- <MediaSection {...content.AtoMedia} /> -->
-  <Topics {...content.solution} />
-  <Tiles {...content.pricing} />
-  <hr />
-  <Tiles {...content.features} />
-  <CTA {...content.cta} />
+  <CTA {...content.aBetterWay} />
+  <Topics {...content.sharedFrustrations} />
+  <Tiles {...content.powerhouseTools} />
+  <Tiles {...content.howItsBuilt} />
   <Topics {...ourApproach} />
   <Tiles {...otherOfferings} />
   <!-- <Tiles {...sitewide.supportTiles} /> -->
