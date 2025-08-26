@@ -79,7 +79,7 @@ function formatTileWrapper(tileItem: Item) {
                   class="logo-icon display-block height-8"
                   src={import(`./../assets/${item.icon}.svg`)}
                   alt={item.icon}
-                  width="48"
+                  height="64"
                 />
               ) : (
                 <span class="display-block">
@@ -137,6 +137,7 @@ function formatTileWrapper(tileItem: Item) {
       color: var(--section-card-text, #333);
       border: 1px solid var(--section-border, #fff);
       gap: 1.5rem;
+      align-items: center;
     }
     .color {
       color: var(--section-card-text, #333);
