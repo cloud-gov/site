@@ -13,11 +13,12 @@ export const redirects: Record<string, RedirectConfig> = {
   '/docs/pricing/free-limited-sandbox/': '/sign-up',
   '/docs/pricing/quotas/': '/pricing',
 
-  '/news/': 'https://docs.cloud.gov/knowledge-base',
-  '/updates.xml': 'https://docs.cloud.gov/knowledge-base',
+  '/news/': 'https://docs.cloud.gov/news',
+  '/updates.xml': 'https://docs.cloud.gov/release-notes/rss.xml',
 
-  '/docs/customer-stories/epa-airnow-gov/': '/',
-  '/docs/customer-stories/fec/': '/',
+  // will add these pages soon
+  '/docs/customer-stories/epa-airnow-gov/': '/customer-stories/epa-airnow-gov/',
+  '/docs/customer-stories/fec/': '/customer-stories/fec/',
 
   '/docs/overview/': 'https://docs.cloud.gov/',
   '/docs/overview/cloudgov-benefits/': '/',
