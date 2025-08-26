@@ -12,16 +12,25 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 
 console.log('BASEURL:', process.env.BASEURL);
-
 console.log('SITE_PREFIX:', process.env.SITE_PREFIX);
+console.log('FEDERALIST_URL:', process.env.FEDERALIST_URL);
+console.log('OWNER:', process.env.OWNER);
+console.log('REPOSITORY:', process.env.REPOSITORY);
+console.log('BRANCH:', process.env.BRANCH);
 
+// generate site url based on branch for production builds
+let siteUrl = process.env.BASEURL ? process.env.BASEURL : 'http://localhost:4321';
+if (process.env?.BRANCH === "main") {
+  siteUrl = "https://cloud.gov";
+} else if (process.env?.BRANCH) {
+  siteUrl = `${process.env.FEDERALIST_URL}/preview/${process.env.OWNER}/${process.env.REPOSITORY}/${process.env.BRANCH}/`
+}
+console.log("Final site URL", siteUrl)
 export default defineConfig({
   outDir: '_site',
   // where siteurl matches a custom domain
   // site: `https://${siteurl}`
-  site: process.env.BASEURL
-    ? `https://federalist-f689d682-d20c-4d0b-af7b-c1a42fcd49f5.sites.pages.cloud.gov${process.env.BASEURL}`
-    : 'http://localhost:4321',
+  site: siteUrl,
   base: process.env.BASEURL ? process.env.BASEURL + '/' : '/',
   redirects: redirects,
   integrations: [mdx(), sitemap()],
