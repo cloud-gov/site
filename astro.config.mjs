@@ -23,7 +23,7 @@ let siteUrl = process.env.BASEURL ? process.env.BASEURL : 'http://localhost:4321
 if (process.env?.BRANCH === "main") {
   siteUrl = "https://cloud.gov";
 } else if (process.env?.BRANCH) {
-  siteUrl = `${process.env.FEDERALIST_URL}/preview/${process.env.OWNER}/${process.env.REPOSITORY}/${process.env.BRANCH}/`
+  siteUrl = `${process.env.FEDERALIST_URL}/preview/${process.env.OWNER}/${process.env.REPOSITORY}/${process.env.BRANCH}`
 }
 console.log("Final site URL", siteUrl)
 export default defineConfig({
