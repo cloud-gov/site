@@ -16,7 +16,7 @@ If your application uses relational databases for storage, you can use the AWS R
 | `micro-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory   | 15.x\*                     |
 | `micro-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 1 GiB memory    | 15.x\*                     |
 | `micro-psql-replica`      | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 1 GiB memory    | 15.x\*                     |
-| `small-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memor    | 15.x\*                     |
+| `small-psql`                | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memory    | 15.x\*                     |
 | `small-psql-redundant`      | Multi-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 2 GiB memory    | 15.x\*                     |
 | `small-psql-replica`      | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 1 core, minimum 2 GiB memory    | 15.x\*                     |
 | `medium-psql`               | Single-AZ RDS instance of PostgreSQL, minimum 1 core, minimum 4 GiB memory   | 15.x\*                     |
@@ -31,37 +31,31 @@ If your application uses relational databases for storage, you can use the AWS R
 | `xlarge-gp-psql`            | Single-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory | 15.x\*                     |
 | `xlarge-gp-psql-redundant`  | Multi-AZ RDS instance of PostgreSQL, minimum 2 cores, minimum 16 GiB memory  | 15.x\*                     |
 | `xlarge-gp-psql-replica`  | Multi-AZ RDS instance of PostgreSQL with read replica, minimum 2 cores, minimum 16 GiB memory  | 15.x\*                     |
-| `small-mysql`               | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory        | 8.x.x\*                    |
-| `small-mysql-redundant`     | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory         | 8.x.x\*                    |
-| `small-mysql-replica`     | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 2 GiB memory         | 8.x.x\*                    |
-| `medium-mysql`              | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory       | 8.x.x\*                    |
-| `medium-mysql-redundant`    | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory        | 8.x.x\*                    |
-| `medium-mysql-replica`    | Multi-AZ RDS instance of MySQL with read replica, minimum 2 cores, minimum 4 GiB memory        | 8.x.x\*                    |
-| `medium-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory        | 8.x.x\*                    |
-| `medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
-| `medium-gp-mysql-replica` | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
-| `large-gp-mysql`            | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory        | 8.x.x\*                    |
-| `large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
-| `large-gp-mysql-replica`  | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 8 GiB memory         | 8.x.x\*                    |
-| `xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory      | 8.x.x\*                    |
-| `xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory       | 8.x.x\*                    |
-| `xlarge-gp-mysql-replica` | Multi-AZ RDS instance of MySQL with read replica, minimum 2 cores, minimum 16 GiB memory       | 8.x.x\*                    |
+| `small-mysql`               | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory        | 8.4.x\*                    |
+| `small-mysql-redundant`     | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 2 GiB memory         | 8.4.x\*                    |
+| `small-mysql-replica`     | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 2 GiB memory         | 8.4.x\*                    |
+| `medium-mysql`              | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory       | 8.4.x\*                    |
+| `medium-mysql-redundant`    | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 4 GiB memory        | 8.4.x\*                    |
+| `medium-mysql-replica`    | Multi-AZ RDS instance of MySQL with read replica, minimum 2 cores, minimum 4 GiB memory        | 8.4.x\*                    |
+| `medium-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory        | 8.4.x\*                    |
+| `medium-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory         | 8.4.x\*                    |
+| `medium-gp-mysql-replica` | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 8 GiB memory         | 8.4.x\*                    |
+| `large-gp-mysql`            | Single-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory        | 8.4.x\*                    |
+| `large-gp-mysql-redundant`  | Multi-AZ RDS instance of MySQL, minimum 1 core, minimum 8 GiB memory         | 8.4.x\*                    |
+| `large-gp-mysql-replica`  | Multi-AZ RDS instance of MySQL with read replica, minimum 1 core, minimum 8 GiB memory         | 8.4.x\*                    |
+| `xlarge-gp-mysql`           | Single-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory      | 8.4.x\*                    |
+| `xlarge-gp-mysql-redundant` | Multi-AZ RDS instance of MySQL, minimum 2 cores, minimum 16 GiB memory       | 8.4.x\*                    |
+| `xlarge-gp-mysql-replica` | Multi-AZ RDS instance of MySQL with read replica, minimum 2 cores, minimum 16 GiB memory       | 8.4.x\*                    |
 | `medium-oracle-se2`         | Single-AZ RDS instance of Oracle SE2, minimum 1 core, minimum 4 GiB memory   | AWS RDS Latest Default     |
 
 _\*Note: The actual database engine version used is the latest minor/patch version offered by AWS RDS for this major version_
 
 _Only the `micro-psql` and `small-mysql` plans are available in [sandbox spaces](/docs/pricing/free-limited-sandbox#sandbox-limitations)._
 
-You can always view an up-to-date version of this list directly in your command line as well with the following command (using `cf` CLI version 6):
+You can always view an up-to-date version of this list directly in your command line as well with the following command (using `cf` CLI version 7 or later):
 
 ```shell
 cf marketplace -s aws-rds
-```
-
-Or, the following command (using `cf` CLI version 7 or later):
-
-```shell
-cf marketplace -e aws-rds
 ```
 
 The dedicated plans listed above (marked "AWS RDS Latest") deploy the default version as advertised by AWS. If you need to determine the exact version of the RDS service deployed, see [this knowledge base article](/knowledge-base/2021-05-20-getting-rds-version-information/).
@@ -112,7 +106,7 @@ There are several optional parameters that you can specify when creating a new i
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
 | `storage`                 | Number of GB available to the database instance                                                                                                                                                                                          | 10                            |
 | `enable_functions`        | Boolean to enable functions, procedures, and triggers on MySQL databases                                                                                                                                                                 | false                         |
-| `version`                 | Specifies a supported major version in RDS (must be in quotes)                                                                                                                                                                           | PostgreSQL: `15`, MySQL `8.0` |
+| `version`                 | Specifies a supported major version in RDS (must be in quotes)                                                                                                                                                                           | PostgreSQL: `15`, MySQL `8.4` |
 | `backup_retention_period` | Specifies a number of days to retain daily snapshots.                                                                                                                                                                                    | 14                            |
 | `binary_log_format`       | Specifies the format for [MySQL binary logging](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQL.BinaryFormat.html). **Only supported for MySQL database plans**. Valid options: `ROW`, `STATEMENT`, `MIXED`. | ---                           |
 | `enable_pg_cron`          | Boolean to enable [`pg_cron` extension on PostgreSQL databases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL_pg_cron.html) (requires PostgreSQL 12.5 and above; see example below for details)                      | false                         |
@@ -120,13 +114,11 @@ There are several optional parameters that you can specify when creating a new i
 A couple of notes regarding the optional `version` parameter:
 
 - It is currently only supported for dedicated MySQL and PostgreSQL instances; if you specify it for any other type of instance it is ignored.
-- It only supports major version numbers (e.g. "8.0"); if you specify a minor/patch level version (e.g., "12.16" for PostgreSQL or "8.0.32" for MySQL), the command will fail.
+- It only supports major version numbers (e.g. "8.4"); if you specify a minor/patch level version (e.g., "15.1" for PostgreSQL or "8.4.5" for MySQL), the command will fail.
 - The version number must be provided in double quotes (`"`); this is because the value is treated as a string to account for different engine types and version schemes.
 
 These are the current supported major versions for PostgreSQL:
 
-- 12
-- 13
 - 14
 - 15
 
@@ -134,7 +126,7 @@ _\*Note: [**For PostgreSQL versions 15+ , using SSL is required when connecting 
 
 These are the current supported major versions for MySQL:
 
-- 8.0
+- 8.4
 
 The `backup_retention_period` can be no less than 14 days but extended up to 35 days.
 
@@ -178,13 +170,13 @@ cf create-service aws-rds \
 
 After running this command, you must [finish setting up pg_cron on your instance](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/PostgreSQL_pg_cron.html#PostgreSQL_pg_cron.enable). You can use [cf-service-connect](https://github.com/cloud-gov/cf-service-connect) to connect to your instance, or connect via an application. Note that you must target the `postgres` database. To do this via `cf-service-connect`, run `\c postgres` in the psql shell.
 
-To specify a major version of a new instance, e.g., PostgreSQL version 14 (please note the double quotes (`"`) around the version number; they are required):
+To specify a major version of a new instance, e.g., PostgreSQL version 15 (please note the double quotes (`"`) around the version number; they are required):
 
 ```shell
 cf create-service aws-rds \
     micro-psql \
     my-test-service \
-    -c '{"version": "14"}'
+    -c '{"version": "15"}'
 ```
 
 To extend the backup retention period for a database to 30 days:
@@ -202,7 +194,7 @@ You can combine multiple optional parameters as long as the JSON is well-formed:
 cf create-service aws-rds \
     small-mysql \
     my-test-service \
-    -c '{"version": "8.0", "storage": 35}'
+    -c '{"version": "8.4", "storage": 35}'
 ```
 
 ### Instance creation time
