@@ -28,8 +28,7 @@ const { heading, intro, buttons = [], color = "white", art, content } = Astro.pr
         {
           art?.startsWith("cloud-") && (
             <Image
-              class="product-logo"
-              class="height-9 width-auto margin-right-auto margin-bottom-3"
+              class="product-logo height-9 width-auto margin-right-auto margin-bottom-3"
               src={import(`./../assets/logo-${art}.svg`)}
               alt={heading}
             />
