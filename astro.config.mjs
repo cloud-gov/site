@@ -43,7 +43,8 @@ export default defineConfig({
       yaml(),
       copy({
         targets: [
-          { src: 'src/data/credits.json', dest: 'public/data' }
+          { src: 'src/data/credits.json', dest: 'public/data' },
+          { src: 'src/data/workshop.json', dest: 'public/data' }
         ],
         hook: 'buildStart'
       })

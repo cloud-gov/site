@@ -38,6 +38,20 @@ interface Apps {
   link?: Link;
   tiers: AppsTier[];
 }
+interface WorkshopTier {
+  name: string;
+  credits: number;
+  price: string;
+  rowspan: number;
+  for?: string;
+}
+interface Workshop {
+  subhead?: string;
+  heading?: string;
+  text?: string;
+  link?: Link;
+  tiers: WorkshopTier[];
+}
 
 interface Props {
   heading?: string;
@@ -45,11 +59,13 @@ interface Props {
   outro?: string;
   pages: Pages;
   apps: Apps;
+  workshop: Workshop;
   color?: string;
 }
 
-const { apps, pages, color = "white" } = Astro.props;
-let groupIndex = 0;
+const { apps, pages, workshop, color = "white" } = Astro.props;
+let appGroupIndex = 0;
+let workshopGroupIndex = 0;
 
 function formatNum(num = 0) {
   return new Intl.NumberFormat().format(num);
@@ -63,7 +79,13 @@ function yearlyFromMonthly(num = 0) {
 <dialog id="estimator">
   <div class="dialog-content">
     <a href="#" id="close-estimator" class="dialog-close" aria-label="Close dialog">×</a>
-    <CostEstimator />
+    <CostEstimator forSchema="credits" client:visible />
+  </div>
+</dialog>
+<dialog id="workshop-planner">
+  <div class="dialog-content">
+    <a href="#" id="close-workshop-planner" class="dialog-close" aria-label="Close dialog">×</a>
+    <CostEstimator forSchema="workshop" client:visible />
   </div>
 </dialog>
 <section class={`usa-section section section--${color}`}>
@@ -86,7 +108,7 @@ function yearlyFromMonthly(num = 0) {
       <div class="section__media section__media--pricing">
         <div class="border radius-lg bg-white height-full overflow-hidden text-left width-full maxw-tablet">
           <table
-            class="usa-table usa-table--borderless width-full font-sans-sm margin-0 overflow-hidden radius-lg pricing-table">
+            class="usa-table usa-table--borderless width-full font-sans-sm margin-0 overflow-hidden radius-lg pricing-table pricing-table--apps">
             <thead>
               <tr>
                 <th scope="col">Tier</th>
@@ -101,8 +123,8 @@ function yearlyFromMonthly(num = 0) {
             <tbody>
               {
                 apps.tiers.map((tier) => {
-                  if (tier.rowspan > 0) groupIndex += 1;
-                  const rowClass = `pricing-for--${groupIndex}`;
+                  if (tier.rowspan > 0) appGroupIndex += 1;
+                  const rowClass = `pricing-group--${appGroupIndex}`;
                   return (
                     <>
                       {tier.rowspan > 0 ? (
@@ -147,7 +169,7 @@ function yearlyFromMonthly(num = 0) {
         <Markdown content={pages.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
         {
           pages.link && (
-            <a class="usa-button usa-button--inverse" href={pages.link.url}>
+            <a class="usa-button usa-button--inverse usa-button--accent-cool" href={pages.link.url}>
               {pages.link.label}
             </a>
           )
@@ -172,6 +194,63 @@ function yearlyFromMonthly(num = 0) {
             <span class="font-sans-3xl text-bold text-accent-cool">{pages.pricing.price}</span>
             <span class="display-inline-block font-sans-lg">{pages.pricing.unit}</span>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="section__item section__item--pricing">
+      <div class="section__text top-divider top-divider--center-mobile">
+        <h3 class="font-body-sm text-uppercase text-ls-2 text-medium subhead">{workshop.subhead}</h3>
+        <h4 class="font-body-xl text-medium">{workshop.heading}</h4>
+
+        <Markdown content={workshop.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
+
+        {
+          workshop.link && (
+            <a class="usa-button usa-button--accent-warm usa-button--inverse" href={workshop.link.url}>
+              {workshop.link.label}
+            </a>
+          )
+        }
+      </div>
+      <div class="section__media section__media--pricing">
+        <div class="border radius-lg bg-white height-full overflow-hidden text-left width-full maxw-tablet padding-3">
+          <Image
+            class="height-10 width-auto margin-x-auto margin-top-1 margin-bottom-3 display-block"
+            src={import(`./../assets/logo-cloud-workshop.svg`)}
+            alt="Cloud.gov Workshop Logo"
+          />
+          <table
+            class="usa-table usa-table--borderless width-full font-sans-sm margin-y-2 margin-x-0 overflow-hidden pricing-table pricing-table--workshop border-y border-y-width-2px border-base-lighter">
+            <thead>
+              <tr class="usa-sr-only">
+                <th scope="col">Workshop Offering</th>
+                <th scope="col" class="text-right">Credits</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                workshop.tiers.map((tier, workshopGroupIndex) => {
+                  const rowClass = `pricing-group--${workshopGroupIndex}`;
+                  return (
+                    <>
+                      <tr class={rowClass}>
+                        <th scope="row">
+                          <h4 class="font-sans-md margin-bottom-05">{tier.name}</h4>
+                          <span class="font-sans-sm text-normal">{tier.for}</span>
+                        </th>
+
+                        <td class="text-right line-height-sans-3">
+                          <span class="font-sans-md text-bold text-no-wrap">{yearlyFromMonthly(tier.credits)}/yr</span>
+                          <br />
+                          <span class="font-sans-sm text-normal text-italic">~{formatNum(tier.credits)}/mo</span>
+                        </td>
+                      </tr>
+                    </>
+                  );
+                })
+              }
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -209,41 +288,72 @@ function yearlyFromMonthly(num = 0) {
     }
   </style>
   <script type="module">
-    const dialog = document.getElementById("estimator");
-    const closeLink = document.getElementById("close-estimator");
-    const openLink = document.querySelectorAll("a[href='#estimator']")[0];
+    const creditEstimator = document.getElementById("estimator");
+    const creditEstimatorCloseLink = document.getElementById("close-estimator");
+    const creditEstimatorOpenLink = document.querySelectorAll("a[href='#estimator']")[0];
 
-    function openDialog() {
-      if (!dialog.open) dialog.showModal();
-      history.pushState("", document.title, window.location.pathname + "#estimator"); // add estimator
+    const workshopPlanner = document.getElementById("workshop-planner");
+    const workshopPlannerCloseLink = document.getElementById("close-workshop-planner");
+    const workshopPlannerOpenLink = document.querySelectorAll("a[href='#workshop-planner']")[0];
+
+    function openCreditEstimator() {
+      if (!creditEstimator.open) creditEstimator.showModal();
+      history.pushState("", document.title, window.location.pathname + "#estimator");
+    }
+    function openWorkshopPlanner() {
+      if (!workshopPlanner.open) workshopPlanner.showModal();
+      history.pushState("", document.title, window.location.pathname + "#workshop-planner");
     }
 
-    function closeDialog() {
-      if (dialog.open) dialog.close();
-      history.pushState("", document.title, window.location.pathname + window.location.search); // remove #estimator
+    function closeCreditEstimator() {
+      if (creditEstimator.open) creditEstimator.close();
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+    function closeWorkshopPlanner() {
+      if (workshopPlanner.open) workshopPlanner.close();
+      history.pushState("", document.title, window.location.pathname + window.location.search);
     }
 
-    // Open on page load
     if (window.location.hash === "#estimator") {
-      openDialog();
+      openCreditEstimator();
+    }
+    if (window.location.hash === "#workshop-planner") {
+      openWorkshopPlanner();
     }
 
-    openLink.addEventListener("click", (e) => {
+    creditEstimatorOpenLink.addEventListener("click", (e) => {
       e.preventDefault();
-      openDialog();
+      openCreditEstimator();
     });
 
-    closeLink.addEventListener("click", (e) => {
+    creditEstimatorCloseLink.addEventListener("click", (e) => {
       e.preventDefault();
-      closeDialog();
+      closeCreditEstimator();
     });
 
-    dialog.addEventListener("click", (e) => {
-      if (e.target === dialog) closeDialog();
+    creditEstimator.addEventListener("click", (e) => {
+      if (e.target === creditEstimator) closeCreditEstimator();
+    });
+
+    workshopPlannerOpenLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      openWorkshopPlanner();
+    });
+
+    workshopPlannerCloseLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      closeWorkshopPlanner();
+    });
+
+    workshopPlanner.addEventListener("click", (e) => {
+      if (e.target === workshopPlanner) closeWorkshopPlanner();
     });
 
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") closeDialog();
+      if (event.key === "Escape") {
+        closeCreditEstimator();
+        closeWorkshopPlanner();
+      }
     });
   </script>
 </section>

@@ -41,7 +41,7 @@ pricingContent:
       Your credits unlock a wide range of cloud services, from pre-configured database and caching instances to dynamically metered resources like storage, memory, and SES, giving you granular control over your infrastructure and cost. 
 
     link:
-      label: "Estimate your credit usage"
+      label: "Estimate your credit needs"
       url: "#estimator"
     tiers:
       - name: "Sandbox"
@@ -129,6 +129,43 @@ pricingContent:
         - "Unlimited deploys and preview sites"
         - "Includes up to 5 production websites. Additional production domains are available in sets of 3 for $21,000/year."
         - "No charges for storage or bandwidth"
+  workshop:
+    subhead: "Cloud.gov Workshop pricing"
+    heading: "Powerhouse tools at warehouse pricing"
+    text: |
+
+      Use your Cloud.gov service credits to create the plan that works for you. Start with enough seats for your group (Standard or AI-assisted), which sets you up with your first namespace, a small 10-job runner, and 10GiB of storage per seat towards your total allocation. 
+      
+      Have more than one group? Add as many namespaces as you want, and scale them individually. When one of your groups needs capacity for more than 10 parallel jobs, you can increase that namespace's Runner Pool up to 80 jobs. 
+      
+      Additional storage is also available. **We don't charge per repository**, because your contract structure shouldn't dictate how you organize your code.
+
+    link:
+      label: "Plan your Workshop"
+      url: "#workshop-planner"
+    tiers:
+      - name: "Standard User"
+        credits: 5 #per month, 60 per year
+        for: "GitLab Dedicated for Government Ultimate and +10GiB storage"
+      - name: "AI-Assisted User"
+        credits: 7 #per month, 84 per year
+        for: "(Coming soon) Adds GitLab Duo and 10M inference tokens/month"
+      - name: "Small Runner Pool (Free)"
+        credits: 0 # Free
+        for: "Up to 10 parallel jobs"
+      - name: "Medium Runner Pool"
+        credits: 5 # monthly, 60 yearly
+        for: "Up to 20 parallel jobs"
+      - name: "Large Runner Pool"
+        credits: 10 # monthly, 120 yearly
+        for: "Up to 40 parallel jobs"
+      - name: "Extra Large Runner Pool"
+        credits: 20 # monthly, 240 yearly
+        for: "Up to 80 parallel jobs"
+      - name: "+10GiB of additional storage"
+        credits: 0.5 # monthly, 6 yearly
+        for: "Used for code, build artifacts, packages, and container images"
+
 
 stepsList:
   heading: "How an IAA with Cloud.gov works for you"

@@ -1,12 +1,19 @@
 ---
 import creditsData from "../data/credits.json";
+
+export interface Props {
+  forSchema: "credits" | "workshop";
+}
+const { forSchema = "credits", ...props } = Astro.props;
+
+const title = forSchema == "credits" ? "Cloud.gov Credit Estimator" : "Cloud.gov Workshop Planner";
 ---
 
 <>
-  <h2 class="margin-top-0">Cloud.gov Credit Estimator</h2>
+  <h2 class="margin-top-0">{title}</h2>
 
-  <div id="estimator-rows" class="bg-primary-lightest border-primary-light border" role="grid">
-    <div class="estimator-row">
+  <div data-for-schema=`${forSchema}` id=`${forSchema}-estimator` class="estimator-rows bg-primary-lightest border-primary-light border" role="grid">
+    <div class="estimator-row header-row">
       <div class="service-container tablet:width-card-lg">
         <span class="usa-label text-bold" role="columnheader">Resource</span>
       </div>
@@ -19,36 +26,36 @@ import creditsData from "../data/credits.json";
     </div>
   </div>
 
-  <button type="button" class="usa-button usa-button--outline margin-right-0" id="add-row">+ Add resource</button>
+  <button type="button" class="usa-button usa-button--outline margin-right-0" id=`${forSchema}-add-row`>+ Add resource</button>
 
   <p class="total">
-    Estimated credits: <span id="credit-total"></span>
+    Estimated credits: <span id=`${forSchema}-credit-total`></span>
   </p>
 
-  <template id="row-template">
+  <template id=`${forSchema}-row-template`>
     <div class="estimator-row border-primary-light border-top-1px" role="row">
-      <div class="service-container" role="gridcell">
-        <label class="usa-label text-bold hide-on-desktop" for="service-select">Resource</label>
-        <select class="usa-select service-select" id="service-select">
+      <div class="service-container tablet:width-card-lg" role="gridcell">
+        <label class="usa-label text-bold hide-on-desktop" for=`${forSchema}-service-select`>Resource</label>
+        <select class="usa-select service-select" id=`${forSchema}-service-select`>
           <option disabled selected>— Choose from —</option>
         </select>
       </div>
 
       <div class="plan-container" role="gridcell" hidden>
-        <label class="usa-label text-bold hide-on-desktop" for="plan-select" hidden>Plan size</label>
-        <select class="usa-select plan-select" id="plan-select">
+        <label class="usa-label text-bold hide-on-desktop" for=`${forSchema}-plan-select` hidden>Plan size</label>
+        <select class="usa-select plan-select" id=`${forSchema}-plan-select`>
           <option disabled selected>— Choose a plan size —</option>
         </select>
       </div>
 
       <div class="multiplier-container" role="gridcell" hidden>
-        <input type="number" value="1" class="usa-input multiplier-input" id="multiplier-input" min="1" />
-        <label class="usa-label text-bold" for="multiplier-input" hidden>Quantity</label>
+        <input type="number" value="1" class="usa-input multiplier-input" id=`${forSchema}-multiplier-input` min="1" />
+        <label class="usa-label text-bold" for=`${forSchema}-multiplier-input` hidden>Quantity</label>
       </div>
 
       <div class="metered-container" role="gridcell" hidden>
-        <input type="number" value="1" class="usa-input metered-input" id="metered-input" min="1" />
-        <label class="usa-label text-bold" for="metered-input" hidden>
+        <input type="number" value="1" class="usa-input metered-input" id=`${forSchema}-metered-input` min="1" />
+        <label class="usa-label text-bold" for=`${forSchema}-metered-input`  hidden>
           <span class="metered-unit margin-right-05">units</span>
           <span class="metered-type"></span>
         </label>
@@ -72,12 +79,16 @@ import creditsData from "../data/credits.json";
     </div>
   </template>
 </>
-<script type="module">
-  const data = await fetch("./data/credits.json").then((r) => r.json());
-  const estimatorRows = document.getElementById("estimator-rows");
-  const addRowBtn = document.getElementById("add-row");
-  const creditTotal = document.getElementById("credit-total");
-  const rowTemplate = document.getElementById("row-template");
+<script type="module" define:vars={{ forSchema }}>
+// scope because this script tag shows up for each separate calculator
+{
+  const thisEstimator = document.getElementById(`${forSchema}-estimator`);
+
+  const data = await fetch(`./data/${forSchema}.json`).then((r) => r.json());
+  const estimatorRows = document.getElementById(`${forSchema}-estimator`);
+  const addRowBtn = document.getElementById(`${forSchema}-add-row`);
+  const creditTotal = document.getElementById(`${forSchema}-credit-total`);
+  const rowTemplate = document.getElementById(`${forSchema}-row-template`);
 
   function formatNum(num = 0) {
     return new Intl.NumberFormat().format(num);
@@ -137,7 +148,12 @@ import creditsData from "../data/credits.json";
         });
 
         const updateCredits = () => {
-          credits = selected.plans[planSelect.value]?.credits || 0;
+          const multiplier = Math.abs(parseFloat(multiplierInput.value)) || 1;
+          credits = (selected.plans[planSelect.value]?.credits * multiplier) || 0;
+        
+          if (selected?.multiplier && selected.plans[planSelect.value]?.credits > 0) {
+            multiplierContainer.hidden = false;
+          }
           creditOutput.textContent = credits;
           row.dataset.credits = credits;
           updateTotal();
@@ -187,13 +203,14 @@ import creditsData from "../data/credits.json";
 
   function updateTotal() {
     const rows = [...estimatorRows.querySelectorAll(".estimator-row")];
-    const total = rows.reduce((sum, row) => sum + (parseInt(row.dataset.credits) || 0), 0);
+    const total = rows.reduce((sum, row) => sum + (parseFloat(row.dataset.credits) || 0), 0);
     creditTotal.textContent = `${formatNum(total)}/month or ${yearlyFromMonthly(total)}/year`;
   }
 
   addRowBtn.addEventListener("click", createRow);
 
   createRow();
+}
 </script>
 
 <style lang="scss">
@@ -203,7 +220,7 @@ import creditsData from "../data/credits.json";
     font-size: 1.8rem;
   }
 
-  #estimator-rows {
+  .estimator-rows {
     display: flex;
     flex-flow: column;
     width: 100%;
@@ -237,7 +254,7 @@ import creditsData from "../data/credits.json";
   .metered-container,
   .multiplier-container,
   .free-container {
-    flex: 1;
+    flex: 3;
     min-height: 2.5em;
     align-content: center;
   }
@@ -258,7 +275,7 @@ import creditsData from "../data/credits.json";
       margin-top: 0;
     }
     input[type="number"] {
-      width: 8ch;
+      width: 6ch;
     }
   }
 
@@ -293,6 +310,14 @@ import creditsData from "../data/credits.json";
       gap: 1rem;
       padding: 1rem 0;
       flex-wrap: wrap;
+      
+      label {
+        margin-top: 0;
+      }
+    }
+    .header-row {
+      gap: 0;
+      padding: 0;
     }
 
     .service-container,
