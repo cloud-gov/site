@@ -134,11 +134,11 @@ pricingContent:
     heading: "Powerhouse tools at warehouse pricing"
     text: |
 
-      Use your Cloud.gov service credits to create the plan that works for you. Start with enough seats for your group (Standard or AI-assisted), which sets you up with your first namespace, a small 10-job runner, and 10GiB of storage per seat towards your total allocation. 
+      Use your Cloud.gov service credits to create the plan that works for you. Start with enough seats for your first team and namespace, which comes with a small 10-job runner and 10GiB of storage per seat towards your total allocation. 
       
-      Have more than one group? Add as many namespaces as you want, and scale them individually. When one of your groups needs capacity for more than 10 parallel jobs, you can increase that namespace's Runner Pool up to 80 jobs. 
+      Have more than one team, or a more complex organization? Add as many namespaces as you want, structure them to your needs, and scale them individually. When one of your namespaces needs capacity for more than 10 parallel jobs, you can increase that namespace's Runner Pool up to 80 jobs. 
       
-      Additional storage is also available. **We don't charge per repository**, because your contract structure shouldn't dictate how you organize your code.
+      Additional storage is also available. **We don't charge per repository or namespace*, because your contract structure shouldn't dictate how you organize your code.
 
     link:
       label: "Plan your Workshop"
