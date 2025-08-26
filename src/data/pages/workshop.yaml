@@ -3,7 +3,7 @@ description: FedRAMP Moderate authorized Source Code Management, CI/CD, security
 
 hero:
   heading: "A fully stocked workshop for federal software teams"
-  intro: "Everything you need to create, test, and deploy government software — with compliance built-in, so you can focus on delivery."
+  intro: "Everything you need to create, test, and deploy government software — with compliance built in, so you can focus on delivery."
   art: "cloud-workshop"
   color: "accent-warm-lighter"
   buttons:
