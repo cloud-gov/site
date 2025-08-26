@@ -19,7 +19,7 @@ interface Pages {
   subhead?: string;
   heading?: string;
   text?: string;
-  link?: Link;
+  button?: Link;
   pricing: PagesPricing;
 }
 
@@ -35,7 +35,7 @@ interface Apps {
   subhead?: string;
   heading?: string;
   text?: string;
-  link?: Link;
+  button?: Link;
   tiers: AppsTier[];
 }
 interface WorkshopTier {
@@ -49,7 +49,7 @@ interface Workshop {
   subhead?: string;
   heading?: string;
   text?: string;
-  link?: Link;
+  button?: Link;
   tiers: WorkshopTier[];
 }
 
@@ -98,9 +98,9 @@ function yearlyFromMonthly(num = 0) {
         <Markdown content={apps.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
 
         {
-          apps.link && (
-            <a class="usa-button usa-button--inverse" href={apps.link.url}>
-              {apps.link.label}
+          apps.button && (
+            <a class="usa-button usa-button--inverse" href={apps.button.url}>
+              {apps.button.label}
             </a>
           )
         }
@@ -168,9 +168,9 @@ function yearlyFromMonthly(num = 0) {
 
         <Markdown content={pages.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
         {
-          pages.link && (
-            <a class="usa-button usa-button--inverse usa-button--accent-cool" href={pages.link.url}>
-              {pages.link.label}
+          pages.button && (
+            <a class="usa-button usa-button--inverse usa-button--accent-cool" href={pages.button.url}>
+              {pages.button.label}
             </a>
           )
         }
@@ -205,9 +205,9 @@ function yearlyFromMonthly(num = 0) {
         <Markdown content={workshop.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
 
         {
-          workshop.link && (
-            <a class="usa-button usa-button--accent-warm usa-button--inverse" href={workshop.link.url}>
-              {workshop.link.label}
+          workshop.button && (
+            <a class="usa-button usa-button--accent-warm usa-button--inverse" href={workshop.button.url}>
+              {workshop.button.label}
             </a>
           )
         }

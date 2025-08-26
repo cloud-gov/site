@@ -10,7 +10,7 @@ interface Item {
   icon?: string;
   heading?: string;
   text?: string;
-  link?: Link;
+  button?: Link; // call this button to stay consistent with the rest of the site
 }
 
 interface Props {
@@ -49,10 +49,10 @@ const { items = [], color = "white", id, ...props } = Astro.props;
               />
             )}
 
-            {item.link && (
+            {item.button && (
               <p class="font-body-xs line-height-body-3 margin-top-1 margin-bottom-0">
-                <a class="usa-link" href={item.link.url}>
-                  {item.link.label}
+                <a class="usa-link" href={item.button.url}>
+                  {item.button.label}
                   <svg class="usa-icon text-bottom width-2 height-205" aria-hidden="true" focusable="false" role="img">
                     <use href={`${Astro.site}/assets/uswds/img/sprite.svg#navigate_next`} />
                   </svg>

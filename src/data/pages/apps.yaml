@@ -22,13 +22,13 @@ moreWithLess:
   items:
     - heading: "Inherited security controls for easy ATOs"
       text: "Cloud.gov is FedRAMP Moderate Authorized, which means it complies with federal security requirements. When you build on Cloud.gov, you leverage our compliance practices and reduce the amount of work you need to do."
-      link:
+      button:
         label: "Our cybersecurity practices"
         url: "security"
       icon: "verified_user"
     - heading: "Acquire cloud services faster"
       text: "We partner with your team using a straightforward Interagency Agreement (IAA) with GSA. By selecting a flexible pricing tier, you can choose the cloud services that meet the needs of your agency’s digital initiatives."
-      link:
+      button:
         label: "Faster and easier cloud purchasing"
         url: "pricing"
       icon: "attach_money"

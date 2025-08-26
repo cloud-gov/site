@@ -62,13 +62,13 @@ AtoMedia:
     - heading: "Guided security support with our in-house experts"
       text: "We work directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessments (SIA)."
       mediaComponent: "Illustration-ATO"
-      link:
+      button:
         label: "Check us out on the FedRAMP marketplace"
         url: "https://marketplace.fedramp.gov/products/F1607067912"
     - heading: "We do more, so you do less"
       text: "Cloud.gov isn’t just _technically_ compliant—it’s built with the realities of federal security in mind. We’ve supported dozens of agencies through audits, ATOs, and reauthorizations, and we’ve shaped our platform and docs around what teams actually need to succeed."
       mediaComponent: "Illustration-Security"
-      link:
+      button:
         label: "Review our compliance docs on Connect.gov"
         url: "https://www.connect.gov/"
   color: "primary-dark"

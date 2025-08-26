@@ -138,14 +138,14 @@ AtoMedia:
     - heading: "Guided security support with our in-house experts"
       text: "The Cloud.gov Pages team directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessments (SIA)."
       mediaComponent: "Illustration-ATO-Pages"
-      link:
+      button:
         variant: "accent-cool"
         label: "Check us out on the FedRAMP marketplace"
         url: "https://marketplace.fedramp.gov/products/F1607067912"
     - heading: "You don't have to BYO ATO"
       text: "Cloud.gov Pages offers a simple Authority to Use (ATU) approach. After guiding dozens of government agencies through the compliance authorization process, our experts have streamlined each step of the process, from initial documentation to final approval."
       mediaComponent: "Illustration-Security-Pages"
-      link:
+      button:
         variant: "accent-cool"
         label: "Request the free Cloud.gov Pages ATU Kit"
         url: "https://docs.cloud.gov/pages/security-compliance/pages-atu-guide"
