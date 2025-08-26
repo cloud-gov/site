@@ -36,30 +36,61 @@ solution:
   items:
     - heading: Tools you already know and love
       text: Cloud.gov Workshop is powered by GitLab Dedicated for Government and hosted on the Cloud.gov PaaS.
-    - heading: Simple and efficient developer experience
-      text: Stay in the flow with one place to plan, code, scan, review, and ship your team's federal software.
+
+    # - heading: Simple and efficient developer experience
+    #   text: Stay in the flow with one place to plan, code, scan, review, and ship your team's federal software.
+
+    # - heading: Agile collaboration tools
+    #   text: Plan, track, and deliver the way your team works best with built-in boards, issues, and roadmaps.
+
+    - heading: "Plan to production, in one place"
+      text: "Plan work, review code, run pipelines, and manage artifacts without swithing tools — stay in flow from issue to deploy."
+
     - heading: Your fastest path to ATO
-      text: Inherit more than 300 NIST 800-53 Rev 5 controls to significantly shorten your authorization process.
-    - heading: Container registry and storage
-      text: "Publish, scan, and share containers and packages in one secure registry."
-      # supply chain hardening? SBOMs?
-    - heading: Developer-centered Compliance as Code
-      text: Catch issues early with compliance frameworks, opt-in policies, and CI/CD components that report directly to project dashboards.
-      # mention Section 508 compliance?
-    - heading: Scalable, consistent Infrastructure as Code
-      text: Automate the nuts and bolts of your infrastructure with repeatable template that document and enforce every change.
-    - heading: Agile collaboration tools
-      text: Plan, track, and deliver the way your team works best with built-in boards, issues, and roadmaps.
-    - heading: Structure without overhead
-      text: Organize your projects with namespaces that enforce separation of duties and least privilege access.
-      # Role based access control?
-    - heading: Automation included
-      text: Kick off projects with prebuilt CI/CD pipelines you can extend as your team grows.
-    - heading: Flexible storage
-      text: Expand or monitor storage on demand with built-in metering and reporting.
-    - heading: "Use the accounts you already manage"
-      text: "Use SSO to integrate your agency's identity provider with Cloud.gov via SAML or OAuth."
+      text: Running on Cloud.gov means you inherit more than 300 NIST 800-53 Rev 5 controls to significantly shorten your authorization process.
+
+    # supply chain hardening? SBOMs?
+    # - heading: Developer-centered Compliance as Code
+    #   text: Catch issues early with compliance frameworks, opt-in policies, and CI/CD components that report directly to project dashboards.
+
+    # - heading: Automation included
+    #   text: Kick off projects with prebuilt CI/CD pipelines you can extend as your team grows.
+
+    - heading: "Compliance that lives in your pipelines"
+      text: "Catch vulnerabilites, security or license risks, and accessibility issues early with automated scans and opt-in policies that report to clear dashboards."
+
+    # mention Section 508 compliance?
+    # - heading: Scalable, consistent Infrastructure as Code
+    #   text: Automate the nuts and bolts of your infrastructure with repeatable templates(?) that document and enforce every change.
+
+    - heading: "Scaleable Infrastructure as Code"
+      text: "Cloud.gov Workshop is auditable by design. Automate the nuts and bolts of your infrastructure so every change is documented, reviewed, and enforced by code."
+
+    # - heading: Container registry and storage
+    #   text: "Publish, scan, and share containers and packages in one secure registry."
+    
+    - heading: "Secure artifacts and storage"
+      text: "Publish, scan, and share containers and packages in one registry, surfacing supply chain risks before they ship. Meter and expand storage on demand as your projects grow."
+    
+    # - heading: "Storage that flexes"
+    #   text: "Meter, monitor, and expand storage as your projects grow."
+
+    #   # Role based access control?  
+    # - heading: "Use the accounts you already manage"
+    #   text: "Use SSO to integrate your agency's identity provider with Cloud.gov via SAML or OAuth."
+
+    # - heading: Structure without overhead
+    #   text: Organize your projects with namespaces that enforce separation of duties and least privilege access.
+
+    - heading: "Access that matches your organization"
+      text: "Sign in with your agency IDP (SSO), map project roles to user groups, and enforce separation of duties with the namespace structure that works for you." 
+
+
+
     # Logs and audit trails? Observability?
+
+
+
 
 pricing:
   heading: Powerhouse tools at warehouse pricing 
