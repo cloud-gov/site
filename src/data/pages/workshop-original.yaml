@@ -39,23 +39,16 @@ sharedFrustrations:
   items:
     - heading: State of the art DevSecOps without an RFP
       text: Get all this through an IAA – you can even use your existing IAA through the cloud.gov credit system.
-      icon: 
     - heading: An easier path to ATO
       text: Cloud.gov Workshop complies with federal security requirements right out of the box, and inherited controls reduce the time spent to get up and running.
-
-      icon: 
     - heading: The right stuff
       text: Secure software development tools, authorized at a FedRAMP Moderate impact level.
-      icon: 
     - heading: Developer-centered Compliance as Code
       text: Prevent costly mistakes with our compliance frameworks, opt-in policies, and CI/CD components that scan your projects for trouble and surface issues into dashboards.
-      icon: 
     - heading: Scalable, consistent Infrastructure as Code
       text: Automate the nuts and bolts of your infrastructure for faster deployments, clearer documentation, and greater cost savings.
-      icon: 
     - heading: Agile collaboration tools
       text: Highly configurable boards, issues, plans, and roadmaps to accommodate different organization sizes and team styles.
-      icon: 
 
 powerhouseTools:
   heading: Powerhouse tools at an optimal value 
@@ -64,14 +57,13 @@ powerhouseTools:
   items:
     - heading: Good structure
       text: Free namespaces allow agency partners to use less complicated permission structures, follow the principle of least privilege, and lay out their Cloud.gov Workshop spaces to meet program operational and security needs. This supports separation of duties, simplified permissions, and blast radius control. It also sidesteps the weaker structural choices that are sometimes necessitated when PaaS “organizations” (logical namespaces) are charged by structure. 
-
-      icon:
+      icon: "build"
     - heading: Leveraging automation
       text: CI/CD automation is a must for all teams, and including a small pool for free with each namespace supports the needs of most small teams/programs with no additional purchase. For larger teams or more complicated systems requiring many parallel CI/CD tasks, the additional charge for optional kinds of Cloud.gov Workshop Runner offerings can be justified in time savings.
-      icon:
+      icon: "build"
     - heading: Thoughtful storage
       text: Storage use tends to scale with the size of a team, so each Cloud.gov Workshop User includes an allocation of storage that’s added to the overall agency customer pool. Running out of space can wreak havoc on teams, stopping work or even causing outages, so hard quotas are not used. Metering and reporting will let customers to know if they’re nearing the limit of their storage pool size, offering a chance for clean up or to purchase additional space.
-      icon:
+      icon: "build"
   outro: |
      [Get in touch with us](mailto:workshop-inquiries@cloud.gov) to discuss Cloud.gov Workshop options that make sense for your team
 
@@ -83,22 +75,22 @@ howItsBuilt:
   items:
     - heading: "Singular solution"
       text: "Cloud.gov Workshop is the only actual moderate impact SCM and CI/CD system available for use in government."
-      icon: ""
+      icon: "build"
     - heading: "Security risk reduction"
       text: "Leverage our built-in security scanning components, compliance frameworks and patterns, and guardrails for safe development in government."
-      icon: ""
+      icon: "build"
     - heading: "Industry standard"
       text: "Do you already have a home in the cloud? No problem. Cloud.gov Workshop is powerful wherever you deploy it, inside OR outside the Cloud.gov boundary."
-      icon: ""
+      icon: "build"
     - heading: "Home court advantage"
       text: "Are your applications on Cloud.gov already? Enjoy the integrated tooling of a product suite that plays well together. Plus, you can leverage your existing IAA to deploy even faster."
-      icon: ""
+      icon: "build"
     - heading: "Use ours, or bring your own"
       text: "Got a super complicated security boundary and your own CI/CD runners? Bring them with you, they’ll fit right in."
-      icon: ""
+      icon: "build"
     - heading: "Moving made easy"
       text: "No matter which system you currently use, we offer multiple migration options – you can also mirror from your existing repositories."
-      icon: ""
+      icon: "build"
 
 
 

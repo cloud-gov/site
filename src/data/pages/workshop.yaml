@@ -40,31 +40,23 @@ solution:
       text: Stay in the flow with one place to plan, code, scan, review, and ship your team's federal software.
     - heading: Your fastest path to ATO
       text: Inherit more than 300 NIST 800-53 Rev 5 controls to significantly shorten your authorization process.
-      icon: 
     - heading: Container registry and storage
       text: "Publish, scan, and share containers and packages in one secure registry."
-      icon: 
       # supply chain hardening? SBOMs?
     - heading: Developer-centered Compliance as Code
       text: Catch issues early with compliance frameworks, opt-in policies, and CI/CD components that report directly to project dashboards.
       # mention Section 508 compliance?
-      icon: 
     - heading: Scalable, consistent Infrastructure as Code
       text: Automate the nuts and bolts of your infrastructure with repeatable template that document and enforce every change.
-      icon: 
     - heading: Agile collaboration tools
       text: Plan, track, and deliver the way your team works best with built-in boards, issues, and roadmaps.
-      icon: 
     - heading: Structure without overhead
       text: Organize your projects with namespaces that enforce separation of duties and least privilege access.
       # Role based access control?
-      icon:
     - heading: Automation included
       text: Kick off projects with prebuilt CI/CD pipelines you can extend as your team grows.
-      icon:
     - heading: Flexible storage
       text: Expand or monitor storage on demand with built-in metering and reporting.
-      icon:
     - heading: "Use the accounts you already manage"
       text: "Use SSO to integrate your agency's identity provider with Cloud.gov via SAML or OAuth."
     # Logs and audit trails? Observability?
@@ -77,13 +69,13 @@ pricing:
   items:
     - heading: "One predictable price"
       text: "Handle all of your DevSecOps tools through a straightforward Interagency Agreement (IAA) with GSA — or use your existing Cloud.gov service credits."
-      icon:
+      icon: "attach_money"
     - heading: "No surprise add-ons"
       text: "Get pipelines, repos, registries, and boards included up front, with no surprise fees to unlock features later."
-      icon:
+      icon: "shopping_basket"
     - heading: "Scale when you need to"
       text: "Add capacity as soon as your projects grow, instead of waiting for the next budget cycle."
-      icon:
+      icon: "zoom_out_map"
     # shared responsibility clear? you control app/identity/deployment, workshop provides the tools?
 
   outro: |
@@ -96,13 +88,13 @@ features:
   items:
     - heading: "Deploy your way"
       text: "Run inside Cloud.gov or extend to other environments — whatever works for your workflow."
-      icon: ""
+      icon: "build"
     - heading: "BYO CI/CD runners"
       text: "Use custom or managed runners meet your agency's policy and performance needs."
-      icon: ""
+      icon: "check_circle"
     - heading: "Easy migrations"
       text: "Mirror your current repos or migrate through supported pathways, without refactoring your entire stack."
-      icon: ""
+      icon: "content_copy"
   outro: Want technical details? See the [Cloud.gov Workshop Docs](https://docs.cloud.gov/workshop/overview) for more.
 
 cta:
