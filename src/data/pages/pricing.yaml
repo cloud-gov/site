@@ -148,9 +148,9 @@ pricingContent:
       - name: "Standard User"
         credits: 5 #per month, 60 per year
         for: "GitLab Dedicated for Government Ultimate and +10GiB storage"
-      - name: "AI-Assisted User"
-        credits: 7 #per month, 84 per year
-        for: "(Coming soon) Adds GitLab Duo and 10M inference tokens/month"
+      # - name: "AI-Assisted User"
+      #   credits: 7 #per month, 84 per year
+      #   for: "(Coming soon) Adds GitLab Duo and 10M inference tokens/month"
       - name: "Small CI/CD Pool (Free)"
         credits: 0 # Free
         for: "Up to 10 parallel jobs"
