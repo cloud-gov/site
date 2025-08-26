@@ -32,7 +32,7 @@ solution:
   outro: |
     Federal software engineers are most productive when they can focus on achieving the agency's mission, not chasing down compliance lists. 
 
-  color: workshop-dark
+  color: white
   items:
     - heading: Tools you already know and love
       text: Cloud.gov Workshop is powered by GitLab Dedicated for Government and hosted on the Cloud.gov PaaS.
@@ -94,7 +94,7 @@ solution:
 
 pricing:
   heading: Powerhouse tools at warehouse pricing 
-  color: white
+  color: "workshop-dark"
   intro: |
     Cloud.gov Workshop consolidates what agencies currently buy as half a dozen separate products into one FedRAMP authorized service. That means fewer vendors, lower total cost, and no extra procurement cycles for your team. 
   items:

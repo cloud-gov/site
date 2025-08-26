@@ -39,7 +39,6 @@
   --theme-color-accent-cool-lighter: #{color($theme-color-accent-cool-lighter)};
   --theme-color-accent-cool-light: #{color($theme-color-accent-cool-light)};
   --theme-color-accent-cool: #{color("accent-cool")};
-  --theme-color-accent-cool-alt: #{color("cyan-40v")};
   --theme-color-accent-cool-dark: #{color("accent-cool-dark")};
   --theme-color-accent-cool-darker: #{color($theme-color-accent-cool-darker)};
 
@@ -49,7 +48,7 @@
   --theme-color-accent-warm-lightest: #{color($theme-color-accent-warm-lightest)};
   --theme-color-accent-warm-lighter: #{color($theme-color-accent-warm-lighter)};
   --theme-color-accent-warm-light: #{color($theme-color-accent-warm-light)};
-  --theme-color-accent-warm: #{color($theme-color-primary)};
+  --theme-color-accent-warm: #{color("accent-warm")};
   --theme-color-accent-warm-dark: #{color($theme-color-accent-warm-dark)};
   --theme-color-accent-warm-darker: #{color($theme-color-accent-warm-darker)};
 

@@ -5,6 +5,7 @@
 @use "@uswds/uswds/packages/uswds-core" as *;
 // centralizes common page styles using css variables
 @use './pageSection';
+@use './pricingTables';
 
 h1, h2, h3, h4, h5, p, li {
   text-wrap: pretty;
@@ -48,9 +49,14 @@ ul li, ol li {
 }
 .usa-button {
   -webkit-font-smoothing: antialiased;
-  font-size: font-size($theme-button-font-family, "md");
+  // font-size: font-size($theme-button-font-family, "md"); // 17.92px
+  font-size: 1.13rem; // 18.02px
   font-weight: font-weight(500);
  
+  &.usa-button--accent-cool,
+  &.usa-button--accent-warm {
+    color: white; // for better contrast
+  }
   &.usa-button--outline {
     background-color: #fff;
     -webkit-font-smoothing: inherit;
@@ -195,20 +201,20 @@ hr {
 
 }
 
-$theme-footer-link-color: 'blue-warm-10v';
+$theme-footer-link-color: 'blue-warm-60v'; 
 $footer-context: "Footer";
-$theme-footer-background-color: "primary";
+$theme-footer-background-color: 'blue-warm-10v';
 
 @mixin footer-secondary-link {
   @include set-link-from-bg(
     $theme-footer-background-color,
-    $theme-footer-link-color,
+    $theme-footer-link-color, // #246cd2
     $context: $footer-context
   );
 }
 
 
-.usa-footer__secondary-section {
+.usa-footer__primary-section {
   @include set-text-and-bg(
     $theme-footer-background-color,
     $context: $footer-context
@@ -309,164 +315,4 @@ $theme-footer-background-color: "primary";
 
     }
   }
-}
-
-
-.pricing-table {
-  -webkit-font-smoothing:antialiased;
-  thead {
-    th {
-      padding-top: .75rem;
-      padding-bottom: .75rem;
-    }
-  }
-  &--apps {
-    thead th {
-      background-color: color("blue-warm-60v");
-      border-color: color("blue-warm-70v");
-      color: white;
-      border-bottom-width: 0;
-    }
-    th, td {
-      border-style: solid;
-      border-top-width: 0;
-      padding: .35rem .75rem;
-      &[rowspan] {
-        border-left-width: 1px;
-      }
-    }
-    .pricing-group {
-      &--1 {
-        td, th {      
-          color: color("base-dark");
-          background-color: white;
-          border-color: color("blue-warm-20v");
-        }
-      }
-      &--2 {
-        td, th {      
-          color: color("blue-warm-80v");
-          background-color: color("blue-warm-10v");
-          border-color: color("blue-warm-20v");
-        }
-      }
-      &--3 {
-        td, th {    
-          color: color("blue-warm-80v");
-          background-color: color("blue-warm-20v");
-          border-color: color("blue-warm-30v");
-        }
-      }
-      &--4 {
-        td, th {      
-          color: white;
-          background-color: color("blue-warm-50v");
-          border-color: color("blue-warm-40v");
-        }
-      }
-      &--5 {
-        td, th {      
-          color: white;
-          background-color: color("blue-warm-60v");
-          border-color: color("blue-warm-40v");
-        }
-      }
-    }
-  }
-  &--workshop {
-
-    th, td {
-      border-style: solid;
-      border-top-width: 0;
-      padding: .75rem 1rem;
-    }
-    .pricing-group {
-      &--0,
-      &--1 {
-        td, th {      
-          color: color("base-dark");
-          background-color: white;
-          border-color: color("base-lighter");
-          h4, .text-bold {
-            color: color($theme-color-accent-warm);
-          }
-        }
-      }
-      &--2 {
-        td, th {      
-          color: color("accent-warm-dark");
-          background-color: color("accent-warm-lighter");
-          border-color: color("orange-warm-20v");
-        }
-      }
-      &--3 {
-        td, th {    
-          color: color("accent-warm-dark");
-          background-color: color("accent-warm-light");
-          border-color: color("accent-warm-dark");
-        }
-      }
-      &--4 {
-        td, th {      
-          color: white;
-          background-color: color("accent-warm-dark");
-          border-color: color("orange-warm-40");
-        }
-      }
-      &--5 {
-        td, th {      
-          color: white;
-          background-color: color("accent-warm-darker");
-          border-color: color("orange-warm-60v");
-        }
-      }
-      &--6 {
-        td, th {      
-          color: color("base-dark");
-          background-color: color("base-lightest");
-          border-color: white;
-        }
-      }
-    }
-  }
-
-  
-  // show colspan on narrow widths, rowspan when there's room
-  // rowspan no, colspan yes
-  td[rowspan] {
-    display: none;
-  }
-  th[colspan] {
-    display: table-cell;
-    padding: .65rem .75rem;
-    font-weight: 400;
-    border-top-width: 4px;
-  }
-  // rowspan yes, colspan no
-  @media (min-width: 640px) and (max-width: 1023px) {
-    td[rowspan] {
-      display: table-cell;
-    }
-    th[colspan] {
-      display: none;
-    }
-  }
-  // rowspan no, colspan yes
-  @media (min-width: 1024px) and (max-width: 1199px) {
-    td[rowspan] {
-      display: none;
-    }
-    th[colspan] {
-      display: table-cell;
-    }
-  }
-    // rowspan yes, colspan no
-    @media (min-width: 1200px) {
-      td[rowspan] {
-        display: table-cell;
-      }
-      th[colspan] {
-        display: none;
-      }
-    }
 }
