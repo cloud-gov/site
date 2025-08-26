@@ -100,6 +100,25 @@
       color: #fff;
     }
   }
+  &.section--workshop,
+  &.section--workshop-light {
+    --section-bg: var(--theme-color-accent-warm-lightest);
+    --section-text: var(--theme-color-base-darker);
+    --section-accent: var(--theme-color-accent-cool);
+    --section-border: var(--theme-color-accent-warm-light);
+  }
+
+  &.section--workshop-dark {
+    -webkit-font-smoothing: antialiased;
+    --section-bg: var(--theme-color-accent-warm-dark);
+    --section-text: #fff;
+    --section-accent: var(--theme-color-accent-warm-light);
+    --section-border: var(--theme-color-accent-warm-darker);
+    .section__content a, 
+    .section__item a {
+      color: #fff;
+    }
+  }
 
   &__container {
     display: grid;

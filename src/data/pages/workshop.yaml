@@ -1,20 +1,108 @@
-title: Cloud.gov Workshop
-description: SEO description goes here
+title: Developer Security Operations for Government
+description: FedRAMP Moderate authorized Source Code Management, CI/CD, security tools, container repositories, agile planning tools and more, all brought to you from Cloud.gov Workshop.
 
 hero:
-  heading: "One FedRAMP Moderate SaaS Platform to Rule Them All"
-  intro: "Build, host, and deploy your applications without all the compliance headaches."
+  heading: "A finely equipped DevSecOps Workshop to build Government software"
+  intro: "Everything you need to create, host, and deploy your applications, with a giant head start on compliance —  so you can focus on delivery."
   art: "cloud-workshop"
   color: "accent-warm-lighter"
-  buttons:
-    - label: "do thing one"
-      url: "#"
-      variant: "accent-warm"
-    - label: "do thing two"
-      url: "#"
-      variant: "accent-warm usa-button--outline"
+  # buttons:
+  #   - label: "do thing one"
+  #     url: "#"
+  #     variant: "accent-warm"
+  #   - label: "do thing two"
+  #     url: "#"
+  #     variant: "accent-warm usa-button--outline"
 
-# declare your objects here following the established patterns of other pages
+moreWithLess:
+  heading: Starting and operating digital services within the federal government can be a LOT.
+  intro: |
+    It’s the perfect storm of complexity and amorphousness – where to even start? 
+  content: |
+    You endure endless cycles of compliance whack-a-mole, and craft the perfect SSP, only to go through yet another round of revisions with your 3PAO. Meanwhile, the pile of critical vulnerabilities just keeps growing. You’d love to update your toolchain and consolidate workflows, but there’s no way you’re fitting an RFP process into your timeline.
+  outro: If only there was a better way, designed by people who know how the story goes…
+
+aBetterWay:
+  heading: There's a better way
+  intro: |
+    Turn your repos, roadmaps, and wireframes into real digital services with a sprinkling of Cloud.gov Workshop’s FedRAMP Moderate SaaS compliance dust.
+  content: |
+    Federal software engineers are most productive when they can be focused on building solutions that solve the public’s problems – not navigating an obstacle course with each new project. 
+    
+    Cloud.gov Workshop clears the tediousness of fragmented tooling and compliance friction, and provides a modern, efficient alternative for getting things shipped, and it’s built expressly for federal software teams on top of GitLab Dedicated for Government.
+  color: workshop-dark
+
+sharedFrustrations:
+  heading: We’ve shared your frustrations. Cloud.gov Workshop has what it takes to put those headaches behind you.
+  intro: |
+    We’ve shared your frustrations. Cloud.gov Workshop has what it takes to put those headaches behind you.
+  items:
+    - heading: State of the art DevSecOps without an RFP
+      text: Get all this through an IAA – you can even use your existing IAA through the cloud.gov credit system.
+      icon: 
+    - heading: An easier path to ATO
+      text: Cloud.gov Workshop complies with federal security requirements right out of the box, and inherited controls reduce the time spent to get up and running.
+
+      icon: 
+    - heading: The right stuff
+      text: Secure software development tools, authorized at a FedRAMP Moderate impact level.
+      icon: 
+    - heading: Developer-centered Compliance as Code
+      text: Prevent costly mistakes with our compliance frameworks, opt-in policies, and CI/CD components that scan your projects for trouble and surface issues into dashboards.
+      icon: 
+    - heading: Scalable, consistent Infrastructure as Code
+      text: Automate the nuts and bolts of your infrastructure for faster deployments, clearer documentation, and greater cost savings.
+      icon: 
+    - heading: Agile collaboration tools
+      text: Highly configurable boards, issues, plans, and roadmaps to accommodate different organization sizes and team styles.
+      icon: 
+
+powerhouseTools:
+  heading: Powerhouse tools at an optimal value 
+  intro: |
+    Assembling a similar toolset can be cost-prohibitive and complicated. But since Workshop is part of the Cloud.gov suite of products, purchasing and billing is straightforward and transparent. 
+  items:
+    - heading: Good structure
+      text: Free namespaces allow agency partners to use less complicated permission structures, follow the principle of least privilege, and lay out their Cloud.gov Workshop spaces to meet program operational and security needs. This supports separation of duties, simplified permissions, and blast radius control. It also sidesteps the weaker structural choices that are sometimes necessitated when PaaS “organizations” (logical namespaces) are charged by structure. 
+
+      icon:
+    - heading: Leveraging automation
+      text: CI/CD automation is a must for all teams, and including a small pool for free with each namespace supports the needs of most small teams/programs with no additional purchase. For larger teams or more complicated systems requiring many parallel CI/CD tasks, the additional charge for optional kinds of Cloud.gov Workshop Runner offerings can be justified in time savings.
+      icon:
+    - heading: Thoughtful storage
+      text: Storage use tends to scale with the size of a team, so each Cloud.gov Workshop User includes an allocation of storage that’s added to the overall agency customer pool. Running out of space can wreak havoc on teams, stopping work or even causing outages, so hard quotas are not used. Metering and reporting will let customers to know if they’re nearing the limit of their storage pool size, offering a chance for clean up or to purchase additional space.
+      icon:
+  outro: |
+     [Get in touch with us](mailto:workshop-inquiries@cloud.gov) to discuss Cloud.gov Workshop options that make sense for your team
+
+
+howItsBuilt:
+  heading: "Adaptable, configurable, and flexibles"
+  intro: "We know that projects are not all made the same way. Cloud.gov Workshop manages complexity of all shapes and sizes, and was built to handle government curves and roadblocks – even yours."
+  color: "workshop"
+  items:
+    - heading: "Singular solution"
+      text: "Cloud.gov Workshop is the only actual moderate impact SCM and CI/CD system available for use in government."
+      icon: ""
+    - heading: "Security risk reduction"
+      text: "Leverage our built-in security scanning components, compliance frameworks and patterns, and guardrails for safe development in government."
+      icon: ""
+    - heading: "Industry standard"
+      text: "Do you already have a home in the cloud? No problem. Cloud.gov Workshop is powerful wherever you deploy it, inside OR outside the Cloud.gov boundary."
+      icon: ""
+    - heading: "Home court advantage"
+      text: "Are your applications on Cloud.gov already? Enjoy the integrated tooling of a product suite that plays well together. Plus, you can leverage your existing IAA to deploy even faster."
+      icon: ""
+    - heading: "Use ours, or bring your own"
+      text: "Got a super complicated security boundary and your own CI/CD runners? Bring them with you, they’ll fit right in."
+      icon: ""
+    - heading: "Moving made easy"
+      text: "No matter which system you currently use, we offer multiple migration options – you can also mirror from your existing repositories."
+      icon: ""
+
+
+
+
 
 approachIds:
   - security

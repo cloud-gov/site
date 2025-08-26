@@ -2,9 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Topics from "../components/Topics.astro";
+import Steps from "../components/Steps.astro";
 import Tiles from "../components/Tiles.astro";
 import CTA from "../components/CTA.astro";
 import Subscribe from "../components/Subscribe.astro";
+import MediaSection from "../components/MediaSection.astro";
 
 import content from "../data/pages/workshop.yaml";
 import sitewide from "../data/sitewide.yaml";
@@ -22,9 +24,14 @@ const otherOfferings = {
 
 <Layout title={content.title} description={content.description}>
   <Hero {...content.hero} />
-  <!-- Put more components here using your yaml object names, order as you like -->
-  <Tiles {...otherOfferings} />
+  <Topics {...content.moreWithLess} />
+  <!-- <MediaSection {...content.AtoMedia} /> -->
+  <CTA {...content.aBetterWay} />
+  <Topics {...content.sharedFrustrations} />
+  <Tiles {...content.powerhouseTools} />
+  <Tiles {...content.howItsBuilt} />
   <Topics {...ourApproach} />
-  <Tiles {...sitewide.supportTiles} />
+  <Tiles {...otherOfferings} />
+  <!-- <Tiles {...sitewide.supportTiles} /> -->
   <Subscribe {...sitewide.newsletter} />
 </Layout>
