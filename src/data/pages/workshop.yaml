@@ -24,11 +24,11 @@ stakes:
 # Federal software teams lose weeks wiring together tools, writing policies by hand, and proving the same controls over and over. You shouldn't have to build the bench before you can build the product.
 
 solution:
-  heading: What if you had everything you need to build compliant, federal software on day one?
+  heading: What if you had everything you need to build federal software that's compliant on day one?
   intro: |
     Cloud.gov Workshop gives you a ready-to-use DevSecOps environment that meets federal requirements with all the modern, secure development tools you need.
 
-    This is not just another toolchain. Its the **only FedRAMP Moderate DevSecOps platform** available to federal agencies. And you don't even need to write an RFP.
+    This is not just another toolchain. It's the **only FedRAMP Moderate DevSecOps platform** available to federal agencies. And you don't even need to write an RFP.
   outro: |
     Federal software engineers are most productive when they can focus on achieving the agency's mission, not chasing down compliance lists. 
 
