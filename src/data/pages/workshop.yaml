@@ -24,18 +24,18 @@ stakes:
 # Federal software teams lose weeks wiring together tools, writing policies by hand, and proving the same controls over and over. You shouldn't have to build the bench before you can build the product.
 
 solution:
-  heading: What if you had everything you need to build federal software that's compliant on day one?
+  heading: What if you had everything you need to build excellent and compliant federal software on day one?
   intro: |
     Cloud.gov Workshop gives you a ready-to-use DevSecOps environment that meets federal requirements with all the modern, secure development tools you need.
 
-    This is not just another toolchain. It's the **only FedRAMP Moderate DevSecOps platform** available to federal agencies. And you don't even need to write an RFP.
+    This is not just another toolchain. It's a **FedRAMP Moderate DevSecOps platform** available to federal agencies. And you don't even need to write an RFP.
   outro: |
     Federal software engineers are most productive when they can focus on achieving the agency's mission, not chasing down compliance lists. 
 
   color: white
   items:
     - heading: Tools you already know and love
-      text: Cloud.gov Workshop is powered by GitLab Dedicated for Government and hosted on the Cloud.gov PaaS.
+      text: Cloud.gov Workshop is powered by GitLab Dedicated for Government and the Cloud.gov PaaS.
 
     # - heading: Simple and efficient developer experience
     #   text: Stay in the flow with one place to plan, code, scan, review, and ship your team's federal software.
@@ -56,15 +56,15 @@ solution:
     # - heading: Automation included
     #   text: Kick off projects with prebuilt CI/CD pipelines you can extend as your team grows.
 
-    - heading: "Compliance that lives in your pipelines"
+    - heading: "Security that lives in your pipelines"
       text: "Catch vulnerabilites, security or license risks, and accessibility issues early with automated scans and opt-in policies that report to clear dashboards."
 
     # mention Section 508 compliance?
     # - heading: Scalable, consistent Infrastructure as Code
     #   text: Automate the nuts and bolts of your infrastructure with repeatable templates(?) that document and enforce every change.
 
-    - heading: "Scaleable Infrastructure as Code"
-      text: "Cloud.gov Workshop is auditable by design. Automate the nuts and bolts of your infrastructure so every change is documented, reviewed, and enforced by code."
+    # - heading: "Scaleable Infrastructure as Code"
+    #   text: "Cloud.gov Workshop is auditable by design. Automate the nuts and bolts of your infrastructure so every change is documented, reviewed, and enforced by code."
 
     # - heading: Container registry and storage
     #   text: "Publish, scan, and share containers and packages in one secure registry."
@@ -118,10 +118,10 @@ features:
   color: "white"
   items:
     - heading: "Deploy your way"
-      text: "Run inside Cloud.gov or extend to other environments — whatever works for your workflow."
+      text: "Deploy to Cloud.gov or the environment of your choice — whatever works for your situation."
       icon: "build"
     - heading: "BYO CI/CD runners"
-      text: "Use custom or managed runners that meet your agency's policy and performance needs."
+      text: "Use our managed runners or bring your own to meet your security, policy, and performance needs."
       icon: "check_circle"
     - heading: "Easy migrations"
       text: "Mirror your current repos or migrate through supported pathways, without refactoring your entire stack."
