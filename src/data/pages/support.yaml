@@ -46,7 +46,7 @@ commonSupportTopics:
     - heading: "Knowledge base"
       text: "Best practices, tutorials, and recommendations from the Cloud.gov team"
       icon: "school"
-      link: "https://docs.cloud.gov/blog"
+      link: "https://docs.cloud.gov/knowledge-base"
 
     # - heading: "Onboarding"
     #   text: "Follow our step-by-step onboarding guides to set up accounts, permissions, and projects."
