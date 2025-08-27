@@ -6,7 +6,7 @@ import Steps from "../components/Steps.astro";
 import Tiles from "../components/Tiles.astro";
 import CTA from "../components/CTA.astro";
 import Subscribe from "../components/Subscribe.astro";
-import FeaturedSection from "../components/FeaturedSection.astro";
+import MediaSection from "../components/MediaSection.astro";
 
 import content from "../data/pages/pages.yaml";
 import sitewide from "../data/sitewide.yaml";
@@ -25,14 +25,13 @@ const otherOfferings = {
 <Layout title={content.title} description={content.description}>
   <Hero {...content.hero} />
   <Steps {...content.moreWithLess} />
-  <hr />
-  <CTA {...content.relyOnPages} />
-  <FeaturedSection {...content.AtoFeature} />
+  <MediaSection {...content.AtoMedia} />
   <Topics {...content.whatYouGet} />
   <Tiles {...content.whatYouCanBuild} />
   <CTA {...content.noRFP} />
-  <Tiles {...otherOfferings} />
+  <CTA {...content.relyOnPages} />
   <Topics {...ourApproach} />
-  <Tiles {...sitewide.supportTiles} />
+  <Tiles {...otherOfferings} />
+  <!-- <Tiles {...sitewide.supportTiles} /> -->
   <Subscribe {...sitewide.newsletter} />
 </Layout>

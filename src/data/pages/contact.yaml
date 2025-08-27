@@ -4,6 +4,6 @@ description: Reach out to the Cloud.gov team with questions about our platform, 
 hero:
   heading: "Talk to a human"
   intro: "If you’re interested in using Cloud.gov, email [inquiries@cloud.gov](mailto:inquiries@cloud.gov)."
-  color: "primary"
+  color: "primary-lightest"
   art: "contact"
 

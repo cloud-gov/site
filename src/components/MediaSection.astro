@@ -1,18 +1,18 @@
 ---
 import Markdown from "./Markdown.astro";
-import ServiceLogos from "./media/ServiceLogos.astro";
-import Terminal from "./media/Terminal.astro";
+import Illustration from "./media/Illustration.astro";
 
 interface Link {
   label: string;
   url: string;
+  variant?: string;
 }
 
 interface Item {
   heading?: string;
   text?: string;
-  link?: Link;
-  mediaComponent?: "ServiceLogos" | "Terminal";
+  button?: Link; // call this button to stay consistent with the rest of the site
+  mediaComponent?: "ServiceLogos" | "Terminal" | "Illustration";
 }
 interface Props {
   heading?: string;
@@ -44,17 +44,20 @@ const { heading = false, intro = false, outro = false, color = "white", items = 
               <Markdown content={item.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
             )}
 
-            {item.link && (
+            {item.button && (
               <div class="margin-top-2 margin-bottom-0">
-                <a class="usa-button usa-button--inverse" href={item.link.url}>
-                  {item.link.label}
+                <a
+                  class={`usa-button usa-button--inverse ${item.button.variant ? ` usa-button--${item.button.variant}` : ""} margin-bottom-05`}
+                  href={item.button.url}>
+                  {item.button.label}
                 </a>
               </div>
             )}
           </div>
           <div class="section__media">
-            {item.mediaComponent === "ServiceLogos" && <ServiceLogos />}
-            {item.mediaComponent === "Terminal" && <Terminal />}
+            {item.mediaComponent && item.mediaComponent.startsWith("Illustration") && (
+              <Illustration name={item.mediaComponent} />
+            )}
           </div>
         </div>
       ))

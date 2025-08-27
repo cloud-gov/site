@@ -1,4 +1,4 @@
-title: Pricing & Procurement
+title: How to buy government cloud services without an RFP
 description: Simple, transparent pricing for federal teams. Learn how Cloud.gov charges in credits and how to estimate your costs.
 
 hero:
@@ -15,6 +15,7 @@ g2g:
   heading: "One agreement, unlimited innovation"
   intro: "Our enterprise customers unlock significant savings in time, resources, and long-term planning. When multiple teams share Cloud.gov access through a single agreement, agencies benefit from:"
   align: "center"
+  color: "primary-vivid"
   items:
     - heading: "Streamlined acquisition"
       text: "Reduce your administrative overhead with fewer IAAs to manage"
@@ -39,9 +40,9 @@ pricingContent:
 
       Your credits unlock a wide range of cloud services, from pre-configured database and caching instances to dynamically metered resources like storage, memory, and SES, giving you granular control over your infrastructure and cost. 
 
-    link:
-      label: "Estimate your credit usage"
-      url: "./pricing#estimator"
+    button:
+      label: "Estimate your credit needs"
+      url: "#estimator"
     tiers:
       - name: "Sandbox"
         credits: 8
@@ -113,7 +114,7 @@ pricingContent:
       Powered by the same secure, FedRAMP-authorized infrastructure as cloud.gov, **Pages offers a straightforward annual pricing model** for federal digital teams.
 
       One annual fee unlocks a comprehensive suite of website development and hosting tools designed specifically for your needs.
-    link:
+    button:
       label: "Connect with our team"
       url: "./contact"
     pricing:
@@ -121,13 +122,51 @@ pricingContent:
       price: "35,000"
       unit: "/ year"
       features:
-        - "USWDS starter kits in JavaScript and Ruby with DAP and Search.gov"
+        - "USWDS starter kits with DAP and Search.gov"
+        - "Support for static, NodeJS, Hugo, and Ruby runtimes"
         - "Automated vulnerability and accessibility ConMon scans"
         - "Highly scalable content delivery network (CDN)"
         - "Automatic HTTPS certificates and renewals"
         - "Unlimited deploys and preview sites"
         - "Includes up to 5 production websites. Additional production domains are available in sets of 3 for $21,000/year."
         - "No charges for storage or bandwidth"
+  workshop:
+    subhead: "Cloud.gov Workshop pricing"
+    heading: "Powerhouse tools at warehouse pricing"
+    text: |
+
+      Use your Cloud.gov service credits to create the plan that works for you. Start with enough seats for your first team and namespace, which comes with a small 10-job CI/CD runner and 10GiB of storage per seat towards your total allocation. 
+      
+      Have more than one team, or a more complex organization? Add as many namespaces as you want, structure them to your needs, and scale them individually. When one of your namespaces needs capacity for more than 10 parallel jobs, you can easily scale up to 80 jobs. 
+      
+      Additional storage is also available. **We don't charge per repository or namespace**, because your contract structure shouldn't dictate how you organize your code.
+
+    button:
+      label: "Plan your Workshop"
+      url: "#workshop-planner"
+    tiers:
+      - name: "Standard User"
+        credits: 5 #per month, 60 per year
+        for: "GitLab Dedicated for Government Ultimate and +10GiB storage"
+      # - name: "AI-Assisted User"
+      #   credits: 7 #per month, 84 per year
+      #   for: "(Coming soon) Adds GitLab Duo and 10M inference tokens/month"
+      - name: "Small CI/CD Pool (Free)"
+        credits: 0 # Free
+        for: "Up to 10 parallel jobs"
+      - name: "Medium CI/CD Pool"
+        credits: 5 # monthly, 60 yearly
+        for: "Up to 20 parallel jobs"
+      - name: "Large CI/CD Pool"
+        credits: 10 # monthly, 120 yearly
+        for: "Up to 40 parallel jobs"
+      - name: "Extra Large CI/CD Pool"
+        credits: 20 # monthly, 240 yearly
+        for: "Up to 80 parallel jobs"
+      - name: "+10GiB of additional storage"
+        credits: 0.5 # monthly, 6 yearly
+        for: "Used for code, build artifacts, packages, and container images"
+
 
 stepsList:
   heading: "How an IAA with Cloud.gov works for you"

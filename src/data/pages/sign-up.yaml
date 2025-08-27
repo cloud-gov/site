@@ -1,4 +1,4 @@
-title: Get Started with Cloud.gov  
+title: Get started with a free account 
 description: Ready to launch? Request access to Cloud.gov and start building secure, compliant sites and apps today.
 
 hero:
@@ -6,7 +6,7 @@ hero:
   intro: |
     Have a .gov or .mil? You’re invited!
   art: "trial"
-  color: "primary"
+  color: "primary-lightest"
   buttons:
     - label: "Connect with our team"
       url: "contact"
@@ -37,6 +37,7 @@ kickTires:
 
 
 sandboxLimitations:
+  id: "sandbox-limitations"
   heading: "Free sandbox limitations"
   intro: "Your complimentary Cloud.gov sandbox provides you with enough space to prototype your ideas, with clear pathways when your team is ready to scale."
   color: "white"
@@ -63,7 +64,7 @@ sandboxLimitations:
   outro: "If your team has an idea and a mission, we help you get it live—securely, and in weeks, not quarters."
 
 
-servicesFeature:
+servicesMedia:
   heading: "What do you want to build today?"
   intro: |
     Follow any of the tutorials to launch your own web application from your sandbox. 
@@ -74,14 +75,14 @@ servicesFeature:
         Deploy a [sample app](https://docs.cloud.gov/getting-started/code-samples) in minutes using the CLI and built-in buildpacks. Cloud.gov gives you a self-service, API-friendly platform with support for languages like Node.js, Python, Ruby, and Java. 
         
          Easily connect to services like PostgreSQL, MySQL, Redis (via ElastiCache), and S3-compatible storage through our service brokers — simple automations that let you provision and bind services with just a CLI command, no ticket required. 
-      mediaComponent: "ServiceLogos"
-      link:
+      mediaComponent: "Illustration-Sequence-Diagram"
+      button:
         label: "Install the CLI"
         url: "https://docs.cloudfoundry.org/cf-cli/getting-started.html"
     - heading: "Watch a demo"
       text: "You can also check out our video tutorials on an [overview of the Cloud.gov PaaS](https://www.youtube.com/watch?v=LKb0liZyepA&feature=emb_logo) (27 mins), a walk through of the [account registration process](https://www.youtube.com/watch?v=ip8G_Rafb_c&feature=emb_logo), (7 mins) and a hands-on [workshop on how to start running applications](https://www.youtube.com/watch?v=G2J8dxSF0-I&feature=emb_logo) (41 mins)"
-      mediaComponent: "Terminal"
-      link:
+      mediaComponent: "Illustration-Demo-Video"
+      button:
         label: "Create a Cloud.gov account"
         url: "https://account.fr.cloud.gov/"
   color: "primary-vivid"

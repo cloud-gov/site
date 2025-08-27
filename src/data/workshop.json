@@ -1,0 +1,57 @@
+{
+  "services": [
+    {
+      "name": "Runner Pools",
+      "multiplier": true,
+      "plans": [
+        {
+          "plan": "Small Runner Pool",
+          "instanceClass": "Up to 10 parallel jobs",
+          "credits": 0
+        },
+        {
+          "plan": "Medium Runner Pool",
+          "instanceClass": "Up to 20 parallel jobs",
+          "credits": 5
+        },
+        {
+          "plan": "Large Runner Pool",
+          "instanceClass": "Up to 40 parallel jobs",
+          "credits": 10
+        },
+        {
+          "plan": "Extra Large Runner Pool",
+          "instanceClass": "Up to 80 parallel jobs",
+          "credits": 20
+        }
+      ]
+    },
+    {
+      "name": "Standard Users",
+      "metered": {
+        "type": "reserved",
+        "unit": "seats",
+        "unitsPerCredit": 1,
+        "credits": 5
+      }
+    },
+    {
+      "name": "AI-Assisted Users",
+      "metered": {
+        "type": "reserved",
+        "unit": "seats",
+        "unitsPerCredit": 1,
+        "credits": 7
+      }
+    },
+    {
+      "name": "Additional Storage",
+      "metered": {
+        "type": "reserved",
+        "unit": "steps of 10GiBs",
+        "unitsPerCredit": 1,
+        "credits": 0.5
+      }
+    }
+  ]
+}

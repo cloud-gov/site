@@ -60,7 +60,6 @@ const {
     {
       outro && (
         <div class="section__outro">
-          {art.length > 0 && <div class="top-divider" />}
           <Markdown
             content={outro}
             classes="margin-top-0 font-sans-lg line-height-sans-4 text-light margin-bottom-2"
@@ -73,7 +72,7 @@ const {
       buttons.length > 0 && (
         <div class="section__outro">
           {buttons.map((btn) => (
-            <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""}`}>
+            <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""} margin-bottom-05`}>
               {btn.label}
             </a>
           ))}

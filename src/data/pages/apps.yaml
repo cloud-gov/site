@@ -1,11 +1,11 @@
-title: Deploy Custom Applications
+title: Secure and scalable infrastructure for government applications
 description: Build and run cloud-native applications with Cloud.gov’s fully managed platform-as-a-service.
 
 hero:
   heading: "Modern Application Hosting for Government"
   intro: "Secure and scalable cloud infrastructure made easy"
-  align: "center"
-  color: "base"
+  color: "primary-lightest"
+  art: "cloud"
   buttons:
     - label: "Get a free sandbox"
       url: "sign-up"
@@ -22,13 +22,13 @@ moreWithLess:
   items:
     - heading: "Inherited security controls for easy ATOs"
       text: "Cloud.gov is FedRAMP Moderate Authorized, which means it complies with federal security requirements. When you build on Cloud.gov, you leverage our compliance practices and reduce the amount of work you need to do."
-      link:
+      button:
         label: "Our cybersecurity practices"
         url: "security"
       icon: "verified_user"
     - heading: "Acquire cloud services faster"
       text: "We partner with your team using a straightforward Interagency Agreement (IAA) with GSA. By selecting a flexible pricing tier, you can choose the cloud services that meet the needs of your agency’s digital initiatives."
-      link:
+      button:
         label: "Faster and easier cloud purchasing"
         url: "pricing"
       icon: "attach_money"

@@ -64,6 +64,7 @@
   $theme-type-scale-xl: 14,
   $theme-type-scale-lg: 10,
   $theme-type-scale-md: 7,
+  $theme-type-scale-sm: 6,
     
   $theme-link-color: "primary",
   $theme-link-visited-color: "primary-darker",
@@ -108,18 +109,18 @@
   $theme-color-secondary-darkest: "red-90",
 
   // pages
-  $theme-color-accent-cool-lightest: "cyan-5v",
+  $theme-color-accent-cool-lightest: "cyan-5",
   $theme-color-accent-cool-lighter: "cyan-5v",
   $theme-color-accent-cool-light: "cyan-10v",
-  $theme-color-accent-cool: "cyan-40v",
-  $theme-color-accent-cool-dark: "cyan-60v",
+  $theme-color-accent-cool: "cyan-40v", //#03a1c4, 
+  $theme-color-accent-cool-dark: #037d99,
   $theme-color-accent-cool-darker: "cyan-70v",
 
   // workshop?
   $theme-color-accent-warm-lightest: "orange-warm-5v",
   $theme-color-accent-warm-lighter: "orange-warm-5v",
   $theme-color-accent-warm-light: "orange-warm-10v",
-  $theme-color-accent-warm: "orange-warm-40v",
+  $theme-color-accent-warm: "orange-warm-40v", 
   $theme-color-accent-warm-dark: "orange-warm-50v",
   $theme-color-accent-warm-darker: "orange-warm-60v",
 
@@ -128,6 +129,8 @@
   $theme-card-border-width: 1px,
   $theme-card-border-color: "base-light",
   $theme-button-border-radius: 'sm',
-  $theme-button-small-width: 1px
+  $theme-button-small-width: 1px,
+
+
 );
 

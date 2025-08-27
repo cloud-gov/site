@@ -6,7 +6,7 @@ import Tiles from "../components/Tiles.astro";
 import Steps from "../components/Steps.astro";
 import Subscribe from "../components/Subscribe.astro";
 import CTA from "../components/CTA.astro";
-import FeaturedSection from "../components/FeaturedSection.astro";
+import MediaSection from "../components/MediaSection.astro";
 
 import content from "../data/pages/security.yaml";
 import sitewide from "../data/sitewide.yaml";
@@ -21,7 +21,7 @@ const ourApproach = {
   <Hero {...content.hero} />
   <Tiles {...content.g2g} />
   <Steps {...content.launchNow} />
-  <FeaturedSection {...content.AtoFeature} />
+  <MediaSection {...content.AtoMedia} />
   <Tiles {...content.yourMissionOurInfra} />
   <CTA {...sitewide.freeSandbox} />
   <Topics {...ourApproach} />

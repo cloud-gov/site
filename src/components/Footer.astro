@@ -1,6 +1,6 @@
 ---
 import gsaLogo from "../../public/gsaLogoReverse.png";
-import logoImg from "../assets/cloud-gov-logo.png";
+import logoImg from "../assets/logo-cloud-gov.png";
 
 type Link = { text: string; url: string };
 type LinkList = { label: string; links: Link[] };
@@ -28,7 +28,7 @@ const { logoText, logoUrl, list, identifier } = Astro.props;
               <div
                 class="mobile-lg:grid-offset-3 desktop:margin-left-0 mobile-lg:grid-col-6 desktop:grid-col-3 padding-2 mobile-lg:padding-x-0 desktop:padding-0">
                 <a href={logoUrl} title={logoText} class="footer-logo">
-                  <img class="height-5 display-block" src={logoImg.src} alt={logoText} />
+                  <img class="height-5 display-block" src={logoImg.src} alt=`${logoText}` />
                 </a>
               </div>
               {
