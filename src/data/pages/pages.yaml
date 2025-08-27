@@ -62,7 +62,7 @@ whatYouGet:
       text: "USWDS-based websites that are responsive, accessible, and compliant with Section 508 and Federal Website Standards."
     - heading: "Branding, web design, content strategy, & accessibility expertise"
       text: "Need a little extra help? We offer design and content strategy services for Cloud.gov Pages sites by the hour, tailored to federal needs."
-    - heading: "Fast, secure, and built to scale—no config required"
+    - heading: "Fast, secure, and built to scale — no config required"
       text: "Every Cloud.gov Pages site is served over HTTPS and distributed via CDN with autoscaling and DDoS protection."
     - heading: "In-house help desk & Office Hours"
       text: "Chat, email, or drop into weekly office hours to talk with our in-house engineers."
@@ -81,7 +81,7 @@ whatYouGet:
 
 whatYouCanBuild:
   heading: "What you can build with Cloud.gov Pages"
-  intro: "From mission-critical services to public transparency portals, Cloud.gov Pages empowers teams to build, launch, and manage federal websites quickly—without the usual infrastructure burden."
+  intro: "From mission-critical services to public transparency portals, Cloud.gov Pages empowers teams to build, launch, and manage federal websites quickly — without the usual infrastructure burden."
   color: "pages"
   items:
     - heading: "Agency brochure sites"
@@ -102,7 +102,7 @@ whatYouCanBuild:
     - heading: "Open data dashboards"
       text: "Visualize government data with simple charts and downloadable files"
       icon: "assessment"
-  outro: "If your team has an idea and a mission, we help you get it live—securely, and in weeks, not quarters."
+  outro: "If your team has an idea and a mission, we help you get it live — securely, and in weeks, not quarters."
 
 noRFP:
   heading: "Publish a website in the time it takes to post an RFP"
@@ -111,7 +111,7 @@ noRFP:
 
     We partner directly with your team using a straightforward Interagency Agreement (IAA) with GSA. Run up to five websites with a firm fixed starting package, and add more sites as you grow.
 
-    Picture three months from now—do you want your RFP cleared, or your site live?
+    Picture three months from now — do you want your RFP cleared, or your site live?
   buttons:
     - label: "See pricing"
       url: "/pricing"
