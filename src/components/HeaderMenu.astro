@@ -1,0 +1,133 @@
+---
+import closeIcon from "@uswds/uswds/img/usa-icons/close.svg";
+import searchIcon from "@uswds/uswds/img/usa-icons-bg/search--white.svg";
+import logoImg from "../assets/logo-cloud-gov.png";
+
+import sitewide from "../data/sitewide.yaml";
+
+type NavLink = { label: string; url: string };
+type ButtonLink = { label: string; url: string; class?: string };
+type NavSection = { label: string; links: NavLink[] };
+
+interface Props {
+  logoText: string;
+  logoUrl: string;
+  dropdowns: NavSection[];
+  navLinks: NavLink[];
+  secondaryLinks: NavLink[];
+  buttonLinks: ButtonLink[];
+  searchPlaceholder: string;
+}
+
+const { logoText, logoUrl, dropdowns, navLinks, secondaryLinks, buttonLinks, searchPlaceholder } = Astro.props;
+
+function normalizePath(path: string): string {
+  if (!path.startsWith("/")) path = "/" + path;
+  return path.replace(/\/+$/, ""); // remove trailing slash(es)
+}
+---
+
+<div class="usa-overlay"></div>
+<header class="usa-header usa-header--extended border-bottom-1px border-base-lighter">
+  <div class="usa-navbar">
+    <div class="usa-logo">
+      <a href={logoUrl} title={logoText}>
+        <img class="height-5 display-block" src={logoImg.src} alt=`${logoText}` height="40"/>
+      </a>
+    </div>
+    <div class="display-none tablet:display-block usa-navbar-button-group">
+      {
+        buttonLinks.map((link, index) => (
+          <a href={link.url} class={`usa-button--in-nav usa-button${link.class ? ` usa-button--${link.class}` : ""}`}>
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+    <button type="button" class="usa-menu-btn">Menu</button>
+  </div>
+
+  <nav aria-label="Primary navigation" class="usa-nav">
+    <div class="usa-nav__inner">
+      <button type="button" class="usa-nav__close" aria-label="Close menu">
+        <img src={closeIcon.src} role="img" alt="Close" />
+      </button>
+      <ul class="usa-nav__primary usa-accordion">
+        {
+          dropdowns.map((dropdown, i) => (
+            <li class="usa-nav__primary-item">
+              <button
+                type="button"
+                class="usa-accordion__button usa-nav__link"
+                aria-expanded="false"
+                aria-controls={`nav-section-${i}`}>
+                <span>{dropdown.label}</span>
+              </button>
+              <ul id={`nav-section-${i}`} class="usa-nav__submenu">
+                {dropdown.links.map((link) => (
+                  <li class="usa-nav__submenu-item">
+                    <a href={link.url}>
+                      <span>{link.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))
+        }
+
+        {
+          navLinks.map((link) => (
+            <li class="usa-nav__primary-item">
+              <a
+                href={link.url}
+                class={`usa-nav-link${normalizePath(Astro.url.pathname) === normalizePath(link.url) ? " usa-current" : ""}`}
+                aria-current={normalizePath(Astro.url.pathname) === normalizePath(link.url) ? "page" : undefined}>
+                <span>{link.label}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="usa-nav__secondary">
+        <ul class="usa-nav__secondary-links">
+          {
+            secondaryLinks.map((link) => (
+              <li class="usa-nav__secondary-item margin-bottom-0">
+                <a href={link.url} class="usa-nav-link">
+                  <span>{link.label}</span>
+                </a>
+              </li>
+            ))
+          }
+          {
+            buttonLinks.map((link) => (
+            <li class="usa-nav__secondary-item margin-bottom-0 desktop:display-none">
+                <a href={link.url} class="usa-nav-link">
+                  <span>{link.label}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+
+        <section aria-label="Search component">
+          <form
+            class="usa-search usa-search--small"
+            role="search"
+            action="https://search.usa.gov/search"
+            accept-charset="UTF-8"
+            method="get">
+            <label class="usa-sr-only" for="search-field">Search</label>
+            <input type="hidden" name="affiliate" id="affiliate" value={sitewide.search.affiliate} autocomplete="off" />
+            <input class="usa-input" id="search-field" type="search" placeholder={searchPlaceholder} name="query" />
+            <button class="usa-button" value="Search" type="submit">
+              <img src={searchIcon.src} class="usa-search__submit-icon" alt="Search" />
+            </button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </nav>
+</header>

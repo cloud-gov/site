@@ -1,0 +1,120 @@
+title: Faster, easier, and more secure digital services for government agencies
+description: A platform-as-a-service built for government. Deploy secure, compliant sites and apps without managing infrastructure.
+
+
+hero:
+  heading: "Faster, easier, and built for government from the start"
+  intro: |
+    Most federal software development teams spend more time pushing paperwork around than pushing to production.
+  content: |
+    As a FedRAMP-authorized Cloud Services Provider within General Services Administration (GSA), our customers don’t need to navigate vendor contracts, exhaustive security reviews, or external approvals. Our infrastructure, pricing, and onboarding are designed specifically for government—**so you can focus on delivery, not procurement**.
+  art: "g2g"
+  buttons:
+    - label: "Get a free sandbox"
+      url: "sign-up"
+    - label: "Connect with our team"
+      url: "contact"
+      variant: "outline"
+g2g:
+  heading: "Government-to-government, not just “govtech”"
+  intro: "We’re not a vendor. We’re government, just like you. That means:"
+  color: "primary-vivid"
+  align: "center"
+  items:
+    - heading: "No RFP required"
+      text: "Get your team onboarded in days, not months, under [a simple IAA with GSA](pricing)."
+      icon: "account_balance"
+    - heading: "No multi-year contract traps"
+      text: "We’re incentivized to serve your mission and our platform, not maximize profit."
+      icon: "lock_open"
+    - heading: "No vendor lock-in"
+      text: "Your team retains control of your apps, data, and repos. Forever."
+      icon: "groups"
+
+getCoding:
+  heading: "Get to work in hours, not months"
+  intro: |
+    Cloud.gov works with government agencies of every scale and complexity — from small teams to large departments, with diverse budgetary structures and purchase processes. With Cloud.gov, your digital services team can:
+  items:
+    - heading: "Start building in a [free sandbox](sign-up) within hours"
+    - heading: "Quickly set up your own development environments and spaces"
+    - heading: "Manage access and permissions for your entire team, space or organization"
+    - heading: "Create managed service instances (databases, search) automatically"
+    - heading: "Monitor metrics, logs, and application performance"
+    - heading: "Manage your applications and infrastructure directly through our platform"
+    - heading: "Scale your resources in seconds, without waiting weeks for ticket approvals"
+    - heading: "Move into production once you’re ready, and redeploy as often as you like"
+    - heading: "[Pay only for what you need](pricing), not for a bundle of extras"
+  checks: true
+
+# this is also on pricing.yaml
+stepsList:
+  heading: "How an IAA with Cloud.gov works for you"
+  intro: "Buying services with us is unlike any other provider."
+  outro: "Ready to get started? [Reach out to start the conversation](/contact)."
+  step_heading_level: "h3"
+  step_headings_only: false
+  items:
+    - heading: "Initial consultation with our expert cloud services staff"
+      text: "Our cloud services engineers will listen closely to your agency's mission, asking strategic questions to map your technology requirements. We partner with you to identify the right cloud services for your mission requirements."
+    - heading: "Proven and seamless agreement design"
+      text: "We help estimate your usage and scope an Interagency Agreement that precisely matches your agency's needs. Consider one or multiple Cloud.gov products, add professional support services, and plan for your future with standardized language crafted from hundreds of our existing federal agreements."
+    - heading: "Simplified approvals and execution"
+      text: "We work with you throughout the approval and billing process, supported by GSA’s fully electronic G-invoicing system. This phase usually takes our customers a few weeks from start to finish, compared to months-long traditional procurement cycles."
+    - heading: "Flexible deployments and renewals"
+      text: "Launch your cloud services with a one-year renewable agreement designed for continuous adaptation. Months before you renew, we reach out to you about your evolving technology needs, ensuring your technology always matches your mission."
+
+mandatesHandled:
+  heading: "The latest 2025 federal compliance mandates, handled"
+  art: "compliance-alt"
+  color: "primary-vivid"
+  intro: |
+    Cloud.gov is already FedRAMP Authorized (Moderate), so your agency can reuse our compliance package. That means on day one, you can check these off your list:
+  content: |
+    - Built-in continuous monitoring, monthly vulnerability scans, POA&M updates, incident reporting, and annual assessments that satisfy key **FY 2025 FISMA CIO metrics under OMB M-25-04**.
+
+    - Integrated platform patching, automated backups, centralized logging, and incident alerting mapped to **NIST 800-53 Rev. 5 control families like SI, AU, and CM**.
+
+    - Encrypted, isolated networking between containers with short-lived credentials and granular access policies—aligned with **EO 14028 and CISA’s Zero Trust Maturity Model**.
+
+    - **FIPS 140-2** compliant environment with cryptographic modules validated against **FIPS 140-3**.
+
+
+  buttons: 
+  # TODO add links
+    - label: "More about compliance"
+      url: "security"
+  outro: |
+    You don’t have to set up your own platform to meet federal compliance requirements. **We’re already operating one for you.**
+
+approachIds:
+  - security
+  - pricing
+
+allOfferings:
+  heading: "Meet your team"
+  intro: |
+    Whether you are looking to stand up a new federal website or deploy your software securely, we have the tools to help.
+  color: "primary"
+  items:
+    - id: "apps"
+      heading: "Modern Application Hosting for Government"
+      text: "Secure, scalable infrastructure without the vendor sprawl"
+      icon: "logo-cloud-apps"
+      button:
+        label: "Learn about Apps"
+        url: "apps"
+    - id: "pages"
+      heading: "Compliant federal public websites"
+      text: "Easily publish accessible, fast, and federally compliant websites."
+      icon: "logo-cloud-pages"
+      button:
+        label: "Learn about Pages"
+        url: "pages"
+    - id: "tools"
+      heading: "DevSecOps workspaces for federal teams"
+      text: "A Secure GitLab environment with quicker setup and deployment tools."
+      icon: "logo-cloud-workshop"
+      button:
+        label: "Learn about Workshop"
+        url: "workshop"

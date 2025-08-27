@@ -1,0 +1,117 @@
+@use './uswds-tokens.scss';
+@use "@uswds/uswds/packages/uswds-core" as *;
+
+.pricing-table {
+  -webkit-font-smoothing:antialiased;
+  thead {
+    th {
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+    }
+  }
+  &--apps {
+    thead th {
+      background-color: color("blue-warm-60v");
+      border-color: color("blue-warm-70v");
+      color: white;
+      border-bottom-width: 0;
+    }
+    th, td {
+      border-style: solid;
+      border-top-width: 0;
+      padding: .35rem .75rem;
+      &[rowspan] {
+        border-left-width: 1px;
+      }
+    }
+    .pricing-group {
+      &--1 {
+        td, th {      
+          color: color("base-dark");
+          background-color: white;
+          border-color: color("blue-warm-20v");
+        }
+      }
+      &--2 {
+        td, th {      
+          color: color("blue-warm-80v");
+          background-color: color("blue-warm-10v");
+          border-color: color("blue-warm-20v");
+        }
+      }
+      &--3 {
+        td, th {    
+          color: color("blue-warm-80v");
+          background-color: color("blue-warm-20v");
+          border-color: color("blue-warm-30v");
+        }
+      }
+      &--4 {
+        td, th {      
+          color: white;
+          background-color: color("blue-warm-50v");
+          border-color: color("blue-warm-40v");
+        }
+      }
+      &--5 {
+        td, th {      
+          color: white;
+          background-color: color("blue-warm-60v");
+          border-color: color("blue-warm-40v");
+        }
+      }
+    }
+  }
+  &--workshop {
+    -webkit-font-smoothing: subpixel-antialiased;
+    td, th {      
+      color: color("base-darker");
+      background-color: white;
+      border-color: color("base-lighter");
+      h4, .text-bold {
+        color:  color("accent-warm");
+        font-weight: 600;
+      }
+    }
+  }
+
+  
+  // show colspan on narrow widths, rowspan when there's room
+  // rowspan no, colspan yes
+  td[rowspan] {
+    display: none;
+  }
+  th[colspan] {
+    display: table-cell;
+    padding: .65rem .75rem;
+    font-weight: 400;
+    border-top-width: 4px;
+  }
+  // rowspan yes, colspan no
+  @media (min-width: 640px) and (max-width: 1023px) {
+    td[rowspan] {
+      display: table-cell;
+    }
+    th[colspan] {
+      display: none;
+    }
+  }
+  // rowspan no, colspan yes
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    td[rowspan] {
+      display: none;
+    }
+    th[colspan] {
+      display: table-cell;
+    }
+  }
+    // rowspan yes, colspan no
+    @media (min-width: 1200px) {
+      td[rowspan] {
+        display: table-cell;
+      }
+      th[colspan] {
+        display: none;
+      }
+    }
+}

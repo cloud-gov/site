@@ -1,0 +1,59 @@
+@use './uswds-tokens.scss';
+@use "@uswds/uswds/packages/uswds-core" as *;
+
+:root {
+  --breakpoint-mobile-lg: #{units("mobile-lg")}; //480px
+  --breakpoint-tablet: #{units("tablet")}; //640px
+  --breakpoint-tablet-lg: #{units("tablet-lg")}; //800px
+  --breakpoint-desktop: #{units("desktop")}; //1024
+  --breakpoint-desktop-lg: #{units("desktop-lg")}; //1200px
+  --breakpoint-widescreen: #{units("widescreen")}; //1400px
+
+  --theme-banner-background-color: #{color($theme-banner-background-color)};
+
+  --theme-color-base-lightest: #{color($theme-color-base-lightest)};
+  --theme-color-base-lighter: #{color($theme-color-base-lighter)};
+  --theme-color-base-light: #{color($theme-color-base-light)};
+  --theme-color-base: #{color($theme-color-base)};
+  --theme-color-base-dark: #{color($theme-color-base-dark)};
+  --theme-color-base-darker: #{color($theme-color-base-darker)};
+  --theme-color-base-darkest: #{color($theme-color-base-darkest)};
+
+  --theme-color-primary-lightest: #{color($theme-color-primary-lightest)};
+  --theme-color-primary-lighter: #{color($theme-color-primary-lighter)};
+  --theme-color-primary-light: #{color($theme-color-primary-light)};
+  --theme-color-primary: #{color($theme-color-primary)};
+  --theme-color-primary-vivid: #{color($theme-color-primary-vivid)};
+  --theme-color-primary-dark: #{color($theme-color-primary-dark)};
+  --theme-color-primary-darker: #{color($theme-color-primary-darker)};
+  --theme-color-primary-darkest: #{color($theme-color-primary-darkest)};
+
+
+  --theme-color-cloud: #{color($theme-color-primary)};
+  --theme-color-cloud-hover: #{color($theme-color-primary-vivid)};
+
+
+  --theme-color-pages: #{color("accent-cool")};
+  --theme-color-pages-hover: #{color("accent-cool-dark")};
+  --theme-color-accent-cool-lightest: #{color($theme-color-accent-cool-lightest)};
+  --theme-color-accent-cool-lighter: #{color($theme-color-accent-cool-lighter)};
+  --theme-color-accent-cool-light: #{color($theme-color-accent-cool-light)};
+  --theme-color-accent-cool: #{color("accent-cool")};
+  --theme-color-accent-cool-dark: #{color("accent-cool-dark")};
+  --theme-color-accent-cool-darker: #{color($theme-color-accent-cool-darker)};
+
+
+  --theme-color-workshop: #{color("accent-warm")};
+  --theme-color-workshop-hover: #{color("accent-warm-dark")};
+  --theme-color-accent-warm-lightest: #{color($theme-color-accent-warm-lightest)};
+  --theme-color-accent-warm-lighter: #{color($theme-color-accent-warm-lighter)};
+  --theme-color-accent-warm-light: #{color($theme-color-accent-warm-light)};
+  --theme-color-accent-warm: #{color("accent-warm")};
+  --theme-color-accent-warm-dark: #{color($theme-color-accent-warm-dark)};
+  --theme-color-accent-warm-darker: #{color($theme-color-accent-warm-darker)};
+
+
+background-color: var(--theme-color-primary-vivid);
+
+}
+

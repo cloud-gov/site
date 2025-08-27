@@ -1,0 +1,87 @@
+---
+import Markdown from "./Markdown.astro";
+import PageSection from "./PageSection.astro";
+interface Link {
+  label: string;
+  url: string;
+}
+
+interface Item {
+  icon?: string;
+  heading?: string;
+  text?: string;
+  button?: Link; // call this button to stay consistent with the rest of the site
+}
+
+interface Props {
+  heading?: string;
+  intro?: string;
+  outro?: string;
+  items?: Item[];
+  id?: string;
+  color?: string;
+}
+
+const { items = [], color = "white", id, ...props } = Astro.props;
+---
+
+<PageSection align="left" color={color} {...props}>
+  <div class="topics">
+    {
+      items.map((item) => (
+        <div class="display-flex flex-row top-divider">
+          {item.icon && (
+            <div class="width-4 margin-right-2">
+              <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
+                <use href={`${Astro.site}/assets/uswds/img/sprite.svg#${item.icon}`} />
+              </svg>
+            </div>
+          )}
+
+          <div class="display-flex flex-column height-full padding-right-2">
+            {item.heading && <h3 class="font-body-lg margin-bottom-05 margin-top-1">{item.heading}</h3>}
+
+            {item.text && (
+              <Markdown
+                content={item.text}
+                classes="font-body-sm line-height-body-3 margin-top-05 margin-bottom-0"
+                inline
+              />
+            )}
+
+            {item.button && (
+              <p class="font-body-xs line-height-body-3 margin-top-1 margin-bottom-0">
+                <a class="usa-link" href={item.button.url}>
+                  {item.button.label}
+                  <svg class="usa-icon text-bottom width-2 height-205" aria-hidden="true" focusable="false" role="img">
+                    <use href={`${Astro.site}/assets/uswds/img/sprite.svg#navigate_next`} />
+                  </svg>
+                </a>
+              </p>
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</PageSection>
+
+<style lang="scss">
+  .topics {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+    @media (min-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+      // padding: 0 8.33vw; // roughly 1/12th screen width
+    }
+    @media (min-width: 1024px) {
+      gap: 1rem 6rem;
+    }
+    @media (min-width: 1200px) {
+      gap: 1rem 6rem;
+      padding: 0;
+    }
+  }
+</style>

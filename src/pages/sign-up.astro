@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Topics from "../components/Topics.astro";
+import PageSection from "../components/PageSection.astro";
+import Tiles from "../components/Tiles.astro";
+import CTA from "../components/CTA.astro";
+import Steps from "../components/Steps.astro";
+import Subscribe from "../components/Subscribe.astro";
+import MediaSection from "../components/MediaSection.astro";
+
+import content from "../data/pages/sign-up.yaml";
+import sitewide from "../data/sitewide.yaml";
+
+const ourApproach = {
+  ...sitewide.ourApproach,
+  items: sitewide.ourApproach.items.filter((item) => content.approachIds.includes(item.id)),
+};
+const otherOfferings = {
+  ...sitewide.otherOfferings,
+  items: sitewide.otherOfferings.items.filter((item) => content.offeringIds.includes(item.id)),
+};
+---
+
+<Layout title={content.title} description={content.description}>
+  <Hero {...content.hero} />
+  <Steps {...content.kickTires} />
+  <MediaSection {...content.servicesMedia} />
+  <Tiles {...content.sandboxLimitations} />
+  <Tiles {...sitewide.supportTiles} />
+  <Topics {...ourApproach} />
+  <Tiles {...otherOfferings} />
+  <Subscribe {...sitewide.newsletter} />
+</Layout>

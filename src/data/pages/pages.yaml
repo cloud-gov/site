@@ -1,0 +1,160 @@
+title: Simple, accessible, and 21st Century IDEA compliant government websites
+description: Cloud.gov Pages helps federal agencies launch secure, compliant websites with a modern publishing workflow and no infrastructure headaches.
+
+
+hero:
+  heading: "Everything you need to run your compliant government website"
+  intro: "Easy-to-manage public websites for federal agencies"
+  color: "accent-cool-lighter"
+  art: "cloud-pages"
+  buttons:
+    - label: "Connect with our team"
+      url: "contact"
+      variant: "accent-cool"
+    - label: "See pricing"
+      url: "pricing"
+      variant: "accent-cool usa-button--outline"
+
+moreWithLess:
+  heading: "We built Cloud.gov Pages to help teams publish federal websites with confidence"
+  intro: |
+    Publishing an agency update may seem simple, but federal websites are held to the highest standards for security, accessibility, and trust. That means wearing a lot of hats.
+  content: |
+    Teams tasked with public communication and service delivery are also expected to be **infrastructure, cybersecurity, and web design experts** — usually with limited access to training, budget, and staff.
+
+    Today’s federal website managers must meet a growing list of responsibilities, including:
+  items:
+    - heading: "**Audit your site for outdated or inaccurate content**"
+      text:    "(OMB M-23-22; OMB Circular A-130; 21st Century IDEA)"
+    - heading: "**Check accessibility on every page**"
+      text:    "(Section 508, 29 U.S.C. § 794d; 36 CFR Part 1194; 21st Century IDEA; OMB M-23-22)"
+    - heading: "**Host your site on a FedRAMP-authorized platform**"
+      text:    "(FedRAMP Authorization Act; OMB FedRAMP policy; OMB Circular A-130)"
+    - heading: "**Scan for vulnerabilities and address findings**"
+      text:    "(CISA BOD 22-01; FISMA; OMB Circular A-130; NIST SP 800-53)"
+    - heading: "**Renew HTTPS certificates before they expire**"
+      text:    "(OMB M-15-13 HTTPS-Only; CISA BOD 18-01)"
+    - heading: "**Complete and update your ATO documentation**"
+      text:    "(FISMA; OMB Circular A-130; NIST RMF-SP 800-37; NIST SP 800-53)"
+    - heading: "**Review website analytics and identify areas to improve**"
+      text:    "(OMB M-23-22; Digital Analytics Program (DAP) requirements)"
+    - heading: "**Confirm all content is searchable**"
+      text:    "(OMB M-23-22; 21st Century IDEA; Search.gov)"
+    - heading: "**Use USWDS and adhere to the Federal Website Standards**"
+      text:    "(21st Century IDEA website standards; OMB M-23-22; USWDS guidance)"
+    - heading: "**Publish federally required notices**"
+      text:    "(FOIA 5 U.S.C. § 552(a)(2); Privacy Act; OMB privacy guidance; OMB M-23-22)"
+    - heading: "**Release datasets in machine-readable formats**"
+      text:    "(OPEN Government Data Act (Evidence Act Title II); OMB M-13-13 Open Data Policy)"
+    - heading: "**Archive past versions to meet records retention requirements**"
+      text:    "(NARA records management guidance; 36 CFR Subchapter B; OMB Circular A-130)"
+
+
+  checks: true
+  outro: |
+    Managing all parts of a public-facing site is often buried under ‘other duties as assigned’, but it’s one of the most visible responsibilities an agency has. It shouldn’t require **enterprise-scale effort from a two-person team**.
+
+whatYouGet:
+  heading: "What you get on Cloud.gov Pages"
+  intro: "You don’t need to be a web developer, cybersecurity expert, accessibility specialist, and contracting officer rolled into one to run a great federal website."
+  items:
+    - heading: "Custom, federally compliant, and accessible websites"
+      text: "USWDS-based websites that are responsive, accessible, and compliant with Section 508 and Federal Website Standards."
+    - heading: "Branding, web design, content strategy, & accessibility expertise"
+      text: "Need a little extra help? We offer design and content strategy services for Cloud.gov Pages sites by the hour, tailored to federal needs."
+    - heading: "Fast, secure, and built to scale — no config required"
+      text: "Every Cloud.gov Pages site is served over HTTPS and distributed via CDN with autoscaling and DDoS protection."
+    - heading: "In-house help desk & Office Hours"
+      text: "Chat, email, or drop into weekly office hours to talk with our in-house engineers."
+    - heading: "Easy invoicing"
+      text: "Simple government-to-government billing through an Interagency agreement with GSA."
+    - heading: "Hands-off publishing and training"
+      text: "Publish in seconds, no command line or FTP required."
+    - heading: "Automated compliance scans"
+      text: "Pages handles monthly checks for cybersecurity and accessibility issues, so your site is always secure and ready to serve the public."
+    - heading: ""
+      text: ""
+  outro: |
+    We’re experts in government websites. Whether you need a little help or full support, we’ve got experience with agency needs at every scale.
+    
+    For technical details about hosting your site, [visit the Cloud.gov Pages documentation.](https://docs.cloud.gov/pages/using-pages/getting-started)
+
+whatYouCanBuild:
+  heading: "What you can build with Cloud.gov Pages"
+  intro: "From mission-critical services to public transparency portals, Cloud.gov Pages empowers teams to build, launch, and manage federal websites quickly — without the usual infrastructure burden."
+  color: "pages"
+  items:
+    - heading: "Agency brochure sites"
+      text: "Public websites that evolve with your program and scale with your mission"
+      icon: "home"
+    - heading: "Rapid prototypes"
+      text: "Test ideas fast with proof-of-concept sites that don’t need complex setup"
+      icon: "loop"
+    - heading: "Resource directories"
+      text: "Organize and publish policies, standards, and documents"
+      icon: "contact_page"
+    - heading: "Regulatory reporting"
+      text: "Publish official disclosures to support agency transparency and trust"
+      icon: "spellcheck"
+    - heading: "FOIA Reading Rooms"
+      text: "Share requested documents in a searchable, durable public archive"
+      icon: "local_library"
+    - heading: "Open data dashboards"
+      text: "Visualize government data with simple charts and downloadable files"
+      icon: "assessment"
+  outro: "If your team has an idea and a mission, we help you get it live — securely, and in weeks, not quarters."
+
+noRFP:
+  heading: "Publish a website in the time it takes to post an RFP"
+  intro: |
+    Forget months-long vendor negotiations and complex Request for Proposal (RFP) processes. As a federal team within GSA, we've streamlined procurement to work the way government actually works.
+
+    We partner directly with your team using a straightforward Interagency Agreement (IAA) with GSA. Run up to five websites with a firm fixed starting package, and add more sites as you grow.
+
+    Picture three months from now — do you want your RFP cleared, or your site live?
+  buttons:
+    - label: "See pricing"
+      url: "/pricing"
+      variant: "accent-cool"
+
+
+relyOnPages:
+  heading: "Dozens of agencies across government rely on Cloud.gov Pages"
+  intro: |
+    You don’t need a whole IT department to run a compliant federal website. 
+    You just need Cloud.gov Pages.
+  buttons:
+    - label: "Connect with our team"
+      url: "contact"
+      variant: "accent-cool usa-button--inverse"
+  color: "pages-dark"
+  align: "center"
+
+
+AtoMedia:
+  heading: "Designed for the way government launches software"
+  intro: "Cloud.gov’s shared responsibility model gives federal teams a head start, whether you’re seeking a new ATO or reauthorizing an existing system. With Cloud.gov’s position, context, and expertise inside government, we understand firsthand what’s hard for agency customers."
+  items:
+    - heading: "Guided security support with our in-house experts"
+      text: "The Cloud.gov Pages team directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessments (SIA)."
+      mediaComponent: "Illustration-ATO-Pages"
+      button:
+        variant: "accent-cool"
+        label: "Check us out on the FedRAMP marketplace"
+        url: "https://marketplace.fedramp.gov/products/F1607067912"
+    - heading: "You don't have to BYO ATO"
+      text: "Cloud.gov Pages offers a simple Authority to Use (ATU) approach. After guiding dozens of government agencies through the compliance authorization process, our experts have streamlined each step of the process, from initial documentation to final approval."
+      mediaComponent: "Illustration-Security-Pages"
+      button:
+        variant: "accent-cool"
+        label: "Request the free Cloud.gov Pages ATU Kit"
+        url: "https://docs.cloud.gov/pages/security-compliance/pages-atu-guide"
+  color: "pages-dark"
+
+approachIds:
+  - g2g
+  - pricing
+
+offeringIds:
+  - apps
+  - tools

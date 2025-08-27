@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Tiles from "../components/Tiles.astro";
+import Subscribe from "../components/Subscribe.astro";
+
+import content from "../data/pages/support.yaml";
+import sitewide from "../data/sitewide.yaml";
+---
+
+<Layout title={content.title} description={content.description}>
+  <Hero {...content.hero}>
+    <section class="width-mobile">
+      <form class="usa-search" role="search" action="https://search.usa.gov/search" accept-charset="UTF-8" method="get">
+        <label class="usa-sr-only" for="query">Search</label>
+        <input type="hidden" name="affiliate" id="affiliate" value={sitewide.search.affiliate} autocomplete="off" />
+        <input class="usa-input" name="query" id="query" type="search" placeholder="How do I..." />
+        <button class="usa-button" value="Search" type="submit"> Search </button>
+      </form>
+    </section>
+  </Hero>
+  <Tiles {...content.productDocs} />
+  <Tiles {...content.commonSupportTopics} />
+  <Tiles {...sitewide.supportTiles} />
+  <Subscribe {...sitewide.newsletter} />
+</Layout>

@@ -1,0 +1,180 @@
+---
+
+---
+
+<div class="terminal">
+  <div class="block-line short line1"></div>
+  <div class="block-line medium line2"></div>
+  <div class="block-line long line3"></div>
+  <div class="block-line short line4"></div>
+  <div class="cursor-wrapper">
+    <div class="cursor"></div>
+  </div>
+</div>
+
+<style>
+  .terminal {
+    background: var(--theme-color-primary-darker, #000);
+    color: #00ff88;
+    font-family: monospace;
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid var(--theme-color-primary-darkest, #000);
+    box-shadow: 0 0 10px var(--theme-color-primary, #000);
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    min-height: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .block-line {
+    display: inline-block;
+    background-color: #00ff88;
+    height: 1em;
+    border-radius: 2px;
+    transform-origin: left;
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .line1 {
+    width: 80%;
+    animation: line1-in 10s linear infinite;
+  }
+
+  .line2 {
+    width: 70%;
+    animation: line2-in 10s linear infinite;
+  }
+
+  .line3 {
+    width: 90%;
+    animation: line3-in 10s linear infinite;
+  }
+
+  .line4 {
+    width: 50%;
+    animation: line4-in 10s linear infinite;
+  }
+
+  @keyframes line1-in {
+    0% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    8% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    99% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes line2-in {
+    0%,
+    9% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    17% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    99% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes line3-in {
+    0%,
+    18% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    29% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    99% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+
+  @keyframes line4-in {
+    0%,
+    30% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    38% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    99% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+
+  .cursor-wrapper {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    animation: cursor-visibility 10s linear infinite;
+  }
+
+  @keyframes cursor-visibility {
+    0%,
+    39% {
+      opacity: 0;
+    }
+    40%,
+    99% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .cursor {
+    width: 0.6em;
+    height: 1em;
+    background: #00ff88;
+    animation: blink 1s steps(2, start) infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+</style>

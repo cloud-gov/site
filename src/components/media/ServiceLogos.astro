@@ -1,0 +1,199 @@
+---
+import sitewide from "../../data/sitewide.yaml";
+import { Image } from "astro:assets";
+
+type ServiceLogo = {
+  default: ImageMetadata;
+  [key: string]: unknown;
+};
+
+interface Sitewide {
+  serviceLogos: string[];
+}
+type ServiceLogosMap = Record<string, ServiceLogo>;
+
+const serviceLogos: ServiceLogosMap = import.meta.glob("../../assets/service-logos/*", { eager: true });
+---
+
+<div class="bubble-container">
+  {
+    (sitewide as Sitewide).serviceLogos.map((name: string) => {
+      const matchingImage = Object.entries(serviceLogos).find(([path]) => path.includes(name));
+      return (
+        matchingImage && (
+          <div class="bubble-shadow">
+            <div class="bubble">
+              <Image src={matchingImage[1].default} alt={name} width="50" />
+            </div>
+          </div>
+        )
+      );
+    })
+  }
+</div>
+
+<style>
+  :host {
+    --float-animation: "float1";
+    --float-speed: 10s;
+  }
+
+  .bubble-container {
+    position: relative;
+    width: 100%;
+    height: 25rem;
+    max-height: 30vw;
+  }
+
+  .bubble-shadow {
+    position: absolute;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
+    animation: var(--float-animation) var(--float-speed, 15s) linear infinite;
+    will-change: transform;
+    transition:
+      top 0.5s ease,
+      left 0.5s ease,
+      transform 0.3s;
+  }
+
+  .bubble {
+    width: 80px;
+    height: 80px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    border-radius: 100%;
+    /* border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-left-radius: 10% 30%;
+    border-bottom-right-radius: 10% 30%;
+    position: relative; */
+    padding: 1rem;
+  }
+
+  /* cloud version */
+  /* 
+  .bubble::before,
+  .bubble::after {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: inherit;
+    border-top-left-radius: 50% 60%;
+    border-top-right-radius: 50% 60%;
+  }
+
+  .bubble::before {
+    width: 60px;
+    height: 40px;
+    bottom: 0;
+    left: -25px;
+  }
+
+  .bubble::after {
+    width: 50px;
+    height: 30px;
+    bottom: 0;
+    right: -20px;
+  } */
+
+  .bubble img {
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: contain;
+    z-index: 1;
+  }
+
+  @keyframes float1 {
+    0% {
+      transform: translate(0, 0);
+    }
+    30% {
+      transform: translate(25px, -40px);
+    }
+    60% {
+      transform: translate(-35px, -80px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes float2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-60px, 80px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes float3 {
+    0% {
+      transform: translate(0, 0);
+    }
+    40% {
+      transform: translate(40px, 50px);
+    }
+    70% {
+      transform: translate(80px, 35px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+</style>
+
+<script>
+  const animations = ["float1", "float2", "float3"];
+  let debounceTimeout: ReturnType<typeof setTimeout> | null = null;
+
+  function positionBubbles(target = null) {
+    const container = document.querySelector(".bubble-container");
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
+
+    const bubbles = target ? [target] : document.querySelectorAll(".bubble-shadow");
+
+    bubbles.forEach((shadow) => {
+      const x = Math.random() * (containerWidth - 100);
+      const y = Math.random() * (containerHeight - 100);
+      const speed = 10 + Math.random() * 10;
+      const delay = Math.random() * 2;
+      const anim = animations[Math.floor(Math.random() * animations.length)];
+
+      shadow.style.top = `${y}px`;
+      shadow.style.left = `${x}px`;
+      shadow.style.setProperty("--float-speed", `${speed}s`);
+      shadow.style.setProperty("--float-animation", anim);
+      shadow.style.animationDelay = `${delay}s`;
+      shadow.style.zIndex = Math.floor(Math.random() * 10);
+    });
+  }
+
+  positionBubbles();
+
+  window.addEventListener("resize", () => {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+      positionBubbles();
+      debounceTimeout = null; // 👈 reset it here
+    }, 200);
+  });
+
+  document.querySelectorAll(".bubble-shadow").forEach((shadow) => {
+    shadow.addEventListener("mouseenter", () => {
+      if (debounceTimeout) return;
+
+      positionBubbles(shadow);
+      debounceTimeout = setTimeout(() => {
+        debounceTimeout = null;
+      }, 400);
+    });
+  });
+</script>

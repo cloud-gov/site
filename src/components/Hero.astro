@@ -1,0 +1,84 @@
+---
+import Markdown from "./Markdown.astro";
+import { Image } from "astro:assets";
+
+interface Button {
+  label: string;
+  url: string;
+  variant?: string;
+}
+
+export interface Props {
+  heading: string;
+  intro?: string;
+  art?: string;
+  buttons?: Button[];
+  color?: string;
+  content?: string;
+}
+
+const { heading, intro, buttons = [], color = "white", art, content } = Astro.props;
+---
+
+<section
+  class={`${art && `section-art section-art--${art}`} bg-${color} text-base-darkest text-base-darkest  ${color === "white" ? "border-bottom-1px border-base-darker" : "border-primary-lighter border-y-1px margin-top-neg-1px"} padding-y-6 text-left`}>
+  <div class="grid-container">
+    <div class="grid-row">
+      <div class="grid-col-12 desktop:grid-col-9">
+        {
+          art?.startsWith("cloud-") && (
+            <Image
+              class="product-logo height-9 width-auto margin-right-auto margin-bottom-3"
+              src={import(`./../assets/logo-${art}.svg`)}
+              alt={heading}
+              width="330"
+            />
+          )
+        }
+        {
+          heading && (
+            <Markdown
+              content={heading}
+              classes="font-sans-xl desktop:font-sans-3xl text-semibold margin-bottom-4 margin-top-0"
+              tag="h1"
+              inline
+            />
+          )
+        }
+
+        {
+          intro && (
+            <Markdown
+              content={intro}
+              classes="text-base-darker font-sans-lg line-height-sans-5 margin-bottom-3 measure-3 text-light"
+              inline
+            />
+          )
+        }
+
+        {
+          content && (
+            <Markdown
+              content={content}
+              classes="top-divider top-divider--center-mobile section__markdown font-body-md line-height-sans-5 measure-5"
+            />
+          )
+        }
+        {
+          buttons.length > 0 && (
+            <div class="usa-button-group margin-top-4">
+              {buttons.map((btn) => (
+                <a
+                  href={btn.url}
+                  class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""} margin-bottom-05`}>
+                  {btn.label}
+                </a>
+              ))}
+            </div>
+          )
+        }
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>

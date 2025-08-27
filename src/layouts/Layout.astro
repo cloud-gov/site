@@ -1,0 +1,54 @@
+---
+const { ...props } = Astro.props;
+import Meta from "../components/Meta.astro";
+import HeaderMenu from "../components/HeaderMenu.astro";
+import FooterMenu from "../components/Footer.astro";
+import { headerProps } from "../data/header";
+import { footerProps } from "../data/footer";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <Meta title={title} description={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" href="styles/uswds-theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  </head>
+  <body>
+    <script src="@uswds/uswds/components/usa-banner"></script>
+    <usa-banner></usa-banner>
+
+    <HeaderMenu {...headerProps} />
+
+    <slot />
+    <FooterMenu {...footerProps} />
+
+    <script>
+      import "@uswds/uswds";
+    </script>
+    <script is:inline type="text/javascript">
+      window.zESettings = {
+        webWidget: {
+          contactForm: {
+            attachments: false,
+            subject: true
+          }
+        }
+      };
+    </script>
+    <script is:inline id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=8db168ec-b19f-4496-a804-7a267cb1d900"></script> 
+  </body>
+</html>

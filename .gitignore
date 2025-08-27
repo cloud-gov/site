@@ -116,9 +116,15 @@ web_modules/
 .yarn/install-state.gz
 .pnp.*
 
-# 11ty Related
+# JS Related
 _site
-public
+/dist
+/public/assets/uswds/**
+/public/styles/**
 node_modules
-.idea
+public/data/credits.json
+public/data/workshop.json
+
+# Astro
 _data/assetPaths.json
+.astro/*

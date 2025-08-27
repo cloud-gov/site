@@ -1,117 +1,87 @@
-# cloud.gov
+# Cloud.gov Public Website
 
-This site uses the [cloud.gov Pages USWDS 11ty template](https://github.com/cloud-gov/pages-uswds-11ty). [cloud.gov Pages](https://cloud.gov/pages/) runs on cloud.gov and supports the development of this template. By leveraging this template cloud.gov gets the benefits of a maintained template as well as a way to test out new functionality in the template.
+This repo uses Astro to build a static site, ready to be hosted on [Cloud.gov Pages](https://cloud.gov/pages/).
 
-This [11ty static site generator](https://www.11ty.dev/) uses the [U.S. Web Design System v 3.0](https://designsystem.digital.gov/) and provides developers a starter kit and reference implementation for cloud.gov Pages websites.
+## Local Development
 
-This site uses [U.S. Web Design System](https://designsystem.digital.gov/) and strives to be compliant with requirements set by [21st Century IDEA Act](https://designsystem.digital.gov/website-standards/). The standards require that a website or digital service:
+`npm i` to install packages (use the LTS version of NodeJS)
 
-- is accessible to individuals with disabilities;
-- has a consistent appearance;
-- does not duplicate any legacy websites (the legislation also requires agencies to ensure that legacy websites are regularly reviewed, removed, and consolidated);
-- has a search function;
-- uses an industry standard secure connection;
-- is designed around user needs with data-driven analysis influencing management and development decisions, using qualitative and quantitative data to determine user goals, needs, and behaviors, and continually test the website, web-based form, web-based application, or digital service to ensure that user needs are addressed;
-- allows for user customization; and
-- is mobile-friendly.
+`npm run dev` to copy USWDS assets and start a dev server
 
-## Key Functionality
+View the website at <http://localhost:4321>
 
-This repository contains the following examples and functionality:
+`npm run build` to build all assets locally
 
-✅ Publish blog posts, press releases, announcements, etc. To modify this code, check out `blog/index.html`, which manages how the posts are listed. You should then check out `_includes/layouts/post.html` to see how individual posts are structured.
+`npm run federalist` to approximate the build that happens on Pages.
 
-✅ Publish single one-off pages. Instead of creating lots of folders throughout the root directory, you should put single pages in the `content/pages` folder and change the `permalink` at the top of each page. Use sub-folders only when you really need to.
+Please review the [Astro developer documentation](https://docs.astro.build/en/getting-started/) if you're going to make code changes.
 
-✅ There are two different kinds of `pages`, one does not have a side bar navigation, and the other uses `_includes/components/sidenav.html`. You can enable this option by adding `sidenav: true` to your page front matter.
+### Env variables & baseurl
+Because Pages preview links deploy to subdirectory paths and not root-level domains, it's important to make sure there's a `FEDERALIST_URL` environment variable provided for production builds other than the final live domain. To build absolute asset paths correctly (like the sitemap and canonical URLs), the build process must provide the entire domain, including protocol (`"https://federalist-12345.sites.pages.cloud.gov/"`) and any containing directories. In production, the build process automatically prefixes relative urls automatically build for federalist previews of any branch other than `main`, using the ENV variables provided by Pages. See https://docs.cloud.gov/pages/developers/env-vars-on-pages-builds
 
-```yaml
----
-title: Document with Sidenav
-layout: layouts/base
-sidenav: true
-permalink: /document-with-sidenav
----
+In order to keep links easy whether we're building the site at the root level or within a folder, this layout makes use of the rarely-seen `<base>` [element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/base) to prefix all non-absolute links. This means that page links which direct to `[this website]/foo` are defined without the first slash (`link: 'foo'`) in YAML and output without the first slash in HTML (`<a href="foo"`). 
+
+## Editing Content
+
+The site's content is in YAML or JSON data so that it can be easily edited from the GitHub web interface if you're not running the site locally.
+
+In `/src/data/`, you'll see some data files and a folder titled `pages`. All of the page-specific content is in a `page/[name].yaml` file. Sitewide content is in `sitewide.yaml`. You can edit the link in the header and footer in `header.ts` or `footer.ts` 
+
+The order of the page sections in the HTML is controlled elsewhere. If you need to re-order the sections on a given page, or if you've renamed a key in your page's YAML file, check the `src/pages/` folder for the `.astro` page, and update the order of the components or key name in that file. 
+
+```js
+  <Hero {...content.hero} />
+  <Tiles {...content.g2g} />
+  <CTA {...sitewide.freeSandbox} />
 ```
 
-✅ [Search.gov](https://search.gov) integration - Once you have registered and configured Search.gov for your site by following [these instructions](https://cloud.gov/pages/documentation/search/), add your "affiliate" and "access key" to `_data/site.yml`. Ex.
+The content sections all accept:
+  - a `heading` field
+  - an `intro` field (parsed as markdown)
+  - a `content` field (parsed as markdown)
+  - an `outro` field (parsed as markdown)
+  - a string of extra `classes` for the containing element
+  - an `art` field which adds a pre-defined background illustration
+  - a `color` field which applies a pre-defined color theme to this section
+  - an `id` field which allows you to specify a unique anchor to this section for in-page linking
+  - a `buttons` list, which can show zero, one, or more large buttons, each expecting:
+      - a `label` which is the button text in sentence case
+      - a `url` which should follow the conventions above (omit the first slash for relative links)
+      - a `variant` if you wish to specify a color(`accent-warm`) or style (`outline`)
 
-```yaml
-searchgov:
+All of the above are optional, so if you don't want something, just omit it.
 
-  # You should not change this.
-  endpoint: https://search.usa.gov
+Some sections also use lists to show content in colums, lists, or cards. These all follow the same structure as well, within an `items` array:
+  - a `heading` field
+  - a `text` field (parsed as markdown)
+  - an `icon` field which will choose from one of the [USWDS icons](https://designsystem.digital.gov/components/icon/) by name (`add_circle`)
+  - a `button` element which has the same `label`, `url`, and `variant` button options above. 
+    The Tiles component allow you to specify whether the whole item is clickable, and to what url, using `link`. Do not use both of these together.
+    The Topics component will style this "button" as a text link.
 
-  # replace this with your search.gov account
-  affiliate: pages-uswds-example
+### Adding new pages
 
-  # replace with your access key
-  access_key: xX1gtb2RcnLbIYkHAcB6IaTRr4ZfN-p16ofcyUebeko=
+Add a new `src/pages/[page].astro` file and its corresponding `src/data/pages[page].yaml`. Make sure your new astro file points to the content at your new YAML file. Match your YAML keys to the objects you're passing into the components. 
 
-  # this renders the results within the page instead of sending the user to search.gov
-  inline: true
-```
+### Changing URLs
 
-The logic for using Search.gov can be found in `_includes/searchgov/form.html` and supports displaying the results inline or sending the user to Search.gov the view the results. This setting defaults to "inline" but can be changed by setting
+Rename the [page].astro filename to change the path. (Really, it's ok) This is not controlled by the page YAML file. **AND THEN:**
 
-```yaml
-searchgov:
-  inline: false
-```
+### Deleting pages / Redirects
 
-in `_data/site.yml`.
+Please add redirects to `redirects.ts` in the format:
 
-## How to edit cloud.gov content
+```'/old': '/new',```
 
-- Non-developers should focus on editing markdown content in the `content` folder. Generally most of the cloud.gov content will be in the `content` folder.
+**whenever** you delete or rename a page url. (Images and other assets can 404).
 
-- Pricing updates can go directly into `_data/pricing.yml` file and if any of the aws services need to be updated that can occur in the `_data/services.yml` file.
+### Adding images
 
-- We try to keep configuration options to a minimum so you can easily change functionality. You should review `.eleventy.js` to see the options that are available to you. There are a few values on top that you **need** to change. They refer to the agency name and contact information. The rest of `.eleventy.js` has a range of more advanced options.
+There are two places for images:
+`src/assets/` is home to the images that are dynamically accessed and inserted into the page HTML at build time. These are minified and hashed by Astro, and their actual paths on the website are not stable. You cannot safely link directly to these assets using `src` or `href`, or in Markdown.
 
-- If you look at `package.json` you will see that the `npm run build` command that will run when running on the cloud.gov Pages platform.
+`public/assets/img` is the place for any images that are loaded by the CSS, like background images. These are also assets that do not change (or change infrequently), so their URLs are stable. 
 
-- Do not edit files in the `_site/` folder. These files are auto-generated, and any change you make in the folder will be overwritten.
-
-- To edit the look and feel of the site, you need to edit files in `_includes/` folder, which render key components, like the menu, side navigation, and logos.
-
-- Some pages are styled to be `.html` rather than markdown you can find these in the `_layouts` folder.
-
-  - The `homepage` can be edited more directly in `index.liquid` file.
-  - The `pricing` page is mostly edited with the `index.liquid` file.
-
-- `_layouts/` may require the least amount of editing of all the files since they are primarily responsible for printing the content.
-
-- `_includes/searchgov/form.html` is used by search.gov.
-
-- If you make major changes to content, let the [#search](https://gsa-tts.slack.com/archives/C33CZQG2D) team know and they can reindex the site. More information on the search.gov account here: <https://search.usa.gov/sites/6217>
-
-## Updating content on your own computer
-
-```shell
-    git clone https://github.com/cloud-gov/site
-    cd site
-```
-
-Note that when built by cloud.gov Pages, `npm run build` is used instead of the
-`build` script.
-
-### Install dependencies and run app
-
-```shell
-    npm install
-    npm run assets:build && npx @11ty/eleventy
-    npx @11ty/eleventy --serve
-```
-
-Open your web browser to [localhost:4000](http://localhost:4000/) to view your
-site.
-
-## Technologies you should be familiarize yourself with
-
-- [11ty](https://www.11ty.dev/) - The primary site engine that builds your code and content.
-- [Front Matter](https://www.11ty.dev/docs/data-frontmatter/) - The top of each page/post includes keywords within `---` tags. This is meta data that helps 11ty build the site, but you can also use it to pass custom variables.
-- [U.S. Web Design System v 3.0](https://designsystem.digital.gov/)
 
 ## Contributing
 

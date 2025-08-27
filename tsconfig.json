@@ -1,0 +1,19 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": ["src", "src/types"],
+  "compilerOptions": {
+    "types": ["astro/client"],
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": [
+      "DOM",
+      "ES2022"
+    ],
+    "experimentalDecorators": true,
+    "useDefineForClassFields": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}

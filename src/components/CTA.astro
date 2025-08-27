@@ -1,0 +1,33 @@
+---
+import PageSection from "./PageSection.astro";
+
+interface Button {
+  label: string;
+  url: string;
+  variant?: string;
+}
+
+export interface Props {
+  heading: string;
+  intro?: string;
+  align?: "left" | "center";
+  buttons?: Button[];
+  color?: string;
+}
+
+const { align = "left", buttons = [], color = "white", ...props } = Astro.props;
+---
+
+<PageSection {...props} color={color} align={align}>
+  {
+    buttons.length > 0 && (
+      <div class={`align-${align} section__outro`}>
+        {buttons.map((btn) => (
+          <a href={btn.url} class={`usa-button${btn.variant ? ` usa-button--${btn.variant}` : ""} margin-bottom-05`}>
+            {btn.label}
+          </a>
+        ))}
+      </div>
+    )
+  }
+</PageSection>

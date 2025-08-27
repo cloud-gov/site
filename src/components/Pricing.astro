@@ -1,0 +1,361 @@
+---
+import Markdown from "./Markdown.astro";
+import CostEstimator from "./CostEstimator.astro";
+import { Image } from "astro:assets";
+
+interface Link {
+  label: string;
+  url: string;
+}
+
+interface PagesPricing {
+  name: string;
+  price: string;
+  unit?: string;
+  features: string[];
+}
+
+interface Pages {
+  subhead?: string;
+  heading?: string;
+  text?: string;
+  button?: Link;
+  pricing: PagesPricing;
+}
+
+interface AppsTier {
+  name: string;
+  credits: number;
+  price: string;
+  rowspan: number;
+  for?: string;
+}
+
+interface Apps {
+  subhead?: string;
+  heading?: string;
+  text?: string;
+  button?: Link;
+  tiers: AppsTier[];
+}
+interface WorkshopTier {
+  name: string;
+  credits: number;
+  price: string;
+  rowspan: number;
+  for?: string;
+}
+interface Workshop {
+  subhead?: string;
+  heading?: string;
+  text?: string;
+  button?: Link;
+  tiers: WorkshopTier[];
+}
+
+interface Props {
+  heading?: string;
+  intro?: string;
+  outro?: string;
+  pages: Pages;
+  apps: Apps;
+  workshop: Workshop;
+  color?: string;
+}
+
+const { apps, pages, workshop, color = "white" } = Astro.props;
+let appGroupIndex = 0;
+let workshopGroupIndex = 0;
+
+function formatNum(num = 0) {
+  return new Intl.NumberFormat().format(num);
+}
+
+function yearlyFromMonthly(num = 0) {
+  return formatNum(num * 12);
+}
+---
+
+<dialog id="estimator">
+  <div class="dialog-content">
+    <a href="#" id="close-estimator" class="dialog-close" aria-label="Close dialog">×</a>
+    <CostEstimator forSchema="credits" client:visible />
+  </div>
+</dialog>
+<dialog id="workshop-planner">
+  <div class="dialog-content">
+    <a href="#" id="close-workshop-planner" class="dialog-close" aria-label="Close dialog">×</a>
+    <CostEstimator forSchema="workshop" client:visible />
+  </div>
+</dialog>
+<section class={`usa-section section section--${color}`}>
+  <div class="section__container">
+    <div class="section__item section__item--pricing">
+      <div class="section__text top-divider top-divider--center-mobile">
+        <h3 class="font-body-sm text-uppercase text-ls-2 text-medium subhead">{apps.subhead}</h3>
+        <h4 class="font-body-xl text-medium">{apps.heading}</h4>
+
+        <Markdown content={apps.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
+
+        {
+          apps.button && (
+            <a class="usa-button usa-button--inverse" href={apps.button.url}>
+              {apps.button.label}
+            </a>
+          )
+        }
+      </div>
+      <div class="section__media section__media--pricing">
+        <div class="border radius-lg bg-white height-full overflow-hidden text-left width-full maxw-tablet">
+          <table
+            class="usa-table usa-table--borderless width-full font-sans-sm margin-0 overflow-hidden radius-lg pricing-table pricing-table--apps">
+            <thead>
+              <tr>
+                <th scope="col">Tier</th>
+                <th scope="col" class="text-right">Credits</th>
+                <th
+                  scope="col"
+                  class="display-none tablet:display-table-cell desktop:display-none desktop-lg:display-table-cell"
+                  >Best for</th
+                >
+              </tr>
+            </thead>
+            <tbody>
+              {
+                apps.tiers.map((tier) => {
+                  if (tier.rowspan > 0) appGroupIndex += 1;
+                  const rowClass = `pricing-group--${appGroupIndex}`;
+                  return (
+                    <>
+                      {tier.rowspan > 0 ? (
+                        <tr class={rowClass}>
+                          <th colspan="4">
+                            <Markdown content={tier.for} classes="font-body-sm line-height-body-3" inline />
+                          </th>
+                        </tr>
+                      ) : null}
+                      <tr class={rowClass}>
+                        <th scope="row">
+                          <span class="font-sans-md text-bold">{tier.name}</span>
+                          <br />
+                          <span class="font-sans-sm text-normal">{tier.price}</span>
+                        </th>
+
+                        <td class="text-right line-height-sans-3">
+                          <span class="font-sans-md text-bold text-no-wrap">{yearlyFromMonthly(tier.credits)}/yr</span>
+                          <br />
+                          <span class="font-sans-sm text-normal text-italic">~{formatNum(tier.credits)}/mo</span>
+                        </td>
+                        {tier.rowspan > 0 ? (
+                          <td rowspan={tier.rowspan}>
+                            <Markdown content={tier.for} classes="font-body-sm line-height-body-3" inline />
+                          </td>
+                        ) : null}
+                      </tr>
+                    </>
+                  );
+                })
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="section__item section__item--pricing" data-odd>
+      <div class="section__text top-divider top-divider--center-mobile">
+        <h3 class="font-body-sm text-uppercase text-ls-2 text-medium subhead">{pages.subhead}</h3>
+        <h4 class="font-body-xl text-medium heading">{pages.heading}</h4>
+
+        <Markdown content={pages.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
+        {
+          pages.button && (
+            <a class="usa-button usa-button--inverse usa-button--accent-cool" href={pages.button.url}>
+              {pages.button.label}
+            </a>
+          )
+        }
+      </div>
+      <div class="section__media section__media--pricing">
+        <div class="padding-4 border radius-lg bg-white height-full maxw-mobile-lg">
+          <!-- <h3 class="font-sans-xl text-bold margin-bottom-1 text-center">
+              {pages.pricing.name}
+            </h3> -->
+          <Image
+            class="height-10 width-auto margin-x-auto margin-y-2 display-block"
+            src={import(`./../assets/logo-cloud-pages.svg`)}
+            alt="Cloud.gov Pages Logo"
+            width="250"
+          />
+          <ul
+            class="usa-list font-body-md line-height-body-4 text-left padding-y-3 border-y border-y-width-2px border-base-lighter">
+            {pages.pricing.features.map((feature) => <li class="padding-y-05">{feature}</li>)}
+          </ul>
+          <div class="text-center line-height-sans-1 margin-y-1 text-base-darker">
+            <span class="display-inline-block font-sans-lg">$</span>
+            <span class="font-sans-3xl text-bold text-accent-cool">{pages.pricing.price}</span>
+            <span class="display-inline-block font-sans-lg">{pages.pricing.unit}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section__item section__item--pricing">
+      <div class="section__text top-divider top-divider--center-mobile">
+        <h3 class="font-body-sm text-uppercase text-ls-2 text-medium subhead">{workshop.subhead}</h3>
+        <h4 class="font-body-xl text-medium">{workshop.heading}</h4>
+
+        <Markdown content={workshop.text} classes="font-body-md line-height-body-3 margin-bottom-4" inline />
+
+        {
+          workshop.button && (
+            <a class="usa-button usa-button--accent-warm usa-button--inverse" href={workshop.button.url}>
+              {workshop.button.label}
+            </a>
+          )
+        }
+      </div>
+      <div class="section__media section__media--pricing">
+        <div class="border radius-lg bg-white height-full overflow-hidden text-left width-full maxw-tablet padding-3">
+          <Image
+            class="height-10 width-auto margin-x-auto margin-top-1 margin-bottom-3 display-block"
+            src={import(`./../assets/logo-cloud-workshop.svg`)}
+            alt="Cloud.gov Workshop Logo"
+            width="350"
+          />
+          <table
+            class="usa-table usa-table--borderless width-full font-sans-sm margin-y-2 margin-x-0 overflow-hidden pricing-table pricing-table--workshop border-y border-y-width-2px border-base-lighter">
+            <thead>
+              <tr class="usa-sr-only">
+                <th scope="col">Workshop Offering</th>
+                <th scope="col" class="text-right">Credits</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                workshop.tiers.map((tier, workshopGroupIndex) => {
+                  const rowClass = `pricing-group--${workshopGroupIndex}`;
+                  return (
+                    <>
+                      <tr class={rowClass}>
+                        <th scope="row">
+                          <h4 class="font-sans-md margin-bottom-05">{tier.name}</h4>
+                          <span class="font-sans-sm text-normal">{tier.for}</span>
+                        </th>
+
+                        <td class="text-right line-height-sans-3">
+                          <span class="font-sans-md text-bold text-no-wrap">{yearlyFromMonthly(tier.credits)} credits/yr</span>
+                          <br />
+                          <span class="font-sans-sm text-normal text-italic">~{formatNum(tier.credits)} credits/mo</span>
+                        </td>
+                      </tr>
+                    </>
+                  );
+                })
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    dialog {
+      width: 95vw;
+      max-width: 100ch;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0;
+      box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+    }
+    .dialog-content {
+      padding: 2rem;
+      display: flex;
+      flex-flow: column;
+      position: relative;
+    }
+
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    a.dialog-close {
+      display: inline-block;
+      text-align: right;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: inherit;
+      text-decoration: none;
+      margin-left: auto;
+      position: absolute;
+      right: 2rem;
+    }
+  </style>
+  <script type="module">
+    const creditEstimator = document.getElementById("estimator");
+    const creditEstimatorCloseLink = document.getElementById("close-estimator");
+    const creditEstimatorOpenLink = document.querySelectorAll("a[href='#estimator']")[0];
+
+    const workshopPlanner = document.getElementById("workshop-planner");
+    const workshopPlannerCloseLink = document.getElementById("close-workshop-planner");
+    const workshopPlannerOpenLink = document.querySelectorAll("a[href='#workshop-planner']")[0];
+
+    function openCreditEstimator() {
+      if (!creditEstimator.open) creditEstimator.showModal();
+      history.pushState("", document.title, window.location.pathname + "#estimator");
+    }
+    function openWorkshopPlanner() {
+      if (!workshopPlanner.open) workshopPlanner.showModal();
+      history.pushState("", document.title, window.location.pathname + "#workshop-planner");
+    }
+
+    function closeCreditEstimator() {
+      if (creditEstimator.open) creditEstimator.close();
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+    function closeWorkshopPlanner() {
+      if (workshopPlanner.open) workshopPlanner.close();
+      history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+
+    if (window.location.hash === "#estimator") {
+      openCreditEstimator();
+    }
+    if (window.location.hash === "#workshop-planner") {
+      openWorkshopPlanner();
+    }
+
+    creditEstimatorOpenLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      openCreditEstimator();
+    });
+
+    creditEstimatorCloseLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      closeCreditEstimator();
+    });
+
+    creditEstimator.addEventListener("click", (e) => {
+      if (e.target === creditEstimator) closeCreditEstimator();
+    });
+
+    workshopPlannerOpenLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      openWorkshopPlanner();
+    });
+
+    workshopPlannerCloseLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      closeWorkshopPlanner();
+    });
+
+    workshopPlanner.addEventListener("click", (e) => {
+      if (e.target === workshopPlanner) closeWorkshopPlanner();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeCreditEstimator();
+        closeWorkshopPlanner();
+      }
+    });
+  </script>
+</section>
