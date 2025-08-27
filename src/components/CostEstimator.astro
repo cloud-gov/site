@@ -10,7 +10,11 @@ const title = forSchema == "credits" ? "Cloud.gov Credit Estimator" : "Cloud.gov
 <>
   <h2 class="margin-top-0">{title}</h2>
 
-  <div data-for-schema=`${forSchema}` id=`${forSchema}-estimator` class="estimator-rows bg-primary-lightest border-primary-light border" role="grid">
+  <div
+    data-for-schema=`${forSchema}`
+    id=`${forSchema}-estimator`
+    class="estimator-rows bg-primary-lightest border-primary-light border"
+    role="grid">
     <div class="estimator-row header-row">
       <div class="service-container tablet:width-card-lg">
         <span class="usa-label text-bold" role="columnheader">Resource</span>
@@ -24,7 +28,9 @@ const title = forSchema == "credits" ? "Cloud.gov Credit Estimator" : "Cloud.gov
     </div>
   </div>
 
-  <button type="button" class="usa-button usa-button--outline margin-right-0" id=`${forSchema}-add-row`>+ Add resource</button>
+  <button type="button" class="usa-button usa-button--outline margin-right-0" id=`${forSchema}-add-row`
+    >+ Add resource</button
+  >
 
   <p class="total">
     Estimated credits: <span id=`${forSchema}-credit-total`></span>
@@ -53,7 +59,7 @@ const title = forSchema == "credits" ? "Cloud.gov Credit Estimator" : "Cloud.gov
 
       <div class="metered-container" role="gridcell" hidden>
         <input type="number" value="1" class="usa-input metered-input" id=`${forSchema}-metered-input` min="1" />
-        <label class="usa-label text-bold" for=`${forSchema}-metered-input`  hidden>
+        <label class="usa-label text-bold" for=`${forSchema}-metered-input` hidden>
           <span class="metered-unit margin-right-05">units</span>
           <span class="metered-type"></span>
         </label>
@@ -70,8 +76,7 @@ const title = forSchema == "credits" ? "Cloud.gov Credit Estimator" : "Cloud.gov
       <div class="remove-container" role="gridcell">
         <button type="button" title="Remove" class="usa-button--unstyled remove-btn" aria-label="Remove row">
           <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
-            <use href={`${Astro.site}/assets/uswds/img/sprite.svg#delete`}
-            ></use>
+            <use href={`${Astro.site}assets/uswds/img/sprite.svg#delete`}></use>
           </svg>
         </button>
       </div>
@@ -79,137 +84,137 @@ const title = forSchema == "credits" ? "Cloud.gov Credit Estimator" : "Cloud.gov
   </template>
 </>
 <script type="module" define:vars={{ forSchema }}>
-// scope because this script tag shows up for each separate calculator
-{
-  const thisEstimator = document.getElementById(`${forSchema}-estimator`);
+  // scope because this script tag shows up for each separate calculator
+  {
+    const thisEstimator = document.getElementById(`${forSchema}-estimator`);
 
-  const data = await fetch(`./data/${forSchema}.json`).then((r) => r.json());
-  const estimatorRows = document.getElementById(`${forSchema}-estimator`);
-  const addRowBtn = document.getElementById(`${forSchema}-add-row`);
-  const creditTotal = document.getElementById(`${forSchema}-credit-total`);
-  const rowTemplate = document.getElementById(`${forSchema}-row-template`);
+    const data = await fetch(`./data/${forSchema}.json`).then((r) => r.json());
+    const estimatorRows = document.getElementById(`${forSchema}-estimator`);
+    const addRowBtn = document.getElementById(`${forSchema}-add-row`);
+    const creditTotal = document.getElementById(`${forSchema}-credit-total`);
+    const rowTemplate = document.getElementById(`${forSchema}-row-template`);
 
-  function formatNum(num = 0) {
-    return new Intl.NumberFormat().format(num);
-  }
-
-  function yearlyFromMonthly(num = 0) {
-    return formatNum(num * 12);
-  }
-
-  function createRow() {
-    const node = rowTemplate.content.cloneNode(true);
-    const row = node.querySelector(".estimator-row");
-    const serviceSelect = node.querySelector(".service-select");
-    const planContainer = node.querySelector(".plan-container");
-    const planSelect = node.querySelector(".plan-select");
-    const meteredContainer = node.querySelector(".metered-container");
-    const meteredInput = node.querySelector(".metered-input");
-    const meteredUnit = node.querySelector(".metered-unit");
-    const meteredType = node.querySelector(".metered-type");
-    const multiplierContainer = node.querySelector(".multiplier-container");
-    const multiplierInput = node.querySelector(".multiplier-input");
-    const freeContainer = node.querySelector(".free-container");
-    const creditOutput = node.querySelector(".credit-output");
-    const removeBtn = node.querySelector(".remove-btn");
-
-    data.services.forEach((s, i) => {
-      const opt = document.createElement("option");
-      opt.value = i;
-      opt.textContent = s.name;
-      serviceSelect.appendChild(opt);
-    });
-
-    function updateRow() {
-      const selected = data.services[serviceSelect.value];
-      let credits = 0;
-
-      planContainer.hidden = true;
-      meteredContainer.hidden = true;
-      multiplierContainer.hidden = true;
-      freeContainer.hidden = true;
-      planSelect.innerHTML = "";
-
-      if (selected?.free) {
-        credits = 0;
-        freeContainer.hidden = false;
-      } else if (selected?.plans) {
-        planContainer.hidden = false;
-        selected.plans.forEach((p, i) => {
-          const opt = document.createElement("option");
-          opt.value = i;
-          let optContent = p.plan;
-          if (p.instanceClass !== undefined) {
-            optContent += ` (${p.instanceClass})`;
-          }
-          opt.textContent = optContent;
-          planSelect.appendChild(opt);
-        });
-
-        const updateCredits = () => {
-          const multiplier = Math.abs(parseFloat(multiplierInput.value)) || 1;
-          credits = (selected.plans[planSelect.value]?.credits * multiplier) || 0;
-        
-          if (selected?.multiplier && selected.plans[planSelect.value]?.credits > 0) {
-            multiplierContainer.hidden = false;
-          }
-          creditOutput.textContent = credits;
-          row.dataset.credits = credits;
-          updateTotal();
-        };
-
-        planSelect.addEventListener("change", updateCredits);
-
-        updateCredits();
-      } else if (selected?.metered) {
-        meteredContainer.hidden = false;
-        meteredUnit.innerText = selected.metered.unit;
-        meteredType.innerText = selected.metered.type;
-        meteredInput.placeholder = selected.metered.unit;
-
-        if (selected?.multiplier) {
-          multiplierContainer.hidden = false;
-        }
-
-        const updateCredits = () => {
-          const metered = Math.abs(parseFloat(meteredInput.value)) || 0;
-          const multiplier = Math.abs(parseFloat(multiplierInput.value)) || 1;
-          credits = Math.ceil(metered / selected.metered.unitsPerCredit) * multiplier * selected.metered.credits;
-          creditOutput.textContent = credits;
-          row.dataset.credits = credits;
-          updateTotal();
-        };
-
-        meteredInput.addEventListener("input", updateCredits);
-        multiplierInput.addEventListener("input", updateCredits);
-        updateCredits(); // Initial update
-      }
-
-      creditOutput.textContent = credits;
-      row.dataset.credits = credits;
-      updateTotal();
+    function formatNum(num = 0) {
+      return new Intl.NumberFormat().format(num);
     }
 
-    serviceSelect.addEventListener("change", updateRow);
-    removeBtn.addEventListener("click", () => {
-      row.remove();
-      updateTotal();
-    });
+    function yearlyFromMonthly(num = 0) {
+      return formatNum(num * 12);
+    }
 
-    updateRow();
-    estimatorRows.appendChild(row);
+    function createRow() {
+      const node = rowTemplate.content.cloneNode(true);
+      const row = node.querySelector(".estimator-row");
+      const serviceSelect = node.querySelector(".service-select");
+      const planContainer = node.querySelector(".plan-container");
+      const planSelect = node.querySelector(".plan-select");
+      const meteredContainer = node.querySelector(".metered-container");
+      const meteredInput = node.querySelector(".metered-input");
+      const meteredUnit = node.querySelector(".metered-unit");
+      const meteredType = node.querySelector(".metered-type");
+      const multiplierContainer = node.querySelector(".multiplier-container");
+      const multiplierInput = node.querySelector(".multiplier-input");
+      const freeContainer = node.querySelector(".free-container");
+      const creditOutput = node.querySelector(".credit-output");
+      const removeBtn = node.querySelector(".remove-btn");
+
+      data.services.forEach((s, i) => {
+        const opt = document.createElement("option");
+        opt.value = i;
+        opt.textContent = s.name;
+        serviceSelect.appendChild(opt);
+      });
+
+      function updateRow() {
+        const selected = data.services[serviceSelect.value];
+        let credits = 0;
+
+        planContainer.hidden = true;
+        meteredContainer.hidden = true;
+        multiplierContainer.hidden = true;
+        freeContainer.hidden = true;
+        planSelect.innerHTML = "";
+
+        if (selected?.free) {
+          credits = 0;
+          freeContainer.hidden = false;
+        } else if (selected?.plans) {
+          planContainer.hidden = false;
+          selected.plans.forEach((p, i) => {
+            const opt = document.createElement("option");
+            opt.value = i;
+            let optContent = p.plan;
+            if (p.instanceClass !== undefined) {
+              optContent += ` (${p.instanceClass})`;
+            }
+            opt.textContent = optContent;
+            planSelect.appendChild(opt);
+          });
+
+          const updateCredits = () => {
+            const multiplier = Math.abs(parseFloat(multiplierInput.value)) || 1;
+            credits = selected.plans[planSelect.value]?.credits * multiplier || 0;
+
+            if (selected?.multiplier && selected.plans[planSelect.value]?.credits > 0) {
+              multiplierContainer.hidden = false;
+            }
+            creditOutput.textContent = credits;
+            row.dataset.credits = credits;
+            updateTotal();
+          };
+
+          planSelect.addEventListener("change", updateCredits);
+
+          updateCredits();
+        } else if (selected?.metered) {
+          meteredContainer.hidden = false;
+          meteredUnit.innerText = selected.metered.unit;
+          meteredType.innerText = selected.metered.type;
+          meteredInput.placeholder = selected.metered.unit;
+
+          if (selected?.multiplier) {
+            multiplierContainer.hidden = false;
+          }
+
+          const updateCredits = () => {
+            const metered = Math.abs(parseFloat(meteredInput.value)) || 0;
+            const multiplier = Math.abs(parseFloat(multiplierInput.value)) || 1;
+            credits = Math.ceil(metered / selected.metered.unitsPerCredit) * multiplier * selected.metered.credits;
+            creditOutput.textContent = credits;
+            row.dataset.credits = credits;
+            updateTotal();
+          };
+
+          meteredInput.addEventListener("input", updateCredits);
+          multiplierInput.addEventListener("input", updateCredits);
+          updateCredits(); // Initial update
+        }
+
+        creditOutput.textContent = credits;
+        row.dataset.credits = credits;
+        updateTotal();
+      }
+
+      serviceSelect.addEventListener("change", updateRow);
+      removeBtn.addEventListener("click", () => {
+        row.remove();
+        updateTotal();
+      });
+
+      updateRow();
+      estimatorRows.appendChild(row);
+    }
+
+    function updateTotal() {
+      const rows = [...estimatorRows.querySelectorAll(".estimator-row")];
+      const total = rows.reduce((sum, row) => sum + (parseFloat(row.dataset.credits) || 0), 0);
+      creditTotal.textContent = `${formatNum(total)}/month or ${yearlyFromMonthly(total)}/year`;
+    }
+
+    addRowBtn.addEventListener("click", createRow);
+
+    createRow();
   }
-
-  function updateTotal() {
-    const rows = [...estimatorRows.querySelectorAll(".estimator-row")];
-    const total = rows.reduce((sum, row) => sum + (parseFloat(row.dataset.credits) || 0), 0);
-    creditTotal.textContent = `${formatNum(total)}/month or ${yearlyFromMonthly(total)}/year`;
-  }
-
-  addRowBtn.addEventListener("click", createRow);
-
-  createRow();
-}
 </script>
 
 <style lang="scss">
@@ -309,7 +314,7 @@ const title = forSchema == "credits" ? "Cloud.gov Credit Estimator" : "Cloud.gov
       gap: 1rem;
       padding: 1rem 0;
       flex-wrap: wrap;
-      
+
       label {
         margin-top: 0;
       }

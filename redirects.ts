@@ -20,7 +20,7 @@ export const redirects: Record<string, RedirectConfig> = {
   '/docs/customer-stories/epa-airnow-gov/': '/customer-stories/epa-airnow-gov/',
   '/docs/customer-stories/fec/': '/customer-stories/fec/',
 
-  '/docs/overview/': 'https://docs.cloud.gov/',
+  '/docs/overview/': '/',
   '/docs/overview/cloudgov-benefits/': '/',
   '/docs/overview/cloudgov-team/': '/',
   '/docs/overview/customer-service-objectives/': '/',
@@ -33,6 +33,7 @@ export const redirects: Record<string, RedirectConfig> = {
   // ^^ docs that aren't docs
 
   // platform docs
+  '/docs/': 'https://docs.cloud.gov/',
   '/docs/compliance/ato-process/': 'https://docs.cloud.gov/platform/compliance/ato-process',
   '/docs/compliance/auditing-activity/': 'https://docs.cloud.gov/platform/compliance/auditing-activity',
   '/docs/compliance/cisa-directives/': 'https://docs.cloud.gov/platform/compliance/cisa-directive-compliance',
