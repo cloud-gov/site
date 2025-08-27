@@ -17,7 +17,7 @@ hero:
 stakes:
   heading: Starting a project shouldn't mean building your toolbench from scratch. 
   intro: |
-    Compliance reviews, procurement delays, tool sprawl, and endless documentation rewrites slow down even the best of teams.
+    Procurement delays, tool sprawl, compliance reviews, and endless documentation rewrites slow down even the best of teams.
 
     You want to ship secure software, not juggle mismatched tools or wait on another RFP. Cloud.gov Workshop streamlines the way federal teams build and run applications, without cutting corners on compliance.
 
