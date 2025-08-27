@@ -33,7 +33,7 @@ const { items = [], color = "white", id, ...props } = Astro.props;
           {item.icon && (
             <div class="width-4 margin-right-2">
               <svg class="usa-icon usa-icon--size-4" role="img" aria-hidden="true">
-                <use href={`${Astro.site}assets/uswds/img/sprite.svg#${item.icon}`} />
+                <use href={`assets/uswds/img/sprite.svg#${item.icon}`} />
               </svg>
             </div>
           )}
@@ -54,7 +54,7 @@ const { items = [], color = "white", id, ...props } = Astro.props;
                 <a class="usa-link" href={item.button.url}>
                   {item.button.label}
                   <svg class="usa-icon text-bottom width-2 height-205" aria-hidden="true" focusable="false" role="img">
-                    <use href={`${Astro.site}assets/uswds/img/sprite.svg#navigate_next`} />
+                    <use href={`assets/uswds/img/sprite.svg#navigate_next`} />
                   </svg>
                 </a>
               </p>
