@@ -87,9 +87,15 @@ Connect to your Elasticache service using port forwarding (see [Using SSH](/docs
 ```shell
 elasticache_credentials=$(cf service-key my-elasticache my-key | tail -n +3)
 
+# CF CLI v7
 elasticache_hostname=$(echo "${elasticache_credentials}" | jq -r '.hostname')
 elasticache_port=$(echo "${elasticache_credentials}" | jq -r '.port')
 elasticache_password=$(echo "${elasticache_credentials}" | jq -r '.password')
+
+# CF CLI v8
+elasticache_hostname=$(echo "${elasticache_credentials}" | jq -r '.credentials.hostname')
+elasticache_port=$(echo "${elasticache_credentials}" | jq -r '.credentials.port')
+elasticache_password=$(echo "${elasticache_credentials}" | jq -r '.credentials.password')
 
 cf ssh my-app -L "8000:${elasticache_hostname}:${elasticache_port}"
 ```
