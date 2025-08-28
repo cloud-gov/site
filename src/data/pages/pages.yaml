@@ -136,7 +136,7 @@ AtoMedia:
   intro: "Cloud.gov’s shared responsibility model gives federal teams a head start, whether you’re seeking a new ATO or reauthorizing an existing system. With Cloud.gov’s position, context, and expertise inside government, we understand firsthand what’s hard for agency customers."
   items:
     - heading: "Guided security support with our in-house experts"
-      text: "The Cloud.gov Pages team directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessments (SIA)."
+      text: "The Cloud.gov Pages team works directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessments (SIA)."
       mediaComponent: "Illustration-ATO-Pages"
       button:
         variant: "accent-cool"
