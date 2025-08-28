@@ -31,7 +31,7 @@ commonSupportTopics:
     - heading: "Open a ticket"
       text: "Need help? Email **support@cloud.gov** or click here to open a support ticket in our help desk."
       icon: "support_agent"
-      link: "javascript:zE?zE('webWidget', 'open'):location.assign('mailto:support@cloud.gov')"
+      url: "mailto:support@cloud.gov"
 
     - heading: "Release notes"
       text: "Buildpack updates, bug fixes, and more for those building apps and services on Cloud.gov."
