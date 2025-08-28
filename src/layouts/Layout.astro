@@ -20,6 +20,9 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <Meta title={title} description={description} />
     <style is:inline>
+      html {
+        background-color: white;
+      }
       body {
         visibility: hidden;
         opacity: 0;
