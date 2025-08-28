@@ -44,7 +44,7 @@ solution:
     #   text: Plan, track, and deliver the way your team works best with built-in boards, issues, and roadmaps.
 
     - heading: "Plan to production, in one place"
-      text: "Plan work, review code, run pipelines, and manage artifacts without swithing tools — stay in flow from issue to deploy."
+      text: "Plan work, review code, run pipelines, and manage artifacts without switching tools — stay in flow from issue to deploy."
 
     - heading: Your fastest path to ATO
       text: Running on Cloud.gov means you inherit more than 300 NIST 800-53 Rev 5 controls to significantly shorten your authorization process.
