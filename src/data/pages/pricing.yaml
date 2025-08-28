@@ -135,7 +135,7 @@ pricingContent:
     heading: "Powerhouse tools at warehouse pricing"
     text: |
 
-      Use your Cloud.gov service credits to create the plan that works for you. Start with enough seats for your first team and namespace, which comes with a small 10-job CI/CD runner and 10GiB of storage per seat towards your total allocation. 
+      Use your Cloud.gov service credits to create the plan that works for you. Start with enough seats for your first team and namespace, which comes with a small 10 parallel job CI/CD runner and 10GiB of storage per user seat towards your total storage allocation. 
       
       Have more than one team, or a more complex organization? Add as many namespaces as you want, structure them to your needs, and scale them individually. When one of your namespaces needs capacity for more than 10 parallel jobs, you can easily scale up to 80 jobs. 
       
