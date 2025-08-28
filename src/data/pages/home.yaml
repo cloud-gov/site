@@ -7,7 +7,7 @@ hero:
   intro: |
     Most federal software development teams spend more time pushing paperwork around than pushing to production.
   content: |
-    As a FedRAMP-authorized Cloud Services Provider within General Services Administration (GSA), our customers don’t need to navigate vendor contracts, exhaustive security reviews, or external approvals. Our infrastructure, pricing, and onboarding are designed specifically for government—**so you can focus on delivery, not procurement**.
+    As a FedRAMP-authorized Cloud Services Provider within General Services Administration (GSA), our customers don’t need to navigate vendor contracts, exhaustive security reviews, or external approvals. Our infrastructure, pricing, and onboarding are designed specifically for government — **so you can focus on delivery, not procurement**.
   art: "g2g"
   buttons:
     - label: "Get a free sandbox"
@@ -75,7 +75,7 @@ mandatesHandled:
 
     - Integrated platform patching, automated backups, centralized logging, and incident alerting mapped to **NIST 800-53 Rev. 5 control families like SI, AU, and CM**.
 
-    - Encrypted, isolated networking between containers with short-lived credentials and granular access policies—aligned with **EO 14028 and CISA’s Zero Trust Maturity Model**.
+    - Encrypted, isolated networking between containers with short-lived credentials and granular access policies — aligned with **EO 14028 and CISA’s Zero Trust Maturity Model**.
 
     - **FIPS 140-2** compliant environment with cryptographic modules validated against **FIPS 140-3**.
 
