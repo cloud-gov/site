@@ -1,7 +1,6 @@
 title: Faster, easier, and more secure digital services for government agencies
 description: A platform-as-a-service built for government. Deploy secure, compliant sites and apps without managing infrastructure.
 
-
 hero:
   heading: "Faster, easier, and built for government from the start"
   intro: |
@@ -65,23 +64,22 @@ stepsList:
       text: "Launch your cloud services with a one-year renewable agreement designed for continuous adaptation. Months before you renew, we reach out to you about your evolving technology needs, ensuring your technology always matches your mission."
 
 mandatesHandled:
-  heading: "The latest 2025 federal compliance mandates, handled"
+  heading: "2025 federal compliance mandates—platform controls handled for you"
   art: "compliance-alt"
   color: "primary-vivid"
   intro: |
-    Cloud.gov is already FedRAMP Authorized (Moderate), so your agency can reuse our compliance package. That means on day one, you can check these off your list:
+    Cloud.gov is FedRAMP Authorized (Moderate). When you build on our platform, you can reuse our authorization package and inherit the platform-level controls that we operate and continuously maintain. This reduces the scope of your own compliance work, but you are still responsible for controls specific to your application.
   content: |
-    - Built-in continuous monitoring, monthly vulnerability scans, POA&M updates, incident reporting, and annual assessments that satisfy key **FY 2025 FISMA CIO metrics under OMB M-25-04**.
+    - **Continuous monitoring and reporting for the platform**: We perform monthly vulnerability scans, POA&M updates, incident reporting, and annual assessments that align with **FY 2025 FISMA CIO metrics under OMB M-25-04**.
 
-    - Integrated platform patching, automated backups, centralized logging, and incident alerting mapped to **NIST 800-53 Rev. 5 control families like SI, AU, and CM**.
+    - **Core operational safeguards managed by Cloud.gov**: Platform patching, automated backups, centralized logging, and incident alerting are implemented and mapped to **NIST 800-53 Rev. 5 control families such as SI, AU, and CM**.
 
-    - Encrypted, isolated networking between containers with short-lived credentials and granular access policies — aligned with **EO 14028 and CISA’s Zero Trust Maturity Model**.
+    - **Zero Trust–aligned infrastructure protections**: Container networking is encrypted and isolated, with short-lived credentials and granular access policies—meeting the intent of **EO 14028 and CISA’s Zero Trust Maturity Model** at the platform layer.
+  outro: |
+    These inherited controls mean your agency has fewer items to implement and assess. You remain responsible for securing your application code, data, and any customer-specific configurations, while Cloud.gov manages the underlying infrastructure and platform controls.
 
-    - **FIPS 140-2** compliant environment with cryptographic modules validated against **FIPS 140-3**.
-
-
-  buttons: 
-  # TODO add links
+  buttons:
+    # TODO add links
     - label: "More about compliance"
       url: "security"
   outro: |
