@@ -7,72 +7,69 @@ hero:
     We handle the infrastructure. You focus on your application.
 
   content: |
-    When you build on Cloud.gov, **you inherit hundreds of security and operational controls** from our FedRAMP-authorized platform—reducing the time, effort, and risk required to achieve an ATO.
+    When you build on Cloud.gov, **you inherit hundreds of security and operational controls** from our FedRAMP-authorized (Moderate) platform. That means less time, less effort, and lower risk in getting your Authority to Operate (ATO).
 
   art: "compliance"
 
 g2g:
-  heading: "Zero-trust infrastructure that meets every government expectation"
-  intro: "Cloud.gov provides you with a FIPS 140-2 compliant environment designed for U.S. federal workloads, where we can offer top-requested security features like:"
+  heading: "Zero-trust infrastructure that meets government expectations"
+  intro: "Cloud.gov provides you with a secure environment designed for U.S. federal workloads, where we can offer top-requested security features like:"
   align: "center"
   color: "primary-vivid"
   items:
     - heading: "Supply-chain hardening"
-      text: "100% of our images are built using pre-scanned, signed, and reproducible buildpacks."
+      text: "Our images are built using pre-scanned and reproducible buildpacks."
       icon: "verified_user"
     - heading: "Per-app isolation"
-      text: "Every container runs in its own trust zone with mutual encryption enforced on every route."
+      text: "Every container runs in its own trust zone with mutual encryption protecting every route."
       icon: "safety_divider"
     - heading: "Least privilege strategy"
-      text: "We deny service-to-service access by default and grant it only through explicit policies."
+      text: "We deny service-to-service access unless your policies explicitly allow it."
       icon: "do_not_touch"
 
 launchNow:
   heading: "Launch securely now, not next quarter"
   art: "compliance-alt"
   intro: |
-    Skip months of security configuration. Our multi-availability zone platform includes enterprise-level protections designed to meet the most stringent federal requirements. 
-    
-  content: | 
-    When you run your FISMA Low or Moderate system on Cloud.gov, you automatically inherit coverage for more than 300 of the NIST 800-53 Rev 5 controls. That means on day one, you can check these off your list:
+    Skip months of security configuration. Our multi-availability zone platform includes enterprise-level protections designed to meet the most stringent federal requirements.
+
+  content: |
+    When you run your FISMA Low or Moderate system on Cloud.gov, you automatically inherit coverage for more than 155 of the NIST 800-53 Rev 5 controls. That means on day one, you can check these off your list:
 
   checks: true
   items:
-    - heading: Advanced anti-malware protection 
-    - heading: Comprehensive network security controls 
+    - heading: Comprehensive network security controls
     - heading: Proactive, immediate event alerting
-    - heading: Intelligent web application firewall (WAF) rules 
+    - heading: Intelligent web application firewall (WAF) rules
     - heading: Searchable application logging
-    - heading: Elastic infrastructure scaling for sudden traffic surges
-    - heading: Continuous monitoring that meets every 2025 FISMA metric for OMB M-25-04
-    - heading: A completely “Zero Trust” model that satisfies Executive Order 14028 
-    - heading: Cryptographic modules that are validated against the FIPS 140-3 Standard
+    - heading: Elastic infrastructure scaling for traffic surges
+    - heading: Continuous monitoring aligned with OMB M-25-04 and 2025 FISMA metrics
+    - heading: A “Zero Trust” model that aligns with Executive Order 14028
     - heading: Physical and environmental protections (PE family)
     - heading: Network and boundary controls (SC-7, AC-17)
     - heading: Platform patching, backups, and system monitoring (SI, AU, CM families)
-    - heading:  A FIPS 140-2 compliant environment
+
   outro: |
     You don’t have to set up your own platform team to meet federal compliance requirements.  **We’re already operating one for you.**
-
 
 AtoMedia:
   heading: "Designed for the way government launches software"
   intro: "Cloud.gov’s shared responsibility model gives federal teams a head start, whether you’re seeking a new ATO or reauthorizing an existing system. With Cloud.gov’s position, context, and expertise inside government, we understand firsthand what’s hard for agency customers."
   items:
     - heading: "Guided security support with our in-house experts"
-      text: "We work directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessments (SIA)."
+      text: "Cloud.gov is built for self-service—our documentation and tooling give your team what they need to move quickly and independently. But you’re not on your own: our in-house experts are available to point you to the right resources and answer your security and compliance questions."
       mediaComponent: "Illustration-ATO"
       button:
         label: "Check us out on the FedRAMP marketplace"
         url: "https://marketplace.fedramp.gov/products/F1607067912"
+
     - heading: "We do more, so you do less"
       text: "Cloud.gov isn’t just _technically_ compliant—it’s built with the realities of federal security in mind. We’ve supported dozens of agencies through audits, ATOs, and reauthorizations, and we’ve shaped our platform and docs around what teams actually need to succeed."
       mediaComponent: "Illustration-Security"
       button:
-        label: "Review our compliance docs on Connect.gov"
-        url: "https://www.connect.gov/"
+        label: "Explore our compliance documentation"
+        url: "https://docs.cloud.gov/platform/compliance/"
   color: "primary-dark"
-
 
 yourMissionOurInfra:
   heading: "Your mission, our infrastructure"
