@@ -54,7 +54,7 @@ ourApproach:
   items:
     - id: "g2g"
       heading: "Built for gov, by gov"
-      text: "Our infrastructure, pricing, and onboarding are designed specifically for government—so you can focus on delivery, not procurement."
+      text: "Our infrastructure, pricing, and onboarding are designed specifically for government — so you can focus on delivery, not procurement."
       link:
         label: "Our approach"
         url: ""
