@@ -20,7 +20,7 @@ import sitewide from "../data/sitewide.yaml";
     width="100%"
     height="533"
     referrerpolicy="origin"
-    sandbox="allow-forms allow-scripts"
+    sandbox="allow-forms allow-scripts allow-same-origin"
     allow="
     geolocation 'none';
     camera 'none';
@@ -35,43 +35,6 @@ import sitewide from "../data/sitewide.yaml";
     onload="this.style.backgroundImage='none'"
     style="border:0;background:#fff url('/assets/img/loading.gif') no-repeat center 10%;background-size:10vw"
   ></iframe>
-  <Tiles {...sitewide.supportTiles} />
-  <Subscribe {...sitewide.newsletter} />
-</Layout>
-
-<style></style>
-
---- import Layout from "../layouts/Layout.astro"; import Hero from
-"../components/Hero.astro"; import Tiles from "../components/Tiles.astro";
-import Subscribe from "../components/Subscribe.astro"; import content from
-"../data/pages/contact.yaml"; import sitewide from "../data/sitewide.yaml"; ---
-
-<Layout title={content.title} description={content.description}>
-  <Hero {...content.headerSection} />
-  <script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"
-  ></script><!-- Secure Airtable iframe (auto-loads, minimal) -->
-  <iframe
-    title="Cloud.gov contact form (Airtable)"
-    src="https://airtable.com/embed/appbHJFEYs3H7fmA8/shrNrGC5KQnLgJqWc"
-    loading="eager"
-    width="100%"
-    height="533"
-    referrerpolicy="origin"
-    sandbox="allow-forms allow-scripts"
-    allow="
-    geolocation 'none';
-    camera 'none';
-    microphone 'none';
-    clipboard-read 'none';
-    clipboard-write 'none';
-    payment 'none';
-    usb 'none';
-    bluetooth 'none';
-    xr-spatial-tracking 'none';
-    fullscreen 'none'
-  "
-    style="border:0"></iframe>
-
   <Tiles {...sitewide.supportTiles} />
   <Subscribe {...sitewide.newsletter} />
 </Layout>
