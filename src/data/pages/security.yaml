@@ -57,19 +57,18 @@ AtoMedia:
   intro: "Cloud.gov’s shared responsibility model gives federal teams a head start, whether you’re seeking a new ATO or reauthorizing an existing system. With Cloud.gov’s position, context, and expertise inside government, we understand firsthand what’s hard for agency customers."
   items:
     - heading: "Guided security support with our in-house experts"
-      text: "We work directly with your security and compliance staff to provide system diagrams and boundary documentation, walk your team through inherited control mappings, and even **provide boilerplate text and evidence** for your System Security Plan (SSP) and Security Impact Assessments (SIA)."
+      text: "Cloud.gov is built for self-service—our documentation and tooling give your team what they need to move quickly and independently. But you’re not on your own: our in-house experts are available to point you to the right resources, answer your security and compliance questions.
       mediaComponent: "Illustration-ATO"
       button:
         label: "Check us out on the FedRAMP marketplace"
         url: "https://marketplace.fedramp.gov/products/F1607067912"
+
     - heading: "We do more, so you do less"
       text: "Cloud.gov isn’t just _technically_ compliant—it’s built with the realities of federal security in mind. We’ve supported dozens of agencies through audits, ATOs, and reauthorizations, and we’ve shaped our platform and docs around what teams actually need to succeed."
       mediaComponent: "Illustration-Security"
       button:
-        label: "- **Accelerated ATO timeline through inherited controls**"
-      text: "In Cloud.gov, hundreds of Moderate baseline controls are already implemented, assessed, and continuously monitored. You only handle the remaining system-specific and hybrid controls. That means fewer control narratives, fewer configurations, fewer test cases—and a significantly faster ATO path."
-
-
+        label: "Explore our compliance documentation"
+        url: "https://docs.cloud.gov/platform/compliance/"
   color: "primary-dark"
 
 yourMissionOurInfra:
