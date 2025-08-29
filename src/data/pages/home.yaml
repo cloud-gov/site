@@ -64,20 +64,17 @@ stepsList:
       text: "Launch your cloud services with a one-year renewable agreement designed for continuous adaptation. Months before you renew, we reach out to you about your evolving technology needs, ensuring your technology always matches your mission."
 
 mandatesHandled:
-  heading: "2025 federal compliance mandates—platform controls handled for you"
+  heading: "The latest 2025 federal compliance mandates, handled"
   art: "compliance-alt"
   color: "primary-vivid"
   intro: |
-    Cloud.gov is FedRAMP Authorized (Moderate). When you build on our platform, you can reuse our authorization package and inherit the platform-level controls that we operate and continuously maintain. This reduces the scope of your own compliance work, but you are still responsible for controls specific to your application.
-  items:
-    - heading: "Continuous monitoring and reporting (platform)"
-      text: "We perform monthly vulnerability scans, POA&M updates, incident reporting, and annual assessments that align with FY 2025 FISMA CIO metrics under OMB M-25-04."
-    - heading: "Operational safeguards managed by Cloud.gov"
-      text: "Platform patching, automated backups, centralized logging, and incident alerting are implemented and mapped to NIST 800-53 Rev. 5 control families such as SI, AU, and CM."
-    - heading: "Zero Trust–aligned infrastructure protections"
-      text: "Container networking is encrypted and isolated, with short-lived credentials and granular access policies—meeting the intent of EO 14028 and CISA’s Zero Trust Maturity Model at the platform layer."
-  outro: |
-    These inherited controls mean your agency has fewer items to implement and assess. You remain responsible for securing your application code, data, and any customer-specific configurations, while Cloud.gov manages the underlying infrastructure and platform controls.
+    Cloud.gov is already FedRAMP Authorized (Moderate), so your agency can reuse our compliance package. That means on day one, your **platform layer** already meets these mandates:
+  content: |
+    - Continuous monitoring, monthly vulnerability scans, POA&M updates, incident reporting, and annual assessments — all performed for the **platform itself**, satisfying key FY 2025 FISMA CIO metrics under OMB M-25-04.
+
+    - Platform patching, automated backups, centralized logging, and incident alerting mapped to **NIST 800-53 Rev. 5 control families like SI, AU, and CM**.
+
+    - Encrypted, isolated networking between containers with short-lived credentials and granular access policies — aligned with **EO 14028 and CISA’s Zero Trust Maturity Model**.
 
   buttons:
     # TODO add links
