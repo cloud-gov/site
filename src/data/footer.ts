@@ -55,7 +55,7 @@ export const footerProps = {
     },
     {
       text: "Accessibility statement",
-      url: "https://www.gsa.gov/website-information/accessibility-aids"
+      url: "https://www.gsa.gov/website-information/accessibility-statement"
     },
     {
       text: "FOIA requests",
