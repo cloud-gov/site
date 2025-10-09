@@ -321,6 +321,16 @@
           "plan": "es-4xlarge-gp-ha",
           "instanceClass": "m5.4xlarge.search",
           "credits": 456
+        },
+        {
+          "plan": "es-12xlarge-gp",
+          "instanceClass": "m5.4xlarge.search",
+          "credits": 978
+        },
+        {
+          "plan": "es-12xlarge-gp-ha",
+          "instanceClass": "m5.4xlarge.search",
+          "credits": 1368
         }
       ]
     },
