@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.4.1",
-    "astro": "^5.13.7",
+    "astro": "^5.14.4",
     "lit": "^3.3.0",
     "rollup-plugin-copy": "^3.5.0"
   },
