@@ -2,9 +2,10 @@
   "services": [
     {
       "name": "Containerized apps",
+      "resource-kind": "cf-app-memory",
       "multiplier": true,
       "metered": {
-        "type": "reserved",
+        "type": "used",
         "unit": "GBs of memory",
         "unitsPerCredit": 1,
         "credits": 3
@@ -237,6 +238,7 @@
     },
     {
       "name": "AWS RDS storage",
+      "resource-kind": "rds-storage",
       "metered": {
         "type": "reserved",
         "unit": "GBs",
@@ -246,6 +248,7 @@
     },
     {
       "name": "AWS S3 storage",
+      "resource-kind": "s3-storage",
       "metered": {
         "type": "used",
         "unit": "GBs",
@@ -355,6 +358,7 @@
     },
     {
       "name": "AWS OpenSearch storage",
+      "resource-kind": "aws-opensearch-storage",
       "metered": {
         "type": "reserved",
         "unit": "GBs",
@@ -364,6 +368,7 @@
     },
     {
       "name": "AWS SES (Emails)",
+      "resource-kind": "aws-ses-emails-sent",
       "metered": {
         "type": "used",
         "unit": "Sends",
@@ -373,6 +378,7 @@
     },
     {
       "name": "AWS SES (Attachments)",
+      "resource-kind": "aws-ses-attachment-data",
       "metered": {
         "type": "used",
         "unit": "GBs",
@@ -381,7 +387,17 @@
       }
     },
     {
-      "name": "Autoscaler",
+      "name": "App Autoscaler",
+      "plans": [
+        {
+          "plan": "autoscaler-free-plan",
+          "credits": 0
+        },
+        {
+          "plan": "acceptance-standard",
+          "credits": 0
+        }
+      ],
       "free": true,
       "credits": 0
     },
@@ -396,6 +412,7 @@
     },
     {
       "name": "UAA Service Account",
+      "resource-kind": "cf-uaa-service-account",
       "free": true,
       "credits": 0
     }
