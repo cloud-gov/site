@@ -1,34 +1,15 @@
 {
   "services": [
     {
-      "name": "AWS ElastiCache",
-      "plans": [
-        {
-          "plan": "redis-dev",
-          "instanceClass": "cache.t3.micro",
-          "credits": 1
-        },
-        {
-          "plan": "redis-3node",
-          "instanceClass": "cache.t3.micro",
-          "credits": 2
-        },
-        {
-          "plan": "redis-5node",
-          "instanceClass": "cache.t3.micro",
-          "credits": 4
-        },
-        {
-          "plan": "redis-3node-large",
-          "instanceClass": "cache.t3.small",
-          "credits": 5
-        },
-        {
-          "plan": "redis-5node-large",
-          "instanceClass": "cache.t3.small",
-          "credits": 8
-        }
-      ]
+      "name": "Containerized apps",
+      "resource-kind": "cf-app-memory",
+      "multiplier": true,
+      "metered": {
+        "type": "used",
+        "unit": "GBs of memory",
+        "unitsPerCredit": 1,
+        "credits": 3
+      }
     },
     {
       "name": "AWS RDS",
@@ -257,12 +238,53 @@
     },
     {
       "name": "AWS RDS storage",
+      "resource-kind": "rds-storage",
       "metered": {
         "type": "reserved",
         "unit": "GBs",
         "unitsPerCredit": 100,
         "credits": 1
       }
+    },
+    {
+      "name": "AWS S3 storage",
+      "resource-kind": "s3-storage",
+      "metered": {
+        "type": "used",
+        "unit": "GBs",
+        "unitsPerCredit": 400,
+        "credits": 1
+      }
+    },
+    {
+      "name": "AWS ElastiCache",
+      "plans": [
+        {
+          "plan": "redis-dev",
+          "instanceClass": "cache.t3.micro",
+          "credits": 1
+        },
+        {
+          "plan": "redis-3node",
+          "instanceClass": "cache.t3.micro",
+          "credits": 2
+        },
+        {
+          "plan": "redis-5node",
+          "instanceClass": "cache.t3.micro",
+          "credits": 4
+        },
+        {
+          "plan": "redis-3node-large",
+          "instanceClass": "cache.t3.small",
+          "credits": 5
+        },
+        {
+          "plan": "redis-5node-large",
+          "instanceClass": "cache.t3.small",
+          "credits": 8
+        }
+      ]
     },
     {
       "name": "AWS OpenSearch",
@@ -336,6 +358,7 @@
     },
     {
       "name": "AWS OpenSearch storage",
+      "resource-kind": "aws-opensearch-storage",
       "metered": {
         "type": "reserved",
         "unit": "GBs",
@@ -344,16 +367,8 @@
       }
     },
     {
-      "name": "AWS S3 storage",
-      "metered": {
-        "type": "used",
-        "unit": "GBs",
-        "unitsPerCredit": 400,
-        "credits": 1
-      }
-    },
-    {
       "name": "AWS SES (Emails)",
+      "resource-kind": "aws-ses-emails-sent",
       "metered": {
         "type": "used",
         "unit": "Sends",
@@ -363,6 +378,7 @@
     },
     {
       "name": "AWS SES (Attachments)",
+      "resource-kind": "aws-ses-attachment-data",
       "metered": {
         "type": "used",
         "unit": "GBs",
@@ -371,17 +387,17 @@
       }
     },
     {
-      "name": "Containerized apps",
-      "multiplier": true,
-      "metered": {
-        "type": "reserved",
-        "unit": "GBs of memory",
-        "unitsPerCredit": 1,
-        "credits": 3
-      }
-    },
-    {
-      "name": "Autoscaler",
+      "name": "App Autoscaler",
+      "plans": [
+        {
+          "plan": "autoscaler-free-plan",
+          "credits": 0
+        },
+        {
+          "plan": "acceptance-standard",
+          "credits": 0
+        }
+      ],
       "free": true,
       "credits": 0
     },
@@ -396,6 +412,7 @@
     },
     {
       "name": "UAA Service Account",
+      "resource-kind": "cf-uaa-service-account",
       "free": true,
       "credits": 0
     }
