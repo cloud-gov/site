@@ -2,6 +2,7 @@
   "services": [
     {
       "name": "Containerized apps",
+      "product": "platform",
       "resource-kind": "cf-app-memory",
       "multiplier": true,
       "metered": {
@@ -13,6 +14,7 @@
     },
     {
       "name": "AWS RDS",
+      "product": "platform",
       "plans": [
         {
           "plan": "micro-psql",
@@ -238,6 +240,7 @@
     },
     {
       "name": "AWS RDS storage",
+      "product": "platform",
       "resource-kind": "rds-storage",
       "metered": {
         "type": "reserved",
@@ -248,6 +251,7 @@
     },
     {
       "name": "AWS S3 storage",
+      "product": "platform",
       "resource-kind": "s3-storage",
       "metered": {
         "type": "used",
@@ -258,6 +262,7 @@
     },
     {
       "name": "AWS ElastiCache",
+      "product": "platform",
       "plans": [
         {
           "plan": "redis-dev",
@@ -288,6 +293,7 @@
     },
     {
       "name": "AWS OpenSearch",
+      "product": "platform",
       "plans": [
         {
           "plan": "es-dev",
@@ -358,6 +364,7 @@
     },
     {
       "name": "AWS OpenSearch storage",
+      "product": "platform",
       "resource-kind": "aws-opensearch-storage",
       "metered": {
         "type": "reserved",
@@ -368,6 +375,7 @@
     },
     {
       "name": "AWS SES (Emails)",
+      "product": "platform",
       "resource-kind": "aws-ses-emails-sent",
       "metered": {
         "type": "used",
@@ -379,6 +387,7 @@
     {
       "name": "AWS SES (Attachments)",
       "resource-kind": "aws-ses-attachment-data",
+      "product": "platform",
       "metered": {
         "type": "used",
         "unit": "GBs",
@@ -388,6 +397,7 @@
     },
     {
       "name": "App Autoscaler",
+      "product": "platform",
       "plans": [
         {
           "plan": "autoscaler-free-plan",
@@ -403,6 +413,7 @@
     },
     {
       "name": "External Domain",
+      "product": "platform",
       "plans": [
         {
           "plan": "domain-with-cdn-dedicated-waf",
@@ -412,9 +423,74 @@
     },
     {
       "name": "UAA Service Account",
+      "product": "platform",
       "resource-kind": "cf-uaa-service-account",
       "free": true,
       "credits": 0
+    },
+    {
+      "name": "Pages Static Website",
+      "product": "pages",
+      "resource-kind": "pages-static-website",
+      "metered": {
+        "type": "domain",
+        "unit": "Website",
+        "unitsPerCredit": 1,
+        "credits": 12
+      }
+    },
+    {
+      "name": "Runner Pools",
+      "multiplier": true,
+      "product": "workshop",
+      "plans": [
+        {
+          "plan": "Small Runner Pool",
+          "instanceClass": "Up to 10 parallel jobs",
+          "resource-kind": "runner-pool-small",
+          "credits": 0
+        },
+        {
+          "plan": "Medium Runner Pool",
+          "instanceClass": "Up to 20 parallel jobs",
+          "resource-kind": "runner-pool-medium",
+          "credits": 5
+        },
+        {
+          "plan": "Large Runner Pool",
+          "instanceClass": "Up to 40 parallel jobs",
+          "resource-kind": "runner-pool-large",
+          "credits": 10
+        },
+        {
+          "plan": "Extra Large Runner Pool",
+          "instanceClass": "Up to 80 parallel jobs",
+          "resource-kind": "runner-pool-extra-large",
+          "credits": 20
+        }
+      ]
+    },
+    {
+      "name": "Standard Users",
+      "resource-kind": "workshop-standard-user",
+      "product": "workshop",
+      "metered": {
+        "type": "reserved",
+        "unit": "seats",
+        "unitsPerCredit": 1,
+        "credits": 5
+      }
+    },
+    {
+      "name": "Additional Storage",
+      "resource-kind": "workshop-additional-storage",
+      "product": "workshop",
+      "metered": {
+        "type": "reserved",
+        "unit": "steps of 10GiBs",
+        "unitsPerCredit": 1,
+        "credits": 0.5
+      }
     }
   ]
 }
