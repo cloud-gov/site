@@ -5,77 +5,77 @@ export const footerProps = {
       links: [
         {
           text: "Customer support",
-          url: "support"
+          url: "support",
         },
         {
           text: "Business inquiries",
-          url: "mailto:inquiries@cloud.gov"
-        }
-      ]
+          url: "https://airtable.com/embed/appbHJFEYs3H7fmA8/shrNrGC5KQnLgJqWc",
+        },
+      ],
     },
     {
       label: "For developers",
       links: [
         {
           text: "Our repositiories",
-          url: "https://github.com/cloud-gov/"
+          url: "https://github.com/cloud-gov/",
         },
         {
           text: "Documentation",
-          url: "https://docs.cloud.gov"
+          url: "https://docs.cloud.gov",
         },
         {
           text: "Free sandbox",
-          url: "sign-up"
+          url: "sign-up",
         },
         {
           text: "Status",
-          url: "https://cloudgov.statuspage.io/"
-        }
-      ]
+          url: "https://cloudgov.statuspage.io/",
+        },
+      ],
     },
     {
       label: "Policies",
       links: [
         {
           text: "Vulnerability disclosure policy",
-          url: "https://www.gsa.gov/vulnerability-disclosure-policy"
+          url: "https://www.gsa.gov/vulnerability-disclosure-policy",
         },
         {
           text: "Open source policy",
-          url: "https://open.gsa.gov/oss/"
-        }
-      ]
-    }
+          url: "https://open.gsa.gov/oss/",
+        },
+      ],
+    },
   ],
   identifier: [
     {
       text: "About GSA",
-      url: "https://www.gsa.gov/about-us"
+      url: "https://www.gsa.gov/about-us",
     },
     {
       text: "Accessibility statement",
-      url: "https://www.gsa.gov/website-information/accessibility-statement"
+      url: "https://www.gsa.gov/website-information/accessibility-statement",
     },
     {
       text: "FOIA requests",
-      url: "https://www.gsa.gov/reference/freedom-of-information-act-foia"
+      url: "https://www.gsa.gov/reference/freedom-of-information-act-foia",
     },
     {
       text: "No FEAR Act data",
-      url: "https://www.gsa.gov/reference/civil-rights-programs/notification-and-federal-employee-antidiscrimination-and-retaliation-act-of-2002"
+      url: "https://www.gsa.gov/reference/civil-rights-programs/notification-and-federal-employee-antidiscrimination-and-retaliation-act-of-2002",
     },
     {
       text: "Office of the Inspector General",
-      url: "https://www.gsaig.gov/"
+      url: "https://www.gsaig.gov/",
     },
     {
       text: "Performance reports",
-      url: "https://www.gsa.gov/reference/reports/budget-performance"
+      url: "https://www.gsa.gov/reference/reports/budget-performance",
     },
     {
       text: "Privacy policy",
-      url: "https://www.gsa.gov/website-information/website-policies"
+      url: "https://www.gsa.gov/website-information/website-policies",
     },
-  ]
+  ],
 };
