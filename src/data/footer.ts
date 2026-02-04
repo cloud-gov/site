@@ -9,7 +9,7 @@ export const footerProps = {
         },
         {
           text: "Business inquiries",
-          url: "https://airtable.com/embed/appbHJFEYs3H7fmA8/shrNrGC5KQnLgJqWc",
+          url: "/contact",
         },
       ],
     },
