@@ -7,6 +7,12 @@
 @use './pageSection';
 @use './pricingTables';
 
+// show the page once CSS has loaded fully
+body {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 h1, h2, h3, h4, h5, p, li {
   text-wrap: pretty;
 }

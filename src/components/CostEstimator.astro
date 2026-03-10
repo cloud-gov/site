@@ -119,6 +119,7 @@ const title = forSchema == "credits" ? "Cloud.gov Credit Estimator" : "Cloud.gov
       const removeBtn = node.querySelector(".remove-btn");
 
       data.services.forEach((s, i) => {
+        if (s.product != 'platform' ) return; 
         const opt = document.createElement("option");
         opt.value = i;
         opt.textContent = s.name;
