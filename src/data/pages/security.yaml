@@ -8,7 +8,6 @@ hero:
 
   content: |
     When you build on Cloud.gov, **you inherit hundreds of security and operational controls** from our FedRAMP-authorized (Moderate) platform. That means less time, less effort, and lower risk in getting your Authority to Operate (ATO).
-
   art: "compliance"
 
 g2g:
@@ -64,7 +63,7 @@ AtoMedia:
         url: "https://marketplace.fedramp.gov/products/F1607067912"
 
     - heading: "We do more, so you do less"
-      text: "Cloud.gov isn’t just _technically_ compliant—it’s built with the realities of federal security in mind. We’ve supported dozens of agencies through audits, ATOs, and reauthorizations, and we’ve shaped our platform and docs around what teams actually need to succeed."
+      text: "Cloud.gov isn’t just _technically_ compliant — it’s built with the realities of federal security in mind. We’ve supported dozens of agencies through audits, ATOs, and reauthorizations, and we’ve shaped our platform and docs around what teams actually need to succeed."
       mediaComponent: "Illustration-Security"
       button:
         label: "Explore our compliance documentation"
@@ -73,7 +72,7 @@ AtoMedia:
 
 yourMissionOurInfra:
   heading: "Your mission, our infrastructure"
-  intro: "Employees and contractors can focus on developing mission-critical applications, leaving server infrastructure management to us. We support the platform—you own the application. That means you’re in control of things like:"
+  intro: "Employees and contractors can focus on developing mission-critical applications, leaving server infrastructure management to us. We support the platform — you own the application. That means you’re in control of things like:"
   align: "center"
   color: "white"
   items:
