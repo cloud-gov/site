@@ -24,7 +24,7 @@ kickTires:
     - heading: "**Experiment with the CLI**"
       text: "Dive right in with extensive self-documentation and community plugins"
     - heading: "**Deploy a demo app or two**"
-      text: "You can use [one of these sample apps]() or your own code."
+      text: "You can use [one of these sample apps](https://docs.cloud.gov/platform/getting-started/code-samples/) or your own code."
     - heading: "**Create some services**"
       text: "Create and bind a PostgreSQL or MySQL database instance for free"
     - heading: "**Review app logs**"
@@ -72,7 +72,7 @@ servicesMedia:
   items:
     - heading: "Try it yourself"
       text: |
-        Deploy a [sample app](https://docs.cloud.gov/getting-started/code-samples) in minutes using the CLI and built-in buildpacks. Cloud.gov gives you a self-service, API-friendly platform with support for languages like Node.js, Python, Ruby, and Java. 
+        Deploy a [sample app](https://docs.cloud.gov/platform/getting-started/code-samples/) in minutes using the CLI and built-in buildpacks. Cloud.gov gives you a self-service, API-friendly platform with support for languages like Node.js, Python, Ruby, and Java. 
         
          Easily connect to services like PostgreSQL, MySQL, Redis (via ElastiCache), and S3-compatible storage through our service brokers — simple automations that let you provision and bind services with just a CLI command, no ticket required. 
       mediaComponent: "Illustration-Sequence-Diagram"
