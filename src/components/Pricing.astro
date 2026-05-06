@@ -191,9 +191,12 @@ function yearlyFromMonthly(num = 0) {
             {pages.pricing.features.map((feature) => <li class="padding-y-05">{feature}</li>)}
           </ul>
           <div class="text-center line-height-sans-1 margin-y-1 text-base-darker">
-            <span class="display-inline-block font-sans-lg">$</span>
-            <span class="font-sans-3xl text-bold text-accent-cool">{pages.pricing.price}</span>
-            <span class="display-inline-block font-sans-lg">{pages.pricing.unit}</span>
+            <span class="font-sans-lg text-bold text-accent-cool">{pages.pricing.credits} credits</span>
+            <span class="display-inline-block font-sans-md">{pages.pricing.unit}</span>
+          </div>
+          <div class="text-center line-height-sans-1 margin-y-1 text-base-darker">
+            <span class="font-sans-sm text-italic">{pages.pricing.subcredits} credits</span>
+            <span class="display-inline-block font-sans-sm text-italic">{pages.pricing.subunit}</span>
           </div>
         </div>
       </div>
