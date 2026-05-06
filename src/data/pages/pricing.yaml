@@ -35,10 +35,10 @@ pricingContent:
     text: |
 
       Optimize your team's costs with our flexible credit system, which lets you dedicate your infrastructure spend towards the specific services you need, when you need them.
-      
+
       Credits empower you to tune your cloud resources  throughout the year. Think of them like rollover minutes. As your needs change, you can scale up or down as needed — **without modifying your agreement** or paying a premium all year for short-term peaks. 
 
-      Your credits unlock a wide range of cloud services, from pre-configured database and caching instances to dynamically metered resources like storage, memory, and SES, giving you granular control over your infrastructure and cost. 
+      Your credits unlock a wide range of cloud services, from pre-configured database and caching instances to dynamically metered resources like storage, memory, and SES, giving you granular control over your infrastructure and cost.
 
     button:
       label: "Estimate your credit needs"
@@ -119,8 +119,10 @@ pricingContent:
       url: "./contact"
     pricing:
       name: "Cloud.gov Pages"
-      price: "35,000"
-      unit: "/ year"
+      credits: "144"
+      unit: "/ year per provisioned domain"
+      subcredits: "12"
+      subunit: "/ month per provisioned domain"
       features:
         - "USWDS starter kits with DAP and Search.gov"
         - "Support for static, NodeJS, Hugo, and Ruby runtimes"
@@ -128,7 +130,7 @@ pricingContent:
         - "Highly scalable content delivery network (CDN)"
         - "Automatic HTTPS certificates and renewals"
         - "Unlimited deploys and preview sites"
-        - "Includes up to 5 production websites. Additional production domains are available in sets of 3 for $21,000/year."
+        - "Can be bundled with other Cloud.gov offerings"
         - "No charges for storage or bandwidth"
   workshop:
     subhead: "Cloud.gov Workshop pricing"
@@ -136,9 +138,9 @@ pricingContent:
     text: |
 
       Use your Cloud.gov service credits to create the plan that works for you. Start with enough seats for your first team and namespace, which comes with a small 10 parallel job CI/CD runner and 10GiB of storage per user seat towards your total storage allocation. 
-      
+
       Have more than one team, or a more complex organization? Add as many namespaces as you want, structure them to your needs, and scale them individually. When one of your namespaces needs capacity for more than 10 parallel jobs, you can easily scale up to 80 jobs. 
-      
+
       Additional storage is also available. **We don't charge per repository or namespace**, because your contract structure shouldn't dictate how you organize your code.
 
     button:
@@ -166,7 +168,6 @@ pricingContent:
       - name: "+10GiB of additional storage"
         credits: 0.5 # monthly, 6 yearly
         for: "Used for code, build artifacts, packages, and container images"
-
 
 stepsList:
   heading: "How an IAA with Cloud.gov works for you"
@@ -199,7 +200,6 @@ noRFP:
     - **Zero vendor overhead:** 100% of your investment goes directly to platform development
 
     Many technology providers simply repurpose private sector tools, leaving you to navigate critical compliance and integration challenges on your own. At Cloud.​gov, we proactively address these challenges, building in compliance and integration from the start, so you can focus on your mission.
-
 
 approachIds:
   - g2g
