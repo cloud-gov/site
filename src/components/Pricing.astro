@@ -13,6 +13,9 @@ interface PagesPricing {
   price: string;
   unit?: string;
   features: string[];
+  credits?: number;
+  subcredits?: number;
+  subunit?: string;
 }
 
 interface Pages {
@@ -66,6 +69,14 @@ interface Props {
 const { apps, pages, workshop, color = "white" } = Astro.props;
 let appGroupIndex = 0;
 let workshopGroupIndex = 0;
+const pagesPricingUnit = pages.pricing.unit ?? "";
+const pagesPricingUnitMatch = pagesPricingUnit.match(/^(\/\s*year)\s+(.*)$/i);
+const pagesPricingPrimaryUnit = pagesPricingUnitMatch?.[1] ?? pagesPricingUnit;
+const pagesPricingSecondaryUnit = pagesPricingUnitMatch?.[2] ?? "";
+const pagesPricingSubunit = pages.pricing.subunit ?? "";
+const pagesPricingSubunitMatch = pagesPricingSubunit.match(/^(\/\s*month)\s+(.*)$/i);
+const pagesPricingPrimarySubunit = pagesPricingSubunitMatch?.[1] ?? pagesPricingSubunit;
+const pagesPricingSecondarySubunit = pagesPricingSubunitMatch?.[2] ?? "";
 
 function formatNum(num = 0) {
   return new Intl.NumberFormat().format(num);
@@ -190,13 +201,25 @@ function yearlyFromMonthly(num = 0) {
             class="usa-list font-body-md line-height-body-4 text-left padding-y-3 border-y border-y-width-2px border-base-lighter">
             {pages.pricing.features.map((feature) => <li class="padding-y-05">{feature}</li>)}
           </ul>
-          <div class="text-center line-height-sans-1 margin-y-1 text-base-darker">
-            <span class="font-sans-lg text-bold text-accent-cool">{pages.pricing.credits} credits</span>
-            <span class="display-inline-block font-sans-md">{pages.pricing.unit}</span>
+          <div class="text-center line-height-sans-1 margin-y-1 text-base-darker pages-pricing-rate">
+            <span class="pages-pricing-rate__primary">
+              <span class="font-sans-lg text-bold text-accent-cool pages-pricing-rate__credits">
+                {pages.pricing.credits} credits
+              </span>
+              <span class="font-sans-md">{pagesPricingPrimaryUnit}</span>
+            </span>
+            {pagesPricingSecondaryUnit && <span class="font-sans-md pages-pricing-rate__secondary">{pagesPricingSecondaryUnit}</span>}
           </div>
-          <div class="text-center line-height-sans-1 margin-y-1 text-base-darker">
-            <span class="font-sans-sm text-italic">{pages.pricing.subcredits} credits</span>
-            <span class="display-inline-block font-sans-sm text-italic">{pages.pricing.subunit}</span>
+          <div class="text-center line-height-sans-1 margin-y-1 text-base-darker pages-pricing-subrate">
+            <span class="pages-pricing-subrate__primary">
+              <span class="font-sans-sm text-italic">{pages.pricing.subcredits} credits</span>
+              <span class="font-sans-sm text-italic">{pagesPricingPrimarySubunit}</span>
+            </span>
+            {
+              pagesPricingSecondarySubunit && (
+                <span class="font-sans-sm text-italic pages-pricing-subrate__secondary">{pagesPricingSecondarySubunit}</span>
+              )
+            }
           </div>
         </div>
       </div>
@@ -290,6 +313,48 @@ function yearlyFromMonthly(num = 0) {
       margin-left: auto;
       position: absolute;
       right: 2rem;
+    }
+
+    .pages-pricing-rate__primary {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.3rem;
+      white-space: nowrap;
+    }
+
+    .pages-pricing-subrate {
+      padding-top: 0.85rem;
+    }
+
+    .pages-pricing-subrate__primary {
+      display: inline-flex;
+      gap: 0.25rem;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 800px) {
+      .pages-pricing-rate {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .pages-pricing-rate__credits {
+        font-size: 1.75rem;
+      }
+
+      .pages-pricing-subrate {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        padding-top: 1rem;
+      }
+
+      .pages-pricing-subrate__secondary {
+        display: block;
+      }
     }
   </style>
   <script type="module">
