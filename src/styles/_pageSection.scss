@@ -358,6 +358,12 @@
   &--contact,
   &--support {
     background-image: url('../assets/img/bg-tiled-support.png');
+    a {
+      color: var(--theme-color-primary-dark);
+      &:hover {
+        color: var(--theme-color-primary-vivid);
+      }
+    }
   }
   &--trial {
     background-image: url('../assets/img/bg-tiled-trial.png');
