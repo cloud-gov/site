@@ -1,5 +1,4 @@
 ---
-import { late } from "astro:schema";
 import Markdown from "./Markdown.astro";
 import PageSection from "./PageSection.astro";
 import { Image } from "astro:assets";
@@ -62,7 +61,7 @@ function formatTileWrapper(tileItem: Item) {
 <PageSection align={align} color={color} {...props}>
   <div class="tiles">
     {
-      items.map((item) => {
+      items.map((item: Item) => {
         formatTileWrapper(item);
 
         return tileIsReverseLogo ? (
@@ -143,8 +142,8 @@ function formatTileWrapper(tileItem: Item) {
       color: var(--section-card-text, #333);
     }
     .accent {
-      color: var(--section-accent, #333);
-      fill: var(--section-accent, #333);
+      color: var(--theme-color-primary, #333);
+      fill: var(--theme-color-primary, #333);
     }
     .tile__link {
       text-decoration: none;

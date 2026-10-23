@@ -58,28 +58,36 @@ ul li, ol li {
   // font-size: font-size($theme-button-font-family, "md"); // 17.92px
   font-size: 1.13rem; // 18.02px
   font-weight: font-weight(500);
+  color: #fff;
  
   &.usa-button--accent-cool,
   &.usa-button--accent-warm {
     color: white; // for better contrast
   }
+  &.usa-button--accent-cool {
+    background-color: color("blue-cool-60v");
+  }
+  &.usa-button--accent-warm {
+    background-color: color("orange-50v");
+  }
   &.usa-button--outline {
     background-color: #fff;
     -webkit-font-smoothing: inherit;
+    color: var(--theme-color-primary, #333);
     &.usa-button--accent-warm {
       box-shadow: inset 0 0 0 units($theme-button-stroke-width) color("accent-warm");
-      color: color("accent-warm");
+      color: color("accent-warm-dark");
       &:hover {
         box-shadow: inset 0 0 0 units($theme-button-stroke-width) color("accent-warm-dark");
-        color: color("accent-warm-dark");
+        color: color("accent-warm-darker");
       }
     }
     &.usa-button--accent-cool {
       box-shadow: inset 0 0 0 units($theme-button-stroke-width) color("accent-cool");
-      color: color("accent-cool");
+      color: color("accent-cool-dark");
       &:hover {
         box-shadow: inset 0 0 0 units($theme-button-stroke-width) color("accent-cool-dark");
-        color: color("accent-cool-dark");
+        color: color("accent-cool-darker");
       }
     }
   }
@@ -277,6 +285,12 @@ $theme-footer-background-color: 'blue-warm-5v';
     font-size: font-size($theme-body-font-family, "md");
     font-weight: font-weight(500);
     line-height: 1.3;
+    a {
+      color: var(--theme-color-primary-dark);
+      &:hover {
+        color: var(--theme-color-primary-darker)
+      }
+    }
     &::after {
       content: "";
       position:absolute;
@@ -292,7 +306,9 @@ $theme-footer-background-color: 'blue-warm-5v';
   .usa-process-list__text {
     // font-weight: font-weight(500);
     font-size: font-size($theme-body-font-family, "sm");
-
+    a {
+      color: var(--theme-color-primary-dark);
+    }
   }
 
 }
