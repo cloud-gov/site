@@ -32,10 +32,10 @@ const { logoText, logoUrl, list, identifier } = Astro.props;
                 </a>
               </div>
               {
-                list.map((linkList) => (
+                list.map((linkList: LinkList) => (
                   <div class="mobile-lg:padding-top-105 mobile-lg:grid-offset-3 desktop:margin-left-0 mobile-lg:grid-col-6 desktop:grid-col-3">
                     <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
-                      <h4 class="usa-footer__primary-link text-primary-dark">{linkList.label}</h4>
+                      <h2 class="usa-footer__primary-link text-primary-dark">{linkList.label}</h2>
                       <ul class="usa-list usa-list--unstyled">
                         {linkList.links.map((link) => (
                           <li class="usa-footer__secondary-link">
@@ -82,7 +82,7 @@ const { logoText, logoUrl, list, identifier } = Astro.props;
     <div class="usa-identifier__container">
       <ul class="usa-identifier__required-links-list">
         {
-          identifier.map((link) => (
+          identifier.map((link: Link) => (
             <li class="usa-identifier__required-links-item">
               <a href={link.url} class="usa-identifier__required-link usa-link usa-link--external" target="_blank">
                 {link.text}
