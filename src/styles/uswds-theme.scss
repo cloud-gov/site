@@ -182,6 +182,13 @@ ul li, ol li {
     }
     .usa-logo {
       margin: 1rem 0 0.5rem 0rem;
+      a:focus, a:focus-visible {
+        outline: 0; // remove for Mozilla based browsers
+        img {
+          outline-offset: 0.25rem;
+          outline: 0.25rem solid #2491ff;
+        }
+      }
     }
   }
 
