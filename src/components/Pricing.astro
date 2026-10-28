@@ -122,15 +122,15 @@ function yearlyFromMonthly(num = 0) {
             </thead>
             <tbody>
               {
-                apps.tiers.map((tier) => {
+                apps.tiers.map((tier: AppsTier) => {
                   if (tier.rowspan > 0) appGroupIndex += 1;
                   const rowClass = `pricing-group--${appGroupIndex}`;
                   return (
                     <>
                       {tier.rowspan > 0 ? (
-                        <tr class={rowClass}>
-                          <th colspan="4">
-                            <Markdown content={tier.for} classes="font-body-sm line-height-body-3" inline />
+                        <tr class:list={[rowClass, "pricing-group-description"]}>
+                          <th colspan="3">
+                            <Markdown content={tier.for || ""} classes="font-body-sm line-height-body-3" inline />
                           </th>
                         </tr>
                       ) : null}
@@ -148,7 +148,7 @@ function yearlyFromMonthly(num = 0) {
                         </td>
                         {tier.rowspan > 0 ? (
                           <td rowspan={tier.rowspan}>
-                            <Markdown content={tier.for} classes="font-body-sm line-height-body-3" inline />
+                            <Markdown content={tier.for || ""} classes="font-body-sm line-height-body-3" inline />
                           </td>
                         ) : null}
                       </tr>
@@ -188,7 +188,7 @@ function yearlyFromMonthly(num = 0) {
           />
           <ul
             class="usa-list font-body-md line-height-body-4 text-left padding-y-3 border-y border-y-width-2px border-base-lighter">
-            {pages.pricing.features.map((feature) => <li class="padding-y-05">{feature}</li>)}
+            {pages.pricing.features.map((feature: any) => <li class="padding-y-05">{feature}</li>)}
           </ul>
           <div class="text-center line-height-sans-1 margin-y-1 text-base-darker">
             <span class="font-sans-xl tablet:font-sans-lg desktop:font-sans-xl text-bold text-accent-cool">{pages.pricing.credits} credits</span>
@@ -234,7 +234,7 @@ function yearlyFromMonthly(num = 0) {
             </thead>
             <tbody>
               {
-                workshop.tiers.map((tier, workshopGroupIndex) => {
+                workshop.tiers.map((tier: AppsTier, workshopGroupIndex: number) => {
                   const rowClass = `pricing-group--${workshopGroupIndex}`;
                   return (
                     <>
@@ -262,6 +262,15 @@ function yearlyFromMonthly(num = 0) {
   </div>
 
   <style>
+    .pricing-group-description {
+      display: table-row;
+    }
+
+    @media (min-width: 800px) {
+      .pricing-group-description {
+        display: none;
+      }
+    }
     dialog {
       width: 95vw;
       max-width: 100ch;
